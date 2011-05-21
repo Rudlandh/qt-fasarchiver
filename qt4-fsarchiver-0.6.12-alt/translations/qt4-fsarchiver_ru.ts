@@ -1275,7 +1275,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainWindow.cpp" line="273"/>
         <source>Sicherungsdatei</source>
-        <translation type="unfinished">Файл сохранения</translation>
+        <translation type="unfinished">Файл резервной копии</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="274"/>
@@ -1657,86 +1657,125 @@ Copyright (C) 2008-2011 Francois Dupoux, Dieter Baum.
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="14"/>
         <source>Partitionen sichern/zurückschreiben</source>
-        <translation type="unfinished">Раздел сохранения/восстановления</translation>
+        <translatorcomment>1</translatorcomment>
+        <translation type="unfinished">Cохранение/Восстановления раздела</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="27"/>
         <source>vorhandene Partitionen:</source>
+        <translatorcomment>2</translatorcomment>
         <translation type="unfinished">Найденны разделы:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="40"/>
         <source>Sicherungsverzeichnis:</source>
+        <translatorcomment>3</translatorcomment>
         <translation type="unfinished">Каталог сохранения:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="53"/>
         <location filename="../src/ui/fsarchiverMain.ui" line="632"/>
         <source>Partition sichern</source>
-        <translation type="unfinished">Раздел сохранения</translation>
+        <translatorcomment>4</translatorcomment>
+        <translation type="unfinished">Сохранить раздел</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="66"/>
         <location filename="../src/ui/fsarchiverMain.ui" line="612"/>
         <source>Beenden</source>
+        <translatorcomment>5</translatorcomment>
         <translation type="unfinished">Выход</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="111"/>
         <source>S</source>
+        <translatorcomment>6?</translatorcomment>
         <translation type="unfinished">S</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="130"/>
         <source>vorgesehene Aktion:</source>
+        <translatorcomment>7</translatorcomment>
         <translation type="unfinished">Возможные действия:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="148"/>
         <source>Partition mit
 fsArchiver sichern:</source>
-        <translation type="unfinished">Сохранение
-раздела:</translation>
+        <translatorcomment>8</translatorcomment>
+        <translation type="unfinished">Сохранить
+раздел:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="162"/>
         <source>Partition mit fs-Archiver
 zurückschreiben</source>
-        <translation type="unfinished">Восстановление
-раздела</translation>
+        <translatorcomment>9</translatorcomment>
+        <translation type="unfinished">Восстановить
+раздел</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="200"/>
         <location filename="../src/ui/fsarchiverMain.ui" line="641"/>
         <source>Partition wiederherstellen</source>
+        <translatorcomment>10</translatorcomment>
         <translation type="unfinished">Восстановление раздела</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="213"/>
         <source>Dateiname der Sicherung:</source>
+        <translatorcomment>11</translatorcomment>
         <translation type="unfinished">Имя файла сохранения:</translation>
+    </message>
+    <message>
+        <source>Vorgesehene Aktion:</source>
+        <translation type="obsolete">Возможные действия:</translation>
+    </message>
+    <message>
+        <source>Partition mit fsArchiver sichern:</source>
+        <translation type="obsolete">Сохраненить раздел:</translation>
+    </message>
+    <message>
+        <source>Partition mit fs-Archiver zurückschreiben</source>
+        <translation type="obsolete">Восстановить раздел</translation>
+    </message>
+    <message>
+        <source>vergangene Zeit:</source>
+        <translation type="obsolete">Прошедшее время:</translation>
+    </message>
+    <message>
+        <source>noch zu erwartende Zeit:</source>
+        <translation type="obsolete">Оставшеяся время:</translation>
+    </message>
+    <message>
+        <source>Vorhandene Partitionen:</source>
+        <translation type="obsolete">Найденные разделы:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="226"/>
         <source>Hinweise zu der Sicherung eingeben</source>
+        <translatorcomment>12</translatorcomment>
         <translation type="unfinished">Ввод инструкций сохранения</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="239"/>
         <source>Kompressions-
 einstellung:</source>
+        <translatorcomment>13</translatorcomment>
         <translation type="unfinished">Тип 
 сжатия:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="263"/>
         <source>vorhanden Sicherung überschreiben</source>
+        <translatorcomment>14</translatorcomment>
         <translation type="unfinished">Перезапись сохранённого образа</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="291"/>
         <source>Anzahl der zu sichernden 
 Dateien/Verzeichnisse:</source>
+        <translatorcomment>15</translatorcomment>
         <translation type="unfinished">Число сохранённых
 файлов/каталогов:</translation>
     </message>
@@ -1745,6 +1784,7 @@ Dateien/Verzeichnisse:</source>
         <source>bereits gesicherte 
 Datein/Verzeichnisse:
 </source>
+        <translatorcomment>16</translatorcomment>
         <translation type="unfinished">Сохранённые
 файлы/каталоги:
 </translation>
@@ -1756,6 +1796,7 @@ Datein/Verzeichnisse:
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translatorcomment>17</translatorcomment>
         <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1766,11 +1807,13 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/ui/fsarchiverMain.ui" line="392"/>
         <location filename="../src/ui/fsarchiverMain.ui" line="474"/>
         <source>Minuten</source>
+        <translatorcomment>18</translatorcomment>
         <translation type="unfinished">минут</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="418"/>
         <source>Sekunden:</source>
+        <translatorcomment>19</translatorcomment>
         <translation type="unfinished">секунд:</translation>
     </message>
     <message>
@@ -1780,6 +1823,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translatorcomment>20</translatorcomment>
         <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1789,12 +1833,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="487"/>
         <source>Sekunden</source>
+        <translatorcomment>21</translatorcomment>
         <translation type="unfinished">секунд</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="511"/>
         <source>Sicherung  verschlüsseln
 Schlüssel:</source>
+        <translatorcomment>22</translatorcomment>
         <translation type="unfinished">Ключ 
 шифрования: </translation>
     </message>
@@ -1802,75 +1848,110 @@ Schlüssel:</source>
         <location filename="../src/ui/fsarchiverMain.ui" line="535"/>
         <source>Anzahl Prozessorenkerne, die für
 fsarchiver verwendet werden sollen:</source>
-        <translatorcomment>Число ядерных модулей используемых программой</translatorcomment>
+        <translatorcomment>23 Число ядерных модулей используемых программой</translatorcomment>
         <translation type="unfinished">Число используемых
 потоков :</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="549"/>
         <source>Archiv splitten auf DVD Größe</source>
+        <translatorcomment>24</translatorcomment>
         <translation type="unfinished">Разбиение архива для DVD</translation>
+    </message>
+    <message>
+        <source>Anzahl Prozessorenkerne, die für
+ fsarchiver verwendet werden sollen:</source>
+        <translation type="obsolete">Число используемых
+потоков :</translation>
+    </message>
+    <message>
+        <source>Kompressionseinstellung:</source>
+        <translation type="obsolete">Тип сжатия:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="584"/>
         <source>Aktionen</source>
+        <translatorcomment>25</translatorcomment>
         <translation type="unfinished">Функции</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="600"/>
         <source>Einstellungen</source>
+        <translatorcomment>26</translatorcomment>
         <translation type="unfinished">Настройка</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="606"/>
         <source>Information</source>
+        <translatorcomment>27</translatorcomment>
         <translation type="unfinished">Справка</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="623"/>
         <location filename="../src/ui/fsarchiverMain.ui" line="650"/>
         <source>Basiseinstellungen</source>
+        <translatorcomment>28</translatorcomment>
         <translation type="unfinished">Основные настройки</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="659"/>
         <source>Information fsarchiver</source>
-        <translation type="unfinished">О  fsarchiver</translation>
+        <translatorcomment>29</translatorcomment>
+        <translation type="unfinished">О  Qt4-fsarchiver</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="668"/>
         <source>MBR sichern</source>
-        <translation type="unfinished"> Сохранение MBR</translation>
+        <translatorcomment>30</translatorcomment>
+        <translation type="unfinished">Сохранение MBR</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="677"/>
         <source>MBR wiederherstellen</source>
+        <translatorcomment>31</translatorcomment>
         <translation type="unfinished">Восстановление MBR</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="686"/>
         <source>Verzeichnis zurückschreiben</source>
-        <translation type="unfinished">Каталог восстановления</translation>
+        <translatorcomment>32</translatorcomment>
+        <translation type="unfinished">Восстановление каталога</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="695"/>
         <source>Verzeichnis sichern</source>
+        <translatorcomment>33</translatorcomment>
         <translation type="unfinished">Сохранение каталога</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="704"/>
         <source>Programm beenden</source>
+        <translatorcomment>34</translatorcomment>
         <translation type="unfinished">Выход из программы</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="713"/>
         <source>Partition sichern Netzwerk</source>
-        <translation type="unfinished">Сохранение раздела по сети</translation>
+        <translatorcomment>35</translatorcomment>
+        <translation type="unfinished">Сохраненение раздел по сети</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="722"/>
         <source>Partition wiederherstellen Netzwerk</source>
+        <translatorcomment>36</translatorcomment>
         <translation type="unfinished">Восстановление раздела по сети</translation>
+    </message>
+    <message>
+        <source>1 Partitionen sichern/zurückschreiben</source>
+        <translation type="obsolete">Сохранение/восстановление раздела</translation>
+    </message>
+    <message>
+        <source>2 vorhandene Partitionen:</source>
+        <translation type="obsolete">Найденные разделы:</translation>
+    </message>
+    <message>
+        <source>3 Sicherungsverzeichnis:</source>
+        <translation type="obsolete">Каталоги сохранения:</translation>
     </message>
 </context>
 <context>
