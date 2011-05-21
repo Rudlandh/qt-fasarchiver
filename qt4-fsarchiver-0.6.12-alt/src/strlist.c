@@ -70,17 +70,17 @@ int strlist_add(cstrlist *l, char *str)
     int len;
     
     if (!l || !str || !strlen(str))
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
     
     if (strlist_exists(l, str)==true)
-    {   errprintf(tr("canot add dring: [%s] is already in the list\n"), str);
+    {   errprintf(_("canot add dring: [%s] is already in the list\n"), str);
         return -1;
     }
     
     if ((lnew=malloc(sizeof(cstrlistitem)))==NULL)
-    {   errprintf(tr("malloc() failed\n"));
+    {   errprintf(_("malloc() failed\n"));
         return -1;
     }
     memset(lnew, 0, sizeof(cstrlistitem));
@@ -88,7 +88,7 @@ int strlist_add(cstrlist *l, char *str)
     
     len=strlen(str);
     if ((lnew->str=malloc(len+1))==NULL)
-    {   errprintf(tr("malloc() failed\n"));
+    {   errprintf(_("malloc() failed\n"));
         free(lnew);
         return -1;
     }
@@ -114,7 +114,7 @@ int strlist_getitem(cstrlist *l, int index, char *buf, int bufsize)
     int pos=0;
 
     if (!l || !buf || bufsize<=0)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
     
@@ -136,7 +136,7 @@ int strlist_remove(cstrlist *l, char *str)
     cstrlistitem *item, *next;
     
     if (!l || !str)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
     
@@ -172,7 +172,7 @@ char *strlist_merge(cstrlist *l, char *bufdat, int bufsize, char sep)
     cstrlistitem *item;
     
     if (!l || !bufdat || bufsize<=0)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return NULL;
     }
     
@@ -195,7 +195,7 @@ int strlist_exists(cstrlist *l, char *str)
     cstrlistitem *item;
     
     if (!l || !str)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1; // error
     }
     
@@ -219,7 +219,7 @@ int strlist_split(cstrlist *l, char *text, char sep)
     int len;
 
     if (!l || !text)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
     
@@ -229,7 +229,7 @@ int strlist_split(cstrlist *l, char *text, char sep)
     strlist_empty(l);
     
     if ((textcopy=malloc(len+1))==NULL)
-    {   errprintf(tr("malloc(%d) failed\n"), len+1);
+    {   errprintf(_("malloc(%d) failed\n"), len+1);
         return -1;
     }
 
@@ -237,7 +237,7 @@ int strlist_split(cstrlist *l, char *text, char sep)
     for (result=strtok_r(textcopy, delims, &saveptr); result!=NULL; result=strtok_r(NULL, delims, &saveptr))
     {
         if (strlist_add(l, result)!=0)
-        {   errprintf(tr("strlist_add(l, [%s]) failed\n"), result);
+        {   errprintf(_("strlist_add(l, [%s]) failed\n"), result);
             free(textcopy);
             return -1;
         }
@@ -253,7 +253,7 @@ int strlist_count(cstrlist *l)
     int count=0;
     
     if (!l)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1; // error
     }
     
@@ -276,18 +276,18 @@ int strlist_show(cstrlist *l)
     int count=0;
     
     if (!l)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1; // error
     }
     
     if (!l->head)
     {   
-        printf(tr("list is empty"));
+        printf(_("list is empty"));
     }
     else
     {
         for (item=l->head; (item!=NULL); item=item->next)
-            printf(tr("item[%d]: [%s]\n"), count++, item->str);
+            printf(_("item[%d]: [%s]\n"), count++, item->str);
     }
 
     return 0;

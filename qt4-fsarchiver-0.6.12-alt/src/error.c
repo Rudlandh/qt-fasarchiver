@@ -47,7 +47,7 @@ int fsaprintf(int level, bool showerrno, bool showloc, const char *file, const c
     {
         // 1. format errno and its meaning
         if (showerrno)
-            strlcatf(buffer, sizeof(buffer), tr("[errno=%d, %s]: "), errno, strerror(errno));
+            strlcatf(buffer, sizeof(buffer), _("[errno=%d, %s]: "), errno, strerror(errno));
         
         // 2. format location of the message
         if (showloc)

@@ -45,26 +45,26 @@ void *thread_writer_fct(void *args)
     inc_secthreads();
     
     if ((ai=(carchwriter *)args)==NULL)
-    {   errprintf(tr("ai is NULL\n"));
+    {   errprintf(_("ai is NULL\n"));
         goto thread_writer_fct_error;
     }
     if (archwriter_volpath(ai)!=0)
-    {   msgprintf(MSG_STACK, tr("archwriter_volpath() failed\n"));
+    {   msgprintf(MSG_STACK, _("archwriter_volpath() failed\n"));
         goto thread_writer_fct_error;
     }
     if (archwriter_create(ai)!=0)
-    {   msgprintf(MSG_STACK, tr("archwriter_create(%s) failed\n"), ai->basepath);
+    {   msgprintf(MSG_STACK, _("archwriter_create(%s) failed\n"), ai->basepath);
         goto thread_writer_fct_error;
     }
     if (archwriter_write_volheader(ai)!=0)
-    {   msgprintf(MSG_STACK, tr("cannot write volume header: archwriter_write_volheader() failed\n"));
+    {   msgprintf(MSG_STACK, _("cannot write volume header: archwriter_write_volheader() failed\n"));
         goto thread_writer_fct_error;
     }
     
     while (queue_get_end_of_queue(&g_queue)==false)
     {
         if ((blknum=queue_dequeue_first(&g_queue, &type, &headinfo, &blkinfo))<0 && blknum!=FSAERR_ENDOFFILE) // error
-        {   msgprintf(MSG_STACK, tr("queue_dequeue_first()=%ld=%s failed\n"), (long)blknum, error_int_to_string(blknum));
+        {   msgprintf(MSG_STACK, _("queue_dequeue_first()=%ld=%s failed\n"), (long)blknum, error_int_to_string(blknum));
             goto thread_writer_fct_error;
         }
         else if (blknum>0) // block or header found
@@ -73,20 +73,20 @@ void *thread_writer_fct(void *args)
             {
                 case QITEM_TYPE_BLOCK:
                     if (archwriter_dowrite_block(ai, &blkinfo)!=0)
-                    {   msgprintf(MSG_STACK, tr("archive_dowrite_block() failed\n"));
+                    {   msgprintf(MSG_STACK, _("archive_dowrite_block() failed\n"));
                         goto thread_writer_fct_error;
                     }
                     free(blkinfo.blkdata);
                     break;
                 case QITEM_TYPE_HEADER:
                     if (archwriter_dowrite_header(ai, &headinfo)!=0)
-                    {   msgprintf(MSG_STACK, tr("archive_write_header() failed\n"));
+                    {   msgprintf(MSG_STACK, _("archive_write_header() failed\n"));
                         goto thread_writer_fct_error;
                     }
                     dico_destroy(headinfo.dico);
                     break;
                 default:
-                    errprintf(tr("unexpected item type from queue: type=%d\n"), type);
+                    errprintf(_("unexpected item type from queue: type=%d\n"), type);
                     break;
             }
         }
@@ -94,16 +94,16 @@ void *thread_writer_fct(void *args)
     
     // write last volume footer
     if (archwriter_write_volfooter(ai, true)!=0)
-    {   msgprintf(MSG_STACK, tr("cannot write volume footer: archio_write_volfooter() failed\n"));
+    {   msgprintf(MSG_STACK, _("cannot write volume footer: archio_write_volfooter() failed\n"));
         goto thread_writer_fct_error;
     }
     archwriter_close(ai);
-    msgprintf(MSG_DEBUG1, tr("THREAD-WRITER: exit success\n"));
+    msgprintf(MSG_DEBUG1, _("THREAD-WRITER: exit success\n"));
     dec_secthreads();
     return NULL;
     
 thread_writer_fct_error:
-    msgprintf(MSG_DEBUG1, tr("THREAD-WRITER: exit remove\n"));
+    msgprintf(MSG_DEBUG1, _("THREAD-WRITER: exit remove\n"));
     set_stopfillqueue(); // say to the create.c thread that it must stop
     while (queue_get_end_of_queue(&g_queue)==false) // wait until all the compression threads exit
         queue_destroy_first_item(&g_queue); // empty queue
@@ -132,40 +132,40 @@ void *thread_reader_fct(void *args)
     inc_secthreads();
 
     if ((ai=(carchreader *)args)==NULL)
-    {   errprintf(tr("ai is NULL\n"));
+    {   errprintf(_("ai is NULL\n"));
         goto thread_reader_fct_error;
     }
     
     // open archive file
     if (archreader_volpath(ai)!=0)
-    {   errprintf(tr("archreader_volpath() failed\n"));
+    {   errprintf(_("archreader_volpath() failed\n"));
         goto thread_reader_fct_error;
     }
     
     if (archreader_open(ai)!=0)
-    {   errprintf(tr("archreader_open(%s) failed\n"), ai->basepath);
+    {   errprintf(_("archreader_open(%s) failed\n"), ai->basepath);
         goto thread_reader_fct_error;
     }
     
     // read volume header
     if (archreader_read_volheader(ai)!=0)
-    {   errprintf(tr("archio_read_volheader() failed\n"));
+    {   errprintf(_("archio_read_volheader() failed\n"));
         goto thread_reader_fct_error;
     }
     
     // ---- read main archive header
     if ((res=archreader_read_header(ai, magic, &dico, false, &fsid))!=FSAERR_SUCCESS)
-    {   errprintf(tr("archreader_read_header() failed to read the archive header\n"));
+    {   errprintf(_("archreader_read_header() failed to read the archive header\n"));
         goto thread_reader_fct_error; // this header is required to continue
     }
     
     if (dico_get_u32(dico, 0, MAINHEADKEY_ARCHIVEID, &ai->archid)!=0)
-    {   msgprintf(3, tr("cannot get archive-id from main header\n"));
+    {   msgprintf(3, _("cannot get archive-id from main header\n"));
         goto thread_reader_fct_error;
     }
     
     if ((lres=queue_add_header(&g_queue, dico, magic, fsid))!=FSAERR_SUCCESS)
-    {   errprintf(tr("queue_add_header()=%ld=%s failed to add the archive header\n"), (long)lres, error_int_to_string(lres));
+    {   errprintf(_("queue_add_header()=%ld=%s failed to add the archive header\n"), (long)lres, error_int_to_string(lres));
         goto thread_reader_fct_error;
     }
     
@@ -174,15 +174,15 @@ void *thread_reader_fct(void *args)
     {
         if ((res=archreader_read_header(ai, magic, &dico, true, &fsid))!=FSAERR_SUCCESS)
         {   dico_destroy(dico);
-            msgprintf(MSG_STACK, tr("archreader_read_header() failed to read next header\n"));
+            msgprintf(MSG_STACK, _("archreader_read_header() failed to read next header\n"));
             if (res==OLDERR_MINOR) // header is corrupt or not what we expected
             {   errors++;
-                msgprintf(MSG_DEBUG1, tr("OLDERR_MINOR\n"));
+                msgprintf(MSG_DEBUG1, _("OLDERR_MINOR\n"));
                 continue;
             }
             else // fatal error (eg: cannot read archive from disk)
             {
-                msgprintf(MSG_DEBUG1, tr("!OLDERR_MINOR\n"));
+                msgprintf(MSG_DEBUG1, _("!OLDERR_MINOR\n"));
                 goto thread_reader_fct_error;
             }
         }
@@ -194,10 +194,10 @@ void *thread_reader_fct(void *args)
             
             // check the "end of archive" flag in header
             if (dico_get_u32(dico, 0, VOLUMEFOOTKEY_LASTVOL, &endofarchive)!=0)
-            {   errprintf(tr("cannot get compr from block-header\n"));
+            {   errprintf(_("cannot get compr from block-header\n"));
                 goto thread_reader_fct_error;
             }
-            msgprintf(MSG_VERB2, tr("End of volume [%s]\n"), ai->volpath);
+            msgprintf(MSG_VERB2, _("End of volume [%s]\n"), ai->volpath);
             if (endofarchive!=true)
             {
                 archreader_incvolume(ai, false);
@@ -208,18 +208,18 @@ void *thread_reader_fct(void *args)
                         usleep(5000);
                     fflush(stdout);
                     fflush(stderr);
-                    msgprintf(MSG_FORCE, tr("File [%s] is not found, please type the path to volume %ld:\n"), ai->volpath, (long)ai->curvol);
-                    fprintf(stdout, tr("New path:> "));
+                    msgprintf(MSG_FORCE, _("File [%s] is not found, please type the path to volume %ld:\n"), ai->volpath, (long)ai->curvol);
+                    fprintf(stdout, _("New path:> "));
                     res=scanf("%s", ai->volpath);
                 }
                 
-                msgprintf(MSG_VERB2, tr("New volume is [%s]\n"), ai->volpath);
+                msgprintf(MSG_VERB2, _("New volume is [%s]\n"), ai->volpath);
                 if (archreader_open(ai)!=0)
-                {   msgprintf(MSG_STACK, tr("archreader_open() failed\n"));
+                {   msgprintf(MSG_STACK, _("archreader_open() failed\n"));
                     goto thread_reader_fct_error;
                 }
                 if (archreader_read_volheader(ai)!=0)
-                {      msgprintf(MSG_STACK, tr("archio_read_volheader() failed\n"));
+                {      msgprintf(MSG_STACK, _("archio_read_volheader() failed\n"));
                     goto thread_reader_fct_error;
                 }
             }
@@ -232,7 +232,7 @@ void *thread_reader_fct(void *args)
                 skipblock=(g_fsbitmap[fsid]==0);
                 //errprintf("DEBUG: skipblock=%d g_fsbitmap[fsid=%d]=%d\n", skipblock, (int)fsid, (int)g_fsbitmap[fsid]);
                 if (archreader_read_block(ai, dico, skipblock, &sumok, &blkinfo)!=0)
-                {   msgprintf(MSG_STACK, tr("archreader_read_block() failed\n"));
+                {   msgprintf(MSG_STACK, _("archreader_read_block() failed\n"));
                     goto thread_reader_fct_error;
                 }
                 
@@ -241,7 +241,7 @@ void *thread_reader_fct(void *args)
                     status=((sumok==true)?QITEM_STATUS_TODO:QITEM_STATUS_DONE);
                     if ((lres=queue_add_block(&g_queue, &blkinfo, status))!=FSAERR_SUCCESS)
                     {   if (lres!=FSAERR_NOTOPEN)
-                            errprintf(tr("queue_add_block()=%ld=%s failed\n"), (long)lres, error_int_to_string(lres));
+                            errprintf(_("queue_add_block()=%ld=%s failed\n"), (long)lres, error_int_to_string(lres));
                         goto thread_reader_fct_error;
                     }
                     if (sumok==false) errors++;
@@ -254,7 +254,7 @@ void *thread_reader_fct(void *args)
                 if (fsid==FSA_FILESYSID_NULL || g_fsbitmap[fsid]==1)
                 {
                     if ((lres=queue_add_header(&g_queue, dico, magic, fsid))!=FSAERR_SUCCESS)
-                    {   msgprintf(MSG_STACK, tr("queue_add_header()=%ld=%s failed\n"), (long)lres, error_int_to_string(lres));
+                    {   msgprintf(MSG_STACK, _("queue_add_header()=%ld=%s failed\n"), (long)lres, error_int_to_string(lres));
                         goto thread_reader_fct_error;
                     }
                 }
@@ -267,9 +267,9 @@ void *thread_reader_fct(void *args)
     }
     
 thread_reader_fct_error:
-    msgprintf(MSG_DEBUG1, tr("THREAD-READER: queue_set_end_of_queue(&g_queue, true)\n"));
+    msgprintf(MSG_DEBUG1, _("THREAD-READER: queue_set_end_of_queue(&g_queue, true)\n"));
     queue_set_end_of_queue(&g_queue, true); // don't wait for more data from this thread
     dec_secthreads();
-    msgprintf(MSG_DEBUG1, tr("THREAD-READER: exit\n"));
+    msgprintf(MSG_DEBUG1, _("THREAD-READER: exit\n"));
     return NULL;
 }

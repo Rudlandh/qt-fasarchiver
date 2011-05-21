@@ -14,6 +14,7 @@ OBJECTS_DIR = build
 MOC_DIR = build
 UI_DIR = build
 RCC_DIR = build
+
 CODECFORTR=utf8
 CODECFORSRC=utf8
 
@@ -123,6 +124,13 @@ SOURCES += src/archinfo.c \
            src/thread_archio.c \
            src/thread_comp.c \
            src/writebuf.c
+
+
+TRANSLATIONS += translations/template_qt4-fsarchiver.ts \
+    translations/qt4-fsarchiver_ru.ts \
+    translations/qt4-fsarchiver_de.ts
+
+
 RESOURCES += src/icon.qrc
 
 # install
@@ -131,13 +139,8 @@ icon.files = src/images/harddrive.png
 icon.path = /usr/share/pixmaps
 autostart.files = starter/qt4-fsarchiver.desktop
 autostart.path = /usr/share/applications
-INSTALLS = target icon autostart
+translations.files = translations/qt4-fsarchiver_ru.gm \
+                      translations/qt4-fsarchiver_de.gm
 
-TRANSLATIONS = translations/template_qt4-fsarchiver.ts \
-    translations/qt4-fsarchiver_ru.ts \
-    translations/qt4-fsarchiver_en.ts \
-    translations/qt4-fsarchiver_de.ts
-    
-translations.files += translations/qt4-fsarchiver_ru.gm
-
+INSTALLS = target icon autostart translations
 

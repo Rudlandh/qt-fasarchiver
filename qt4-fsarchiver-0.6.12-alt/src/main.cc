@@ -44,8 +44,18 @@ int anzahl_disk;
 QString parameter[15];
 QString add_part[100];
 
+#include <locale.h>
+#include <gettext.h>
+
+
+
 int main(int argc, char *argv[])
 {
+  /* Set locale via LC_ALL.  */
+    setlocale (LC_ALL, "");
+    bindtextdomain ("" ,"qt-fsarchiver");
+    textdomain ("qt-fsarchiver");
+
    QApplication app(argc, argv);
 
 //	/*---install translation file for application strings---*/

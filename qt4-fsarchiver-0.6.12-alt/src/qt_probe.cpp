@@ -68,7 +68,7 @@ int qt_probe()
     // ---- 0. get info from /proc/partitions + libblkid
 
    if ((res=partlist_getlist(blkdev, FSA_MAX_BLKDEVICES, &diskcount, &partcount))<1)
-   {   printf(tr("keine Disk und Partition entdeckt\n"));
+   {   printf(_("keine Disk und Partition entdeckt\n"));
         return -1;
     }
    
@@ -101,7 +101,7 @@ int qt_probe()
     }
     else
     {
-        printf(tr("Es wurde keine Festplatte erkannt!\n"));
+        printf(_("Es wurde keine Festplatte erkannt!\n"));
     }
     return 0;
 

@@ -82,16 +82,17 @@ INSTALL_ROOT=%buildroot qmake qt4-fsarchiver-net.pro
 INSTALL_ROOT=%buildroot %makeinstall_std
 mkdir -p %buildroot%_datadir/qt4/translations
 cp translations/%{name}*.qm %buildroot%_datadir/qt4/translations
+install -D -m644 %buildroot/%_pixmapsdir/harddrive.png %buildroot%_liconsdir/%name.png
 
 %files
 %_sbindir/%name
 %_desktopdir/qt4-fsarchiver.desktop
-%_pixmapsdir/*.png
-%_datadir/qt4/translations/%{name}*.qm
+%_iconsdir/hicolor/*/apps/*
+%_datadir/qt4/translations/*%{name}*.qm
 
 %changelog
 * Wed May 18 2011 Hihin Ruslan <ruslandh@altlinux.ru> 0.6.12-alt1.1
-- add localisation
+- 
 
 * Wed May 11 2011 Hihin Ruslan <ruslandh@altlinux.ru> 0.6.12-alt1
 - Initial release for ALT Linux

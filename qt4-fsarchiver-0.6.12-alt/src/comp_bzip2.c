@@ -37,7 +37,7 @@ int compress_block_bzip2(u64 origsize, u64 *compsize, u8 *origbuf, u8 *compbuf, 
             *compsize=(u64)destsize;
             return FSAERR_SUCCESS;
         case BZ_MEM_ERROR:
-            errprintf(tr("BZ2_bzBuffToBuffCompress(): BZIP2 compression failed "
+            errprintf(_("BZ2_bzBuffToBuffCompress(): BZIP2 compression failed "
                 "with an out of memory error.\nYou should use a lower "
                 "compression level to reduce the memory requirement.\n"));
             return FSAERR_ENOMEM;
@@ -59,7 +59,7 @@ int uncompress_block_bzip2(u64 compsize, u64 *origsize, u8 *origbuf, u64 origbuf
             *origsize=(u64)destsize;
             return FSAERR_SUCCESS;
         default:
-            errprintf(tr("BZ2_bzBuffToBuffDecompress() failed, res=%d\n"), res);
+            errprintf(_("BZ2_bzBuffToBuffDecompress() failed, res=%d\n"), res);
             return FSAERR_UNKNOWN;
     }
     

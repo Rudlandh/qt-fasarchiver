@@ -36,7 +36,7 @@ int regmulti_empty(cregmulti *m)
     int i;
 
     if (!m)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
 
@@ -52,7 +52,7 @@ int regmulti_empty(cregmulti *m)
 int regmulti_init(cregmulti *m, u32 maxblksize)
 {
     if (!m)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
     
@@ -64,7 +64,7 @@ int regmulti_init(cregmulti *m, u32 maxblksize)
 int regmulti_count(cregmulti *m, cdico *header, char *data, u32 datsize)
 {
     if (!m)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
 
@@ -74,7 +74,7 @@ int regmulti_count(cregmulti *m, cdico *header, char *data, u32 datsize)
 bool regmulti_save_enough_space_for_new_file(cregmulti *m, u32 filesize)
 {
     if (!m)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return false;
     }
     
@@ -88,17 +88,17 @@ bool regmulti_save_enough_space_for_new_file(cregmulti *m, u32 filesize)
 int regmulti_save_addfile(cregmulti *m, cdico *header, char *data, u32 datsize)
 {
     if (!m)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
 
     if (m->count >= m->maxitems)
-    {   errprintf(tr("regmulti is full: it contains %ld items\n"), (long)m->count);
+    {   errprintf(_("regmulti is full: it contains %ld items\n"), (long)m->count);
         return -1;
     }
 
     if (m->usedsize+datsize > m->maxblksize)
-    {   errprintf(tr("block is too small to store that new sub-block of data\n"));
+    {   errprintf(_("block is too small to store that new sub-block of data\n"));
         return -1;
     }
     
@@ -119,7 +119,7 @@ int regmulti_save_enqueue(cregmulti *m, cqueue *q, int fsid)
     int i;
     
     if (!m)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
     
@@ -130,38 +130,38 @@ int regmulti_save_enqueue(cregmulti *m, cqueue *q, int fsid)
     for (i=0; i < m->count; i++)
     {
         if (m->objhead[i]==NULL)
-        {   errprintf(tr("error: objhead[%d]==NULL\n"), i);
+        {   errprintf(_("error: objhead[%d]==NULL\n"), i);
             return -1;
         }
         
         // get file size from header
         if (dico_get_u64(m->objhead[i], DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_SIZE, &filesize)!=0)
-        {   errprintf(tr("Cannot read filesize DISKITEMKEY_SIZE from archive\n"));
+        {   errprintf(_("Cannot read filesize DISKITEMKEY_SIZE from archive\n"));
             return -1;
         }
         
         // the extraction function needs to know how many small-files are packed together
         if (dico_add_u32(m->objhead[i], DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_MULTIFILESCOUNT, (u32)m->count)!=0)
-        {   errprintf(tr("dico_add_u32(DISKITEMKEY_MULTIFILESCOUNT) failed\n"));
+        {   errprintf(_("dico_add_u32(DISKITEMKEY_MULTIFILESCOUNT) failed\n"));
             return -1;
         }
         
         // the extraction function needs to know where the data for this file are in the block
         if (dico_add_u32(m->objhead[i], DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_MULTIFILESOFFSET, (u32)offset)!=0)
-        {   errprintf(tr("dico_add_u32(DISKITEMKEY_MULTIFILESCOUNT) failed\n"));
+        {   errprintf(_("dico_add_u32(DISKITEMKEY_MULTIFILESCOUNT) failed\n"));
             return -1;
         }
         offset+=(u32)filesize;
         
         if (queue_add_header(q, m->objhead[i], FSA_MAGIC_OBJT, fsid)!=0)
-        {   errprintf(tr("queue_add_header() failed\n"));
+        {   errprintf(_("queue_add_header() failed\n"));
             return -1;
         }
     }
     
     // make a copy of the static block to dynamic memory
     if ((dynblock=malloc(m->usedsize)) == NULL)
-    {   errprintf(tr("malloc(%ld) failed: out of memory\n"), (long)m->usedsize);
+    {   errprintf(_("malloc(%ld) failed: out of memory\n"), (long)m->usedsize);
         return -1;
     }
     memcpy(dynblock, m->data, m->usedsize);
@@ -172,7 +172,7 @@ int regmulti_save_enqueue(cregmulti *m, cqueue *q, int fsid)
     blkinfo.blkoffset=0; // no meaning for multi-regfiles
     blkinfo.blkfsid=fsid;
     if (queue_add_block(q, &blkinfo, QITEM_STATUS_TODO)!=0)
-    {   errprintf(tr("queue_add_block() failed\n"));
+    {   errprintf(_("queue_add_block() failed\n"));
         return -1;
     }
     
@@ -182,12 +182,12 @@ int regmulti_save_enqueue(cregmulti *m, cqueue *q, int fsid)
 int regmulti_rest_addheader(cregmulti *m, cdico *header)
 {
     if (!m)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
     
     if (m->count >= m->maxitems)
-    {   errprintf(tr("regmulti is full: it contains %ld items\n"), (long)m->count);
+    {   errprintf(_("regmulti is full: it contains %ld items\n"), (long)m->count);
         return -1;
     }
     
@@ -199,12 +199,12 @@ int regmulti_rest_addheader(cregmulti *m, cdico *header)
 int regmulti_rest_setdatablock(cregmulti *m, char *data, u32 datsize)
 {
     if (!m)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
 
     if (m->usedsize+datsize > m->maxblksize)
-    {   errprintf(tr("block is too small to store that new sub-block of data\n"));
+    {   errprintf(_("block is too small to store that new sub-block of data\n"));
         return -1;
     }
     
@@ -220,12 +220,12 @@ int regmulti_rest_getfile(cregmulti *m, int index, cdico **filehead, char *data,
     u64 filesize;
     
     if (!m || !filehead)
-    {   errprintf(tr("invalid param\n"));
+    {   errprintf(_("invalid param\n"));
         return -1;
     }
     
     if (index >= m->count)
-    {   errprintf(tr("index=%d out of scope: the structure only contains %ld items\n"), index, (long)m->count);
+    {   errprintf(_("index=%d out of scope: the structure only contains %ld items\n"), index, (long)m->count);
         return -1;
     }
     
@@ -234,11 +234,11 @@ int regmulti_rest_getfile(cregmulti *m, int index, cdico **filehead, char *data,
     
     // ---- return the data to the calling function
     if (dico_get_u64(m->objhead[index], DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_SIZE, &filesize)!=0)
-    {   errprintf(tr("Cannot read filesize DISKITEMKEY_SIZE from archive\n"));
+    {   errprintf(_("Cannot read filesize DISKITEMKEY_SIZE from archive\n"));
         return -1;
     }
     if (dico_get_u32(m->objhead[index], DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_MULTIFILESOFFSET, &offset)!=0)
-    {   errprintf(tr("Cannot read filesize DISKITEMKEY_SIZE from archive\n"));
+    {   errprintf(_("Cannot read filesize DISKITEMKEY_SIZE from archive\n"));
         return -1;
     }
     *datsize=filesize;

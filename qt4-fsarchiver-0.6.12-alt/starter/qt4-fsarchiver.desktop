@@ -1,14 +1,9 @@
 [Desktop Entry]
-Name=qt4-fsarchiver
+Name=QTfs
 Comment=Sicherungsprogramm
 Exec=sudo qt4-fsarchiver
-Icon=/usr/share/pixmaps/harddrive.png
+Icon=qt4-fsarchiver.png
 Terminal=true
 Type=Application
-Categories=GNOME;GTK;Utility;
-Encoding=UTF-8
+Categories=Qt;System;Filesystem;
 StartupNotify=true
-
-
-
-

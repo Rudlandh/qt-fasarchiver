@@ -123,15 +123,15 @@ int devcmp(char *dev1, char *dev2)
         if (stat64(devname[i], &devstat[i]) != 0)
         {
             if (errno == ENOENT)
-                errprintf(tr("Warning: node for device [%s] does not exist in /dev/\n"), devname[i]);
+                errprintf(_("Warning: node for device [%s] does not exist in /dev/\n"), devname[i]);
             else
-                errprintf(tr("Warning: cannot get details for device [%s]\n"), devname[i]);
+                errprintf(_("Warning: cannot get details for device [%s]\n"), devname[i]);
             return -1;
         }
 
         if (!S_ISBLK(devstat[0].st_mode))
         {
-            errprintf(tr("Warning: [%s] is not a block device\n"), devname[i]);
+            errprintf(_("Warning: [%s] is not a block device\n"), devname[i]);
             return -1;
         }
     }
@@ -176,12 +176,12 @@ int generic_get_mntinfo(char *devname, int *readwrite, char *mntbuf, int maxmntb
     if (stat64(devname, &devstat)==0 && stat64("/", &rootstat)==0 && (devstat.st_rdev==rootstat.st_dev))
     {
         devisroot=true;
-        msgprintf(MSG_VERB1, tr("device [%s] is the root device\n"), devname);
+        msgprintf(MSG_VERB1, _("device [%s] is the root device\n"), devname);
     }
 
     // 2. check device in "/proc/mounts" (typical case)
     if ((f=fopen("/proc/mounts","rb"))==NULL)
-    {   sysprintf(tr("Cannot open /proc/mounts\n"));
+    {   sysprintf(_("Cannot open /proc/mounts\n"));
         return 1;
     }
 
@@ -214,13 +214,13 @@ int generic_get_mntinfo(char *devname, int *readwrite, char *mntbuf, int maxmntb
             if ((devisroot==true) && (strcmp(col_mnt, "/")==0) && (strcmp(col_fs, "rootfs")!=0))
                 snprintf(col_dev, sizeof(col_dev), "%s", devname);
 
-            msgprintf(MSG_DEBUG1, tr("mount entry: col_dev=[%s] col_mnt=[%s] col_fs=[%s] col_opt=[%s]\n"), col_dev, col_mnt, col_fs, col_opt);
+            msgprintf(MSG_DEBUG1, _("mount entry: col_dev=[%s] col_mnt=[%s] col_fs=[%s] col_opt=[%s]\n"), col_dev, col_mnt, col_fs, col_opt);
 
             if (devcmp(col_dev, devname)==0)
             {
                 if (generic_get_spacestats(col_dev, col_mnt, temp, sizeof(temp))==0)
                 {
-                    msgprintf(MSG_DEBUG1, tr("found mount entry for device=[%s]: mnt=[%s] fs=[%s] opt=[%s]\n"), devname, col_mnt, col_fs, col_opt);
+                    msgprintf(MSG_DEBUG1, _("found mount entry for device=[%s]: mnt=[%s] fs=[%s] opt=[%s]\n"), devname, col_mnt, col_fs, col_opt);
                     *readwrite=generic_get_fsrwstatus(col_opt);
                     snprintf(mntbuf, maxmntbuf, "%s", col_mnt);
                     snprintf(optbuf, maxoptbuf, "%s", col_opt);
@@ -239,7 +239,7 @@ int generic_get_mntinfo(char *devname, int *readwrite, char *mntbuf, int maxmntb
 int generic_mount(char *partition, char *mntbuf, char *fsbuf, char *mntopt, int flags)
 {
     if (!partition || !mntbuf || !fsbuf || !fsbuf[0])
-    {   errprintf(tr("invalid parameters\n"));
+    {   errprintf(_("invalid parameters\n"));
         return -1;
     }
     
@@ -247,22 +247,22 @@ int generic_mount(char *partition, char *mntbuf, char *fsbuf, char *mntopt, int 
     flags|=MS_NOATIME|MS_NODIRATIME;
     
     // if fsbuf is not empty, use the filesystem which is specified
-    msgprintf(MSG_DEBUG1, tr("trying to mount [%s] on [%s] as [%s] with options [%s]\n"), partition, mntbuf, fsbuf, mntopt);
+    msgprintf(MSG_DEBUG1, _("trying to mount [%s] on [%s] as [%s] with options [%s]\n"), partition, mntbuf, fsbuf, mntopt);
     if (mount(partition, mntbuf, fsbuf, flags, mntopt)!=0)
-    {   errprintf(tr("partition [%s] cannot be mounted on [%s] as [%s] with options [%s]\n"), partition, mntbuf, fsbuf, mntopt);
+    {   errprintf(_("partition [%s] cannot be mounted on [%s] as [%s] with options [%s]\n"), partition, mntbuf, fsbuf, mntopt);
         return -1;
     }
-    msgprintf(MSG_VERB2, tr("partition [%s] was successfully mounted on [%s] as [%s] with options [%s]\n"), partition, mntbuf, fsbuf, mntopt);
+    msgprintf(MSG_VERB2, _("partition [%s] was successfully mounted on [%s] as [%s] with options [%s]\n"), partition, mntbuf, fsbuf, mntopt);
     return 0;
 }
 
 int generic_umount(char *mntbuf)
 {
     if (!mntbuf)
-    {   errprintf(tr("invalid param: mntbuf is null\n"));
+    {   errprintf(_("invalid param: mntbuf is null\n"));
         return -1;
     }
-    msgprintf(MSG_DEBUG1, tr("unmount_partition(%s)\n"), mntbuf);
+    msgprintf(MSG_DEBUG1, _("unmount_partition(%s)\n"), mntbuf);
     return umount2(mntbuf, 0);
 }
 

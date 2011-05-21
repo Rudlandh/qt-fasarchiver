@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="MBR sichern/zurückschreiben">Save / restore MBR</string>
+   <string>MBR sichern/zurückschreiben</string>
   </property>
   <widget class="QComboBox" name="cmb_mbr">
    <property name="geometry">
@@ -24,22 +24,22 @@
    </property>
    <item>
     <property name="text">
-     <string extracomment="nur den Bootloaderbereich wieder herstellen">Only the boot loader area to restore</string>
+     <string>nur den Bootloaderbereich wieder herstellen</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string extracomment="Bootloaderbereich und die Partitionstabelle wieder herstellen">Bootloader area and restore the partition table</string>
+     <string>Bootloaderbereich und die Partitionstabelle wieder herstellen</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string extracomment="Partitionstabelle wiederherstellen">Restore partition table</string>
+     <string>Partitionstabelle wiederherstellen</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string extracomment="Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).">Secretly area to restore. (Without Boot Loader and without partition table).</string>
+     <string>Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).</string>
     </property>
    </item>
    <item>
@@ -58,7 +58,7 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Abbrechen">Cancel</string>
+    <string>Abbrechen</string>
    </property>
   </widget>
   <widget class="QPushButton" name="bt_save">
@@ -71,7 +71,7 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="MBR sichern/zurückschreiben">Save / restore MBR</string>
+    <string>MBR sichern/zurückschreiben</string>
    </property>
   </widget>
   <widget class="QTreeView" name="treeView">
@@ -86,18 +86,21 @@
    <attribute name="headerDefaultSectionSize">
     <number>400</number>
    </attribute>
+   <attribute name="headerDefaultSectionSize">
+    <number>400</number>
+   </attribute>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>30</y>
-     <width>421</width>
+     <width>201</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="MBR Sicherungsverzeichnis:">MBR backup directory:</string>
+    <string>MBR Sicherungsverzeichnis:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -106,12 +109,12 @@
      <x>20</x>
      <y>410</y>
      <width>231</width>
-     <height>41</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="MBR von dieser dieser Festplatte sichern / wiederherstellen:">MBR of that drive this
-Backup / restore:</string>
+    <string>MBR von dieser dieser Festplatte 
+sichern / wiederherstellen:</string>
    </property>
   </widget>
   <widget class="QRadioButton" name="rdbt_sda">
@@ -124,7 +127,7 @@ Backup / restore:</string>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="sda">sda</string>
+    <string>sda</string>
    </property>
   </widget>
   <widget class="QRadioButton" name="rdbt_sdb">
@@ -137,7 +140,7 @@ Backup / restore:</string>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="sdb">sdb</string>
+    <string>sdb</string>
    </property>
   </widget>
   <widget class="QRadioButton" name="rdbt_sdc">
@@ -150,7 +153,7 @@ Backup / restore:</string>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="sdc">sdc</string>
+    <string>sdc</string>
    </property>
   </widget>
   <widget class="QRadioButton" name="rdbt_sdd">
@@ -163,7 +166,7 @@ Backup / restore:</string>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="sdd">sdd</string>
+    <string>sdd</string>
    </property>
   </widget>
  </widget>

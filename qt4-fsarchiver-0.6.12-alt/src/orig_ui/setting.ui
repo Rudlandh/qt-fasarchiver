@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="Basis-Einstellungen">Basic settings</string>
+   <string>Basis-Einstellungen</string>
   </property>
   <widget class="QPushButton" name="cmd_save">
    <property name="geometry">
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Einstellungen speichern">Save Settings</string>
+    <string>Einstellungen speichern</string>
    </property>
   </widget>
   <widget class="QPushButton" name="cmd_cancel">
@@ -36,22 +36,22 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Beenden">Exit</string>
+    <string>Beenden</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>20</y>
-     <width>181</width>
+     <width>171</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Anzahl Prozessorenkerne, * die für fsarchiver * verwendet werden sollen:">Number of processors
-cores, for fsarchiver
-should be used:</string>
+    <string>Anzahl Prozessorenkerne,
+die für fsarchiver 
+verwendet werden sollen:</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="chk_file">
@@ -64,8 +64,8 @@ should be used:</string>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="vorhandene Dateien * standardmäßig überschreiben">existing files 
-by default override</string>
+    <string>vorhandene Dateien 
+standardmäßig überschreiben</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="chk_tip">
@@ -73,13 +73,13 @@ by default override</string>
     <rect>
      <x>20</x>
      <y>180</y>
-     <width>221</width>
+     <width>201</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Hinweise zur Sicherung * standardmäßig aktivieren">Backup note
-enable by default</string>
+    <string>Hinweise zur Sicherung
+standardmäßig aktivieren</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="chk_key">
@@ -92,8 +92,8 @@ enable by default</string>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Verschlüsselung * standardmäßig aktivieren">Enable encryption
-by default</string>
+    <string>Verschlüsselung
+standardmäßig aktivieren</string>
    </property>
   </widget>
   <widget class="QComboBox" name="cmb_Kerne">
@@ -126,8 +126,8 @@ by default</string>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Standard*kompression:">Standard
-compression:</string>
+    <string>Standard-
+kompression:</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="chk_folder">
@@ -135,15 +135,15 @@ compression:</string>
     <rect>
      <x>20</x>
      <y>270</y>
-     <width>231</width>
+     <width>161</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Verzeichnisse * standardmäßig an * den ursprünglichen * Ort zurückschreiben">Directories by default
-write back to 
-the original 
-location</string>
+    <string>Verzeichnisse 
+standardmäßig an 
+den ursprünglichen 
+Ort zurückschreiben</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="chk_split">
@@ -151,13 +151,13 @@ location</string>
     <rect>
      <x>20</x>
      <y>340</y>
-     <width>231</width>
+     <width>171</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Archiv-Datei auf DVD * Größe aufteilen">Archive file
-size divided on DVD</string>
+    <string>Archiv-Datei auf DVD
+Größe aufteilen</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="chk_password">
@@ -165,12 +165,13 @@ size divided on DVD</string>
     <rect>
      <x>20</x>
      <y>390</y>
-     <width>231</width>
+     <width>201</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Passwort für Netzwerk * anzeigen">Password for network's view</string>
+    <string>Passwort für Netzwerk 
+anzeigen</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="chk_datesave">
@@ -178,12 +179,13 @@ size divided on DVD</string>
     <rect>
      <x>20</x>
      <y>430</y>
-     <width>241</width>
+     <width>191</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Netzwerkeingabedaten * speichern">Network input data save</string>
+    <string>Netzwerkeingabedaten
+speichern </string>
    </property>
   </widget>
  </widget>

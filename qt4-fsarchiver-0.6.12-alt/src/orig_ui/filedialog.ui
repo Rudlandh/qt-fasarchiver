@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="Beschreibung der Sicherung">Description of the backup</string>
+   <string>Beschreibung der Sicherung</string>
   </property>
   <widget class="QPushButton" name="cmd_cancel">
    <property name="geometry">
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Abbrechen">Cancel</string>
+    <string>Abbrechen </string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -31,12 +31,12 @@
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>251</width>
+     <width>211</width>
      <height>18</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Beschreibung der Sicherung:">Description of the backup:</string>
+    <string>Beschreibung der Sicherung:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="cmd_save">
@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Partition sichern">Back partition</string>
+    <string>Partition sichern </string>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEdit">

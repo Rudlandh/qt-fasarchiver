@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string extracomment="Daten Netzwerk">Data network</string>
+   <string>Daten Netzwerk</string>
   </property>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Benutzername:">Username:</string>
+    <string>Benutzername:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -31,25 +31,25 @@
     <rect>
      <x>20</x>
      <y>230</y>
-     <width>111</width>
+     <width>71</width>
      <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Kennwort:">Password:</string>
+    <string>Kennwort:</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="chk_datesave">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>180</x>
      <y>270</y>
      <width>141</width>
      <height>22</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Daten speichern">Save data</string>
+    <string>Daten speichern</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="txt_key">
@@ -85,7 +85,7 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Weiter">Next</string>
+    <string>Weiter</string>
    </property>
   </widget>
   <widget class="QListWidget" name="listWidget_net">
@@ -101,14 +101,14 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>20</y>
-     <width>341</width>
-     <height>20</height>
+     <width>201</width>
+     <height>17</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Im Netz erreichbare Rechner:">Achievable in the network computer:</string>
+    <string>Im Netz erreichbare Rechner:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_net">
@@ -127,14 +127,14 @@
   <widget class="QCheckBox" name="chk_password">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>270</y>
      <width>161</width>
      <height>22</height>
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Kennwort anzeigen">Show Password</string>
+    <string>Kennwort anzeigen</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_end">
@@ -147,7 +147,7 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Abbrechen">Cancel</string>
+    <string>Abbrechen</string>
    </property>
   </widget>
   <zorder>pushButton_net</zorder>

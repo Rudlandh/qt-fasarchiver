@@ -1,0 +1,3386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-05-21 09:48+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: archinfo.c:65 common.c:447 queue.c:322 queue.c:357 queue.c:382 queue.c:429
+#: queue.c:490 queue.c:540 queue.c:562 queue.c:615 queue.c:635 queue.c:694
+#: writebuf.c:103 writebuf.c:198 writebuf.c:237
+msgid "a parameter is null\n"
+msgstr ""
+
+#: archinfo.c:69
+msgid "====================== archive information ======================\n"
+msgstr ""
+
+#: archinfo.c:70
+#, c-format
+msgid "Archive type: \t\t\t%s\n"
+msgstr ""
+
+#: archinfo.c:70
+msgid "filesystems"
+msgstr ""
+
+#: archinfo.c:70
+msgid "flat files"
+msgstr ""
+
+#: archinfo.c:72
+#, c-format
+msgid "Filesystems count: \t\t%ld\n"
+msgstr ""
+
+#: archinfo.c:73
+#, c-format
+msgid "Archive id: \t\t\t%.8x\n"
+msgstr ""
+
+#: archinfo.c:74
+#, c-format
+msgid "Archive file format: \t\t%s\n"
+msgstr ""
+
+#: archinfo.c:75
+#, c-format
+msgid "Archive created with: \t\t%s\n"
+msgstr ""
+
+#: archinfo.c:76
+#, c-format
+msgid "Archive creation date: \t\t%s\n"
+msgstr ""
+
+#: archinfo.c:77
+#, c-format
+msgid "Archive label: \t\t\t%s\n"
+msgstr ""
+
+#: archinfo.c:79
+#, c-format
+msgid "Minimum fsarchiver version:\t%d.%d.%d.%d\n"
+msgstr ""
+
+#: archinfo.c:81
+#, c-format
+msgid "Compression level: \t\t%d (%s level %d)\n"
+msgstr ""
+
+#: archinfo.c:82
+#, c-format
+msgid "Encryption algorithm: \t\t%s\n"
+msgstr ""
+
+#: archinfo.c:105
+msgid "dicofshead is null\n"
+msgstr ""
+
+#: archinfo.c:110
+msgid "cannot find FSYSHEADKEY_FILESYSTEM in filesystem-header\n"
+msgstr ""
+
+#: archinfo.c:115
+msgid "cannot find FSYSHEADKEY_BYTESTOTAL in filesystem-header\n"
+msgstr ""
+
+#: archinfo.c:120
+msgid "cannot find FSYSHEADKEY_BYTESUSED in filesystem-header\n"
+msgstr ""
+
+#: archinfo.c:125 archinfo.c:131
+#, c-format
+msgid "<none>"
+msgstr ""
+
+#: archinfo.c:128
+#, c-format
+msgid "<unknown>"
+msgstr ""
+
+#: archinfo.c:137
+msgid "===================== filesystem information ====================\n"
+msgstr ""
+
+#: archinfo.c:138
+#, c-format
+msgid "Filesystem id in archive: \t%ld\n"
+msgstr ""
+
+#: archinfo.c:139
+#, c-format
+msgid "Filesystem format: \t\t%s\n"
+msgstr ""
+
+#: archinfo.c:140
+#, c-format
+msgid "Filesystem label: \t\t%s\n"
+msgstr ""
+
+#: archinfo.c:141
+#, c-format
+msgid "Filesystem uuid: \t\t%s\n"
+msgstr ""
+
+#: archinfo.c:142
+#, c-format
+msgid "Original device: \t\t%s\n"
+msgstr ""
+
+#: archinfo.c:143
+#, c-format
+msgid "Original filesystem size: \t%s (%lld bytes)\n"
+msgstr ""
+
+#: archinfo.c:144
+#, c-format
+msgid "Space used in filesystem: \t%s (%lld bytes)\n"
+msgstr ""
+
+#: archreader.c:74
+#, c-format
+msgid "cannot open archive %s\n"
+msgstr ""
+
+#: archreader.c:80 oper_restore.c:1551
+#, c-format
+msgid "fstat64(%s) failed\n"
+msgstr ""
+
+#: archreader.c:84
+#, c-format
+msgid "%s is not a regular file, cannot continue\n"
+msgstr ""
+
+#: archreader.c:91
+#, c-format
+msgid "cannot read magic from %s\n"
+msgstr ""
+
+#: archreader.c:96
+#, c-format
+msgid "cannot rewind volume %s\n"
+msgstr ""
+
+#: archreader.c:113
+#, c-format
+msgid "%s is not a supported fsarchiver file format\n"
+msgstr ""
+
+#: archreader.c:118
+#, c-format
+msgid "Detected fileformat=%d in archive %s\n"
+msgstr ""
+
+#: archreader.c:160
+#, c-format
+msgid "read failed: read(size=%ld)=%ld\n"
+msgstr ""
+
+#: archreader.c:191 archreader.c:198
+msgid "imgdisk_read_data() failed\n"
+msgstr ""
+
+#: archreader.c:204
+#, c-format
+msgid "Fatal error: invalid file format version: ai->filefmtver=%d\n"
+msgstr ""
+
+#: archreader.c:210
+msgid "cannot allocate memory for header\n"
+msgstr ""
+
+#: archreader.c:215
+msgid "cannot read header data\n"
+msgstr ""
+
+#: archreader.c:221
+msgid "cannot read header checksum\n"
+msgstr ""
+
+#: archreader.c:231
+msgid "bad checksum for header\n"
+msgstr ""
+
+#: archreader.c:290 oper_save.c:242 oper_save.c:621 oper_save.c:884
+#: oper_save.c:1226 oper_save.c:1282 writebuf.c:242
+msgid "dico_alloc() failed\n"
+msgstr ""
+
+#: archreader.c:296
+msgid "lseek64() failed to get the current position in archive\n"
+msgstr ""
+
+#: archreader.c:301 archreader.c:318
+#, c-format
+msgid "cannot read header magic: res=%d\n"
+msgstr ""
+
+#: archreader.c:307
+msgid ""
+"cannot read header magic: this is not a valid fsarchiver file, or it has "
+"been created with a different version.\n"
+msgstr ""
+
+#: archreader.c:314
+#, c-format
+msgid "lseek64(pos=%lld, SEEK_SET) failed\n"
+msgstr ""
+
+#: archreader.c:325
+#, c-format
+msgid "cannot read archive-id in header: res=%d\n"
+msgstr ""
+
+#: archreader.c:332
+#, c-format
+msgid "archive-id in header does not match: archid=[%.8x], expected=[%.8x]\n"
+msgstr ""
+
+#: archreader.c:339
+#, c-format
+msgid "cannot read filesystem-id in header: res=%d\n"
+msgstr ""
+
+#: archreader.c:346
+msgid "imgdisk_read_dico() failed\n"
+msgstr ""
+
+#: archreader.c:371 thread_archio.c:158
+msgid "archreader_read_header() failed to read the archive header\n"
+msgstr ""
+
+#: archreader.c:377
+#, c-format
+msgid "magic is not what we expected: found=[%s] and expected=[%s]\n"
+msgstr ""
+
+#: archreader.c:382
+msgid "cannot get VOLUMEHEADKEY_ARCHID from the volume header\n"
+msgstr ""
+
+#: archreader.c:392
+#, c-format
+msgid "wrong header id: found=%.8x and expected=%.8x\n"
+msgstr ""
+
+#: archreader.c:398
+msgid "cannot get VOLUMEHEADKEY_VOLNUM from the volume header\n"
+msgstr ""
+
+#: archreader.c:402
+#, c-format
+msgid "wrong volume number in [%s]: volnum is %d and we need volnum %d\n"
+msgstr ""
+
+#: archreader.c:408
+msgid "cannot find VOLUMEHEADKEY_FILEFORMATVER in main-header\n"
+msgstr ""
+
+#: archreader.c:418 oper_restore.c:1138
+#, c-format
+msgid ""
+"This archive is based on a different file format: [%s]. Cannot continue.\n"
+msgstr ""
+
+#: archreader.c:419 oper_restore.c:1139
+#, c-format
+msgid ""
+"It has been created with fsarchiver [%s], you should extrat the archive "
+"using that version.\n"
+msgstr ""
+
+#: archreader.c:420 oper_restore.c:1140
+#, c-format
+msgid ""
+"The current version of the program is [%s], and it's based on format [%s]\n"
+msgstr ""
+
+#: archreader.c:425
+msgid "cannot find VOLUMEHEADKEY_PROGVERCREAT in main-header\n"
+msgstr ""
+
+#: archreader.c:460
+msgid "cannot get blockoffset from block-header\n"
+msgstr ""
+
+#: archreader.c:465
+msgid "cannot get blocksize from block-header\n"
+msgstr ""
+
+#: archreader.c:470
+msgid "cannot get BLOCKHEADITEMKEY_COMPRESSALGO from block-header\n"
+msgstr ""
+
+#: archreader.c:475
+msgid "cannot get BLOCKHEADITEMKEY_ENCRYPTALGO from block-header\n"
+msgstr ""
+
+#: archreader.c:480
+msgid "cannot get BLOCKHEADITEMKEY_ARSIZE from block-header\n"
+msgstr ""
+
+#: archreader.c:485
+msgid "cannot get BLOCKHEADITEMKEY_COMPSIZE from block-header\n"
+msgstr ""
+
+#: archreader.c:490
+msgid "cannot get BLOCKHEADITEMKEY_ARCSUM from block-header\n"
+msgstr ""
+
+#: archreader.c:497
+#, c-format
+msgid "cannot skip block (finalsize=%ld) failed\n"
+msgstr ""
+
+#: archreader.c:505 archreader.c:532
+#, c-format
+msgid "cannot allocate block: malloc(%d) failed\n"
+msgstr ""
+
+#: archreader.c:510
+#, c-format
+msgid "cannot read block (finalsize=%ld) failed\n"
+msgstr ""
+
+#: archreader.c:529
+#, c-format
+msgid "block is corrupt at offset=%ld, blksize=%ld\n"
+msgstr ""
+
+#: archreader.c:539
+msgid "lseek64() failed\n"
+msgstr ""
+
+#: archwriter.c:91
+#, c-format
+msgid "%s already exists, and is not a regular file.\n"
+msgstr ""
+
+#: archwriter.c:95
+#, c-format
+msgid "%s already exists, please remove it first.\n"
+msgstr ""
+
+#: archwriter.c:117
+#, c-format
+msgid "cannot create archive %s\n"
+msgstr ""
+
+#: archwriter.c:170
+#, c-format
+msgid "removed %s\n"
+msgstr ""
+
+#: archwriter.c:172
+#, c-format
+msgid "cannot remove %s\n"
+msgstr ""
+
+#: archwriter.c:195
+#, c-format
+msgid "wb->size=%ld\n"
+msgstr ""
+
+#: archwriter.c:201
+#, c-format
+msgid "write(size=%ld) returned %ld\n"
+msgstr ""
+
+#: archwriter.c:205
+#, c-format
+msgid "fstatvfs(fd=%d) failed\n"
+msgstr ""
+
+#: archwriter.c:210
+#, c-format
+msgid ""
+"Can't write to the archive file. Space on device is %s. \n"
+"If the archive is being written to a FAT filesystem, you may have reached \n"
+"the maximum filesize that it can handle (in general 2 GB)\n"
+msgstr ""
+
+#: archwriter.c:218
+#, c-format
+msgid "write(size=%ld) failed\n"
+msgstr ""
+
+#: archwriter.c:255 archwriter.c:296 archwriter.c:380 archwriter.c:410
+msgid "writebuf_alloc() failed\n"
+msgstr ""
+
+#: archwriter.c:260 archwriter.c:301
+msgid "voldico=dico_alloc() failed\n"
+msgstr ""
+
+#: archwriter.c:272 archwriter.c:312
+msgid "archio_write_header() failed\n"
+msgstr ""
+
+#: archwriter.c:278 archwriter.c:395 archwriter.c:425
+msgid "archwriter_write_buffer() failed\n"
+msgstr ""
+
+#: archwriter.c:318
+#, c-format
+msgid "archwriter_write_data(size=%ld) failed\n"
+msgstr ""
+
+#: archwriter.c:336
+#, c-format
+msgid ""
+"splitchk: YES --> cursize=%lld, g_options.splitsize=%lld, cursize+wb->size="
+"%lld, wb->size=%lld\n"
+msgstr ""
+
+#: archwriter.c:342
+#, c-format
+msgid ""
+"splitchk: NO --> cursize=%lld, g_options.splitsize=%lld, cursize+wb->size="
+"%lld, wb->size=%lld\n"
+msgstr ""
+
+#: archwriter.c:355 thread_archio.c:97
+msgid "cannot write volume footer: archio_write_volfooter() failed\n"
+msgstr ""
+
+#: archwriter.c:360
+#, c-format
+msgid "Creating new volume: [%s]\n"
+msgstr ""
+
+#: archwriter.c:362
+msgid "archwriter_create() failed\n"
+msgstr ""
+
+#: archwriter.c:366
+msgid "cannot write volume header: archio_write_volheader() failed\n"
+msgstr ""
+
+#: archwriter.c:385 archwriter.c:415
+msgid "archio_write_block() failed\n"
+msgstr ""
+
+#: archwriter.c:390 archwriter.c:420
+msgid "archwriter_split_if_necessary() failed\n"
+msgstr ""
+
+#: common.c:79
+#, c-format
+msgid "%lld bytes"
+msgstr ""
+
+#: common.c:83
+#, c-format
+msgid "%.2f KB"
+msgstr ""
+
+#: common.c:87
+#, c-format
+msgid "%.2f MB"
+msgstr ""
+
+#: common.c:91
+#, c-format
+msgid "%.2f GB"
+msgstr ""
+
+#: common.c:95
+#, c-format
+msgid "%.2f TB"
+msgstr ""
+
+#: common.c:185 oper_save.c:771
+#, c-format
+msgid "cannot open directory %s\n"
+msgstr ""
+
+#: common.c:193
+#, c-format
+msgid "cannot stat %s\n"
+msgstr ""
+
+#: common.c:326
+#, c-format
+msgid "argv[%d]=[%s]\n"
+msgstr ""
+
+#: common.c:331
+#, c-format
+msgid "program [%s] no found in PATH or bad permissions on that program\n"
+msgstr ""
+
+#: common.c:335
+#, c-format
+msgid "getpathtoprog(%s)=[%s]\n"
+msgstr ""
+
+#: common.c:339
+msgid "pipe() failed\n"
+msgstr ""
+
+#: common.c:344
+#, c-format
+msgid "executing [%s]...\n"
+msgstr ""
+
+#: common.c:347
+msgid "fork() failed\n"
+msgstr ""
+
+#: common.c:360
+#, c-format
+msgid "execvp(%s) failed\n"
+msgstr ""
+
+#: common.c:401
+#, c-format
+msgid "command [%s] returned %d\n"
+msgstr ""
+
+#: common.c:515 oper_save.c:777 oper_save.c:801
+#, c-format
+msgid "cannot lstat64(%s)\n"
+msgstr ""
+
+#: common.c:520
+#, c-format
+msgid "error: [%s] is not a directory\n"
+msgstr ""
+
+#: common.c:607
+#, c-format
+msgid "archive has an invalid basepath: [%s]\n"
+msgstr ""
+
+#: comp_bzip2.c:40
+msgid ""
+"BZ2_bzBuffToBuffCompress(): BZIP2 compression failed with an out of memory "
+"error.\n"
+"You should use a lower compression level to reduce the memory requirement.\n"
+msgstr ""
+
+#: comp_bzip2.c:62
+#, c-format
+msgid "BZ2_bzBuffToBuffDecompress() failed, res=%d\n"
+msgstr ""
+
+#: comp_gzip.c:66
+#, c-format
+msgid "uncompress() failed, res=%d\n"
+msgstr ""
+
+#: comp_lzma.c:48
+#, c-format
+msgid ""
+"lzma_easy_encoder(%d): LZMA compression failed with an out of memory error.\n"
+"You should use a lower compression level to reduce the memory requirement.\n"
+msgstr ""
+
+#: comp_lzma.c:54
+#, c-format
+msgid "lzma_easy_encoder(%d) failed with res=%d\n"
+msgstr ""
+
+#: comp_lzma.c:61 comp_lzma.c:107
+#, c-format
+msgid "lzma_code(LZMA_RUN) failed with res=%d\n"
+msgstr ""
+
+#: comp_lzma.c:67
+#, c-format
+msgid "lzma_code(LZMA_FINISH) failed with res=%d\n"
+msgstr ""
+
+#: comp_lzma.c:92
+#, c-format
+msgid "lzma_auto_decoder() failed with res=%d\n"
+msgstr ""
+
+#: comp_lzma.c:104
+#, c-format
+msgid "lzma_memlimit_set(%lld)\n"
+msgstr ""
+
+#: comp_lzo.c:61
+#, c-format
+msgid "lzo1x_decompress_safe() failed, res=%d\n"
+msgstr ""
+
+#: crypto.c:45
+msgid "libgcrypt version mismatch\n"
+msgstr ""
+
+#: crypto.c:75
+msgid "gcry_cipher_open() failed\n"
+msgstr ""
+
+#: crypto.c:82
+msgid "gcry_cipher_setkey() failed\n"
+msgstr ""
+
+#: crypto.c:89
+msgid "gcry_cipher_setiv() failed\n"
+msgstr ""
+
+#: crypto.c:103
+#, c-format
+msgid "invalid parameter: enc=%d\n"
+msgstr ""
+
+#: datafile.c:75
+msgid "File is already open\n"
+msgstr ""
+
+#: datafile.c:84
+#, c-format
+msgid "can't write file [%s]: no space left on device\n"
+msgstr ""
+
+#: datafile.c:88
+#, c-format
+msgid "Cannot open %s for writing\n"
+msgstr ""
+
+#: datafile.c:95 oper_save.c:158
+msgid "gcry_md_open() failed\n"
+msgstr ""
+
+#: datafile.c:125 datafile.c:169
+msgid "File is not open\n"
+msgstr ""
+
+#: datafile.c:134
+#, c-format
+msgid "Can't lseek64() in file [%s]\n"
+msgstr ""
+
+#: datafile.c:144
+#, c-format
+msgid "Can't write file [%s]: no space left on device\n"
+msgstr ""
+
+#: datafile.c:148
+#, c-format
+msgid "cannot write %s: size=%ld\n"
+msgstr ""
+
+#: datafile.c:174 oper_save.c:229
+msgid "gcry_md_read() failed\n"
+msgstr ""
+
+#: datafile.c:183
+msgid "Buffer too small for md5 checksum\n"
+msgstr ""
+
+#: datafile.c:192
+#, c-format
+msgid "ftruncate() failed for file [%s]\n"
+msgstr ""
+
+#: dichl.c:67 filesys.c:242
+msgid "invalid parameters\n"
+msgstr ""
+
+#: dichl.c:75 dichl.c:83 dico.c:80 dico.c:114 queue.c:203 regmulti.c:164
+#: strdico.c:213 thread_comp.c:54 thread_comp.c:126 thread_comp.c:180
+#, c-format
+msgid "malloc(%ld) failed: out of memory\n"
+msgstr ""
+
+#: dichl.c:103
+#, c-format
+msgid ""
+"dichl_add_internal(): item with key1=%ld and key2=%ld is already in dico\n"
+msgstr ""
+
+#: dichl.c:119
+msgid "invalid dichl\n"
+msgstr ""
+
+#: dico.c:95
+#, c-format
+msgid "dico_add_generic(): item with key=%ld is already in dico\n"
+msgstr ""
+
+#: dico.c:142 dico.c:337
+msgid "dico is empty\n"
+msgstr ""
+
+#: dico.c:147
+#, c-format
+msgid "case1: maxsize=%d\n"
+msgstr ""
+
+#: dico.c:156
+#, c-format
+msgid "case2: (item->size > maxsize): item->size =%d, maxsize=%d\n"
+msgstr ""
+
+#: dico.c:167
+msgid "case3: not found\n"
+msgstr ""
+
+#: dico.c:296
+#, c-format
+msgid ""
+"\n"
+"-----------------debug-dico-begin(%s)---------------\n"
+msgstr ""
+
+#: dico.c:304
+#, c-format
+msgid "key=[%ld], sizeof(data)=[%d], "
+msgstr ""
+
+#: dico.c:309
+#, c-format
+msgid "type=u8, size=[%d]"
+msgstr ""
+
+#: dico.c:312
+#, c-format
+msgid "type=u16, size=[%d]"
+msgstr ""
+
+#: dico.c:315
+#, c-format
+msgid "type=u32, size=[%d]"
+msgstr ""
+
+#: dico.c:318
+#, c-format
+msgid "type=u64, size=[%d]"
+msgstr ""
+
+#: dico.c:321
+#, c-format
+msgid "type=str, size=[%d], data=[%s]"
+msgstr ""
+
+#: dico.c:324
+#, c-format
+msgid "type=dat, size=[%d]"
+msgstr ""
+
+#: dico.c:327
+#, c-format
+msgid "type=unknown"
+msgstr ""
+
+#: dico.c:340
+#, c-format
+msgid ""
+"-----------------debug-dico-end(%s)------------------\n"
+"\n"
+msgstr ""
+
+#: error.c:50
+#, c-format
+msgid "[errno=%d, %s]: "
+msgstr ""
+
+#: filesys.c:126
+#, c-format
+msgid "Warning: node for device [%s] does not exist in /dev/\n"
+msgstr ""
+
+#: filesys.c:128
+#, c-format
+msgid "Warning: cannot get details for device [%s]\n"
+msgstr ""
+
+#: filesys.c:134
+#, c-format
+msgid "Warning: [%s] is not a block device\n"
+msgstr ""
+
+#: filesys.c:179
+#, c-format
+msgid "device [%s] is the root device\n"
+msgstr ""
+
+#: filesys.c:184
+msgid "Cannot open /proc/mounts\n"
+msgstr ""
+
+#: filesys.c:217
+#, c-format
+msgid "mount entry: col_dev=[%s] col_mnt=[%s] col_fs=[%s] col_opt=[%s]\n"
+msgstr ""
+
+#: filesys.c:223
+#, c-format
+msgid "found mount entry for device=[%s]: mnt=[%s] fs=[%s] opt=[%s]\n"
+msgstr ""
+
+#: filesys.c:250
+#, c-format
+msgid "trying to mount [%s] on [%s] as [%s] with options [%s]\n"
+msgstr ""
+
+#: filesys.c:252
+#, c-format
+msgid "partition [%s] cannot be mounted on [%s] as [%s] with options [%s]\n"
+msgstr ""
+
+#: filesys.c:255
+#, c-format
+msgid ""
+"partition [%s] was successfully mounted on [%s] as [%s] with options [%s]\n"
+msgstr ""
+
+#: filesys.c:262
+msgid "invalid param: mntbuf is null\n"
+msgstr ""
+
+#: filesys.c:265
+#, c-format
+msgid "unmount_partition(%s)\n"
+msgstr ""
+
+#: fsarchiver.c:59
+#, c-format
+msgid "====> fsarchiver version %s (%s) - http://www.fsarchiver.org <====\n"
+msgstr ""
+
+#: fsarchiver.c:60
+msgid "Distributed under the GPL v2 license (GNU General Public License v2).\n"
+msgstr ""
+
+#: fsarchiver.c:61
+#, c-format
+msgid ""
+" * usage: %s [<options>] <command> <archive> [<part1> [<part2> [...]]]\n"
+msgstr ""
+
+#: fsarchiver.c:62
+msgid "<commands>\n"
+msgstr ""
+
+#: fsarchiver.c:63
+msgid ""
+" * savefs: save filesystems to an archive file (backup a partition to a "
+"file)\n"
+msgstr ""
+
+#: fsarchiver.c:64
+msgid ""
+" * restfs: restore filesystems from an archive (overwrites the existing "
+"data)\n"
+msgstr ""
+
+#: fsarchiver.c:65
+msgid ""
+" * savedir: save directories to the archive (similar to a compressed "
+"tarball)\n"
+msgstr ""
+
+#: fsarchiver.c:66
+msgid ""
+" * restdir: restore data from an archive which is not based on a filesystem\n"
+msgstr ""
+
+#: fsarchiver.c:67
+msgid ""
+" * archinfo: show information about an existing archive file and its "
+"contents\n"
+msgstr ""
+
+#: fsarchiver.c:68
+msgid " * probe [detailed]: show list of filesystems detected on the disks\n"
+msgstr ""
+
+#: fsarchiver.c:69
+msgid "<options>\n"
+msgstr ""
+
+#: fsarchiver.c:70
+msgid " -o: overwrite the archive if it already exists instead of failing\n"
+msgstr ""
+
+#: fsarchiver.c:71
+msgid ""
+" -v: verbose mode (can be used several times to increase the level of "
+"details)\n"
+msgstr ""
+
+#: fsarchiver.c:72
+msgid ""
+" -d: debug mode (can be used several times to increase the level of "
+"details)\n"
+msgstr ""
+
+#: fsarchiver.c:73
+msgid ""
+" -A: allow to save a filesystem which is mounted in read-write (live "
+"backup)\n"
+msgstr ""
+
+#: fsarchiver.c:74
+msgid ""
+" -a: allow running savefs when partition mounted without the acl/xattr "
+"options\n"
+msgstr ""
+
+#: fsarchiver.c:75
+msgid " -e <pattern>: exclude files and directories that match that pattern\n"
+msgstr ""
+
+#: fsarchiver.c:76
+msgid ""
+" -L <label>: set the label of the archive (comment about the contents)\n"
+msgstr ""
+
+#: fsarchiver.c:77
+msgid ""
+" -z <level>: compression level from 1 (very fast)  to  9 (very good) "
+"default=3\n"
+msgstr ""
+
+#: fsarchiver.c:78
+msgid ""
+" -s <mbsize>: split the archive into several files of <mbsize> megabytes "
+"each\n"
+msgstr ""
+
+#: fsarchiver.c:79
+msgid ""
+" -j <count>: create more than one compression thread. useful on multi-core "
+"cpu\n"
+msgstr ""
+
+#: fsarchiver.c:80
+msgid ""
+" -c <password>: encrypt/decrypt data in archive, \"-c -\" for interactive "
+"password\n"
+msgstr ""
+
+#: fsarchiver.c:81
+msgid ""
+" -h: show help and information about how to use fsarchiver with examples\n"
+msgstr ""
+
+#: fsarchiver.c:82
+msgid " -V: show program version and exit\n"
+msgstr ""
+
+#: fsarchiver.c:83
+msgid "<information>\n"
+msgstr ""
+
+#: fsarchiver.c:84
+#, c-format
+msgid " * Support included for: lzo=%s, lzma=%s\n"
+msgstr ""
+
+#: fsarchiver.c:84
+msgid "yes"
+msgstr ""
+
+#: fsarchiver.c:84
+msgid "no"
+msgstr ""
+
+#: fsarchiver.c:85
+msgid ""
+" * support for ntfs filesystems is unstable: don't use it for production.\n"
+msgstr ""
+
+#: fsarchiver.c:89
+msgid "<examples>\n"
+msgstr ""
+
+#: fsarchiver.c:90
+msgid " * \\e[1msave only one filesystem (/dev/sda1) to an archive:\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:91
+msgid "   fsarchiver savefs /data/myarchive1.fsa /dev/sda1\n"
+msgstr ""
+
+#: fsarchiver.c:92
+msgid ""
+" * \\e[1msave two filesystems (/dev/sda1 and /dev/sdb1) to an archive:\\e"
+"[0m\n"
+msgstr ""
+
+#: fsarchiver.c:93
+msgid "   fsarchiver savefs /data/myarchive2.fsa /dev/sda1 /dev/sdb1\n"
+msgstr ""
+
+#: fsarchiver.c:94
+msgid ""
+" * \\e[1mrestore the first filesystem from an archive (first = number 0):\\e"
+"[0m\n"
+msgstr ""
+
+#: fsarchiver.c:95
+msgid "   fsarchiver restfs /data/myarchive2.fsa id=0,dest=/dev/sda1\n"
+msgstr ""
+
+#: fsarchiver.c:96
+msgid ""
+" * \\e[1mrestore the second filesystem from an archive (second = number 1):"
+"\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:97
+msgid "   fsarchiver restfs /data/myarchive2.fsa id=1,dest=/dev/sdb1\n"
+msgstr ""
+
+#: fsarchiver.c:98
+msgid ""
+" * \\e[1mrestore two filesystems from an archive (number 0 and 1):\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:99
+msgid ""
+"   fsarchiver restfs /data/arch2.fsa id=0,dest=/dev/sda1 id=1,dest=/dev/"
+"sdb1\n"
+msgstr ""
+
+#: fsarchiver.c:100
+msgid ""
+" * \\e[1mrestore a filesystem from an archive and convert it to reiserfs:\\e"
+"[0m\n"
+msgstr ""
+
+#: fsarchiver.c:101
+msgid ""
+"   fsarchiver restfs /data/myarchive1.fsa id=0,dest=/dev/sda1,mkfs=reiserfs\n"
+msgstr ""
+
+#: fsarchiver.c:102
+msgid ""
+" * \\e[1msave the contents of /usr/src/linux to an archive (similar to tar):"
+"\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:103
+msgid "   fsarchiver savedir /data/linux-sources.fsa /usr/src/linux\n"
+msgstr ""
+
+#: fsarchiver.c:104
+msgid ""
+" * \\e[1msave a filesystem (/dev/sda1) to an archive split into volumes of "
+"680MB:\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:105
+msgid "   fsarchiver savefs -s 680 /data/myarchive1.fsa /dev/sda1\n"
+msgstr ""
+
+#: fsarchiver.c:106
+msgid ""
+" * \\e[1msave a filesystem and exclude all files/dirs called 'pagefile.*':\\e"
+"[0m\n"
+msgstr ""
+
+#: fsarchiver.c:107
+msgid ""
+"   fsarchiver savefs /data/myarchive.fsa /dev/sda1 --exclude='pagefile.*'\n"
+msgstr ""
+
+#: fsarchiver.c:108
+msgid ""
+" * \\e[1mgeneric exclude for 'share' such as '/usr/share' and '/usr/local/"
+"share':\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:109
+msgid "   fsarchiver savefs /data/myarchive.fsa --exclude=share\n"
+msgstr ""
+
+#: fsarchiver.c:110
+msgid ""
+" * \\e[1mabsolute exclude valid for '/usr/share' but not for '/usr/local/"
+"share':\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:111
+msgid "   fsarchiver savefs /data/myarchive.fsa --exclude=/usr/share\n"
+msgstr ""
+
+#: fsarchiver.c:112
+msgid " * \\e[1msave a filesystem (/dev/sda1) to an encrypted archive:\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:113
+msgid "   fsarchiver savefs -c mypassword /data/myarchive1.fsa /dev/sda1\n"
+msgstr ""
+
+#: fsarchiver.c:114
+msgid ""
+" * \\e[1mSame as before but prompt for password in the terminal:\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:115
+msgid "   fsarchiver savefs -c - /data/myarchive1.fsa /dev/sda1\n"
+msgstr ""
+
+#: fsarchiver.c:116
+msgid ""
+" * \\e[1mextract an archive made of simple files to /tmp/extract:\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:117
+msgid "   fsarchiver restdir /data/linux-sources.fsa /tmp/extract\n"
+msgstr ""
+
+#: fsarchiver.c:118
+msgid ""
+" * \\e[1mshow information about an archive and its file systems:\\e[0m\n"
+msgstr ""
+
+#: fsarchiver.c:119
+msgid "   fsarchiver archinfo /data/myarchive2.fsa\n"
+msgstr ""
+
+#: fsarchiver.c:210
+#, c-format
+msgid "fsarchiver %s (%s)\n"
+msgstr ""
+
+#: fsarchiver.c:219
+#, c-format
+msgid "[%s] is not a valid number of jobs. Must be between 1 and %d\n"
+msgstr ""
+
+#: fsarchiver.c:231
+#, c-format
+msgid "argument of option -s is invalid (%s). It must be a valid integer\n"
+msgstr ""
+
+#: fsarchiver.c:237
+#, c-format
+msgid "Archive will be split into volumes of %lld bytes (%s)\n"
+msgstr ""
+
+#: fsarchiver.c:244
+#, c-format
+msgid ""
+"[%s] is not a valid compression level, it must be an integer between 1 and "
+"9.\n"
+msgstr ""
+
+#: fsarchiver.c:251
+msgid ""
+"Compression levels >= 8 may require a huge amount of memory\n"
+"Please read the man page or \"http://www.fsarchiver.org/Compression\" for "
+"more details.\n"
+msgstr ""
+
+#: fsarchiver.c:257
+#, c-format
+msgid ""
+"the password lenght is incorrect, it must between %d and %d chars, or \"-\" "
+"for interactive password prompt.\n"
+msgstr ""
+
+#: fsarchiver.c:281
+#, c-format
+msgid "No arguments provided, cannot continue\n"
+msgstr ""
+
+#: fsarchiver.c:292
+#, c-format
+msgid "Files smaller than %ld will be packed with other small files\n"
+msgstr ""
+
+#: fsarchiver.c:333
+msgid "invalid number of arguments.\n"
+msgstr ""
+
+#: fsarchiver.c:340
+#, c-format
+msgid "\"fsarchiver %s\" must be run as root. cannot continue.\n"
+msgstr ""
+
+#: fsarchiver.c:351
+msgid "Enter password: "
+msgstr ""
+
+#: fsarchiver.c:352 fsarchiver.c:364
+msgid "failed to get interactive password from the console\n"
+msgstr ""
+
+#: fsarchiver.c:356
+#, c-format
+msgid "the password lenght is incorrect, it must between %d and %d chars\n"
+msgstr ""
+
+#: fsarchiver.c:363
+msgid "Confirm password: "
+msgstr ""
+
+#: fsarchiver.c:368
+msgid "the passwords do not match\n"
+msgstr ""
+
+#: fsarchiver.c:426
+#, c-format
+msgid "[%s] is not a valid command.\n"
+msgstr ""
+
+#: fsarchiver.c:444
+msgid "internal error - lzo_init() failed\n"
+msgstr ""
+
+#: fsarchiver.c:451
+msgid "cannot initialize the crypto environment\n"
+msgstr ""
+
+#: fs_btrfs.c:77 fs_btrfs.c:157
+msgid ""
+"this filesystem has features which are not supported by this fsarchiver "
+"version.\n"
+msgstr ""
+
+#: fs_btrfs.c:83
+msgid ""
+"mkfs.btrfs not found. please install btrfs-progs on your system or check the "
+"PATH.\n"
+msgstr ""
+
+#: fs_btrfs.c:96 fs_jfs.c:58 fs_jfs.c:70 fs_ntfs.c:66 fs_reiser4.c:65
+#: fs_reiserfs.c:65 fs_xfs.c:59 fs_xfs.c:71
+#, c-format
+msgid "command [%s] failed\n"
+msgstr ""
+
+#: fs_btrfs.c:113 fs_jfs.c:87 fs_reiser4.c:83 fs_reiserfs.c:83
+#, c-format
+msgid "cannot open(%s, O_RDONLY)\n"
+msgstr ""
+
+#: fs_btrfs.c:119
+#, c-format
+msgid "cannot lseek(fd, BTRFS_SUPER_INFO_OFFSET, SEEK_SET) on %s\n"
+msgstr ""
+
+#: fs_btrfs.c:125
+#, c-format
+msgid "cannot read the btrfs superblock on device [%s]\n"
+msgstr ""
+
+#: fs_btrfs.c:131
+#, c-format
+msgid ""
+"magic different from expectations superblock on [%s]: magic=[%.8s], expected="
+"[%.8s]\n"
+msgstr ""
+
+#: fs_ext2.c:160
+#, c-format
+msgid ""
+"%s not found. please install a recent e2fsprogs on your system or check the "
+"PATH.\n"
+msgstr ""
+
+#: fs_ext2.c:198 fs_ext2.c:413
+msgid ""
+"this filesystem has ext{2,3,4} features which are not supported by this "
+"fsarchiver version.\n"
+msgstr ""
+
+#: fs_ext2.c:205
+#, c-format
+msgid ""
+"the filesystem type determined by the original filesystem features is [%s]\n"
+msgstr ""
+
+#: fs_ext2.c:219
+#, c-format
+msgid "the filesystem type to create considering the command options is [%s]\n"
+msgstr ""
+
+#: fs_ext2.c:236
+#, c-format
+msgid "--> feature [%s]=YES\n"
+msgstr ""
+
+#: fs_ext2.c:240
+#, c-format
+msgid "--> feature [%s]=NO\n"
+msgstr ""
+
+#: fs_ext2.c:251
+#, c-format
+msgid "features: mkfs_options+=[-O %s]\n"
+msgstr ""
+
+#: fs_ext2.c:255
+#, c-format
+msgid "mke2fs version detected: %s\n"
+msgstr ""
+
+#: fs_ext2.c:256
+#, c-format
+msgid "mke2fs version required: %s\n"
+msgstr ""
+
+#: fs_ext2.c:258
+#, c-format
+msgid ""
+"mke2fs was found but is too old, please upgrade to a version %s or more "
+"recent.\n"
+msgstr ""
+
+#: fs_ext2.c:271
+#, c-format
+msgid "exec: %s\n"
+msgstr ""
+
+#: fs_ext2.c:273 fs_ext2.c:295 fs_ext2.c:305
+#, c-format
+msgid "command [%s] failed with return status=%d\n"
+msgstr ""
+
+#: fs_ext2.c:333 fs_ext2.c:436
+#, c-format
+msgid "ext2fs_open(%s) failed\n"
+msgstr ""
+
+#: fs_ext2.c:352
+#, c-format
+msgid "extfs_uuid=[%s]\n"
+msgstr ""
+
+#: fs_ext2.c:369
+#, c-format
+msgid "extfs_raid_stride: %u\n"
+msgstr ""
+
+#: fs_ext2.c:373
+#, c-format
+msgid "extfs_raid_stripe_width: %u\n"
+msgstr ""
+
+#: fs_ext2.c:379
+#, c-format
+msgid "extfs_max_mount_count: %ld\n"
+msgstr ""
+
+#: fs_ext2.c:380
+#, c-format
+msgid "extfs_check_interval: %ld\n"
+msgstr ""
+
+#: fs_ext2.c:401
+#, c-format
+msgid "default mount options: [%s]\n"
+msgstr ""
+
+#: fs_ext2.c:409
+#, c-format
+msgid "the filesystem type determined by the features is [%s]\n"
+msgstr ""
+
+#: fs_ext2.c:433
+#, c-format
+msgid "extfs_mount(partition=[%s], mnt=[%s], fsbuf=[%s])\n"
+msgstr ""
+
+#: fs_ext2.c:443
+#, c-format
+msgid "the filesystem of [%s] type determined by the features is [%s]\n"
+msgstr ""
+
+#: fs_ext2.c:448
+#, c-format
+msgid ""
+"extfs_mount: the filesystem requested [%s] does not match the filesystem "
+"detected [%s]\n"
+msgstr ""
+
+#: fs_ext2.c:472
+#, c-format
+msgid "the filesystem type determined by the extfs features is [%s]\n"
+msgstr ""
+
+#: fs_ext2.c:540
+#, c-format
+msgid "program %s was not found or has bad permissions.\n"
+msgstr ""
+
+#: fs_ext2.c:554
+#, c-format
+msgid "can't parse %s version number: no match\n"
+msgstr ""
+
+#: fs_ext2.c:562
+#, c-format
+msgid "can't parse %s version number: x=y=0\n"
+msgstr ""
+
+#: fs_jfs.c:48
+msgid ""
+"mkfs.jfs not found. please install jfsutils on your system or check the "
+"PATH.\n"
+msgstr ""
+
+#: fs_jfs.c:93
+#, c-format
+msgid "cannot lseek(fd, JFS_SUPER1_OFF, SEEK_SET) on %s\n"
+msgstr ""
+
+#: fs_jfs.c:99
+#, c-format
+msgid "cannot read the jfs superblock on [%s]\n"
+msgstr ""
+
+#: fs_jfs.c:105 fs_reiser4.c:106
+#, c-format
+msgid ""
+"magic different from expectations superblock on %s: magic=[%s], expected="
+"[%s]\n"
+msgstr ""
+
+#: fs_jfs.c:108
+#, c-format
+msgid "jfs_magic=[%s]\n"
+msgstr ""
+
+#: fs_jfs.c:111
+#, c-format
+msgid "jfs_label=[%s]\n"
+msgstr ""
+
+#: fs_jfs.c:120
+#, c-format
+msgid "jfs_uuid=[%s]\n"
+msgstr ""
+
+#: fs_ntfs.c:50
+msgid ""
+"mkfs.ntfs not found. please install ntfsprogs-2.0.0 on your system or check "
+"the PATH.\n"
+msgstr ""
+
+#: fs_ntfs.c:87
+#, c-format
+msgid "cannot open device or read bootsector on %s\n"
+msgstr ""
+
+#: fs_ntfs.c:93
+#, c-format
+msgid "cannot find the ntfs signature on %s\n"
+msgstr ""
+
+#: fs_ntfs.c:99
+#, c-format
+msgid "get_devinfo(%s) failed\n"
+msgstr ""
+
+#: fs_ntfs.c:108
+#, c-format
+msgid "bytes_per_sector=[%lld]\n"
+msgstr ""
+
+#: fs_ntfs.c:109
+#, c-format
+msgid "sectors_per_clusters=[%lld]\n"
+msgstr ""
+
+#: fs_ntfs.c:110
+#, c-format
+msgid "bytes_per_cluster=[%lld]\n"
+msgstr ""
+
+#: fs_ntfs.c:111
+#, c-format
+msgid "uuid=[%016llX]\n"
+msgstr ""
+
+#: fs_ntfs.c:119
+#, c-format
+msgid "ntfs_label=[%s]\n"
+msgstr ""
+
+#: fs_ntfs.c:147
+#, c-format
+msgid "ntfs-3g %.4d.%.2d.%.2d (standard release)"
+msgstr ""
+
+#: fs_ntfs.c:152
+#, c-format
+msgid ""
+"ntfs-3g not found. please install %s\n"
+"or a newer version on your system or check the PATH.\n"
+msgstr ""
+
+#: fs_ntfs.c:162
+#, c-format
+msgid "ntfs-3g detected version: year=[%.4d], month=[%.2d], day=[%.2d]\n"
+msgstr ""
+
+#: fs_ntfs.c:169
+#, c-format
+msgid "fsarchiver requires %s to operate. The detected version is too old\n"
+msgstr ""
+
+#: fs_ntfs.c:174
+#, c-format
+msgid "ntfs-3g has been found: version is %d.%d.%d\n"
+msgstr ""
+
+#: fs_ntfs.c:195
+#, c-format
+msgid ""
+"command [%s] failed, make sure a recent version of ntfs-3g is installed\n"
+msgstr ""
+
+#: fs_ntfs.c:208
+msgid ""
+"fusermount not found. please install fuse on your system or check the PATH.\n"
+msgstr ""
+
+#: fs_ntfs.c:213
+#, c-format
+msgid "cannot unmount [%s]\n"
+msgstr ""
+
+#: fs_ntfs.c:258
+#, c-format
+msgid "cannot open(%s, O_RDWR)\n"
+msgstr ""
+
+#: fs_ntfs.c:264
+#, c-format
+msgid "cannot read the boot sector on %s\n"
+msgstr ""
+
+#: fs_ntfs.c:273
+msgid "lseek(fd, 0, SEEK_SET) failed\n"
+msgstr ""
+
+#: fs_ntfs.c:280
+#, c-format
+msgid "cannot modify the boot sector on %s\n"
+msgstr ""
+
+#: fs_reiser4.c:49
+msgid ""
+"mkfs.reiser4 not found. please install reiser4progs on your system or check "
+"the PATH.\n"
+msgstr ""
+
+#: fs_reiser4.c:89
+#, c-format
+msgid "cannot lseek(fd, REISER4_DISK_OFFSET_IN_BYTES, SEEK_SET) on %s\n"
+msgstr ""
+
+#: fs_reiser4.c:96
+#, c-format
+msgid "cannot read the reiser4 superblock on device [%s]\n"
+msgstr ""
+
+#: fs_reiser4.c:109
+#, c-format
+msgid "reiser4_magic=[%s]\n"
+msgstr ""
+
+#: fs_reiser4.c:112
+#, c-format
+msgid "reiser4_label=[%s]\n"
+msgstr ""
+
+#: fs_reiser4.c:121
+#, c-format
+msgid "reiser4_uuid=[%s]\n"
+msgstr ""
+
+#: fs_reiser4.c:128
+#, c-format
+msgid "invalid reiser4 block-size: %ld, it should be 4096\n"
+msgstr ""
+
+#: fs_reiser4.c:132
+#, c-format
+msgid "reiser4_blksize=[%ld]\n"
+msgstr ""
+
+#: fs_reiserfs.c:49
+msgid ""
+"mkreiserfs not found. please install reiserfsprogs-3.6 on your system or "
+"check the PATH.\n"
+msgstr ""
+
+#: fs_reiserfs.c:89
+#, c-format
+msgid "cannot lseek(fd, REISERFS_DISK_OFFSET_IN_BYTES, SEEK_SET) on %s\n"
+msgstr ""
+
+#: fs_reiserfs.c:96
+#, c-format
+msgid "cannot read the reiserfs superblock on device [%s]\n"
+msgstr ""
+
+#: fs_reiserfs.c:106
+#, c-format
+msgid "magic different from expectations superblock on %s: magic=[%s]\n"
+msgstr ""
+
+#: fs_reiserfs.c:110
+#, c-format
+msgid "reiserfs_magic=[%s]\n"
+msgstr ""
+
+#: fs_reiserfs.c:113
+#, c-format
+msgid "reiserfs_label=[%s]\n"
+msgstr ""
+
+#: fs_reiserfs.c:122
+#, c-format
+msgid "reiserfs_uuid=[%s]\n"
+msgstr ""
+
+#: fs_reiserfs.c:127
+#, c-format
+msgid "reiserfs_blksize=[%ld]\n"
+msgstr ""
+
+#: fs_xfs.c:47
+msgid ""
+"mkfs.xfs not found. please install xfsprogs on your system or check the "
+"PATH.\n"
+msgstr ""
+
+#: fs_xfs.c:102
+msgid "sb.sb_magicnum!=XFS_SUPER_MAGIC\n"
+msgstr ""
+
+#: fs_xfs.c:122
+#, c-format
+msgid "xfs_blksize=[%ld] is an invalid xfs block size\n"
+msgstr ""
+
+#: fs_xfs.c:126
+#, c-format
+msgid "xfs_blksize=[%ld]\n"
+msgstr ""
+
+#: fs_xfs.c:154
+#, c-format
+msgid "open64(%s) failed\n"
+msgstr ""
+
+#: fs_xfs.c:161
+msgid "read failed\n"
+msgstr ""
+
+#: fs_xfs.c:168
+#, c-format
+msgid "(be32_to_cpu(sb.sb_magicnum)=%.8x) != (XFS_SUPER_MAGIC=%.8x)\n"
+msgstr ""
+
+#: logfile.c:51
+#, c-format
+msgid "Creating logfile in %s\n"
+msgstr ""
+
+#: logfile.c:52
+#, c-format
+msgid "Running fsarchiver version=[%s], fileformat=[%s]\n"
+msgstr ""
+
+#: logfile.c:56
+#, c-format
+msgid "Cannot create logfile in %s\n"
+msgstr ""
+
+#: oper_probe.c:178
+msgid "Failed to detect disks and filesystems\n"
+msgstr ""
+
+#: oper_probe.c:185
+msgid ""
+"[======DISK======] [=============NAME==============] [====SIZE====] [MAJ] "
+"[MIN]\n"
+msgstr ""
+
+#: oper_probe.c:194
+msgid "No physical disk found\n"
+msgstr ""
+
+#: oper_probe.c:224
+msgid "No filesystem found\n"
+msgstr ""
+
+#: oper_restore.c:84
+#, c-format
+msgid "file/dir=[%s] excluded because of its own name/path\n"
+msgstr ""
+
+#: oper_restore.c:105
+#, c-format
+msgid "file/dir=[%s] excluded because of its parent=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:138
+#, c-format
+msgid "cannot find \"id=\" key in \"%s\"\n"
+msgstr ""
+
+#: oper_restore.c:144
+#, c-format
+msgid ""
+"invalid filesystem id [%d]: it must match a valid filesystem id as shown by "
+"archinfo\n"
+msgstr ""
+
+#: oper_restore.c:151
+#, c-format
+msgid "cannot find \"dest=\" key in \"%s\"\n"
+msgstr ""
+
+#: oper_restore.c:156
+#, c-format
+msgid "\"%s\" is not a valid block device\n"
+msgstr ""
+
+#: oper_restore.c:163
+#, c-format
+msgid "you mentioned filesystem with id=%d multiple times, cannot continue\n"
+msgstr ""
+
+#: oper_restore.c:207
+#, c-format
+msgid ""
+"Cannot retrieve the name of an xattr for file %s: DICO_OBJ_SECTION_XATTR, "
+"key=%ld\n"
+msgstr ""
+
+#: oper_restore.c:214
+#, c-format
+msgid ""
+"Cannot retrieve the value of an xattr for file %s: DICO_OBJ_SECTION_XATTR, "
+"key=%ld\n"
+msgstr ""
+
+#: oper_restore.c:221
+#, c-format
+msgid "xattr:lsetxattr(%s,%s) failed\n"
+msgstr ""
+
+#: oper_restore.c:225
+#, c-format
+msgid "            xattr:lsetxattr(%s, %s)=%d\n"
+msgstr ""
+
+#: oper_restore.c:248
+#, c-format
+msgid "Cannot retrieve the name of an winattr for file %s\n"
+msgstr ""
+
+#: oper_restore.c:256
+#, c-format
+msgid "Cannot retrieve the value of an winattr for file %s\n"
+msgstr ""
+
+#: oper_restore.c:263
+#, c-format
+msgid "winattr:lsetxattr(%s,%s) failed\n"
+msgstr ""
+
+#: oper_restore.c:268
+#, c-format
+msgid "            winattr:lsetxattr(%s, %s)=%d\n"
+msgstr ""
+
+#: oper_restore.c:293
+#, c-format
+msgid "Cannot lchown(%s) which is %s\n"
+msgstr ""
+
+#: oper_restore.c:300
+#, c-format
+msgid "chmod(%s, %lld) failed\n"
+msgstr ""
+
+#: oper_restore.c:314 oper_restore.c:419 oper_restore.c:477 oper_restore.c:530
+#: oper_restore.c:575 oper_restore.c:728
+#, c-format
+msgid "utimes(%s) failed\n"
+msgstr ""
+
+#: oper_restore.c:371
+#, c-format
+msgid "Cannot read field=symlink for file=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:382
+#, c-format
+msgid "LINK: mklink=[%s], target=[%s], targettype=DIR\n"
+msgstr ""
+
+#: oper_restore.c:384
+#, c-format
+msgid "Cannot create directory for ntfs symlink: path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:389
+#, c-format
+msgid "LINK: mklink=[%s], target=[%s], targettype=REGFILE\n"
+msgstr ""
+
+#: oper_restore.c:391
+#, c-format
+msgid "Cannot create file for ntfs symlink: path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:397
+#, c-format
+msgid "LINK: mklink=[%s], target=[%s], targettype=UNKNOWN\n"
+msgstr ""
+
+#: oper_restore.c:398
+#, c-format
+msgid "Unexpected target type for ntfs symlink: path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:405
+#, c-format
+msgid "LINK: symlink=[%s], target=[%s] (normal symlink)\n"
+msgstr ""
+
+#: oper_restore.c:407
+#, c-format
+msgid "symlink(%s, %s) failed\n"
+msgstr ""
+
+#: oper_restore.c:413 oper_restore.c:471 oper_restore.c:524 oper_restore.c:569
+#: oper_restore.c:722 oper_restore.c:840
+#, c-format
+msgid "cannot restore file attributes for file [%s]\n"
+msgstr ""
+
+#: oper_restore.c:459
+msgid ""
+"dico_get_string(DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_HARDLINK) failed\n"
+msgstr ""
+
+#: oper_restore.c:466
+#, c-format
+msgid "link(%s, %s) failed\n"
+msgstr ""
+
+#: oper_restore.c:520
+#, c-format
+msgid "mknod failed on [%s]\n"
+msgstr ""
+
+#: oper_restore.c:620
+msgid "cannot read DISKITEMKEY_MULTIFILESCOUNT from header in archive\n"
+msgstr ""
+
+#: oper_restore.c:624
+msgid "rest_addheader() failed\n"
+msgstr ""
+
+#: oper_restore.c:631
+msgid "queue_dequeue_header() failed: cannot read multireg object header\n"
+msgstr ""
+
+#: oper_restore.c:636 oper_restore.c:863 oper_restore.c:1072
+#: oper_restore.c:1245 oper_restore.c:1318 oper_restore.c:1477
+#: oper_restore.c:1502
+#, c-format
+msgid "header is not what we expected: found=[%s] and expected=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:640 oper_restore.c:662
+#, c-format
+msgid "rest_addheader() failed for file %d\n"
+msgstr ""
+
+#: oper_restore.c:647
+#, c-format
+msgid "queue_dequeue_block()=%ld=%s failed\n"
+msgstr ""
+
+#: oper_restore.c:652
+msgid "regmulti_rest_setdatablock() failed\n"
+msgstr ""
+
+#: oper_restore.c:668
+msgid "Cannot read object type\n"
+msgstr ""
+
+#: oper_restore.c:673
+#, c-format
+msgid "Cannot read DISKITEMKEY_PATH from header, res=%d, key=%d\n"
+msgstr ""
+
+#: oper_restore.c:697 oper_restore.c:869
+#, c-format
+msgid "cannot get md5sum from file footer for file=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:716
+#, c-format
+msgid ""
+"cannot restore file %s, the data block (which is shared by multiple files) "
+"is corrupt\n"
+msgstr ""
+
+#: oper_restore.c:773
+#, c-format
+msgid "Cannot read filesize DISKITEMKEY_SIZE from archive for file=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:804
+#, c-format
+msgid "restore_obj_regfile_unique(file=%s, size=%lld)\n"
+msgstr ""
+
+#: oper_restore.c:808
+#, c-format
+msgid "queue_dequeue_block()=%ld=%s for file(%s) failed\n"
+msgstr ""
+
+#: oper_restore.c:815
+#, c-format
+msgid ""
+"file offset do not match for file(%s) failed: filepos=%lld, blkinfo."
+"blkoffset=%lld, blkinfo.blkrealsize=%lld\n"
+msgstr ""
+
+#: oper_restore.c:855
+msgid "queue_dequeue_header() failed: cannot read footer dico\n"
+msgstr ""
+
+#: oper_restore.c:875
+#, c-format
+msgid "cannot restore file %s, file is corrupt\n"
+msgstr ""
+
+#: oper_restore.c:898 oper_save.c:222
+msgid "operation has been interrupted\n"
+msgstr ""
+
+#: oper_restore.c:929
+#, c-format
+msgid "objtype=OBJTYPE_DIR, path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:933
+#, c-format
+msgid "objtype=OBJTYPE_SYMLINK, path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:937
+#, c-format
+msgid "objtype=OBJTYPE_HARDLINK, path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:941
+#, c-format
+msgid "objtype=OBJTYPE_CHARDEV, path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:945
+#, c-format
+msgid "objtype=OBJTYPE_BLOCKDEV, path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:949
+#, c-format
+msgid "objtype=OBJTYPE_FIFO, path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:953
+#, c-format
+msgid "objtype=OBJTYPE_SOCKET, path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:957
+#, c-format
+msgid "objtype=OBJTYPE_REGFILEUNIQUE, path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:959
+#, c-format
+msgid "restore_obj_regfile_unique(%s) failed with res=%d\n"
+msgstr ""
+
+#: oper_restore.c:964
+#, c-format
+msgid "objtype=OBJTYPE_REGFILEMULTI, path=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:966
+#, c-format
+msgid "restore_obj_regfile_multi(%s) failed with res=%d\n"
+msgstr ""
+
+#: oper_restore.c:971
+#, c-format
+msgid "Unknown objtype %d\n"
+msgstr ""
+
+#: oper_restore.c:975
+#, c-format
+msgid "Restoring file=[%s], objtype=[%s] failed\n"
+msgstr ""
+
+#: oper_restore.c:1002
+msgid "queue_check_next_item() failed: cannot read object from archive\n"
+msgstr ""
+
+#: oper_restore.c:1011
+#, c-format
+msgid "unexpected header found in archive, skipping it: type=%d, magic=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:1014
+msgid "queue_destroy_first_item() failed: cannot read object from archive\n"
+msgstr ""
+
+#: oper_restore.c:1024 oper_restore.c:1311
+msgid "queue_dequeue_header() failed\n"
+msgstr ""
+
+#: oper_restore.c:1031
+#, c-format
+msgid "restore_object() failed with res=%d\n"
+msgstr ""
+
+#: oper_restore.c:1037
+#, c-format
+msgid ""
+"restore_object(): object has a wrong filesystem id: found=[%d], expected="
+"[%d]\n"
+msgstr ""
+
+#: oper_restore.c:1067
+msgid "queue_dequeue_header() failed: cannot read main header\n"
+msgstr ""
+
+#: oper_restore.c:1077
+msgid "cannot find MAINHEADKEY_ARCHTYPE in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1082
+msgid "cannot find MAINHEADKEY_FSCOUNT in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1087
+msgid "cannot find MAINHEADKEY_ARCHIVEID in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1092
+msgid "cannot find MAINHEADKEY_FILEFORMATVER in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1097
+msgid "cannot find MAINHEADKEY_PROGVERCREAT in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1102
+msgid "cannot find MAINHEADKEY_ARCHLABEL in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1107
+msgid "cannot find MAINHEADKEY_COMPRESSALGO in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1112
+msgid "cannot find MAINHEADKEY_ENCRYPTALGO in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1117
+msgid "cannot find MAINHEADKEY_COMPRESSLEVEL in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1122
+msgid "cannot find MAINHEADKEY_FSACOMPLEVEL in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1127
+msgid "cannot find MAINHEADKEY_CREATTIME in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1154
+msgid "cannot find MAINHEADKEY_BUFCHECKPASSCRYPTBUF in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1158
+msgid "cannot find MAINHEADKEY_BUFCHECKPASSCLEARMD5 in main-header\n"
+msgstr ""
+
+#: oper_restore.c:1164
+msgid ""
+"you have to provide the password which was used to create archive, no "
+"password given on the command line\n"
+msgstr ""
+
+#: oper_restore.c:1172
+msgid ""
+"you have to provide the password which was used to create archive, cannot "
+"decrypt the test buffer.\n"
+msgstr ""
+
+#: oper_restore.c:1210
+msgid "strdico_get_string(dicocmdline, 'dest') failed\n"
+msgstr ""
+
+#: oper_restore.c:1218 oper_restore.c:1418
+#, c-format
+msgid "Current fsarchiver version: %d.%d.%d.%d\n"
+msgstr ""
+
+#: oper_restore.c:1220
+#, c-format
+msgid "Minimum fsarchiver version for that filesystem: %d.%d.%d.%d\n"
+msgstr ""
+
+#: oper_restore.c:1223
+#, c-format
+msgid ""
+"This filesystem can only be restored with fsarchiver %d.%d.%d.%d or more "
+"recent\n"
+msgstr ""
+
+#: oper_restore.c:1232
+#, c-format
+msgid ""
+"partition [%s] is mounted on [%s].\n"
+"cannot restore an archive to a partition which is mounted, unmount it first: "
+"umount %s\n"
+msgstr ""
+
+#: oper_restore.c:1239
+msgid "queue_dequeue_header() failed: cannot read file system dico\n"
+msgstr ""
+
+#: oper_restore.c:1255
+msgid "dico_get_string(FSYSHEADKEY_FILESYSTEM) failed\n"
+msgstr ""
+
+#: oper_restore.c:1260
+msgid "dico_get_string(FSYSHEADKEY_BYTESTOTAL) failed\n"
+msgstr ""
+
+#: oper_restore.c:1265
+msgid "dico_get_string(FSYSHEADKEY_BYTESUSED) failed\n"
+msgstr ""
+
+#: oper_restore.c:1269
+#, c-format
+msgid "filesystem=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:1270
+#, c-format
+msgid "fsbytestotal=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:1271
+#, c-format
+msgid "fsbytesused=[%s]\n"
+msgstr ""
+
+#: oper_restore.c:1275
+#, c-format
+msgid "filesystem [%s] is not supported by fsarchiver\n"
+msgstr ""
+
+#: oper_restore.c:1281
+#, c-format
+msgid "cannot format the filesystem %s on partition %s\n"
+msgstr ""
+
+#: oper_restore.c:1292
+#, c-format
+msgid "Mount information: [%s]\n"
+msgstr ""
+
+#: oper_restore.c:1294
+#, c-format
+msgid "partition [%s] cannot be mounted on %s. cannot continue.\n"
+msgstr ""
+
+#: oper_restore.c:1299 oper_restore.c:1564
+#, c-format
+msgid "extract_read_objects(%s) failed\n"
+msgstr ""
+
+#: oper_restore.c:1304
+#, c-format
+msgid "extract_read_objects(%s) worked with errors\n"
+msgstr ""
+
+#: oper_restore.c:1324
+#, c-format
+msgid "cannot umount %s\n"
+msgstr ""
+
+#: oper_restore.c:1352
+msgid "[ prozentualer Anteil ]  \n"
+msgstr ""
+
+#: oper_restore.c:1380
+msgid "convert_argv_to_dico() failed\n"
+msgstr ""
+
+#: oper_restore.c:1397
+msgid "pthread_create(thread_decomp_fct) failed\n"
+msgstr ""
+
+#: oper_restore.c:1404
+msgid "pthread_create(thread_reader_fct) failed\n"
+msgstr ""
+
+#: oper_restore.c:1410
+#, c-format
+msgid "read_mainhead(%s) failed\n"
+msgstr ""
+
+#: oper_restore.c:1420
+#, c-format
+msgid "Minimum fsarchiver version for that archive: %d.%d.%d.%d\n"
+msgstr ""
+
+#: oper_restore.c:1424
+#, c-format
+msgid ""
+"This archive can only be restored with fsarchiver %d.%d.%d.%d or more "
+"recent\n"
+msgstr ""
+
+#: oper_restore.c:1432
+#, c-format
+msgid "archinfo_show_mainhead(%s) failed\n"
+msgstr ""
+
+#: oper_restore.c:1441
+msgid ""
+"this archive does not contain filesystems, cannot use \"restfs\". Try "
+"\"restdir\" instead.\n"
+msgstr ""
+
+#: oper_restore.c:1448
+msgid ""
+"this archive does not contain simple directories, cannot use \"restdir\". "
+"Try \"restfs\" instead.\n"
+msgstr ""
+
+#: oper_restore.c:1454
+#, c-format
+msgid "this archive has an unknown type: %d, cannot continue\n"
+msgstr ""
+
+#: oper_restore.c:1462
+#, c-format
+msgid ""
+"invalid filesystem id: [%d]. the filesystem id must be an integer between 0 "
+"and %d\n"
+msgstr ""
+
+#: oper_restore.c:1472
+msgid "queue_dequeue_header() failed: cannot read filesystem-info dico\n"
+msgstr ""
+
+#: oper_restore.c:1482
+msgid "archinfo_show_fshead() failed\n"
+msgstr ""
+
+#: oper_restore.c:1498
+msgid "queue_dequeue_header() failed: cannot read the dirsinfo header\n"
+msgstr ""
+
+#: oper_restore.c:1506
+msgid "cannot read DIRSINFOKEY_TOTALCOST in dirsinfo\n"
+msgstr ""
+
+#: oper_restore.c:1514 thread_comp.c:170
+msgid ""
+"this archive has been encrypted, you have to provide a password on the "
+"command line using option '-c'\n"
+msgstr ""
+
+#: oper_restore.c:1527
+#, c-format
+msgid "============= extracting filesystem %d =============\n"
+msgstr ""
+
+#: oper_restore.c:1529
+#, c-format
+msgid "extract_filesystem(%d) failed\n"
+msgstr ""
+
+#: oper_restore.c:1548
+#, c-format
+msgid "%s does not exist, cannot continue\n"
+msgstr ""
+
+#: oper_restore.c:1558
+#, c-format
+msgid "%s is not a valid directory, cannot continue\n"
+msgstr ""
+
+#: oper_restore.c:1571 oper_save.c:1352
+#, c-format
+msgid "unsupported archtype: %d\n"
+msgstr ""
+
+#: oper_restore.c:1577 oper_save.c:1359
+msgid "operation aborted by user\n"
+msgstr ""
+
+#: oper_restore.c:1583
+msgid "THREAD-MAIN2: exit error\n"
+msgstr ""
+
+#: oper_restore.c:1587
+msgid "THREAD-MAIN2: exit\n"
+msgstr ""
+
+#: oper_restore.c:1589 oper_restore.c:1594
+#, c-format
+msgid "queue_count_items_todo(&g_queue)=%d\n"
+msgstr ""
+
+#: oper_restore.c:1591
+#, c-format
+msgid "queue_count_items_todo(): %ld\n"
+msgstr ""
+
+#: oper_restore.c:1600
+msgid "THREAD-MAIN2: queue is now empty\n"
+msgstr ""
+
+#: oper_restore.c:1605
+msgid "pthread_join(thread_decomp) failed\n"
+msgstr ""
+
+#: oper_restore.c:1608
+msgid "pthread_join(thread_reader) failed\n"
+msgstr ""
+
+#: oper_save.c:95
+#, c-format
+msgid "Cannot open small file %s for reading\n"
+msgstr ""
+
+#: oper_save.c:99
+#, c-format
+msgid "backup_obj_regfile_multi(file=%s, size=%lld)\n"
+msgstr ""
+
+#: oper_save.c:107 oper_save.c:189
+#, c-format
+msgid ""
+"file [%s] has been truncated to %lld bytes (original size: %lld): padding "
+"with zeros\n"
+msgstr ""
+
+#: oper_save.c:112
+#, c-format
+msgid "Cannot read data block size=%ld from small file %s, res=%ld\n"
+msgstr ""
+
+#: oper_save.c:124 oper_save.c:857
+msgid "Cannot queue last block of small-files\n"
+msgstr ""
+
+#: oper_save.c:133
+#, c-format
+msgid "Cannot add small-file %s to regmulti structure\n"
+msgstr ""
+
+#: oper_save.c:163
+#, c-format
+msgid "Cannot open %s for reading\n"
+msgstr ""
+
+#: oper_save.c:170
+#, c-format
+msgid "backup_obj_regfile_unique(file=%s, size=%lld)\n"
+msgstr ""
+
+#: oper_save.c:175
+#, c-format
+msgid "----> filepos=%lld, remaining=%lld, curblocksize=%lld\n"
+msgstr ""
+
+#: oper_save.c:179
+#, c-format
+msgid "malloc(%ld) failed: cannot allocate data block\n"
+msgstr ""
+
+#: oper_save.c:195
+#, c-format
+msgid "Cannot read data block from %s, block=%ld and res=%ld\n"
+msgstr ""
+
+#: oper_save.c:215
+#, c-format
+msgid "queue_add_block(%s) failed\n"
+msgstr ""
+
+#: oper_save.c:236
+#, c-format
+msgid "--> finished loop for file=%s, size=%lld, md5=[%s]\n"
+msgstr ""
+
+#: oper_save.c:249
+#, c-format
+msgid "Cannot write footer for file %s\n"
+msgstr ""
+
+#: oper_save.c:285
+#, c-format
+msgid "            xattr:file=[%s], attrid=%d, name=[%s], size=%ld\n"
+msgstr ""
+
+#: oper_save.c:287
+#, c-format
+msgid "file [%s] has an xattr [%s] with data too big (size=%ld, maxsize=64k)\n"
+msgstr ""
+
+#: oper_save.c:293
+#, c-format
+msgid "malloc(%ld) failed\n"
+msgstr ""
+
+#: oper_save.c:299 oper_save.c:313
+#, c-format
+msgid "            xattr:lgetxattr(%s,%s)=%d\n"
+msgstr ""
+
+#: oper_save.c:302
+#, c-format
+msgid "            xattr:lgetxattr(%s,%s)=%d: [%s]\n"
+msgstr ""
+
+#: oper_save.c:303
+#, c-format
+msgid "            xattr:lgetxattr(%s)=%d: [%s]=[%s]\n"
+msgstr ""
+
+#: oper_save.c:304
+#, c-format
+msgid "            xattr:dico_add_string(%s, xattr): key=%d, name=[%s]\n"
+msgstr ""
+
+#: oper_save.c:306
+#, c-format
+msgid "            xattr:dico_add_data(%s, xattr): key=%d, data (size=[%d])\n"
+msgstr ""
+
+#: oper_save.c:320
+#, c-format
+msgid "            xattr:lgetxattr-win(%s,%s)=-1: errno==ENOATTR\n"
+msgstr ""
+
+#: oper_save.c:354
+#, c-format
+msgid "           winattr:lgetxattr(%s,%s): returned negative attribute size\n"
+msgstr ""
+
+#: oper_save.c:359
+#, c-format
+msgid "            winattr:file=[%s], attrcnt=%d, name=[%s], size=%ld\n"
+msgstr ""
+
+#: oper_save.c:362
+#, c-format
+msgid ""
+"file [%s] has an xattr [%s] with data size=%ld too big (max xattr size is "
+"65535)\n"
+msgstr ""
+
+#: oper_save.c:369
+#, c-format
+msgid ""
+"malloc(%d) failed\n"
+")"
+msgstr ""
+
+#: oper_save.c:374
+#, c-format
+msgid "            winattr:lgetxattr-win(%s,%s)=%d\n"
+msgstr ""
+
+#: oper_save.c:377
+#, c-format
+msgid "            winattr:dico_add_string(%s, winattr): key=%d, name=[%s]\n"
+msgstr ""
+
+#: oper_save.c:379
+#, c-format
+msgid ""
+"            winattr:dico_add_data(%s, winattr): key=%d, data (size=[%d])\n"
+msgstr ""
+
+#: oper_save.c:386
+#, c-format
+msgid "            winattr:lgetxattr(%s,%s)=%d\n"
+msgstr ""
+
+#: oper_save.c:393
+#, c-format
+msgid "            winattr:lgetxattr-win(%s,%s)=-1: errno==ENOATTR\n"
+msgstr ""
+
+#: oper_save.c:425
+#, c-format
+msgid ""
+"Es müssen insgesamt %.5lld  Verzeichnisse bzw. Dateien gesichert werden."
+msgstr ""
+
+#: oper_save.c:441
+#, c-format
+msgid "Adding [%.5lld]=[%s]\n"
+msgstr ""
+
+#: oper_save.c:443 oper_save.c:451
+msgid "dico_add_u64(DICO_OBJ_SECTION_STDATTR) failed\n"
+msgstr ""
+
+#: oper_save.c:447
+msgid "dico_add_string(DICO_OBJ_SECTION_STDATTR) failed\n"
+msgstr ""
+
+#: oper_save.c:455 oper_save.c:459 oper_save.c:467 oper_save.c:471
+msgid "dico_add_u32(DICO_OBJ_SECTION_STDATTR) failed\n"
+msgstr ""
+
+#: oper_save.c:463
+msgid "dico_add_u32(gid) failed\n"
+msgstr ""
+
+#: oper_save.c:487
+#, c-format
+msgid "readlink(%s) failed\n"
+msgstr ""
+
+#: oper_save.c:502
+#, c-format
+msgid "fixed-readlink([%s])=[%s]\n"
+msgstr ""
+
+#: oper_save.c:511
+#, c-format
+msgid "absolute-symlink: fullpath=[%s] --> lstat64=[%s]\n"
+msgstr ""
+
+#: oper_save.c:517
+#, c-format
+msgid "relative-symlink: fullpath=[%s] --> lstat64=[%s]\n"
+msgstr ""
+
+#: oper_save.c:525
+#, c-format
+msgid "LINK: link=[%s], target=[%s]=DIR\n"
+msgstr ""
+
+#: oper_save.c:529
+#, c-format
+msgid "LINK: link=[%s], target=[%s]=REGFILE\n"
+msgstr ""
+
+#: oper_save.c:532
+#, c-format
+msgid "LINK: link=[%s], target=[%s]=UNKNOWN\n"
+msgstr ""
+
+#: oper_save.c:587
+#, c-format
+msgid ""
+"unknown item %s\n"
+")"
+msgstr ""
+
+#: oper_save.c:614
+#, c-format
+msgid "file [%s] ignored: it's the current archive file\n"
+msgstr ""
+
+#: oper_save.c:626
+#, c-format
+msgid "backup_item_stdattr() failed: cannot read standard attributes on [%s]\n"
+msgstr ""
+
+#: oper_save.c:639
+#, c-format
+msgid "backup_item_xattr() failed: cannot prepare xattr-dico for item %s\n"
+msgstr ""
+
+#: oper_save.c:646
+#, c-format
+msgid "backup_item_winattr() failed: cannot prepare winattr-dico for item %s\n"
+msgstr ""
+
+#: oper_save.c:674 oper_save.c:686 oper_save.c:698 oper_save.c:713
+#, c-format
+msgid "queue_add_header(%s) failed\n"
+msgstr ""
+
+#: oper_save.c:725
+#, c-format
+msgid "backup_obj_regfile_unique(%s)=%d failed\n"
+msgstr ""
+
+#: oper_save.c:740
+#, c-format
+msgid "backup_obj_regfile_multi(%s)=%d failed\n"
+msgstr ""
+
+#: oper_save.c:749
+#, c-format
+msgid "invalid object type: %ld for file %s\n"
+msgstr ""
+
+#: oper_save.c:784
+#, c-format
+msgid "createar_save_file(%s,%s) failed\n"
+msgstr ""
+
+#: oper_save.c:811
+#, c-format
+msgid "file/dir=[%s] excluded\n"
+msgstr ""
+
+#: oper_save.c:819 oper_save.c:827
+#, c-format
+msgid "createar_save_directory(%s) failed\n"
+msgstr ""
+
+#: oper_save.c:844
+msgid "dichardlinks=dichl_alloc() failed\n"
+msgstr ""
+
+#: oper_save.c:849
+msgid "regmulti_init failed\n"
+msgstr ""
+
+#: oper_save.c:877 thread_archio.c:48 thread_archio.c:135
+msgid "ai is NULL\n"
+msgstr ""
+
+#: oper_save.c:923
+msgid "cannot write dico for main header\n"
+msgstr ""
+
+#: oper_save.c:956
+#, c-format
+msgid "generic_get_mntinfo(%s): mnt=[%s], opt=[%s], fs=[%s], rw=[%d]\n"
+msgstr ""
+
+#: oper_save.c:959
+#, c-format
+msgid ""
+"partition [%s] is mounted read/write. please mount it read-only \n"
+"and then try again. you can do \"mount -o remount,ro %s\". you can \n"
+"also run fsarchiver with option '-A' if you know what you are doing.\n"
+msgstr ""
+
+#: oper_save.c:968
+#, c-format
+msgid ""
+"partition [%s] is using a fuse based filesystem (probably ntfs-3g). Unmount "
+"it and try again\n"
+msgstr ""
+
+#: oper_save.c:970
+#, c-format
+msgid ""
+"filesystem of partition [%s] is not supported by fsarchiver: filesystem="
+"[%s]\n"
+msgstr ""
+
+#: oper_save.c:979
+#, c-format
+msgid "cannot get the required mount options for partition=[%s]\n"
+msgstr ""
+
+#: oper_save.c:985
+#, c-format
+msgid "mount options found for partition=[%s]: [%s]\n"
+msgstr ""
+
+#: oper_save.c:986
+#, c-format
+msgid "mount options required for partition=[%s]: [%s]\n"
+msgstr ""
+
+#: oper_save.c:987
+#, c-format
+msgid "mount options to avoid for partition=[%s]: [%s]\n"
+msgstr ""
+
+#: oper_save.c:992
+#, c-format
+msgid "checking there is reqmntopt[%d]=[%s]\n"
+msgstr ""
+
+#: oper_save.c:996
+#, c-format
+msgid ""
+"partition [%s] has to be mounted with options [%s] in order to preserve all "
+"its attributes. you can use mount with option remount to do that.\n"
+msgstr ""
+
+#: oper_save.c:1001 oper_save.c:1022
+msgid "fsarchiver will continue anyway since the option '-a' was used\n"
+msgstr ""
+
+#: oper_save.c:1004
+msgid ""
+"fsarchiver cannot continue, you can use option '-a' to ignore the mount "
+"options (xattr or acl may not be preserved)\n"
+msgstr ""
+
+#: oper_save.c:1014
+#, c-format
+msgid "checking there is not badmntopt[%d]=[%s]\n"
+msgstr ""
+
+#: oper_save.c:1018
+#, c-format
+msgid ""
+"partition [%s] has to be mounted without options [%s] in order to preserve "
+"all its attributes\n"
+msgstr ""
+
+#: oper_save.c:1025
+msgid ""
+"fsarchiver cannot continue, you can use option '-a' to ignore the mount "
+"options (xattr or acl may not be preserverd)\n"
+msgstr ""
+
+#: oper_save.c:1038
+#, c-format
+msgid "mount(src=[%s], target=[%s], NULL, MS_BIND|MS_RDONLY, NULL) failed\n"
+msgstr ""
+
+#: oper_save.c:1046
+#, c-format
+msgid "partition %s is not mounted\n"
+msgstr ""
+
+#: oper_save.c:1051
+#, c-format
+msgid "partition %s successfully mounted on [%s] as [%s]\n"
+msgstr ""
+
+#: oper_save.c:1055
+#, c-format
+msgid ""
+"cannot mount partition [%s]: filesystem may not be supported by either "
+"fsarchiver or the kernel.\n"
+msgstr ""
+
+#: oper_save.c:1065
+#, c-format
+msgid "statvfs64(%s) failed\n"
+msgstr ""
+
+#: oper_save.c:1078
+#, c-format
+msgid "cannot save filesystem attributes for partition %s\n"
+msgstr ""
+
+#: oper_save.c:1093
+msgid "dicostart=dico_alloc() failed\n"
+msgstr ""
+
+#: oper_save.c:1106 oper_save.c:1343
+msgid "dicoend=dico_alloc() failed\n"
+msgstr ""
+
+#: oper_save.c:1179
+#, c-format
+msgid "%s is not a valid block device\n"
+msgstr ""
+
+#: oper_save.c:1189
+#, c-format
+msgid "%s is not a valid directory\n"
+msgstr ""
+
+#: oper_save.c:1199
+msgid "pthread_create(thread_comp_fct) failed\n"
+msgstr ""
+
+#: oper_save.c:1207
+msgid "pthread_create(thread_writer_fct) failed\n"
+msgstr ""
+
+#: oper_save.c:1214
+#, c-format
+msgid "archive_write_mainhead(%s) failed\n"
+msgstr ""
+
+#: oper_save.c:1233
+#, c-format
+msgid "Mounting filesystem on %s...\n"
+msgstr ""
+
+#: oper_save.c:1235 oper_save.c:1315 oper_save.c:1334
+#, c-format
+msgid "archive_filesystem(%s) failed\n"
+msgstr ""
+
+#: oper_save.c:1245
+#, c-format
+msgid "Analysing filesystem on %s...\n"
+msgstr ""
+
+#: oper_save.c:1247 oper_save.c:1274
+#, c-format
+msgid "cannot run evaluation createar_save_directory(%s)\n"
+msgstr ""
+
+#: oper_save.c:1251
+msgid "dico_add_u64(FSYSHEADKEY_TOTALCOST) failed\n"
+msgstr ""
+
+#: oper_save.c:1258
+#, c-format
+msgid "queue_add_header(FSA_MAGIC_FSIN, %s) failed\n"
+msgstr ""
+
+#: oper_save.c:1272
+#, c-format
+msgid "Analysing directory %s...\n"
+msgstr ""
+
+#: oper_save.c:1286
+msgid "dico_add_u64(DIRSINFOKEY_TOTALCOST) failed\n"
+msgstr ""
+
+#: oper_save.c:1291
+msgid "queue_add_header(FSA_MAGIC_DIRS) failed\n"
+msgstr ""
+
+#: oper_save.c:1303
+msgid "[ Anzahl Dateien  prozentualer Anteil ]  \n"
+msgstr ""
+
+#: oper_save.c:1311
+#, c-format
+msgid "============= archiving filesystem %s =============\n"
+msgstr ""
+
+#: oper_save.c:1332
+#, c-format
+msgid "============= archiving directory %s =============\n"
+msgstr ""
+
+#: oper_save.c:1362
+msgid "THREAD-MAIN1: exit error\n"
+msgstr ""
+
+#: oper_save.c:1366
+msgid "THREAD-MAIN1: exit\n"
+msgstr ""
+
+#: oper_save.c:1372
+#, c-format
+msgid "unmounting [%s] which is mounted on [%s]\n"
+msgstr ""
+
+#: oper_save.c:1374
+#, c-format
+msgid "cannot umount [%s]\n"
+msgstr ""
+
+#: oper_save.c:1384
+#, c-format
+msgid "pthread_join(thread_comp[%d]) failed\n"
+msgstr ""
+
+#: oper_save.c:1388
+msgid "pthread_join(thread_writer) failed\n"
+msgstr ""
+
+#: options.c:58
+#, c-format
+msgid ""
+"compression level %d is not available: lzo has been disabled at compilation "
+"time\n"
+msgstr ""
+
+#: options.c:103
+#, c-format
+msgid ""
+"compression level %d is not available: lzma has been disabled at compilation "
+"time\n"
+msgstr ""
+
+#: options.c:107 thread_comp.c:89
+#, c-format
+msgid "invalid compression level: %d\n"
+msgstr ""
+
+#: queue.c:52 queue.c:86 queue.c:111 queue.c:126 queue.c:140 queue.c:154
+#: queue.c:172
+msgid "q is NULL\n"
+msgstr ""
+
+#: queue.c:68
+msgid "pthread_mutex_init failed\n"
+msgstr ""
+
+#: queue.c:73
+msgid "pthread_cond_init failed\n"
+msgstr ""
+
+#: queue.c:196
+msgid "a parameter is NULL\n"
+msgstr ""
+
+#: queue.c:250 queue.c:268
+msgid "parameter is null\n"
+msgstr ""
+
+#: queue.c:275
+#, c-format
+msgid "malloc(%ld) failed: out of memory 1\n"
+msgstr ""
+
+#: queue.c:330
+msgid "q->head is NULL: list is empty\n"
+msgstr ""
+
+#: queue.c:466
+msgid "invalid item type in queue\n"
+msgstr ""
+
+#: queue.c:527
+msgid ""
+"dequeue - wrong type of data in the queue: wanted a block, found an header\n"
+msgstr ""
+
+#: queue.c:545
+msgid "queue_dequeue_header_internal() failed\n"
+msgstr ""
+
+#: queue.c:597
+msgid ""
+"dequeue - wrong type of data in the queue: expected a dico and found a "
+"block\n"
+msgstr ""
+
+#: queue.c:602
+msgid ""
+"dequeue - wrong type of data in the queue: expected a dico and found an "
+"unknown item\n"
+msgstr ""
+
+#: queue.c:676
+#, c-format
+msgid "invalid item type in queue: type=%d\n"
+msgstr ""
+
+#: regmulti.c:39 regmulti.c:55 regmulti.c:67 regmulti.c:77 regmulti.c:91
+#: regmulti.c:122 regmulti.c:185 regmulti.c:202 regmulti.c:223 strlist.c:73
+#: strlist.c:117 strlist.c:139 strlist.c:175 strlist.c:198 strlist.c:222
+#: strlist.c:256 strlist.c:279
+msgid "invalid param\n"
+msgstr ""
+
+#: regmulti.c:96 regmulti.c:190
+#, c-format
+msgid "regmulti is full: it contains %ld items\n"
+msgstr ""
+
+#: regmulti.c:101 regmulti.c:207
+msgid "block is too small to store that new sub-block of data\n"
+msgstr ""
+
+#: regmulti.c:133
+#, c-format
+msgid "error: objhead[%d]==NULL\n"
+msgstr ""
+
+#: regmulti.c:139 regmulti.c:237 regmulti.c:241
+msgid "Cannot read filesize DISKITEMKEY_SIZE from archive\n"
+msgstr ""
+
+#: regmulti.c:145 regmulti.c:151
+msgid "dico_add_u32(DISKITEMKEY_MULTIFILESCOUNT) failed\n"
+msgstr ""
+
+#: regmulti.c:157
+msgid "queue_add_header() failed\n"
+msgstr ""
+
+#: regmulti.c:175
+msgid "queue_add_block() failed\n"
+msgstr ""
+
+#: regmulti.c:228
+#, c-format
+msgid "index=%d out of scope: the structure only contains %ld items\n"
+msgstr ""
+
+#: strdico.c:88 strdico.c:111 strdico.c:172
+msgid "strdup() failed: out of memory\n"
+msgstr ""
+
+#: strdico.c:126
+#, c-format
+msgid ""
+"Incorrect syntax in \"%s\" . Cannot find symbol '=' to separate the key and "
+"the value. expected something like \"name1=val1,name2=val2\"\n"
+msgstr ""
+
+#: strdico.c:186
+#, c-format
+msgid "unexpected key \"%s\". valid keys are \"%s\"\n"
+msgstr ""
+
+#: strdico.c:202 strdico.c:218 strdico.c:223
+#, c-format
+msgid "malloc(%d) failed: out of memory\n"
+msgstr ""
+
+#: strdico.c:273
+#, c-format
+msgid "key \"%s\" has an empty value. expected a valid number\n"
+msgstr ""
+
+#: strdico.c:280
+#, c-format
+msgid "key \"%s\" does not contain a valid number: \"%s\"\n"
+msgstr ""
+
+#: strdico.c:295
+#, c-format
+msgid "item[%d]: key=[%s] value=[%s]\n"
+msgstr ""
+
+#: strlist.c:78
+#, c-format
+msgid "canot add dring: [%s] is already in the list\n"
+msgstr ""
+
+#: strlist.c:83 strlist.c:91
+msgid "malloc() failed\n"
+msgstr ""
+
+#: strlist.c:232
+#, c-format
+msgid "malloc(%d) failed\n"
+msgstr ""
+
+#: strlist.c:240
+#, c-format
+msgid "strlist_add(l, [%s]) failed\n"
+msgstr ""
+
+#: strlist.c:285
+#, c-format
+msgid "list is empty"
+msgstr ""
+
+#: strlist.c:290
+#, c-format
+msgid "item[%d]: [%s]\n"
+msgstr ""
+
+#: thread_archio.c:52
+msgid "archwriter_volpath() failed\n"
+msgstr ""
+
+#: thread_archio.c:56
+#, c-format
+msgid "archwriter_create(%s) failed\n"
+msgstr ""
+
+#: thread_archio.c:60
+msgid "cannot write volume header: archwriter_write_volheader() failed\n"
+msgstr ""
+
+#: thread_archio.c:67
+#, c-format
+msgid "queue_dequeue_first()=%ld=%s failed\n"
+msgstr ""
+
+#: thread_archio.c:76
+msgid "archive_dowrite_block() failed\n"
+msgstr ""
+
+#: thread_archio.c:83
+msgid "archive_write_header() failed\n"
+msgstr ""
+
+#: thread_archio.c:89
+#, c-format
+msgid "unexpected item type from queue: type=%d\n"
+msgstr ""
+
+#: thread_archio.c:101
+msgid "THREAD-WRITER: exit success\n"
+msgstr ""
+
+#: thread_archio.c:106
+msgid "THREAD-WRITER: exit remove\n"
+msgstr ""
+
+#: thread_archio.c:141
+msgid "archreader_volpath() failed\n"
+msgstr ""
+
+#: thread_archio.c:146
+#, c-format
+msgid "archreader_open(%s) failed\n"
+msgstr ""
+
+#: thread_archio.c:152 thread_archio.c:222
+msgid "archio_read_volheader() failed\n"
+msgstr ""
+
+#: thread_archio.c:163
+msgid "cannot get archive-id from main header\n"
+msgstr ""
+
+#: thread_archio.c:168
+#, c-format
+msgid "queue_add_header()=%ld=%s failed to add the archive header\n"
+msgstr ""
+
+#: thread_archio.c:177
+msgid "archreader_read_header() failed to read next header\n"
+msgstr ""
+
+#: thread_archio.c:180
+msgid "OLDERR_MINOR\n"
+msgstr ""
+
+#: thread_archio.c:185
+msgid "!OLDERR_MINOR\n"
+msgstr ""
+
+#: thread_archio.c:197
+msgid "cannot get compr from block-header\n"
+msgstr ""
+
+#: thread_archio.c:200
+#, c-format
+msgid "End of volume [%s]\n"
+msgstr ""
+
+#: thread_archio.c:211
+#, c-format
+msgid "File [%s] is not found, please type the path to volume %ld:\n"
+msgstr ""
+
+#: thread_archio.c:212
+#, c-format
+msgid "New path:> "
+msgstr ""
+
+#: thread_archio.c:216
+#, c-format
+msgid "New volume is [%s]\n"
+msgstr ""
+
+#: thread_archio.c:218
+msgid "archreader_open() failed\n"
+msgstr ""
+
+#: thread_archio.c:235
+msgid "archreader_read_block() failed\n"
+msgstr ""
+
+#: thread_archio.c:244
+#, c-format
+msgid "queue_add_block()=%ld=%s failed\n"
+msgstr ""
+
+#: thread_archio.c:257
+#, c-format
+msgid "queue_add_header()=%ld=%s failed\n"
+msgstr ""
+
+#: thread_archio.c:270
+msgid "THREAD-READER: queue_set_end_of_queue(&g_queue, true)\n"
+msgstr ""
+
+#: thread_archio.c:273
+msgid "THREAD-READER: exit\n"
+msgstr ""
+
+#: thread_comp.c:96
+#, c-format
+msgid ""
+"attempt to compress the current block using an alternative algorithm (\"-z%d"
+"\")\n"
+msgstr ""
+
+#: thread_comp.c:131 thread_comp.c:185
+msgid "crypt_block_blowfish() failed\n"
+msgstr ""
+
+#: thread_comp.c:158
+#, c-format
+msgid "malloc(%ld) failed: cannot allocate memory for compressed block\n"
+msgstr ""
+
+#: thread_comp.c:164
+#, c-format
+msgid "block is corrupt at blockoffset=%ld, blksize=%ld\n"
+msgstr ""
+
+#: thread_comp.c:189
+#, c-format
+msgid ""
+"clearsize does not match blkcompsize: clearsize=%ld and blkcompsize=%ld\n"
+msgstr ""
+
+#: thread_comp.c:206
+#, c-format
+msgid "uncompress_block_lzo()=%d failed: finalsize=%ld and checkorigsize=%ld\n"
+msgstr ""
+
+#: thread_comp.c:215
+#, c-format
+msgid ""
+"uncompress_block_gzip()=%d failed: finalsize=%ld and checkorigsize=%ld\n"
+msgstr ""
+
+#: thread_comp.c:223
+#, c-format
+msgid ""
+"uncompress_block_bzip2()=%d failed: finalsize=%ld and checkorigsize=%ld\n"
+msgstr ""
+
+#: thread_comp.c:232
+#, c-format
+msgid ""
+"uncompress_block_lzma()=%d failed: finalsize=%ld and checkorigsize=%ld\n"
+msgstr ""
+
+#: thread_comp.c:240
+#, c-format
+msgid "unsupported compression algorithm: %ld\n"
+msgstr ""
+
+#: thread_comp.c:269
+#, c-format
+msgid "oper is invalid: %d\n"
+msgstr ""
+
+#: thread_comp.c:273
+#, c-format
+msgid "compress_block()=%d failed\n"
+msgstr ""
+
+#: thread_comp.c:281
+msgid "THREAD-COMP: exit success\n"
+msgstr ""
+
+#: thread_comp.c:286
+msgid "THREAD-COMP: exit error\n"
+msgstr ""
+
+#: writebuf.c:39
+#, c-format
+msgid "malloc(%d) failed: cannot allocate memory for writebuf\n"
+msgstr ""
+
+#: writebuf.c:50 writebuf.c:69
+msgid "wb is NULL\n"
+msgstr ""
+
+#: writebuf.c:74
+msgid "size=0\n"
+msgstr ""
+
+#: writebuf.c:81
+#, c-format
+msgid "realloc(oldsize=%ld, newsize=%ld) failed\n"
+msgstr ""
+
+#: writebuf.c:108
+#, c-format
+msgid "archio_write_dico(wb=%p, dico=%p, magic=[%c%c%c%c])\n"
+msgstr ""
+
+#: writebuf.c:111
+#, c-format
+msgid "filepath=[%s]\n"
+msgstr ""
+
+#: writebuf.c:115
+#, c-format
+msgid "dico_count_all_sections(dico=%p)=%d\n"
+msgstr ""
+
+#: writebuf.c:127
+#, c-format
+msgid "calculated headerlen for that dico: headerlen=%d\n"
+msgstr ""
+
+#: writebuf.c:132
+msgid "cannot allocate memory for buffer"
+msgstr ""
+
+#: writebuf.c:138
+#, c-format
+msgid "mempcpy items count to buffer: u16 count=%d\n"
+msgstr ""
+
+#: writebuf.c:144
+#, c-format
+msgid "itemnum=%d (type=%d, section=%d, key=%d, size=%d)\n"
+msgstr ""
+
+#: writebuf.c:165
+#, c-format
+msgid "all %d items mempcopied to buffer\n"
+msgstr ""
+
+#: writebuf.c:187
+#, c-format
+msgid "end of archio_write_dico(wb=%p, dico=%p, magic=[%c%c%c%c])\n"
+msgstr ""
+
+#: writebuf.c:204
+msgid "writebuf_add_data() failed to write FSA_SIZEOF_MAGIC\n"
+msgstr ""
+
+#: writebuf.c:211
+msgid "writebuf_add_data() failed to write archid\n"
+msgstr ""
+
+#: writebuf.c:218
+msgid "writebuf_add_data() failed to write fsid\n"
+msgstr ""
+
+#: writebuf.c:224
+msgid "archio_write_dico() failed to write the header dico\n"
+msgstr ""
+
+#: writebuf.c:247
+msgid "blkinfo->blkarsize=0: block is empty\n"
+msgstr ""
+
+#: writebuf.c:264
+msgid "cannot write FSA_MAGIC_BLKH block-header\n"
+msgstr ""
+
+#: writebuf.c:270
+msgid "cannot write data block: writebuf_add_data() failed\n"
+msgstr ""

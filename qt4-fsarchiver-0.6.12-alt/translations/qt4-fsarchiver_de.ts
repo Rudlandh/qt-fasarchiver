@@ -944,101 +944,139 @@ Schlüssel:</translation>
 <context>
     <name>Dialog_Net</name>
     <message>
-        <location filename="../src/ui/net.ui" line="14"/>
         <source>Partitionen über ein Netzwerk sichern/zurückschreiben</source>
+        <translation type="obsolete">Partitionen über ein Netzwerk sichern/zurückschreiben</translation>
+    </message>
+    <message>
+        <source>Hinweise zu der Sicherung eingeben</source>
+        <translation type="obsolete">Hinweise zu der Sicherung eingeben</translation>
+    </message>
+    <message>
+        <source>Netzrechnername:</source>
+        <translation type="obsolete">Netzrechnername:</translation>
+    </message>
+    <message>
+        <source>Anzahl Prozessorenkerne, die für
+fsarchiver verwendet werden sollen:</source>
+        <translation type="obsolete">Anzahl Prozessorenkerne, die für
+fsarchiver verwendet werden sollen:</translation>
+    </message>
+    <message>
+        <source>Sicherungsverzeichnis:</source>
+        <translation type="obsolete">Sicherungsverzeichnis:</translation>
+    </message>
+    <message>
+        <source>vorhanden Sicherung überschreiben</source>
+        <translation type="obsolete">vorhanden Sicherung überschreiben</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/net.ui" line="14"/>
+        <source>Backup/restore partition over network</source>
+        <extracomment>Partitionen über ein Netzwerk sichern/zurückschreiben</extracomment>
         <translation>Partitionen über ein Netzwerk sichern/zurückschreiben</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="26"/>
-        <source>Hinweise zu der Sicherung eingeben</source>
+        <source>Instructions to enter the backup</source>
+        <extracomment>Hinweise zu der Sicherung eingeben</extracomment>
         <translation>Hinweise zu der Sicherung eingeben</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="39"/>
-        <source>Netzrechnername:</source>
+        <source>Network computer 
+ name:</source>
+        <extracomment>Netzrechnername:</extracomment>
         <translation>Netzrechnername:</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="52"/>
-        <source>Anzahl Prozessorenkerne, die für
-fsarchiver verwendet werden sollen:</source>
+        <location filename="../src/ui/net.ui" line="53"/>
+        <source>Number of processor cores
+that are to be used for fsarchiver:</source>
+        <extracomment>Anzahl Prozessorenkerne, die für * fsarchiver verwendet werden sollen:</extracomment>
         <translation>Anzahl Prozessorenkerne, die für
 fsarchiver verwendet werden sollen:</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="66"/>
-        <source>Sicherungsverzeichnis:</source>
+        <location filename="../src/ui/net.ui" line="67"/>
+        <source>Backup directory:</source>
+        <extracomment>Sicherungsverzeichnis:</extracomment>
         <translation>Sicherungsverzeichnis:</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="79"/>
-        <source>vorhanden Sicherung überschreiben</source>
+        <location filename="../src/ui/net.ui" line="80"/>
+        <source>available backup overwrite</source>
+        <extracomment>vorhanden Sicherung überschreiben</extracomment>
         <translation>vorhanden Sicherung überschreiben</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="98"/>
+        <location filename="../src/ui/net.ui" line="99"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="111"/>
-        <source>vorhandene Partitionen:</source>
+        <location filename="../src/ui/net.ui" line="112"/>
+        <source>Existing partitions:</source>
+        <extracomment>vorhandene Partitionen:</extracomment>
         <translation>vorhandene Partitionen:</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="130"/>
-        <source>vorgesehene Aktion:</source>
+        <location filename="../src/ui/net.ui" line="131"/>
+        <source>proposed action:</source>
+        <extracomment>vorgesehene Aktion:</extracomment>
         <translation>vorgesehene Aktion:</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="148"/>
-        <source>Partition mit
-fsArchiver sichern:</source>
+        <location filename="../src/ui/net.ui" line="149"/>
+        <source>Partition save with fsarchiver:</source>
+        <extracomment>Partition mit * fsArchiver sichern:</extracomment>
         <translation>Partition mit
 fsArchiver sichern:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="162"/>
-        <source>Partition mit fs-Archiver
-zurückschreiben</source>
+        <source>Partition fs-Archiver restore</source>
+        <extracomment>Partition mit fs-Archiver * zurückschreiben</extracomment>
         <translation>Partition mit fs-Archiver
 zurückschreiben</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="177"/>
-        <source>Sicherung  verschlüsseln
-Schlüssel:</source>
-        <translation>Sicherung  verschlüsseln
+        <location filename="../src/ui/net.ui" line="176"/>
+        <source>Encrypt backup
+key:</source>
+        <extracomment>Sicherung  verschlüsseln * Schlüssel:</extracomment>
+        <translation>Sicherung verschlüsseln
 Schlüssel:</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="204"/>
-        <source>Partition wiederherstellen</source>
+        <location filename="../src/ui/net.ui" line="203"/>
+        <source>Partition restore</source>
+        <extracomment>Partition wiederherstellen</extracomment>
         <translation>Partition wiederherstellen</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="242"/>
-        <source>Anzahl der zu sichernden 
-Dateien/Verzeichnisse:</source>
-        <translation>Anzahl der zu sichernden 
+        <location filename="../src/ui/net.ui" line="241"/>
+        <source>Number of backup
+files/directories:</source>
+        <extracomment>Anzahl der zu sichernden * Dateien/Verzeichnisse:</extracomment>
+        <translation>Anzahl der zu sichernden
 Dateien/Verzeichnisse:</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="269"/>
-        <source>bereits gesicherte 
-Datein/Verzeichnisse:
-</source>
-        <translation>bereits gesicherte 
-Datein/Verzeichnisse:
-</translation>
+        <location filename="../src/ui/net.ui" line="268"/>
+        <source>Already saved
+files/directories:</source>
+        <extracomment>bereits gesicherte * Datein/Verzeichnisse:</extracomment>
+        <translation>bereits gesicherte
+Datein/Verzeichnisse:</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="313"/>
+        <location filename="../src/ui/net.ui" line="311"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;elapsed time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>vergangene Zeit:</extracomment>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1046,23 +1084,31 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="343"/>
-        <location filename="../src/ui/net.ui" line="425"/>
-        <source>Minuten</source>
+        <location filename="../src/ui/net.ui" line="341"/>
+        <location filename="../src/ui/net.ui" line="423"/>
+        <source>minutes</source>
+        <extracomment>Minuten
+----------
+Minuten</extracomment>
         <translation>Minuten</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="369"/>
-        <source>Sekunden:</source>
-        <translation>Sekunden:</translation>
+        <location filename="../src/ui/net.ui" line="367"/>
+        <location filename="../src/ui/net.ui" line="436"/>
+        <source>seconds</source>
+        <extracomment>Sekunden:
+----------
+Sekunden</extracomment>
+        <translation>Sekunden</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="382"/>
+        <location filename="../src/ui/net.ui" line="380"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;expected time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>noch zu erwartende Zeit:</extracomment>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -1070,73 +1116,204 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="438"/>
-        <source>Sekunden</source>
-        <translation>Sekunden</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/net.ui" line="452"/>
-        <source>n</source>
-        <translation>n</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/net.ui" line="478"/>
-        <source>Partition sichern</source>
+        <location filename="../src/ui/net.ui" line="476"/>
+        <source>save partition</source>
+        <extracomment>Partition sichern</extracomment>
         <translation>Partition sichern</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="514"/>
-        <source>Kompressions-
-einstellung:</source>
+        <location filename="../src/ui/net.ui" line="512"/>
+        <source>Compression setting:</source>
+        <extracomment>Kompressions-*einstellung:</extracomment>
         <translation>Kompressions-
 einstellung:</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="558"/>
-        <source>Archiv splitten auf DVD Größe</source>
+        <location filename="../src/ui/net.ui" line="555"/>
+        <source>Stock Split on DVD size</source>
+        <extracomment>Archiv splitten auf DVD Größe</extracomment>
         <translation>Archiv splitten auf DVD Größe</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="571"/>
-        <source>Dateiname der Sicherung:</source>
+        <location filename="../src/ui/net.ui" line="568"/>
+        <source>Name the backup file:</source>
+        <extracomment>Dateiname der Sicherung:</extracomment>
         <translation>Dateiname der Sicherung:</translation>
     </message>
     <message>
-        <location filename="../src/ui/net.ui" line="584"/>
-        <source>Beenden</source>
+        <location filename="../src/ui/net.ui" line="581"/>
+        <source>Exit</source>
+        <extracomment>Beenden</extracomment>
         <translation>Beenden</translation>
+    </message>
+    <message>
+        <source>vorhandene Partitionen:</source>
+        <translation type="obsolete">vorhandene Partitionen:</translation>
+    </message>
+    <message>
+        <source>vorgesehene Aktion:</source>
+        <translation type="obsolete">vorgesehene Aktion:</translation>
+    </message>
+    <message>
+        <source>Partition mit
+fsArchiver sichern:</source>
+        <translation type="obsolete">Partition mit
+fsArchiver sichern:</translation>
+    </message>
+    <message>
+        <source>Partition mit fs-Archiver
+zurückschreiben</source>
+        <translation type="obsolete">Partition mit fs-Archiver
+zurückschreiben</translation>
+    </message>
+    <message>
+        <source>Sicherung  verschlüsseln
+Schlüssel:</source>
+        <translation type="obsolete">Sicherung  verschlüsseln
+Schlüssel:</translation>
+    </message>
+    <message>
+        <source>Partition wiederherstellen</source>
+        <translation type="obsolete">Partition wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Anzahl der zu sichernden 
+Dateien/Verzeichnisse:</source>
+        <translation type="obsolete">Anzahl der zu sichernden 
+Dateien/Verzeichnisse:</translation>
+    </message>
+    <message>
+        <source>bereits gesicherte 
+Datein/Verzeichnisse:
+</source>
+        <translation type="obsolete">bereits gesicherte 
+Datein/Verzeichnisse:
+</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Minuten</source>
+        <translation type="obsolete">Minuten</translation>
+    </message>
+    <message>
+        <source>Sekunden:</source>
+        <translation type="obsolete">Sekunden:</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Sekunden</source>
+        <translation type="obsolete">Sekunden</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/net.ui" line="450"/>
+        <source>n</source>
+        <translation>n</translation>
+    </message>
+    <message>
+        <source>Partition sichern</source>
+        <translation type="obsolete">Partition sichern</translation>
+    </message>
+    <message>
+        <source>Kompressions-
+einstellung:</source>
+        <translation type="obsolete">Kompressions-
+einstellung:</translation>
+    </message>
+    <message>
+        <source>Archiv splitten auf DVD Größe</source>
+        <translation type="obsolete">Archiv splitten auf DVD Größe</translation>
+    </message>
+    <message>
+        <source>Dateiname der Sicherung:</source>
+        <translation type="obsolete">Dateiname der Sicherung:</translation>
+    </message>
+    <message>
+        <source>Beenden</source>
+        <translation type="obsolete">Beenden</translation>
     </message>
 </context>
 <context>
     <name>Eingabe_Net</name>
     <message>
-        <location filename="../src/ui/net_ein.ui" line="14"/>
         <source>Daten Netzwerk</source>
+        <translation type="obsolete">Daten Netzwerk</translation>
+    </message>
+    <message>
+        <source>Benutzername:</source>
+        <translation type="obsolete">Benutzername:</translation>
+    </message>
+    <message>
+        <source>Kennwort:</source>
+        <translation type="obsolete">Kennwort:</translation>
+    </message>
+    <message>
+        <source>Daten speichern</source>
+        <translation type="obsolete">Daten speichern</translation>
+    </message>
+    <message>
+        <source>Weiter</source>
+        <translation type="obsolete">Weiter</translation>
+    </message>
+    <message>
+        <source>Im Netz erreichbare Rechner:</source>
+        <translation type="obsolete">Im Netz erreichbare Rechner:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/net_ein.ui" line="14"/>
+        <source>Data network</source>
+        <extracomment>Daten Netzwerk</extracomment>
         <translation>Daten Netzwerk</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="26"/>
-        <source>Benutzername:</source>
+        <source>Username:</source>
+        <extracomment>Benutzername:</extracomment>
         <translation>Benutzername:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="39"/>
-        <source>Kennwort:</source>
+        <source>Password:</source>
+        <extracomment>Kennwort:</extracomment>
         <translation>Kennwort:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="52"/>
-        <source>Daten speichern</source>
+        <source>Save data</source>
+        <extracomment>Daten speichern</extracomment>
         <translation>Daten speichern</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="88"/>
-        <source>Weiter</source>
+        <source>Next</source>
+        <extracomment>Weiter</extracomment>
         <translation>Weiter</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="111"/>
-        <source>Im Netz erreichbare Rechner:</source>
+        <source>Achievable in the network computer:</source>
+        <extracomment>Im Netz erreichbare Rechner:</extracomment>
         <translation>Im Netz erreichbare Rechner:</translation>
     </message>
     <message>
@@ -1146,36 +1323,66 @@ einstellung:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="137"/>
-        <source>Kennwort anzeigen</source>
+        <source>Show Password</source>
+        <extracomment>Kennwort anzeigen</extracomment>
         <translation>Kennwort anzeigen</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="150"/>
-        <source>Abbrechen</source>
+        <source>Cancel</source>
+        <extracomment>Abbrechen</extracomment>
         <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Kennwort anzeigen</source>
+        <translation type="obsolete">Kennwort anzeigen</translation>
+    </message>
+    <message>
+        <source>Abbrechen</source>
+        <translation type="obsolete">Abbrechen</translation>
     </message>
 </context>
 <context>
     <name>FileDialog</name>
     <message>
-        <location filename="../src/ui/filedialog.ui" line="14"/>
         <source>Beschreibung der Sicherung</source>
+        <translation type="obsolete">Beschreibung der Sicherung</translation>
+    </message>
+    <message>
+        <source>Abbrechen </source>
+        <translation type="obsolete">Abbrechen </translation>
+    </message>
+    <message>
+        <source>Beschreibung der Sicherung:</source>
+        <translation type="obsolete">Beschreibung der Sicherung:</translation>
+    </message>
+    <message>
+        <source>Partition sichern </source>
+        <translation type="obsolete">Partition sichern </translation>
+    </message>
+    <message>
+        <location filename="../src/ui/filedialog.ui" line="14"/>
+        <source>Description of the backup</source>
+        <extracomment>Beschreibung der Sicherung</extracomment>
         <translation>Beschreibung der Sicherung</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="26"/>
-        <source>Abbrechen </source>
-        <translation>Abbrechen </translation>
+        <source>Cancel</source>
+        <extracomment>Abbrechen</extracomment>
+        <translation>Abbrechen</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="39"/>
-        <source>Beschreibung der Sicherung:</source>
+        <source>Description of the backup:</source>
+        <extracomment>Beschreibung der Sicherung:</extracomment>
         <translation>Beschreibung der Sicherung:</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="52"/>
-        <source>Partition sichern </source>
-        <translation>Partition sichern </translation>
+        <source>Back partition</source>
+        <extracomment>Partition sichern</extracomment>
+        <translation>Partition sichern</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="80"/>
@@ -1191,9 +1398,14 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
+        <source>Partition zurückschreiben</source>
+        <translation type="obsolete">Partition zurückschreiben</translation>
+    </message>
+    <message>
         <location filename="../src/filedialog.cpp" line="41"/>
         <source>Partition zurückschreiben</source>
-        <translation>Partition zurückschreiben</translation>
+        <comment>Partition zurückschreiben</comment>
+        <translation type="unfinished">Partition zurückschreiben</translation>
     </message>
     <message>
         <location filename="../src/filedialog.cpp" line="50"/>
@@ -1628,221 +1840,383 @@ Version 0.6.12-6, 6. Mai 2011</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="14"/>
         <source>Partitionen sichern/zurückschreiben</source>
-        <translation type="unfinished">Partitionen sichern/zurückschreiben</translation>
+        <translation type="obsolete">Partitionen sichern/zurückschreiben</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="27"/>
         <source>vorhandene Partitionen:</source>
-        <translation type="unfinished">vorhandene Partitionen:</translation>
+        <translation type="obsolete">vorhandene Partitionen:</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="40"/>
         <source>Sicherungsverzeichnis:</source>
-        <translation type="unfinished">Sicherungsverzeichnis:</translation>
+        <translation type="obsolete">Sicherungsverzeichnis:</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="53"/>
-        <location filename="../src/ui/fsarchiverMain.ui" line="632"/>
         <source>Partition sichern</source>
-        <translation type="unfinished">Partition sichern</translation>
+        <translation type="obsolete">Partition sichern</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="66"/>
-        <location filename="../src/ui/fsarchiverMain.ui" line="612"/>
         <source>Beenden</source>
-        <translation type="unfinished">Beenden</translation>
+        <translation type="obsolete">Beenden</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="111"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="14"/>
+        <source>Save/restore partition </source>
+        <translation>Partitionen sichern/zurückschreiben</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="30"/>
+        <source>Existing partitions:</source>
+        <translation>vorhandene Partitionen:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="46"/>
+        <source>Backup directory:</source>
+        <translation>Sicherungsverzeichnis:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="59"/>
+        <source>Stored partitions</source>
+        <translation>Partition sichern</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="72"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="540"/>
+        <source>Exit</source>
+        <translation>Beenden</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="117"/>
         <source>S</source>
-        <translation type="unfinished">S</translation>
+        <translation>S</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="130"/>
-        <source>vorgesehene Aktion:</source>
-        <translation type="unfinished">vorgesehene Aktion:</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="136"/>
+        <source>Proposed action:</source>
+        <translation>vorgesehene Aktion:</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="148"/>
-        <source>Partition mit
-fsArchiver sichern:</source>
-        <translation type="unfinished">Partition mit
-fsArchiver sichern:</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="157"/>
+        <source>Saving partition with fsArchiver:</source>
+        <translation>Partition mit fsArchiver
+sichern:</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="162"/>
-        <source>Partition mit fs-Archiver
-zurückschreiben</source>
-        <translation type="unfinished">Partition mit fs-Archiver
-zurückschreiben</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="173"/>
+        <source>Restore partition with fsArchiver:</source>
+        <translation>Partition mit fs-Archiver
+zurückschreiben:</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="200"/>
-        <location filename="../src/ui/fsarchiverMain.ui" line="641"/>
-        <source>Partition wiederherstellen</source>
-        <translation type="unfinished">Partition wiederherstellen</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="213"/>
-        <source>Dateiname der Sicherung:</source>
-        <translation type="unfinished">Dateiname der Sicherung:</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="210"/>
+        <source>Partition restore</source>
+        <translation>Partition wiederherstellen</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="226"/>
-        <source>Hinweise zu der Sicherung eingeben</source>
-        <translation type="unfinished">Hinweise zu der Sicherung eingeben</translation>
+        <source>Name the backup file:</source>
+        <translation>Hinweise zu der Sicherung eingeben:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="239"/>
-        <source>Kompressions-
-einstellung:</source>
-        <translation type="unfinished">Kompressions-
+        <source>Instructions to enter the backup</source>
+        <translation>Hinweise zu der Sicherung eingeben</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="252"/>
+        <source>Compression
+setting:</source>
+        <translation>Kompressions-
 einstellung:</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="263"/>
-        <source>vorhanden Sicherung überschreiben</source>
-        <translation type="unfinished">vorhanden Sicherung überschreiben</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="276"/>
+        <source>available backup overwrite</source>
+        <translation>vorhanden Sicherung überschreiben</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="291"/>
-        <source>Anzahl der zu sichernden 
-Dateien/Verzeichnisse:</source>
-        <translation type="unfinished">Anzahl der zu sichernden 
-Dateien/Verzeichnisse:</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="301"/>
+        <source>On the number saved
+Files/directories:</source>
+        <translation>bereits gesicherte 
+Datein/Verzeichnisse:</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="318"/>
-        <source>bereits gesicherte 
-Datein/Verzeichnisse:
-</source>
-        <translation type="unfinished">bereits gesicherte 
-Datein/Verzeichnisse:
-</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="362"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="316"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;elapsed time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="392"/>
-        <location filename="../src/ui/fsarchiverMain.ui" line="474"/>
-        <source>Minuten</source>
-        <translation type="unfinished">Minuten</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="334"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="387"/>
+        <source>minutes</source>
+        <translation>Minuten</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="418"/>
-        <source>Sekunden:</source>
-        <translation type="unfinished">Sekunden:</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="348"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="401"/>
+        <source>seconds</source>
+        <translation>Sekunden</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="431"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="355"/>
+        <source>already saved files/directories:</source>
+        <translation>bereits gesicherte 
+Datein/Verzeichnisse:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="369"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;expected time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="487"/>
-        <source>Sekunden</source>
-        <translation type="unfinished">Sekunden</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="511"/>
-        <source>Sicherung  verschlüsseln
-Schlüssel:</source>
-        <translation type="unfinished">Sicherung  verschlüsseln
+        <location filename="../src/ui/fsarchiverMain.ui" line="437"/>
+        <source>Encrypt backup key:</source>
+        <translation>Sicherung  verschlüsseln
 Schlüssel:</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="535"/>
-        <source>Anzahl Prozessorenkerne, die für
-fsarchiver verwendet werden sollen:</source>
-        <translation type="unfinished">Anzahl Prozessorenkerne, die für
+        <location filename="../src/ui/fsarchiverMain.ui" line="463"/>
+        <source>Number of processors cores for
+to be used fsarchiver:</source>
+        <translation>Anzahl Prozessorenkerne, die für
 fsarchiver verwendet werden sollen:</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="549"/>
-        <source>Archiv splitten auf DVD Größe</source>
-        <translation type="unfinished">Archiv splitten auf DVD Größe</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="477"/>
+        <source>Stock Split on DVD size</source>
+        <translation>Archiv splitten auf DVD Größe</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="584"/>
-        <source>Aktionen</source>
-        <translation type="unfinished">Aktionen</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="512"/>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="600"/>
-        <source>Einstellungen</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="528"/>
+        <source>Settings</source>
+        <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="606"/>
-        <source>Information</source>
-        <translation type="unfinished">Information</translation>
+        <location filename="../src/ui/fsarchiverMain.ui" line="551"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="578"/>
+        <source>Basic Settings</source>
+        <translation>Basiseinstellungen</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="560"/>
+        <source>Backup partition</source>
+        <translation>Partition sichern</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="569"/>
+        <source>Restore partition</source>
+        <translation>Partition wiederherstellen</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="596"/>
+        <source>Save MBR</source>
+        <translation>MBR sichern</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="605"/>
+        <source>Restore MBR</source>
+        <translation>MBR wiederherstellen</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="614"/>
+        <source>Restore directory </source>
+        <translation>Verzeichnis zurückschreiben</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="623"/>
+        <source>Save directory </source>
+        <translation>Verzeichnis sichern</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="632"/>
+        <source>Exit program</source>
+        <translation>Programm beenden</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="641"/>
+        <source>Save a parttion on network</source>
+        <translation>Partition sichern Netzwerk</translation>
+    </message>
+    <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="650"/>
+        <source>Restore a parttion on network</source>
+        <translation>Partition wiederherstellen</translation>
+    </message>
+    <message>
+        <source>vorgesehene Aktion:</source>
+        <translation type="obsolete">vorgesehene Aktion:</translation>
+    </message>
+    <message>
+        <source>Partition mit
+fsArchiver sichern:</source>
+        <translation type="obsolete">Partition mit
+fsArchiver sichern:</translation>
+    </message>
+    <message>
+        <source>Partition mit fs-Archiver
+zurückschreiben</source>
+        <translation type="obsolete">Partition mit fs-Archiver
+zurückschreiben</translation>
+    </message>
+    <message>
+        <source>Partition wiederherstellen</source>
+        <translation type="obsolete">Partition wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Dateiname der Sicherung:</source>
+        <translation type="obsolete">Dateiname der Sicherung:</translation>
+    </message>
+    <message>
+        <source>Hinweise zu der Sicherung eingeben</source>
+        <translation type="obsolete">Hinweise zu der Sicherung eingeben</translation>
+    </message>
+    <message>
+        <source>Kompressions-
+einstellung:</source>
+        <translation type="obsolete">Kompressions-
+einstellung:</translation>
+    </message>
+    <message>
+        <source>vorhanden Sicherung überschreiben</source>
+        <translation type="obsolete">vorhanden Sicherung überschreiben</translation>
+    </message>
+    <message>
+        <source>Anzahl der zu sichernden 
+Dateien/Verzeichnisse:</source>
+        <translation type="obsolete">Anzahl der zu sichernden 
+Dateien/Verzeichnisse:</translation>
+    </message>
+    <message>
+        <source>bereits gesicherte 
+Datein/Verzeichnisse:
+</source>
+        <translation type="obsolete">bereits gesicherte 
+Datein/Verzeichnisse:
+</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Minuten</source>
+        <translation type="obsolete">Minuten</translation>
+    </message>
+    <message>
+        <source>Sekunden:</source>
+        <translation type="obsolete">Sekunden:</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Sekunden</source>
+        <translation type="obsolete">Sekunden</translation>
+    </message>
+    <message>
+        <source>Sicherung  verschlüsseln
+Schlüssel:</source>
+        <translation type="obsolete">Sicherung  verschlüsseln
+Schlüssel:</translation>
+    </message>
+    <message>
+        <source>Anzahl Prozessorenkerne, die für
+fsarchiver verwendet werden sollen:</source>
+        <translation type="obsolete">Anzahl Prozessorenkerne, die für
+fsarchiver verwendet werden sollen:</translation>
+    </message>
+    <message>
+        <source>Archiv splitten auf DVD Größe</source>
+        <translation type="obsolete">Archiv splitten auf DVD Größe</translation>
+    </message>
+    <message>
+        <source>Aktionen</source>
+        <translation type="obsolete">Aktionen</translation>
+    </message>
+    <message>
+        <source>Einstellungen</source>
+        <translation type="obsolete">Einstellungen</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="534"/>
+        <source>Information</source>
+        <translation>Information</translation>
+    </message>
+    <message>
         <source>Basiseinstellungen</source>
-        <translation type="unfinished">Basiseinstellungen</translation>
+        <translation type="obsolete">Basiseinstellungen</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="659"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="587"/>
         <source>Information fsarchiver</source>
-        <translation type="unfinished">Information fsarchiver</translation>
+        <translation>Information fsarchiver</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="668"/>
         <source>MBR sichern</source>
-        <translation type="unfinished">MBR sichern</translation>
+        <translation type="obsolete">MBR sichern</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="677"/>
         <source>MBR wiederherstellen</source>
-        <translation type="unfinished">MBR wiederherstellen</translation>
+        <translation type="obsolete">MBR wiederherstellen</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="686"/>
         <source>Verzeichnis zurückschreiben</source>
-        <translation type="unfinished">Verzeichnis zurückschreiben</translation>
+        <translation type="obsolete">Verzeichnis zurückschreiben</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="695"/>
         <source>Verzeichnis sichern</source>
-        <translation type="unfinished">Verzeichnis sichern</translation>
+        <translation type="obsolete">Verzeichnis sichern</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="704"/>
         <source>Programm beenden</source>
-        <translation type="unfinished">Programm beenden</translation>
+        <translation type="obsolete">Programm beenden</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="713"/>
         <source>Partition sichern Netzwerk</source>
-        <translation type="unfinished">Partition sichern Netzwerk</translation>
+        <translation type="obsolete">Partition sichern Netzwerk</translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="722"/>
         <source>Partition wiederherstellen Netzwerk</source>
-        <translation type="unfinished">Partition wiederherstellen Netzwerk</translation>
+        <translation type="obsolete">Partition wiederherstellen Netzwerk</translation>
     </message>
 </context>
 <context>
@@ -1953,73 +2327,173 @@ fsarchiver verwendet werden sollen:</translation>
 <context>
     <name>dir_dialog</name>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="14"/>
-        <location filename="../src/ui/dir_dialog.ui" line="39"/>
         <source>Verzeichnis sichern/zurückschreiben</source>
-        <translation>Verzeichnis sichern/zurückschreiben</translation>
+        <translation type="obsolete">Verzeichnis sichern/zurückschreiben</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="26"/>
         <source>Schließen</source>
-        <translation>Schließen</translation>
+        <translation type="obsolete">Schließen</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="65"/>
         <source>zu sicherndes Verzeichnis:</source>
-        <translation>zu sicherndes Verzeichnis:</translation>
+        <translation type="obsolete">zu sicherndes Verzeichnis:</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="91"/>
         <source>Ort (Pfad) der Sicherung:</source>
-        <translation>Ort (Pfad) der Sicherung:</translation>
+        <translation type="obsolete">Ort (Pfad) der Sicherung:</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="114"/>
         <source>Kompression-
 einstellung:</source>
-        <translation>Kompression-
+        <translation type="obsolete">Kompression-
 einstellung:</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="128"/>
         <source>Sicherung  entschlüsseln
 Schlüssel:</source>
-        <translation>Sicherung  entschlüsseln
+        <translation type="obsolete">Sicherung  entschlüsseln
 Schlüssel:</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="152"/>
         <source>vorhandene Sicherung überschreiben</source>
-        <translation>vorhandene Sicherung überschreiben</translation>
+        <translation type="obsolete">vorhandene Sicherung überschreiben</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="165"/>
         <source>Sicherung an den Ursprungsort zurückschreiben</source>
-        <translation>Sicherung an den Ursprungsort zurückschreiben</translation>
+        <translation type="obsolete">Sicherung an den Ursprungsort zurückschreiben</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="193"/>
         <source>Anzahl der zu sichernden 
 Dateien/Verzeichnisse:</source>
-        <translation>Anzahl der zu sichernden 
+        <translation type="obsolete">Anzahl der zu sichernden 
 Dateien/Verzeichnisse:</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="220"/>
         <source>bereits gesicherte 
 Datein/Verzeichnisse:
 </source>
-        <translation>bereits gesicherte 
+        <translation type="obsolete">bereits gesicherte 
 Datein/Verzeichnisse:
 </translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="264"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Minuten</source>
+        <translation type="obsolete">Minuten</translation>
+    </message>
+    <message>
+        <source>Sekunden:</source>
+        <translation type="obsolete">Sekunden:</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Sekunden</source>
+        <translation type="obsolete">Sekunden</translation>
+    </message>
+    <message>
+        <source>Anzahl der Prozessorkerne, die für
+fsarchiver verwendet werden sollen:</source>
+        <translation type="obsolete">Anzahl der Prozessorkerne, die für
+fsarchiver verwendet werden sollen:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="14"/>
+        <location filename="../src/ui/dir_dialog.ui" line="39"/>
+        <source>Save/restore directory</source>
+        <extracomment>Verzeichnis sichern/zurückschreiben
+----------
+Verzeichnis sichern/zurückschreiben</extracomment>
+        <translation>Verzeichnis sichern/zurückschreiben</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="26"/>
+        <source>Close</source>
+        <extracomment>Schließen</extracomment>
+        <translation>Schließen</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="65"/>
+        <source>Saved directory</source>
+        <extracomment>zu sicherndes Verzeichnis:</extracomment>
+        <translation>zu sicherndes Verzeichnis</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="91"/>
+        <source>Location (path) of backup:</source>
+        <extracomment>Ort (Pfad) der Sicherung:</extracomment>
+        <translation>Ort (Pfad) der Sicherung:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="114"/>
+        <source>Compression setting:</source>
+        <extracomment>Kompressioneinstellung:</extracomment>
+        <translation>Kompressioneinstellung:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="127"/>
+        <source>Security key
+ to decrypt:</source>
+        <extracomment>Sicherung  entschlüsseln Schlüssel:</extracomment>
+        <translation>Sicherung  entschlüsseln
+Schlüssel:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="151"/>
+        <source>Overwrite existing backup</source>
+        <extracomment>vorhandene Sicherung überschreiben</extracomment>
+        <translation>vorhandene Sicherung überschreiben</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="164"/>
+        <source>Backup restore to the Origin</source>
+        <extracomment>Sicherung an den Ursprungsort zurückschreiben</extracomment>
+        <translation>Sicherung an den Ursprungsort zurückschreiben</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="192"/>
+        <source>On the number of
+captive Files/directories:</source>
+        <extracomment>Anzahl der zu sichernden Dateien/Verzeichnisse:</extracomment>
+        <translation>Anzahl der zu sichernden 
+Dateien/Verzeichnisse:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="219"/>
+        <source>Already backed
+Files/directories:</source>
+        <extracomment>bereits gesicherte Datein/Verzeichnisse:</extracomment>
+        <translation>bereits gesicherte Datein/Verzeichnisse:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/dir_dialog.ui" line="262"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;elapsed time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>vergangene Zeit:</extracomment>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -2027,23 +2501,33 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;vergangene Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="294"/>
-        <location filename="../src/ui/dir_dialog.ui" line="376"/>
-        <source>Minuten</source>
+        <location filename="../src/ui/dir_dialog.ui" line="292"/>
+        <location filename="../src/ui/dir_dialog.ui" line="374"/>
+        <source>minutes</source>
+        <extracomment>Minuten
+----------
+Minuten</extracomment>
+        <translatorcomment>Minuten</translatorcomment>
         <translation>Minuten</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="320"/>
-        <source>Sekunden:</source>
-        <translation>Sekunden:</translation>
+        <location filename="../src/ui/dir_dialog.ui" line="318"/>
+        <location filename="../src/ui/dir_dialog.ui" line="387"/>
+        <source>seconds</source>
+        <extracomment>Sekunden
+----------
+Sekunden</extracomment>
+        <translatorcomment>Sekunden</translatorcomment>
+        <translation>Sekunden</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="333"/>
+        <location filename="../src/ui/dir_dialog.ui" line="331"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;expected time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>noch zu erwartende Zeit:</extracomment>
         <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -2051,14 +2535,10 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;noch zu erwartende Zeit:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/ui/dir_dialog.ui" line="389"/>
-        <source>Sekunden</source>
-        <translation>Sekunden</translation>
-    </message>
-    <message>
-        <location filename="../src/ui/dir_dialog.ui" line="413"/>
-        <source>Anzahl der Prozessorkerne, die für
-fsarchiver verwendet werden sollen:</source>
+        <location filename="../src/ui/dir_dialog.ui" line="411"/>
+        <source>Number of processor cores
+for to be used fsarchiver:</source>
+        <extracomment>Anzahl der Prozessorkerne, die für fsarchiver verwendet werden sollen:</extracomment>
         <translation>Anzahl der Prozessorkerne, die für
 fsarchiver verwendet werden sollen:</translation>
     </message>
@@ -2066,154 +2546,290 @@ fsarchiver verwendet werden sollen:</translation>
 <context>
     <name>mbr_dialog</name>
     <message>
+        <source>MBR sichern/zurückschreiben</source>
+        <translation type="obsolete">MBR sichern/zurückschreiben</translation>
+    </message>
+    <message>
+        <source>nur den Bootloaderbereich wieder herstellen</source>
+        <translation type="obsolete">nur den Bootloaderbereich wieder herstellen</translation>
+    </message>
+    <message>
+        <source>Bootloaderbereich und die Partitionstabelle wieder herstellen</source>
+        <translation type="obsolete">Bootloaderbereich und die Partitionstabelle wieder herstellen</translation>
+    </message>
+    <message>
+        <source>Partitionstabelle wiederherstellen</source>
+        <translation type="obsolete">Partitionstabelle wiederherstellen</translation>
+    </message>
+    <message>
+        <source>Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).</source>
+        <translation type="obsolete">Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).</translation>
+    </message>
+    <message>
+        <source>Abbrechen</source>
+        <translation type="obsolete">Abbrechen</translation>
+    </message>
+    <message>
+        <source>MBR Sicherungsverzeichnis:</source>
+        <translation type="obsolete">MBR Sicherungsverzeichnis:</translation>
+    </message>
+    <message>
+        <source>MBR von dieser dieser Festplatte 
+sichern / wiederherstellen:</source>
+        <translation type="obsolete">MBR von dieser dieser Festplatte 
+sichern / wiederherstellen:</translation>
+    </message>
+    <message>
         <location filename="../src/ui/mbr_dialog.ui" line="14"/>
         <location filename="../src/ui/mbr_dialog.ui" line="74"/>
-        <source>MBR sichern/zurückschreiben</source>
+        <source>Save / restore MBR</source>
+        <extracomment>MBR sichern/zurückschreiben
+----------
+MBR sichern/zurückschreiben</extracomment>
         <translation>MBR sichern/zurückschreiben</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="27"/>
-        <source>nur den Bootloaderbereich wieder herstellen</source>
+        <source>Only the boot loader area to restore</source>
+        <extracomment>nur den Bootloaderbereich wieder herstellen</extracomment>
         <translation>nur den Bootloaderbereich wieder herstellen</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="32"/>
-        <source>Bootloaderbereich und die Partitionstabelle wieder herstellen</source>
+        <source>Bootloader area and restore the partition table</source>
+        <extracomment>Bootloaderbereich und die Partitionstabelle wieder herstellen</extracomment>
         <translation>Bootloaderbereich und die Partitionstabelle wieder herstellen</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="37"/>
-        <source>Partitionstabelle wiederherstellen</source>
+        <source>Restore partition table</source>
+        <extracomment>Partitionstabelle wiederherstellen</extracomment>
         <translation>Partitionstabelle wiederherstellen</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="42"/>
-        <source>Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).</source>
-        <translation>Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).</translation>
+        <source>Secretly area to restore. (Without Boot Loader and without partition table).</source>
+        <extracomment>Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).</extracomment>
+        <translation>Verborgenen Bereich wieder herstellen. (Ohne Bootloader und ohne Partitionstabelle).</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="61"/>
-        <source>Abbrechen</source>
+        <source>Cancel</source>
+        <extracomment>Abbrechen</extracomment>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/ui/mbr_dialog.ui" line="103"/>
-        <source>MBR Sicherungsverzeichnis:</source>
+        <location filename="../src/ui/mbr_dialog.ui" line="100"/>
+        <source>MBR backup directory:</source>
+        <extracomment>MBR Sicherungsverzeichnis:</extracomment>
         <translation>MBR Sicherungsverzeichnis:</translation>
     </message>
     <message>
-        <location filename="../src/ui/mbr_dialog.ui" line="116"/>
-        <source>MBR von dieser dieser Festplatte 
-sichern / wiederherstellen:</source>
-        <translation>MBR von dieser dieser Festplatte 
+        <location filename="../src/ui/mbr_dialog.ui" line="113"/>
+        <source>MBR of that drive this
+Backup / restore:</source>
+        <extracomment>MBR von dieser dieser Festplatte sichern / wiederherstellen:</extracomment>
+        <translation>MBR von dieser dieser Festplatte
 sichern / wiederherstellen:</translation>
     </message>
     <message>
-        <location filename="../src/ui/mbr_dialog.ui" line="130"/>
+        <location filename="../src/ui/mbr_dialog.ui" line="127"/>
         <source>sda</source>
+        <extracomment>sda</extracomment>
         <translation>sda</translation>
     </message>
     <message>
-        <location filename="../src/ui/mbr_dialog.ui" line="143"/>
+        <location filename="../src/ui/mbr_dialog.ui" line="140"/>
         <source>sdb</source>
+        <extracomment>sdb</extracomment>
         <translation>sdb</translation>
     </message>
     <message>
-        <location filename="../src/ui/mbr_dialog.ui" line="156"/>
+        <location filename="../src/ui/mbr_dialog.ui" line="153"/>
         <source>sdc</source>
+        <extracomment>sdc</extracomment>
         <translation>sdc</translation>
     </message>
     <message>
-        <location filename="../src/ui/mbr_dialog.ui" line="169"/>
+        <location filename="../src/ui/mbr_dialog.ui" line="166"/>
         <source>sdd</source>
+        <extracomment>sdd</extracomment>
         <translation>sdd</translation>
     </message>
 </context>
 <context>
     <name>setting_dialog</name>
     <message>
-        <location filename="../src/ui/setting.ui" line="14"/>
         <source>Basis-Einstellungen</source>
-        <translation>Basis-Einstellungen</translation>
+        <translation type="obsolete">Basis-Einstellungen</translation>
     </message>
     <message>
-        <location filename="../src/ui/setting.ui" line="26"/>
         <source>Einstellungen speichern</source>
-        <translation>Einstellungen speichern</translation>
+        <translation type="obsolete">Einstellungen speichern</translation>
     </message>
     <message>
-        <location filename="../src/ui/setting.ui" line="39"/>
         <source>Beenden</source>
-        <translation>Beenden</translation>
+        <translation type="obsolete">Beenden</translation>
     </message>
     <message>
-        <location filename="../src/ui/setting.ui" line="52"/>
         <source>Anzahl Prozessorenkerne,
 die für fsarchiver 
 verwendet werden sollen:</source>
-        <translation>Anzahl Prozessorenkerne,
+        <translation type="obsolete">Anzahl Prozessorenkerne,
 die für fsarchiver 
 verwendet werden sollen:</translation>
     </message>
     <message>
-        <location filename="../src/ui/setting.ui" line="67"/>
         <source>vorhandene Dateien 
 standardmäßig überschreiben</source>
-        <translation>vorhandene Dateien 
+        <translation type="obsolete">vorhandene Dateien 
 standardmäßig überschreiben</translation>
     </message>
     <message>
-        <location filename="../src/ui/setting.ui" line="81"/>
         <source>Hinweise zur Sicherung
 standardmäßig aktivieren</source>
-        <translation>Hinweise zur Sicherung
+        <translation type="obsolete">Hinweise zur Sicherung
 standardmäßig aktivieren</translation>
     </message>
     <message>
-        <location filename="../src/ui/setting.ui" line="95"/>
         <source>Verschlüsselung
 standardmäßig aktivieren</source>
-        <translation>Verschlüsselung
+        <translation type="obsolete">Verschlüsselung
 standardmäßig aktivieren</translation>
     </message>
     <message>
-        <location filename="../src/ui/setting.ui" line="129"/>
         <source>Standard-
 kompression:</source>
-        <translation>Standard-
+        <translation type="obsolete">Standard-
 kompression:</translation>
     </message>
     <message>
-        <location filename="../src/ui/setting.ui" line="143"/>
         <source>Verzeichnisse 
 standardmäßig an 
 den ursprünglichen 
 Ort zurückschreiben</source>
-        <translation>Verzeichnisse 
+        <translation type="obsolete">Verzeichnisse 
 standardmäßig an 
 den ursprünglichen 
 Ort zurückschreiben</translation>
     </message>
     <message>
-        <location filename="../src/ui/setting.ui" line="159"/>
         <source>Archiv-Datei auf DVD
 Größe aufteilen</source>
+        <translation type="obsolete">Archiv-Datei auf DVD
+Größe aufteilen</translation>
+    </message>
+    <message>
+        <source>Passwort für Netzwerk 
+anzeigen</source>
+        <translation type="obsolete">Passwort für Netzwerk 
+anzeigen</translation>
+    </message>
+    <message>
+        <source>Netzwerkeingabedaten
+speichern </source>
+        <translation type="obsolete">Netzwerkeingabedaten
+speichern </translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="14"/>
+        <source>Basic settings</source>
+        <extracomment>Basis-Einstellungen</extracomment>
+        <translation>Basis-Einstellungen</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="26"/>
+        <source>Save Settings</source>
+        <extracomment>Einstellungen speichern</extracomment>
+        <translation>Einstellungen speichern</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="39"/>
+        <source>Exit</source>
+        <extracomment>Beenden</extracomment>
+        <translation>Beenden</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="52"/>
+        <source>Number of processors
+cores, for fsarchiver
+should be used:</source>
+        <extracomment>Anzahl Prozessorenkerne, * die für fsarchiver * verwendet werden sollen:</extracomment>
+        <translation>Anzahl Prozessorenkerne,
+die für fsarchiver
+verwendet werden sollen:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="67"/>
+        <source>existing files 
+by default override</source>
+        <extracomment>vorhandene Dateien * standardmäßig überschreiben</extracomment>
+        <translation>vorhandene Dateien
+standardmäßig überschreiben</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="81"/>
+        <source>Backup note
+enable by default</source>
+        <extracomment>Hinweise zur Sicherung * standardmäßig aktivieren</extracomment>
+        <translation>Hinweise zur Sicherung
+standardmäßig aktivieren</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="95"/>
+        <source>Enable encryption
+by default</source>
+        <extracomment>Verschlüsselung * standardmäßig aktivieren</extracomment>
+        <translation>Verschlüsselung
+standardmäßig aktivieren</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="129"/>
+        <source>Standard
+compression:</source>
+        <extracomment>Standard*kompression:</extracomment>
+        <translation>Standard
+kompression:</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="143"/>
+        <source>Directories by default
+write back to 
+the original 
+location</source>
+        <extracomment>Verzeichnisse * standardmäßig an * den ursprünglichen * Ort zurückschreiben</extracomment>
+        <translation>Verzeichnisse
+standardmäßig an
+den ursprünglichen
+Ort zurückschreiben</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="159"/>
+        <source>Archive file
+size divided on DVD</source>
+        <extracomment>Archiv-Datei auf DVD * Größe aufteilen</extracomment>
         <translation>Archiv-Datei auf DVD
 Größe aufteilen</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="173"/>
-        <source>Passwort für Netzwerk 
-anzeigen</source>
-        <translation>Passwort für Netzwerk 
+        <source>Password for network&apos;s view</source>
+        <extracomment>Passwort für Netzwerk * anzeigen</extracomment>
+        <translation>Passwort für Netzwerk
 anzeigen</translation>
     </message>
     <message>
-        <location filename="../src/ui/setting.ui" line="187"/>
-        <source>Netzwerkeingabedaten
-speichern </source>
+        <source>Password for network&apos;s</source>
+        <extracomment>Passwort für Netzwerk * anzeigen</extracomment>
+        <translation type="obsolete">Passwort für Netzwerk
+anzeigen</translation>
+    </message>
+    <message>
+        <location filename="../src/ui/setting.ui" line="186"/>
+        <source>Network input data save</source>
+        <extracomment>Netzwerkeingabedaten * speichern</extracomment>
         <translation>Netzwerkeingabedaten
-speichern </translation>
+speichern</translation>
     </message>
 </context>
 </TS>

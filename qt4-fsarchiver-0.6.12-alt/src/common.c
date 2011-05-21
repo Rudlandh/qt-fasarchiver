@@ -76,23 +76,23 @@ char *format_size(u64 size, char *text, int max, char units)
     u64 llTeraB = 1024LL * llGigaB;
     
     if ((units=='b') || ((units=='h') && size < llKiloB)) // In Bytes
-    {   snprintf(text, max, tr("%lld bytes"), (long long)size);
+    {   snprintf(text, max, _("%lld bytes"), (long long)size);
     }
     else if ((units=='k') || ((units=='h') && size < llMegaB)) // In KiloBytes
     {   dSize = ((double)size) / ((double)llKiloB);
-        snprintf(text, max, tr("%.2f KB"), (float) dSize);
+        snprintf(text, max, _("%.2f KB"), (float) dSize);
     }
     else if ((units=='m') || ((units=='h') && size < llGigaB)) // In MegaBytes
     {   dSize = ((double)size) / ((double)llMegaB);
-        snprintf(text, max, tr("%.2f MB"), (float) dSize);
+        snprintf(text, max, _("%.2f MB"), (float) dSize);
     }
     else if ((units=='g') || ((units=='h') && size < llTeraB)) // In Gigabytes
     {   dSize = ((double)size) / ((double)llGigaB);
-        snprintf(text, max, tr("%.2f GB"), (float) dSize);
+        snprintf(text, max, _("%.2f GB"), (float) dSize);
     }
     else // bigger than 1TB
     {   dSize = ((double)size) / ((double)llTeraB);
-        snprintf(text, max, tr("%.2f TB"), (float) dSize);
+        snprintf(text, max, _("%.2f TB"), (float) dSize);
     }
     
     return text;
@@ -182,7 +182,7 @@ int is_dir_empty(char *path)
     
     dirdesc = opendir(path);
     if (!dirdesc)
-    {      sysprintf(tr("cannot open directory %s\n"), path);
+    {      sysprintf(_("cannot open directory %s\n"), path);
         return -1;
     }
     
@@ -190,7 +190,7 @@ int is_dir_empty(char *path)
     {
         concatenate_paths(fullpath, sizeof(fullpath), path, dir->d_name);
         if (lstat64(fullpath, &statbuf)!=0)
-        {   sysprintf (tr("cannot stat %s\n"), fullpath);
+        {   sysprintf (_("cannot stat %s\n"), fullpath);
             closedir(dirdesc);
             return -1;
         }
@@ -323,28 +323,28 @@ int exec_command(char *command, int cmdbufsize, int *exitst, char *stdoutbuf, in
     wordexp(command, &p, 0); // will require wordfree to free the memory
     for(i=0; (i < p.we_wordc) && (i<max_argv); i++)
     {   argv[i]=p.we_wordv[i];
-        msgprintf(MSG_DEBUG1, tr("argv[%d]=[%s]\n"), i, argv[i]);
+        msgprintf(MSG_DEBUG1, _("argv[%d]=[%s]\n"), i, argv[i]);
     }
     
     // get the full path to the program
     if (getpathtoprog(pathtoprog, sizeof(pathtoprog), argv[0])!=0)
-    {   errprintf(tr("program [%s] no found in PATH or bad permissions on that program\n"), argv[0]);
+    {   errprintf(_("program [%s] no found in PATH or bad permissions on that program\n"), argv[0]);
         wordfree(&p);
         return -1;
     }
-    msgprintf(MSG_VERB2, tr("getpathtoprog(%s)=[%s]\n"), argv[0], pathtoprog);
+    msgprintf(MSG_VERB2, _("getpathtoprog(%s)=[%s]\n"), argv[0], pathtoprog);
     
     // execute the command
     if ((pipe(pfildes1)==-1) || (pipe(pfildes2)==-1))
-    {   errprintf(tr("pipe() failed\n"));
+    {   errprintf(_("pipe() failed\n"));
         wordfree(&p);
         return -1;
     }
     
-    msgprintf(MSG_VERB1, tr("executing [%s]...\n"), command);
+    msgprintf(MSG_VERB1, _("executing [%s]...\n"), command);
     
     if ((pid = fork()) == -1)
-    {   sysprintf(tr("fork() failed\n"));
+    {   sysprintf(_("fork() failed\n"));
         wordfree(&p);
         return -1;
     }
@@ -357,7 +357,7 @@ int exec_command(char *command, int cmdbufsize, int *exitst, char *stdoutbuf, in
         dup2(pfildes2[1],2); // make 1 same as write-to end of pipe
         close(pfildes2[1]); // close excess fildes
         execvp(pathtoprog, argv);
-        errprintf(tr("execvp(%s) failed\n"), pathtoprog); // still around? exec failed
+        errprintf(_("execvp(%s) failed\n"), pathtoprog); // still around? exec failed
         wordfree(&p);
         exit(EXIT_FAILURE);
     }
@@ -398,7 +398,7 @@ int exec_command(char *command, int cmdbufsize, int *exitst, char *stdoutbuf, in
         if ((stderrbuf!=NULL) && (errpos+1 < stderrsize))
             res=read(mystderr, stderrbuf+errpos, stderrsize-errpos-1);
         
-        msgprintf(MSG_VERB1, tr("command [%s] returned %d\n"), command, WEXITSTATUS(status));
+        msgprintf(MSG_VERB1, _("command [%s] returned %d\n"), command, WEXITSTATUS(status));
         if (exitst)
             *exitst=WEXITSTATUS(status);
         
@@ -444,7 +444,7 @@ int path_force_extension(char *buf, int bufsize, char *origpath, char *ext)
     int oldlen, extlen;
     
     if (!buf || !origpath || !ext)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return -1;
     }
     
@@ -512,12 +512,12 @@ int get_parent_dir_time_attrib(char *filepath, char *parentdirbuf, int bufsize, 
     extract_dirpath(filepath, parentdirbuf, bufsize);
     
     if (lstat64(parentdirbuf, &statbuf)!=0)
-    {   sysprintf(tr("cannot lstat64(%s)\n"), parentdirbuf);
+    {   sysprintf(_("cannot lstat64(%s)\n"), parentdirbuf);
         return -1;
     }
     
     if (!S_ISDIR(statbuf.st_mode))
-    {   sysprintf(tr("error: [%s] is not a directory\n"), parentdirbuf);
+    {   sysprintf(_("error: [%s] is not a directory\n"), parentdirbuf);
         return -1;
     }
     
@@ -533,12 +533,12 @@ int get_parent_dir_time_attrib(char *filepath, char *parentdirbuf, int bufsize, 
 int stats_show(cstats stats, int fsid)
 {
     /*
-     msgprintf(MSG_FORCE, tr("Statistics for filesystem %d\n"), fsid);
-    msgprintf(MSG_FORCE, tr("* files successfully processed:....regfiles=%lld, directories=%lld, "
+     msgprintf(MSG_FORCE, _("Statistics for filesystem %d\n"), fsid);
+    msgprintf(MSG_FORCE, _("* files successfully processed:....regfiles=%lld, directories=%lld, "
         "symlinks=%lld, hardlinks=%lld, specials=%lld\n"), 
         (long long)stats.cnt_regfile, (long long)stats.cnt_dir, (long long)stats.cnt_symlink, 
         (long long)stats.cnt_hardlink, (long long)stats.cnt_special);
-    msgprintf(MSG_FORCE, tr("* files with errors:...............regfiles=%lld, directories=%lld, "
+    msgprintf(MSG_FORCE, _("* files with errors:...............regfiles=%lld, directories=%lld, "
         "symlinks=%lld, hardlinks=%lld, specials=%lld\n"), 
         (long long)stats.err_regfile, (long long)stats.err_dir, (long long)stats.err_symlink, 
         (long long)stats.err_hardlink, (long long)stats.err_special);
@@ -604,7 +604,7 @@ int get_path_to_volume(char *newvolbuf, int bufsize, char *basepath, long curvol
     int pathlen;
     
     if ((pathlen=strlen(basepath))<4) // all archives terminates with ".fsa"
-    {   errprintf(tr("archive has an invalid basepath: [%s]\n"), basepath);
+    {   errprintf(_("archive has an invalid basepath: [%s]\n"), basepath);
         return -1;
     }
     

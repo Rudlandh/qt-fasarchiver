@@ -58,7 +58,7 @@ int uncompress_block_lzo(u64 compsize, u64 *origsize, u8 *origbuf, u64 origbufsi
         case LZO_E_OUT_OF_MEMORY:
             return FSAERR_ENOMEM;
         default:
-            errprintf(tr("lzo1x_decompress_safe() failed, res=%d\n"), res);
+            errprintf(_("lzo1x_decompress_safe() failed, res=%d\n"), res);
             return FSAERR_UNKNOWN;
     }
     

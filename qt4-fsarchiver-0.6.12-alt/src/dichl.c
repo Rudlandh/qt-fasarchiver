@@ -64,7 +64,7 @@ int dichl_add(cdichl *d, u64 key1, u64 key2, char *str)
     int len;
     
     if (d==NULL || !str)
-    {   errprintf(tr("invalid parameters\n"));
+    {   errprintf(_("invalid parameters\n"));
         return -1;
     }
     len=strlen(str);
@@ -72,7 +72,7 @@ int dichl_add(cdichl *d, u64 key1, u64 key2, char *str)
     // allocate object
     lnew=malloc(sizeof(cdichlitem));
     if (!lnew)
-    {   errprintf(tr("malloc(%ld) failed: out of memory\n"), (long)sizeof(cdichlitem));
+    {   errprintf(_("malloc(%ld) failed: out of memory\n"), (long)sizeof(cdichlitem));
         return -1;
     }
     memset(lnew, 0, sizeof(cdichlitem));
@@ -80,7 +80,7 @@ int dichl_add(cdichl *d, u64 key1, u64 key2, char *str)
     if (!lnew->str)
     {   
         free(lnew);
-        errprintf(tr("malloc(%ld) failed: out of memory\n"), (long)len+1);
+        errprintf(_("malloc(%ld) failed: out of memory\n"), (long)len+1);
         return -1;
     }
     
@@ -100,7 +100,7 @@ int dichl_add(cdichl *d, u64 key1, u64 key2, char *str)
         {   
             last=item;
             if (item->key1==key1 && item->key2==key2)
-            {   errprintf(tr("dichl_add_internal(): item with key1=%ld and key2=%ld is already in dico\n"), (long)item->key1, (long)item->key2);
+            {   errprintf(_("dichl_add_internal(): item with key1=%ld and key2=%ld is already in dico\n"), (long)item->key1, (long)item->key2);
                 return -1;
             }
         }
@@ -116,7 +116,7 @@ int dichl_get(cdichl *d, u64 key1, u64 key2, char *buf, int bufsize)
     int len;
     
     if (d==NULL || !buf)
-    {   errprintf(tr("invalid dichl\n"));
+    {   errprintf(_("invalid dichl\n"));
         return -1;
     }
     

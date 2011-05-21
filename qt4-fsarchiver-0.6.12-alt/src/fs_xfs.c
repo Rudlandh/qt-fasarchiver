@@ -44,7 +44,7 @@ int xfs_mkfs(cdico *d, char *partition)
     u64 temp64;
     
     if (exec_command(command, sizeof(command), NULL, NULL, 0, NULL, 0, "mkfs.xfs -V")!=0)
-    {   errprintf(tr("mkfs.xfs not found. please install xfsprogs on your system or check the PATH.\n"));
+    {   errprintf(_("mkfs.xfs not found. please install xfsprogs on your system or check the PATH.\n"));
         return -1;
     }
     
@@ -56,7 +56,7 @@ int xfs_mkfs(cdico *d, char *partition)
         strlcatf(options, sizeof(options), " -b size=%ld ", (long)temp64);
     
     if (exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "mkfs.xfs -f %s %s", partition, options)!=0 || exitst!=0)
-    {   errprintf(tr("command [%s] failed\n"), command);
+    {   errprintf(_("command [%s] failed\n"), command);
         return -1;
     }
     
@@ -68,7 +68,7 @@ int xfs_mkfs(cdico *d, char *partition)
     if (options[0])
     {
         if (exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "xfs_admin %s %s", options, partition)!=0 || exitst!=-0)
-        {   errprintf(tr("command [%s] failed\n"), command);
+        {   errprintf(_("command [%s] failed\n"), command);
             return -1;
         }
     }
@@ -99,7 +99,7 @@ int xfs_getinfo(cdico *d, char *devname)
     // ---- check it's an XFS file system
     if (be32_to_cpu(sb.sb_magicnum) != XFS_SUPER_MAGIC)
     {   ret=-1;
-        msgprintf(3, tr("sb.sb_magicnum!=XFS_SUPER_MAGIC\n"));
+        msgprintf(3, _("sb.sb_magicnum!=XFS_SUPER_MAGIC\n"));
         goto xfs_read_sb_close;
     }
     
@@ -119,11 +119,11 @@ int xfs_getinfo(cdico *d, char *devname)
     temp32=be32_to_cpu(sb.sb_blocksize);
     if ((temp32%512!=0) || (temp32<512) || (temp32>65536))
     {   ret=-1;
-        msgprintf(3, tr("xfs_blksize=[%ld] is an invalid xfs block size\n"), (long)temp32);
+        msgprintf(3, _("xfs_blksize=[%ld] is an invalid xfs block size\n"), (long)temp32);
         goto xfs_read_sb_close;
     }
     dico_add_u64(d, 0, FSYSHEADKEY_FSXFSBLOCKSIZE, temp32);
-    msgprintf(MSG_DEBUG1, tr("xfs_blksize=[%ld]\n"), (long)temp32);
+    msgprintf(MSG_DEBUG1, _("xfs_blksize=[%ld]\n"), (long)temp32);
     
     // ---- minimum fsarchiver version required to restore
     dico_add_u64(d, 0, FSYSHEADKEY_MINFSAVERSION, FSA_VERSION_BUILD(0, 6, 4, 0));
@@ -151,21 +151,21 @@ int xfs_test(char *devname)
     
     if ((fd=open64(devname, O_RDONLY|O_LARGEFILE))<0)
     {
-        msgprintf(MSG_DEBUG1, tr("open64(%s) failed\n"), devname);
+        msgprintf(MSG_DEBUG1, _("open64(%s) failed\n"), devname);
         return false;
     }
     
     memset(&sb, 0, sizeof(sb));
     if (read(fd, &sb, sizeof(sb))!=sizeof(sb))
     {   close(fd);
-        msgprintf(MSG_DEBUG1, tr("read failed\n"));
+        msgprintf(MSG_DEBUG1, _("read failed\n"));
         return false;
     }
     
     // ---- check it's an XFS file system
     if (be32_to_cpu(sb.sb_magicnum) != XFS_SUPER_MAGIC)
     {   close(fd);
-        msgprintf(MSG_DEBUG1, tr("(be32_to_cpu(sb.sb_magicnum)=%.8x) != (XFS_SUPER_MAGIC=%.8x)\n"), be32_to_cpu(sb.sb_magicnum), XFS_SUPER_MAGIC);
+        msgprintf(MSG_DEBUG1, _("(be32_to_cpu(sb.sb_magicnum)=%.8x) != (XFS_SUPER_MAGIC=%.8x)\n"), be32_to_cpu(sb.sb_magicnum), XFS_SUPER_MAGIC);
         return false;
     }
     

@@ -46,7 +46,7 @@ int reiserfs_mkfs(cdico *d, char *partition)
     
     // ---- check mkreiserfs is available
     if (exec_command(command, sizeof(command), NULL, NULL, 0, NULL, 0, "mkreiserfs -V")!=0)
-    {   errprintf(tr("mkreiserfs not found. please install reiserfsprogs-3.6 on your system or check the PATH.\n"));
+    {   errprintf(_("mkreiserfs not found. please install reiserfsprogs-3.6 on your system or check the PATH.\n"));
         return -1;
     }
     
@@ -62,7 +62,7 @@ int reiserfs_mkfs(cdico *d, char *partition)
         strlcatf(options, sizeof(options), " -u %s ", buffer);
     
     if (exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "mkreiserfs -f %s %s", partition, options)!=0 || exitst!=0)
-    {   errprintf(tr("command [%s] failed\n"), command);
+    {   errprintf(_("command [%s] failed\n"), command);
         return -1;
     }
     
@@ -80,20 +80,20 @@ int reiserfs_getinfo(cdico *d, char *devname)
     
     if ((fd=open64(devname, O_RDONLY|O_LARGEFILE))<0)
     {   ret=-1;
-        errprintf(tr("cannot open(%s, O_RDONLY)\n"), devname);
+        errprintf(_("cannot open(%s, O_RDONLY)\n"), devname);
         goto reiserfs_read_sb_return;
     }
     
     if (lseek(fd, REISERFS_DISK_OFFSET_IN_BYTES, SEEK_SET)!=REISERFS_DISK_OFFSET_IN_BYTES)
     {   ret=-2;
-        errprintf(tr("cannot lseek(fd, REISERFS_DISK_OFFSET_IN_BYTES, SEEK_SET) on %s\n"), devname);
+        errprintf(_("cannot lseek(fd, REISERFS_DISK_OFFSET_IN_BYTES, SEEK_SET) on %s\n"), devname);
         goto reiserfs_read_sb_close;
     }
     
     res=read(fd, &sb, sizeof(sb));
     if (res!=sizeof(sb))
     {   ret=-3;
-        errprintf(tr("cannot read the reiserfs superblock on device [%s]\n"), devname);
+        errprintf(_("cannot read the reiserfs superblock on device [%s]\n"), devname);
         goto reiserfs_read_sb_close;
     }
     
@@ -103,14 +103,14 @@ int reiserfs_getinfo(cdico *d, char *devname)
         dico_add_string(d, 0, FSYSHEADKEY_FSVERSION, "reiserfs-3.6");
     else
     {   ret=-4;
-        errprintf(tr("magic different from expectations superblock on %s: magic=[%s]\n"), devname, sb.s_v1.s_magic);
+        errprintf(_("magic different from expectations superblock on %s: magic=[%s]\n"), devname, sb.s_v1.s_magic);
         goto reiserfs_read_sb_close;
     }
     
-    msgprintf(MSG_DEBUG1, tr("reiserfs_magic=[%s]\n"), sb.s_v1.s_magic);
+    msgprintf(MSG_DEBUG1, _("reiserfs_magic=[%s]\n"), sb.s_v1.s_magic);
     
     // ---- label
-    msgprintf(MSG_DEBUG1, tr("reiserfs_label=[%s]\n"), sb.s_label);
+    msgprintf(MSG_DEBUG1, _("reiserfs_label=[%s]\n"), sb.s_label);
     dico_add_string(d, 0, FSYSHEADKEY_FSLABEL, (char*)sb.s_label);
     
     // ---- uuid
@@ -119,12 +119,12 @@ int reiserfs_getinfo(cdico *d, char *devname)
     memset(uuid, 0, sizeof(uuid));
     uuid_unparse_lower((u8*)sb.s_uuid, uuid);
     dico_add_string(d, 0, FSYSHEADKEY_FSUUID, uuid);
-    msgprintf(MSG_DEBUG1, tr("reiserfs_uuid=[%s]\n"), uuid);
+    msgprintf(MSG_DEBUG1, _("reiserfs_uuid=[%s]\n"), uuid);
     
     // ---- block size
     temp16=le16_to_cpu(sb.s_v1.s_blocksize);
     dico_add_u64(d, 0, FSYSHEADKEY_FSREISERBLOCKSIZE, temp16);
-    msgprintf(MSG_DEBUG1, tr("reiserfs_blksize=[%ld]\n"), (long)temp16);
+    msgprintf(MSG_DEBUG1, _("reiserfs_blksize=[%ld]\n"), (long)temp16);
     
     // ---- minimum fsarchiver version required to restore
     dico_add_u64(d, 0, FSYSHEADKEY_MINFSAVERSION, FSA_VERSION_BUILD(0, 6, 4, 0));

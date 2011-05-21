@@ -63,7 +63,7 @@ int uncompress_block_gzip(u64 compsize, u64 *origsize, u8 *origbuf, u64 origbufs
         case Z_MEM_ERROR:
             return FSAERR_ENOMEM;
         default:
-            errprintf(tr("uncompress() failed, res=%d\n"), res);
+            errprintf(_("uncompress() failed, res=%d\n"), res);
             return FSAERR_UNKNOWN;
     }
 }

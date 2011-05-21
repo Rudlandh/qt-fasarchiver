@@ -42,7 +42,7 @@ int crypto_init()
     // check that header files and library match
     if (!gcry_check_version(FSA_GCRYPT_VERSION))
     {
-        errprintf(tr("libgcrypt version mismatch\n"));
+        errprintf(_("libgcrypt version mismatch\n"));
         return -1;
     }
     
@@ -72,21 +72,21 @@ int crypto_blowfish(u64 insize, u64 *outsize, u8 *inbuf, u8 *outbuf, u8 *passwor
     
     if ((res=gcry_cipher_open(&hd, GCRY_CIPHER_BLOWFISH, GCRY_CIPHER_MODE_CFB, GCRY_CIPHER_SECURE))!=0)
     {
-        errprintf(tr("gcry_cipher_open() failed\n"));
+        errprintf(_("gcry_cipher_open() failed\n"));
         gcry_cipher_close(hd);
         return -1;
     }
     
     if ((res=gcry_cipher_setkey(hd, password, passlen))!=0)
     {
-        errprintf(tr("gcry_cipher_setkey() failed\n"));
+        errprintf(_("gcry_cipher_setkey() failed\n"));
         gcry_cipher_close(hd);
         return -1;
     }
     
     if (gcry_cipher_setiv(hd, iv, strlen((char*)iv)))
     {
-        errprintf(tr("gcry_cipher_setiv() failed\n"));
+        errprintf(_("gcry_cipher_setiv() failed\n"));
         gcry_cipher_close(hd);
         return -1;
     }
@@ -100,7 +100,7 @@ int crypto_blowfish(u64 insize, u64 *outsize, u8 *inbuf, u8 *outbuf, u8 *passwor
             res=gcry_cipher_decrypt(hd, outbuf, insize, inbuf, insize);
             break;
         default: // invalid
-            errprintf(tr("invalid parameter: enc=%d\n"), (int)enc);
+            errprintf(_("invalid parameter: enc=%d\n"), (int)enc);
             gcry_cipher_close(hd);
             return -1;
     }

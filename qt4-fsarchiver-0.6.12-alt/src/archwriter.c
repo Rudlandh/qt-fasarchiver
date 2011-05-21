@@ -88,33 +88,33 @@ int archwriter_create(carchwriter *ai)
     // if the archive already exists and is a not regular file
     res=stat64(ai->volpath, &st);
     if (res==0 && !S_ISREG(st.st_mode))
-    {   errprintf(tr("%s already exists, and is not a regular file.\n"), ai->basepath);
+    {   errprintf(_("%s already exists, and is not a regular file.\n"), ai->basepath);
         return -1;
     }
     else if ((g_options.overwrite==0) && (res==0) && S_ISREG(st.st_mode)) // archive exists and is a regular file
-    {   errprintf(tr("%s already exists, please remove it first.\n"), ai->basepath);
+    {   errprintf(_("%s already exists, please remove it first.\n"), ai->basepath);
         return -1;
     }
     
     // check if it's a network filesystem
-    /*snprintf(testpath, sizeof(testpath), tr("%s.test"), ai->volpath);
+    /*snprintf(testpath, sizeof(testpath), _("%s.test"), ai->volpath);
     if (((tempfd=open64(testpath, basicflags, archperm))<0) ||
         (fstatfs(tempfd, &svfs)!=0) ||
         (close(tempfd)!=0) ||
         (unlink(testpath)!=0))
-    {   errprintf(tr("Cannot check the filesystem type on file %s\n"), testpath);
+    {   errprintf(_("Cannot check the filesystem type on file %s\n"), testpath);
         return -1;
     }
     
     if (svfs.f_type==FSA_CIFS_MAGIC_NUMBER || svfs.f_type==FSA_SMB_SUPER_MAGIC)
-    {   sysprintf (tr("writing an archive on a smbfs/cifs filesystem is "
+    {   sysprintf (_("writing an archive on a smbfs/cifs filesystem is "
             "not allowed, since it can produce corrupt archives.\n"));
         return -1;
     }*/
     
     ai->archfd=open64(ai->volpath, archflags, archperm);
     if (ai->archfd < 0)
-    {   sysprintf (tr("cannot create archive %s\n"), ai->volpath);
+    {   sysprintf (_("cannot create archive %s\n"), ai->volpath);
         return -1;
     }
     ai->newarch=true;
@@ -123,7 +123,7 @@ int archwriter_create(carchwriter *ai)
     
     /* lockf is causing corruption when the archive is written on a smbfs/cifs filesystem */
     /*if (lockf(ai->archfd, F_LOCK, 0)!=0)
-    {   sysprintf(tr("Cannot lock archive file: %s\n"), ai->volpath);
+    {   sysprintf(_("Cannot lock archive file: %s\n"), ai->volpath);
         close(ai->archfd);
         return -1;
     }*/
@@ -167,9 +167,9 @@ int archwriter_remove(carchwriter *ai)
             if (strlist_getitem(&ai->vollist, i, volpath, sizeof(volpath))==0)
             {
                 if (unlink(volpath)==0)
-                    msgprintf(MSG_FORCE, tr("removed %s\n"), volpath);
+                    msgprintf(MSG_FORCE, _("removed %s\n"), volpath);
                 else
-                    errprintf(tr("cannot remove %s\n"), volpath);
+                    errprintf(_("cannot remove %s\n"), volpath);
             }
         }
     }
@@ -192,22 +192,22 @@ int archwriter_write_buffer(carchwriter *ai, struct s_writebuf *wb)
     assert(wb);
     
     if (wb->size <=0)
-    {   errprintf(tr("wb->size=%ld\n"), (long)wb->size);
+    {   errprintf(_("wb->size=%ld\n"), (long)wb->size);
         return -1;
     }
     
     if ((lres=write(ai->archfd, (char*)wb->data, (long)wb->size))!=(long)wb->size)
     {
-        errprintf(tr("write(size=%ld) returned %ld\n"), (long)wb->size, (long)lres);
+        errprintf(_("write(size=%ld) returned %ld\n"), (long)wb->size, (long)lres);
         if ((lres>0) && (lres < (long)wb->size)) // probably "no space left"
         {
             if (fstatvfs64(ai->archfd, &statvfsbuf)!=0)
-            {   sysprintf(tr("fstatvfs(fd=%d) failed\n"), ai->archfd);
+            {   sysprintf(_("fstatvfs(fd=%d) failed\n"), ai->archfd);
                 return -1;
             }
             
             u64 freebytes = statvfsbuf.f_bfree * statvfsbuf.f_bsize;
-            errprintf(tr("Can't write to the archive file. Space on device is %s. \n"
+            errprintf(_("Can't write to the archive file. Space on device is %s. \n"
                 "If the archive is being written to a FAT filesystem, you may have reached \n"
                 "the maximum filesize that it can handle (in general 2 GB)\n"), 
                 format_size(freebytes, textbuf, sizeof(textbuf), 'h'));
@@ -215,7 +215,7 @@ int archwriter_write_buffer(carchwriter *ai, struct s_writebuf *wb)
         }
         else // another error
         {
-            sysprintf(tr("write(size=%ld) failed\n"), (long)wb->size);
+            sysprintf(_("write(size=%ld) failed\n"), (long)wb->size);
             return -1;
         }
     }
@@ -252,12 +252,12 @@ int archwriter_write_volheader(carchwriter *ai)
     assert(ai);
     
     if ((wb=writebuf_alloc())==NULL)
-    {   msgprintf(MSG_STACK, tr("writebuf_alloc() failed\n"));
+    {   msgprintf(MSG_STACK, _("writebuf_alloc() failed\n"));
         return -1;
     }
     
     if ((voldico=dico_alloc())==NULL)
-    {   msgprintf(MSG_STACK, tr("voldico=dico_alloc() failed\n"));
+    {   msgprintf(MSG_STACK, _("voldico=dico_alloc() failed\n"));
         return -1;
     }
     
@@ -269,13 +269,13 @@ int archwriter_write_volheader(carchwriter *ai)
     
     // write header to buffer
     if (writebuf_add_header(wb, voldico, FSA_MAGIC_VOLH, ai->archid, FSA_FILESYSID_NULL)!=0)
-    {   errprintf(tr("archio_write_header() failed\n"));
+    {   errprintf(_("archio_write_header() failed\n"));
         return -1;
     }
     
     // write header to file
     if (archwriter_write_buffer(ai, wb)!=0)
-    {   errprintf(tr("archwriter_write_buffer() failed\n"));
+    {   errprintf(_("archwriter_write_buffer() failed\n"));
         return -1;
     }
     
@@ -293,12 +293,12 @@ int archwriter_write_volfooter(carchwriter *ai, bool lastvol)
     assert(ai);
     
     if ((wb=writebuf_alloc())==NULL)
-    {   errprintf(tr("writebuf_alloc() failed\n"));
+    {   errprintf(_("writebuf_alloc() failed\n"));
         return -1;
     }
     
     if ((voldico=dico_alloc())==NULL)
-    {   errprintf(tr("voldico=dico_alloc() failed\n"));
+    {   errprintf(_("voldico=dico_alloc() failed\n"));
         return -1;
     }
     
@@ -309,13 +309,13 @@ int archwriter_write_volfooter(carchwriter *ai, bool lastvol)
     
     // write header to buffer
     if (writebuf_add_header(wb, voldico, FSA_MAGIC_VOLF, ai->archid, FSA_FILESYSID_NULL)!=0)
-    {   msgprintf(MSG_STACK, tr("archio_write_header() failed\n"));
+    {   msgprintf(MSG_STACK, _("archio_write_header() failed\n"));
         return -1;
     }
     
     // write header to file
     if (archwriter_write_buffer(ai, wb)!=0)
-    {   msgprintf(MSG_STACK, tr("archwriter_write_data(size=%ld) failed\n"), (long)wb->size);
+    {   msgprintf(MSG_STACK, _("archwriter_write_data(size=%ld) failed\n"), (long)wb->size);
         return -1;
     }
     
@@ -333,13 +333,13 @@ int archwriter_split_check(carchwriter *ai, struct s_writebuf *wb)
 
     if (((cursize=archwriter_get_currentpos(ai))>=0) && (g_options.splitsize>0 && cursize+wb->size > g_options.splitsize))
     {
-        msgprintf(MSG_DEBUG4, tr("splitchk: YES --> cursize=%lld, g_options.splitsize=%lld, cursize+wb->size=%lld, wb->size=%lld\n"),
+        msgprintf(MSG_DEBUG4, _("splitchk: YES --> cursize=%lld, g_options.splitsize=%lld, cursize+wb->size=%lld, wb->size=%lld\n"),
             (long long)cursize, (long long)g_options.splitsize, (long long)cursize+wb->size, (long long)wb->size);
         return true;
     }
     else
     {
-        msgprintf(MSG_DEBUG4, tr("splitchk: NO --> cursize=%lld, g_options.splitsize=%lld, cursize+wb->size=%lld, wb->size=%lld\n"),
+        msgprintf(MSG_DEBUG4, _("splitchk: NO --> cursize=%lld, g_options.splitsize=%lld, cursize+wb->size=%lld, wb->size=%lld\n"),
             (long long)cursize, (long long)g_options.splitsize, (long long)cursize+wb->size, (long long)wb->size);
         return false;
     }
@@ -352,18 +352,18 @@ int archwriter_split_if_necessary(carchwriter *ai, struct s_writebuf *wb)
     if (archwriter_split_check(ai, wb)==true)
     {
         if (archwriter_write_volfooter(ai, false)!=0)
-        {   msgprintf(MSG_STACK, tr("cannot write volume footer: archio_write_volfooter() failed\n"));
+        {   msgprintf(MSG_STACK, _("cannot write volume footer: archio_write_volfooter() failed\n"));
             return -1;
         }
         archwriter_close(ai);
         archwriter_incvolume(ai, false);
-        msgprintf(MSG_VERB2, tr("Creating new volume: [%s]\n"), ai->volpath);
+        msgprintf(MSG_VERB2, _("Creating new volume: [%s]\n"), ai->volpath);
         if (archwriter_create(ai)!=0)
-        {   msgprintf(MSG_STACK, tr("archwriter_create() failed\n"));
+        {   msgprintf(MSG_STACK, _("archwriter_create() failed\n"));
             return -1;
         }
         if (archwriter_write_volheader(ai)!=0)
-        {   msgprintf(MSG_STACK, tr("cannot write volume header: archio_write_volheader() failed\n"));
+        {   msgprintf(MSG_STACK, _("cannot write volume header: archio_write_volheader() failed\n"));
             return -1;
         }
     }
@@ -377,22 +377,22 @@ int archwriter_dowrite_block(carchwriter *ai, struct s_blockinfo *blkinfo)
     assert(ai);
 
     if ((wb=writebuf_alloc())==NULL)
-    {   errprintf(tr("writebuf_alloc() failed\n"));
+    {   errprintf(_("writebuf_alloc() failed\n"));
         return -1;
     }
     
     if (writebuf_add_block(wb, blkinfo, ai->archid, blkinfo->blkfsid)!=0)
-    {   msgprintf(MSG_STACK, tr("archio_write_block() failed\n"));
+    {   msgprintf(MSG_STACK, _("archio_write_block() failed\n"));
         return -1;
     }
     
     if (archwriter_split_if_necessary(ai, wb)!=0)
-    {   msgprintf(MSG_STACK, tr("archwriter_split_if_necessary() failed\n"));
+    {   msgprintf(MSG_STACK, _("archwriter_split_if_necessary() failed\n"));
         return -1;
     }
     
     if (archwriter_write_buffer(ai, wb)!=0)
-    {   msgprintf(MSG_STACK, tr("archwriter_write_buffer() failed\n"));
+    {   msgprintf(MSG_STACK, _("archwriter_write_buffer() failed\n"));
         return -1;
     }
 
@@ -407,22 +407,22 @@ int archwriter_dowrite_header(carchwriter *ai, struct s_headinfo *headinfo)
     assert(ai);
 
     if ((wb=writebuf_alloc())==NULL)
-    {   errprintf(tr("writebuf_alloc() failed\n"));
+    {   errprintf(_("writebuf_alloc() failed\n"));
         return -1;
     }
     
     if (writebuf_add_header(wb, headinfo->dico, headinfo->magic, ai->archid, headinfo->fsid)!=0)
-    {   msgprintf(MSG_STACK, tr("archio_write_block() failed\n"));
+    {   msgprintf(MSG_STACK, _("archio_write_block() failed\n"));
         return -1;
     }
     
     if (archwriter_split_if_necessary(ai, wb)!=0)
-    {   msgprintf(MSG_STACK, tr("archwriter_split_if_necessary() failed\n"));
+    {   msgprintf(MSG_STACK, _("archwriter_split_if_necessary() failed\n"));
         return -1;
     }
     
     if (archwriter_write_buffer(ai, wb)!=0)
-    {   msgprintf(MSG_STACK, tr("archwriter_write_buffer() failed\n"));
+    {   msgprintf(MSG_STACK, _("archwriter_write_buffer() failed\n"));
         return -1;
     }
     

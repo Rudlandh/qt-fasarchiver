@@ -38,7 +38,7 @@ FileDialog::FileDialog(QWidget *parent)
  
  if (dialog_auswertung ==3)
      {
-	cmd_save->setText(tr("Partition zurückschreiben"));
+	cmd_save->setText(tr("Partition zurückschreiben", "Partition zurückschreiben"));
 	file_read();
      }
   

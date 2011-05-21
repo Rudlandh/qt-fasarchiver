@@ -71,29 +71,29 @@ int archreader_open(carchreader *ai)
     // on the archive volume
     ai->archfd=open64(ai->volpath, O_RDONLY|O_LARGEFILE);
     if (ai->archfd<0)
-    {   sysprintf (tr("cannot open archive %s\n"), ai->volpath);
+    {   sysprintf (_("cannot open archive %s\n"), ai->volpath);
         return -1;
     }
     
     // check the archive volume is a regular file
     if (fstat64(ai->archfd, &st)!=0)
-    {   sysprintf(tr("fstat64(%s) failed\n"), ai->volpath);
+    {   sysprintf(_("fstat64(%s) failed\n"), ai->volpath);
         return -1;
     }
     if (!S_ISREG(st.st_mode))
-    {   errprintf(tr("%s is not a regular file, cannot continue\n"), ai->volpath);
+    {   errprintf(_("%s is not a regular file, cannot continue\n"), ai->volpath);
         close(ai->archfd);
         return -1;
     }
     
     // read file format version and rewind to beginning of the volume
     if (read(ai->archfd, volhead, sizeof(volhead))!=sizeof(volhead))
-    {   sysprintf(tr("cannot read magic from %s\n"), ai->volpath);
+    {   sysprintf(_("cannot read magic from %s\n"), ai->volpath);
         close(ai->archfd);
         return -1;
     }
     if (lseek64(ai->archfd, 0, SEEK_SET)!=0)
-    {   sysprintf(tr("cannot rewind volume %s\n"), ai->volpath);
+    {   sysprintf(_("cannot rewind volume %s\n"), ai->volpath);
         close(ai->archfd);
         return -1;
     }
@@ -110,12 +110,12 @@ int archreader_open(carchreader *ai)
     }
     else
     {
-        errprintf(tr("%s is not a supported fsarchiver file format\n"), ai->volpath);
+        errprintf(_("%s is not a supported fsarchiver file format\n"), ai->volpath);
         close(ai->archfd);
         return -1;
     }
     
-    msgprintf(MSG_VERB2, tr("Detected fileformat=%d in archive %s\n"), (int)ai->filefmtver, ai->volpath);
+    msgprintf(MSG_VERB2, _("Detected fileformat=%d in archive %s\n"), (int)ai->filefmtver, ai->volpath);
     
     return 0;
 }
@@ -157,7 +157,7 @@ int archreader_read_data(carchreader *ai, void *data, u64 size)
     assert(ai);
 
     if ((lres=read(ai->archfd, (char*)data, (long)size))!=(long)size)
-    {   sysprintf(tr("read failed: read(size=%ld)=%ld\n"), (long)size, lres);
+    {   sysprintf(_("read failed: read(size=%ld)=%ld\n"), (long)size, lres);
         return -1;
     }
     
@@ -188,37 +188,37 @@ int archreader_read_dico(carchreader *ai, cdico *d)
     {
         case 1:
             if (archreader_read_data(ai, &temp16, sizeof(temp16))!=0)
-            {   errprintf(tr("imgdisk_read_data() failed\n"));
+            {   errprintf(_("imgdisk_read_data() failed\n"));
                 return OLDERR_FATAL;
             }
             headerlen=le16_to_cpu(temp16);
             break;
         case 2:
             if (archreader_read_data(ai, &temp32, sizeof(temp32))!=0)
-            {   errprintf(tr("imgdisk_read_data() failed\n"));
+            {   errprintf(_("imgdisk_read_data() failed\n"));
                 return OLDERR_FATAL;
             }
             headerlen=le32_to_cpu(temp32);
             break;
         default:
-            errprintf(tr("Fatal error: invalid file format version: ai->filefmtver=%d\n"), ai->filefmtver);
+            errprintf(_("Fatal error: invalid file format version: ai->filefmtver=%d\n"), ai->filefmtver);
             return OLDERR_FATAL;
     }
     
     bufpos=buffer=malloc(headerlen);
     if (!buffer)
-    {   errprintf(tr("cannot allocate memory for header\n"));
+    {   errprintf(_("cannot allocate memory for header\n"));
         return FSAERR_ENOMEM;
     }
     
     if (archreader_read_data(ai, buffer, headerlen)!=0)
-    {   errprintf(tr("cannot read header data\n"));
+    {   errprintf(_("cannot read header data\n"));
         free(buffer);
         return OLDERR_FATAL;
     }
     
     if (archreader_read_data(ai, &temp32, sizeof(temp32))!=0)
-    {   errprintf(tr("cannot read header checksum\n"));
+    {   errprintf(_("cannot read header checksum\n"));
         free(buffer);
         return OLDERR_FATAL;
     }
@@ -228,7 +228,7 @@ int archreader_read_dico(carchreader *ai, cdico *d)
     newsum=fletcher32(buffer, headerlen);
     
     if (newsum!=origsum)
-    {   errprintf(tr("bad checksum for header\n"));
+    {   errprintf(_("bad checksum for header\n"));
         free(buffer);
         return OLDERR_MINOR; // header corrupt --> skip file
     }
@@ -287,63 +287,63 @@ int archreader_read_header(carchreader *ai, char *magic, cdico **d, bool allowse
     *d=NULL;
     
     if ((*d=dico_alloc())==NULL)
-    {   errprintf(tr("dico_alloc() failed\n"));
+    {   errprintf(_("dico_alloc() failed\n"));
         return OLDERR_FATAL;
     }
     
     // search for next read header marker and magic (it may be further if corruption in archive)
     if ((curpos=lseek64(ai->archfd, 0, SEEK_CUR))<0)
-    {   sysprintf(tr("lseek64() failed to get the current position in archive\n"));
+    {   sysprintf(_("lseek64() failed to get the current position in archive\n"));
         return OLDERR_FATAL;
     }
     
     if ((res=archreader_read_data(ai, magic, FSA_SIZEOF_MAGIC))!=FSAERR_SUCCESS)
-    {   msgprintf(MSG_STACK, tr("cannot read header magic: res=%d\n"), res);
+    {   msgprintf(MSG_STACK, _("cannot read header magic: res=%d\n"), res);
         return OLDERR_FATAL;
     }
     
     // we don't want to search for the magic if it's a volume header
     if (is_magic_valid(magic)!=true && allowseek!=true)
-    {   errprintf(tr("cannot read header magic: this is not a valid fsarchiver file, or it has been created with a different version.\n"));
+    {   errprintf(_("cannot read header magic: this is not a valid fsarchiver file, or it has been created with a different version.\n"));
         return OLDERR_FATAL;
     }
     
     while (is_magic_valid(magic)!=true)
     {
         if (lseek64(ai->archfd, curpos++, SEEK_SET)<0)
-        {   sysprintf(tr("lseek64(pos=%lld, SEEK_SET) failed\n"), (long long)curpos);
+        {   sysprintf(_("lseek64(pos=%lld, SEEK_SET) failed\n"), (long long)curpos);
             return OLDERR_FATAL;
         }
         if ((res=archreader_read_data(ai, magic, FSA_SIZEOF_MAGIC))!=FSAERR_SUCCESS)
-        {   msgprintf(MSG_STACK, tr("cannot read header magic: res=%d\n"), res);
+        {   msgprintf(MSG_STACK, _("cannot read header magic: res=%d\n"), res);
             return OLDERR_FATAL;
         }
     }
     
     // read the archive id
     if ((res=archreader_read_data(ai, &temp32, sizeof(temp32)))!=FSAERR_SUCCESS)
-    {   msgprintf(MSG_STACK, tr("cannot read archive-id in header: res=%d\n"), res);
+    {   msgprintf(MSG_STACK, _("cannot read archive-id in header: res=%d\n"), res);
         return OLDERR_FATAL;
     }
     archid=le32_to_cpu(temp32);
     if (ai->archid) // only check archive-id if it's known (when main header has been read)
     {
         if (archid!=ai->archid)
-        {   errprintf(tr("archive-id in header does not match: archid=[%.8x], expected=[%.8x]\n"), archid, ai->archid);
+        {   errprintf(_("archive-id in header does not match: archid=[%.8x], expected=[%.8x]\n"), archid, ai->archid);
             return OLDERR_MINOR;
         }
     }
     
     // read the filesystem id
     if ((res=archreader_read_data(ai, &temp16, sizeof(temp16)))!=FSAERR_SUCCESS)
-    {   msgprintf(MSG_STACK, tr("cannot read filesystem-id in header: res=%d\n"), res);
+    {   msgprintf(MSG_STACK, _("cannot read filesystem-id in header: res=%d\n"), res);
         return OLDERR_FATAL;
     }
     *fsid=le16_to_cpu(temp16);
     
     // read the dico of the header
     if ((res=archreader_read_dico(ai, *d))!=FSAERR_SUCCESS)
-    {   msgprintf(MSG_STACK, tr("imgdisk_read_dico() failed\n"));
+    {   msgprintf(MSG_STACK, _("imgdisk_read_dico() failed\n"));
         return res;
     }
     
@@ -368,18 +368,18 @@ int archreader_read_volheader(carchreader *ai)
 
     // ---- a. read header from archive file
     if ((res=archreader_read_header(ai, magic, &d, false, &fsid))!=FSAERR_SUCCESS)
-    {   errprintf(tr("archreader_read_header() failed to read the archive header\n"));
+    {   errprintf(_("archreader_read_header() failed to read the archive header\n"));
         return -1;
     }
     
     // ---- b. check the magic is what we expected
     if (strncmp(magic, FSA_MAGIC_VOLH, FSA_SIZEOF_MAGIC)!=0)
-    {   errprintf(tr("magic is not what we expected: found=[%s] and expected=[%s]\n"), magic, FSA_MAGIC_VOLH);
+    {   errprintf(_("magic is not what we expected: found=[%s] and expected=[%s]\n"), magic, FSA_MAGIC_VOLH);
         ret=-1; goto archio_read_volheader_error;
     }
     
     if (dico_get_u32(d, 0, VOLUMEHEADKEY_ARCHID, &readid)!=0)
-    {   errprintf(tr("cannot get VOLUMEHEADKEY_ARCHID from the volume header\n"));
+    {   errprintf(_("cannot get VOLUMEHEADKEY_ARCHID from the volume header\n"));
         ret=-1; goto archio_read_volheader_error;
     }
     
@@ -389,23 +389,23 @@ int archreader_read_volheader(carchreader *ai)
         ai->archid=readid;
     }
     else if (readid!=ai->archid) // archid known: not the first volume
-    {   errprintf(tr("wrong header id: found=%.8x and expected=%.8x\n"), readid, ai->archid);
+    {   errprintf(_("wrong header id: found=%.8x and expected=%.8x\n"), readid, ai->archid);
         ret=-1; goto archio_read_volheader_error;
     }
     
     // ---- d. check the volnum
     if (dico_get_u32(d, 0, VOLUMEHEADKEY_VOLNUM, &volnum)!=0)
-    {   errprintf(tr("cannot get VOLUMEHEADKEY_VOLNUM from the volume header\n"));
+    {   errprintf(_("cannot get VOLUMEHEADKEY_VOLNUM from the volume header\n"));
         ret=-1; goto archio_read_volheader_error;
     }
     if (volnum!=ai->curvol) // not the right volume number
-    {   errprintf(tr("wrong volume number in [%s]: volnum is %d and we need volnum %d\n"), ai->volpath, (int)volnum, (int)ai->curvol);
+    {   errprintf(_("wrong volume number in [%s]: volnum is %d and we need volnum %d\n"), ai->volpath, (int)volnum, (int)ai->curvol);
         ret=-1; goto archio_read_volheader_error;
     }
     
     // ---- d. check the the file format
     if (dico_get_data(d, 0, VOLUMEHEADKEY_FILEFORMATVER, filefmt, FSA_MAX_FILEFMTLEN, NULL)!=0)
-    {   errprintf(tr("cannot find VOLUMEHEADKEY_FILEFORMATVER in main-header\n"));
+    {   errprintf(_("cannot find VOLUMEHEADKEY_FILEFORMATVER in main-header\n"));
         ret=-1; goto archio_read_volheader_error;
     }
     
@@ -415,14 +415,14 @@ int archreader_read_volheader(carchreader *ai)
     }
     else if (strncmp(filefmt, ai->filefmt, FSA_MAX_FILEFMTLEN)!=0)
     {
-        errprintf(tr("This archive is based on a different file format: [%s]. Cannot continue.\n"), ai->filefmt);
-        errprintf(tr("It has been created with fsarchiver [%s], you should extrat the archive using that version.\n"), ai->creatver);
-        errprintf(tr("The current version of the program is [%s], and it's based on format [%s]\n"), FSA_VERSION, FSA_FILEFORMAT);
+        errprintf(_("This archive is based on a different file format: [%s]. Cannot continue.\n"), ai->filefmt);
+        errprintf(_("It has been created with fsarchiver [%s], you should extrat the archive using that version.\n"), ai->creatver);
+        errprintf(_("The current version of the program is [%s], and it's based on format [%s]\n"), FSA_VERSION, FSA_FILEFORMAT);
         ret=-1; goto archio_read_volheader_error;
     }
     
     if (dico_get_data(d, 0, VOLUMEHEADKEY_PROGVERCREAT, creatver, FSA_MAX_PROGVERLEN, NULL)!=0)
-    {   errprintf(tr("cannot find VOLUMEHEADKEY_PROGVERCREAT in main-header\n"));
+    {   errprintf(_("cannot find VOLUMEHEADKEY_PROGVERCREAT in main-header\n"));
         ret=-1; goto archio_read_volheader_error;
     }
     
@@ -457,44 +457,44 @@ int archreader_read_block(carchreader *ai, cdico *in_blkdico, int in_skipblock, 
     *out_sumok=-1;
     
     if (dico_get_u64(in_blkdico, 0, BLOCKHEADITEMKEY_BLOCKOFFSET, &blockoffset)!=0)
-    {   msgprintf(3, tr("cannot get blockoffset from block-header\n"));
+    {   msgprintf(3, _("cannot get blockoffset from block-header\n"));
         return -1;
     }
     
     if (dico_get_u32(in_blkdico, 0, BLOCKHEADITEMKEY_REALSIZE, &curblocksize)!=0 || curblocksize>FSA_MAX_BLKSIZE)
-    {   msgprintf(3, tr("cannot get blocksize from block-header\n"));
+    {   msgprintf(3, _("cannot get blocksize from block-header\n"));
         return -1;
     }
     
     if (dico_get_u16(in_blkdico, 0, BLOCKHEADITEMKEY_COMPRESSALGO, &compalgo)!=0)
-    {   msgprintf(3, tr("cannot get BLOCKHEADITEMKEY_COMPRESSALGO from block-header\n"));
+    {   msgprintf(3, _("cannot get BLOCKHEADITEMKEY_COMPRESSALGO from block-header\n"));
         return -1;
     }
     
     if (dico_get_u16(in_blkdico, 0, BLOCKHEADITEMKEY_ENCRYPTALGO, &cryptalgo)!=0)
-    {   msgprintf(3, tr("cannot get BLOCKHEADITEMKEY_ENCRYPTALGO from block-header\n"));
+    {   msgprintf(3, _("cannot get BLOCKHEADITEMKEY_ENCRYPTALGO from block-header\n"));
         return -1;
     }
     
     if (dico_get_u32(in_blkdico, 0, BLOCKHEADITEMKEY_ARSIZE, &finalsize)!=0)
-    {   msgprintf(3, tr("cannot get BLOCKHEADITEMKEY_ARSIZE from block-header\n"));
+    {   msgprintf(3, _("cannot get BLOCKHEADITEMKEY_ARSIZE from block-header\n"));
         return -1;
     }
     
     if (dico_get_u32(in_blkdico, 0, BLOCKHEADITEMKEY_COMPSIZE, &compsize)!=0)
-    {   msgprintf(3, tr("cannot get BLOCKHEADITEMKEY_COMPSIZE from block-header\n"));
+    {   msgprintf(3, _("cannot get BLOCKHEADITEMKEY_COMPSIZE from block-header\n"));
         return -1;
     }
     
     if (dico_get_u32(in_blkdico, 0, BLOCKHEADITEMKEY_ARCSUM, &arblockcsumorig)!=0)
-    {   msgprintf(3, tr("cannot get BLOCKHEADITEMKEY_ARCSUM from block-header\n"));
+    {   msgprintf(3, _("cannot get BLOCKHEADITEMKEY_ARCSUM from block-header\n"));
         return -1;
     }
     
     if (in_skipblock==true) // the main thread does not need that block (block belongs to a filesys we want to skip)
     {
         if (lseek64(ai->archfd, (long)finalsize, SEEK_CUR)<0)
-        {   sysprintf(tr("cannot skip block (finalsize=%ld) failed\n"), (long)finalsize);
+        {   sysprintf(_("cannot skip block (finalsize=%ld) failed\n"), (long)finalsize);
             return -1;
         }
         return 0;
@@ -502,12 +502,12 @@ int archreader_read_block(carchreader *ai, cdico *in_blkdico, int in_skipblock, 
     
     // ---- allocate memory
     if ((buffer=malloc(finalsize))==NULL)
-    {   errprintf(tr("cannot allocate block: malloc(%d) failed\n"), finalsize);
+    {   errprintf(_("cannot allocate block: malloc(%d) failed\n"), finalsize);
         return FSAERR_ENOMEM;
     }
     
     if (read(ai->archfd, buffer, (long)finalsize)!=(long)finalsize)
-    {   sysprintf(tr("cannot read block (finalsize=%ld) failed\n"), (long)finalsize);
+    {   sysprintf(_("cannot read block (finalsize=%ld) failed\n"), (long)finalsize);
         free(buffer);
         return -1;
     }
@@ -526,17 +526,17 @@ int archreader_read_block(carchreader *ai, cdico *in_blkdico, int in_skipblock, 
     arblockcsumcalc=fletcher32(buffer, finalsize);
     if (arblockcsumcalc!=arblockcsumorig) // bad checksum
     {
-        errprintf(tr("block is corrupt at offset=%ld, blksize=%ld\n"), (long)blockoffset, (long)curblocksize);
+        errprintf(_("block is corrupt at offset=%ld, blksize=%ld\n"), (long)blockoffset, (long)curblocksize);
         free(out_blkinfo->blkdata);
         if ((out_blkinfo->blkdata=malloc(curblocksize))==NULL)
-        {   errprintf(tr("cannot allocate block: malloc(%d) failed\n"), curblocksize);
+        {   errprintf(_("cannot allocate block: malloc(%d) failed\n"), curblocksize);
             return FSAERR_ENOMEM;
         }
         memset(out_blkinfo->blkdata, 0, curblocksize);
         *out_sumok=false;
         // go to the beginning of the corrupted contents so that the next header is searched here
         if (lseek64(ai->archfd, -(long long)finalsize, SEEK_CUR)<0)
-        {   errprintf(tr("lseek64() failed\n"));
+        {   errprintf(_("lseek64() failed\n"));
         }
     }
     else // no corruption detected

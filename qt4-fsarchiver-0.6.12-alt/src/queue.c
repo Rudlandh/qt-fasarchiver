@@ -49,7 +49,7 @@ s64 queue_init(cqueue *q, s64 blkmax)
     pthread_mutexattr_t attr;
 
     if (!q)
-    {   errprintf(tr("q is NULL\n"));
+    {   errprintf(_("q is NULL\n"));
         return FSAERR_EINVAL;
     }
     
@@ -65,12 +65,12 @@ s64 queue_init(cqueue *q, s64 blkmax)
     assert(pthread_mutexattr_init(&attr)==0);
     assert(pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_ERRORCHECK)==0);
     if (pthread_mutex_init(&q->mutex, &attr)!=0)
-    {   msgprintf(3, tr("pthread_mutex_init failed\n"));
+    {   msgprintf(3, _("pthread_mutex_init failed\n"));
         return FSAERR_UNKNOWN;
     }
     
     if (pthread_cond_init(&q->cond,NULL)!=0)
-    {   msgprintf(3, tr("pthread_cond_init failed\n"));
+    {   msgprintf(3, _("pthread_cond_init failed\n"));
         return FSAERR_UNKNOWN;
     }
     
@@ -83,7 +83,7 @@ s64 queue_destroy(cqueue *q)
     cqueueitem *next;
     
     if (!q)
-    {   errprintf(tr("q is NULL\n"));
+    {   errprintf(_("q is NULL\n"));
         return FSAERR_EINVAL;
     }
     
@@ -108,7 +108,7 @@ s64 queue_destroy(cqueue *q)
 s64 queue_set_end_of_queue(cqueue *q, bool state)
 {
     if (!q)
-    {   errprintf(tr("q is NULL\n"));
+    {   errprintf(_("q is NULL\n"));
         return FSAERR_EINVAL;
     }
 
@@ -123,7 +123,7 @@ bool queue_get_end_of_queue(cqueue *q)
 {
     bool res;
     if (!q)
-    {   errprintf(tr("q is NULL\n"));
+    {   errprintf(_("q is NULL\n"));
         return FSAERR_EINVAL;
     }
 
@@ -137,7 +137,7 @@ bool queuelocked_get_end_of_queue(cqueue *q)
 {
     bool res;
     if (!q)
-    {   errprintf(tr("q is NULL\n"));
+    {   errprintf(_("q is NULL\n"));
         return FSAERR_EINVAL;
     }
 
@@ -151,7 +151,7 @@ s64 queue_count(cqueue *q)
     s64 itemcount;
     
     if (!q)
-    {   errprintf(tr("q is NULL\n"));
+    {   errprintf(_("q is NULL\n"));
         return FSAERR_EINVAL;
     }
 
@@ -169,7 +169,7 @@ s64 queue_count_status(cqueue *q, int status)
     int count=0;
     
     if (!q)
-    {   errprintf(tr("q is NULL\n"));
+    {   errprintf(_("q is NULL\n"));
         return FSAERR_EINVAL;
     }
 
@@ -193,14 +193,14 @@ s64 queue_add_block(cqueue *q, cblockinfo *blkinfo, int status)
     cqueueitem *cur;
     
     if (!q || !blkinfo)
-    {   errprintf(tr("a parameter is NULL\n"));
+    {   errprintf(_("a parameter is NULL\n"));
         return FSAERR_EINVAL;
     }
     
     // create the new item in memory
     item=malloc(sizeof(cqueueitem));
     if (!item)
-    {   errprintf(tr("malloc(%ld) failed: out of memory\n"), (long)sizeof(cqueueitem));
+    {   errprintf(_("malloc(%ld) failed: out of memory\n"), (long)sizeof(cqueueitem));
         return FSAERR_ENOMEM;
     }
     item->type=QITEM_TYPE_BLOCK;
@@ -247,7 +247,7 @@ s64 queue_add_header(cqueue *q, cdico *d, char *magic, u16 fsid)
     cheadinfo headinfo;
     
     if (!q || !d || !magic)
-    {   errprintf(tr("parameter is null\n"));
+    {   errprintf(_("parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
@@ -265,14 +265,14 @@ s64 queue_add_header_internal(cqueue *q, cheadinfo *headinfo)
     cqueueitem *cur;
     
     if (!q || !headinfo)
-    {   errprintf(tr("parameter is null\n"));
+    {   errprintf(_("parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
     // create the new item in memory
     item=malloc(sizeof(cqueueitem));
     if (!item)
-    {   errprintf(tr("malloc(%ld) failed: out of memory 1\n"), (long)sizeof(cqueueitem));
+    {   errprintf(_("malloc(%ld) failed: out of memory 1\n"), (long)sizeof(cqueueitem));
         return FSAERR_ENOMEM;
     }
     
@@ -319,7 +319,7 @@ s64 queue_replace_block(cqueue *q, s64 itemnum, cblockinfo *blkinfo, int newstat
     cqueueitem *cur;
     
     if (!q || !blkinfo)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
@@ -327,7 +327,7 @@ s64 queue_replace_block(cqueue *q, s64 itemnum, cblockinfo *blkinfo, int newstat
     
     if (q->head==NULL)
     {   assert(pthread_mutex_unlock(&q->mutex)==0);
-        msgprintf(MSG_DEBUG1, tr("q->head is NULL: list is empty\n"));
+        msgprintf(MSG_DEBUG1, _("q->head is NULL: list is empty\n"));
         return FSAERR_ENOENT; // item not found
     }
     
@@ -354,7 +354,7 @@ s64 queue_count_items_todo(cqueue *q)
     s64 count=0;
     
     if (!q)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
@@ -379,7 +379,7 @@ s64 queue_get_first_block_todo(cqueue *q, cblockinfo *blkinfo)
     int res;
     
     if (!q || !blkinfo)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
@@ -426,7 +426,7 @@ s64 queue_dequeue_first(cqueue *q, int *type, cheadinfo *headinfo, cblockinfo *b
     int ret;
     
     if (!q || !headinfo || !blkinfo)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
@@ -463,7 +463,7 @@ s64 queue_dequeue_first(cqueue *q, int *type, cheadinfo *headinfo, cblockinfo *b
             }
             else
             {
-                errprintf(tr("invalid item type in queue\n"));
+                errprintf(_("invalid item type in queue\n"));
                 assert(pthread_mutex_unlock(&q->mutex)==0);
                 return FSAERR_EINVAL;
             }
@@ -487,7 +487,7 @@ s64 queue_dequeue_block(cqueue *q, cblockinfo *blkinfo)
     s64 itemnum;
     
     if (!q || !blkinfo)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
@@ -524,7 +524,7 @@ s64 queue_dequeue_block(cqueue *q, cblockinfo *blkinfo)
     }
     else
     {
-        errprintf(tr("dequeue - wrong type of data in the queue: wanted a block, found an header\n"));
+        errprintf(_("dequeue - wrong type of data in the queue: wanted a block, found an header\n"));
         assert(pthread_mutex_unlock(&q->mutex)==0);
         pthread_cond_broadcast(&q->cond);
         return FSAERR_WRONGTYPE;  // ok but not found
@@ -537,12 +537,12 @@ s64 queue_dequeue_header(cqueue *q, cdico **d, char *magicbuf, u16 *fsid)
     s64 lres;
     
     if (!q || !d || !magicbuf)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
     if ((lres=queue_dequeue_header_internal(q, &headinfo))<=0)
-    {   msgprintf(MSG_STACK, tr("queue_dequeue_header_internal() failed\n"));
+    {   msgprintf(MSG_STACK, _("queue_dequeue_header_internal() failed\n"));
         return lres;
     }
     
@@ -559,7 +559,7 @@ s64 queue_dequeue_header_internal(cqueue *q, cheadinfo *headinfo)
     s64 itemnum;
     
     if (!q || !headinfo)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
@@ -594,12 +594,12 @@ s64 queue_dequeue_header_internal(cqueue *q, cheadinfo *headinfo)
             pthread_cond_broadcast(&q->cond);
             return itemnum;
         case QITEM_TYPE_BLOCK:
-            errprintf(tr("dequeue - wrong type of data in the queue: expected a dico and found a block\n"));
+            errprintf(_("dequeue - wrong type of data in the queue: expected a dico and found a block\n"));
             assert(pthread_mutex_unlock(&q->mutex)==0);
             pthread_cond_broadcast(&q->cond);
             return FSAERR_WRONGTYPE;  // ok but not found
         default: // should never happen
-            errprintf(tr("dequeue - wrong type of data in the queue: expected a dico and found an unknown item\n"));
+            errprintf(_("dequeue - wrong type of data in the queue: expected a dico and found an unknown item\n"));
             assert(pthread_mutex_unlock(&q->mutex)==0);
             pthread_cond_broadcast(&q->cond);
             return FSAERR_WRONGTYPE;  // ok but not found
@@ -612,7 +612,7 @@ bool queuelocked_is_first_item_ready(cqueue *q)
     cqueueitem *cur;
     
     if (!q)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return false; // not found
     }
     
@@ -632,7 +632,7 @@ s64 queue_check_next_item(cqueue *q, int *type, char *magic)
     cqueueitem *cur;
     
     if (!q || !type || !magic)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
@@ -673,7 +673,7 @@ s64 queue_check_next_item(cqueue *q, int *type, char *magic)
         }
         else
         {
-            errprintf(tr("invalid item type in queue: type=%d\n"), cur->type);
+            errprintf(_("invalid item type in queue: type=%d\n"), cur->type);
             assert(pthread_mutex_unlock(&q->mutex)==0);
             return FSAERR_EINVAL;
         }
@@ -691,7 +691,7 @@ s64 queue_destroy_first_item(cqueue *q)
     cqueueitem *cur;
     
     if (!q)
-    {   errprintf(tr("a parameter is null\n"));
+    {   errprintf(_("a parameter is null\n"));
         return FSAERR_EINVAL;
     }
     
