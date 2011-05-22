@@ -38,7 +38,7 @@ FileDialog::FileDialog(QWidget *parent)
  
  if (dialog_auswertung ==3)
      {
-	cmd_save->setText(tr("Partition zurückschreiben", "Partition zurückschreiben"));
+	cmd_save->setText(tr("Partition restore", "Partition zurückschreiben"));
 	file_read();
      }
   
@@ -47,7 +47,7 @@ FileDialog::FileDialog(QWidget *parent)
 void FileDialog::folder_einlesen() {
         QString folder;
         if (dialog_auswertung ==2){
-            cmd_save->setText(tr("Partition sichern")); 
+            cmd_save->setText(tr("Save partition", "Partition sichern")); 
             file_save();
         }
         dialog_auswertung = 1;
@@ -64,8 +64,8 @@ void FileDialog::file_save()
 	QFile file(filename);
         if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) 
            {
-             QMessageBox::about(this,tr("Hinweis"),
-              tr("Die Hinweise zur Partition wurden nicht in eine Datei geschrieben.\n"));
+             QMessageBox::about(this,tr("Note", "Hinweis"),
+              tr("Instructions for partition were not recorded written to the file.\n", "Die Hinweise zur Partition wurden nicht in eine Datei geschrieben.\n"));
             }
         text = textEdit->toPlainText().toAscii();
 	file.write((textEdit->toPlainText()).toAscii());
@@ -91,7 +91,7 @@ void FileDialog::file_read()
 
 
 QString FileDialog::werte_holen_(int auswahl) {
-return  "hallo";
+return  tr("hello", "hallo");
 }
 
 void FileDialog::werte_uebergeben(QString wert) {

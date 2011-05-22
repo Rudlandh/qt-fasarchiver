@@ -60,11 +60,11 @@ DialogMBR::DialogMBR(QWidget *parent)
            }
 
         if (dialog_auswertung == 4){
-            bt_save->setText (tr("MBR sichern"));
+            bt_save->setText (tr("MBR save", "MBR sichern"));
             cmb_mbr->setEnabled(false);
             } 
         if (dialog_auswertung == 5){
-            bt_save->setText (tr("MBR zurückschreiben"));  
+            bt_save->setText (tr("MBR restore", "MBR zurückschreiben"));  
 	    cmb_mbr->setEnabled(true);
             }
         //sektor = sektor_auslesen();
@@ -102,14 +102,14 @@ QString homepath = QDir::homePath();
                befehl = ("dd if=/dev/" + partition + " of=" + folder_ + "/" + Ubuntuversion + "_mbr_" + partition + " bs=" + Sektor_byte + " " + "count=1");
                 i = system (befehl.toAscii().data());
    		if (i == 0)
-      			QMessageBox::about(this,tr("Hinweis"), tr("Der MBR wurde erfolgreich gesichert.\n"));
+      			QMessageBox::about(this,tr("Note", "Hinweis"), tr("The MBR was successfully backed up.\n", "Der MBR wurde erfolgreich gesichert.\n"));
         	else
-      			QMessageBox::about(this, tr("Hinweis"), tr("Der MBR wurde nicht gesichert.\n"));
+      			QMessageBox::about(this, tr("Note", "Hinweis"), tr("The MBR has not been backeed.\n", "Der MBR wurde nicht gesichert.\n"));
                 }
        }
      if (dialog_auswertung == 5 && cmb_mbr->currentIndex() != 3)	
        {
-        int auswertung = questionMessage(tr("Vorsicht: Wollen Sie wirklich den MBR komplett beziehungsweise teilweise zurückschreiben? \n")); 
+        int auswertung = questionMessage(tr("Caution: If you really want to to write back the MBR completely or partially?\n", "Vorsicht: Wollen Sie wirklich den MBR komplett beziehungsweise teilweise zurückschreiben?\n")); 
             if  (auswertung == 2) 
                 return 1; 
         i = folder_einlesen();
@@ -118,9 +118,9 @@ QString homepath = QDir::homePath();
               befehl = ("dd if="+ folder_ + " of=/dev/" + partition + " bs=1 count=446");
               i = system (befehl.toAscii().data());
    	      if (i == 0)
-      		QMessageBox::about(this, tr("Hinweis"), tr("Der Bootloaderbereich wurde erfolgreich wieder hergestellt.\n"));
+      		QMessageBox::about(this, tr("Note", "Hinweis"), tr("The Boot Loader section is successful return.\n", "Der Bootloaderbereich wurde erfolgreich wieder hergestellt.\n"));
               else
-      		QMessageBox::about(this, tr("Hinweis"), tr("Der Bootloaderbereich wurde nicht wieder hergestellt.\n"));
+      		QMessageBox::about(this, tr("Note", "Hinweis"), tr("The boot loader area was not restored.\n", "Der Bootloaderbereich wurde nicht wieder hergestellt.\n"));
               }
               if (cmb_mbr->currentIndex() == 2) {
 		   //verborgenen Bereich extrahieren                   
@@ -133,24 +133,24 @@ QString homepath = QDir::homePath();
                    befehl = "rm " + homepath + "/.mbr.txt";
                    system (befehl.toAscii().data());
    	           if (i == 0)
-      			QMessageBox::about(this, tr("Hinweis"), tr("Die Partitionstabelle wurde erfolgreich wieder hergestellt.\n"));
+      			QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition table is successful return.", "Die Partitionstabelle wurde erfolgreich wieder hergestellt.\n"));
                    else
-      			QMessageBox::about(this, tr("Hinweis"), tr("Die Partitionstabelle wurde nicht wieder hergestellt.\n"));
+      			QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition table was not restored.\n", "Die Partitionstabelle wurde nicht wieder hergestellt.\n"));
                }
                if (cmb_mbr->currentIndex() == 1) {
                  befehl = ("dd if="+ folder_ + " of=/dev/" + partition + " bs=1 count=512");
                  i = system (befehl.toAscii().data());
    	       if (i == 0) 
-      		   QMessageBox::about(this, tr("Hinweis"), tr("Der MBR wurde erfolgreich wieder hergestellt.\n"));
+      		   QMessageBox::about(this, tr("Note","Hinweis"), tr("The MBR is successful return.\n", "Der MBR wurde erfolgreich wieder hergestellt.\n"));
                 else
-      		  QMessageBox::about(this, tr("Hinweis"), tr("Der MBR wurde nicht wieder hergestellt.\n"));
+      		  QMessageBox::about(this, tr("Note", "Hinweis"), tr("The MBR is not restored.\n", "Der MBR wurde nicht wieder hergestellt.\n"));
                }
                
           }
     }
     if (dialog_auswertung == 5 && cmb_mbr->currentIndex() == 3)	
        {
-        int auswertung = questionMessage(tr("Vorsicht: Wollen Sie wirklich den verborgenen Bereich zurückschreiben? \n")); 
+        int auswertung = questionMessage(tr("Caution: If you really want to to write back the secret field?\n", "Vorsicht: Wollen Sie wirklich den verborgenen Bereich zurückschreiben? \n")); 
             if  (auswertung == 2) 
                 return 1; 
             i = folder_einlesen();
@@ -165,9 +165,9 @@ QString homepath = QDir::homePath();
                    befehl = "rm " + homepath + "/.mbr.txt";
                    i = system (befehl.toAscii().data());
    	        if (i == 0) 
-      		   QMessageBox::about(this, tr("Hinweis"), tr("Der verborgene Bereich wurde erfolgreich wieder hergestellt.\n"));
+      		   QMessageBox::about(this, tr("Note", "Hinweis"), tr("The hidden area is successful return.\n", "Der verborgene Bereich wurde erfolgreich wieder hergestellt.\n"));
                 else
-      		  QMessageBox::about(this, tr("Hinweis"), tr("Der verborgene Bereich wurde nicht wieder hergestellt.\n"));
+      		  QMessageBox::about(this, tr("Note", "Hinweis"), tr("The hidden area was not restored.\n", "Der verborgene Bereich wurde nicht wieder hergestellt.\n"));
         }
     }
        close();
@@ -208,7 +208,7 @@ int sektor_;
        befehl = "rm "  + homepath + "/.sektornummer.txt";
        system (befehl.toAscii().data()); 
        if (sektor_ < 2) {
-	    QMessageBox::about(this, tr("Hinweis"), tr("Das Ende des verborgenen Bereiches der 1. Partition konnte nicht ausgelesen werden. Es werden nur 512 Bytes gesichert.\n"));
+	    QMessageBox::about(this, tr("Note", "Hinweis"), tr("The end of hidden area of the 1st Partition could not be read. Only 512 bytes are saved.", "Das Ende des verborgenen Bereiches der 1. Partition konnte nicht ausgelesen werden. Es werden nur 512 Bytes gesichert.\n"));
             sektor = 2;
 	}
         sektor_byte = (sektor_ -1) * 512;
@@ -266,20 +266,20 @@ int DialogMBR::folder_einlesen() {
    size_ = info.size(); 
    if (folder_ == "" && (dialog_auswertung == 4))
       {
-       QMessageBox::about(this, tr("Hinweis"),
-      tr("Sie müssen ein Verzeichnis auswählen\n"));
+       QMessageBox::about(this, tr("Note", "Hinweis"),
+      tr("You must select a directory", "Sie müssen ein Verzeichnis auswählen\n"));
       return 1 ;
       }
    if (info.isFile() && (dialog_auswertung == 4))
       {
-      QMessageBox::about(this, tr("Hinweis"),
-      tr("Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen\n"));
+      QMessageBox::about(this, tr("Note", "Hinweis"),
+      tr("You have selected a file. You must select a directory.\n", "Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen\n"));
       return 1 ;
       }
     if (info.isDir() && (dialog_auswertung == 5))
       {
-      QMessageBox::about(this, tr("Hinweis"),
-      tr("Sie haben ein Verzeichnis ausgewählt. Sie müssen die MBR Sicherungsdatei auswählen\n"));
+      QMessageBox::about(this, tr("Note", "Hinweis"),
+      tr("You have selected a directory. You must select the MBR backup file\n", "Sie haben ein Verzeichnis ausgewählt. Sie müssen die MBR Sicherungsdatei auswählen\n"));
       return 1 ;
       }
     pos = folder_.indexOf("mbr_sd");
@@ -305,15 +305,14 @@ int DialogMBR::folder_einlesen() {
     }
     if (pos1 == -1  && dialog_auswertung == 5){
       //Partitionen stimmen nicht überein
-      QString text = tr("Sie haben eventuell eine falsche Festplatte ausgewählt. Die wiederherzustellende Festplatte ist ") + partition + 
-      tr(",  die gesicherte Festplatte ist aber ") +  Festplatte + tr(" Wollen Sie fortfahren?");
+      QString text = tr("You may have the wrong disk is selected. The restore disk is ", "Sie haben eventuell eine falsche Festplatte ausgewählt. Die wiederherzustellende Festplatte ist ") + partition + tr(", the saved hard drive is ", ",  die gesicherte Festplatte ist aber ") +  Festplatte + tr(" Are you sure?", " Wollen Sie fortfahren?");
         ret = questionMessage(text);
         if (ret == 2)
             return 1;
         }
     QString sA = QString::number(size_);
-    QString text = tr("Sie haben eventuell eine falsche Datei ausgewählt. Der wiederherzustellende verborgene Bereich hat eine Größe von") +  sA + 
-    tr(" Byte. Der verborgene Bereich von der Festplatte ") + partition + tr(" hat eine Größe von ") + Sektor_byte + tr(" Byte. Wollen Sie fortfahren?");
+    QString text = tr("You may have a wrong file selected. Restore the hidden field has a size of ", "Sie haben eventuell eine falsche Datei ausgewählt. Der wiederherzustellende verborgene Bereich hat eine Größe von") +  sA + 
+    tr(" bytes. The hidden area of the disk ", " Byte. Der verborgene Bereich von der Festplatte ") + partition + tr(" has a size of ", " hat eine Größe von ") + Sektor_byte + tr(" bytes. Are you sure?", " Byte. Wollen Sie fortfahren?");
     if (size_ != sektor_byte && dialog_auswertung == 5 && cmb_mbr->currentIndex() == 3) {
         ret = questionMessage(text);
         if (ret == 2)
@@ -323,8 +322,8 @@ int DialogMBR::folder_einlesen() {
        }
     if (dialog_auswertung == 5 && pos == -1 ){
       //Länge der Datei und Name überprüfen
-      QMessageBox::about(this, tr("Hinweis"),
-      tr("Sie haben keine MBR Sicherungsdatei ausgewählt. Name oder Größe ist nicht korrekt\n"));
+      QMessageBox::about(this, tr("Note", "Hinweis"),
+      tr("You have no MBR backup file selected. Name or size is not correct\n", "Sie haben keine MBR Sicherungsdatei ausgewählt. Name oder Größe ist nicht korrekt\n"));
       return 1 ;
       }
     return 0;
@@ -333,7 +332,7 @@ int DialogMBR::folder_einlesen() {
 int DialogMBR::questionMessage(QString frage)
 {
     QMessageBox::StandardButton reply;
-    reply = QMessageBox::warning(this, tr("Hinweis"),
+    reply = QMessageBox::warning(this, tr("Note", "Hinweis"),
                                     frage,
                                     //QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
                                      QMessageBox::No | QMessageBox::Yes | QMessageBox::Default);

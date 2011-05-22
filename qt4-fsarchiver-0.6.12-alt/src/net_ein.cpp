@@ -42,7 +42,7 @@ connect( chk_password, SIGNAL( clicked() ), this, SLOT(Kennwort()));
    if (file.exists()) {
         QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
         setting.beginGroup("Basiseinstellungen");
-        int auswertung = setting.value("Passwort").toInt();
+        int auswertung = setting.value("Password").toInt();
         if (auswertung ==1){
            	txt_key ->setEchoMode(QLineEdit::Normal);
                 chk_password->setChecked(Qt::Checked);
@@ -145,8 +145,8 @@ QString hostname_;
         }
 	file1.close();
         if (i == 0 && flag == "1"){
-   		QMessageBox::about(this,tr("Hinweis"),
-      		tr("Es ist derzeit kein Netzwerkrechner erreichbar.\n"));
+   		QMessageBox::about(this,tr("Note","Hinweis"),
+      		tr("There is currently no available network computer.\n","Es ist derzeit kein Netzwerkrechner erreichbar.\n"));
         	return 1;
    }
    return 0;
@@ -204,16 +204,17 @@ int NetEin:: setting_save()
    //qDebug() << "befehl" << befehl;
    int k = system (befehl.toAscii().data());
    if (k == 0 && dialog_auswertung == 6){
-   	QMessageBox::about(this, tr("Hinweis"),
-      	tr("Der Netzrechner ") + comNet_name + tr(" wurde erfolgreich eingebunden. Sie können mit der Sicherung fortfahren\n"));
+   	QMessageBox::about(this, tr("Note","Hinweis"),
+      	tr("The network computer","Der Netzrechner ") + comNet_name + 
+      	tr(" has been successfully added. You can continue saving\n"," wurde erfolgreich eingebunden. Sie können mit der Sicherung fortfahren\n"));
        }
    if (k == 0 && dialog_auswertung == 7){
-   	QMessageBox::about(this, tr("Hinweis"),
-      	tr("Der Netzwerkrechner ") + comNet_name + tr(" wurde erfolgreich eingebunden. Sie können mit dem Zurückschreiben fortfahren\n"));
+   	QMessageBox::about(this, tr("Note","Hinweis"),
+      	tr("The network computer", "Der Netzwerkrechner ") + comNet_name + tr("  has been successfully added. You can continue to restore\n", " wurde erfolgreich eingebunden. Sie können mit dem Zurückschreiben fortfahren\n"));
       } 
    if (k != 0){
-   	QMessageBox::about(this, tr("Hinweis"),
-      	tr("Der Netzwerkrechner ") + comNet_name + tr(" konnte nicht eingebunden werden. Das Programm wird abgebrochen\n"));
+   	QMessageBox::about(this, tr("Note", "Hinweis"),
+      	tr("The network computer",  "Der Netzwerkrechner ") + comNet_name + tr(" could not be integrated. The program is aborted\n", " konnte nicht eingebunden werden. Das Programm wird abgebrochen\n"));
         return 1;
    }
   // Dateien entfernen 
@@ -314,24 +315,24 @@ setting.beginGroup(comNet_name);
      key = txt_key->text();
      if (comNet == "" && dialog_auswertung == 6)
        {
-       QMessageBox::about(this, tr("Hinweis"),
-      tr("Sie müssen den Rechner auswählen, auf den die Sicherungsdaten geschrieben werden sollen\n"));
+       QMessageBox::about(this, tr("Note", "Hinweis"),
+      tr("You must select the computer on which the backup data to be written\n", "Sie müssen den Rechner auswählen, auf den die Sicherungsdaten geschrieben werden sollen\n"));
       return 1 ;
       }
      if (comNet == "" && dialog_auswertung == 7)
       {
-       QMessageBox::about(this, tr("Hinweis"),
-       tr("Sie müssen den Rechner auswählen, von dem die Sicherungsdaten zurück geschrieben werden sollen\n"));
+       QMessageBox::about(this, tr("Note", "Hinweis"),
+       tr("You must select your computer from which the backup data to be written back\n", "Sie müssen den Rechner auswählen, von dem die Sicherungsdaten zurück geschrieben werden sollen\n"));
       return 1 ;
       }
      if (user == "" )
       {
-       QMessageBox::about(this, tr("Hinweis"),
-      tr("Sie müssen den Benutzernamen eingeben. Sonst kann nicht auf Netzrechner zugegriffen werden\n"));
+       QMessageBox::about(this, tr("Note","Hinweis"),
+      tr("You must enter the user name. Can not otherwise be accessible to network computers\n", "Sie müssen den Benutzernamen eingeben. Sonst kann nicht auf Netzrechner zugegriffen werden\n"));
       return 1 ;
       }
      if (key == "" ) {
-          int ret = questionMessage(tr("Ist das richtig, dass Sie keinen Schlüssel eingegeben haben?"));
+          int ret = questionMessage(tr("Is it true that you have entered a key?", "Ist das richtig, dass Sie keinen Schlüssel eingegeben haben?"));
               if (ret == 2)
               return 1;
       }
@@ -522,7 +523,7 @@ for (i=0; i < j; i++)
 int NetEin::questionMessage(QString frage)
 {
     QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this, tr("Hinweis"),
+    reply = QMessageBox::question(this, tr("Note", "Hinweis"),
             frage,
             QMessageBox::No | QMessageBox::Yes | QMessageBox::Default);
     if (reply == QMessageBox::Yes)

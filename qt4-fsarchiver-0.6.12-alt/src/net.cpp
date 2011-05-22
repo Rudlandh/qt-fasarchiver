@@ -198,27 +198,27 @@ QFile file(folder_net);
      {
      	if (folder_net == "")
            {
-          	QMessageBox::about(this, tr("Hinweis"),
-         	tr("Bitte wählen Sie das Sicherungsverzeichnis aus.\n"));
+          	QMessageBox::about(this, tr("Note", "Hinweis"),
+         	tr("Please, select the saved directory..\n", "Bitte wählen Sie das Sicherungsverzeichnis aus.\n"));
 		return 0 ;
            }
         if (partition_net_ == "")
            {
-          	QMessageBox::about(this,tr("Hinweis"),
-         	tr("Bitte wählen Sie die zu sichernde Partition aus.\n"));
+          	QMessageBox::about(this,tr("Note", "Hinweis"),
+         	tr("Please, select the partition to be saved.\n", "Bitte wählen Sie die zu sichernde Partition aus.\n"));
 		return 0 ;
            }
         DateiName_net = lineEdit_DateiName->text();
         if (DateiName_net == "")
            {
-          	QMessageBox::about(this, tr("Hinweis"),
-         	tr("Bitte wählen Sie den Dateinamen der Sicherung aus.\n"));
+          	QMessageBox::about(this, tr("Note", "Hinweis"),
+         	tr("Please, select the filename of the backup.\n", "Bitte wählen Sie den Dateinamen der Sicherung aus.\n"));
 		return 0 ;
            }
         if (file.open(QIODevice::ReadOnly))
         	  {
-                QMessageBox::about(this,"Hinweis",
-         	tr("Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen\n"));
+                QMessageBox::about(this, tr("Note", "Hinweis"),
+         	tr("You have selected a file. You must select a directory\n", "Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen\n"));
 		file.close();
 		return 0 ;
  	        }
@@ -244,7 +244,7 @@ QFile file(folder_net);
                    int ret = 1; 
                    if (part_art_net == "system")
                 	{
-                	ret = window.questionMessage(tr("Die zu sichernde Systempartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?"));
+                	ret = window.questionMessage(tr("The system partition to be saved is mounted. Do you want to do a live backup?", "Die zu sichernde Systempartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?"));
                         if (ret == 2)
                            return 0;
                         if (ret == 1)
@@ -252,7 +252,7 @@ QFile file(folder_net);
                 	}
                   if (part_art_net == "home")
                 	{
-                	ret = window.questionMessage(tr("Die zu sichernde Homepartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?"));
+                	ret = window.questionMessage(tr("The home partition to be saved is mounted. Do you want to do a live backup?", "Die zu sichernde Homepartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?"));
                         if (ret == 2)
                            return 0;
                         if (ret == 1)
@@ -266,8 +266,9 @@ QFile file(folder_net);
                          	err = system (umountpoint);
                            if (err != 0 && liveFlag == 0)
                                 {
-				QMessageBox::about(this, tr("Hinweis"),
-         			tr("Die Partition ")   + partition_net_ + tr(" kann nicht ausgehängt werden. Das Programm wird abgebrochen\n"));
+				QMessageBox::about(this, tr("Note", "Hinweis"),
+         			tr("The partition ", "Die Partition ")   + partition_net_ + 
+				tr("can not be unmounted. The program is terminated\n", " kann nicht ausgehängt werden. Das Programm wird abgebrochen\n"));
                                 return 0 ; 
                                 }  
                  	}
@@ -304,8 +305,8 @@ QFile file(folder_net);
 	    			    parameter[indizierung + 1] = keyText;
                                     int len = parameter[indizierung + 1].size();
                				if (len < 6 || len > 64) {
-                  				QMessageBox::about(this,tr("Hinweis"),
-         	  				tr("Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
+                  				QMessageBox::about(this,tr("Note", "Hinweis"),
+         	  				tr("The key length must be between 6 and 64 characters\n", "Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
                   				return 0 ; 
                				        }
                                      indizierung = indizierung + 2;  
@@ -328,8 +329,8 @@ QFile file(folder_net);
             			  parameter[indizierung + 1] = ("/dev/" + partition_net_);
                                   QFile f(parameter[indizierung]);
                                   if  (parameter[4] != "-o" && (f.exists())){
-				       QMessageBox::about(this, tr("Hinweis"),
-         	  			  tr("Die Partitionsdatei ")   + parameter[6] + tr(" ist bereits vorhanden. Die Sicherung wird nicht durchgeführt\n"));
+				       QMessageBox::about(this, tr("Note", "Hinweis"),
+         	  			  tr("The partition file ", "Die Partitionsdatei ")   + parameter[6] + tr("already exists. The backup is not performed\n", " ist bereits vorhanden. Die Sicherung wird nicht durchgeführt\n"));
                   			  return 0 ; 
                				}
                                   state = chk_Beschreibung->checkState();
@@ -344,8 +345,8 @@ QFile file(folder_net);
              			  int wert = dlg->exec();
              			  if (wert == 0 && dialog_auswertung == 2)
                 		      {
-                		      QMessageBox::about(this, tr("Hinweis"),
-         			      tr("Die Sicherung wurde vom Benutzer abgebrochen\n"));
+                		      QMessageBox::about(this, tr("Note", "Hinweis"),
+         			      tr("The backup was aborted by the user\n", "Die Sicherung wurde vom Benutzer abgebrochen\n"));
 				      pushButton_save->setEnabled(false);
                 		      return 0;
                 		      }
@@ -411,20 +412,20 @@ int pos;
         {
           if (state1 == Qt::Checked && keyText.isEmpty())  
               {
-                QMessageBox::about(this,tr("Hinweis"),
-         	tr("Es wurde kein Schlüssel für die Entschlüsselung angegeben.\n"));
+                QMessageBox::about(this,tr("Note", "Hinweis"),
+         	tr("No key was given for the decryption\n", "Es wurde kein Schlüssel für die Entschlüsselung angegeben.\n"));
 		return 1 ;
                }
            if (folder_net == "")
            {
-          	QMessageBox::about(this, tr("Hinweis"),
-         	tr("Bitte wählen Sie den Dateinamen der Sicherung aus.\n"));
+          	QMessageBox::about(this, tr("Note", "Hinweis"),
+         	tr("Please, select the filename of the backup.\n", "Bitte wählen Sie den Dateinamen der Sicherung aus.\n"));
                 return 0;
            }
            if (partition_net_ == "")
            {
-          	QMessageBox::about(this, tr("Hinweis"),
-         	tr("Bitte wählen Sie die zurück zu schreibende Partition aus.\n"));
+          	QMessageBox::about(this, tr("Note", "Hinweis"),
+         	tr("Please, select the partition to be written back.\n", "Bitte wählen Sie die zurück zu schreibende Partition aus.\n"));
                 return 0;
            }
    	   if (file.open(QIODevice::ReadOnly))
@@ -434,8 +435,8 @@ int pos;
                         pos = testDateiName("fsa"); 
          		if (pos == 0)
          			   {
-           			   QMessageBox::about(this, tr("Hinweis"),
-         			   tr("Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht \nDie Dateiendung muss .fsa sein"));
+           			   QMessageBox::about(this, tr("Note", "Hinweis"),
+         			   tr("You have chosen the wrong recovery file selected.\nThe files should end with. fsa be", "Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht \nDie Dateiendung muss .fsa sein"));
                                    return 0;
          			   }
              		}
@@ -443,8 +444,8 @@ int pos;
            	
 	     else
                 {
-                QMessageBox::about(this, tr("Hinweis"),
-         	tr("Sie haben ein Verzeichnis ausgewählt. Sie müssen eine Datei auswählen\n"));
+                QMessageBox::about(this, tr("Note", "Hinweis"),
+         	tr("You have selected a directory. You must select a file\n", "Sie haben ein Verzeichnis ausgewählt. Sie müssen eine Datei auswählen\n"));
                 return 0;
                  }
                state = chk_Beschreibung->checkState();
@@ -460,8 +461,8 @@ int pos;
                		dev_part = meldungen_holen(2);
                         if (werte_holen(4) == 103){
                   		chk_key->setChecked(Qt::Checked);
-                  		QMessageBox::about(this, tr("Hinweis"),
-         	     		tr("Die Partition ist verschlüsselt. Bitte geben Sie den Schlüsel ein\n"));
+                  		QMessageBox::about(this, tr("Note", "Hinweis"),
+         	     		tr("The partition is encrypted. Please enter the key\n", "Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein\n"));
                    		return 0;
                		} 
         	}
@@ -469,14 +470,14 @@ int pos;
             		parameter[2] = "-c";
                         parameter[3] = keyText;
                         if (parameter[3].size() < 6 || parameter[3].size() > 64) {
-                  		QMessageBox::about(this, tr("Hinweis"),
-         	  		tr("Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
+                  		QMessageBox::about(this, tr("Note", "Hinweis"),
+         	  		tr("The key length must be between 6 and 64 characters\n", "Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
                   		return 0 ; 
                	   		}
 			parameter[4] = folder_net;
                         int retour =  fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
                         if ( werte_holen(4) == 103 && retour != 0){
-                           QMessageBox::about(this, tr("Hinweis"), tr("Sie haben ein falsches Passwort eingegeben. \n"));
+                           QMessageBox::about(this, tr("Note","Hinweis"), tr("They have entered a wrong password.\n", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");
                            return 0;
                         }
@@ -494,8 +495,8 @@ int pos;
                QString str, str1;
 	       str = dev_part;
                str1 = dev_;
-               cmp = window.questionMessage(tr("Die wiederherzustellende Partition ") + str1 + 
-               tr(" stimmt nicht mit der gesicherten ") + str + tr(" überein. Wollen Sie trotzdem die Wiederherstellung durchführen?"));
+               cmp = window.questionMessage(tr("Partition to restore the ", "Die wiederherzustellende Partition ") + str1 + 
+               tr(" does not coincide with the saved  ", " stimmt nicht mit der gesicherten ") + str + tr("Do you want to continue restore?", " überein. Wollen Sie trotzdem die Wiederherstellung durchführen?"));
                if (cmp == 2)  //nicht wiederherstellen
                   return 0;
             }
@@ -519,8 +520,8 @@ int pos;
              		int wert = dlg->exec();
              		if (wert == 0 && dialog_auswertung == 3)
                 	   {
-                	   QMessageBox::about(this, tr("Hinweis"),
-         		   tr("Das Zurückschreiben wurde vom Benutzer abgebrochen\n"));
+                	   QMessageBox::about(this, tr("Note", "Hinweis"),
+         		   tr("The restore was canceled by user\n", "Das Zurückschreiben wurde vom Benutzer abgebrochen\n"));
                             pushButton_restore->setEnabled(false);
                 	   return 0;
                 	   }
@@ -532,15 +533,15 @@ int pos;
               //Überprüfung ob System oder Home Partition 
                    if (part_art_net == "system")
                 	{
-                        QMessageBox::about(this, tr("Hinweis"),
-         			tr("Die wiederherzustellende Systempartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD\n"));
+                        QMessageBox::about(this, tr("Note", "Hinweis"),
+         			tr("To restore system partition is mounted and can not be restored. Please use a live CD\n", "Die wiederherzustellende Systempartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD\n"));
 				return 0;
 				      } 
                         
                    if (part_art_net == "home")
                 	{
-                        QMessageBox::about(this, tr("Hinweis"),
-         			tr("Die wiederherzustellende Homepartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD\n"));
+                        QMessageBox::about(this, tr("Note", "Hinweis"),
+         			tr("The restored home partition is mounted and can not be restored. Please use a live CD\n", "Die wiederherzustellende Homepartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD\n"));
 				return 0; 
                         
                 	}
@@ -551,9 +552,9 @@ int pos;
                           err = system (umountpoint);  
                           if (err != 0)
                                 {
-				QMessageBox::about(this, tr("Hinweis"),
-         			tr("Die Partition ")   + partition_net_ + 
-         			tr(" kann nicht ausgehängt werden. Das Programm wird abgebrochen\n"));
+				QMessageBox::about(this, tr("Note", "Hinweis"),
+         			tr("The partition", "Die Partition ")   + partition_net_ + 
+         			tr("can not be unmounted. The program is terminated\n", " kann nicht ausgehängt werden. Das Programm wird abgebrochen\n"));
                                 return 0 ; 
                                 }  
                           }
@@ -577,8 +578,8 @@ int pos;
                  parameter[4] = keyText;
                  int len = parameter[4].size();
                	    if (len < 6 || len > 64) {
-                  	QMessageBox::about(this, tr("Hinweis"),
-         	  	tr("Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
+                  	QMessageBox::about(this, tr("Note", "Hinweis"),
+         	  	tr("The key length must be between 6 and 64 characters\n", "Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
                   	return 0 ; 
                	   }
                  parameter[5] = folder_net;
@@ -621,8 +622,8 @@ int i = 0;
 }
 
 void DialogNet::starteinstellung(){
-            label_folder->setText (tr("Sicherungsverzeichnis"));
-            pushButton_save->setText (tr("Partition sichern"));
+            label_folder->setText (tr("Backup directory", "Sicherungsverzeichnis"));
+            pushButton_save->setText (tr("Save partition", "Partition sichern"));
             lineEdit_DateiName->setEnabled(true);
             pushButton_restore->setEnabled(false);
             pushButton_save->setEnabled(true);
@@ -635,7 +636,7 @@ void DialogNet::starteinstellung(){
            
             AnzahlsaveFile->setEnabled(true);
             AnzahlgesicherteFile->setEnabled(true);
-            chk_key->setText (tr("Sicherung  verschlüsseln\nSchlüssel:"));
+            chk_key->setText (tr("Encrypt backup key:", "Sicherung  verschlüsseln\nSchlüssel:"));
             chk_split->setEnabled(true);
             QModelIndex cwdIndex = dirModel->index("/");
       	    treeView->setRootIndex(cwdIndex);  
@@ -650,8 +651,8 @@ void DialogNet::rdButton_auslesen()
         }
      if (rdBt_restoreFsArchiv->isChecked())
         {
-		label_folder->setText (tr("Sicherungsdatei"));
-      		pushButton_save->setText (tr("Partition zurückschreiben"));
+		label_folder->setText (tr("Backup file", "Sicherungsdatei"));
+      		pushButton_save->setText (tr("Partition restore", "Partition zurückschreiben"));
                 pushButton_restore->setEnabled(true);
                 pushButton_save->setEnabled(false);
                 lineEdit_DateiName->setEnabled(false);
@@ -664,7 +665,7 @@ void DialogNet::rdButton_auslesen()
                 
                 AnzahlsaveFile->setEnabled(false);
                 AnzahlgesicherteFile->setEnabled(false);
-                chk_key->setText (tr("Sicherung  entschlüsseln\nSchlüssel:"));
+                chk_key->setText (tr("Security key\n to decrypt:", "Sicherung  entschlüsseln\nSchlüssel:"));
                 chk_split->setEnabled(false);
                 treeView->setEnabled(true);
                 QModelIndex cwdIndex = dirModel->index("/mnt/qt4-fs-client");
@@ -741,8 +742,8 @@ void DialogNet::thread1Ready()  {
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
-       QMessageBox::about(this, tr("Hinweis"), tr("Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_
-        + tr(" Dateien, ") + cnt_dir_ + tr(" Verzeichnisse und ") + cnt_hardlinks_ + tr(" Links wurden gesichert"));
+       QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition has been backed up successfully.\n", "Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_
+        + tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories and", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been saved", " Links wurden gesichert"));
      }
      else {
        pushButton_save->setEnabled(false);
@@ -758,8 +759,8 @@ void DialogNet::thread1Ready()  {
        // Anzahl nicht korrekt gesicherte Dateien ausgeben
        int part_testen = werte_holen(4);
        if (part_testen == 108){
-	   QMessageBox::about(this, tr("Hinweis"),
-          tr("Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?\n" ));
+	   QMessageBox::about(this, tr("Note", "Hinweis"),
+          tr("The partition type is not supported. Maybe the partition is encrypted?\n", "Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?\n" ));
           }
        int err_regfile = werte_holen(1);
        QString err_regfile_ = QString::number(err_regfile);
@@ -769,9 +770,12 @@ void DialogNet::thread1Ready()  {
        err_hardlinks = err_hardlinks + werte_holen(5);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
        if (part_testen != 108){
-       	  QMessageBox::about(this, tr("Hinweis"),
-          err_regfile_ + tr(" Dateien, ")    + err_dir_ + tr(" Verzeichnisse und ")
-           + err_hardlinks_ + tr(" Links wurden nicht korrekt gesichert. Die Sicherung der Partition war nur teilweise erfolgreich\n" ));
+       	  QMessageBox::about(this, tr("Note", "Hinweis"),
+          err_regfile_ + tr(" files", " Dateien, ") 
+	+ err_dir_ + tr(" Directories and ", " Verzeichnisse und ") + err_hardlinks_ 
+	+ tr(" links were not saved properly. The backup of the partition was only partially successful\n", 
+	" Links wurden nicht korrekt gesichert. Die Sicherung der Partition war nur teilweise erfolgreich\n" ));
+	
 	  }
         }
        
@@ -795,9 +799,9 @@ void DialogNet::thread2Ready()  {
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
-       QMessageBox::about(this, tr("Hinweis"), 
-       tr("Die Partition wurde erfolgreich wieder hergestellt.\n") + cnt_regfile_ + tr(" Dateien, ") + cnt_dir_ + 
-       tr(" Verzeichnisse und ") + cnt_hardlinks_ + tr(" Links wurden wieder hergestellt"));
+       QMessageBox::about(this, tr("Note", "Hinweis"), 
+       tr("The partition is successful back.\n", "Die Partition wurde erfolgreich wieder hergestellt.\n") + cnt_regfile_ + tr(" Files", " Dateien, ") + cnt_dir_ + 
+       tr(" directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr("links have been restored", " Links wurden wieder hergestellt"));
         }
      if (meldung == 100) {
           // Anzahl nicht korrekt zurückgeschriebene Dateien ausgeben
@@ -809,17 +813,17 @@ void DialogNet::thread2Ready()  {
        int err_hardlinks = werte_holen(3);
        err_hardlinks = err_hardlinks + werte_holen(5);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
-       QMessageBox::about(this, tr("Hinweis"),
-         err_regfile_ + tr(" Dateien, ")    + err_dir_ +
-         tr(" Verzeichnisse und ") + err_hardlinks_ + 
-         tr(" Links wurden nicht korrekt wiederhergestellt. Die Wiederherstellung der Partition war nur teilweise erfolgreich\n" ));
+       QMessageBox::about(this, tr("Note", "Hinweis"),
+         err_regfile_ + tr(" files", " Dateien, ") + err_dir_ +
+         tr(" directories and ", " Verzeichnisse und ") + err_hardlinks_ + 
+         tr(" links were not recovered correctly. The recovery of the partition was only partly successful\n", " Links wurden nicht korrekt wiederhergestellt. Die Wiederherstellung der Partition war nur teilweise erfolgreich\n" ));
         }
      if (meldung == 102) { 
-        QMessageBox::about(this, tr("Hinweis"), 
-        tr("Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu\n"));
+        QMessageBox::about(this, tr("Note", "Hinweis"), 
+        tr("You tried to restore a partition. The selected file can only restore directories. Please restart the program\n", "Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu\n"));
       }
      if (meldung == 103) { 
-        QMessageBox::about(this, tr("Hinweis"), tr("Sie haben ein falsches Passwort eingegeben. \n"));
+        QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.\n", "Sie haben ein falsches Passwort eingegeben. \n"));
         endeThread_net = 0;
         lineKey->setText ("");
       }

@@ -92,7 +92,7 @@ int get_abort()
         for (i=0; mysigs[i]!=-1; i++)
         {
             if (sigismember(&mask_set, mysigs[i]))
-            {   //msgprintf(MSG_FORCE, tr("get_terminate(): received signal %d\n"), mysigs[i]);
+            {   //msgprintf(MSG_FORCE, _("get_terminate(): received signal %d\n"), mysigs[i]);
                 atomic_set(&g_aborted, true);
                 return true;
             }

@@ -95,10 +95,10 @@ DialogDIR::DialogDIR(QWidget *parent)
            lineKey->setEnabled(true);
         state = chk_path->checkState();
         if (dialog_auswertung == 4){
-            chk_key->setText (tr("Sicherung verschlüsseln\nSchlüssel:"));
-            bt_save->setText (tr("Verzeichnis sichern"));
-            label->setText (tr("zu sicherndes Verzeichnis"));
-            label_2->setText (tr("Ort (Pfad) der Sicherung")); 
+            chk_key->setText (tr("Encrypt backup  Key:", "Sicherung verschlüsseln\nSchlüssel:"));
+            bt_save->setText (tr("Directory save", "Verzeichnis sichern"));
+            label->setText (tr("to saved Directory", "zu sicherndes Verzeichnis"));
+            label_2->setText (tr("Location (path) of the backup", "Ort (Pfad) der Sicherung")); 
             chk_path->setEnabled(false);
             chk_overwrite->setEnabled(true);
             cmb_zip->setEnabled(true);
@@ -110,10 +110,10 @@ DialogDIR::DialogDIR(QWidget *parent)
             AnzahlgesicherteFile->setEnabled(true);
             } 
         if (dialog_auswertung == 5){
-            chk_key->setText (tr("Sicherung entschlüsseln\nSchlüssel:"));
-            bt_save->setText (tr("Verzeichnis zurückschreiben"));  
-	    label->setText (tr("zurück zu schreibende Sicherungsdatei"));
-            label_2->setText (tr("Ort (Pfad) der Wiederherstellung")); 
+            chk_key->setText (tr("Backup key\n to decrypt:", "Sicherung entschlüsseln\nSchlüssel:"));
+            bt_save->setText (tr("Directory restore", "Verzeichnis zurückschreiben"));  
+	    label->setText (tr("back to write backup file", "zurück zu schreibende Sicherungsdatei"));
+            label_2->setText (tr("Location (path) of the restore", "Ort (Pfad) der Wiederherstellung")); 
             state = chk_path->checkState();
             if (state == Qt::Checked)
                  treeView_path->setEnabled(false);
@@ -152,26 +152,26 @@ Qt::CheckState state1;
         if (dialog_auswertung == 4){
            if (state1 == Qt::Checked && keyText.isEmpty())
               {
-                QMessageBox::about(this, tr("Hinweis"),
-         	tr("Es wurde kein Schlüssel für die Verschlüsselung angegeben.\n"));
+                QMessageBox::about(this, tr("Note", "Hinweis"),
+         	tr("There was no key for encryption specified.\n", "Es wurde kein Schlüssel für die Verschlüsselung angegeben.\n"));
 		return 1 ;
                }
            if (folder_path == "")
              {
-          	QMessageBox::about(this,tr("Hinweis"),
-         	tr("Bitte wählen Sie das Verzeichnis aus, in das das zu sichernde Verzeichnis bzw die zu sichernde Datei geschrieben werden soll.\n"));
+          	QMessageBox::about(this,tr("Note", "Hinweis"),
+         	tr("Please select the directory in which the to the directory or file to be saved is to be written.\n", "Bitte wählen Sie das Verzeichnis aus, in das das zu sichernde Verzeichnis bzw die zu sichernde Datei geschrieben werden soll.\n"));
 		return 1 ;
              }
    	   if (folder_dir == "")
              {
-          	QMessageBox::about(this,tr("Hinweis"),
-         	tr("Bitte wählen Sie das zu sichernde Verzeichnis bzw. die zu sichernde Datei aus.\n"));
+          	QMessageBox::about(this,tr("Note","Hinweis"),
+         	tr("Please select the to be directory or file to be saved.\n", "Bitte wählen Sie das zu sichernde Verzeichnis bzw. die zu sichernde Datei aus.\n"));
 		return 1 ;
              }
    	  if (info.isFile() && (dialog_auswertung == 4))
             {
       		QMessageBox::about(this, tr("Hinweis"),
-      		tr("Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen\n"));
+      		tr("You have selected a file. You must select a directory\n", "Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen\n"));
       		return 1 ;
             }
         parameter[0] = "fsarchiver";
@@ -198,8 +198,8 @@ Qt::CheckState state1;
 	      parameter[indizierung + 1] = keyText;  
               int len = parameter[indizierung + 1].size();
               if (len < 6 || len > 64) {
-                  QMessageBox::about(this,tr("Hinweis"),
-         	  	tr("Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
+                  QMessageBox::about(this,tr("Note", "Hinweis"),
+         	  	tr("The key length must be between 6 and 64 characters\n", "Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
                   	return 0 ; 
                	   }
                indizierung = indizierung + 2;  
@@ -218,8 +218,9 @@ Qt::CheckState state1;
         parameter[indizierung+1] = folder_dir;
         QFile f(parameter[indizierung]);
         if  (parameter[4] != "-o" && (f.exists())){
-            QMessageBox::about(this,tr("Hinweis"),
-         	tr("Die Partitionsdatei ")   + parameter[6] + tr(" ist bereits vorhanden. Die Sicherung wird nicht durchgeführt\n"));
+            QMessageBox::about(this,tr("Note", "Hinweis"),
+         	tr("The partition file ", "Die Partitionsdatei ")   + parameter[6] 
+	+ tr("already exists. The backup is not performed\n", " ist bereits vorhanden. Die Sicherung wird nicht durchgeführt\n"));
                 return 0 ; 
             }
         thread1.setValues(indizierung + 2,0);
@@ -261,41 +262,41 @@ Qt::CheckState state1;
       state = chk_path->checkState();
            if (state1 == Qt::Checked && keyText.isEmpty())  
               {
-                QMessageBox::about(this, tr("Hinweis"),
-         	tr("Es wurde kein Schlüssel für die Entschlüsselung angegeben.\n"));
+                QMessageBox::about(this, tr("Note", "Hinweis"),
+         	tr("There was no key to decrypt specified.\n", "Es wurde kein Schlüssel für die Entschlüsselung angegeben.\n"));
 		return 1 ;
                }
            if (folder_path == ""  && state != Qt::Checked)
              {
-          	QMessageBox::about(this, tr("Hinweis"),
-         	tr("Bitte wählen Sie das Verzeichnis aus, in das das das gesichernte Verzeichnis zurück geschrieben werden soll.\n"));
+          	QMessageBox::about(this, tr("Note", "Hinweis"),
+         	tr("Select the directory in which the saved image will be recovered.\n", "Bitte wählen Sie das Verzeichnis aus, in das das das gesicherte Verzeichnis zurück geschrieben werden soll.\n"));
 		return 1 ;
              }
    	   if (folder_dir == "")
              {
-          	QMessageBox::about(this,tr("Hinweis"),
-         	tr("Bitte wählen Sie die vorhandene Sicherungsdatei aus.\n"));
+          	QMessageBox::about(this,tr("Note", "Hinweis"),
+         	tr("Please select the existing backup file.\n", "Bitte wählen Sie die vorhandene Sicherungsdatei aus.\n"));
 		return 1 ;
              }
    	  if (info.isDir() && (dialog_auswertung == 4))
             {
-      		QMessageBox::about(this, tr("Hinweis"),
-      		tr("Sie haben ein Verzeichnis ausgewählt. Sie müssen eine Sicherungsdatei mit der Dateiendung .fsa auswählen\n"));
+      		QMessageBox::about(this, tr("Note", "Hinweis"),
+      		tr("You have selected a directory. You need a backup file with the extension .fsa select\n", "Sie haben ein Verzeichnis ausgewählt. Sie müssen eine Sicherungsdatei mit der Dateiendung .fsa auswählen\n"));
       		return 1 ;
             }
           pos = folder_dir.indexOf("fsa");
           if (pos == -1)
          	{
                 QMessageBox::about(this,tr("Hinweis"),
-         	tr("Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht \nDie Dateiendung muss .fsa sein"));
+         	tr("You have chosen the wrong recovery file selected.\n The files should end with. fsa be", "Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht \nDie Dateiendung muss .fsa sein"));
                 return 1;
          	}
         // prüfen ob Verzeichnis verschlüsselt
         int pos = folder_dir.indexOf("!.fsa");
         if (pos > 0 && state1 != Qt::Checked)  //Verzeichnis ist verschlüsselt
            { chk_key->setChecked(Qt::Checked);
-             QMessageBox::about(this, tr("Hinweis"),
-              tr("Die Partition ist verschlüsselt. Bitte geben Sie den Schlüsel ein\n"));
+             QMessageBox::about(this, tr("Note", "Hinweis"),
+              tr("The partition is encrypted. Please enter the Schlüsel\n", "Die Partition ist verschlüsselt. Bitte geben Sie den Schlüsel ein\n"));
               return 0; 
            }
         parameter[0] = "fsarchiver";
@@ -359,7 +360,7 @@ void DialogDIR::treeview_show()
 int DialogDIR::questionMessage(QString frage)
 {
     QMessageBox::StandardButton reply;
-    reply = QMessageBox::warning(this, tr("Hinweis"),
+    reply = QMessageBox::warning(this, tr("Note", "Hinweis"),
                                     frage,
                                     //QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
                                      QMessageBox::No | QMessageBox::Yes | QMessageBox::Default);
@@ -401,8 +402,8 @@ void DialogDIR::thread1Ready()  {
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
-       QMessageBox::about(this, tr("Hinweis"), tr("Die Sicherung des Verzeichnisses war erfolgreich.\n") + cnt_regfile_ +
-        tr(" Dateien, ") + cnt_dir_ + tr(" Verzeichnisse und ") + cnt_hardlinks_ + tr(" Links wurden gesichert"));
+       QMessageBox::about(this, tr("Note", "Hinweis"), tr("The backup of the directory was successful.\n", "Die Sicherung des Verzeichnisses war erfolgreich.\n") + cnt_regfile_ +
+        tr(" Files, ", " Dateien, ") + cnt_dir_ + tr(" directories, and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been saved", " Links wurden gesichert"));
        }
      else {
        // Anzahl nicht korrekt gesicherte Dateien ausgeben
@@ -413,9 +414,10 @@ void DialogDIR::thread1Ready()  {
        int err_hardlinks = werte_holen(3);
        err_hardlinks = err_hardlinks + werte_holen(5);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
-       QMessageBox::about(this,tr("Hinweis"), 
-         err_regfile_ + tr(" Dateien, ")    + err_dir_ + tr(" Verzeichnisse und ") + 
-         err_hardlinks_ + tr(" Links wurden nicht korrekt gesichert. Die Sicherung der Verzeichnisse war nur teilweise erfolgreich\n") );
+       QMessageBox::about(this,tr("Note", "Hinweis"), 
+         err_regfile_ + tr(" Files, ", " Dateien, ")    + err_dir_ 
+	+ tr(" directories, and ", " Verzeichnisse und ") + 
+         err_hardlinks_ + tr(" Links were not backed properly. The backup of the directories was only partially successful\n", " Links wurden nicht korrekt gesichert. Die Sicherung der Verzeichnisse war nur teilweise erfolgreich\n") );
      }
    } 
    thread1.exit();
@@ -437,8 +439,7 @@ void DialogDIR::thread2Ready()  {
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
-       QMessageBox::about(this,tr("Hinweis"), tr("Die Wiederherstellung des Verzeichnisses war erfolgreich.\n") + cnt_regfile_ + 
-       tr(" Dateien, ") + cnt_dir_ + tr(" Verzeichnisse und ") + cnt_hardlinks_ + tr(" Links wurden wieder hergestellt"));
+       QMessageBox::about(this,tr("Note", "Hinweis"), tr("The restoring of the directory was successful.\n", "Die Wiederherstellung des Verzeichnisses war erfolgreich.\n") + cnt_regfile_ + tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories, and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been restored", " Links wurden wieder hergestellt"));
         }
    if (meldung == 100) {
        // Anzahl nicht korrekt gesicherte Dateien ausgeben
@@ -449,23 +450,23 @@ void DialogDIR::thread2Ready()  {
        int err_hardlinks = werte_holen(3);
        err_hardlinks = err_hardlinks + werte_holen(5);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
-       QMessageBox::about(this,tr("Hinweis"),
-         err_regfile_ + tr(" Dateien, ")    + err_dir_ + 
-         tr(" Verzeichnisse und ") + err_hardlinks_ + 
-         tr(" Links wurden nicht korrekt wiederhergestellt. Die Wiederherstellung der Verzeichnisse war nur teilweise erfolgreich\n"));
+       QMessageBox::about(this,tr("Note", "Hinweis"),
+         err_regfile_ + tr(" Files,", " Dateien, ")    + err_dir_ + 
+         tr(" directories, and ", " Verzeichnisse und ") + err_hardlinks_ + 
+         tr(" links were not correctly restored. The restoring of the lists was only partially successful", " Links wurden nicht korrekt wiederhergestellt. Die Wiederherstellung der Verzeichnisse war nur teilweise erfolgreich\n"));
        }
    if (meldung == 103) { 
-        QMessageBox::about(this, tr("Hinweis"), tr("Sie haben ein falsches Passwort eingegeben.\n"));
+        QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.\n", "Sie haben ein falsches Passwort eingegeben.\n"));
         werte_uebergeben(100,4);
         endeThread_ = 0;
         lineKey->setText ("");
       }
    if (meldung == 104) {
-       QMessageBox::about(this, tr("Hinweis"), 
-       tr("Sie haben versucht ein Verzeichnis wiederherzustellen. Die gewählte Datei kann nur Partitionen wiederherstellen.\n"));
+       QMessageBox::about(this, tr("Note", "Hinweis"), 
+       tr("You have tried to restore a directory. The selected file can only restore partitions.\n", "Sie haben versucht ein Verzeichnis wiederherzustellen. Die gewählte Datei kann nur Partitionen wiederherstellen.\n"));
    }
    if (meldung == 106) {
-       QMessageBox::about(this, tr("Hinweis"), tr("Fehler in fsarchiver. Das Verzeichnis kann nicht wiederhergestellt werden!!\n"));
+       QMessageBox::about(this, tr("Note", "Hinweis"), tr("Error in fsarchiver. The directory can not be restored!", "Fehler in fsarchiver. Das Verzeichnis kann nicht wiederhergestellt werden!!\n"));
        endeThread_ = 0;
    }
 }

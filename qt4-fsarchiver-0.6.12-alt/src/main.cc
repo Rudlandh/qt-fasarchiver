@@ -51,14 +51,14 @@ QString add_part[100];
 
 int main(int argc, char *argv[])
 {
-  /* Set locale via LC_ALL.  */
+/* Set locale via LC_LL.  */
     setlocale (LC_ALL, "");
     bindtextdomain ("" ,"qt-fsarchiver");
     textdomain ("qt-fsarchiver");
 
    QApplication app(argc, argv);
 
-//	/*---install translation file for application strings---*/
+//	/*---install qt translation file for application strings---*/
 
 	QString sLocPath = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
 	QTranslator *translator = new QTranslator(0);

@@ -83,6 +83,7 @@ INSTALL_ROOT=%buildroot %makeinstall_std
 mkdir -p %buildroot%_datadir/qt4/translations
 cp translations/%{name}*.qm %buildroot%_datadir/qt4/translations
 install -D -m644 %buildroot/%_pixmapsdir/harddrive.png %buildroot%_liconsdir/%name.png
+rm %buildroot/%_pixmapsdir/harddrive.png
 
 %files
 %_sbindir/%name

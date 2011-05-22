@@ -59,7 +59,7 @@ DialogSetting::DialogSetting(QWidget *parent)
         auswertung = setting.value("split").toInt();
         if (auswertung ==1)
            chk_split->setChecked(Qt::Checked); 
-        auswertung = setting.value("Passwort").toInt();
+        auswertung = setting.value("Password").toInt();
         if (auswertung ==1)
            chk_password->setChecked(Qt::Checked); 
         auswertung = setting.value("save").toInt();
@@ -103,9 +103,9 @@ void DialogSetting:: setting_save()
             setting.setValue("split",0);
      state = chk_password->checkState();
      if (state == Qt::Checked) 
-            setting.setValue("Passwort",1);
+            setting.setValue("Password",1);
      else
-            setting.setValue("Passwort",0);
+            setting.setValue("Password",0);
      state = chk_datesave->checkState();
      if (state == Qt::Checked) 
             setting.setValue("save",1);

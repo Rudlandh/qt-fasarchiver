@@ -86,7 +86,7 @@ int fsarchiver_aufruf(int argc, char *anlage0, char *anlage1, char *anlage2, cha
     argv[12] = anlage12;
     argv[13] = anlage13;
     argv[14] = anlage14;
-    //msgprintf(MSG_FORCE, tr("fsarchiver_aufruf in connect_cpp %d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s\n"),argc, argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6],argv[7], argv[8], argv[9], argv[10], argv[11], argv[12], argv[13], argv[14]);
+    //msgprintf(MSG_FORCE, _("fsarchiver_aufruf in connect_cpp %d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s\n"),argc, argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6],argv[7], argv[8], argv[9], argv[10], argv[11], argv[12], argv[13], argv[14]);
     ret=fsarchiver_main(argc, argv);
     return ret;
 }

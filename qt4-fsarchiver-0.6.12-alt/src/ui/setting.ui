@@ -6,187 +6,152 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>263</width>
-    <height>584</height>
+    <width>473</width>
+    <height>568</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string extracomment="Basis-Einstellungen">Basic settings</string>
   </property>
-  <widget class="QPushButton" name="cmd_save">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>490</y>
-     <width>181</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="Einstellungen speichern">Save Settings</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="cmd_cancel">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>530</y>
-     <width>181</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="Beenden">Exit</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>20</y>
-     <width>181</width>
-     <height>61</height>
+     <y>10</y>
+     <width>451</width>
+     <height>541</height>
     </rect>
    </property>
-   <property name="text">
-    <string extracomment="Anzahl Prozessorenkerne, * die für fsarchiver * verwendet werden sollen:">Number of processors
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>421</width>
+      <height>521</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0" colspan="2">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string extracomment="Anzahl Prozessorenkerne, * die für fsarchiver * verwendet werden sollen:">Number of processors
 cores, for fsarchiver
 should be used:</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="chk_file">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>140</y>
-     <width>231</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="vorhandene Dateien * standardmäßig überschreiben">existing files 
-by default override</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="chk_tip">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>180</y>
-     <width>221</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="Hinweise zur Sicherung * standardmäßig aktivieren">Backup note
-enable by default</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="chk_key">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>220</y>
-     <width>221</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="Verschlüsselung * standardmäßig aktivieren">Enable encryption
-by default</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="cmb_Kerne">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>35</y>
-     <width>50</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="cmb_zip">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>95</y>
-     <width>121</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>90</y>
-     <width>91</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="Standard*kompression:">Standard
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QComboBox" name="cmb_Kerne"/>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string extracomment="Standard*kompression:">Standard
 compression:</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="chk_folder">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>270</y>
-     <width>231</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="Verzeichnisse * standardmäßig an * den ursprünglichen * Ort zurückschreiben">Directories by default
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QComboBox" name="cmb_zip"/>
+     </item>
+     <item row="2" column="0" colspan="3">
+      <widget class="QCheckBox" name="chk_file">
+       <property name="text">
+        <string extracomment="vorhandene Dateien * standardmäßig überschreiben">existing files 
+by default override</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="3">
+      <widget class="QCheckBox" name="chk_tip">
+       <property name="text">
+        <string extracomment="Hinweise zur Sicherung * standardmäßig aktivieren">Backup note
+enable by default</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="3">
+      <widget class="QCheckBox" name="chk_key">
+       <property name="text">
+        <string extracomment="Verschlüsselung * standardmäßig aktivieren">Enable encryption
+by default</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="3">
+      <widget class="QCheckBox" name="chk_folder">
+       <property name="text">
+        <string extracomment="Verzeichnisse * standardmäßig an * den ursprünglichen * Ort zurückschreiben">Directories by default
 write back to 
 the original 
 location</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="chk_split">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>340</y>
-     <width>231</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="Archiv-Datei auf DVD * Größe aufteilen">Archive file
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" colspan="3">
+      <widget class="QCheckBox" name="chk_split">
+       <property name="text">
+        <string extracomment="Archiv-Datei auf DVD * Größe aufteilen">Archive file
 size divided on DVD</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="chk_password">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>390</y>
-     <width>231</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="Passwort für Netzwerk * anzeigen">Password for network's view</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="chk_datesave">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>430</y>
-     <width>241</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="Netzwerkeingabedaten * speichern">Network input data save</string>
-   </property>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0" colspan="3">
+      <widget class="QCheckBox" name="chk_password">
+       <property name="text">
+        <string extracomment="Passwort für Netzwerk * anzeigen">Password for network's view</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0" colspan="3">
+      <widget class="QCheckBox" name="chk_datesave">
+       <property name="text">
+        <string extracomment="Netzwerkeingabedaten * speichern">Network input data save</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0" colspan="3">
+      <widget class="QPushButton" name="cmd_save">
+       <property name="text">
+        <string extracomment="Einstellungen speichern">Save Settings</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0" colspan="3">
+      <widget class="QPushButton" name="cmd_cancel">
+       <property name="text">
+        <string extracomment="Beenden">Exit</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
  </widget>
  <resources/>
  <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>false</bool>
+  </property>
+ </designerdata>
 </ui>
