@@ -31,7 +31,7 @@
 
 /* Internationalization.  */
 #include "gettext.h"
-#define _(str) gettext (str)
+#define _(str) (char*) gettext (str)
 #define N_(str) gettext_noop (str)
 
 /* Check for errors on write.  */

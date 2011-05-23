@@ -28,7 +28,6 @@
 #include <QtGui>
 #include "fsarchiver.h"
 #include "qt_probe.h"
-#include "system.h"
 extern "C" {
 #include "oper_probe.h"
 #include "devinfo.h"
@@ -68,7 +67,7 @@ int qt_probe()
     // ---- 0. get info from /proc/partitions + libblkid
 
    if ((res=partlist_getlist(blkdev, FSA_MAX_BLKDEVICES, &diskcount, &partcount))<1)
-   {   printf(_("keine Disk und Partition entdeckt\n"));
+   {   printf("keine Disk und Partition entdeckt\n");
         return -1;
     }
    
@@ -101,7 +100,7 @@ int qt_probe()
     }
     else
     {
-        printf(_("Es wurde keine Festplatte erkannt!\n"));
+        printf("Es wurde keine Festplatte erkannt!\n");
     }
     return 0;
 

@@ -48,6 +48,7 @@ protected slots:
     void closeEvent(QCloseEvent* event);
     void elapsedTime();
     void remainingTime(int prozent);
+    void chkkey();
 
 private slots:    
    void startThread1();

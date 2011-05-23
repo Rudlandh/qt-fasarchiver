@@ -21,7 +21,7 @@
 extern int dialog_auswertung;
 QStringList items_kerne;
 QStringList items_zip; 
-
+QStringList items_language; 
 
 DialogSetting::DialogSetting(QWidget *parent)
 {
@@ -29,6 +29,8 @@ DialogSetting::DialogSetting(QWidget *parent)
         setupUi(this); // this sets up GUI
 	connect( cmd_save, SIGNAL( clicked() ), this, SLOT( setting_save())); 
         connect( cmd_cancel, SIGNAL( clicked() ), this, SLOT(close()));
+        items_language << tr("German", "Deutsch") << tr("English", "Englisch") << tr("Russia", "Russisch") ;
+        cmb_language->addItems (items_language);
         items_kerne << "1" << "2" << "3" << "4" <<  "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12" ;
         cmb_Kerne->addItems (items_kerne);
    	items_kerne.clear();
@@ -40,7 +42,9 @@ DialogSetting::DialogSetting(QWidget *parent)
    	items_zip.clear();
         QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
         setting.beginGroup("Basiseinstellungen");
-        int auswertung = setting.value("Kompression").toInt();
+        int auswertung = setting.value("Sprache").toInt(); 
+        cmb_language -> setCurrentIndex(auswertung-1); 
+        auswertung = setting.value("Kompression").toInt();
         cmb_zip -> setCurrentIndex(auswertung); 
         auswertung = setting.value("Kerne").toInt();
         cmb_Kerne -> setCurrentIndex(auswertung-1); 
@@ -59,7 +63,7 @@ DialogSetting::DialogSetting(QWidget *parent)
         auswertung = setting.value("split").toInt();
         if (auswertung ==1)
            chk_split->setChecked(Qt::Checked); 
-        auswertung = setting.value("Password").toInt();
+        auswertung = setting.value("Passwort").toInt();
         if (auswertung ==1)
            chk_password->setChecked(Qt::Checked); 
         auswertung = setting.value("save").toInt();
@@ -74,6 +78,7 @@ void DialogSetting:: setting_save()
      QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
      setting.beginGroup("Basiseinstellungen");
      setting.setValue("Kerne",cmb_Kerne->currentText());
+     setting.setValue("Sprache",cmb_language->currentIndex()+1);
      int zip = cmb_zip->currentIndex();
      setting.setValue("Kompression",zip);
      state = chk_file->checkState();
@@ -103,15 +108,16 @@ void DialogSetting:: setting_save()
             setting.setValue("split",0);
      state = chk_password->checkState();
      if (state == Qt::Checked) 
-            setting.setValue("Password",1);
+            setting.setValue("Passwort",1);
      else
-            setting.setValue("Password",0);
+            setting.setValue("Passwort",0);
      state = chk_datesave->checkState();
      if (state == Qt::Checked) 
             setting.setValue("save",1);
      else
             setting.setValue("save",0);
-     
      setting.endGroup();
+     QMessageBox::about(this,tr("Note", "Hinweis"),
+         tr("The settings have been saved. Be restarted, the program modified the language setting.","Die Einstellungen wurden gespeichert. Bei geänderter Spracheinstellung muss das Programm neu gestartet werden.\n"));
 }
 

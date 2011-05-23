@@ -60,6 +60,7 @@ QStringList items_kerne_;
 	connect( rdBt_saveFsArchiv, SIGNAL( clicked() ), this, SLOT(rdButton_auslesen()));
    	connect( rdBt_restoreFsArchiv, SIGNAL( clicked() ), this, SLOT(rdButton_auslesen())); 
         connect( pushButton_partition, SIGNAL( clicked() ), this, SLOT(listWidget_auslesen()));
+        connect( chk_key, SIGNAL( clicked() ), this, SLOT(chkkey()));
   	dirModel = new QDirModel;
    	selModel = new QItemSelectionModel(dirModel);
    	treeView->setModel(dirModel);
@@ -85,6 +86,7 @@ QStringList items_kerne_;
    	items << zip_net[5] << zip_net[6] << zip_net[7] << zip_net[8];
    	cmb_zip->addItems (items);
    	items.clear();
+        chkkey();
    	// Ini-Datei auslesen
    	QString homepath = QDir::homePath();
    	QFile file1(homepath + "/.config/qt4-fsarchiver/qt4-fsarchiver.conf");
@@ -131,6 +133,17 @@ treeView->setSelectionModel(selModel);
         QModelIndexList indexes = selModel->selectedIndexes();
         folder_net =  (dirModel->filePath(index));
 }   
+
+void DialogNet::chkkey(){
+     Qt::CheckState state;
+     state = chk_key->checkState();
+     if (state == Qt::Checked){
+        lbl_key->setEnabled(true);
+        lineKey->setEnabled(true);}
+     else {
+	lbl_key->setEnabled(false);
+        lineKey->setEnabled(false);}
+}  
 
 void DialogNet:: end()
 { 
@@ -636,7 +649,7 @@ void DialogNet::starteinstellung(){
            
             AnzahlsaveFile->setEnabled(true);
             AnzahlgesicherteFile->setEnabled(true);
-            chk_key->setText (tr("Encrypt backup key:", "Sicherung  verschlüsseln\nSchlüssel:"));
+            chk_key->setText (tr("Encrypt\nbackup:", "Sicherung\nverschlüsseln"));
             chk_split->setEnabled(true);
             QModelIndex cwdIndex = dirModel->index("/");
       	    treeView->setRootIndex(cwdIndex);  
@@ -665,7 +678,7 @@ void DialogNet::rdButton_auslesen()
                 
                 AnzahlsaveFile->setEnabled(false);
                 AnzahlgesicherteFile->setEnabled(false);
-                chk_key->setText (tr("Security key\n to decrypt:", "Sicherung  entschlüsseln\nSchlüssel:"));
+               chk_key->setText (tr("Decrypt\nbackup:", "Sicherung\nentschlüsseln"));
                 chk_split->setEnabled(false);
                 treeView->setEnabled(true);
                 QModelIndex cwdIndex = dirModel->index("/mnt/qt4-fs-client");

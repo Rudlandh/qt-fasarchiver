@@ -18,6 +18,8 @@
 #ifndef __ERROR_H__
 #define __ERROR_H__
 
+#include "system.h"
+
 struct s_stats;
 typedef struct s_stats cstats;
 
@@ -35,7 +37,7 @@ struct s_stats
 };
 
 int fsaprintf(int level, bool showerrno, bool showloc, const char *file, 
-    const char *fct, int line, const char *format, ...) 
+    const char *fct, int line, char *format, ...) 
     __attribute__ ((format (printf, 7, 8)));
 
 // ---- message levels

@@ -34,9 +34,11 @@
 #include <string.h>
 #include <sys/param.h>
 #include "qt_probe.h"
+#include "setting.h"
+#include <locale.h>
+#include <gettext.h>
+
 using namespace std;
-
-
 FILE * g_fDebug; // debug file
 QString folder_file_;
 int dialog_auswertung;
@@ -44,28 +46,32 @@ int anzahl_disk;
 QString parameter[15];
 QString add_part[100];
 
-#include <locale.h>
-#include <gettext.h>
-
-
-
 int main(int argc, char *argv[])
 {
 /* Set locale via LC_LL.  */
     setlocale (LC_ALL, "");
     bindtextdomain ("" ,"qt-fsarchiver");
     textdomain ("qt-fsarchiver");
-
    QApplication app(argc, argv);
-
-//	/*---install qt translation file for application strings---*/
-
+   QString language_;
+   QString language[20];
+   language[0] = "de_DE";
+   language[1] = "en_EN";
+   language[2] = "ru_RU";
+   QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
+   setting.beginGroup("Basiseinstellungen");
+   int auswertung = setting.value("Sprache").toInt();
+   if (auswertung > 0) 
+   	language_ = "qt4-fsarchiver_" + language[auswertung -1];
+   setting.endGroup();
+//	/*---install translation file for application strings---*/
 	QString sLocPath = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
 	QTranslator *translator = new QTranslator(0);
+        if (auswertung == 0)
 	translator->load(QString("qt4-fsarchiver_"+QLocale::system().name()), sLocPath);
+        if (auswertung != 0) 
+           translator->load(language_, sLocPath);
 	app.installTranslator(translator);
-
-
    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8")); 
    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8")); 
    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8")); 

@@ -42,6 +42,7 @@ DialogDIR::DialogDIR(QWidget *parent)
         connect( chk_path, SIGNAL( clicked() ), this, SLOT( treeview_show() ) );
         //connect( btEnd, SIGNAL( clicked() ), qApp, SLOT(close()));
         connect( bt_end, SIGNAL( clicked() ), this, SLOT(close()));
+        connect( chk_key, SIGNAL( clicked() ), this, SLOT(chkkey()));
         dirModel = new QDirModel;
    	selModel = new QItemSelectionModel(dirModel);
         dirModel1 = new QDirModel;
@@ -90,12 +91,13 @@ DialogDIR::DialogDIR(QWidget *parent)
         	chk_overwrite->setChecked(Qt::Checked); 
         	cmb_zip -> setCurrentIndex(2); 
         	} 
+        chkkey();
 	state = chk_key->checkState();
         if (state == Qt::Checked)
            lineKey->setEnabled(true);
         state = chk_path->checkState();
         if (dialog_auswertung == 4){
-            chk_key->setText (tr("Encrypt backup  Key:", "Sicherung verschlüsseln\nSchlüssel:"));
+            chk_key->setText (tr("Encrypt\nbackup", "Sicherung\nverschlüsseln"));
             bt_save->setText (tr("Directory save", "Verzeichnis sichern"));
             label->setText (tr("to saved Directory", "zu sicherndes Verzeichnis"));
             label_2->setText (tr("Location (path) of the backup", "Ort (Pfad) der Sicherung")); 
@@ -110,7 +112,7 @@ DialogDIR::DialogDIR(QWidget *parent)
             AnzahlgesicherteFile->setEnabled(true);
             } 
         if (dialog_auswertung == 5){
-            chk_key->setText (tr("Backup key\n to decrypt:", "Sicherung entschlüsseln\nSchlüssel:"));
+            chk_key->setText (tr("Decrypt\nBackup", "Sicherung\nentschlüsseln"));
             bt_save->setText (tr("Directory restore", "Verzeichnis zurückschreiben"));  
 	    label->setText (tr("back to write backup file", "zurück zu schreibende Sicherungsdatei"));
             label_2->setText (tr("Location (path) of the restore", "Ort (Pfad) der Wiederherstellung")); 
@@ -125,6 +127,17 @@ DialogDIR::DialogDIR(QWidget *parent)
             AnzahlgesicherteFile->setEnabled(false);
             } 
  }
+
+void DialogDIR::chkkey(){
+     Qt::CheckState state;
+     state = chk_key->checkState();
+     if (state == Qt::Checked){
+        lbl_key->setEnabled(true);
+        lineKey->setEnabled(true);}
+     else {
+	lbl_key->setEnabled(false);
+        lineKey->setEnabled(false);}
+}
 
 int DialogDIR::folder_dir_path_einlesen() {
 int pos = 0;

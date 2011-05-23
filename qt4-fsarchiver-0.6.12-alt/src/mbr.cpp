@@ -109,6 +109,9 @@ QString homepath = QDir::homePath();
        }
      if (dialog_auswertung == 5 && cmb_mbr->currentIndex() != 3)	
        {
+        i = folder_einlesen();
+        if (i ==1)
+	   return 0;
         int auswertung = questionMessage(tr("Caution: If you really want to to write back the MBR completely or partially?\n", "Vorsicht: Wollen Sie wirklich den MBR komplett beziehungsweise teilweise zurückschreiben?\n")); 
             if  (auswertung == 2) 
                 return 1; 
@@ -150,6 +153,9 @@ QString homepath = QDir::homePath();
     }
     if (dialog_auswertung == 5 && cmb_mbr->currentIndex() == 3)	
        {
+        i = folder_einlesen();
+        if (i ==1)
+	   return 0;
         int auswertung = questionMessage(tr("Caution: If you really want to to write back the secret field?\n", "Vorsicht: Wollen Sie wirklich den verborgenen Bereich zurückschreiben? \n")); 
             if  (auswertung == 2) 
                 return 1; 
@@ -170,7 +176,6 @@ QString homepath = QDir::homePath();
       		  QMessageBox::about(this, tr("Note", "Hinweis"), tr("The hidden area was not restored.\n", "Der verborgene Bereich wurde nicht wieder hergestellt.\n"));
         }
     }
-       close();
        return 0;
 }
 
@@ -211,9 +216,9 @@ int sektor_;
 	    QMessageBox::about(this, tr("Note", "Hinweis"), tr("The end of hidden area of the 1st Partition could not be read. Only 512 bytes are saved.", "Das Ende des verborgenen Bereiches der 1. Partition konnte nicht ausgelesen werden. Es werden nur 512 Bytes gesichert.\n"));
             sektor = 2;
 	}
-        sektor_byte = (sektor_ -1) * 512;
+        sektor_byte = sektor_  * 512;
         Sektor_byte =  QString::number(sektor_byte);
-        sektor_byte_1 = (sektor_ -2) * 512;
+        sektor_byte_1 = (sektor_ -1) * 512 ;
         Sektor_byte_1=  QString::number(sektor_byte_1); 
 }
 
@@ -274,6 +279,12 @@ int DialogMBR::folder_einlesen() {
       {
       QMessageBox::about(this, tr("Note", "Hinweis"),
       tr("You have selected a file. You must select a directory.\n", "Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen\n"));
+      return 1 ;
+      }
+    if (folder_ == "" && (dialog_auswertung == 5))
+      {
+       QMessageBox::about(this, tr("Note", "Hinweis"),
+      tr("You must choose the MBR file\n","Sie müssen die MBR Sicherungsdatei auswählen.\n"));
       return 1 ;
       }
     if (info.isDir() && (dialog_auswertung == 5))

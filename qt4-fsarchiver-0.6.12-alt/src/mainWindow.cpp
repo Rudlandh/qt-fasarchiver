@@ -114,6 +114,7 @@ MWindow::MWindow()
    connect( pushButton_folder, SIGNAL( clicked() ), this, SLOT(folder_einlesen()));
    connect( rdBt_saveFsArchiv, SIGNAL( clicked() ), this, SLOT(rdButton_auslesen()));
    connect( rdBt_restoreFsArchiv, SIGNAL( clicked() ), this, SLOT(rdButton_auslesen()));
+   connect( chk_key, SIGNAL( clicked() ), this, SLOT(chkkey()));
    /*
    // Zeitgeber für Berechnung remainingTime
    QTimer *timer1 = new QTimer(this);
@@ -252,6 +253,17 @@ MWindow::MWindow()
       	} 
 }
 
+void MWindow::chkkey(){
+     Qt::CheckState state;
+     state = chk_key->checkState();
+     if (state == Qt::Checked){
+        lbl_key->setEnabled(true);
+        lineKey->setEnabled(true);}
+     else {
+	lbl_key->setEnabled(false);
+        lineKey->setEnabled(false);}
+}
+
 void MWindow::save_button(){
      rdBt_saveFsArchiv->setChecked(Qt::Checked);
      rdButton_auslesen();
@@ -284,8 +296,8 @@ void MWindow::rdButton_auslesen()
                 label_3->setEnabled(false);
                 AnzahlsaveFile->setEnabled(false);
                 AnzahlgesicherteFile->setEnabled(false);
-                chk_key->setText (tr("Backup key to decrypt:",
-		 "Sicherung  entschlüsseln\nSchlüssel:")); 
+                chk_key->setText (tr("Decrypt\nBackup",
+		 "Sicherung\nentschlüsseln")); 
                 chk_split->setEnabled(false); 
          }
      } 
@@ -305,8 +317,9 @@ void MWindow::starteinstellung(){
             label_3->setEnabled(true);
             AnzahlsaveFile->setEnabled(true);
             AnzahlgesicherteFile->setEnabled(true);
-            chk_key->setText (tr("Encrypt backup key", "Sicherung  verschlüsseln\nSchlüssel:"));
+            chk_key->setText (tr("Encrypt\nbackup", "Sicherung\nverschlüsseln"));
             chk_split->setEnabled(true); 
+            chkkey(); 
             }
        
 int MWindow::savePartition() 
@@ -792,15 +805,15 @@ void MWindow::info() {
       0, tr("qt4-fsarchiver"),
       tr("Backup and restore\n"
          "partitions, directory and MBR\n"
-         "Copyright (C) 2008-2011 Francois Dupoux, Dieter Baum.\n"
+         "Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.\n"
          "All rights reserved.\n"
-         "Version 0.6.12-6, May 6, 2011",
+         "Version 0.6.12-7, May 31, 2011",
 
 	 "Sichern und Wiederherstellen\n"
          "von Partitionen, Verzeichnissen und MBR\n"
-         "Copyright (C) 2008-2011 Francois Dupoux, Dieter Baum.\n"
+         "Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.\n"
          "All rights reserved.\n"
-         "Version 0.6.12-6, 6. Mai 2011"));
+         "Version 0.6.12-7, 31. Mai 2011"));
 }
 
 int MWindow::Root_Auswertung(){

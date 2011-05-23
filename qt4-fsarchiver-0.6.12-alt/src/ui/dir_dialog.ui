@@ -55,8 +55,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>20</y>
+     <x>20</x>
+     <y>25</y>
      <width>311</width>
      <height>18</height>
     </rect>
@@ -81,8 +81,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>20</y>
+     <x>370</x>
+     <y>25</y>
      <width>291</width>
      <height>18</height>
     </rect>
@@ -114,26 +114,12 @@
     <string extracomment="Kompressioneinstellung:">Compression setting:</string>
    </property>
   </widget>
-  <widget class="QCheckBox" name="chk_key">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>400</y>
-     <width>161</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string extracomment="Sicherung  entschlüsseln Schlüssel:">Security key
- to decrypt:</string>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="lineKey">
    <property name="geometry">
     <rect>
-     <x>222</x>
+     <x>262</x>
      <y>410</y>
-     <width>131</width>
+     <width>91</width>
      <height>26</height>
     </rect>
    </property>
@@ -252,18 +238,14 @@ Files/directories:</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>20</y>
+      <x>300</x>
+      <y>25</y>
       <width>131</width>
       <height>18</height>
      </rect>
     </property>
     <property name="text">
-     <string extracomment="vergangene Zeit:">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;elapsed time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string extracomment="vergangene Zeit:">elapsed time:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="MinuteElapsed">
@@ -283,7 +265,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>490</x>
-      <y>30</y>
+      <y>25</y>
       <width>71</width>
       <height>18</height>
      </rect>
@@ -309,7 +291,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>30</y>
+      <y>25</y>
       <width>71</width>
       <height>18</height>
      </rect>
@@ -321,18 +303,14 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>60</y>
-      <width>171</width>
+      <x>300</x>
+      <y>65</y>
+      <width>121</width>
       <height>18</height>
      </rect>
     </property>
     <property name="text">
-     <string extracomment="noch zu erwartende Zeit:">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;expected time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string extracomment="noch zu erwartende Zeit:">expected time:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="MinuteRemaining">
@@ -365,7 +343,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>490</x>
-      <y>60</y>
+      <y>65</y>
       <width>71</width>
       <height>18</height>
      </rect>
@@ -378,7 +356,7 @@ p, li { white-space: pre-wrap; }
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>60</y>
+      <y>65</y>
       <width>71</width>
       <height>18</height>
      </rect>
@@ -410,6 +388,36 @@ p, li { white-space: pre-wrap; }
    <property name="text">
     <string extracomment="Anzahl der Prozessorkerne, die für fsarchiver verwendet werden sollen:">Number of processor cores
 for to be used fsarchiver:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbl_key">
+   <property name="geometry">
+    <rect>
+     <x>176</x>
+     <y>415</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>key:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="chk_key">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>400</y>
+     <width>131</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Decrypt
+backup</string>
    </property>
   </widget>
  </widget>

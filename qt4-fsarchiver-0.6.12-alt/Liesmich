@@ -2,8 +2,9 @@
 qt4-fsarchiver: Sichern und Wiederherstellen von Partitionen für (K)Ubuntu. [http://wiki.ubuntuusers.de/qt4-fsarchiver]
 =======================================================================================================================
 
-Copyright (C) 2008-2011 Francois Dupoux und Dieter Baum.  All rights reserved.
+Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan und Dieter Baum.  All rights reserved.
 Kopieren der Dateien, mit und ohne Änderung ist erlaubt. Der Code ist ohne jegliche Garantie- Die Benutzung erfolgt auf eigene Gefahr.
+Francois Dupoux entwickelte das Basisprogramm fsarchiver, Hihin Ruslan hat das Programm internationalisiert, Dieter Baum erstellte die GUI.
 
 qt4-fsarchiver ist ein Programm mit einer grafischen Oberfläche zur einfachen Bedienung des Archivierungsprogramms fsarchiver.
 
@@ -16,6 +17,8 @@ Dies erreichen Sie mit folgendem Befehl:
 sudo apt-get install libzip-dev libbz2-dev liblzma-dev liblzo2-2 liblzo2-dev libgcrypt11-dev e2fslibs-dev libblkid-dev libattr1-dev build-essential libqt4-core libqt4-dev. 
 In dem Terminal wechseln Sie an den Ort, in dem sich das von sourceforge.net entpackte Archiv befindet.
 Mit der Eingabe von dem Befehl qmake && make && sudo make install wird das Programm installiert.
+Für die Verwendung der Sprachdateien müssen die Dateien *.qm in translation nach /usr/share/qt4/translation kopiert werden.
+Die deb-Pakete erledigen dies automatisch.
 
 Programmaufruf:
 Ubuntu: Unter "Anwendungen > Zubehör" wurde ein Starter für qt4-fsarchiver installiert. Mit Doppelklick wird das Programm mit Root-Rechten gestartet.

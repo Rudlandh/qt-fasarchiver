@@ -54,7 +54,7 @@ private:
 private slots:
 	void end();
         QString hostname();
-        
+        void chkkey();
 	void addWidget();
         void starteinstellung();
         void rdButton_auslesen();

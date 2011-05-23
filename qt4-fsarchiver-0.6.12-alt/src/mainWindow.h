@@ -66,6 +66,7 @@ protected slots:
    void restore_button();
    void eingabe_net_save();
    void eingabe_net_restore();
+   void chkkey();
    
    QString ubuntu_version();
    QString mountpoint(QString uuid);
