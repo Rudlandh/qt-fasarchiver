@@ -68,7 +68,7 @@ FSArchiver  - системный инструментарий, позволяя�
 - шифрование архива паролём на основе blowfish, libcrypto, openssl.
 
 %prep
-%setup -n %name-%version-%subversion
+%setup -n %name
 
 echo QMAKE_CXXFLAGS_RELEASE = %optflags >>  qt4-fsarchiver.pro
 echo QMAKE_CFLAGS_RELEASE = %optflags >>  qt4-fsarchiver.pro
