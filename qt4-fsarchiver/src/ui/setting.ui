@@ -28,30 +28,30 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-    <layout class="QGridLayout" name="gridLayout">
+   <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string extracomment="Anzahl Prozessorenkerne, * die für fsarchiver * verwendet werden sollen:">Number of processors
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string extracomment="Anzahl Prozessorenkerne, * die für fsarchiver * verwendet werden sollen:">Number of processors
 cores, for fsarchiver
 should be used:</string>
-       </property>
-      </widget>
-     </item>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="1">
-      <widget class="QComboBox" name="cmb_Kerne"/>
-     </item>
+     <widget class="QComboBox" name="cmb_Kerne"/>
+    </item>
     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string extracomment="Standard*kompression:">Standard
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string extracomment="Standard*kompression:">Standard
 compression:</string>
-       </property>
-      </widget>
-     </item>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="1">
-      <widget class="QComboBox" name="cmb_zip"/>
-     </item>
+     <widget class="QComboBox" name="cmb_zip"/>
+    </item>
     <item row="2" column="0">
      <widget class="QLabel" name="label_3">
       <property name="text">
@@ -72,73 +72,69 @@ location</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-      <widget class="QCheckBox" name="chk_file">
-       <property name="text">
-        <string extracomment="vorhandene Dateien * standardmäßig überschreiben">existing files 
-by default override</string>
-       </property>
-      </widget>
-     </item>
-    <item row="5" column="0">
-      <widget class="QCheckBox" name="chk_tip">
-       <property name="text">
-        <string extracomment="Hinweise zur Sicherung * standardmäßig aktivieren">Backup note
-enable by default</string>
-       </property>
-      </widget>
-     </item>
-    <item row="6" column="0">
-      <widget class="QCheckBox" name="chk_key">
-       <property name="text">
-        <string extracomment="Verschlüsselung * standardmäßig aktivieren">Enable encryption
-by default</string>
-       </property>
-      </widget>
-     </item>
-    <item row="8" column="0">
-      <widget class="QCheckBox" name="chk_split">
-       <property name="text">
-        <string extracomment="Archiv-Datei auf DVD * Größe aufteilen">Archive file
-size divided on DVD</string>
-       </property>
-      </widget>
-     </item>
-    <item row="9" column="0">
-      <widget class="QCheckBox" name="chk_password">
-       <property name="text">
-        <string extracomment="Passwort für Netzwerk * anzeigen">Password for network's view</string>
-       </property>
-      </widget>
-     </item>
-    <item row="10" column="0">
-      <widget class="QCheckBox" name="chk_datesave">
-       <property name="text">
-        <string extracomment="Netzwerkeingabedaten * speichern">Network input data save</string>
-       </property>
-      </widget>
-     </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QCheckBox" name="chk_file">
+      <property name="text">
+       <string extracomment="vorhandene Dateien * standardmäßig überschreiben">existing files by default override</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0" colspan="2">
+     <widget class="QCheckBox" name="chk_tip">
+      <property name="text">
+       <string extracomment="Hinweise zur Sicherung * standardmäßig aktivieren">Backup note enable by default</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0" colspan="2">
+     <widget class="QCheckBox" name="chk_key">
+      <property name="text">
+       <string extracomment="Verschlüsselung * standardmäßig aktivieren">Enable encryptionby default</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0" colspan="2">
+     <widget class="QCheckBox" name="chk_split">
+      <property name="text">
+       <string extracomment="Archiv-Datei auf DVD * Größe aufteilen">Archive file size divided on DVD</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="0" colspan="2">
+     <widget class="QCheckBox" name="chk_password">
+      <property name="text">
+       <string extracomment="Passwort für Netzwerk * anzeigen">Password for network's view</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0" colspan="2">
+     <widget class="QCheckBox" name="chk_datesave">
+      <property name="text">
+       <string extracomment="Netzwerkeingabedaten * speichern">Network input data save</string>
+      </property>
+     </widget>
+    </item>
     <item row="11" column="0" colspan="2">
-      <widget class="QPushButton" name="cmd_save">
-       <property name="text">
-        <string extracomment="Einstellungen speichern">Save Settings</string>
-       </property>
-      </widget>
-     </item>
+     <widget class="QPushButton" name="cmd_save">
+      <property name="text">
+       <string extracomment="Einstellungen speichern">Save Settings</string>
+      </property>
+     </widget>
+    </item>
     <item row="12" column="0" colspan="2">
-      <widget class="QPushButton" name="cmd_cancel">
-       <property name="text">
-        <string extracomment="Beenden">Exit</string>
-       </property>
-      </widget>
-     </item>
-    <item row="7" column="0">
+     <widget class="QPushButton" name="cmd_cancel">
+      <property name="text">
+       <string extracomment="Beenden">Exit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0" colspan="2">
      <widget class="QCheckBox" name="chk_folder_2">
       <property name="text">
        <string extracomment="Verzeichnisse * standardmäßig an * den ursprünglichen * Ort zurückschreiben">Directories by default write 
 back to the original location</string>
       </property>
-   </widget>
+     </widget>
     </item>
    </layout>
   </widget>

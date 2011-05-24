@@ -138,10 +138,8 @@ void DialogNet::chkkey(){
      Qt::CheckState state;
      state = chk_key->checkState();
      if (state == Qt::Checked){
-        lbl_key->setEnabled(true);
         lineKey->setEnabled(true);}
      else {
-	lbl_key->setEnabled(false);
         lineKey->setEnabled(false);}
 }  
 

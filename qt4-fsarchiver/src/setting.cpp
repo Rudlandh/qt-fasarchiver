@@ -29,7 +29,7 @@ DialogSetting::DialogSetting(QWidget *parent)
         setupUi(this); // this sets up GUI
 	connect( cmd_save, SIGNAL( clicked() ), this, SLOT( setting_save())); 
         connect( cmd_cancel, SIGNAL( clicked() ), this, SLOT(close()));
-        items_language << tr("German", "Deutsch") << tr("English", "Englisch") << tr("Russia", "Russisch") ;
+        items_language << tr("Deutsch", "German") << tr("English", "Englisch") << tr("Русский", "Russisch") ;
         cmb_language->addItems (items_language);
         items_kerne << "1" << "2" << "3" << "4" <<  "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12" ;
         cmb_Kerne->addItems (items_kerne);

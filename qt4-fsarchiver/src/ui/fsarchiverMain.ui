@@ -120,10 +120,10 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>0</x>
       <y>0</y>
       <width>341</width>
-      <height>71</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="sizeIncrement">
@@ -141,40 +141,30 @@
     <property name="checkable">
      <bool>false</bool>
     </property>
-    <widget class="QRadioButton" name="rdBt_saveFsArchiv">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>20</y>
-       <width>161</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="locale">
-      <locale language="German" country="Germany"/>
-     </property>
-     <property name="text">
-      <string>Saving partition 
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QRadioButton" name="rdBt_saveFsArchiv">
+       <property name="locale">
+        <locale language="German" country="Germany"/>
+       </property>
+       <property name="text">
+        <string>Saving partition 
 with fsArchiver:</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="rdBt_restoreFsArchiv">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>20</y>
-       <width>191</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="locale">
-      <locale language="German" country="Germany"/>
-     </property>
-     <property name="text">
-      <string>Restore partition 
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="rdBt_restoreFsArchiv">
+       <property name="locale">
+        <locale language="German" country="Germany"/>
+       </property>
+       <property name="text">
+        <string>Restore partition 
 with fsArchiver:</string>
-     </property>
-    </widget>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QPushButton" name="pushButton_folder">
     <property name="geometry">
@@ -226,56 +216,6 @@ with fsArchiver:</string>
     </property>
     <property name="text">
      <string>Name the backup file:</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="chk_Beschreibung">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>70</y>
-      <width>341</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Instructions to enter the backup</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>240</y>
-      <width>181</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Compression
-setting:</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="cmb_zip">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>240</y>
-      <width>131</width>
-      <height>27</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="chk_overwrite">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>100</y>
-      <width>341</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>available backup overwrite</string>
     </property>
    </widget>
    <widget class="QFrame" name="frame">
@@ -409,109 +349,159 @@ files/directories:</string>
      </item>
     </layout>
    </widget>
-   <widget class="QLineEdit" name="lineKey">
+   <widget class="QFrame" name="frame_2">
     <property name="geometry">
      <rect>
-      <x>275</x>
-      <y>130</y>
-      <width>71</width>
-      <height>26</height>
+      <x>10</x>
+      <y>80</y>
+      <width>351</width>
+      <height>201</height>
      </rect>
     </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QComboBox" name="cmb_zip">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>160</y>
+       <width>161</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>271</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="locale">
+      <locale language="English" country="UnitedStates"/>
+     </property>
+     <property name="text">
+      <string>Number of processors
+cores for to be used fsarchiver:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cmb_kerne">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>130</y>
+       <width>51</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>161</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Compression
+setting:</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chk_Beschreibung">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>331</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Instructions to enter the backup</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chk_key">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Encrypt 
+backup key</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineKey">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>60</y>
+       <width>121</width>
+       <height>26</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chk_overwrite">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>341</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>available backup overwrite</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chk_split">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>90</y>
+       <width>251</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Stock Split on DVD size</string>
+     </property>
+    </widget>
+    <zorder>chk_Beschreibung</zorder>
+    <zorder>label</zorder>
+    <zorder>cmb_zip</zorder>
+    <zorder>chk_overwrite</zorder>
+    <zorder>lineKey</zorder>
+    <zorder>chk_key</zorder>
+    <zorder>cmb_kerne</zorder>
+    <zorder>label_11</zorder>
+    <zorder>chk_split</zorder>
    </widget>
-   <widget class="QCheckBox" name="chk_key">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>130</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Encrypt 
-backup</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="cmb_kerne">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>200</y>
-      <width>71</width>
-      <height>27</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_11">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>200</y>
-      <width>251</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="locale">
-     <locale language="English" country="UnitedStates"/>
-    </property>
-    <property name="text">
-     <string>Number of processors cores for
-to be used fsarchiver:</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="chk_split">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>170</y>
-      <width>321</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Stock Split on DVD size</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbl_key">
-    <property name="geometry">
-     <rect>
-      <x>165</x>
-      <y>135</y>
-      <width>101</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>key:</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <zorder>pushButton_partition</zorder>
-   <zorder>pushButton_folder</zorder>
    <zorder>label_Partition</zorder>
    <zorder>label_folder</zorder>
    <zorder>pushButton_save</zorder>
-   <zorder>pushButton_end</zorder>
    <zorder>listWidget</zorder>
    <zorder>treeView</zorder>
+   <zorder>pushButton_partition</zorder>
    <zorder>groupBox</zorder>
+   <zorder>pushButton_folder</zorder>
    <zorder>lineEdit_DateiName</zorder>
    <zorder>pushButton_restore</zorder>
    <zorder>label_4</zorder>
-   <zorder>chk_Beschreibung</zorder>
-   <zorder>label</zorder>
-   <zorder>cmb_zip</zorder>
-   <zorder>chk_overwrite</zorder>
    <zorder>frame</zorder>
-   <zorder>lineKey</zorder>
-   <zorder>chk_key</zorder>
-   <zorder>cmb_kerne</zorder>
-   <zorder>label_11</zorder>
-   <zorder>chk_split</zorder>
-   <zorder>lbl_key</zorder>
+   <zorder>frame_2</zorder>
+   <zorder>pushButton_end</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -539,7 +529,7 @@ to be used fsarchiver:</string>
      <x>0</x>
      <y>0</y>
      <width>770</width>
-     <height>25</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAktionen">

@@ -257,10 +257,8 @@ void MWindow::chkkey(){
      Qt::CheckState state;
      state = chk_key->checkState();
      if (state == Qt::Checked){
-        lbl_key->setEnabled(true);
         lineKey->setEnabled(true);}
      else {
-	lbl_key->setEnabled(false);
         lineKey->setEnabled(false);}
 }
 
@@ -283,7 +281,7 @@ void MWindow::rdButton_auslesen()
      if (rdBt_restoreFsArchiv->isChecked())
         {
 		label_folder->setText (tr("Backup file", "Sicherungsdatei"));
-      		pushButton_save->setText (tr("Partition restore", "Partition zurückschreiben"));
+      		pushButton_save->setText (tr("Save partition", "Partition sichern"));
                 pushButton_restore->setEnabled(true);
                 pushButton_save->setEnabled(false);
                 lineEdit_DateiName->setEnabled(false);
@@ -1185,8 +1183,8 @@ compress_[8] = 0.32; //lzma best
 	tr("Partition  name:", "Partitionsname: ")  
 	+ PartitionString(row+1,0) + "\n" + tr("Partition type: ", "Partitionsart: ") 
        	+ PartitionString(row+1,1) + "\n" + tr("UUID: ") +  PartitionString(row+1,3) + "\n" + tr("Description: ", "Bezeichnung: ") + PartitionString(row+1,4) + "\n" + 
-       	tr("Partition size: ", "Partitionsgröße: ") + part_size_ + "\n" + tr("Assignment of the partition: ", "Belegung der Partition: ") + 
-       	free_part_size_ + "\n" + tr("Assignment of the partition: ", "Belegung der Partition: ") + QString::number(prozent)+ " %" + "\n" + tr("Compression: ", "Kompression: ") + compress + "\n" + 
+       	tr("Partition size: ", "Partitionsgröße: ") + part_size_ + "\n" + tr("Assignment of the partition : ", "Belegung der Partition: ") + 
+       	free_part_size_ + "\n" + tr("Assignment of the partition %: ", "Belegung der Partition %: ") + QString::number(prozent)+ " %" + "\n" + tr("Compression: ", "Kompression: ") + compress + "\n" + 
        	tr("Approximate image file sizes: ", "ungefähre Sicherungsdateigröße: ") + part_size_compress + "\n" + "\n" + tr("Other notes:", "weitere Hinweise:");
         ubuntu_root = tr("to be protected/secured partition: / (root system directory) ", "zu sichernde / gesicherte Partition: / (Wurzel-Systemverzeichnis)");
 	if (part_art == "system"){
