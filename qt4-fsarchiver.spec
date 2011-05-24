@@ -7,7 +7,7 @@ Release: alt1.2
 Url: http://www.fsarchiver.org
 Packager: Hihin Ruslan <ruslandh@altlinux.ru>
 
-Source: %name-%version-%subversion.tar
+Source: %name.tar
 
 License: GPLv2+
 Group: Archiving/Backup
