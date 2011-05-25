@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
  *
- * Copyright (C) 2010, 2011 Dieter Baum.  All rights reserved.
+ * Copyright (C) 2010, 2011 Hihin Ruslan und Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -67,7 +67,7 @@ protected slots:
    void eingabe_net_save();
    void eingabe_net_restore();
    void chkkey();
-   
+   QString kernel_version();
    QString ubuntu_version();
    QString mountpoint(QString uuid);
    QString format(float zahl);

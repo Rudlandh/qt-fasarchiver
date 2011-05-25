@@ -21,7 +21,7 @@ Für die Verwendung der Sprachdateien müssen die Dateien *.qm in translation na
 Die deb-Pakete erledigen dies automatisch.
 
 Programmaufruf:
-Ubuntu: Unter "Anwendungen > Zubehör" wurde ein Starter für qt4-fsarchiver installiert. Mit Doppelklick wird das Programm mit Root-Rechten gestartet.
+Ubuntu: Unter "Anwendungen > Zubehör" wurde ein Starter für qt4-fsarchiver installiert. Mit Doppelklick wird das Programm mit Root-Rechten gestartet. Bei der Oberfläche Unity muss die Übernahme in das Startmenü selbst vorgenommen werden.
 LinuxMint: Unter "Menü > Anwendungen > Zubehör" wurde ein Starter für qt4-fsarchiver installiert. Mit Doppelklick wird das Programm mit Root-Rechten gestartet.
 
 Hinweis für Ubuntu: Die Oberfläche ist seit Ubuntu 10.10 nicht mehr Gnome angepasst. 

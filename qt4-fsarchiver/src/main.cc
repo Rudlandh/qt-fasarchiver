@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
  *
- * Copyright (C) 2010-2011 Dieter Baum.  All rights reserved.
+ * Copyright (C) 2010-2011 Hihin Ruslan, Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -65,6 +65,13 @@ int main(int argc, char *argv[])
    	language_ = "qt4-fsarchiver_" + language[auswertung -1];
    setting.endGroup();
 //	/*---install translation file for application strings---*/
+//   ursprünglicher Code, Ausführung nur in Deutsch  
+//   QString translatorFileName = QLatin1String("qt_");
+//   translatorFileName += QLocale::system().name();
+//   QTranslator *translator = new QTranslator(&app);
+//   if (translator->load(translatorFileName, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+//        app.installTranslator(translator);
+//   internationale Sprachauswahl
 	QString sLocPath = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
 	QTranslator *translator = new QTranslator(0);
         if (auswertung == 0)

@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
  *
- * Copyright (C) 2010, 2011 Dieter Baum.  All rights reserved.
+ * Copyright (C) 2010, 2011 Hihin Ruslan, Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -150,16 +150,16 @@ QString filename;
 QFile f(filename);
 QString homepath = QDir::homePath();
     
-        befehl = "sudo umount /mnt/qt4-fs-client";
+        befehl = "umount /mnt/qt4-fs-client";
 	system (befehl.toAscii().data()); // Dateien entfernen 
   	filename = homepath + "/.config/qt4-fsarchiver/ip.txt";
 	if (f.exists()){
-     		befehl = "rm filename";
+     		befehl = "rm " + filename;
 		system (befehl.toAscii().data());
        }     
        filename = homepath + "/.config/qt4-fsarchiver/smbtree.txt";
        if (f.exists()){
-     		befehl = "rm filename";
+     		befehl = "rm " + filename;
 		system (befehl.toAscii().data());
        } 
        close(); 
@@ -176,7 +176,6 @@ QString rechner;
 
 QString DialogNet::hostname()
 {
-QString befehl;
 QString homepath = QDir::homePath(); 
 // eigenen Hostname einlesen
 QFile file("/etc/hostname");
@@ -754,7 +753,7 @@ void DialogNet::thread1Ready()  {
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
        QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition has been backed up successfully.\n", "Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_
-        + tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories and", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been saved", " Links wurden gesichert"));
+        + tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been saved.", " Links wurden gesichert."));
      }
      else {
        pushButton_save->setEnabled(false);
@@ -783,10 +782,9 @@ void DialogNet::thread1Ready()  {
        if (part_testen != 108){
        	  QMessageBox::about(this, tr("Note", "Hinweis"),
           err_regfile_ + tr(" files", " Dateien, ") 
-	+ err_dir_ + tr(" Directories and ", " Verzeichnisse und ") + err_hardlinks_ 
+	+ err_dir_ + tr(" directories and ", " Verzeichnisse und ") + err_hardlinks_ 
 	+ tr(" links were not saved properly. The backup of the partition was only partially successful\n", 
 	" Links wurden nicht korrekt gesichert. Die Sicherung der Partition war nur teilweise erfolgreich\n" ));
-	
 	  }
         }
        
@@ -811,8 +809,8 @@ void DialogNet::thread2Ready()  {
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
        QMessageBox::about(this, tr("Note", "Hinweis"), 
-       tr("The partition is successful back.\n", "Die Partition wurde erfolgreich wieder hergestellt.\n") + cnt_regfile_ + tr(" Files", " Dateien, ") + cnt_dir_ + 
-       tr(" directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr("links have been restored", " Links wurden wieder hergestellt"));
+       tr("The partition is successful back.\n", "Die Partition wurde erfolgreich wieder hergestellt.\n") + cnt_regfile_ + tr(" files, ", " Dateien, ") + cnt_dir_ + 
+       tr(" directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been restored.", " Links wurden wieder hergestellt."));
         }
      if (meldung == 100) {
           // Anzahl nicht korrekt zurückgeschriebene Dateien ausgeben
@@ -827,11 +825,11 @@ void DialogNet::thread2Ready()  {
        QMessageBox::about(this, tr("Note", "Hinweis"),
          err_regfile_ + tr(" files", " Dateien, ") + err_dir_ +
          tr(" directories and ", " Verzeichnisse und ") + err_hardlinks_ + 
-         tr(" links were not recovered correctly. The recovery of the partition was only partly successful\n", " Links wurden nicht korrekt wiederhergestellt. Die Wiederherstellung der Partition war nur teilweise erfolgreich\n" ));
+         tr(" links were not recovered correctly. The recovery of the partition was only partly successful.\n", " Links wurden nicht korrekt wiederhergestellt. Die Wiederherstellung der Partition war nur teilweise erfolgreich.\n" ));
         }
      if (meldung == 102) { 
         QMessageBox::about(this, tr("Note", "Hinweis"), 
-        tr("You tried to restore a partition. The selected file can only restore directories. Please restart the program\n", "Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu\n"));
+        tr("You tried to restore a partition. The selected file can only restore directories. Please restart the program.\n", "Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.\n"));
       }
      if (meldung == 103) { 
         QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.\n", "Sie haben ein falsches Passwort eingegeben. \n"));

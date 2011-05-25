@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
  *
- * Copyright (C) 2010, 2011 Dieter Baum.  All rights reserved.
+ * Copyright (C) 2010, 2011 Hihin Ruslan und Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -82,7 +82,7 @@ QString befehl;
 QString homepath = QDir::homePath(); 
 QString hostname_;
         hostname_ = hostname();
-//Auswertung findsmbs Windows-Rechner werden nichterkannt
+//smbtree: zuverlässige und schnelle Linux-Rechner Suche. Windows-Rechner werden aber nicht erkannt
 // -N verhindert die sudo-Abfrage
         befehl = "smbtree -N 1> " +  homepath + "/.config/qt4-fsarchiver/smbtree.txt";
 	system (befehl.toAscii().data()); 
@@ -110,7 +110,7 @@ QString hostname_;
         } 
 	file.close();
 
-//Auswertung findsmbs Windows-Rechner werden nichterkannt
+//Auswertung findsmbs Windows-Rechner werden erkannt
         QStringList adresse_;
         befehl = "findsmb 1> " +  homepath + "/.config/qt4-fsarchiver/findsmb.txt";
 	system (befehl.toAscii().data()); 
@@ -200,7 +200,7 @@ int NetEin:: setting_save()
    setting.endGroup();
    
    //Netzwerkrechner mounten auf /mnt/qt4-fs-client
-   befehl = "sudo mount -t cifs -o username=" + user + ",password=" + key + ",uid=0,gid=0 //" + comNet + "/qt4-fs /mnt/qt4-fs-client" ;
+   befehl = "mount -t cifs -o username=" + user + ",password=" + key + ",uid=0,gid=0 //" + comNet + "/qt4-fs /mnt/qt4-fs-client" ;
    //qDebug() << "befehl" << befehl;
    int k = system (befehl.toAscii().data());
    if (k == 0 && dialog_auswertung == 6){
@@ -522,13 +522,12 @@ for (i=0; i < j; i++)
 
 int NetEin::questionMessage(QString frage)
 {
-    QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this, tr("Note", "Hinweis"),
-            frage,
-            QMessageBox::No | QMessageBox::Yes | QMessageBox::Default);
-    if (reply == QMessageBox::Yes)
+	QMessageBox msg(QMessageBox::Question, tr("Note", "Hinweis"), frage);
+	QPushButton* yesButton = msg.addButton(tr("Yes", "Ja"), QMessageBox::YesRole);
+	QPushButton* noButton = msg.addButton(tr("No", "Nein"), QMessageBox::NoRole);
+	msg.exec();
+	if (msg.clickedButton() == yesButton)
         return 1;
-    else 
+	else if (msg.clickedButton() == noButton)
         return 2;
-
 }

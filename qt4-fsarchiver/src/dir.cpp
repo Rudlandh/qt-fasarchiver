@@ -368,19 +368,6 @@ void DialogDIR::treeview_show()
            treeView_path->setEnabled(true);
 }
 
-int DialogDIR::questionMessage(QString frage)
-{
-    QMessageBox::StandardButton reply;
-    reply = QMessageBox::warning(this, tr("Note", "Hinweis"),
-                                    frage,
-                                    //QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
-                                     QMessageBox::No | QMessageBox::Yes | QMessageBox::Default);
-    if (reply == QMessageBox::Yes)
-        return 1;
-    else 
-        return 2;
-}
-
 void DialogDIR::startThread1() {
    if( thread1.isRunning() ) return;
    connect( &thread1, SIGNAL(finished()),

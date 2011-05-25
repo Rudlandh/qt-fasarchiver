@@ -193,8 +193,8 @@ int sektor_;
         	partition = "sdc";
     	if (rdbt_sdd->isChecked())
         	partition = "sdd";
-        // sudo fdisk -lu , mit diesem Befehl Startsektor von sda1 ermitteln.
-        // derzeit für Ubuntu:  Startsektor sda1 = (63 -1)*512 = 31744 
+        // fdisk -lu , mit diesem Befehl Startsektor von sda1 ermitteln.
+        // derzeit für Ubuntu:  Startsektor sda1 = 63*512 = 32256 
 	// Sektornummer in Datei abspeichern
         Dateiname = homepath + "/.sektornummer.txt";
         befehl = "fdisk -lu | grep " + partition + "1 > " + homepath + "/.sektornummer.txt";

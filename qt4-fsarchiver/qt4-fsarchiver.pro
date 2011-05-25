@@ -138,3 +138,5 @@ translations.files = translations/qt4-fsarchiver_ru.gm \
 translations.path = /usr/share/qt4/translations
 #Installation der Übersetzungdateien klappt nicht
 INSTALLS = target icon autostart translations
+QMAKE_CXXFLAGS_RELEASE = -pipe -Wall -g -O2
+QMAKE_CFLAGS_RELEASE = -pipe -Wall -g -O2

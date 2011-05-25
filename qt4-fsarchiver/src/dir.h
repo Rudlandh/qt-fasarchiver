@@ -31,7 +31,6 @@ public:
 
 public slots:
 	int folder_dir_path_einlesen();
-        int questionMessage(QString frage);
         void treeview_show();
         
 private:
