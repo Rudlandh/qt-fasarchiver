@@ -44,6 +44,8 @@ public slots:
    void save_button();
                
 protected slots:
+   void ViewProzent();
+
    int testDateiName(string endung);
    int savePartition();
    int restorePartition();
@@ -78,7 +80,8 @@ private:
     QLabel *questionLabel;
     Thread thread1;
     Thread thread2;
-        
+    QTimer *timer;   
+
 private slots:    
    void startThread1();
    void thread1Ready();

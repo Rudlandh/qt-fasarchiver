@@ -29,7 +29,6 @@
 #include "dico.h"
 #include "common.h"
 #include "error.h"
-#include "system.h"
 
 cdico *dico_alloc()
 {
@@ -77,7 +76,7 @@ int dico_add_generic(cdico *d, u8 section, u16 key, const void *data, u16 size, 
     // allocate object
     lnew=malloc(sizeof(cdicoitem));
     if (!lnew)
-    {   errprintf(_("malloc(%ld) failed: out of memory\n"), (long)sizeof(cdicoitem));
+    {   errprintf("malloc(%ld) failed: out of memory\n", (long)sizeof(cdicoitem));
         return -3;
     }
     memset(lnew, 0, sizeof(cdicoitem));
@@ -92,7 +91,7 @@ int dico_add_generic(cdico *d, u8 section, u16 key, const void *data, u16 size, 
         for (item=d->head; item!=NULL; item=item->next)
         {   last=item;
             if (item->section==section && item->key==key)
-            {   errprintf(_("dico_add_generic(): item with key=%ld is already in dico\n"), (long)item->key);
+            {   errprintf("dico_add_generic(): item with key=%ld is already in dico\n", (long)item->key);
                 return -3;
             }
         }
@@ -111,7 +110,7 @@ int dico_add_generic(cdico *d, u8 section, u16 key, const void *data, u16 size, 
     {
         lnew->data=malloc(size);
         if (!lnew->data)
-        {   errprintf(_("malloc(%ld) failed: out of memory\n"), (long)size);
+        {   errprintf("malloc(%ld) failed: out of memory\n", (long)size);
             return -3;
         }
         
@@ -139,12 +138,12 @@ int dico_get_generic(cdico *d, u8 section, u16 key, void *data, u16 maxsize, u16
         *size=0;
     
     if (d->head==NULL)
-    {   msgprintf(MSG_DEBUG1, _("dico is empty\n"));
+    {   msgprintf(MSG_DEBUG1, "dico is empty\n");
         return -1;
     }
     
     if (maxsize<1)
-    {   msgprintf(MSG_DEBUG1, _("case1: maxsize=%d\n"), maxsize);
+    {   msgprintf(MSG_DEBUG1, "case1: maxsize=%d\n", maxsize);
         return -3;
     }
     
@@ -153,7 +152,7 @@ int dico_get_generic(cdico *d, u8 section, u16 key, void *data, u16 maxsize, u16
         if ((item!=NULL) && (item->key==key && item->section==section))
         {
             if (item->size > maxsize) // item is too big
-            {   msgprintf(MSG_DEBUG1, _("case2: (item->size > maxsize): item->size =%d, maxsize=%d\n"), item->size, maxsize);
+            {   msgprintf(MSG_DEBUG1, "case2: (item->size > maxsize): item->size =%d, maxsize=%d\n", item->size, maxsize);
                 return -4;
             }
             if ((item->size>0) && (item->data!=NULL)) // there may be no data (size==0)
@@ -164,7 +163,7 @@ int dico_get_generic(cdico *d, u8 section, u16 key, void *data, u16 maxsize, u16
         }
     }
     
-    msgprintf(MSG_DEBUG1, _("case3: not found\n"));
+    msgprintf(MSG_DEBUG1, "case3: not found\n");
     return -5; // not found
 }
 
@@ -293,7 +292,7 @@ int dico_show(cdico *d, u8 section, char *debugtxt)
     cdicoitem *item;
     
     assert(d);
-    msgprintf(MSG_FORCE, _("\n-----------------debug-dico-begin(%s)---------------\n"), debugtxt);
+    msgprintf(MSG_FORCE, "\n-----------------debug-dico-begin(%s)---------------\n", debugtxt);
     
     if (d->head)
     {
@@ -301,30 +300,30 @@ int dico_show(cdico *d, u8 section, char *debugtxt)
         {
             if (item->section==section)
             {
-                snprintf(buffer, sizeof(buffer), _("key=[%ld], sizeof(data)=[%d], "), (long)item->key, (int)item->size);
+                snprintf(buffer, sizeof(buffer), "key=[%ld], sizeof(data)=[%d], ", (long)item->key, (int)item->size);
                 
                 switch (item->type)
                 {
                     case DICTYPE_U8:
-                        snprintf(text, sizeof(text), _("type=u8, size=[%d]"), (int)item->size);
+                        snprintf(text, sizeof(text), "type=u8, size=[%d]", (int)item->size);
                         break;
                     case DICTYPE_U16:
-                        snprintf(text, sizeof(text), _("type=u16, size=[%d]"), (int)item->size);
+                        snprintf(text, sizeof(text), "type=u16, size=[%d]", (int)item->size);
                         break;
                     case DICTYPE_U32:
-                        snprintf(text, sizeof(text), _("type=u32, size=[%d]"), (int)item->size);
+                        snprintf(text, sizeof(text), "type=u32, size=[%d]", (int)item->size);
                         break;
                     case DICTYPE_U64:
-                        snprintf(text, sizeof(text), _("type=u64, size=[%d]"), (int)item->size);
+                        snprintf(text, sizeof(text), "type=u64, size=[%d]", (int)item->size);
                         break;
                     case DICTYPE_STRING:
-                        snprintf(text, sizeof(text), _("type=str, size=[%d], data=[%s]"), (int)item->size, (char*)item->data);
+                        snprintf(text, sizeof(text), "type=str, size=[%d], data=[%s]", (int)item->size, (char*)item->data);
                         break;
                     case DICTYPE_DATA:
-                        snprintf(text, sizeof(text), _("type=dat, size=[%d]"), (int)item->size);
+                        snprintf(text, sizeof(text), "type=dat, size=[%d]", (int)item->size);
                         break;
                     default:
-                        snprintf(text, sizeof(text), _("type=unknown"));
+                        snprintf(text, sizeof(text), "type=unknown");
                         break;
                 }
                 strlcatf(buffer, sizeof(buffer) ,"%s", text);
@@ -334,9 +333,9 @@ int dico_show(cdico *d, u8 section, char *debugtxt)
     }
     else
     {
-        msgprintf(MSG_FORCE, _("dico is empty\n"));
+        msgprintf(MSG_FORCE, "dico is empty\n");
     }
     
-    msgprintf(MSG_FORCE, _("-----------------debug-dico-end(%s)------------------\n\n"), debugtxt);
+    msgprintf(MSG_FORCE, "-----------------debug-dico-end(%s)------------------\n\n", debugtxt);
     return 0;
 }

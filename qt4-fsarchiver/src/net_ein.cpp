@@ -205,16 +205,16 @@ int NetEin:: setting_save()
    int k = system (befehl.toAscii().data());
    if (k == 0 && dialog_auswertung == 6){
    	QMessageBox::about(this, tr("Note","Hinweis"),
-      	tr("The network computer","Der Netzrechner ") + comNet_name + 
+      	tr("The network computer ","Der Netzwerkrechner ") + comNet_name + 
       	tr(" has been successfully added. You can continue saving\n"," wurde erfolgreich eingebunden. Sie können mit der Sicherung fortfahren\n"));
        }
    if (k == 0 && dialog_auswertung == 7){
    	QMessageBox::about(this, tr("Note","Hinweis"),
-      	tr("The network computer", "Der Netzwerkrechner ") + comNet_name + tr("  has been successfully added. You can continue to restore\n", " wurde erfolgreich eingebunden. Sie können mit dem Zurückschreiben fortfahren\n"));
+      	tr("The network computer ", "Der Netzwerkrechner ") + comNet_name + tr("  has been successfully added. You can continue to restore\n", " wurde erfolgreich eingebunden. Sie können mit dem Zurückschreiben fortfahren\n"));
       } 
    if (k != 0){
    	QMessageBox::about(this, tr("Note", "Hinweis"),
-      	tr("The network computer",  "Der Netzwerkrechner ") + comNet_name + tr(" could not be integrated. The program is aborted\n", " konnte nicht eingebunden werden. Das Programm wird abgebrochen\n"));
+      	tr("The network computer ",  "Der Netzwerkrechner ") + comNet_name + tr(" could not be integrated. The program is aborted\n", " konnte nicht eingebunden werden. Das Programm wird abgebrochen\n"));
         return 1;
    }
   // Dateien entfernen 
@@ -527,7 +527,7 @@ int NetEin::questionMessage(QString frage)
 	QPushButton* noButton = msg.addButton(tr("No", "Nein"), QMessageBox::NoRole);
 	msg.exec();
 	if (msg.clickedButton() == yesButton)
-        return 1;
+    		return 1;
 	else if (msg.clickedButton() == noButton)
-        return 2;
+    		return 2;
 }

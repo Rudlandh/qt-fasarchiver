@@ -32,7 +32,6 @@
 #include "filesys.h"
 #include "fs_ext2.h"
 #include "error.h"
-#include "system.h"
 
 // e2fsprogs version required to work on ext2, ext3, ext4
 u64 e2fsprogs_minver[]={PROGVER(1,39,0), PROGVER(1,39,0), PROGVER(1,41,0)};
@@ -157,7 +156,7 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype)
     
     // ---- check that mkfs is installed and get its version
     if (exec_command(command, sizeof(command), NULL, NULL, 0, NULL, 0, "%s -V", progname)!=0)
-    {   errprintf(_("%s not found. please install a recent e2fsprogs on your system or check the PATH.\n"), progname);
+    {   errprintf("%s not found. please install a recent e2fsprogs on your system or check the PATH.\n", progname);
         ret=-1;
         goto extfs_mkfs_cleanup;
     }
@@ -195,14 +194,14 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype)
     
     // ---- check that fsarchiver is aware of all the filesystem features used on that filesystem
     if (extfs_check_compatibility(features_tab[E2P_FEATURE_COMPAT], features_tab[E2P_FEATURE_INCOMPAT], features_tab[E2P_FEATURE_RO_INCOMPAT])!=0)
-    {   errprintf(_("this filesystem has ext{2,3,4} features which are not supported by this fsarchiver version.\n"));
+    {   errprintf("this filesystem has ext{2,3,4} features which are not supported by this fsarchiver version.\n");
         return -1;
     }
     
     // ---- get original filesystem type
     origextfstype=extfs_get_fstype_from_compat_flags(features_tab[E2P_FEATURE_COMPAT], 
             features_tab[E2P_FEATURE_INCOMPAT], features_tab[E2P_FEATURE_RO_INCOMPAT]);
-    msgprintf(MSG_VERB2, _("the filesystem type determined by the original filesystem features is [%s]\n"), format_fstype(origextfstype));
+    msgprintf(MSG_VERB2, "the filesystem type determined by the original filesystem features is [%s]\n", format_fstype(origextfstype));
     
     // remove all the features not supported by the filesystem to create (conversion = downgrade fs)
     for (i=0; mkfeatures[i].name; i++)
@@ -216,7 +215,7 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype)
     // eg: user did a "savefs" of an ext3 and does a "restfs mkfs=ext4" --> add features to force ext4
     // it's a bit more difficult because we only want to add such a feature if no feature of the new
     // filesystem is currently enabled.
-    msgprintf(MSG_VERB2, _("the filesystem type to create considering the command options is [%s]\n"), format_fstype(extfstype));
+    msgprintf(MSG_VERB2, "the filesystem type to create considering the command options is [%s]\n", format_fstype(extfstype));
     if (origextfstype==EXTFSTYPE_EXT2 && extfstype>EXTFSTYPE_EXT2) // upgrade ext2 to ext{3,4}
     {   fsextrevision=EXT2_DYNAMIC_REV;
         features_tab[E2P_FEATURE_COMPAT]|=EXT3_FEATURE_COMPAT_HAS_JOURNAL;
@@ -233,11 +232,11 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype)
         {
             compat_type=mkfeatures[i].compat;
             if (features_tab[compat_type] & mkfeatures[i].mask)
-            {   msgprintf(MSG_VERB2, _("--> feature [%s]=YES\n"), mkfeatures[i].name);
+            {   msgprintf(MSG_VERB2, "--> feature [%s]=YES\n", mkfeatures[i].name);
                 strlist_add(&strfeatures, mkfeatures[i].name);
             }
             else
-            {   msgprintf(MSG_VERB2, _("--> feature [%s]=NO\n"), mkfeatures[i].name);
+            {   msgprintf(MSG_VERB2, "--> feature [%s]=NO\n", mkfeatures[i].name);
                 snprintf(temp, sizeof(temp), "^%s", mkfeatures[i].name); // exclude feature
                 strlist_add(&strfeatures, temp);
             }
@@ -248,14 +247,14 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype)
     if (fsextrevision!=EXT2_GOOD_OLD_REV && strlist_count(&strfeatures)>0)
     {   strlist_merge(&strfeatures, temp, sizeof(temp), ',');
         strlcatf(options, sizeof(options), " -O %s ", temp);
-        msgprintf(MSG_VERB2, _("features: mkfs_options+=[-O %s]\n"), temp);
+        msgprintf(MSG_VERB2, "features: mkfs_options+=[-O %s]\n", temp);
     }
     
     // ---- check mke2fs version requirement
-    msgprintf(MSG_VERB2, _("mke2fs version detected: %s\n"), format_prog_version(e2fstoolsver, temp, sizeof(temp)));
-    msgprintf(MSG_VERB2, _("mke2fs version required: %s\n"), format_prog_version(e2fsprogs_minver[extfstype], temp, sizeof(temp)));
+    msgprintf(MSG_VERB2, "mke2fs version detected: %s\n", format_prog_version(e2fstoolsver, temp, sizeof(temp)));
+    msgprintf(MSG_VERB2, "mke2fs version required: %s\n", format_prog_version(e2fsprogs_minver[extfstype], temp, sizeof(temp)));
     if (e2fstoolsver < e2fsprogs_minver[extfstype])
-    {   errprintf(_("mke2fs was found but is too old, please upgrade to a version %s or more recent.\n"), 
+    {   errprintf("mke2fs was found but is too old, please upgrade to a version %s or more recent.\n", 
             format_prog_version(e2fsprogs_minver[extfstype], temp, sizeof(temp)));
         ret=-1;
         goto extfs_mkfs_cleanup;
@@ -268,9 +267,9 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype)
         strlcatf(options, sizeof(options), " -E stripe-width=%ld ", (long)temp64);
     
     // ---- execute mke2fs
-    msgprintf(MSG_VERB2, _("exec: %s\n"), command);
+    msgprintf(MSG_VERB2, "exec: %s\n", command);
     if (exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "%s %s %s", progname, partition, options)!=0 || exitst!=0)
-    {   errprintf(_("command [%s] failed with return status=%d\n"), command, exitst);
+    {   errprintf("command [%s] failed with return status=%d\n", command, exitst);
         ret=-1;
         goto extfs_mkfs_cleanup;
     }
@@ -292,7 +291,7 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype)
     if (options[0])
     {
         if (exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "tune2fs %s %s", partition, options)!=0 || exitst!=0)
-        {   errprintf(_("command [%s] failed with return status=%d\n"), command, exitst);
+        {   errprintf("command [%s] failed with return status=%d\n", command, exitst);
             ret=-1;
             goto extfs_mkfs_cleanup;
         }
@@ -302,7 +301,7 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype)
         if (extfstype==EXTFSTYPE_EXT4 && e2fstoolsver<PROGVER(1,41,4))
         {
             if ( ((res=exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "e2fsck -fy %s", partition))!=0) || ((exitst!=0) && (exitst!=1)) )
-            {   errprintf(_("command [%s] failed with return status=%d\n"), command, exitst);
+            {   errprintf("command [%s] failed with return status=%d\n", command, exitst);
                 ret=-1;
                 goto extfs_mkfs_cleanup;
             }
@@ -330,7 +329,7 @@ int extfs_getinfo(cdico *d, char *devname)
     
     // ---- open partition
     if (ext2fs_open(devname, EXT2_FLAG_JOURNAL_DEV_OK | EXT2_FLAG_SOFTSUPP_FEATURES, use_superblock,  use_blocksize, unix_io_manager, &fs)!=0)
-    {   errprintf(_("ext2fs_open(%s) failed\n"), devname);
+    {   errprintf("ext2fs_open(%s) failed\n", devname);
         return -1;
     }
     super=(struct fsa_ext2_sb *)fs->super;
@@ -349,7 +348,7 @@ int extfs_getinfo(cdico *d, char *devname)
     memset(uuid, 0, sizeof(uuid));
     uuid_unparse_lower((u8*)super->s_uuid, uuid);
     dico_add_string(d, 0, FSYSHEADKEY_FSUUID, uuid);
-    msgprintf(MSG_DEBUG1, _("extfs_uuid=[%s]\n"), uuid); 
+    msgprintf(MSG_DEBUG1, "extfs_uuid=[%s]\n", uuid); 
     
     // ---- block size
     dico_add_u64(d, 0, FSYSHEADKEY_FSEXTBLOCKSIZE, EXT2_BLOCK_SIZE(super));
@@ -366,18 +365,18 @@ int extfs_getinfo(cdico *d, char *devname)
     // ---- extended options
     if (super->s_raid_stride > 0)
     {   dico_add_u64(d, 0, FSYSHEADKEY_FSEXTEOPTRAIDSTRIDE, super->s_raid_stride);
-        msgprintf(MSG_DEBUG1, _("extfs_raid_stride: %u\n"), super->s_raid_stride);
+        msgprintf(MSG_DEBUG1, "extfs_raid_stride: %u\n", super->s_raid_stride);
     }
     if (super->s_raid_stripe_width > 0)
     {   dico_add_u64(d, 0, FSYSHEADKEY_FSEXTEOPTRAIDSTRIPEWIDTH, super->s_raid_stripe_width);
-        msgprintf(MSG_DEBUG1, _("extfs_raid_stripe_width: %u\n"), super->s_raid_stripe_width);
+        msgprintf(MSG_DEBUG1, "extfs_raid_stripe_width: %u\n", super->s_raid_stripe_width);
     }
     
     // ---- fsck details: max_mount_count and check_interval
     dico_add_u64(d, 0, FSYSHEADKEY_FSEXTFSCKMAXMNTCOUNT, max(super->s_max_mnt_count,0));
     dico_add_u64(d, 0, FSYSHEADKEY_FSEXTFSCKCHECKINTERVAL, super->s_checkinterval);
-    msgprintf(MSG_DEBUG1, _("extfs_max_mount_count: %ld\n"), (long)max(super->s_max_mnt_count,0));
-    msgprintf(MSG_DEBUG1, _("extfs_check_interval: %ld\n"), (long)super->s_checkinterval);
+    msgprintf(MSG_DEBUG1, "extfs_max_mount_count: %ld\n", (long)max(super->s_max_mnt_count,0));
+    msgprintf(MSG_DEBUG1, "extfs_check_interval: %ld\n", (long)super->s_checkinterval);
     
     // ---- default mount options
     memset(mntopt, 0, sizeof(mntopt));
@@ -398,7 +397,7 @@ int extfs_getinfo(cdico *d, char *devname)
         }
     }
     dico_add_string(d, 0, FSYSHEADKEY_FSEXTDEFMNTOPT, mntopt);
-    msgprintf(MSG_DEBUG1, _("default mount options: [%s]\n"), mntopt);
+    msgprintf(MSG_DEBUG1, "default mount options: [%s]\n", mntopt);
     
     // ---- filesystem features
     dico_add_u64(d, 0, FSYSHEADKEY_FSEXTFEATURECOMPAT, (u64)super->s_feature_compat);
@@ -406,11 +405,11 @@ int extfs_getinfo(cdico *d, char *devname)
     dico_add_u64(d, 0, FSYSHEADKEY_FSEXTFEATUREROCOMPAT, (u64)super->s_feature_ro_compat);
     
     origextfstype=extfs_get_fstype_from_compat_flags((u64)super->s_feature_compat, (u64)super->s_feature_incompat, (u64)super->s_feature_ro_compat);
-    msgprintf(MSG_DEBUG1, _("the filesystem type determined by the features is [%s]\n"), format_fstype(origextfstype));
+    msgprintf(MSG_DEBUG1, "the filesystem type determined by the features is [%s]\n", format_fstype(origextfstype));
     
     // ---- check that fsarchiver is aware of all the filesystem features used on that filesystem
     if (extfs_check_compatibility((u64)super->s_feature_compat, (u64)super->s_feature_incompat, (u64)super->s_feature_ro_compat)!=0)
-    {   errprintf(_("this filesystem has ext{2,3,4} features which are not supported by this fsarchiver version.\n"));
+    {   errprintf("this filesystem has ext{2,3,4} features which are not supported by this fsarchiver version.\n");
         return -1;
     }
     
@@ -430,22 +429,22 @@ int extfs_mount(char *partition, char *mntbuf, char *fsbuf, int flags, char *mnt
     int origextfstype;
     char fsname[32];
     
-    msgprintf(MSG_DEBUG1, _("extfs_mount(partition=[%s], mnt=[%s], fsbuf=[%s])\n"), partition, mntbuf, fsbuf);
+    msgprintf(MSG_DEBUG1, "extfs_mount(partition=[%s], mnt=[%s], fsbuf=[%s])\n", partition, mntbuf, fsbuf);
     
     if (ext2fs_open(partition, EXT2_FLAG_JOURNAL_DEV_OK | EXT2_FLAG_SOFTSUPP_FEATURES, use_superblock,  use_blocksize, unix_io_manager, &fs)!=0)
-    {   msgprintf(MSG_DEBUG1, _("ext2fs_open(%s) failed\n"), partition);
+    {   msgprintf(MSG_DEBUG1, "ext2fs_open(%s) failed\n", partition);
         return -1;
     }
     
     origextfstype=extfs_get_fstype_from_compat_flags((u64)fs->super->s_feature_compat, 
             (u64)fs->super->s_feature_incompat, (u64)fs->super->s_feature_ro_compat);
     snprintf(fsname, sizeof(fsname), "%s", format_fstype(origextfstype));
-    msgprintf(MSG_VERB2, _("the filesystem of [%s] type determined by the features is [%s]\n"), partition, fsname);
+    msgprintf(MSG_VERB2, "the filesystem of [%s] type determined by the features is [%s]\n", partition, fsname);
     
     ext2fs_close(fs);
     
     if (strcmp(fsname, fsbuf)!=0)
-    {   msgprintf(MSG_DEBUG1, _("extfs_mount: the filesystem requested [%s] does not match the filesystem detected [%s]\n"), fsbuf, fsname);
+    {   msgprintf(MSG_DEBUG1, "extfs_mount: the filesystem requested [%s] does not match the filesystem detected [%s]\n", fsbuf, fsname);
         return -1;
     }
     
@@ -469,7 +468,7 @@ int extfs_test(char *partition, int extfstype) // returns true if it's that sort
     
     extfstypedetected=extfs_get_fstype_from_compat_flags((u64)fs->super->s_feature_compat, 
             (u64)fs->super->s_feature_incompat, (u64)fs->super->s_feature_ro_compat);
-    msgprintf(MSG_DEBUG1, _("the filesystem type determined by the extfs features is [%s]\n"), format_fstype(extfstypedetected));
+    msgprintf(MSG_DEBUG1, "the filesystem type determined by the extfs features is [%s]\n", format_fstype(extfstypedetected));
     
     ext2fs_close(fs);
     
@@ -537,7 +536,7 @@ u64 check_prog_version(char *prog)
     memset(stderrbuf, 0, sizeof(stderrbuf));
     
     if (exec_command(command, sizeof(command), NULL, NULL, 0, stderrbuf, sizeof(stderrbuf), "%s -V", prog)!=0)
-    {   errprintf(_("program %s was not found or has bad permissions.\n"), prog);
+    {   errprintf("program %s was not found or has bad permissions.\n", prog);
         return -1;
     }
     
@@ -551,7 +550,7 @@ u64 check_prog_version(char *prog)
     }
     
     if (foundversion==false)
-    {   errprintf(_("can't parse %s version number: no match\n"), prog);
+    {   errprintf("can't parse %s version number: no match\n", prog);
         return 0;
     }
     
@@ -559,7 +558,7 @@ u64 check_prog_version(char *prog)
     sscanf(result, "%s %d.%d.%d", temp1, &x, &y, &z);
     
     if (x==0 && y==0)
-    {   errprintf(_("can't parse %s version number: x=y=0\n"), prog);
+    {   errprintf("can't parse %s version number: x=y=0\n", prog);
         return 0;
     }
     

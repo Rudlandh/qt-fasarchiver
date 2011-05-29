@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE KDevPrjSession>
+<KDevPrjSession>
+ <DocsAndViews NumberOfDocuments="8" >
+  <Doc0 NumberOfViews="1" URL="file:///home/writer/!Work/Site/New/qt4-fsarchiver/src/archwriter.h" >
+   <View0 Encoding="" Type="Source" />
+  </Doc0>
+  <Doc1 NumberOfViews="1" URL="file:///root/New/qt4-fsarchiver/src/mainWindow.cpp" >
+   <View0 Encoding="" line="501" Type="Source" />
+  </Doc1>
+  <Doc2 NumberOfViews="1" URL="file:///root/New/qt4-fsarchiver/src/main.cc" >
+   <View0 Encoding="" line="74" Type="Source" />
+  </Doc2>
+  <Doc3 NumberOfViews="1" URL="file:///root/New/qt4-fsarchiver/src/dir.cpp" >
+   <View0 Encoding="" line="388" Type="Source" />
+  </Doc3>
+  <Doc4 NumberOfViews="1" URL="file:///root/New/qt4-fsarchiver/src/net.cpp" >
+   <View0 Encoding="" line="728" Type="Source" />
+  </Doc4>
+  <Doc5 NumberOfViews="1" URL="file:///root/New/qt4-fsarchiver/src/connect_c_cpp.c" >
+   <View0 Encoding="" line="222" Type="Source" />
+  </Doc5>
+  <Doc6 NumberOfViews="1" URL="file:///root/New/qt4-fsarchiver/src/mainWindow.h" >
+   <View0 Encoding="" line="47" Type="Source" />
+  </Doc6>
+  <Doc7 NumberOfViews="1" URL="file:///usr/lib64/qt3/doc/html/qtimer.html#singleShot" >
+   <View0 Type="Documentation" />
+  </Doc7>
+ </DocsAndViews>
+ <pluginList>
+  <kdevdebugger>
+   <breakpointList>
+    <breakpoint0 location="/root/New/qt4-fsarchiver/src/dir.cpp:378" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint0>
+    <breakpoint1 location="/root/New/qt4-fsarchiver/src/dir.cpp:373" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint1>
+    <breakpoint2 location="/root/New/qt4-fsarchiver/src/mainWindow.cpp:411" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint2>
+    <breakpoint3 location="/root/New/qt4-fsarchiver/src/mainWindow.cpp:481" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint3>
+    <breakpoint4 location="/root/New/qt4-fsarchiver/src/mainWindow.cpp:499" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint4>
+    <breakpoint5 location="/root/New/qt4-fsarchiver/src/mainWindow.cpp:382" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint5>
+    <breakpoint6 location="/root/New/qt4-fsarchiver/src/mainWindow.cpp:485" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint6>
+    <breakpoint7 location="/root/New/qt4-fsarchiver/src/mainWindow.cpp:421" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint7>
+    <breakpoint8 location="/root/New/qt4-fsarchiver/src/mainWindow.cpp:404" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint8>
+    <breakpoint9 location="/root/New/qt4-fsarchiver/src/mainWindow.cpp:354" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint9>
+    <breakpoint10 location="/root/New/qt4-fsarchiver/src/mainWindow.cpp:338" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint10>
+    <breakpoint11 location="/root/New/qt4-fsarchiver/src/mainWindow.cpp:503" type="1" tracingFormatString="" traceFormatStringEnabled="0" condition="" tracingEnabled="0" enabled="1" >
+     <tracedExpressions/>
+    </breakpoint11>
+   </breakpointList>
+   <showInternalCommands value="0" />
+  </kdevdebugger>
+  <kdevastyle>
+   <Extensions ext="*.cpp *.h *.hpp,*.c *.h,*.cxx *.hxx,*.c++ *.h++,*.cc *.hh,*.C *.H,*.diff ,*.inl,*.java,*.moc,*.patch,*.tlh,*.xpm" />
+   <AStyle IndentPreprocessors="0" FillCount="4" PadParenthesesOut="1" IndentNamespaces="1" IndentLabels="1" Fill="Tabs" MaxStatement="40" Brackets="Break" MinConditional="-1" IndentBrackets="0" PadParenthesesUn="1" BlockBreak="0" KeepStatements="1" KeepBlocks="1" BlockIfElse="0" IndentSwitches="1" PadOperators="0" FStyle="UserDefined" IndentCases="0" FillEmptyLines="0" BracketsCloseHeaders="0" BlockBreakAll="0" PadParenthesesIn="1" IndentClasses="1" IndentBlocks="0" FillForce="0" />
+  </kdevastyle>
+  <kdevbookmarks>
+   <bookmarks>
+    <bookmark url="/root/New/qt4-fsarchiver/src/main.cc" >
+     <mark line="51" />
+    </bookmark>
+    <bookmark url="/root/New/qt4-fsarchiver/src/mainWindow.cpp" >
+     <mark line="325" />
+     <mark line="463" />
+     <mark line="90" />
+     <mark line="549" />
+     <mark line="498" />
+     <mark line="484" />
+     <mark line="502" />
+     <mark line="79" />
+     <mark line="369" />
+     <mark line="64" />
+    </bookmark>
+    <bookmark url="/root/New/qt4-fsarchiver/src/net.cpp" >
+     <mark line="715" />
+     <mark line="720" />
+    </bookmark>
+    <bookmark url="/root/New/qt4-fsarchiver/src/dir.cpp" >
+     <mark line="377" />
+     <mark line="372" />
+    </bookmark>
+   </bookmarks>
+  </kdevbookmarks>
+  <kdevvalgrind>
+   <executable path="" params="" />
+   <valgrind path="" params="" />
+   <calltree path="" params="" />
+   <kcachegrind path="" />
+  </kdevvalgrind>
+ </pluginList>
+</KDevPrjSession>

@@ -18,8 +18,6 @@
 #ifndef __ERROR_H__
 #define __ERROR_H__
 
-#include "system.h"
-
 struct s_stats;
 typedef struct s_stats cstats;
 

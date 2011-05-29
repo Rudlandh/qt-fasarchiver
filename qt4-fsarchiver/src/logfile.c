@@ -32,7 +32,6 @@
 #include "logfile.h"
 #include "common.h"
 #include "error.h"
-#include "system.h"
 
 int g_logfile=-1;
 
@@ -48,12 +47,12 @@ int logfile_open()
     
     g_logfile=open64(logpath, O_RDWR|O_CREAT|O_TRUNC|O_LARGEFILE, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
     if (g_logfile>=0)
-    {   msgprintf(MSG_VERB1, _("Creating logfile in %s\n"), logpath);
-        msgprintf(MSG_VERB1, _("Running fsarchiver version=[%s], fileformat=[%s]\n"), FSA_VERSION, FSA_FILEFORMAT);
+    {   msgprintf(MSG_VERB1, "Creating logfile in %s\n", logpath);
+        msgprintf(MSG_VERB1, "Running fsarchiver version=[%s], fileformat=[%s]\n", FSA_VERSION, FSA_FILEFORMAT);
         return FSAERR_SUCCESS;
     }
     else
-    {   sysprintf(_("Cannot create logfile in %s\n"), logpath);
+    {   sysprintf("Cannot create logfile in %s\n", logpath);
         return FSAERR_UNKNOWN;
     }
 }

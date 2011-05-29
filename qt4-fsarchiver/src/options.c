@@ -24,7 +24,6 @@
 #include "fsarchiver.h"
 #include "options.h"
 #include "error.h"
-#include "system.h"
 
 coptions g_options;
 
@@ -55,7 +54,7 @@ int options_select_compress_level(int opt)
             break;
 #else
         case 1: // lzo
-            errprintf(_("compression level %d is not available: lzo has been disabled at compilation time\n"), opt);
+            errprintf("compression level %d is not available: lzo has been disabled at compilation time\n", opt);
             return -1;
 #endif // OPTION_LZO_SUPPORT
         case 2: // gzip fast
@@ -100,11 +99,11 @@ int options_select_compress_level(int opt)
         case 7: // lzma
         case 8: // lzma
         case 9: // lzma
-            errprintf(_("compression level %d is not available: lzma has been disabled at compilation time\n"), opt);
+            errprintf("compression level %d is not available: lzma has been disabled at compilation time\n", opt);
             return -1;
 #endif
         default:
-            errprintf(_("invalid compression level: %d\n"), opt);
+            errprintf("invalid compression level: %d\n", opt);
             return -1;
     }
     

@@ -42,6 +42,7 @@ private:
     Thread thread1;
     Thread thread2;
     void indicator_reset();
+    
 
 protected slots:
     void closeEvent(QCloseEvent* event);

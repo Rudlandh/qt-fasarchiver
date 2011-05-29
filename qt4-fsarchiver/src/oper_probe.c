@@ -27,7 +27,6 @@
 #include "oper_probe.h"
 #include "common.h"
 #include "error.h"
-#include "system.h"
 
 struct s_diskinfo
 {
@@ -175,14 +174,14 @@ int oper_probe(bool details)
     
     // ---- 0. get info from /proc/partitions + libblkid
     if ((res=partlist_getlist(blkdev, FSA_MAX_BLKDEVICES, &diskcount, &partcount))<1)
-    {   msgprintf(MSG_FORCE, _("Failed to detect disks and filesystems\n") );
+    {   msgprintf(MSG_FORCE, "Failed to detect disks and filesystems\n");
         return -1;
     }
     
     // ---- 1. show physical disks
     if (diskcount>0)
     {
-        msgprintf(MSG_FORCE, _("[======DISK======] [=============NAME==============] [====SIZE====] [MAJ] [MIN]\n"));
+        msgprintf(MSG_FORCE, "[======DISK======] [=============NAME==============] [====SIZE====] [MAJ] [MIN]\n");
         for (i=0; i < res; i++)
             if (blkdev[i].devtype==BLKDEV_PHYSDISK)
                 msgprintf(MSG_FORCE, "[%-16s] [%-31s] [%12s] [%3d] [%3d]\n", blkdev[i].devname, 
@@ -191,7 +190,7 @@ int oper_probe(bool details)
     }
     else
     {
-        msgprintf(MSG_FORCE, _("No physical disk found\n") );
+        msgprintf(MSG_FORCE, "No physical disk found\n");
     }
     
     // ---- 2. show filesystem information
@@ -221,7 +220,7 @@ int oper_probe(bool details)
     }
     else
     {
-        msgprintf(MSG_FORCE, _("No filesystem found\n") );
+        msgprintf(MSG_FORCE, "No filesystem found\n");
     }
     
     return 0;

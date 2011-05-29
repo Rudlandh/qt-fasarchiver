@@ -57,7 +57,6 @@
 #include "error.h"
 #include "queue.h"
 #include "connect_c_cpp.h"
-#include "system.h"
 
 typedef struct s_savear
 {   carchwriter ai;
@@ -92,11 +91,11 @@ int createar_obj_regfile_multi(csavear *save, cdico *header, char *relpath, char
     
     // The checksum will be in the obj-header not in a file footer
     if ((fd=open64(fullpath, O_RDONLY|O_LARGEFILE))<0)
-    {   sysprintf(_("Cannot open small file %s for reading\n"), relpath);
+    {   sysprintf("Cannot open small file %s for reading\n", relpath);
         return -1;
     }
     
-    msgprintf(MSG_DEBUG1, _("backup_obj_regfile_multi(file=%s, size=%lld)\n"), relpath, (long long)filesize);
+    msgprintf(MSG_DEBUG1, "backup_obj_regfile_multi(file=%s, size=%lld)\n", relpath, (long long)filesize);
     
     res=read(fd, databuf, (long)filesize);
     close(fd);
@@ -104,12 +103,12 @@ int createar_obj_regfile_multi(csavear *save, cdico *header, char *relpath, char
     {   
         if (res>=0 && res<filesize) // file has been truncated: pad with zeros
         {   ret=-1;
-            errprintf(_("file [%s] has been truncated to %lld bytes (original size: %lld): padding with zeros\n"), 
+            errprintf("file [%s] has been truncated to %lld bytes (original size: %lld): padding with zeros\n", 
                 relpath, (long long)res, (long long)filesize);
             memset(databuf+res, 0, filesize-res); // zero out remaining bytes
         }
         else // read error
-        {   sysprintf(_("Cannot read data block size=%ld from small file %s, res=%ld\n"), (long)filesize, relpath, (long)res);
+        {   sysprintf("Cannot read data block size=%ld from small file %s, res=%ld\n", (long)filesize, relpath, (long)res);
             return -1;
         }
     }
@@ -121,7 +120,7 @@ int createar_obj_regfile_multi(csavear *save, cdico *header, char *relpath, char
     if (regmulti_save_enough_space_for_new_file(&save->regmulti, filesize)==false)
     {
         if (regmulti_save_enqueue(&save->regmulti, &g_queue, save->fsid)!=0)
-        {   errprintf(_("Cannot queue last block of small-files\n"));
+        {   errprintf("Cannot queue last block of small-files\n");
             return -1;
         }
         
@@ -130,7 +129,7 @@ int createar_obj_regfile_multi(csavear *save, cdico *header, char *relpath, char
     
     // copy current small file to the shared-block
     if (regmulti_save_addfile(&save->regmulti, header, databuf, filesize)!=0)
-    {   errprintf(_("Cannot add small-file %s to regmulti structure\n"), relpath);
+    {   errprintf("Cannot add small-file %s to regmulti structure\n", relpath);
         return -1;
     }
     
@@ -155,28 +154,28 @@ int createar_obj_regfile_unique(csavear *save, cdico *header, char *relpath, cha
     int fd;
     
     if (gcry_md_open(&md5ctx, GCRY_MD_MD5, 0) != GPG_ERR_NO_ERROR)
-    {   errprintf(_("gcry_md_open() failed\n"));
+    {   errprintf("gcry_md_open() failed\n");
         return -1;
     }
     
     if ((fd=open64(fullpath, O_RDONLY|O_LARGEFILE))<0)
-    {   sysprintf(_("Cannot open %s for reading\n"), relpath);
+    {   sysprintf("Cannot open %s for reading\n", relpath);
         return -1;
     }
     
     // write header with file attributes (only if open64() works)
     queue_add_header(&g_queue, header, FSA_MAGIC_OBJT, save->fsid);
     
-    msgprintf(MSG_DEBUG1, _("backup_obj_regfile_unique(file=%s, size=%lld)\n"), relpath, (long long)filesize);
+    msgprintf(MSG_DEBUG1, "backup_obj_regfile_unique(file=%s, size=%lld)\n", relpath, (long long)filesize);
     for (filepos=0; (filesize>0) && (filepos < filesize) && (get_interrupted()==false); filepos+=curblocksize)
     {
         remaining=filesize-filepos;
         curblocksize=min(remaining, g_options.datablocksize);
-        msgprintf(MSG_DEBUG2, _("----> filepos=%lld, remaining=%lld, curblocksize=%lld\n"), (long long)filepos, (long long)remaining, (long long)curblocksize);
+        msgprintf(MSG_DEBUG2, "----> filepos=%lld, remaining=%lld, curblocksize=%lld\n", (long long)filepos, (long long)remaining, (long long)curblocksize);
         
         origblock=malloc(curblocksize);
         if (!origblock)
-        {   errprintf(_("malloc(%ld) failed: cannot allocate data block\n"), (long)origblock);
+        {   errprintf("malloc(%ld) failed: cannot allocate data block\n", (long)origblock);
             ret=-1;
             goto backup_obj_regfile_unique_error;
         }
@@ -186,13 +185,13 @@ int createar_obj_regfile_unique(csavear *save, cdico *header, char *relpath, cha
             if ((res=read(fd, origblock, (long)curblocksize))!=curblocksize)
             {   ret=-1;
                 if (res>=0 && res<curblocksize) // file has been truncated: pad with zeros
-                {   errprintf(_("file [%s] has been truncated to %lld bytes (original size: %lld): padding with zeros\n"), 
+                {   errprintf("file [%s] has been truncated to %lld bytes (original size: %lld): padding with zeros\n", 
                         relpath, (long long)(filepos+res), (long long)filesize);
                     eof=true; // set oef to true so that we don't try to read the next blocks
                     memset(origblock+res, 0, curblocksize-res); // zero out remaining bytes
                 }
                 else if (res<0) // read error
-                {   sysprintf(_("Cannot read data block from %s, block=%ld and res=%ld\n"), relpath, (long)curblocksize, (long)res);
+                {   sysprintf("Cannot read data block from %s, block=%ld and res=%ld\n", relpath, (long)curblocksize, (long)res);
                     ret=-1;
                     goto backup_obj_regfile_unique_error;
                 }
@@ -212,41 +211,41 @@ int createar_obj_regfile_unique(csavear *save, cdico *header, char *relpath, cha
         blkinfo.blkoffset=filepos;
         blkinfo.blkfsid=save->fsid;
         if (queue_add_block(&g_queue, &blkinfo, QITEM_STATUS_TODO)!=0)
-        {   sysprintf(_("queue_add_block(%s) failed\n"), relpath);
+        {   sysprintf("queue_add_block(%s) failed\n", relpath);
             ret=-1;
             goto backup_obj_regfile_unique_error;
         }
     }
     
     if (get_interrupted()==true)
-    {   errprintf(_("operation has been interrupted\n"));
+    {   errprintf("operation has been interrupted\n");
         ret=-1;
         goto backup_obj_regfile_unique_error;
     }
     
     // write the footer with the global md5sum
     if ((md5tmp=gcry_md_read(md5ctx, GCRY_MD_MD5))==NULL)
-    {   errprintf(_("gcry_md_read() failed\n"));
+    {   errprintf("gcry_md_read() failed\n");
         ret=-1;
         goto backup_obj_regfile_unique_error;
     }
     memcpy(md5sum, md5tmp, 16);
     gcry_md_close(md5ctx);
     
-    msgprintf(MSG_DEBUG1, _("--> finished loop for file=%s, size=%lld, md5=[%s]\n"), relpath, (long long)filesize, format_md5(text, sizeof(text), md5sum));
+    msgprintf(MSG_DEBUG1, "--> finished loop for file=%s, size=%lld, md5=[%s]\n", relpath, (long long)filesize, format_md5(text, sizeof(text), md5sum));
     
     // don't write the footer for empty files (checksum does not make sense --> don't waste space in the archive)
     if (filesize>0)
     {
         if ((footerdico=dico_alloc())==NULL)
-        {   errprintf(_("dico_alloc() failed\n"));
+        {   errprintf("dico_alloc() failed\n");
             ret=-1;
             goto backup_obj_regfile_unique_error;
         }
         dico_add_data(footerdico, 0, BLOCKFOOTITEMKEY_MD5SUM, md5sum, 16);
         
         if (queue_add_header(&g_queue, footerdico, FSA_MAGIC_FILF, save->fsid)!=0)
-        {   msgprintf(MSG_VERB2, _("Cannot write footer for file %s\n"), relpath);
+        {   msgprintf(MSG_VERB2, "Cannot write footer for file %s\n", relpath);
             ret=-1;
             goto backup_obj_regfile_unique_error;
         }
@@ -282,42 +281,42 @@ int createar_item_xattr(csavear *save, char *root, char *relpath, struct stat64 
     {
         len=strlen(buffer+pos)+1;
         attrsize=lgetxattr(fullpath, buffer+pos, NULL, 0);
-        msgprintf(MSG_VERB2, _("            xattr:file=[%s], attrid=%d, name=[%s], size=%ld\n"), relpath, (int)attrcnt, buffer+pos, (long)attrsize);
+        msgprintf(MSG_VERB2, "            xattr:file=[%s], attrid=%d, name=[%s], size=%ld\n", relpath, (int)attrcnt, buffer+pos, (long)attrsize);
         if ((attrsize>0) && (attrsize>65535LL))
-        {   errprintf(_("file [%s] has an xattr [%s] with data too big (size=%ld, maxsize=64k)\n"), relpath, buffer+pos, (long)attrsize);
+        {   errprintf("file [%s] has an xattr [%s] with data too big (size=%ld, maxsize=64k)\n", relpath, buffer+pos, (long)attrsize);
             ret=-1;
             continue; // copy the next xattr
         }
         errno=0;
         if ((valbuf=malloc(attrsize+1))==NULL)
-        {   sysprintf(_("malloc(%ld) failed\n"), (long)(attrsize+1));
+        {   sysprintf("malloc(%ld) failed\n", (long)(attrsize+1));
             ret=-1;
             continue; // ignore the current xattr
         }
         errno=0;
         valsize=lgetxattr(fullpath, buffer+pos, valbuf, attrsize);
-        msgprintf(MSG_VERB2, _("            xattr:lgetxattr(%s,%s)=%d\n"), relpath, buffer+pos, valsize);
+        msgprintf(MSG_VERB2, "            xattr:lgetxattr(%s,%s)=%d\n", relpath, buffer+pos, valsize);
         if (valsize>=0)
         {
-            msgprintf(MSG_VERB2,  _("            xattr:lgetxattr(%s,%s)=%d: [%s]\n"), relpath, buffer+pos, valsize, buffer+pos);
-            msgprintf(MSG_DEBUG2, _("            xattr:lgetxattr(%s)=%d: [%s]=[%s]\n"), relpath, valsize, buffer+pos, valbuf);
-            msgprintf(MSG_DEBUG2, _("            xattr:dico_add_string(%s, xattr): key=%d, name=[%s]\n"), relpath, (int)(2*attrcnt)+0, buffer+pos);
+            msgprintf(MSG_VERB2,  "            xattr:lgetxattr(%s,%s)=%d: [%s]\n", relpath, buffer+pos, valsize, buffer+pos);
+            msgprintf(MSG_DEBUG2, "            xattr:lgetxattr(%s)=%d: [%s]=[%s]\n", relpath, valsize, buffer+pos, valbuf);
+            msgprintf(MSG_DEBUG2, "            xattr:dico_add_string(%s, xattr): key=%d, name=[%s]\n", relpath, (int)(2*attrcnt)+0, buffer+pos);
             dico_add_string(d, DICO_OBJ_SECTION_XATTR, (2*attrcnt)+0, buffer+pos);
-            msgprintf(MSG_DEBUG2, _("            xattr:dico_add_data(%s, xattr): key=%d, data (size=[%d])\n"), relpath, (int)(2*attrcnt)+1, valsize);
+            msgprintf(MSG_DEBUG2, "            xattr:dico_add_data(%s, xattr): key=%d, data (size=[%d])\n", relpath, (int)(2*attrcnt)+1, valsize);
             dico_add_data(d, DICO_OBJ_SECTION_XATTR, (2*attrcnt)+1, valbuf, valsize);
             attrcnt++;
             free(valbuf);
         }
         else if (errno!=ENOATTR) // if the attribute exists and we cannot read it
         {
-            sysprintf(_("            xattr:lgetxattr(%s,%s)=%d\n"), relpath, buffer+pos, valsize);
+            sysprintf("            xattr:lgetxattr(%s,%s)=%d\n", relpath, buffer+pos, valsize);
             ret=-1;
             free(valbuf);
             continue; // copy the next xattr
         }
         else if (errno==ENOATTR) // if the attribute does not exist
         {
-            msgprintf(MSG_VERB2, _("            xattr:lgetxattr-win(%s,%s)=-1: errno==ENOATTR\n"), relpath, buffer+pos);
+            msgprintf(MSG_VERB2, "            xattr:lgetxattr-win(%s,%s)=-1: errno==ENOATTR\n", relpath, buffer+pos);
             free(valbuf);
         }
     }
@@ -351,46 +350,46 @@ int createar_item_winattr(csavear *save, char *root, char *relpath, struct stat6
         {
             if (errno!=ENOATTR)
             {
-                sysprintf(_("           winattr:lgetxattr(%s,%s): returned negative attribute size\n"), relpath, winattr[i]); // output if there are any other error
+                sysprintf("           winattr:lgetxattr(%s,%s): returned negative attribute size\n", relpath, winattr[i]); // output if there are any other error
                 ret=-1;
             }
             continue; // ignore the current xattr
         }
-        msgprintf(MSG_VERB2, _("            winattr:file=[%s], attrcnt=%d, name=[%s], size=%ld\n"), relpath, (int)attrcnt, winattr[i], (long)attrsize);
+        msgprintf(MSG_VERB2, "            winattr:file=[%s], attrcnt=%d, name=[%s], size=%ld\n", relpath, (int)attrcnt, winattr[i], (long)attrsize);
         if ((attrsize>0) && (attrsize>65535LL))
         {
-            errprintf(_("file [%s] has an xattr [%s] with data size=%ld too big (max xattr size is 65535)\n"), relpath, winattr[i], (long)attrsize);
+            errprintf("file [%s] has an xattr [%s] with data size=%ld too big (max xattr size is 65535)\n", relpath, winattr[i], (long)attrsize);
             ret=-1;
             continue; // ignore the current xattr
         }
         errno=0;
         if ((valbuf=malloc(attrsize+1))==NULL)
         {
-            sysprintf(_("malloc(%d) failed\n)"), (int)(attrsize+1));
+            sysprintf("malloc(%d) failed\n", (int)(attrsize+1));
             ret=-1;
             continue; // ignore the current xattr
         }
         valsize=lgetxattr(fullpath, winattr[i], valbuf, attrsize);
-        msgprintf(MSG_VERB2, _("            winattr:lgetxattr-win(%s,%s)=%d\n"), relpath, winattr[i], valsize);
+        msgprintf(MSG_VERB2, "            winattr:lgetxattr-win(%s,%s)=%d\n", relpath, winattr[i], valsize);
         if (valsize>=0)
         {
-            msgprintf(MSG_VERB2, _("            winattr:dico_add_string(%s, winattr): key=%d, name=[%s]\n"), relpath, (int)(2*attrcnt)+0, winattr[i]);
+            msgprintf(MSG_VERB2, "            winattr:dico_add_string(%s, winattr): key=%d, name=[%s]\n", relpath, (int)(2*attrcnt)+0, winattr[i]);
             dico_add_string(d, DICO_OBJ_SECTION_WINATTR, (2*attrcnt)+0, winattr[i]);
-            msgprintf(MSG_VERB2, _("            winattr:dico_add_data(%s, winattr): key=%d, data (size=[%d])\n"), relpath, (int)(2*attrcnt)+1, valsize);
+            msgprintf(MSG_VERB2, "            winattr:dico_add_data(%s, winattr): key=%d, data (size=[%d])\n", relpath, (int)(2*attrcnt)+1, valsize);
             dico_add_data(d, DICO_OBJ_SECTION_WINATTR, (2*attrcnt)+1, valbuf, valsize);
             free(valbuf);
             attrcnt++;
         }
         else if (errno!=ENOATTR) // if the attribute exists and we cannot read it
         {
-            sysprintf(_("            winattr:lgetxattr(%s,%s)=%d\n"), relpath, winattr[i], valsize);
+            sysprintf("            winattr:lgetxattr(%s,%s)=%d\n", relpath, winattr[i], valsize);
             ret=-1;
             free(valbuf);
             continue; // ignore the current xattr
         }
         else if (errno==ENOATTR) // if the attribute does not exist
         {
-            msgprintf(MSG_VERB2, _("            winattr:lgetxattr-win(%s,%s)=-1: errno==ENOATTR\n"), relpath, winattr[i]);
+            msgprintf(MSG_VERB2, "            winattr:lgetxattr-win(%s,%s)=-1: errno==ENOATTR\n", relpath, winattr[i]);
             free(valbuf);
         }
         else
@@ -422,8 +421,7 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
     
     if (meldeflag  == 0) { 
            // Anzeige im Terminal 
-           msgprintf(MSG_FORCE, _("Es müssen insgesamt %.5lld  Verzeichnisse bzw. Dateien gesichert werden."), (long long)save->objectid);
-           msgprintf(MSG_FORCE, "\r");
+           msgprintf(MSG_FORCE, "Es müssen insgesamt %.5lld  Verzeichnisse bzw. Dateien gesichert werden.\r", (long long)save->objectid);
             anzahlfile = save->objectid; 
             werte_uebergeben(anzahlfile,2); 
             } 
@@ -438,37 +436,37 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
            werte_uebergeben(anzahlfile,3); 
          }
     
-    msgprintf(MSG_DEBUG2, _("Adding [%.5lld]=[%s]\n"), (long long)save->objectid, relpath);
+    msgprintf(MSG_DEBUG2, "Adding [%.5lld]=[%s]\n", (long long)save->objectid, relpath);
     if (dico_add_u64(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_OBJECTID, (u64)(save->objectid)++)!=0)
-    {   errprintf(_("dico_add_u64(DICO_OBJ_SECTION_STDATTR) failed\n"));
+    {   errprintf("dico_add_u64(DICO_OBJ_SECTION_STDATTR) failed\n");
         return -1;
     }
     if (dico_add_string(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_PATH, relpath)!=0)
-    {   errprintf(_("dico_add_string(DICO_OBJ_SECTION_STDATTR) failed\n"));
+    {   errprintf("dico_add_string(DICO_OBJ_SECTION_STDATTR) failed\n");
         return -1;
     }
     if (dico_add_u64(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_SIZE, (u64)statbuf->st_size)!=0)
-    {   errprintf(_("dico_add_u64(DICO_OBJ_SECTION_STDATTR) failed\n"));
+    {   errprintf("dico_add_u64(DICO_OBJ_SECTION_STDATTR) failed\n");
         return -1;
     }
     if (dico_add_u32(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_MODE, (u32)statbuf->st_mode)!=0)
-    {   errprintf(_("dico_add_u32(DICO_OBJ_SECTION_STDATTR) failed\n"));
+    {   errprintf("dico_add_u32(DICO_OBJ_SECTION_STDATTR) failed\n");
         return -1;
     }
     if (dico_add_u32(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_UID, (u32)statbuf->st_uid)!=0)
-    {   errprintf(_("dico_add_u32(DICO_OBJ_SECTION_STDATTR) failed\n"));
+    {   errprintf("dico_add_u32(DICO_OBJ_SECTION_STDATTR) failed\n");
         return -1;
     }
     if (dico_add_u32(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_GID, (u32)statbuf->st_gid)!=0)
-    {   errprintf(_("dico_add_u32(gid) failed\n"));
+    {   errprintf("dico_add_u32(gid) failed\n");
         return -1;
     }
     if (dico_add_u64(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_ATIME, (u32)statbuf->st_atime)!=0)
-    {   errprintf(_("dico_add_u32(DICO_OBJ_SECTION_STDATTR) failed\n"));
+    {   errprintf("dico_add_u32(DICO_OBJ_SECTION_STDATTR) failed\n");
         return -1;
     }
     if (dico_add_u64(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_MTIME, (u32)statbuf->st_mtime)!=0)
-    {   errprintf(_("dico_add_u32(DICO_OBJ_SECTION_STDATTR) failed\n"));
+    {   errprintf("dico_add_u32(DICO_OBJ_SECTION_STDATTR) failed\n");
         return -1;
     }
     
@@ -484,7 +482,7 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
             memset(buffer, 0, sizeof(buffer));
             memset(buffer2, 0, sizeof(buffer2));
             if ((readlink(fullpath, buffer, sizeof(buffer)))<0)
-            {   sysprintf(_("readlink(%s) failed\n"), fullpath);
+            {   sysprintf("readlink(%s) failed\n", fullpath);
                 return -1;
             }
             // fix path as ntfs-3g>=2010.3.6 may return an absolute path that includes the mount directory
@@ -499,7 +497,7 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
                         linktarget++;
                 }
             }
-            msgprintf(MSG_DEBUG1, _("fixed-readlink([%s])=[%s]\n"), fullpath, linktarget);
+            msgprintf(MSG_DEBUG1, "fixed-readlink([%s])=[%s]\n", fullpath, linktarget);
             dico_add_string(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_SYMLINK, linktarget);
             
             // save type of the target of the symlink (required to recreate ntfs symlinks)
@@ -508,13 +506,13 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
                 if (linktarget[0]=='/') // absolute symbolic link
                 {
                     snprintf(buffer2, sizeof(buffer2), "%s", buffer);
-                    msgprintf(MSG_DEBUG1, _("absolute-symlink: fullpath=[%s] --> lstat64=[%s]\n"), fullpath, buffer2);
+                    msgprintf(MSG_DEBUG1, "absolute-symlink: fullpath=[%s] --> lstat64=[%s]\n", fullpath, buffer2);
                 }
                 else // relative symbolic link
                 {
                     extract_dirpath(fullpath, directory, sizeof(directory));
                     concatenate_paths(buffer2, sizeof(buffer2), directory, linktarget);
-                    msgprintf(MSG_DEBUG1, _("relative-symlink: fullpath=[%s] --> lstat64=[%s]\n"), fullpath, buffer2);
+                    msgprintf(MSG_DEBUG1, "relative-symlink: fullpath=[%s] --> lstat64=[%s]\n", fullpath, buffer2);
                 }
                 if (lstat64(buffer2, &stattarget)==0)
                 {
@@ -522,14 +520,14 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
                     {
                         case S_IFDIR:
                             dico_add_u64(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_LINKTARGETTYPE, OBJTYPE_DIR);
-                            msgprintf(MSG_DEBUG1, _("LINK: link=[%s], target=[%s]=DIR\n"), relpath, buffer2);
+                            msgprintf(MSG_DEBUG1, "LINK: link=[%s], target=[%s]=DIR\n", relpath, buffer2);
                             break;
                         case S_IFREG:
                             dico_add_u64(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_LINKTARGETTYPE, OBJTYPE_REGFILEUNIQUE);
-                            msgprintf(MSG_DEBUG1, _("LINK: link=[%s], target=[%s]=REGFILE\n"), relpath, buffer2);
+                            msgprintf(MSG_DEBUG1, "LINK: link=[%s], target=[%s]=REGFILE\n", relpath, buffer2);
                             break;
                         default:
-                            msgprintf(MSG_DEBUG1, _("LINK: link=[%s], target=[%s]=UNKNOWN\n"), relpath, buffer2);
+                            msgprintf(MSG_DEBUG1, "LINK: link=[%s], target=[%s]=UNKNOWN\n", relpath, buffer2);
                             break;
                     }
                 }
@@ -584,7 +582,7 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
             *objtype=OBJTYPE_SOCKET;
             break;
         default:
-            errprintf(_("unknown item %s\n)"), fullpath);
+            errprintf("unknown item %s\n", fullpath);
             return -1;
             break;
     }
@@ -611,19 +609,19 @@ int createar_save_file(csavear *save, char *root, char *relpath, struct stat64 *
     
     // don't backup the archive file itself
     if (archwriter_is_path_to_curvol(&save->ai, fullpath)==true)
-    {   errprintf(_("file [%s] ignored: it's the current archive file\n"), fullpath);
+    {   errprintf("file [%s] ignored: it's the current archive file\n", fullpath);
         save->stats.err_regfile++;
         return 0; // not a fatal error, oper must continue
     }
     
     // ---- backup standard file attributes
     if ((dicoattr=dico_alloc())==NULL)
-    {   errprintf(_("dico_alloc() failed\n"));
+    {   errprintf("dico_alloc() failed\n");
         return -1; // fatal error
     }
     
     if (createar_item_stdattr(save, root, relpath, statbuf, dicoattr, &objtype, &filecost)!=0)
-    {   msgprintf(MSG_STACK, _("backup_item_stdattr() failed: cannot read standard attributes on [%s]\n"), relpath);
+    {   msgprintf(MSG_STACK, "backup_item_stdattr() failed: cannot read standard attributes on [%s]\n", relpath);
         attrerrors++;
     }
     
@@ -636,14 +634,14 @@ int createar_save_file(csavear *save, char *root, char *relpath, struct stat64 *
     
     // ---- backup other file attributes (xattr + winattr)
     if (createar_item_xattr(save, root, relpath, statbuf, dicoattr)!=0)
-    {   msgprintf(MSG_STACK, _("backup_item_xattr() failed: cannot prepare xattr-dico for item %s\n"), relpath);
+    {   msgprintf(MSG_STACK, "backup_item_xattr() failed: cannot prepare xattr-dico for item %s\n", relpath);
         attrerrors++;
     }
     
     if (filesys[save->fstype].winattr==true)
     {
         if (createar_item_winattr(save, root, relpath, statbuf, dicoattr)!=0)
-        {   msgprintf(MSG_STACK, _("backup_item_winattr() failed: cannot prepare winattr-dico for item %s\n"), relpath);
+        {   msgprintf(MSG_STACK, "backup_item_winattr() failed: cannot prepare winattr-dico for item %s\n", relpath);
             attrerrors++;
         }
     }
@@ -671,7 +669,7 @@ int createar_save_file(csavear *save, char *root, char *relpath, struct stat64 *
                 return 0; // error is not fatal, operation must continue
             }
             if (queue_add_header(&g_queue, dicoattr, FSA_MAGIC_OBJT, save->fsid)!=0)
-            {   errprintf(_("queue_add_header(%s) failed\n"), relpath);
+            {   errprintf("queue_add_header(%s) failed\n", relpath);
                 return -1; // fatal error
             }
             save->stats.cnt_dir++;
@@ -683,7 +681,7 @@ int createar_save_file(csavear *save, char *root, char *relpath, struct stat64 *
                 return 0; // error is not fatal, operation must continue
             }
             if (queue_add_header(&g_queue, dicoattr, FSA_MAGIC_OBJT, save->fsid)!=0)
-            {   errprintf(_("queue_add_header(%s) failed\n"), relpath);
+            {   errprintf("queue_add_header(%s) failed\n", relpath);
                 return -1; // fatal error
             }
             save->stats.cnt_symlink++;
@@ -695,7 +693,7 @@ int createar_save_file(csavear *save, char *root, char *relpath, struct stat64 *
                 return 0; // error is not fatal, operation must continue
             }
             if (queue_add_header(&g_queue, dicoattr, FSA_MAGIC_OBJT, save->fsid)!=0)
-            {   errprintf(_("queue_add_header(%s) failed\n"), relpath);
+            {   errprintf("queue_add_header(%s) failed\n", relpath);
                 return -1; // fatal error
             }
             save->stats.cnt_hardlink++;
@@ -710,7 +708,7 @@ int createar_save_file(csavear *save, char *root, char *relpath, struct stat64 *
                 return 0; // error is not fatal, operation must continue
             }
             if (queue_add_header(&g_queue, dicoattr, FSA_MAGIC_OBJT, save->fsid)!=0)
-            {   errprintf(_("queue_add_header(%s) failed\n"), relpath);
+            {   errprintf("queue_add_header(%s) failed\n", relpath);
                 return -1; // fatal error
             }
             save->stats.cnt_special++;
@@ -722,7 +720,7 @@ int createar_save_file(csavear *save, char *root, char *relpath, struct stat64 *
                 return 0; // error is not fatal, operation must continue
             }
             if ((res=createar_obj_regfile_unique(save, dicoattr, relpath, fullpath, statbuf->st_size))!=0)
-            {   msgprintf(MSG_STACK, _("backup_obj_regfile_unique(%s)=%d failed\n"), relpath, res);
+            {   msgprintf(MSG_STACK, "backup_obj_regfile_unique(%s)=%d failed\n", relpath, res);
                 save->stats.err_regfile++;
                 return 0; // not a fatal error, oper must continue
             }
@@ -737,7 +735,7 @@ int createar_save_file(csavear *save, char *root, char *relpath, struct stat64 *
                 return 0; // error is not fatal, operation must continue
             }
             if ((res=createar_obj_regfile_multi(save, dicoattr, relpath, fullpath, statbuf->st_size))!=0)
-            {   msgprintf(MSG_STACK, _("backup_obj_regfile_multi(%s)=%d failed\n"), relpath, res);
+            {   msgprintf(MSG_STACK, "backup_obj_regfile_multi(%s)=%d failed\n", relpath, res);
                 save->stats.err_regfile++;
                 return 0; // not a fatal error, oper must continue
             }
@@ -746,7 +744,7 @@ int createar_save_file(csavear *save, char *root, char *relpath, struct stat64 *
             }
             break;
         default: // unknown type
-            errprintf(_("invalid object type: %ld for file %s\n"), (long)objtype, relpath);
+            errprintf("invalid object type: %ld for file %s\n", (long)objtype, relpath);
             return -1; // fatal error
             break;
     }
@@ -768,20 +766,20 @@ int createar_save_directory(csavear *save, char *root, char *path, u64 *costeval
     concatenate_paths(fulldirpath, sizeof(fulldirpath), root, path);
     
     if (!(dirdesc=opendir(fulldirpath)))
-    {   sysprintf(_("cannot open directory %s\n"), fulldirpath);
+    {   sysprintf("cannot open directory %s\n", fulldirpath);
         return 0; // not a fatal error, oper must continue
     }
     
     // backup the directory itself (important for the root of the filesystem)
     if (lstat64(fulldirpath, &statbuf)!=0)
-    {   sysprintf(_("cannot lstat64(%s)\n"), fulldirpath);
+    {   sysprintf("cannot lstat64(%s)\n", fulldirpath);
         ret=-1;
         goto backup_dir_err;
     }
     
     // save info about the directory itself
     if (createar_save_file(save, root, path, &statbuf, costeval)!=0)
-    {   errprintf(_("createar_save_file(%s,%s) failed\n"), root, path);
+    {   errprintf("createar_save_file(%s,%s) failed\n", root, path);
         ret=-1;
         goto backup_dir_err;
     }
@@ -798,7 +796,7 @@ int createar_save_directory(csavear *save, char *root, char *path, u64 *costeval
         
         // ---- get details about current file
         if (lstat64(fullpath, &statbuf)!=0)
-        {   sysprintf(_("cannot lstat64(%s)\n"), fullpath);
+        {   sysprintf("cannot lstat64(%s)\n", fullpath);
             ret=-1;
             goto backup_dir_err;
         }
@@ -808,7 +806,7 @@ int createar_save_directory(csavear *save, char *root, char *path, u64 *costeval
             || (exclude_check(&g_options.exclude, relpath)==true)) // is filepath excluded ?
         {
             if (costeval==NULL) // dont log twice (eval + real)
-                msgprintf(MSG_VERB2, _("file/dir=[%s] excluded\n"), relpath);
+                msgprintf(MSG_VERB2, "file/dir=[%s] excluded\n", relpath);
             continue;
         }
         
@@ -816,7 +814,7 @@ int createar_save_directory(csavear *save, char *root, char *path, u64 *costeval
         if (S_ISDIR(statbuf.st_mode))
         { 
             if (createar_save_directory(save, root, relpath, costeval)!=0)
-            {   msgprintf(MSG_STACK, _("createar_save_directory(%s) failed\n"), relpath);
+            {   msgprintf(MSG_STACK, "createar_save_directory(%s) failed\n", relpath);
                 ret=-1;
                 goto backup_dir_err;
             }
@@ -824,7 +822,7 @@ int createar_save_directory(csavear *save, char *root, char *path, u64 *costeval
         else // not a directory
         {
             if (createar_save_file(save, root, relpath, &statbuf, costeval)!=0)
-            {   msgprintf(MSG_STACK, _("createar_save_directory(%s) failed\n"), relpath);
+            {   msgprintf(MSG_STACK, "createar_save_directory(%s) failed\n", relpath);
                 ret=-1;
                 goto backup_dir_err;
             }
@@ -841,12 +839,12 @@ int createar_save_directory_wrapper(csavear *save, char *root, char *path, u64 *
     int ret;
     
     if ((save->dichardlinks=dichl_alloc())==NULL)
-    {   errprintf(_("dichardlinks=dichl_alloc() failed\n"));
+    {   errprintf("dichardlinks=dichl_alloc() failed\n");
         return -1;
     }
     
     if (regmulti_init(&save->regmulti, g_options.datablocksize)!=0)
-    {   errprintf(_("regmulti_init failed\n"));
+    {   errprintf("regmulti_init failed\n");
         return -1;
     }
     
@@ -854,7 +852,7 @@ int createar_save_directory_wrapper(csavear *save, char *root, char *path, u64 *
     
     // put all small files that are in the last block to the queue
     if (regmulti_save_enqueue(&save->regmulti, &g_queue, save->fsid)!=0)
-    {   errprintf(_("Cannot queue last block of small-files\n"));
+    {   errprintf("Cannot queue last block of small-files\n");
         return -1;
     }
     
@@ -874,14 +872,14 @@ int createar_write_mainhead(csavear *save, int archtype, int fscount)
     cdico *d;
     
     if (!save)
-    {   errprintf(_("ai is NULL\n"));
+    {   errprintf("ai is NULL\n");
         return -1;
     }
     
     // init
     gettimeofday(&now, NULL);
     if ((d=dico_alloc())==NULL)
-    {   errprintf(_("dico_alloc() failed\n"));
+    {   errprintf("dico_alloc() failed\n");
         return -1;
     }
     
@@ -920,7 +918,7 @@ int createar_write_mainhead(csavear *save, int archtype, int fscount)
     }
     
     if (queue_add_header(&g_queue, d, FSA_MAGIC_MAIN, FSA_FILESYSID_NULL)!=0)
-    {   errprintf(_("cannot write dico for main header\n"));
+    {   errprintf("cannot write dico for main header\n");
         dico_destroy(d);
         return -1;
     }
@@ -953,21 +951,21 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
     {
         devinfo->mountedbyfsa=false;
         //snprintf(partmnt, PATH_MAX, "%s", curmntdir); // return the mount point to main savefs function
-        msgprintf(MSG_DEBUG1, _("generic_get_mntinfo(%s): mnt=[%s], opt=[%s], fs=[%s], rw=[%d]\n"), devinfo->devpath, curmntdir, optbuf, fsbuf, readwrite);
+        msgprintf(MSG_DEBUG1, "generic_get_mntinfo(%s): mnt=[%s], opt=[%s], fs=[%s], rw=[%d]\n", devinfo->devpath, curmntdir, optbuf, fsbuf, readwrite);
         if (readwrite==1 && g_options.allowsaverw==0)
         {
-            errprintf(_("partition [%s] is mounted read/write. please mount it read-only \n"
+            errprintf("partition [%s] is mounted read/write. please mount it read-only \n"
                 "and then try again. you can do \"mount -o remount,ro %s\". you can \n"
-                "also run fsarchiver with option '-A' if you know what you are doing.\n"), 
+                "also run fsarchiver with option '-A' if you know what you are doing.\n", 
                 devinfo->devpath, devinfo->devpath);
             return -1;
         }
         if (generic_get_fstype(fsbuf, &devinfo->fstype)!=0)
         {   
             if (strcmp(fsbuf, "fuseblk")==0)
-                errprintf(_("partition [%s] is using a fuse based filesystem (probably ntfs-3g). Unmount it and try again\n"), devinfo->devpath);
+                errprintf("partition [%s] is using a fuse based filesystem (probably ntfs-3g). Unmount it and try again\n", devinfo->devpath);
             else
-                errprintf(_("filesystem of partition [%s] is not supported by fsarchiver: filesystem=[%s]\n"), devinfo->devpath, fsbuf);
+                errprintf("filesystem of partition [%s] is not supported by fsarchiver: filesystem=[%s]\n", devinfo->devpath, fsbuf);
             return -1;
         }
         // check the filesystem is mounted with the right mount-options (to preserve acl and xattr)
@@ -976,33 +974,33 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
         strlist_init(&curmntopt);
         if (filesys[devinfo->fstype].reqmntopt(devinfo->devpath, &reqmntopt, &badmntopt)!=0)
         {
-            errprintf(_("cannot get the required mount options for partition=[%s]\n"), devinfo->devpath);
+            errprintf("cannot get the required mount options for partition=[%s]\n", devinfo->devpath);
             strlist_empty(&reqmntopt);
             strlist_empty(&badmntopt);
             return -1;
         }
         strlist_split(&curmntopt, optbuf, ',');
-        msgprintf(MSG_DEBUG2, _("mount options found for partition=[%s]: [%s]\n"), devinfo->devpath, strlist_merge(&curmntopt, temp, sizeof(temp), ','));
-        msgprintf(MSG_DEBUG2, _("mount options required for partition=[%s]: [%s]\n"), devinfo->devpath, strlist_merge(&reqmntopt, temp, sizeof(temp), ','));
-        msgprintf(MSG_DEBUG2, _("mount options to avoid for partition=[%s]: [%s]\n"), devinfo->devpath, strlist_merge(&badmntopt, temp, sizeof(temp), ','));
+        msgprintf(MSG_DEBUG2, "mount options found for partition=[%s]: [%s]\n", devinfo->devpath, strlist_merge(&curmntopt, temp, sizeof(temp), ','));
+        msgprintf(MSG_DEBUG2, "mount options required for partition=[%s]: [%s]\n", devinfo->devpath, strlist_merge(&reqmntopt, temp, sizeof(temp), ','));
+        msgprintf(MSG_DEBUG2, "mount options to avoid for partition=[%s]: [%s]\n", devinfo->devpath, strlist_merge(&badmntopt, temp, sizeof(temp), ','));
         count=strlist_count(&reqmntopt);
         for (i=0; i < count; i++)
         {
             strlist_getitem(&reqmntopt, i, optbuf, sizeof(optbuf));
-            msgprintf(MSG_DEBUG2, _("checking there is reqmntopt[%d]=[%s]\n"), i, optbuf);
+            msgprintf(MSG_DEBUG2, "checking there is reqmntopt[%d]=[%s]\n", i, optbuf);
             if (strlist_exists(&curmntopt, optbuf)!=true)
             {
                 if (showwarningcount1==0)
-                    errprintf(_("partition [%s] has to be mounted with options [%s] in order to preserve "
-                        "all its attributes. you can use mount with option remount to do that.\n"),
+                    errprintf("partition [%s] has to be mounted with options [%s] in order to preserve "
+                        "all its attributes. you can use mount with option remount to do that.\n",
                         devinfo->devpath, strlist_merge(&reqmntopt, temp, sizeof(temp), ','));
                 if (g_options.dontcheckmountopts==true)
                 {   if (showwarningcount1++ == 0) // show this warning only once
-                        errprintf(_("fsarchiver will continue anyway since the option '-a' was used\n"));
+                        errprintf("fsarchiver will continue anyway since the option '-a' was used\n");
                 }
                 else // don't ignore the mount options
-                {   errprintf(_("fsarchiver cannot continue, you can use option '-a' to ignore "
-                        "the mount options (xattr or acl may not be preserved)\n"));
+                {   errprintf("fsarchiver cannot continue, you can use option '-a' to ignore "
+                        "the mount options (xattr or acl may not be preserved)\n");
                     return -1;
                 }
             }
@@ -1011,19 +1009,19 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
         for (i=0; i < count; i++)
         {
             strlist_getitem(&badmntopt, i, optbuf, sizeof(optbuf));
-            msgprintf(MSG_DEBUG2, _("checking there is not badmntopt[%d]=[%s]\n"), i, optbuf);
+            msgprintf(MSG_DEBUG2, "checking there is not badmntopt[%d]=[%s]\n", i, optbuf);
             if (strlist_exists(&curmntopt, optbuf)==true)
             {
                 if (showwarningcount2==0)
-                    errprintf(_("partition [%s] has to be mounted without options [%s] in order to preserve all its attributes\n"),
+                    errprintf("partition [%s] has to be mounted without options [%s] in order to preserve all its attributes\n",
                         devinfo->devpath, strlist_merge(&badmntopt, temp, sizeof(temp), ','));
                 if (g_options.dontcheckmountopts==true)
                 {   if (showwarningcount2++ == 0) // show this warning only once
-                        errprintf(_("fsarchiver will continue anyway since the option '-a' was used\n"));
+                        errprintf("fsarchiver will continue anyway since the option '-a' was used\n");
                 }
                 else // don't ignore the mount options
-                {   errprintf(_("fsarchiver cannot continue, you can use option '-a' to ignore "
-                        "the mount options (xattr or acl may not be preserverd)\n"));
+                {   errprintf("fsarchiver cannot continue, you can use option '-a' to ignore "
+                        "the mount options (xattr or acl may not be preserverd)\n");
                     return -1;
                 }
             }
@@ -1035,7 +1033,7 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
         mkdir_recursive(devinfo->partmount);
         if (mount(curmntdir, devinfo->partmount, NULL, MS_BIND|MS_RDONLY, NULL)!=0)
         {
-            errprintf(_("mount(src=[%s], target=[%s], NULL, MS_BIND|MS_RDONLY, NULL) failed\n"), curmntdir, devinfo->partmount);
+            errprintf("mount(src=[%s], target=[%s], NULL, MS_BIND|MS_RDONLY, NULL) failed\n", curmntdir, devinfo->partmount);
             return -1;
         }
         devinfo->mountedbyfsa=true;
@@ -1043,16 +1041,16 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
     else // partition not yet mounted
     {
         mkdir_recursive(devinfo->partmount);
-        msgprintf(MSG_DEBUG1, _("partition %s is not mounted\n"), devinfo->devpath);
+        msgprintf(MSG_DEBUG1, "partition %s is not mounted\n", devinfo->devpath);
         for (tmptype=-1, i=0; (filesys[i].name) && (tmptype==-1); i++)
         {
             if ((filesys[i].test(devinfo->devpath)==true) && (filesys[i].mount(devinfo->devpath, devinfo->partmount, filesys[i].name, MS_RDONLY, NULL)==0))
             {   tmptype=i;
-                msgprintf(MSG_DEBUG1, _("partition %s successfully mounted on [%s] as [%s]\n"), devinfo->devpath, devinfo->partmount, filesys[i].name);
+                msgprintf(MSG_DEBUG1, "partition %s successfully mounted on [%s] as [%s]\n", devinfo->devpath, devinfo->partmount, filesys[i].name);
             }
         }
         if (tmptype==-1)
-        {   errprintf(_("cannot mount partition [%s]: filesystem may not be supported by either fsarchiver or the kernel.\n"), devinfo->devpath);
+        {   errprintf("cannot mount partition [%s]: filesystem may not be supported by either fsarchiver or the kernel.\n", devinfo->devpath);
             werte_uebergeben (108,4); 
             return -1;
         }
@@ -1062,7 +1060,7 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
     
     // get space statistics
     if (statvfs64(devinfo->partmount, &statfsbuf)!=0)
-    {   errprintf(_("statvfs64(%s) failed\n"), devinfo->partmount);
+    {   errprintf("statvfs64(%s) failed\n", devinfo->partmount);
         return -1;
     }
     fsbytestotal=(u64)statfsbuf.f_frsize*(u64)statfsbuf.f_blocks;
@@ -1075,7 +1073,7 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
     dico_add_u64(dicofsinfo, 0, FSYSHEADKEY_BYTESUSED, fsbytesused);
     
     if (filesys[devinfo->fstype].getinfo(dicofsinfo, devinfo->devpath)!=0)
-    {   errprintf(_("cannot save filesystem attributes for partition %s\n"), devinfo->devpath);
+    {   errprintf("cannot save filesystem attributes for partition %s\n", devinfo->devpath);
         return -1;
     }
     
@@ -1090,7 +1088,7 @@ int createar_oper_savefs(csavear *save, cdevinfo *devinfo)
     
     // write "begin of filesystem" header
     if ((dicobegin=dico_alloc())==NULL)
-    {   errprintf(_("dicostart=dico_alloc() failed\n"));
+    {   errprintf("dicostart=dico_alloc() failed\n");
         return -1;
     }
     queue_add_header(&g_queue, dicobegin, FSA_MAGIC_FSYB, save->fsid);
@@ -1103,7 +1101,7 @@ int createar_oper_savefs(csavear *save, cdevinfo *devinfo)
     
     // write "end of filesystem" header
     if ((dicoend=dico_alloc())==NULL)
-    {   errprintf(_("dicoend=dico_alloc() failed\n"));
+    {   errprintf("dicoend=dico_alloc() failed\n");
         return -1;
     }
     
@@ -1176,7 +1174,7 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
     for (i=0; (archtype==ARCHTYPE_FILESYSTEMS) && (i < argc) && (argv[i]!=NULL); i++)
     {
         if ((stat64(argv[i], &st)!=0) || (!S_ISBLK(st.st_mode)))
-        {   errprintf(_("%s is not a valid block device\n"), argv[i]);
+        {   errprintf("%s is not a valid block device\n", argv[i]);
             ret=-1;
             goto do_create_error;
         }
@@ -1186,7 +1184,7 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
     for (i=0; (archtype==ARCHTYPE_DIRECTORIES) && (i < argc) && (argv[i]!=NULL); i++)
     {
         if ((stat64(argv[i], &st)!=0) || (!S_ISDIR(st.st_mode)))
-        {   errprintf(_("%s is not a valid directory\n"), argv[i]);
+        {   errprintf("%s is not a valid directory\n", argv[i]);
             ret=-1;
             goto do_create_error;
         }
@@ -1196,7 +1194,7 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
     for (i=0; (i<g_options.compressjobs) && (i<FSA_MAX_COMPJOBS); i++)
     {
         if (pthread_create(&thread_comp[i], NULL, thread_comp_fct, NULL) != 0)
-        {   errprintf(_("pthread_create(thread_comp_fct) failed\n"));
+        {   errprintf("pthread_create(thread_comp_fct) failed\n");
             ret=-1;
             goto do_create_error;
         }
@@ -1204,14 +1202,14 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
     
     // create archive-writer thread
     if (pthread_create(&thread_writer, NULL, thread_writer_fct, (void*)&save.ai) != 0)
-    {   errprintf(_("pthread_create(thread_writer_fct) failed\n"));
+    {   errprintf("pthread_create(thread_writer_fct) failed\n");
         ret=-1;
         goto do_create_error;
     }
     
     // write archive main header
     if (createar_write_mainhead(&save, archtype, argc)!=0)
-    {   errprintf(_("archive_write_mainhead(%s) failed\n"), archive);
+    {   errprintf("archive_write_mainhead(%s) failed\n", archive);
         ret=-1;
         goto do_create_error;
     }
@@ -1223,16 +1221,16 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
         for (i=0; (i < argc) && (argv[i]); i++)
         {
             if ((dicofsinfo[i]=dico_alloc())==NULL)
-            {   errprintf(_("dico_alloc() failed\n"));
+            {   errprintf("dico_alloc() failed\n");
                 goto do_create_error;
             }
             
             snprintf(devinfo[i].devpath, sizeof(devinfo[i].devpath), "%s", argv[i]);
             
             generate_random_tmpdir(devinfo[i].partmount, PATH_MAX, i);
-            msgprintf(MSG_VERB2, _("Mounting filesystem on %s...\n"), devinfo[i].devpath);
+            msgprintf(MSG_VERB2, "Mounting filesystem on %s...\n", devinfo[i].devpath);
             if (filesystem_mount_partition(&devinfo[i], dicofsinfo[i], i)!=0)
-            {   msgprintf(MSG_STACK, _("archive_filesystem(%s) failed\n"), devinfo[i].devpath);
+            {   msgprintf(MSG_STACK, "archive_filesystem(%s) failed\n", devinfo[i].devpath);
                 goto do_create_error;
             }
         }
@@ -1242,20 +1240,20 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
         {
             // evaluate the cost of the operation
             cost_evalfs=0;
-            msgprintf(MSG_VERB1, _("Analysing filesystem on %s...\n"), devinfo[i].devpath);
+            msgprintf(MSG_VERB1, "Analysing filesystem on %s...\n", devinfo[i].devpath);
             if (createar_save_directory_wrapper(&save, devinfo[i].partmount, "/", &cost_evalfs)!=0)
-            {   sysprintf(_("cannot run evaluation createar_save_directory(%s)\n"), devinfo[i].partmount);
+            {   sysprintf("cannot run evaluation createar_save_directory(%s)\n", devinfo[i].partmount);
                 goto do_create_error;
             }
             if (dico_add_u64(dicofsinfo[i], 0, FSYSHEADKEY_TOTALCOST, cost_evalfs)!=0)
-            {   errprintf(_("dico_add_u64(FSYSHEADKEY_TOTALCOST) failed\n"));
+            {   errprintf("dico_add_u64(FSYSHEADKEY_TOTALCOST) failed\n");
                 goto do_create_error;
             }
             save.cost_global+=cost_evalfs;
             
             // write filesystem header
             if (queue_add_header(&g_queue, dicofsinfo[i], FSA_MAGIC_FSIN, FSA_FILESYSID_NULL)!=0)
-            {   errprintf(_("queue_add_header(FSA_MAGIC_FSIN, %s) failed\n"), devinfo[i].devpath);
+            {   errprintf("queue_add_header(FSA_MAGIC_FSIN, %s) failed\n", devinfo[i].devpath);
                 goto do_create_error;
             }
             dicofsinfo[i]=NULL;
@@ -1269,9 +1267,9 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
         for (i=0; (i < argc) && (argv[i]); i++)
         {
             cost_evalfs=0;
-            msgprintf(MSG_VERB1, _("Analysing directory %s...\n"), argv[i]);
+            msgprintf(MSG_VERB1, "Analysing directory %s...\n", argv[i]);
             if (createar_save_directory_wrapper(&save, argv[i], "/", &cost_evalfs)!=0)
-            {   sysprintf(_("cannot run evaluation createar_save_directory(%s)\n"), argv[i]);
+            {   sysprintf("cannot run evaluation createar_save_directory(%s)\n", argv[i]);
                 goto do_create_error;
             }
             save.cost_global+=cost_evalfs;
@@ -1279,16 +1277,16 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
         
         // write dirsinfo header
         if ((dirsinfo=dico_alloc())==NULL)
-        {   errprintf(_("dico_alloc() failed\n"));
+        {   errprintf("dico_alloc() failed\n");
             goto do_create_error;
         }
         if (dico_add_u64(dirsinfo, 0, DIRSINFOKEY_TOTALCOST, save.cost_global)!=0)
-        {   errprintf(_("dico_add_u64(DIRSINFOKEY_TOTALCOST) failed\n"));
+        {   errprintf("dico_add_u64(DIRSINFOKEY_TOTALCOST) failed\n");
             goto do_create_error;
         }
         
         if (queue_add_header(&g_queue, dirsinfo, FSA_MAGIC_DIRS, FSA_FILESYSID_NULL)!=0)
-        {   errprintf(_("queue_add_header(FSA_MAGIC_DIRS) failed\n"));
+        {   errprintf("queue_add_header(FSA_MAGIC_DIRS) failed\n");
             goto do_create_error;
         }
         dirsinfo=NULL;
@@ -1300,7 +1298,7 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
     meldeflag = 1;
 	// Anzeige im Terminal 
 	msgprintf(MSG_FORCE, "\n"); 
-	msgprintf(MSG_FORCE, _("[ Anzahl Dateien  prozentualer Anteil ]  \n"));
+	msgprintf(MSG_FORCE, "[ Anzahl Dateien  prozentualer Anteil ]  \n");
     
     // copy contents to archive
     switch (archtype)
@@ -1308,11 +1306,11 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
         case ARCHTYPE_FILESYSTEMS:// write contents of each filesystem
             for (i=0; (i < argc) && (devinfo[i].devpath!=NULL) && (get_interrupted()==false); i++)
             {
-                msgprintf(MSG_VERB1, _("============= archiving filesystem %s =============\n"), devinfo[i].devpath);
+                msgprintf(MSG_VERB1, "============= archiving filesystem %s =============\n", devinfo[i].devpath);
                 save.fsid=i;
                 memset(&save.stats, 0, sizeof(save.stats));
                 if (createar_oper_savefs(&save, &devinfo[i])!=0)
-                {   errprintf(_("archive_filesystem(%s) failed\n"), devinfo[i].devpath);
+                {   errprintf("archive_filesystem(%s) failed\n", devinfo[i].devpath);
                     goto do_create_error;
                 }
                 if (get_interrupted()==false)
@@ -1329,9 +1327,9 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
             // write the contents of each directory passed on the command line
             for (i=0; (i < argc) && (argv[i]!=NULL) && (get_interrupted()==false); i++)
             {
-                msgprintf(MSG_VERB1, _("============= archiving directory %s =============\n"), argv[i]);
+                msgprintf(MSG_VERB1, "============= archiving directory %s =============\n", argv[i]);
                 if (createar_oper_savedir(&save, argv[i])!=0)
-                {   errprintf(_("archive_filesystem(%s) failed\n"), argv[i]);
+                {   errprintf("archive_filesystem(%s) failed\n", argv[i]);
                     goto do_create_error;
                 }
             }
@@ -1340,7 +1338,7 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
             totalerr+=stats_errcount(save.stats);
             // write "end of archive" header
             if ((dicoend=dico_alloc())==NULL)
-            {   errprintf(_("dicoend=dico_alloc() failed\n"));
+            {   errprintf("dicoend=dico_alloc() failed\n");
                 goto do_create_error;
             }
             
@@ -1349,29 +1347,29 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
             break;
             
         default: // invalid option
-            errprintf(_("unsupported archtype: %d\n"), archtype);
+            errprintf("unsupported archtype: %d\n", archtype);
             goto do_create_error;
     }
     
     if (get_interrupted()==false)
         goto do_create_success;
     if (get_abort()==true)
-        msgprintf(MSG_FORCE, _("operation aborted by user\n"));
+        msgprintf(MSG_FORCE, "operation aborted by user\n");
     
 do_create_error:
-    msgprintf(MSG_DEBUG1, _("THREAD-MAIN1: exit error\n"));
+    msgprintf(MSG_DEBUG1, "THREAD-MAIN1: exit error\n");
     ret=-1;
     
 do_create_success:
-    msgprintf(MSG_DEBUG1, _("THREAD-MAIN1: exit\n"));
+    msgprintf(MSG_DEBUG1, "THREAD-MAIN1: exit\n");
     
     for (i=0; i < FSA_MAX_FSPERARCH; i++)
     {
         if (devinfo[i].mountedbyfsa==true)
         {
-            msgprintf(MSG_VERB2, _("unmounting [%s] which is mounted on [%s]\n"), devinfo[i].devpath, devinfo[i].partmount);
+            msgprintf(MSG_VERB2, "unmounting [%s] which is mounted on [%s]\n", devinfo[i].devpath, devinfo[i].partmount);
             if (filesys[devinfo[i].fstype].umount(devinfo[i].devpath, devinfo[i].partmount)!=0)
-                sysprintf(_("cannot umount [%s]\n"), devinfo[i].partmount);
+                sysprintf("cannot umount [%s]\n", devinfo[i].partmount);
             else
                 rmdir(devinfo[i].partmount); // remove temp dir created by fsarchiver
         }
@@ -1381,11 +1379,10 @@ do_create_success:
     
     for (i=0; (i<g_options.compressjobs) && (i<FSA_MAX_COMPJOBS); i++)
         if (thread_comp[i] && pthread_join(thread_comp[i], NULL) != 0)
-            errprintf(_("pthread_join(thread_comp[%d]) failed\n"), i);
+            errprintf("pthread_join(thread_comp[%d]) failed\n", i);
     
     if (thread_writer && pthread_join(thread_writer, NULL) != 0)
-        errprintf(_(
-        "pthread_join(thread_writer) failed\n"));
+        errprintf("pthread_join(thread_writer) failed\n");
     
     if (ret!=0)
         archwriter_remove(&save.ai);

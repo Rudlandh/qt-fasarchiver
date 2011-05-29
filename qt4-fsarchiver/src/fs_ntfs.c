@@ -33,7 +33,6 @@
 #include "filesys.h"
 #include "strlist.h"
 #include "error.h"
-#include "system.h"
 
 int ntfs_mkfs(cdico *d, char *partition)
 {
@@ -47,7 +46,7 @@ int ntfs_mkfs(cdico *d, char *partition)
     
     // there is no option that just displays the version and return 0 in mkfs.ntfs
     if (exec_command(command, sizeof(command), NULL, NULL, 0, NULL, 0, "mkfs.ntfs")!=0)
-    {   errprintf(_("mkfs.ntfs not found. please install ntfsprogs-2.0.0 on your system or check the PATH.\n"));
+    {   errprintf("mkfs.ntfs not found. please install ntfsprogs-2.0.0 on your system or check the PATH.\n");
         return -1;
     }
     
@@ -63,7 +62,7 @@ int ntfs_mkfs(cdico *d, char *partition)
         strlcatf(options, sizeof(options), " -c %ld ", (long)temp32);
     
     if (exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "mkfs.ntfs -f %s %s", partition, options)!=0 || exitst!=0)
-    {   errprintf(_("command [%s] failed\n"), command);
+    {   errprintf("command [%s] failed\n", command);
         return -1;
     }
     
@@ -84,19 +83,19 @@ int ntfs_getinfo(cdico *d, char *devname)
     if (((fd=open64(devname, O_RDONLY|O_LARGEFILE))<0) ||
         (read(fd, bootsect, sizeof(bootsect))!=sizeof(bootsect)) ||
         (close(fd)<0))
-    {   sysprintf(_("cannot open device or read bootsector on %s\n"), devname);
+    {   sysprintf("cannot open device or read bootsector on %s\n", devname);
         return -1;
     }
     
     // check signature in the boot sector
     if (memcmp(bootsect+3, "NTFS", 4) != 0)
-    {   errprintf(_("cannot find the ntfs signature on %s\n"), devname);
+    {   errprintf("cannot find the ntfs signature on %s\n", devname);
         return -1;
     }
     
     // get device label from common code in libbklid
     if (get_devinfo(&devinfo, devname, -1, -1)!=0)
-    {   errprintf(_("get_devinfo(%s) failed\n"), devname);
+    {   errprintf("get_devinfo(%s) failed\n", devname);
         return -1;
     }
     
@@ -105,10 +104,10 @@ int ntfs_getinfo(cdico *d, char *devname)
     info.bytes_per_cluster = info.bytes_per_sector * info.sectors_per_clusters;
     info.uuid = le64_to_cpu(*((u64*)(bootsect+0x48)));
     
-    msgprintf(MSG_VERB2, _("bytes_per_sector=[%lld]\n"), (long long)info.bytes_per_sector);
-    msgprintf(MSG_VERB2, _("sectors_per_clusters=[%lld]\n"), (long long)info.sectors_per_clusters);
-    msgprintf(MSG_VERB2, _("bytes_per_cluster=[%lld]\n"), (long long)info.bytes_per_cluster);
-    msgprintf(MSG_VERB2, _("uuid=[%016llX]\n"), (long long unsigned int)info.uuid);
+    msgprintf(MSG_VERB2, "bytes_per_sector=[%lld]\n", (long long)info.bytes_per_sector);
+    msgprintf(MSG_VERB2, "sectors_per_clusters=[%lld]\n", (long long)info.sectors_per_clusters);
+    msgprintf(MSG_VERB2, "bytes_per_cluster=[%lld]\n", (long long)info.bytes_per_cluster);
+    msgprintf(MSG_VERB2, "uuid=[%016llX]\n", (long long unsigned int)info.uuid);
     
     dico_add_u16(d, 0, FSYSHEADKEY_NTFSSECTORSIZE, info.bytes_per_sector);
     dico_add_u32(d, 0, FSYSHEADKEY_NTFSCLUSTERSIZE, info.bytes_per_cluster);
@@ -116,7 +115,7 @@ int ntfs_getinfo(cdico *d, char *devname)
     
     // get label from library
     dico_add_string(d, 0, FSYSHEADKEY_FSLABEL, devinfo.label);
-    msgprintf(MSG_VERB2, _("ntfs_label=[%s]\n"), devinfo.label);
+    msgprintf(MSG_VERB2, "ntfs_label=[%s]\n", devinfo.label);
     
     // minimum fsarchiver version required to restore
     dico_add_u64(d, 0, FSYSHEADKEY_MINFSAVERSION, FSA_VERSION_BUILD(0, 6, 4, 0));
@@ -144,13 +143,13 @@ int ntfs_mount(char *partition, char *mntbuf, char *fsbuf, int flags, char *mnti
     // init
     memset(options, 0, sizeof(options));
     memset(stderrbuf, 0, sizeof(stderrbuf));
-    snprintf(minversion, sizeof(minversion), _("ntfs-3g %.4d.%.2d.%.2d (standard release)"), 
+    snprintf(minversion, sizeof(minversion), "ntfs-3g %.4d.%.2d.%.2d (standard release)", 
         NTFS3G_MINVER_Y, NTFS3G_MINVER_M, NTFS3G_MINVER_D);
     
     // check that mount.ntfs-3g is available (don't check the exit status, it's not supposed to be 0)
     if (exec_command(command, sizeof(command), NULL, NULL, 0, stderrbuf, sizeof(stderrbuf), "ntfs-3g -h")!=0)
-    {   errprintf(_("ntfs-3g not found. please install %s\n"
-            "or a newer version on your system or check the PATH.\n"), minversion);
+    {   errprintf("ntfs-3g not found. please install %s\n"
+            "or a newer version on your system or check the PATH.\n", minversion);
         return -1;
     }
     
@@ -159,19 +158,19 @@ int ntfs_mount(char *partition, char *mntbuf, char *fsbuf, int flags, char *mnti
     while (result != NULL && instver==0)
     {   if (sscanf(result, "ntfs-3g %4d.%2d.%2d ", &year, &month, &day)==3)
         {   instver=NTFS3G_VERSION(year, month, day);
-            msgprintf(MSG_VERB2, _("ntfs-3g detected version: year=[%.4d], month=[%.2d], day=[%.2d]\n"), year, month, day);
+            msgprintf(MSG_VERB2, "ntfs-3g detected version: year=[%.4d], month=[%.2d], day=[%.2d]\n", year, month, day);
         }
         result = strtok_r(NULL, delims, &saveptr);
     }
     
     if (instver < NTFS3G_VERSION(NTFS3G_MINVER_Y, NTFS3G_MINVER_M, NTFS3G_MINVER_D))
     {
-        errprintf(_("fsarchiver requires %s to operate. The detected version is too old\n"), minversion);
+        errprintf("fsarchiver requires %s to operate. The detected version is too old\n", minversion);
         return -1;
     }
     else
     {
-        msgprintf(MSG_VERB2, _("ntfs-3g has been found: version is %d.%d.%d\n"), year, month, day);
+        msgprintf(MSG_VERB2, "ntfs-3g has been found: version is %d.%d.%d\n", year, month, day);
     }
     
     // if mntinfo is specified, check which mount option was used at savefs and use the same for consistency
@@ -192,7 +191,7 @@ int ntfs_mount(char *partition, char *mntbuf, char *fsbuf, int flags, char *mnti
     
     // ---- set the advanced filesystem settings from the dico
     if (exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "ntfs-3g %s %s %s", options, partition, mntbuf)!=0 || exitst!=0)
-    {   errprintf(_("command [%s] failed, make sure a recent version of ntfs-3g is installed\n"), command);
+    {   errprintf("command [%s] failed, make sure a recent version of ntfs-3g is installed\n", command);
         return -1;
     }
     
@@ -205,12 +204,12 @@ int ntfs_umount(char *partition, char *mntbuf)
     int existst;
 
     if (exec_command(command, sizeof(command), NULL, NULL, 0, NULL, 0, "fusermount")!=0)
-    {   errprintf(_("fusermount not found. please install fuse on your system or check the PATH.\n"));
+    {   errprintf("fusermount not found. please install fuse on your system or check the PATH.\n");
         return -1;
     }
     
     if (exec_command(command, sizeof(command), &existst, NULL, 0, NULL, 0, "fusermount -u %s", mntbuf)!=0 || existst!=0)
-    {   errprintf(_("cannot unmount [%s]\n"), mntbuf);
+    {   errprintf("cannot unmount [%s]\n", mntbuf);
         return -1;
     }
     
@@ -255,13 +254,13 @@ int ntfs_replace_uuid(char *devname, u64 uuid)
     
     if ((fd=open64(devname, O_RDWR|O_LARGEFILE))<0)
     {
-        errprintf(_("cannot open(%s, O_RDWR)\n"), devname);
+        errprintf("cannot open(%s, O_RDWR)\n", devname);
         return -1;
     }
     
     if (read(fd, bootsect, sizeof(bootsect))!=sizeof(bootsect))
     {
-        errprintf(_("cannot read the boot sector on %s\n"), devname);
+        errprintf("cannot read the boot sector on %s\n", devname);
         close(fd);
         return -1;
     }
@@ -270,14 +269,14 @@ int ntfs_replace_uuid(char *devname, u64 uuid)
     
     if (lseek(fd, 0, SEEK_SET)!=0)
     {
-        errprintf(_("lseek(fd, 0, SEEK_SET) failed\n"));
+        errprintf("lseek(fd, 0, SEEK_SET) failed\n");
         close(fd);
         return -1;
     }
     
     if (write(fd, bootsect, sizeof(bootsect))!=sizeof(bootsect))
     {
-        errprintf(_("cannot modify the boot sector on %s\n"), devname);
+        errprintf("cannot modify the boot sector on %s\n", devname);
         close(fd);
         return -1;
     }

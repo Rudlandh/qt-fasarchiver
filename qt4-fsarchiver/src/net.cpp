@@ -132,15 +132,15 @@ treeView->setSelectionModel(selModel);
 	QModelIndex index = treeView->currentIndex();
         QModelIndexList indexes = selModel->selectedIndexes();
         folder_net =  (dirModel->filePath(index));
-}   
+} 
 
 void DialogNet::chkkey(){
      Qt::CheckState state;
      state = chk_key->checkState();
-     if (state == Qt::Checked){
-        lineKey->setEnabled(true);}
-     else {
-        lineKey->setEnabled(false);}
+     if (state == Qt::Checked)
+        lineKey->setEnabled(true);
+     else 
+	lineKey->setEnabled(false);
 }  
 
 void DialogNet:: end()
@@ -487,7 +487,7 @@ int pos;
 			parameter[4] = folder_net;
                         int retour =  fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
                         if ( werte_holen(4) == 103 && retour != 0){
-                           QMessageBox::about(this, tr("Note","Hinweis"), tr("They have entered a wrong password.\n", "Sie haben ein falsches Passwort eingegeben. \n"));
+                          QMessageBox::about(this, tr("Note","Hinweis"), tr("They have entered a wrong password.\n", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");
                            return 0;
                         }
@@ -533,12 +533,12 @@ int pos;
                 	   QMessageBox::about(this, tr("Note", "Hinweis"),
          		   tr("The restore was canceled by user\n", "Das Zurückschreiben wurde vom Benutzer abgebrochen\n"));
                             pushButton_restore->setEnabled(false);
-                	   return 0;
+                            return 0;
                 	   }
                        }
              	  }
 	if (window.is_mounted(dev_)) 
-              {
+               {
               part_art_net = window.mtab_einlesen(("/dev/" + partition_net_).toAscii().data());
               //Überprüfung ob System oder Home Partition 
                    if (part_art_net == "system")
@@ -569,8 +569,8 @@ int pos;
                                 }  
                           }
                                 
-                }
-	  if (rdBt_restoreFsArchiv->isChecked())
+                } 
+   	  if (rdBt_restoreFsArchiv->isChecked())
               {
                QString keyText = lineKey->text();
                state1 = chk_key->checkState(); 
@@ -646,7 +646,7 @@ void DialogNet::starteinstellung(){
            
             AnzahlsaveFile->setEnabled(true);
             AnzahlgesicherteFile->setEnabled(true);
-            chk_key->setText (tr("Encrypt\nbackup:", "Sicherung\nverschlüsseln"));
+            chk_key->setText (tr("Encrypt\nbackup. key:", "Sicherung\nverschlüsseln. Schlüssel:"));
             chk_split->setEnabled(true);
             QModelIndex cwdIndex = dirModel->index("/");
       	    treeView->setRootIndex(cwdIndex);  
@@ -675,7 +675,7 @@ void DialogNet::rdButton_auslesen()
                 
                 AnzahlsaveFile->setEnabled(false);
                 AnzahlgesicherteFile->setEnabled(false);
-               chk_key->setText (tr("Decrypt\nbackup:", "Sicherung\nentschlüsseln"));
+                chk_key->setText (tr("Decrypt\nbackup. key:", "Sicherung\nentschlüsseln. Schlüssel"));
                 chk_split->setEnabled(false);
                 treeView->setEnabled(true);
                 QModelIndex cwdIndex = dirModel->index("/mnt/qt4-fs-client");
@@ -769,7 +769,7 @@ void DialogNet::thread1Ready()  {
        // Anzahl nicht korrekt gesicherte Dateien ausgeben
        int part_testen = werte_holen(4);
        if (part_testen == 108){
-	   QMessageBox::about(this, tr("Note", "Hinweis"),
+	    QMessageBox::about(this, tr("Note", "Hinweis"),
           tr("The partition type is not supported. Maybe the partition is encrypted?\n", "Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?\n" ));
           }
        int err_regfile = werte_holen(1);
@@ -780,7 +780,7 @@ void DialogNet::thread1Ready()  {
        err_hardlinks = err_hardlinks + werte_holen(5);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
        if (part_testen != 108){
-       	  QMessageBox::about(this, tr("Note", "Hinweis"),
+       	   QMessageBox::about(this, tr("Note", "Hinweis"),
           err_regfile_ + tr(" files", " Dateien, ") 
 	+ err_dir_ + tr(" directories and ", " Verzeichnisse und ") + err_hardlinks_ 
 	+ tr(" links were not saved properly. The backup of the partition was only partially successful\n", 

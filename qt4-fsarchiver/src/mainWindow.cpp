@@ -115,12 +115,13 @@ MWindow::MWindow()
    connect( rdBt_saveFsArchiv, SIGNAL( clicked() ), this, SLOT(rdButton_auslesen()));
    connect( rdBt_restoreFsArchiv, SIGNAL( clicked() ), this, SLOT(rdButton_auslesen()));
    connect( chk_key, SIGNAL( clicked() ), this, SLOT(chkkey()));
-   /*
    // Zeitgeber für Berechnung remainingTime
-   QTimer *timer1 = new QTimer(this);
-   connect(timer1, SIGNAL(timeout()), this, SLOT(remainingTime()));
-   timer1->start(1000);
-    */
+  
+   timer = new QTimer(this);
+ //  timer1->singleShot( 1000, this , SLOT(ViewProzent( )) ;
+//   connect(timer1, SIGNAL(timeout()), this, SLOT(ViewProzent());
+ //  timer1->start(1000);
+
    items_kerne_ << "1" << "2" << "3" << "4" <<  "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12";
    cmb_kerne->addItems (items_kerne_);
    items_kerne_.clear();
@@ -256,10 +257,10 @@ MWindow::MWindow()
 void MWindow::chkkey(){
      Qt::CheckState state;
      state = chk_key->checkState();
-     if (state == Qt::Checked){
-        lineKey->setEnabled(true);}
-     else {
-        lineKey->setEnabled(false);}
+     if (state == Qt::Checked)
+        lineKey->setEnabled(true);
+     else 
+        lineKey->setEnabled(false);
 }
 
 void MWindow::save_button(){
@@ -280,7 +281,7 @@ void MWindow::rdButton_auslesen()
         }
      if (rdBt_restoreFsArchiv->isChecked())
         {
-		label_folder->setText (tr("Backup file", "Sicherungsdatei"));
+		label_folder->setText (tr("Backup File", "Sicherungsdatei"));
       		pushButton_save->setText (tr("Partition restore", "Partition zurückschreiben"));
                 pushButton_restore->setEnabled(true);
                 pushButton_save->setEnabled(false);
@@ -294,8 +295,8 @@ void MWindow::rdButton_auslesen()
                 label_3->setEnabled(false);
                 AnzahlsaveFile->setEnabled(false);
                 AnzahlgesicherteFile->setEnabled(false);
-                chk_key->setText (tr("Decrypt Backup",
-		 "Sicherung entschlüsseln")); 
+                chk_key->setText (tr("Decrypt\nbackup. key:",
+		 "Sicherung\nentschlüsseln. Schlüssel")); 
                 chk_split->setEnabled(false); 
          }
      } 
@@ -315,7 +316,7 @@ void MWindow::starteinstellung(){
             label_3->setEnabled(true);
             AnzahlsaveFile->setEnabled(true);
             AnzahlgesicherteFile->setEnabled(true);
-            chk_key->setText (tr("Encrypt backup", "Sicherung verschlüsseln"));
+            chk_key->setText (tr("Encrypt\nbackup. key:", "Sicherung\nverschlüsseln. Schlüssel"));
             chk_split->setEnabled(true); 
             chkkey(); 
             }
@@ -330,7 +331,7 @@ int MWindow::savePartition()
      char * part_;
      int err = 0;
      QString keyText = "";
-     int prozent;
+   
      int zip;
 
      indicator_reset();
@@ -366,7 +367,7 @@ int MWindow::savePartition()
 		return 0 ;
  	        }
  	 Zeit_auslesen();
-         state = chk_Beschreibung->checkState();
+         state= chk_Beschreibung->checkState();
          //Überprüfung ob gemounted
          part_ = partition_.toAscii().data();
          char  dev_[50] = "/dev/";
@@ -497,12 +498,13 @@ int MWindow::savePartition()
              			}
 				thread1.setValues(indizierung + 2,0);
                                 pushButton_save->setEnabled(false); 
-                                pushButton_end->setEnabled(false);  
+                                pushButton_end->setEnabled(false); 
+  				timer->singleShot( 1000, this , SLOT(ViewProzent( ))) ;
 				startThread1(); // fsarchiver wird im Thread ausgeführt
         			statusBar()->showMessage(tr("The backup is performed", "Die Sicherung wird durchgeführt"), 15000); 
                                 werte_reset();
                                 QString text_integer;
-                                while (endeThread !=1)
+/*	     while (endeThread !=1)
        					{
        					sleep(1);
                                         elapsedTime();
@@ -531,11 +533,48 @@ int MWindow::savePartition()
                                                }
                                         
        					} 
+///============
+*/
                          }
                     }
            return 0;
 
 }
+
+void MWindow::ViewProzent()
+{
+int prozent;
+
+if (endeThread !=1)
+{
+ timer->singleShot( 1000, this , SLOT(ViewProzent( )) ) ;
+  elapsedTime();
+  int meldung = werte_holen(4);
+ if (meldung >= 100) // Thread Abschluss mit Fehler
+   return;
+ int anzahl  = werte_holen(2);
+ QString text_integer;
+ text_integer = text_integer.setNum(anzahl);
+ AnzahlsaveFile ->setText(text_integer);
+ int anzahl1  = werte_holen(3);
+ text_integer = text_integer.setNum(anzahl1);
+ AnzahlgesicherteFile ->setText(text_integer);
+ prozent = werte_holen(1);
+ remainingTime(prozent);
+// bei mehrmaligem Aufruf von fsarchiver wird am Anfang der Sicherung kurzfristig 100 % angezeigt, was falsch ist
+ if (prozent != 100)  {
+  progressBar->setValue(prozent);
+   if (prozent >= 98 ) { 
+     progressBar->setValue(99);
+      	text_integer = text_integer.setNum(anzahl);
+	AnzahlgesicherteFile ->setText(text_integer);
+	SekundeRemaining ->setText("0");
+     return;
+     }
+   }
+ return;
+} }
+
 
 int MWindow::restorePartition()
 {
@@ -868,12 +907,12 @@ int MWindow::questionMessage(QString frage)
 	QPushButton* noButton = msg.addButton(tr("No", "Nein"), QMessageBox::NoRole);
 	msg.exec();
 	if (msg.clickedButton() == yesButton)
-        return 1;
+    		return 1;
 	else if (msg.clickedButton() == noButton)
-        return 2;
+    		return 2;
 }
-    
-    
+
+
 void MWindow::mbr_save () {
      extern int dialog_auswertung;
      dialog_auswertung = 4;
@@ -1178,13 +1217,13 @@ compress_[8] = 0.32; //lzma best
         free_part_size = free_part_size * compress_[zip - 1];
         part_size_compress = format(free_part_size);
        	text = tr("Backup file name: ", "Sicherungsdateiname: ") + text + "\n" + 
-	tr("Partition  name:", "Partitionsname: ")  
+	tr("Partition  name: ", "Partitionsname: ")  
 	+ PartitionString(row+1,0) + "\n" + tr("Partition type: ", "Partitionsart: ") 
        	+ PartitionString(row+1,1) + "\n" + tr("UUID: ") +  PartitionString(row+1,3) + "\n" + tr("Description: ", "Bezeichnung: ") + PartitionString(row+1,4) + "\n" + 
-       	tr("Partition size: ", "Partitionsgröße: ") + part_size_ + "\n" + tr("Assignment of the partition : ", "Belegung der Partition: ") + 
+       	tr("Partition size: ", "Partitionsgröße: ") + part_size_ + "\n" + tr("Assignment of the partition: ", "Belegung der Partition: ") + 
        	free_part_size_ + "\n" + tr("Assignment of the partition: ", "Belegung der Partition: ") + QString::number(prozent)+ " %" + "\n" + tr("Compression: ", "Kompression: ") + compress + "\n" + 
-       	tr("Approximate image file sizes: ", "ungefähre Sicherungsdateigröße: ") + part_size_compress + "\n" + "\n" + tr("Other notes:", "weitere Hinweise:");
-        ubuntu_root = tr("to be protected/secured partition: / (root system directory) ", "zu sichernde / gesicherte Partition: / (Wurzel-Systemverzeichnis)");
+       	tr("Approximate image file sizes: ", "ungefähre Sicherungsdateigröße: ") + part_size_compress + "\n" + "\n" + tr("Other notes: ", "weitere Hinweise:");
+        ubuntu_root = tr("to be protected/secured partition: / (root system directory) ", "zu sichernde / gesicherte Partition: / (Wurzel-Systemverzeichnis) ");
 
 	if (part_art == "system"){
 		Ubuntuversion = ubuntu_version();
@@ -1271,7 +1310,7 @@ QString filename = homepath + "/.config/qt4-fsarchiver/kernel.txt";
            kernel = kernel_.split(" ");
          }
          befehl = "rm " + filename;
-qDebug() << "befehl" << befehl;
+//qDebug() << "befehl" << befehl;
          system (befehl.toAscii().data());
          return kernel[0] + " " + kernel[2] +  " " + kernel[11];
 }

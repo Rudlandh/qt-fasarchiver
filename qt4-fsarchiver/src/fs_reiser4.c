@@ -34,7 +34,6 @@
 #include "filesys.h"
 #include "strlist.h"
 #include "error.h"
-#include "system.h"
 
 int reiser4_mkfs(cdico *d, char *partition)
 {
@@ -46,7 +45,7 @@ int reiser4_mkfs(cdico *d, char *partition)
     
     // ---- check mkfs.reiser4 is available
     if (exec_command(command, sizeof(command), NULL, NULL, 0, NULL, 0, "mkfs.reiser4 -V")!=0)
-    {   errprintf(_("mkfs.reiser4 not found. please install reiser4progs on your system or check the PATH.\n"));
+    {   errprintf("mkfs.reiser4 not found. please install reiser4progs on your system or check the PATH.\n");
         return -1;
     }
     
@@ -62,7 +61,7 @@ int reiser4_mkfs(cdico *d, char *partition)
         strlcatf(options, sizeof(options), " -U %s ", buffer);
     
     if (exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "mkfs.reiser4 -y %s %s", partition, options)!=0 || exitst!=0)
-    {   errprintf(_("command [%s] failed\n"), command);
+    {   errprintf("command [%s] failed\n", command);
         return -1;
     }
     
@@ -80,20 +79,20 @@ int reiser4_getinfo(cdico *d, char *devname)
 
     if ((fd=open64(devname, O_RDONLY|O_LARGEFILE))<0)
     {   ret=-1;
-        errprintf(_("cannot open(%s, O_RDONLY)\n"), devname);
+        errprintf("cannot open(%s, O_RDONLY)\n", devname);
         goto reiser4_get_specific_return;
     }
 
     if (lseek(fd, REISER4_DISK_OFFSET_IN_BYTES, SEEK_SET)!=REISER4_DISK_OFFSET_IN_BYTES)
     {   ret=-2;
-        errprintf(_("cannot lseek(fd, REISER4_DISK_OFFSET_IN_BYTES, SEEK_SET) on %s\n"), devname);
+        errprintf("cannot lseek(fd, REISER4_DISK_OFFSET_IN_BYTES, SEEK_SET) on %s\n", devname);
         goto reiser4_get_specific_close;
     }
 
     res=read(fd, &sb, sizeof(sb));
     if (res!=sizeof(sb))
     {   ret=-3;
-        errprintf(_("cannot read the reiser4 superblock on device [%s]\n"), devname);
+        errprintf("cannot read the reiser4 superblock on device [%s]\n", devname);
         goto reiser4_get_specific_close;
     }
     
@@ -103,13 +102,13 @@ int reiser4_getinfo(cdico *d, char *devname)
     }
     else
     {   ret=-4;
-        errprintf(_("magic different from expectations superblock on %s: magic=[%s], expected=[%s]\n"), devname, sb.magic, REISERFS4_SUPER_MAGIC);
+        errprintf("magic different from expectations superblock on %s: magic=[%s], expected=[%s]\n", devname, sb.magic, REISERFS4_SUPER_MAGIC);
         goto reiser4_get_specific_close;
     }
-    msgprintf(MSG_DEBUG1, _("reiser4_magic=[%s]\n"), sb.magic);
+    msgprintf(MSG_DEBUG1, "reiser4_magic=[%s]\n", sb.magic);
     
     // ---- label
-    msgprintf(MSG_DEBUG1, _("reiser4_label=[%s]\n"), sb.label);
+    msgprintf(MSG_DEBUG1, "reiser4_label=[%s]\n", sb.label);
     dico_add_string(d, 0, FSYSHEADKEY_FSLABEL, (char*)sb.label);
     
     // ---- uuid
@@ -118,18 +117,18 @@ int reiser4_getinfo(cdico *d, char *devname)
     memset(uuid, 0, sizeof(uuid));
     uuid_unparse_lower((u8*)sb.uuid, uuid);
     dico_add_string(d, 0, FSYSHEADKEY_FSUUID, uuid);
-    msgprintf(MSG_DEBUG1, _("reiser4_uuid=[%s]\n"), uuid);
+    msgprintf(MSG_DEBUG1, "reiser4_uuid=[%s]\n", uuid);
     
     // ---- block size
     temp16=le16_to_cpu(sb.blocksize);
     if (temp16!=4096)
     {   ret=-5;
         goto reiser4_get_specific_close;
-        errprintf(_("invalid reiser4 block-size: %ld, it should be 4096\n"), (long)temp16);
+        errprintf("invalid reiser4 block-size: %ld, it should be 4096\n", (long)temp16);
     }
     else
     {   dico_add_u64(d, 0, FSYSHEADKEY_FSREISER4BLOCKSIZE, temp16);
-        msgprintf(3, _("reiser4_blksize=[%ld]\n"), (long)temp16);
+        msgprintf(3, "reiser4_blksize=[%ld]\n", (long)temp16);
     }
     
     // ---- minimum fsarchiver version required to restore

@@ -34,7 +34,6 @@
 #include "filesys.h"
 #include "strlist.h"
 #include "error.h"
-#include "system.h"
 
 int btrfs_check_compatibility(u64 compat, u64 incompat, u64 ro_compat)
 {
@@ -74,13 +73,13 @@ int btrfs_mkfs(cdico *d, char *partition)
     
     // ---- check there is no unsuported feature in that filesystem
     if (btrfs_check_compatibility(compat_flags, incompat_flags, compat_ro_flags)!=0)
-    {   errprintf(_("this filesystem has features which are not supported by this fsarchiver version.\n"));
+    {   errprintf("this filesystem has features which are not supported by this fsarchiver version.\n");
         return -1;
     }
     
     // ---- there is no option that just displays the version and return 0 in mkfs.btrfs-0.16
     if (exec_command(command, sizeof(command), NULL, NULL, 0, NULL, 0, "mkfs.btrfs")!=0)
-    {   errprintf(_("mkfs.btrfs not found. please install btrfs-progs on your system or check the PATH.\n"));
+    {   errprintf("mkfs.btrfs not found. please install btrfs-progs on your system or check the PATH.\n");
         return -1;
     }
     
@@ -93,7 +92,7 @@ int btrfs_mkfs(cdico *d, char *partition)
         strlcatf(options, sizeof(options), " -s %ld ", (long)temp64);
     
     if (exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "mkfs.btrfs %s %s", partition, options)!=0 || exitst!=0)
-    {   errprintf(_("command [%s] failed\n"), command);
+    {   errprintf("command [%s] failed\n", command);
         return -1;
     }
     
@@ -110,25 +109,25 @@ int btrfs_getinfo(cdico *d, char *devname)
     
     if ((fd=open64(devname, O_RDONLY|O_LARGEFILE))<0)
     {   ret=-1;
-        errprintf(_("cannot open(%s, O_RDONLY)\n"), devname);
+        errprintf("cannot open(%s, O_RDONLY)\n", devname);
         goto btrfs_read_sb_return;
     }
     
     if (lseek(fd, BTRFS_SUPER_INFO_OFFSET, SEEK_SET)!=BTRFS_SUPER_INFO_OFFSET)
     {   ret=-2;
-        errprintf(_("cannot lseek(fd, BTRFS_SUPER_INFO_OFFSET, SEEK_SET) on %s\n"), devname);
+        errprintf("cannot lseek(fd, BTRFS_SUPER_INFO_OFFSET, SEEK_SET) on %s\n", devname);
         goto btrfs_read_sb_close;
     }
     
     if (read(fd, &sb, sizeof(sb))!=sizeof(sb))
     {   ret=-3;
-        errprintf(_("cannot read the btrfs superblock on device [%s]\n"), devname);
+        errprintf("cannot read the btrfs superblock on device [%s]\n", devname);
         goto btrfs_read_sb_close;
     }
     
     if (strncmp((char*)&sb.magic, BTRFS_MAGIC, sizeof(sb.magic))!=0)
     {   ret=-4;
-        errprintf(_("magic different from expectations superblock on [%s]: magic=[%.8s], expected=[%.8s]\n"), devname, (char*)&sb.magic, BTRFS_MAGIC);
+        errprintf("magic different from expectations superblock on [%s]: magic=[%.8s], expected=[%.8s]\n", devname, (char*)&sb.magic, BTRFS_MAGIC);
         goto btrfs_read_sb_close;
     }
     
@@ -154,7 +153,7 @@ int btrfs_getinfo(cdico *d, char *devname)
     dico_add_u64(d, 0, FSYSHEADKEY_BTRFSFEATUREINCOMPAT, le64_to_cpu(sb.incompat_flags));
     dico_add_u64(d, 0, FSYSHEADKEY_BTRFSFEATUREROCOMPAT, le64_to_cpu(sb.compat_ro_flags));
     if (btrfs_check_compatibility(le64_to_cpu(sb.compat_flags), le64_to_cpu(sb.incompat_flags), le64_to_cpu(sb.compat_ro_flags))!=0)
-    {   errprintf(_("this filesystem has features which are not supported by this fsarchiver version.\n"));
+    {   errprintf("this filesystem has features which are not supported by this fsarchiver version.\n");
         return -1;
     }
     

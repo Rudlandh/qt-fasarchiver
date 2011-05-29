@@ -32,7 +32,6 @@
 #include "datafile.h"
 #include "common.h"
 #include "error.h"
-#include "system.h"
 
 struct s_datafile 
 {   int  fd; // file descriptor
@@ -72,7 +71,7 @@ int datafile_open_write(cdatafile *f, char *path, bool simul, bool sparse)
     assert(f);
     
     if (f->open)
-    {   errprintf(_("File is already open\n"));
+    {   errprintf("File is already open\n");
         return -1;
     }
     
@@ -81,18 +80,18 @@ int datafile_open_write(cdatafile *f, char *path, bool simul, bool sparse)
         errno=0;
         if ((f->fd=open64(path, O_RDWR|O_CREAT|O_TRUNC|O_LARGEFILE, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH))<0)
         {   if (errno==ENOSPC)
-            {   sysprintf(_("can't write file [%s]: no space left on device\n"), path);
+            {   sysprintf("can't write file [%s]: no space left on device\n", path);
                 return -1; // fatal error
             }
             else
-            {   sysprintf(_("Cannot open %s for writing\n"), path);
+            {   sysprintf("Cannot open %s for writing\n", path);
                 return -1;
             }
         }
     }
     
     if (gcry_md_open(&f->md5ctx, GCRY_MD_MD5, 0) != GPG_ERR_NO_ERROR)
-    {   errprintf(_("gcry_md_open() failed\n"));
+    {   errprintf("gcry_md_open() failed\n");
         return -1;
     }
     
@@ -122,7 +121,7 @@ int datafile_write(cdatafile *f, char *data, u64 len)
     assert(f);
     
     if (!f->open)
-    {   errprintf(_("File is not open\n"));
+    {   errprintf("File is not open\n");
         return FSAERR_NOTOPEN;
     }
     
@@ -131,7 +130,7 @@ int datafile_write(cdatafile *f, char *data, u64 len)
         if ((f->sparse==true) && (datafile_is_block_zero(f, data, len)))
         {
             if (lseek64(f->fd, len, SEEK_CUR)<0)
-            {   sysprintf(_("Can't lseek64() in file [%s]\n"), f->path);
+            {   sysprintf("Can't lseek64() in file [%s]\n", f->path);
                 return FSAERR_SEEK;
             }
         }
@@ -141,11 +140,11 @@ int datafile_write(cdatafile *f, char *data, u64 len)
             if ((lres=write(f->fd, data, len))!=len) // error
             {
                 if ((errno==ENOSPC) || ((lres>0) && (lres < len)))
-                {   sysprintf(_("Can't write file [%s]: no space left on device\n"), f->path);
+                {   sysprintf("Can't write file [%s]: no space left on device\n", f->path);
                     return FSAERR_ENOSPC;
                 }
                 else // another error
-                {   sysprintf(_("cannot write %s: size=%ld\n"), f->path, (long)len);
+                {   sysprintf("cannot write %s: size=%ld\n", f->path, (long)len);
                     return FSAERR_WRITE;
                 }
             }
@@ -166,12 +165,12 @@ int datafile_close(cdatafile *f, u8 *md5bufdat, int md5bufsize)
     assert(f);
     
     if (!f->open)
-    {   errprintf(_("File is not open\n"));
+    {   errprintf("File is not open\n");
         return -1;
     }
     
     if ((md5tmp=gcry_md_read(f->md5ctx, GCRY_MD_MD5))==NULL)
-    {   errprintf(_("gcry_md_read() failed\n"));
+    {   errprintf("gcry_md_read() failed\n");
         return -1;
     }
     memcpy(md5store, md5tmp, 16);
@@ -180,7 +179,7 @@ int datafile_close(cdatafile *f, u8 *md5bufdat, int md5bufsize)
     if (md5bufdat!=NULL)
     {
         if (md5bufsize < 16)
-        {   errprintf(_("Buffer too small for md5 checksum\n"));
+        {   errprintf("Buffer too small for md5 checksum\n");
             return -1;
         }
         memcpy(md5bufdat, md5store, 16);
@@ -189,7 +188,7 @@ int datafile_close(cdatafile *f, u8 *md5bufdat, int md5bufsize)
     if ((f->open==true) && (f->simul==false))
     {
         if ((f->sparse==true) && (ftruncate(f->fd, lseek64(f->fd, 0, SEEK_CUR))<0))
-        {   sysprintf(_("ftruncate() failed for file [%s]\n"), f->path);
+        {   sysprintf("ftruncate() failed for file [%s]\n", f->path);
             res=-1;
         }
         res=min(close(f->fd), res);

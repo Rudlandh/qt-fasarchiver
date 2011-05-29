@@ -23,7 +23,6 @@
 #include "common.h"
 #include "comp_lzma.h"
 #include "error.h"
-#include "system.h"
 
 #ifdef OPTION_LZMA_SUPPORT
 
@@ -45,26 +44,26 @@ int compress_block_lzma(u64 origsize, u64 *compsize, u8 *origbuf, u8 *compbuf, u
     {   switch (res)
         {
             case LZMA_MEM_ERROR:
-                errprintf(_("lzma_easy_encoder(%d): LZMA compression failed "
+                errprintf("lzma_easy_encoder(%d): LZMA compression failed "
                     "with an out of memory error.\nYou should use a lower "
-                    "compression level to reduce the memory requirement.\n"), level);
+                    "compression level to reduce the memory requirement.\n", level);
                 lzma_end(&lzma);
                 return FSAERR_ENOMEM;
             default:
-                errprintf(_("lzma_easy_encoder(%d) failed with res=%d\n"), level, res);
+                errprintf("lzma_easy_encoder(%d) failed with res=%d\n", level, res);
                 lzma_end(&lzma);
                 return FSAERR_UNKNOWN;
         }
     }
     
     if ((res=lzma_code(&lzma, LZMA_RUN))!=LZMA_OK)
-    {   errprintf(_("lzma_code(LZMA_RUN) failed with res=%d\n"), res);
+    {   errprintf("lzma_code(LZMA_RUN) failed with res=%d\n", res);
         lzma_end(&lzma);
         return FSAERR_UNKNOWN;
     }
     
     if ((res=lzma_code(&lzma, LZMA_FINISH))!=LZMA_STREAM_END && res!=LZMA_OK)
-    {   errprintf(_("lzma_code(LZMA_FINISH) failed with res=%d\n"), res);
+    {   errprintf("lzma_code(LZMA_FINISH) failed with res=%d\n", res);
         lzma_end(&lzma);
         return FSAERR_UNKNOWN;
     }
@@ -89,7 +88,7 @@ int uncompress_block_lzma(u64 compsize, u64 *origsize, u8 *origbuf, u64 origbufs
     
     // Initialize a coder to the lzma_stream
     if ((res=lzma_auto_decoder(&lzma, memlimit, 0))!=LZMA_OK)
-    {   errprintf(_("lzma_auto_decoder() failed with res=%d\n"), res);
+    {   errprintf("lzma_auto_decoder() failed with res=%d\n", res);
         lzma_end(&lzma);
         return FSAERR_UNKNOWN;
     }
@@ -101,10 +100,10 @@ int uncompress_block_lzma(u64 compsize, u64 *origsize, u8 *origbuf, u64 origbufs
             if (res == LZMA_MEMLIMIT_ERROR) // we have to raise the memory limit
             {   memlimit+=64*1024*1024;
                 lzma_memlimit_set(&lzma, memlimit);
-                msgprintf(MSG_VERB2, _("lzma_memlimit_set(%lld)\n"), (long long)memlimit);
+                msgprintf(MSG_VERB2, "lzma_memlimit_set(%lld)\n", (long long)memlimit);
             }
             else // another error
-            {   errprintf(_("lzma_code(LZMA_RUN) failed with res=%d\n"), res);
+            {   errprintf("lzma_code(LZMA_RUN) failed with res=%d\n", res);
                 lzma_end(&lzma);
                 return FSAERR_UNKNOWN;
             }

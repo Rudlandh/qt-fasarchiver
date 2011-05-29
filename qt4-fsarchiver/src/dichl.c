@@ -26,7 +26,6 @@
 #include "dichl.h"
 #include "common.h"
 #include "error.h"
-#include "system.h"
 
 cdichl *dichl_alloc()
 {
@@ -64,7 +63,7 @@ int dichl_add(cdichl *d, u64 key1, u64 key2, char *str)
     int len;
     
     if (d==NULL || !str)
-    {   errprintf(_("invalid parameters\n"));
+    {   errprintf("invalid parameters\n");
         return -1;
     }
     len=strlen(str);
@@ -72,7 +71,7 @@ int dichl_add(cdichl *d, u64 key1, u64 key2, char *str)
     // allocate object
     lnew=malloc(sizeof(cdichlitem));
     if (!lnew)
-    {   errprintf(_("malloc(%ld) failed: out of memory\n"), (long)sizeof(cdichlitem));
+    {   errprintf("malloc(%ld) failed: out of memory\n", (long)sizeof(cdichlitem));
         return -1;
     }
     memset(lnew, 0, sizeof(cdichlitem));
@@ -80,7 +79,7 @@ int dichl_add(cdichl *d, u64 key1, u64 key2, char *str)
     if (!lnew->str)
     {   
         free(lnew);
-        errprintf(_("malloc(%ld) failed: out of memory\n"), (long)len+1);
+        errprintf("malloc(%ld) failed: out of memory\n", (long)len+1);
         return -1;
     }
     
@@ -100,7 +99,7 @@ int dichl_add(cdichl *d, u64 key1, u64 key2, char *str)
         {   
             last=item;
             if (item->key1==key1 && item->key2==key2)
-            {   errprintf(_("dichl_add_internal(): item with key1=%ld and key2=%ld is already in dico\n"), (long)item->key1, (long)item->key2);
+            {   errprintf("dichl_add_internal(): item with key1=%ld and key2=%ld is already in dico\n", (long)item->key1, (long)item->key2);
                 return -1;
             }
         }
@@ -116,7 +115,7 @@ int dichl_get(cdichl *d, u64 key1, u64 key2, char *buf, int bufsize)
     int len;
     
     if (d==NULL || !buf)
-    {   errprintf(_("invalid dichl\n"));
+    {   errprintf("invalid dichl\n");
         return -1;
     }
     

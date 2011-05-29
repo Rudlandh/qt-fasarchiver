@@ -94,12 +94,7 @@ QString homepath = QDir::homePath();
 	i = folder_einlesen();
         if (i ==0) {
                 QFile file(folder_);
-               //eventuell bestehende MBR-Datei löschen
-               if (file.exists()) {
-                   befehl = "rm "  + folder_;
-       		   system (befehl.toAscii().data()); 
-               }
-               befehl = ("dd if=/dev/" + partition + " of=" + folder_ + "/" + Ubuntuversion + "_mbr_" + partition + " bs=" + Sektor_byte + " " + "count=1");
+                befehl = ("dd if=/dev/" + partition + " of=" + folder_ + "/" + Ubuntuversion + "_mbr_" + partition + " bs=" + Sektor_byte + " " + "count=1");
                 i = system (befehl.toAscii().data());
    		if (i == 0)
       			QMessageBox::about(this,tr("Note", "Hinweis"), tr("The MBR was successfully backed up.\n", "Der MBR wurde erfolgreich gesichert.\n"));
@@ -176,7 +171,7 @@ QString homepath = QDir::homePath();
       		  QMessageBox::about(this, tr("Note", "Hinweis"), tr("The hidden area was not restored.\n", "Der verborgene Bereich wurde nicht wieder hergestellt.\n"));
         }
     }
-       return 0;
+    return 0;
 }
 
 void DialogMBR::sektor_auslesen() {
@@ -219,7 +214,7 @@ int sektor_;
         sektor_byte = sektor_  * 512;
         Sektor_byte =  QString::number(sektor_byte);
         sektor_byte_1 = (sektor_ -1) * 512 ;
-        Sektor_byte_1=  QString::number(sektor_byte_1); 
+        Sektor_byte_1=  QString::number(sektor_byte_1);  
 }
 
 void DialogMBR::Ubuntuversion_auslesen() {

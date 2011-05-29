@@ -19,7 +19,6 @@
 #  include "config.h"
 #endif
 
-
 #include <string.h>
 
 #include "fsarchiver.h"
@@ -29,10 +28,6 @@
 #include "archreader.h"
 #include "error.h"
 #include "connect_c_cpp.h"
-#include "system.h"
-
-
-
 
 char *compalgostr(int algo)
 {
@@ -62,24 +57,24 @@ int archinfo_show_mainhead(carchreader *ai, cdico *dicomainhead)
     char buffer[256];
     
     if (!ai || !dicomainhead)
-    {   errprintf(_("a parameter is null\n"));
+    {   errprintf("a parameter is null\n");
         return -1;
     }
     
-    msgprintf(MSG_FORCE, _("====================== archive information ======================\n"));
-    msgprintf(MSG_FORCE, _("Archive type: \t\t\t%s\n"), (ai->archtype==ARCHTYPE_FILESYSTEMS)?_("filesystems"):_("flat files"));
+    msgprintf(MSG_FORCE, "====================== archive information ======================\n");
+    msgprintf(MSG_FORCE, "Archive type: \t\t\t%s\n", (ai->archtype==ARCHTYPE_FILESYSTEMS)?"filesystems":"flat files");
     if ((ai->archtype==ARCHTYPE_FILESYSTEMS))
-        msgprintf(0, _("Filesystems count: \t\t%ld\n"), (long)ai->fscount);
-    msgprintf(MSG_FORCE, _("Archive id: \t\t\t%.8x\n"), (unsigned int)ai->archid);
-    msgprintf(MSG_FORCE, _("Archive file format: \t\t%s\n"), ai->filefmt);
-    msgprintf(MSG_FORCE, _("Archive created with: \t\t%s\n"), ai->creatver);
-    msgprintf(MSG_FORCE, _("Archive creation date: \t\t%s\n"), format_time(buffer, sizeof(buffer), ai->creattime));
-    msgprintf(MSG_FORCE, _("Archive label: \t\t\t%s\n"), ai->label);
+        msgprintf(0, "Filesystems count: \t\t%ld\n", (long)ai->fscount);
+    msgprintf(MSG_FORCE, "Archive id: \t\t\t%.8x\n", (unsigned int)ai->archid);
+    msgprintf(MSG_FORCE, "Archive file format: \t\t%s\n", ai->filefmt);
+    msgprintf(MSG_FORCE, "Archive created with: \t\t%s\n", ai->creatver);
+    msgprintf(MSG_FORCE, "Archive creation date: \t\t%s\n", format_time(buffer, sizeof(buffer), ai->creattime));
+    msgprintf(MSG_FORCE, "Archive label: \t\t\t%s\n", ai->label);
     if (ai->minfsaver > 0) // fsarchiver < 0.6.7 had no per-archive minfsaver version requirement
-        msgprintf(MSG_FORCE, _("Minimum fsarchiver version:\t%d.%d.%d.%d\n"), (int)FSA_VERSION_GET_A(ai->minfsaver), 
+        msgprintf(MSG_FORCE, "Minimum fsarchiver version:\t%d.%d.%d.%d\n", (int)FSA_VERSION_GET_A(ai->minfsaver), 
             (int)FSA_VERSION_GET_B(ai->minfsaver), (int)FSA_VERSION_GET_C(ai->minfsaver), (int)FSA_VERSION_GET_D(ai->minfsaver));
-    msgprintf(MSG_FORCE, _("Compression level: \t\t%d (%s level %d)\n"), ai->fsacomp, compalgostr(ai->compalgo), ai->complevel);
-    msgprintf(MSG_FORCE, _("Encryption algorithm: \t\t%s\n"), cryptalgostr(ai->cryptalgo));
+    msgprintf(MSG_FORCE, "Compression level: \t\t%d (%s level %d)\n", ai->fsacomp, compalgostr(ai->compalgo), ai->complevel);
+    msgprintf(MSG_FORCE, "Encryption algorithm: \t\t%s\n", cryptalgostr(ai->cryptalgo));
     msgprintf(MSG_FORCE, "\n");
     meldungen_uebergeben(cryptalgostr(ai->cryptalgo),1);
     
@@ -102,46 +97,46 @@ int archinfo_show_fshead(cdico *dicofshead, int fsid)
     memset(magic, 0, sizeof(magic));
     
     if (!dicofshead)
-    {   errprintf(_("dicofshead is null\n"));
+    {   errprintf("dicofshead is null\n");
         return -1;
     }
     
     if (dico_get_data(dicofshead, 0, FSYSHEADKEY_FILESYSTEM, fsbuf, sizeof(fsbuf), NULL)!=0)
-    {   errprintf(_("cannot find FSYSHEADKEY_FILESYSTEM in filesystem-header\n"));
+    {   errprintf("cannot find FSYSHEADKEY_FILESYSTEM in filesystem-header\n");
         return -1;
     }
 
     if (dico_get_u64(dicofshead, 0, FSYSHEADKEY_BYTESTOTAL, &fsbytestotal)!=0)
-    {   errprintf(_("cannot find FSYSHEADKEY_BYTESTOTAL in filesystem-header\n"));
+    {   errprintf("cannot find FSYSHEADKEY_BYTESTOTAL in filesystem-header\n");
         return -1;
     }
     
     if (dico_get_u64(dicofshead, 0, FSYSHEADKEY_BYTESUSED, &fsbytesused)!=0)
-    {   errprintf(_("cannot find FSYSHEADKEY_BYTESUSED in filesystem-header\n"));
+    {   errprintf("cannot find FSYSHEADKEY_BYTESUSED in filesystem-header\n");
         return -1;
     }
     
     if (dico_get_string(dicofshead, 0, FSYSHEADKEY_FSLABEL, fslabel, sizeof(fslabel))<0)
-        snprintf(fslabel, sizeof(fslabel), _("<none>"));
+        snprintf(fslabel, sizeof(fslabel), "<none>");
     
     if (dico_get_string(dicofshead, 0, FSYSHEADKEY_ORIGDEV, fsorigdev, sizeof(fsorigdev))<0)
-        snprintf(fsorigdev, sizeof(fsorigdev), _("<unknown>"));
+        snprintf(fsorigdev, sizeof(fsorigdev), "<unknown>");
     
     // filesystem uuid: maybe an ntfs uuid or an unix uuid
-    snprintf(fsuuid, sizeof(fsuuid), _("<none>"));
+    snprintf(fsuuid, sizeof(fsuuid), "<none>");
     if (dico_get_u64(dicofshead, 0, FSYSHEADKEY_NTFSUUID, &temp64)==0)
         snprintf(fsuuid, sizeof(fsuuid), "%016llX", (long long unsigned int)temp64);
     else if (dico_get_string(dicofshead, 0, FSYSHEADKEY_FSUUID, buffer, sizeof(buffer))==0 && strlen(buffer)==36)
         snprintf(fsuuid, sizeof(fsuuid), "%s", buffer);
     
-    msgprintf(MSG_FORCE, _("===================== filesystem information ====================\n"));
-    msgprintf(MSG_FORCE, _("Filesystem id in archive: \t%ld\n"), (long)fsid);
-    msgprintf(MSG_FORCE, _("Filesystem format: \t\t%s\n"), fsbuf);
-    msgprintf(MSG_FORCE, _("Filesystem label: \t\t%s\n"), fslabel);
-    msgprintf(MSG_FORCE, _("Filesystem uuid: \t\t%s\n"), fsuuid);
-    msgprintf(MSG_FORCE, _("Original device: \t\t%s\n"), fsorigdev);
-    msgprintf(MSG_FORCE, _("Original filesystem size: \t%s (%lld bytes)\n"), format_size(fsbytestotal, buffer, sizeof(buffer), 'h'), (long long)fsbytestotal);
-    msgprintf(MSG_FORCE, _("Space used in filesystem: \t%s (%lld bytes)\n"), format_size(fsbytesused, buffer, sizeof(buffer), 'h'), (long long)fsbytesused);
+    msgprintf(MSG_FORCE, "===================== filesystem information ====================\n");
+    msgprintf(MSG_FORCE, "Filesystem id in archive: \t%ld\n", (long)fsid);
+    msgprintf(MSG_FORCE, "Filesystem format: \t\t%s\n", fsbuf);
+    msgprintf(MSG_FORCE, "Filesystem label: \t\t%s\n", fslabel);
+    msgprintf(MSG_FORCE, "Filesystem uuid: \t\t%s\n", fsuuid);
+    msgprintf(MSG_FORCE, "Original device: \t\t%s\n", fsorigdev);
+    msgprintf(MSG_FORCE, "Original filesystem size: \t%s (%lld bytes)\n", format_size(fsbytestotal, buffer, sizeof(buffer), 'h'), (long long)fsbytestotal);
+    msgprintf(MSG_FORCE, "Space used in filesystem: \t%s (%lld bytes)\n", format_size(fsbytesused, buffer, sizeof(buffer), 'h'), (long long)fsbytesused);
     msgprintf(MSG_FORCE, "\n");
     meldungen_uebergeben(fsorigdev,2);
    

@@ -37,7 +37,6 @@
 #include "thread_comp.h"
 #include "error.h"
 #include "queue.h"
-#include "system.h"
 
 int compress_block_generic(struct s_blockinfo *blkinfo)
 {
@@ -51,7 +50,7 @@ int compress_block_generic(struct s_blockinfo *blkinfo)
     
     bufsize = (blkinfo->blkrealsize) + (blkinfo->blkrealsize / 16) + 64 + 3; // alloc bigger buffer else lzo will crash
     if ((bufcomp=malloc(bufsize))==NULL)
-    {   errprintf(_("malloc(%ld) failed: out of memory\n"), (long)bufsize);
+    {   errprintf("malloc(%ld) failed: out of memory\n", (long)bufsize);
         return -1;
     }
     
@@ -86,14 +85,14 @@ int compress_block_generic(struct s_blockinfo *blkinfo)
 #endif // OPTION_LZMA_SUPPORT
             default:
                 free(bufcomp);
-                msgprintf(2, _("invalid compression level: %d\n"), (int)compalgo);
+                msgprintf(2, "invalid compression level: %d\n", (int)compalgo);
                 return -1;
         }
         
         // retry if high compression was used and compression failed because of FSAERR_ENOMEM
         if ((res == FSAERR_ENOMEM) && (compalgo > FSA_DEF_COMPRESS_ALGO))
         {
-            errprintf(_("attempt to compress the current block using an alternative algorithm (\"-z%d\")\n"), FSA_DEF_COMPRESS_ALGO);
+            errprintf("attempt to compress the current block using an alternative algorithm (\"-z%d\")\n", FSA_DEF_COMPRESS_ALGO);
             compalgo = FSA_DEF_COMPRESS_ALGO;
             complevel = FSA_DEF_COMPRESS_LEVEL;
         }
@@ -123,12 +122,12 @@ int compress_block_generic(struct s_blockinfo *blkinfo)
     if (g_options.encryptalgo==ENCRYPT_BLOWFISH)
     {
         if ((bufcrypt=malloc(bufsize+8))==NULL)
-        {   errprintf(_("malloc(%ld) failed: out of memory\n"), (long)bufsize+8);
+        {   errprintf("malloc(%ld) failed: out of memory\n", (long)bufsize+8);
             return -1;
         }
         if ((res=crypto_blowfish(blkinfo->blkcompsize, &cryptsize, (u8*)bufcomp, (u8*)bufcrypt, 
             g_options.encryptpass, strlen((char*)g_options.encryptpass), 1))!=0)
-        {   errprintf(_("crypt_block_blowfish() failed\n"));
+        {   errprintf("crypt_block_blowfish() failed\n");
             return -1;
         }
         free(bufcomp);
@@ -155,20 +154,20 @@ int decompress_block_generic(struct s_blockinfo *blkinfo)
     
     // allocate memory for uncompressed data
     if ((bufcomp=malloc(blkinfo->blkrealsize))==NULL)
-    {   errprintf(_("malloc(%ld) failed: cannot allocate memory for compressed block\n"), (long)blkinfo->blkrealsize);
+    {   errprintf("malloc(%ld) failed: cannot allocate memory for compressed block\n", (long)blkinfo->blkrealsize);
         return -1;
     }
     
     // check the block checksum
     if (fletcher32((u8*)blkinfo->blkdata, blkinfo->blkarsize)!=(blkinfo->blkarcsum))
-    {   errprintf(_("block is corrupt at blockoffset=%ld, blksize=%ld\n"), (long)blkinfo->blkoffset, (long)blkinfo->blkrealsize);
+    {   errprintf("block is corrupt at blockoffset=%ld, blksize=%ld\n", (long)blkinfo->blkoffset, (long)blkinfo->blkrealsize);
         memset(bufcomp, 0, blkinfo->blkrealsize);
     }
     else // data not corrupted, decompresses the block
     {
         if ((blkinfo->blkcryptalgo!=ENCRYPT_NONE) && (g_options.encryptalgo!=ENCRYPT_BLOWFISH))
-        {   msgprintf(MSG_DEBUG1, _("this archive has been encrypted, you have to provide a password "
-                "on the command line using option '-c'\n"));
+        {   msgprintf(MSG_DEBUG1, "this archive has been encrypted, you have to provide a password "
+                "on the command line using option '-c'\n");
             return -1;
         }
         
@@ -177,16 +176,16 @@ int decompress_block_generic(struct s_blockinfo *blkinfo)
         if (blkinfo->blkcryptalgo==ENCRYPT_BLOWFISH)
         {
             if ((bufcrypt=malloc(blkinfo->blkrealsize+8))==NULL)
-            {   errprintf(_("malloc(%ld) failed: out of memory\n"), (long)blkinfo->blkrealsize+8);
+            {   errprintf("malloc(%ld) failed: out of memory\n", (long)blkinfo->blkrealsize+8);
                 return -1;
             }
             if ((res=crypto_blowfish(blkinfo->blkarsize, &clearsize, (u8*)blkinfo->blkdata, (u8*)bufcrypt, 
                 g_options.encryptpass, strlen((char*)g_options.encryptpass), 0))!=0)
-            {   errprintf(_("crypt_block_blowfish() failed\n"));
+            {   errprintf("crypt_block_blowfish() failed\n");
                 return -1;
             }
             if (clearsize!=blkinfo->blkcompsize)
-            {   errprintf(_("clearsize does not match blkcompsize: clearsize=%ld and blkcompsize=%ld\n"), 
+            {   errprintf("clearsize does not match blkcompsize: clearsize=%ld and blkcompsize=%ld\n", 
                     (long)clearsize, (long)blkinfo->blkcompsize);
                 return -1;
             }
@@ -203,7 +202,7 @@ int decompress_block_generic(struct s_blockinfo *blkinfo)
 #ifdef OPTION_LZO_SUPPORT
             case COMPRESS_LZO:
                 if ((res=uncompress_block_lzo(blkinfo->blkcompsize, &checkorigsize, (void*)bufcomp, blkinfo->blkrealsize, (u8*)blkinfo->blkdata))!=0)
-                {   errprintf(_("uncompress_block_lzo()=%d failed: finalsize=%ld and checkorigsize=%ld\n"), 
+                {   errprintf("uncompress_block_lzo()=%d failed: finalsize=%ld and checkorigsize=%ld\n", 
                         res, (long)blkinfo->blkarsize, (long)checkorigsize);
                     memset(bufcomp, 0, blkinfo->blkrealsize);
                     // TODO: inc(error_counter);
@@ -212,7 +211,7 @@ int decompress_block_generic(struct s_blockinfo *blkinfo)
 #endif // OPTION_LZO_SUPPORT
             case COMPRESS_GZIP:
                 if ((res=uncompress_block_gzip(blkinfo->blkcompsize, &checkorigsize, (void*)bufcomp, blkinfo->blkrealsize, (u8*)blkinfo->blkdata))!=0)
-                {   errprintf(_("uncompress_block_gzip()=%d failed: finalsize=%ld and checkorigsize=%ld\n"), 
+                {   errprintf("uncompress_block_gzip()=%d failed: finalsize=%ld and checkorigsize=%ld\n", 
                         res, (long)blkinfo->blkarsize, (long)checkorigsize);
                     memset(bufcomp, 0, blkinfo->blkrealsize);
                     // TODO: inc(error_counter);
@@ -220,7 +219,7 @@ int decompress_block_generic(struct s_blockinfo *blkinfo)
                 break;
             case COMPRESS_BZIP2:
                 if ((res=uncompress_block_bzip2(blkinfo->blkcompsize, &checkorigsize, (void*)bufcomp, blkinfo->blkrealsize, (u8*)blkinfo->blkdata))!=0)
-                {   errprintf(_("uncompress_block_bzip2()=%d failed: finalsize=%ld and checkorigsize=%ld\n"), 
+                {   errprintf("uncompress_block_bzip2()=%d failed: finalsize=%ld and checkorigsize=%ld\n", 
                         res, (long)blkinfo->blkarsize, (long)checkorigsize);
                     memset(bufcomp, 0, blkinfo->blkrealsize);
                     // TODO: inc(error_counter);
@@ -229,7 +228,7 @@ int decompress_block_generic(struct s_blockinfo *blkinfo)
 #ifdef OPTION_LZMA_SUPPORT
             case COMPRESS_LZMA:
                 if ((res=uncompress_block_lzma(blkinfo->blkcompsize, &checkorigsize, (void*)bufcomp, blkinfo->blkrealsize, (u8*)blkinfo->blkdata))!=0)
-                {   errprintf(_("uncompress_block_lzma()=%d failed: finalsize=%ld and checkorigsize=%ld\n"), 
+                {   errprintf("uncompress_block_lzma()=%d failed: finalsize=%ld and checkorigsize=%ld\n", 
                         res, (long)blkinfo->blkarsize, (long)checkorigsize);
                     memset(bufcomp, 0, blkinfo->blkrealsize);
                     // TODO: inc(error_counter);
@@ -237,7 +236,7 @@ int decompress_block_generic(struct s_blockinfo *blkinfo)
                 break;
 #endif // OPTION_LZMA_SUPPORT
             default:
-                errprintf(_("unsupported compression algorithm: %ld\n"), (long)blkinfo->blkcompalgo);
+                errprintf("unsupported compression algorithm: %ld\n", (long)blkinfo->blkcompalgo);
                 return -1;
         }
         free(blkinfo->blkdata); // free old buffer (with compressed data)
@@ -266,11 +265,11 @@ int compression_function(int oper)
                     res=decompress_block_generic(&blkinfo);
                     break;
                 default:
-                    errprintf(_("oper is invalid: %d\n"), oper);
+                    errprintf("oper is invalid: %d\n", oper);
                     goto thread_comp_fct_error;
             }
             if (res!=0)
-            {   msgprintf(MSG_STACK, _("compress_block()=%d failed\n"), res);
+            {   msgprintf(MSG_STACK, "compress_block()=%d failed\n", res);
                 goto thread_comp_fct_error;
             }
             // don't check for errors: it's normal to fail when we terminate after a problem
@@ -278,12 +277,12 @@ int compression_function(int oper)
         }
     }
     
-    msgprintf(MSG_DEBUG1, _("THREAD-COMP: exit success\n"));
+    msgprintf(MSG_DEBUG1, "THREAD-COMP: exit success\n");
     return 0;
     
 thread_comp_fct_error:
     get_stopfillqueue();
-    msgprintf(MSG_DEBUG1, _("THREAD-COMP: exit error\n"));
+    msgprintf(MSG_DEBUG1, "THREAD-COMP: exit error\n");
     return 0;
 }
 

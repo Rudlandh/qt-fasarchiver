@@ -92,12 +92,12 @@ DialogDIR::DialogDIR(QWidget *parent)
         	cmb_zip -> setCurrentIndex(2); 
         	} 
         chkkey();
-	state = chk_key->checkState();
+	     state = chk_key->checkState();
         if (state == Qt::Checked)
            lineKey->setEnabled(true);
         state = chk_path->checkState();
         if (dialog_auswertung == 4){
-            chk_key->setText (tr("Encrypt\nbackup", "Sicherung\nverschlüsseln"));
+            chk_key->setText (tr("Encrypt\nbackup. key:", "Sicherung\nverschlüsseln. Schlüssel:"));
             bt_save->setText (tr("Directory save", "Verzeichnis sichern"));
             label->setText (tr("to saved Directory", "zu sicherndes Verzeichnis"));
             label_2->setText (tr("Location (path) of the backup", "Ort (Pfad) der Sicherung")); 
@@ -112,7 +112,7 @@ DialogDIR::DialogDIR(QWidget *parent)
             AnzahlgesicherteFile->setEnabled(true);
             } 
         if (dialog_auswertung == 5){
-            chk_key->setText (tr("Decrypt\nBackup", "Sicherung\nentschlüsseln"));
+            chk_key->setText (tr("Decrypt\nbackup. key:", "Sicherung\nentschlüsseln. Schlüssel:"));
             bt_save->setText (tr("Directory restore", "Verzeichnis zurückschreiben"));  
 	    label->setText (tr("back to write backup file", "zurück zu schreibende Sicherungsdatei"));
             label_2->setText (tr("Location (path) of the restore", "Ort (Pfad) der Wiederherstellung")); 
@@ -131,10 +131,10 @@ DialogDIR::DialogDIR(QWidget *parent)
 void DialogDIR::chkkey(){
      Qt::CheckState state;
      state = chk_key->checkState();
-     if (state == Qt::Checked){
-        lineKey->setEnabled(true);}
-     else {
-        lineKey->setEnabled(false);}
+     if (state == Qt::Checked)
+         lineKey->setEnabled(true);
+     else 
+        lineKey->setEnabled(false);
 }
 
 int DialogDIR::folder_dir_path_einlesen() {

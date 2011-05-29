@@ -49,9 +49,9 @@
    <widget class="QPushButton" name="pushButton_save">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>335</y>
-      <width>331</width>
+      <width>351</width>
       <height>41</height>
      </rect>
     </property>
@@ -62,9 +62,9 @@
    <widget class="QPushButton" name="pushButton_end">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>420</y>
-      <width>331</width>
+      <x>10</x>
+      <y>418</y>
+      <width>351</width>
       <height>41</height>
      </rect>
     </property>
@@ -117,55 +117,6 @@
      <string>S</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>341</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="sizeIncrement">
-     <size>
-      <width>10</width>
-      <height>10</height>
-     </size>
-    </property>
-    <property name="title">
-     <string>Proposed action:</string>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-    <property name="checkable">
-     <bool>false</bool>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QRadioButton" name="rdBt_saveFsArchiv">
-       <property name="locale">
-        <locale language="German" country="Germany"/>
-       </property>
-       <property name="text">
-        <string>Saving partition 
-with fsArchiver:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="rdBt_restoreFsArchiv">
-       <property name="locale">
-        <locale language="German" country="Germany"/>
-       </property>
-       <property name="text">
-        <string>Restore partition 
-with fsArchiver:</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QPushButton" name="pushButton_folder">
     <property name="geometry">
      <rect>
@@ -182,9 +133,9 @@ with fsArchiver:</string>
    <widget class="QLineEdit" name="lineEdit_DateiName">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>300</y>
-      <width>331</width>
+      <x>10</x>
+      <y>302</y>
+      <width>351</width>
       <height>26</height>
      </rect>
     </property>
@@ -192,9 +143,9 @@ with fsArchiver:</string>
    <widget class="QPushButton" name="pushButton_restore">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>377</y>
-      <width>331</width>
+      <x>10</x>
+      <y>376</y>
+      <width>351</width>
       <height>41</height>
      </rect>
     </property>
@@ -206,7 +157,7 @@ with fsArchiver:</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>280</y>
+      <y>282</y>
       <width>291</width>
       <height>18</height>
      </rect>
@@ -221,9 +172,9 @@ with fsArchiver:</string>
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>460</y>
-      <width>731</width>
+      <width>741</width>
       <height>153</height>
      </rect>
     </property>
@@ -353,7 +304,7 @@ files/directories:</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
+      <y>77</y>
       <width>351</width>
       <height>201</height>
      </rect>
@@ -425,21 +376,7 @@ setting:</string>
       </rect>
      </property>
      <property name="text">
-      <string>Instructions to enter the backup</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="chk_key">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>50</y>
-       <width>221</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Encrypt 
-backup key</string>
+      <string>Notes to  the backup</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineKey">
@@ -478,30 +415,88 @@ backup key</string>
       <string>Stock Split on DVD size</string>
      </property>
     </widget>
-    <zorder>chk_Beschreibung</zorder>
-    <zorder>label</zorder>
-    <zorder>cmb_zip</zorder>
-    <zorder>chk_overwrite</zorder>
-    <zorder>lineKey</zorder>
-    <zorder>chk_key</zorder>
-    <zorder>cmb_kerne</zorder>
-    <zorder>label_11</zorder>
-    <zorder>chk_split</zorder>
+    <widget class="QCheckBox" name="chk_key">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Encrypt 
+backup key</string>
+     </property>
+    </widget>
    </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>362</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>10</width>
+      <height>10</height>
+     </size>
+    </property>
+    <property name="title">
+     <string extracomment="vorgesehene Aktion:">Proposed action:</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QRadioButton" name="rdBt_saveFsArchiv">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>165</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string extracomment="Partition mit * fsArchiver sichern:">Partition save 
+with fsarchiver</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="rdBt_restoreFsArchiv">
+     <property name="geometry">
+      <rect>
+       <x>165</x>
+       <y>30</y>
+       <width>195</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string extracomment="Partition mit fs-Archiver * zurückschreiben">Restore partition
+with fsarchiver</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>pushButton_partition</zorder>
+   <zorder>pushButton_folder</zorder>
    <zorder>label_Partition</zorder>
    <zorder>label_folder</zorder>
    <zorder>pushButton_save</zorder>
+   <zorder>pushButton_end</zorder>
    <zorder>listWidget</zorder>
    <zorder>treeView</zorder>
-   <zorder>pushButton_partition</zorder>
-   <zorder>groupBox</zorder>
-   <zorder>pushButton_folder</zorder>
    <zorder>lineEdit_DateiName</zorder>
    <zorder>pushButton_restore</zorder>
    <zorder>label_4</zorder>
    <zorder>frame</zorder>
    <zorder>frame_2</zorder>
-   <zorder>pushButton_end</zorder>
+   <zorder>groupBox</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
@@ -529,7 +524,7 @@ backup key</string>
      <x>0</x>
      <y>0</y>
      <width>770</width>
-     <height>27</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAktionen">

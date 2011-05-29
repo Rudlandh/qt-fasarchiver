@@ -42,7 +42,6 @@
 #include "strdico.h"
 #include "common.h"
 #include "error.h"
-#include "system.h"
 
 cstrdico *strdico_alloc()
 {
@@ -85,7 +84,7 @@ int strdico_set_valid_keys(cstrdico *d, const char *keys)
     assert(d);
     
     if ((d->validkeys=strdup(keys))==NULL)
-    {   errprintf(_("strdup() failed: out of memory\n"));
+    {   errprintf("strdup() failed: out of memory\n");
         return FSAERR_ENOMEM;
     }
     
@@ -108,7 +107,7 @@ int strdico_parse_string(cstrdico *d, const char *strdefs)
     
     // init
     if ((bakdefs=strdup(strdefs))==NULL)
-    {   errprintf(_("strdup() failed: out of memory\n"));
+    {   errprintf("strdup() failed: out of memory\n");
         return FSAERR_ENOMEM;
     }
     
@@ -123,8 +122,8 @@ int strdico_parse_string(cstrdico *d, const char *strdefs)
             key[i]=result[i];
         }
         if (result[i++]!='=')
-        {   errprintf(_("Incorrect syntax in \"%s\" . Cannot find symbol '=' to separate the key and the value. "
-                "expected something like \"name1=val1,name2=val2\"\n"), result);
+        {   errprintf("Incorrect syntax in \"%s\" . Cannot find symbol '=' to separate the key and the value. "
+                "expected something like \"name1=val1,name2=val2\"\n", result);
             free(bakdefs);
             return FSAERR_EINVAL;
         }
@@ -169,7 +168,7 @@ int strdico_set_value(cstrdico *d, const char *key, const char *value)
     if (d->validkeys!=NULL) // if there is a restriction on keys
     {
         if ((bakvalidkeys=strdup(d->validkeys))==NULL)
-        {   errprintf(_("strdup() failed: out of memory\n"));
+        {   errprintf("strdup() failed: out of memory\n");
             return FSAERR_ENOMEM;
         }
         
@@ -183,7 +182,7 @@ int strdico_set_value(cstrdico *d, const char *key, const char *value)
         }
         free(bakvalidkeys);
         if (validkey==false)
-        {   errprintf(_("unexpected key \"%s\". valid keys are \"%s\"\n"), key, d->validkeys);
+        {   errprintf("unexpected key \"%s\". valid keys are \"%s\"\n", key, d->validkeys);
             return FSAERR_EINVAL;
         }
     }
@@ -199,7 +198,7 @@ int strdico_set_value(cstrdico *d, const char *key, const char *value)
     {
         oldvalue=existingitem->value;
         if ((existingitem->value=malloc(vallen+1))==NULL)
-        {   errprintf(_("malloc(%d) failed: out of memory\n"), vallen+1);
+        {   errprintf("malloc(%d) failed: out of memory\n", vallen+1);
             return -FSAERR_ENOMEM;
         }
         snprintf(existingitem->value, vallen+1, "%s", value);
@@ -210,17 +209,17 @@ int strdico_set_value(cstrdico *d, const char *key, const char *value)
     
     // case_2: insert new pair in list
     if ((lnew=malloc(sizeof(cstrdicoitem)))==NULL)
-    {   errprintf(_("malloc(%ld) failed: out of memory\n"), (long)sizeof(cstrdicoitem));
+    {   errprintf("malloc(%ld) failed: out of memory\n", (long)sizeof(cstrdicoitem));
         return -FSAERR_ENOMEM;
     }
     memset(lnew, 0, sizeof(cstrdicoitem));
     if ((lnew->key=malloc(keylen+1))==NULL)
-    {   errprintf(_("malloc(%d) failed: out of memory\n"), keylen+1);
+    {   errprintf("malloc(%d) failed: out of memory\n", keylen+1);
         return -FSAERR_ENOMEM;
     }
     snprintf(lnew->key, keylen+1, "%s", key);
     if ((lnew->value=malloc(vallen+1))==NULL)
-    {   errprintf(_("malloc(%d) failed: out of memory\n"), vallen+1);
+    {   errprintf("malloc(%d) failed: out of memory\n", vallen+1);
         return -FSAERR_ENOMEM;
     }
     snprintf(lnew->value, vallen+1, "%s", value);
@@ -270,14 +269,14 @@ int strdico_get_s64(cstrdico *d, s64 *value, const char *key)
         return res;
     
     if (strlen(buffer)<=0)
-    {   errprintf(_("key \"%s\" has an empty value. expected a valid number\n"), key);
+    {   errprintf("key \"%s\" has an empty value. expected a valid number\n", key);
         return FSAERR_EINVAL;
     }
     
     errno=0;
     *value=strtoll(buffer, &endptr, 10);
     if ((errno!=0) || (*endptr!=0))
-    {   errprintf(_("key \"%s\" does not contain a valid number: \"%s\"\n"), key, buffer);
+    {   errprintf("key \"%s\" does not contain a valid number: \"%s\"\n", key, buffer);
         return FSAERR_EINVAL;
     }
     
@@ -292,7 +291,7 @@ int strdico_print(cstrdico *d)
     assert(d);
     
     for (item=d->head; item!=NULL; item=item->next)
-        printf(_("item[%d]: key=[%s] value=[%s]\n"), pos++, item->key, item->value);
+        printf("item[%d]: key=[%s] value=[%s]\n", pos++, item->key, item->value);
     
     return FSAERR_SUCCESS;
 }
