@@ -81,10 +81,14 @@ export PATH=$PATH:%_qt4dir/bin
 
 #INSTALL_ROOT=%buildroot qmake qt4-fsarchiver.pro
 
-%configure
+./configure  --prefix=/usr \
+--bindir=/usr/bin \
+--datadir=/usr/share \
+--qtdir=%_qt4dir
+
+
 
 lrelease qt4-fsarchiver.pro
-
 
 %make_build
 
