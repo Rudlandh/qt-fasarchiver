@@ -74,11 +74,14 @@ echo QMAKE_CXXFLAGS_RELEASE = %optflags >>  qt4-fsarchiver.pro
 echo QMAKE_CFLAGS_RELEASE = %optflags >>  qt4-fsarchiver.pro
 
 %build
-export PATH=$PATH:%_qt4dir/bin
-qmake QMAKE_CFLAGS_RELEASE="%optflags" \
-	QMAKE_CXXFLAGS_RELEASE="%optflags" qt4-fsarchiver.pro
+#export PATH=$PATH:%_qt4dir/bin
+#qmake QMAKE_CFLAGS_RELEASE="%optflags" \
+#	QMAKE_CXXFLAGS_RELEASE="%optflags" qt4-fsarchiver.pro
 
-INSTALL_ROOT=%buildroot qmake qt4-fsarchiver.pro
+#INSTALL_ROOT=%buildroot qmake qt4-fsarchiver.pro
+
+%configure
+
 lrelease qt4-fsarchiver.pro
 
 
