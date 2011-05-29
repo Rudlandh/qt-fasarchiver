@@ -320,7 +320,7 @@ int exec_command(char *command, int cmdbufsize, int *exitst, char *stdoutbuf, in
     
     // do shell expansion to parse the quotes for args with spaces
     wordexp(command, &p, 0); // will require wordfree to free the memory
-    for(i=0; (i < p.we_wordc) && (i<max_argv); i++)
+    for(i=0; (i <  (signed int) p.we_wordc) && (i<max_argv); i++)
     {   argv[i]=p.we_wordv[i];
         msgprintf(MSG_DEBUG1, "argv[%d]=[%s]\n", i, argv[i]);
     }

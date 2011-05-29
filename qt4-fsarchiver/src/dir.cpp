@@ -20,6 +20,8 @@ extern "C" {
 #include "connect_c_cpp.h"
 }
 
+struct st_argv args;
+
 extern int dialog_auswertung;
 extern int anzahl_disk;
 extern QString parameter[10];
@@ -33,6 +35,7 @@ int dir_sekunde_elapsed;
 int dir_minute_elapsed;
 int dir_sekunde_summe;
 QStringList items_dir_kerne;
+
 
 
 DialogDIR::DialogDIR(QWidget *parent)

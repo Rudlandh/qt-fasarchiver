@@ -37,9 +37,38 @@ extern "C" {
 #include "connect_c_cpp.h"
 #include "fsarchiver.h"
 }
-//#include "system.h"
+
 
 using namespace std;
+
+void fsarchiver_aufruf_c(struct st_argv *args);
+
+void 
+fsarchiver_aufruf(int argc, char *anlage0, char *anlage1=NULL, char *anlage2=NULL, char *anlage3=NULL, char *anlage4=NULL, char *anlage5=NULL, char *anlage6=NULL, char *anlage7=NULL, char *anlage8=NULL, char *anlage9=NULL, char *anlage10=NULL, char *anlage11=NULL, char *anlage12=NULL,char *anlage13=NULL,char *anlage14=NULL)
+{
+struct st_argv arg;
+
+arg.argc=argc;
+arg.argv[0]=anlage0;
+arg.argv[1]=anlage1;
+arg.argv[2]=anlage2;
+arg.argv[3]=anlage3;
+arg.argv[4]=anlage4;
+arg.argv[5]=anlage5;
+arg.argv[6]=anlage6;
+arg.argv[7]=anlage7;
+arg.argv[8]=anlage8;
+arg.argv[9]=anlage9;
+arg.argv[10]=anlage10;
+arg.argv[11]=anlage11;
+arg.argv[12]=anlage12;
+arg.argv[13]=anlage13;
+arg.argv[14]=anlage14;
+
+fsarchiver_aufruf_c(&arg);
+}
+
+
 
 QString Datum_akt("");
 QString partition_;
@@ -50,6 +79,7 @@ QString DateiName("") ;
 extern int anzahl_disk;
 extern int dialog_auswertung;
 extern QString parameter[15];
+extern int gl_rezult, p_work;
 QString part[100][4];
 QString widget[100];
 int endeThread;
@@ -62,6 +92,8 @@ string part_art;
 QString zip_[10];
 QString SicherungsDateiName;
 
+
+
 MWindow::MWindow()
 {
    questionLabel = new QLabel;
@@ -70,7 +102,7 @@ MWindow::MWindow()
    QStringList partition_kurz;
    QString partition1_;
    QStringList items; 
-   int pos, pos1;
+   int pos=0, pos1=0;
    string part_art;
    int i,j;
    QString befehl;
@@ -474,8 +506,8 @@ int MWindow::savePartition()
             			  parameter[indizierung + 1] = ("/dev/" + partition_);
                                   QFile f(parameter[indizierung]);
                                   if  (parameter[4] != "-o" && (f.exists())){
-				       QMessageBox::about(this, tr("Note", "Hinweis"), 
-				       tr("The partition file", "Die Partitionsdatei") + parameter[6] + tr(" already exists. The backup is not performed\n", " ist bereits vorhanden. Die Sicherung wird nicht durchgeführt\n") );
+				       QMessageBox::about(this, tr("Note", "Hinweis"),
+					tr("The partition file", "Die Partitionsdatei")+ parameter[6] + tr(" already exists. The backup is not performed\n", " ist bereits vorhanden. Die Sicherung wird nicht durchgeführt\n") );
                   			  return 0 ; 
                				}
                                   state = chk_Beschreibung->checkState(); 
@@ -552,6 +584,14 @@ if (endeThread !=1)
   int meldung = werte_holen(4);
  if (meldung >= 100) // Thread Abschluss mit Fehler
    return;
+    if (dialog_auswertung != 0){
+   //verhindert das Blockieren des Programmes Abfrage in der while Schleife in dir.cpp und mainwindow.cpp
+      float endeThread = werte_holen(4);
+      // Wenn vom Programm bereits eine Fehlermeldung zurückgeschrieben wurde, wird die Fehlermeldungnummer nicht durch 100 ersetzt.
+      if (endeThread ==0)
+      	werte_uebergeben(100,4);
+     }
+
  int anzahl  = werte_holen(2);
  QString text_integer;
  text_integer = text_integer.setNum(anzahl);
@@ -642,7 +682,10 @@ char * dev_part;
        	       parameter[1] = "archinfo";
                if (state1 != Qt::Checked) {
                		parameter[2] = folder;
-               		fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+
+ fsarchiver_aufruf (3, parameter[0].toAscii().data(),
+ parameter[1].toAscii().data(), parameter[2].toAscii().data());
+
                		optionkey = meldungen_holen(1);
                		dev_part = meldungen_holen(2);
                         if (werte_holen(4) == 103){
@@ -661,7 +704,11 @@ char * dev_part;
                   		return 0 ; 
                	   		}
 			parameter[4] = folder;
-                        int retour =  fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+//                        int retour =
+ 
+fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+
+int retour=gl_rezult;
                         if ( werte_holen(4) == 103 && retour != 0){
                            QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");

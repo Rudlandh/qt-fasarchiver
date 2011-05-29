@@ -46,6 +46,8 @@
 #include "fsarchiver.h"
 #include "connect_c_cpp.h"
 
+
+void  start_fsa(struct st_argv *args);
 float prozent;
 float Anzahl_File_zu_sichern;
 float Anzahl_File_gesichert;
@@ -58,6 +60,10 @@ float s_links_;
 char* key ;
 char fsorigdev[30];
 
+int gl_rezult=0, p_work=0;  // global variable
+
+pthread_attr_t at;
+pthread_t thread_main;
 
 int createar(){
    bool probedetailed = 0;  //=True Anzeige Label zB C-System
@@ -67,28 +73,41 @@ int createar(){
    return test;
 }
 
-int fsarchiver_aufruf(int argc, char *anlage0, char *anlage1, char *anlage2, char *anlage3, char *anlage4, char *anlage5, char *anlage6, char *anlage7,char *anlage8,char *anlage9,char *anlage10, char *anlage11, char *anlage12,char *anlage13,char *anlage14)
+void  
+fsarchiver_aufruf_c(struct st_argv *args)
 {
-    char *argv[15];
-    int ret;
-    argv[0] = anlage0;
-    argv[1] = anlage1;
-    argv[2] = anlage2;
-    argv[3] = anlage3;
-    argv[4] = anlage4;
-    argv[5] = anlage5;
-    argv[6] = anlage6;
-    argv[7] = anlage7;
-    argv[8] = anlage8;
-    argv[9] = anlage9;
-    argv[10] = anlage10;
-    argv[11] = anlage11;
-    argv[12] = anlage12;
-    argv[13] = anlage13;
-    argv[14] = anlage14;
-    //msgprintf(MSG_FORCE, _("fsarchiver_aufruf in connect_cpp %d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s\n"),argc, argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6],argv[7], argv[8], argv[9], argv[10], argv[11], argv[12], argv[13], argv[14]);
-    ret=fsarchiver_main(argc, argv);
-    return ret;
+int ret_ph, argc;
+ 
+    argc=args->argc;
+    if ((argc < 0) && (argc > 15))
+		return; // error !!!
+ 
+//msgprintf(MSG_FORCE, _("fsarchiver_aufruf in connect_cpp %d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s\n"),argc, argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6],argv[7], argv[8], argv[9], argv[10], argv[11], argv[12], argv[13], argv[14]);
+//    ret=fsarchiver_main(argc, argv);
+
+//  !! This is main diff
+pthread_attr_init(&at);
+pthread_attr_setdetachstate(&at,PTHREAD_CREATE_DETACHED );
+ret_ph=pthread_create(&thread_main, NULL, (void*) &start_fsa, &args);
+
+
+return;
+}
+
+void
+start_fsa(struct st_argv *args)  // Basa function thread
+{
+int argc, ret;
+char *new_argv;
+
+argc= args->argc;
+new_argv= args->argv;
+gl_rezult=0;
+p_work=1; // function is work
+
+ret=fsarchiver_main(argc, &new_argv);
+dialog_auswertung=gl_rezult=ret;   // rezult
+p_work=0;   // function is not work
 }
 
 void werte_uebergeben(float prozess, int auswahl){

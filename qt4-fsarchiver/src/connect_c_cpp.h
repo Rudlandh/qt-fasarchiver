@@ -17,8 +17,17 @@
 #ifndef __CONNECT_C_CPP_H__
 #define __CONNECT_C_CPP_H__
 
+struct st_argv
+{
+int argc;
+char *argv[15];
+};
+
 int createar();
-int fsarchiver_aufruf(int argc, char *anlage0, char *anlage1, char *anlage2, char *anlage3, char *anlage4, char *anlage5, char *anlage6, char *anlage7,char *anlage8,char *anlage9,char *anlage10, char *anlage11, char *anlage12,char *anlage13,char *anlage14);
+//int fsarchiver_aufruf(int argc, char *anlage0, char *anlage1, char *anlage2, char *anlage3, char *anlage4, char *anlage5, char *anlage6, char *anlage7,char *anlage8,char *anlage9,char *anlage10, char *anlage11, char *anlage12,char *anlage13,char *anlage14);
+
+void fsarchiver_aufruf_c(struct st_argv *args);
+
 void werte_uebergeben(float prozess, int anzahl);
 float werte_holen(int auswahl);
 void meldungen_uebergeben(char * meldung, int auswahl);
