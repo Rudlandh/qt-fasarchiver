@@ -11,11 +11,6 @@
     </keywords>
     <projectname>qt4_fsarchiver</projectname>
     <ignoreparts/>
-    <projectdirectory>.</projectdirectory>
-    <absoluteprojectpath>false</absoluteprojectpath>
-    <description/>
-    <defaultencoding/>
-    <versioncontrol/>
   </general>
   <kdevfileview>
     <groups>
@@ -72,20 +67,7 @@
   <kdevdebugger>
     <general>
       <dbgshell/>
-      <gdbpath/>
-      <configGdbScript/>
-      <runShellScript/>
-      <runGdbScript/>
-      <breakonloadinglibs>false</breakonloadinglibs>
-      <separatetty>false</separatetty>
-      <floatingtoolbar>false</floatingtoolbar>
-      <raiseGDBOnStart>false</raiseGDBOnStart>
     </general>
-    <display>
-      <staticmembers>false</staticmembers>
-      <demanglenames>true</demanglenames>
-      <outputradix>10</outputradix>
-    </display>
   </kdevdebugger>
   <kdevcppsupport>
     <qt>
@@ -122,27 +104,13 @@
       <alwaysIncludeNamespaces>false</alwaysIncludeNamespaces>
       <includePaths>.;</includePaths>
     </codecompletion>
-    <creategettersetter>
-      <prefixGet/>
-      <prefixSet>set</prefixSet>
-      <prefixVariable>m_,_</prefixVariable>
-      <parameterName>theValue</parameterName>
-      <inlineGet>true</inlineGet>
-      <inlineSet>true</inlineSet>
-    </creategettersetter>
-    <splitheadersource>
-      <enabled>false</enabled>
-      <synchronize>true</synchronize>
-      <orientation>Vertical</orientation>
-    </splitheadersource>
   </kdevcppsupport>
   <kdevfilecreate>
-    <filetypes/>
     <useglobaltypes>
       <type ext="ui" />
-      <type ext="qrc" />
       <type ext="cpp" />
       <type ext="h" />
+      <type ext="qrc" />
     </useglobaltypes>
   </kdevfilecreate>
   <kdevtrollproject>
@@ -151,51 +119,6 @@
     </general>
     <run>
       <directoryradio>executable</directoryradio>
-      <mainprogram>/root/New/qt4-fsarchiver</mainprogram>
-      <programargs/>
-      <globaldebugarguments/>
-      <globalcwd>/root/New/qt4-fsarchiver</globalcwd>
-      <useglobalprogram>false</useglobalprogram>
-      <terminal>false</terminal>
-      <autocompile>true</autocompile>
-      <autoinstall>false</autoinstall>
-      <autokdesu>false</autokdesu>
-      <envvars/>
     </run>
-    <make>
-      <abortonerror>true</abortonerror>
-      <runmultiplejobs>false</runmultiplejobs>
-      <numberofjobs>2</numberofjobs>
-      <dontact>false</dontact>
-      <makebin/>
-      <prio>0</prio>
-      <envvars/>
-    </make>
-    <qmake>
-      <savebehaviour>2</savebehaviour>
-      <replacePaths>true</replacePaths>
-      <disableDefaultOpts>true</disableDefaultOpts>
-      <enableFilenamesOnly>true</enableFilenamesOnly>
-      <showVariablesInTree>true</showVariablesInTree>
-      <showParseErrors>true</showParseErrors>
-    </qmake>
   </kdevtrollproject>
-  <cppsupportpart>
-    <filetemplates>
-      <interfacesuffix>.h</interfacesuffix>
-      <implementationsuffix>.cpp</implementationsuffix>
-    </filetemplates>
-  </cppsupportpart>
-  <kdevdocumentation>
-    <projectdoc>
-      <docsystem/>
-      <docurl/>
-      <usermanualurl/>
-    </projectdoc>
-  </kdevdocumentation>
-  <ctagspart>
-    <customArguments/>
-    <customTagfilePath>/root/New/qt4-fsarchiver/tags</customTagfilePath>
-    <activeTagsFiles/>
-  </ctagspart>
 </kdevelop>

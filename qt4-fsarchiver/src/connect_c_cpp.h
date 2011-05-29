@@ -23,6 +23,9 @@ int argc;
 char *argv[15];
 };
 
+enum color_work {c_hard, c_hard_z, c_part, c_part_z, c_dir, c_dir_z, c_mbr, c_mbr_z, c_th};
+
+
 int createar();
 //int fsarchiver_aufruf(int argc, char *anlage0, char *anlage1, char *anlage2, char *anlage3, char *anlage4, char *anlage5, char *anlage6, char *anlage7,char *anlage8,char *anlage9,char *anlage10, char *anlage11, char *anlage12,char *anlage13,char *anlage14);
 

@@ -42,7 +42,7 @@ int regmulti_empty(cregmulti *m)
     m->count=0;
     m->usedsize=0;
     
-    for (i=0; i < m->maxitems; i++)
+    for (i=0; (unsigned int) i < m->maxitems; i++)
         m->objhead[i]=NULL;
     
     return 0;

@@ -40,14 +40,18 @@
 #include <mntent.h>
 #include <sys/stat.h>
 #include <sys/vfs.h>
+#include <string.h>
+
 // nur für msgprintf(MSG_FORCE
 
 
 #include "fsarchiver.h"
 #include "connect_c_cpp.h"
 
-
+extern int fsarchiver_main(int argc, char** argv);
 void  start_fsa(struct st_argv *args);
+
+
 float prozent;
 float Anzahl_File_zu_sichern;
 float Anzahl_File_gesichert;
@@ -106,7 +110,7 @@ gl_rezult=0;
 p_work=1; // function is work
 
 ret=fsarchiver_main(argc, &new_argv);
-dialog_auswertung=gl_rezult=ret;   // rezult
+gl_rezult=ret;   // rezult
 p_work=0;   // function is not work
 }
 

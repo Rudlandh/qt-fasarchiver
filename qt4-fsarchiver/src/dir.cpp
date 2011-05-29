@@ -22,7 +22,8 @@ extern "C" {
 
 struct st_argv args;
 
-extern int dialog_auswertung;
+extern int t_dialog_auswertung;
+int dialog_auswertung;
 extern int anzahl_disk;
 extern QString parameter[10];
 QString folder_dir;
@@ -40,6 +41,7 @@ QStringList items_dir_kerne;
 
 DialogDIR::DialogDIR(QWidget *parent)
 {
+
         setupUi(this); // this sets up GUI
 	connect( bt_save, SIGNAL( clicked() ), this, SLOT( folder_dir_path_einlesen() ) ); 
         connect( chk_path, SIGNAL( clicked() ), this, SLOT( treeview_show() ) );
@@ -163,7 +165,7 @@ Qt::CheckState state1;
         state1 = chk_key->checkState();
         int indizierung;         
         //Verzeichnis sichern
-        if (dialog_auswertung == 4){
+        if (t_dialog_auswertung == 4){
            if (state1 == Qt::Checked && keyText.isEmpty())
               {
                 QMessageBox::about(this, tr("Note", "Hinweis"),
@@ -242,7 +244,8 @@ Qt::CheckState state1;
             werte_reset();
             bt_save->setEnabled(false);
             startThread1(); // fsarchiver wird im Thread ausgeführt
-            while (dialog_auswertung != 0 || endeThread_ != 1)
+// Fixme need fix
+          while (t_dialog_auswertung != 0 || endeThread_ != 1)
        		{
                 elapsedTime();
                 int anzahl  = werte_holen(2);
@@ -267,7 +270,7 @@ Qt::CheckState state1;
                      SekundeRemaining ->setText("0");
           	   break;
                    }
-                 sleep(1);
+//                 sleep(1);
        	      } 
             }
 
@@ -394,8 +397,9 @@ void DialogDIR::thread1Ready()  {
    extern int dialog_auswertung;
    QString err_regfile_;
    int err_regfile;
-   if (endeThread_ == 1) {
-     if (dialog_auswertung ==0){
+ 
+  if (endeThread_ == 1) {
+     if (t_dialog_auswertung ==0){
        int cnt_regfile = werte_holen(6);
        QString cnt_regfile_ = QString::number(cnt_regfile);
        int cnt_dir = werte_holen(7);
@@ -422,7 +426,7 @@ void DialogDIR::thread1Ready()  {
      }
    } 
    thread1.exit();
-   dialog_auswertung = 4;
+   t_dialog_auswertung = 4;
    bt_save->setEnabled(true);
 }
 void DialogDIR::thread2Ready()  {
@@ -432,7 +436,7 @@ void DialogDIR::thread2Ready()  {
    int err_regfile;
    int meldung = werte_holen(4);
    if (endeThread_ == 1) { 
-     if (dialog_auswertung ==0){
+     if (t_dialog_auswertung ==0){
        int cnt_regfile = werte_holen(6);
        QString cnt_regfile_ = QString::number(cnt_regfile);
        int cnt_dir = werte_holen(7);
@@ -472,7 +476,7 @@ void DialogDIR::thread2Ready()  {
    }
 }
    thread2.exit();
-   dialog_auswertung = 5;
+   t_dialog_auswertung = 5;
    bt_save->setEnabled(true);
 }
 

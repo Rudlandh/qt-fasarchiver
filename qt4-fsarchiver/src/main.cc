@@ -43,7 +43,7 @@ uid_t my_uid, my_euid, my_gid, my_egid; // experement mit uid
 
 FILE * g_fDebug; // debug file
 QString folder_file_;
-int dialog_auswertung;
+// int dialog_auswertung;
 int anzahl_disk;
 QString parameter[15];
 QString add_part[100];
