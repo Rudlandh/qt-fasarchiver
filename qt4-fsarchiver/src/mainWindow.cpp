@@ -48,6 +48,29 @@ void fsarchiver_aufruf_c ( struct st_argv *args );
 int work_global, work_etap;
 int t_dialog_auswertung;
 
+QString Datum_akt ( "" );
+QString partition_;
+string partition_str;
+QString folder;
+QString _Datum;
+QString DateiName ( "" ) ;
+extern int anzahl_disk;
+extern int dialog_auswertung;
+extern QString parameter[15];
+extern int gl_rezult, p_work;
+QString part[100][4];
+QString widget[100];
+int endeThread;
+int sekunde_elapsed;
+int minute_elapsed;
+int sekunde_summe;
+QStringList items_kerne_;
+QString partition_typ_;
+string part_art;
+QString zip_[10];
+QString SicherungsDateiName;
+int dummy_prozent;
+int flag_View;
 
 void
 fsarchiver_aufruf ( int argc, char *anlage0, char *anlage1=NULL, char *anlage2=NULL, char *anlage3=NULL, char *anlage4=NULL, char *anlage5=NULL, char *anlage6=NULL, char *anlage7=NULL, char *anlage8=NULL, char *anlage9=NULL, char *anlage10=NULL, char *anlage11=NULL, char *anlage12=NULL,char *anlage13=NULL,char *anlage14=NULL )
@@ -73,31 +96,6 @@ fsarchiver_aufruf ( int argc, char *anlage0, char *anlage1=NULL, char *anlage2=N
 
 	fsarchiver_aufruf_c ( &arg );
 }
-
-
-
-QString Datum_akt ( "" );
-QString partition_;
-string partition_str;
-QString folder;
-QString _Datum;
-QString DateiName ( "" ) ;
-extern int anzahl_disk;
-extern int dialog_auswertung;
-extern QString parameter[15];
-extern int gl_rezult, p_work;
-QString part[100][4];
-QString widget[100];
-int endeThread;
-int sekunde_elapsed;
-int minute_elapsed;
-int sekunde_summe;
-QStringList items_kerne_;
-QString partition_typ_;
-string part_art;
-QString zip_[10];
-QString SicherungsDateiName;
-
 
 
 MWindow::MWindow()
@@ -597,6 +595,8 @@ int MWindow::savePartition()
 
 }
 
+
+/*
 void MWindow::ViewProzent()
 {
 	int prozent;
@@ -652,6 +652,99 @@ void MWindow::ViewProzent()
 	
 	
 }
+*/
+
+void MWindow::ViewProzent()
+{
+int prozent;
+QString sekunde;
+int sekunde_;
+QString minute;
+int minute_;
+int meldung;
+int anzahl;
+int anzahl1;
+QString text_integer;
+
+if (endeThread !=1)
+{
+ timer->singleShot( 1000, this , SLOT(ViewProzent( )) ) ;
+  elapsedTime();
+  meldung = werte_holen(4);
+  	if (meldung >= 100) // Thread Abschluss mit Fehler
+   		return;
+if (flag_View == 1)
+	{
+ 	anzahl  = werte_holen(2);
+ 	text_integer = text_integer.setNum(anzahl);
+ 	AnzahlsaveFile ->setText(text_integer);
+ 	anzahl1  = werte_holen(3);
+ 	text_integer = text_integer.setNum(anzahl1);
+ 	AnzahlgesicherteFile ->setText(text_integer);
+	}
+ prozent = werte_holen(1);
+ if (dummy_prozent != prozent)
+     remainingTime(prozent);
+ else {
+        if (prozent > 5)
+       {
+        // Sekunden nach unten zählen
+        // SekundenRemaining einlesen
+        sekunde = SekundeRemaining->text();
+        sekunde_ = sekunde.toInt();
+        minute = MinuteRemaining->text();
+        minute_ = minute.toInt();
+        if (sekunde_ > 0)
+        {
+            sekunde_ = sekunde_ - 1;
+            if (sekunde_ == 0) 
+            {
+		if (minute_ > 0)
+                {		
+			minute_ = minute_ - 1;
+                	minute = QString::number(minute_); 
+        		MinuteRemaining ->setText(minute);
+                       	sekunde_ = 59;
+                }
+	    }
+        }		
+        sekunde = QString::number(sekunde_); 
+        SekundeRemaining ->setText(sekunde);
+	    } 
+    }   
+ dummy_prozent = prozent;
+
+// bei mehrmaligem Aufruf von fsarchiver wird am Anfang der Sicherung kurzfristig 100 % angezeigt, was falsch ist
+ if (prozent != 100)  {
+  progressBar->setValue(prozent);
+   if (prozent >= 98 ) { 
+     progressBar->setValue(99);
+      	text_integer = text_integer.setNum(anzahl);
+	AnzahlgesicherteFile ->setText(text_integer);
+	SekundeRemaining ->setText("0");
+     return;
+     }
+   }
+     return;
+ } else //  endeThread = 1
+	{
+		if ( work_etap==c_th )
+			t_dialog_auswertung=gl_rezult;
+		if ( t_dialog_auswertung != 0 )
+
+		{
+			//verhindert das Blockieren des Programmes Abfrage in der while Schleife in dir.cpp und mainwindow.cpp
+			float endeThread = werte_holen ( 4 );
+			// Wenn vom Programm bereits eine Fehlermeldung zurückgeschrieben wurde, wird die Fehlermeldungnummer nicht durch 100 ersetzt.
+			if ( endeThread ==0 )
+				werte_uebergeben ( 100,4 );
+		}
+
+	}
+	
+	
+ }
+
 /*
 ====================
 //work_etap=part;

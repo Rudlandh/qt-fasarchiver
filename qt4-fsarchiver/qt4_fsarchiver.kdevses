@@ -1,46 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <!DOCTYPE KDevPrjSession>
 <KDevPrjSession>
- <DocsAndViews NumberOfDocuments="13" >
-  <Doc0 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/dir.cpp" >
-   <View0 Encoding="" line="246" Type="Source" />
+ <DocsAndViews NumberOfDocuments="1" >
+  <Doc0 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/mainWindow.cpp" >
+   <View0 Encoding="" line="101" Type="Source" />
   </Doc0>
-  <Doc1 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/connect_c_cpp.c" >
-   <View0 Encoding="" line="66" Type="Source" />
-  </Doc1>
-  <Doc2 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/mainWindow.cpp" >
-   <View0 Encoding="" line="46" Type="Source" />
-  </Doc2>
-  <Doc3 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/net.cpp" >
-   <View0 Encoding="" line="731" Type="Source" />
-  </Doc3>
-  <Doc4 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/thread.cpp" >
-   <View0 Encoding="" line="48" Type="Source" />
-  </Doc4>
-  <Doc5 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/filedialog.cpp" >
-   <View0 Encoding="" line="27" Type="Source" />
-  </Doc5>
-  <Doc6 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/main.cc" >
-   <View0 Encoding="" line="45" Type="Source" />
-  </Doc6>
-  <Doc7 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/connect_c_cpp.h" >
-   <View0 Encoding="" line="27" Type="Source" />
-  </Doc7>
-  <Doc8 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/regmulti.c" >
-   <View0 Encoding="" line="46" Type="Source" />
-  </Doc8>
-  <Doc9 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/fs_ext2.c" >
-   <View0 Encoding="" line="125" Type="Source" />
-  </Doc9>
-  <Doc10 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/oper_restore.c" >
-   <View0 Encoding="" line="1561" Type="Source" />
-  </Doc10>
-  <Doc11 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/oper_save.c" >
-   <View0 Encoding="" line="1107" Type="Source" />
-  </Doc11>
-  <Doc12 NumberOfViews="1" URL="file:///home/writer/Projects/qt4-fsarchiver.git/qt4-fsarchiver/src/thread_comp.c" >
-   <View0 Encoding="" line="233" Type="Source" />
-  </Doc12>
  </DocsAndViews>
  <pluginList>
   <kdevdebugger>
@@ -104,6 +68,9 @@
      <mark line="75" />
      <mark line="78" />
     </bookmark>
+    <bookmark url="/root/New/qt4-fsarchiver/src/thread.cpp" >
+     <mark line="44" />
+    </bookmark>
     <bookmark url="/root/New/qt4-fsarchiver/src/mainWindow.cpp" >
      <mark line="442" />
      <mark line="119" />
@@ -117,9 +84,6 @@
      <mark line="354" />
      <mark line="67" />
      <mark line="492" />
-    </bookmark>
-    <bookmark url="/root/New/qt4-fsarchiver/src/thread.cpp" >
-     <mark line="44" />
     </bookmark>
     <bookmark url="/root/New/qt4-fsarchiver/src/net.cpp" >
      <mark line="724" />
