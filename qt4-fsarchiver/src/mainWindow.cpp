@@ -596,63 +596,6 @@ int MWindow::savePartition()
 }
 
 
-/*
-void MWindow::ViewProzent()
-{
-	int prozent;
-	
-
-	if ( endeThread !=1 )
-	{
-		timer->singleShot ( 1000, this , SLOT ( ViewProzent( ) ) ) ;
-		elapsedTime();
-		int meldung = werte_holen ( 4 );
-		if ( meldung >= 100 ) // Thread Abschluss mit Fehler
-			return;
-
-
-		int anzahl  = werte_holen ( 2 );
-		QString text_integer;
-		text_integer = text_integer.setNum ( anzahl );
-		AnzahlsaveFile ->setText ( text_integer );
-		int anzahl1  = werte_holen ( 3 );
-		text_integer = text_integer.setNum ( anzahl1 );
-		AnzahlgesicherteFile ->setText ( text_integer );
-		prozent = werte_holen ( 1 );
-		remainingTime ( prozent );
-// bei mehrmaligem Aufruf von fsarchiver wird am Anfang der Sicherung kurzfristig 100 % angezeigt, was falsch ist
-		if ( prozent != 100 )
-		{
-			progressBar->setValue ( prozent );
-			if ( prozent >= 98 )
-			{
-				progressBar->setValue ( 99 );
-				text_integer = text_integer.setNum ( anzahl );
-				AnzahlgesicherteFile ->setText ( text_integer );
-				SekundeRemaining ->setText ( "0" );
-				return;
-			}
-		}
-		return;
-	} else //  endeThread = 1
-	{
-		if ( work_etap==c_th )
-			t_dialog_auswertung=gl_rezult;
-		if ( t_dialog_auswertung != 0 )
-
-		{
-			//verhindert das Blockieren des Programmes Abfrage in der while Schleife in dir.cpp und mainwindow.cpp
-			float endeThread = werte_holen ( 4 );
-			// Wenn vom Programm bereits eine Fehlermeldung zurückgeschrieben wurde, wird die Fehlermeldungnummer nicht durch 100 ersetzt.
-			if ( endeThread ==0 )
-				werte_uebergeben ( 100,4 );
-		}
-
-	}
-	
-	
-}
-*/
 
 void MWindow::ViewProzent()
 {

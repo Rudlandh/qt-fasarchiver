@@ -3,11 +3,12 @@
 Summary: GUI for Filesystem Archiver for Linux
 Name: qt4-fsarchiver
 Version: 0.6.12
-Release: alt1.1
+Release: alt1.2
 Url: http://www.fsarchiver.org
 Packager: Hihin Ruslan <ruslandh@altlinux.ru>
 
-Source: %name-%version-%subversion.tar
+Source: %name.tar
+
 License: GPLv2+
 Group: Archiving/Backup
 
@@ -17,7 +18,9 @@ Group: Archiving/Backup
 BuildRequires: bzlib-devel gcc-c++ libattr-devel libblkid-devel libe2fs-devel libgcrypt-devel liblzma-devel liblzo2-devel libuuid-devel phonon-devel
 
 %description
-FSArchiver is a system tool that allows you to save the contents of
+QT4-FSArchiver is GUI for fsarhiver.
+
+Fsaiveris a system tool that allows you to save the contents of
 a file-system to a compressed archive file. The file-system can be
 restored on a partition which has a different size and it can be
 restored on a different file-system.
@@ -45,6 +48,8 @@ The following features have already been implemented in the current version:
  from openssl.
 
 %description -l ru_RU.UTF8
+QT4-FSArchiver это GUI для fsarhiver.
+
 FSArchiver  - системный инструментарий, позволяяющий вам сохранять содержимое
 файловой системы в виде сжатого файла. Файловая система может быть восстановлена
 в отличающемся от исходного разделе диска.
@@ -63,18 +68,27 @@ FSArchiver  - системный инструментарий, позволяя�
 - шифрование архива паролём на основе blowfish, libcrypto, openssl.
 
 %prep
-%setup -n %name-%version-%subversion
-echo QMAKE_CXXFLAGS_RELEASE = %optflags >>  qt4-fsarchiver-net.pro
-echo QMAKE_CFLAGS_RELEASE = %optflags >>  qt4-fsarchiver-net.pro
+%setup -n %name
+
+echo QMAKE_CXXFLAGS_RELEASE = %optflags >>  qt4-fsarchiver.pro
+echo QMAKE_CFLAGS_RELEASE = %optflags >>  qt4-fsarchiver.pro
 
 %build
 export PATH=$PATH:%_qt4dir/bin
-qmake QMAKE_CFLAGS_RELEASE="%optflags" \
-	QMAKE_CXXFLAGS_RELEASE="%optflags" qt4-fsarchiver-net.pro
 
-INSTALL_ROOT=%buildroot qmake qt4-fsarchiver-net.pro
-%_qt4dir/bin/lrelease qt4-fsarchiver-net.pro
+#qmake QMAKE_CFLAGS_RELEASE="%optflags" \
+#	QMAKE_CXXFLAGS_RELEASE="%optflags" qt4-fsarchiver.pro
 
+#INSTALL_ROOT=%buildroot qmake qt4-fsarchiver.pro
+
+./configure  --prefix=/usr \
+--bindir=/usr/bin \
+--datadir=/usr/share \
+--qtdir=%_qt4dir
+
+
+
+lrelease qt4-fsarchiver.pro
 
 %make_build
 
@@ -82,17 +96,23 @@ INSTALL_ROOT=%buildroot qmake qt4-fsarchiver-net.pro
 INSTALL_ROOT=%buildroot %makeinstall_std
 mkdir -p %buildroot%_datadir/qt4/translations
 cp translations/%{name}*.qm %buildroot%_datadir/qt4/translations
+install -D -m644 %buildroot/%_pixmapsdir/harddrive.png %buildroot%_liconsdir/%name.png
+rm %buildroot/%_pixmapsdir/harddrive.png
 
 %files
 %_sbindir/%name
 %_desktopdir/qt4-fsarchiver.desktop
-%_pixmapsdir/*.png
-%_datadir/qt4/translations/%{name}*.qm
+%_iconsdir/hicolor/*/apps/*
+%_datadir/qt4/translations/*%{name}*.qm
 
 %changelog
+* Mon May 23 2011 Hihin Ruslan <ruslandh@altlinux.ru> 0.6.12-alt1.2
+- Update to 6.12.7
+
 * Wed May 18 2011 Hihin Ruslan <ruslandh@altlinux.ru> 0.6.12-alt1.1
 - add localisation
 
 * Wed May 11 2011 Hihin Ruslan <ruslandh@altlinux.ru> 0.6.12-alt1
 - Initial release for ALT Linux
+
 

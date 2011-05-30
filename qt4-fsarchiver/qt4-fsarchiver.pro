@@ -6,13 +6,23 @@ TEMPLATE = app
 TARGET = bin/qt4-fsarchiver
 DEPENDPATH += . src translations src/ui
 
+TRANSLATIONS = translations/template_qt4-fsarchiver.ts \
+		translations/qt4-fsarchiver_ru.ts \
+		translations/qt4-fsarchiver_de.ts 
+
+CONFIG += qt thread
+CONFIG += link_pkgconfig
+
 DEFINES +=  HAVE_CONFIG_H _REENTRANT _FILE_OFFSET_BITS=64 _LARGEFILE64_SOURCE _GNU_SOURCE 
 INCLUDEPATH += . src /usr/include/ext2fs /usr/include/et /usr/include/e2p /usr/include/blkid /usr/include/uuid 
 LIBS += -L/usr/lib -lQtGui -lQtCore -lpthread -lrt -llzma -lext2fs -lcom_err -le2p -lblkid -luuid -lz -lbz2 -llzo2 -lgcrypt -lgpg-error
 OBJECTS_DIR = build
+
 MOC_DIR = build
 UI_DIR = build
 RCC_DIR = build
+
+
 CODECFORTR=utf8
 CODECFORSRC=utf8
 
@@ -123,18 +133,13 @@ SOURCES += src/archinfo.c \
            src/writebuf.c
 RESOURCES += src/icon.qrc
 # install
+INSTALLS =  target icon autostart translation 
  target.path = /usr/sbin
  icon.files = src/images/harddrive.png
- icon.path = /usr/share/pixmaps
- autostart.files = starter/qt4-fsarchiver.desktop
+ icon.path = /usr/share/pixmaps/
+   autostart.files = starter/qt4-fsarchiver.desktop
  autostart.path = /usr/share/applications
- 
- TRANSLATIONS += translations/template_qt4-fsarchiver.ts \
-         translations/qt4-fsarchiver_ru.ts \
-     translations/qt4-fsarchiver_de.ts 
-  translations.files = translations/qt4-fsarchiver_ru.qm \
-                        translations/qt4-fsarchiver_de.qm 
-  translations.path = /usr/share/qt4/translations
- INSTALLS = target icon autostart translations
- QMAKE_CXXFLAGS_RELEASE = -pipe -Wall -g -O2
- QMAKE_CFLAGS_RELEASE = -pipe -Wall -g -O2
+ translation.files = translations/qt4-fsarchiver_ru.qm \
+    translations/qt4-fsarchiver_de.qm 
+ translation.path = /usr/share/qt4/translations
+
