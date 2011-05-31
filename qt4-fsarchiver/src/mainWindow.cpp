@@ -94,7 +94,7 @@ fsarchiver_aufruf ( int argc, char *anlage0, char *anlage1=NULL, char *anlage2=N
 	arg.argv[13]=anlage13;
 	arg.argv[14]=anlage14;
 
-	fsarchiver_aufruf_c ( &arg );
+ fsarchiver_aufruf_c (&arg );
 }
 
 
@@ -669,7 +669,11 @@ if (flag_View == 1)
      }
    }
      return;
- } else //  endeThread = 1
+ } //  endeThread = 1
+
+} 
+/*
+ else 
 	{
 		if ( work_etap==c_th )
 			t_dialog_auswertung=gl_rezult;
@@ -684,9 +688,9 @@ if (flag_View == 1)
 		}
 
 	}
+ */	
 	
-	
- }
+ 
 
 /*
 ====================
@@ -734,7 +738,7 @@ if (flag_View == 1)
 //      	werte_uebergeben(100,4);
 //     }
 
-/*
+
 
 	work_etap=part_z;
 
