@@ -37,7 +37,7 @@ extern "C" {
 #include "connect_c_cpp.h"
 #include "fsarchiver.h"
 }
-//#include "system.h"
+
 
 using namespace std;
 
@@ -77,6 +77,8 @@ int fsarchiver_aufruf(int argc, char *anlage0=NULL, char *anlage1=NULL, char *an
 {
     char *argv[15];
     int ret;
+
+
     argv[0] = anlage0;
     argv[1] = anlage1;
     argv[2] = anlage2;
@@ -92,9 +94,11 @@ int fsarchiver_aufruf(int argc, char *anlage0=NULL, char *anlage1=NULL, char *an
     argv[12] = anlage12;
     argv[13] = anlage13;
     argv[14] = anlage14;
+
     //msgprintf(MSG_FORCE, _("fsarchiver_aufruf in connect_cpp %d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s\n"),argc, argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6],argv[7], argv[8], argv[9], argv[10], argv[11], argv[12], argv[13], argv[14]);
     ret=fsarchiver_main(argc, argv);
-    return ret;
+ work_global=ret;
+ return ret;
 }
 
 
@@ -579,6 +583,7 @@ int MWindow::savePartition()
        					} 
 */
                          }
+
                     }
            return 0;
 
@@ -651,6 +656,7 @@ char * dev_part;
                if (state1 != Qt::Checked) {
                		parameter[2] = folder;
                		fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+/* fixme
                		optionkey = meldungen_holen(1);
                		dev_part = meldungen_holen(2);
                         if (werte_holen(4) == 103){
@@ -659,6 +665,7 @@ char * dev_part;
          	     		tr("The partition is encrypted. Please enter the key", "Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein\n"));
                    		return 0;
                		} 
+*/
         	}
                 if (state1 == Qt::Checked) {
             		parameter[2] = "-c";
@@ -669,7 +676,10 @@ char * dev_part;
                   		return 0 ; 
                	   		}
 			parameter[4] = folder;
-                        int retour =  fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+ //                       int retour = 
+// fixme
+ fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+/* fixme
                         if ( werte_holen(4) == 103 && retour != 0){
                            QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");
@@ -677,6 +687,7 @@ char * dev_part;
                         }
 			optionkey = meldungen_holen(1);
                		dev_part = meldungen_holen(2);
+*/
                 }
             //Überprüfen, ob in die Originalpartition zurückgeschrieben werden soll
             part_ = partition_.toAscii().data();
@@ -780,10 +791,11 @@ char * dev_part;
                werte_reset();
                pushButton_restore->setEnabled(false);
                pushButton_end->setEnabled(false);
+               timer->singleShot ( 1000, this , SLOT ( ViewProzent( ) ) ) ;
                startThread2(); // fsarchiver wird im Thread ausgeführt
                statusBar()->showMessage(tr("The restoring is performed", "Die Wiederherstellung wird durchgeführt"), 15000); 
                prozent = 0;
-               while (endeThread != 1)
+/*               while (endeThread != 1)
        		  {
        		  sleep(1);
                   int meldung = werte_holen(4);
@@ -799,7 +811,8 @@ char * dev_part;
           		break;
                 	}
        		   } 
-  	      }
+*/
+  	      } // rdBt_restoreFsArchiv
      }
   return 0;              
 }   

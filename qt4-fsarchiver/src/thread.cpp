@@ -45,9 +45,10 @@ void Thread::run() {
   //Zurücksetzen der bekannten oder unbekannten Fehlermeldung
   werte_uebergeben(1,4);
 //  dialog_auswertung =
- fsarchiver_aufruf(anzahl,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+ fsarchiver_aufruf(anzahl, parameter[0].toAscii().data(), parameter[1].toAscii().data(), parameter[2].toAscii().data(), parameter[3].toAscii().data(), parameter[4].toAscii().data(), parameter[5].toAscii().data(), parameter[6].toAscii().data(), parameter[7].toAscii().data(), parameter[8].toAscii().data(), parameter[9].toAscii().data(), parameter[10].toAscii().data(), parameter[11].toAscii().data(), parameter[12].toAscii().data(), parameter[13].toAscii().data(), parameter[14].toAscii().data());
 
-work_etap=c_th;
+//work_etap=c_th;
+// fixme
 
 //    if (dialog_auswertung != 0){
 //      //verhindert das Blockieren des Programmes Abfrage in der while Schleife in dir.cpp und mainwindow.cpp

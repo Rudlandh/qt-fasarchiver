@@ -243,11 +243,14 @@ Qt::CheckState state1;
         thread1.setValues(indizierung + 2,0);
             indicator_reset();
             werte_reset();
+           
+   // fixme          timer->singleShot ( 1000, this , SLOT ( ViewProzent( ) ) ) ;
+
             bt_save->setEnabled(false);
             startThread1(); // fsarchiver wird im Thread ausgeführt
 // Fixme need fix
-          while (t_dialog_auswertung != 0 || endeThread_ != 1)
-       		{
+/*
+          while (t_dialog_auswertung != 0 || endeThread_ != 1) 	{
                 elapsedTime();
                 int anzahl  = werte_holen(2);
                 QString text_integer;
@@ -270,10 +273,11 @@ Qt::CheckState state1;
                      AnzahlgesicherteFile ->setText(text_integer);
                      SekundeRemaining ->setText("0");
           	   break;
-                   }
-//                 sleep(1);
+                   }  //                 sleep(1);
        	      } 
+*/
             }
+
 
       //Verzeichnis zurückschreiben
       if (dialog_auswertung == 5){

@@ -371,6 +371,7 @@ QFile file(folder_net);
                                 pushButton_end->setEnabled(false); 
 				startThread1(); // fsarchiver wird im Thread ausgeführt
         			werte_reset();
+/* fixme
                                 QString text_integer;
                                 while (endeThread_net !=1)
        					{
@@ -401,6 +402,7 @@ QFile file(folder_net);
                                                }
                                         
        					} 
+*/
 			}
        }
        return 0;
@@ -471,16 +473,20 @@ int pos;
        	       parameter[1] = "archinfo";
 		if (state1 != Qt::Checked) {
                		parameter[2] = folder_net;
+// fixme archinfo
        fsarchiver_aufruf(3,parameter[0].toAscii().data(), parameter[1].toAscii().data(),
        parameter[2].toAscii().data());
+/* fixme
                		optionkey = meldungen_holen(1);
                		dev_part = meldungen_holen(2);
+
                         if (werte_holen(4) == 103){
                   		chk_key->setChecked(Qt::Checked);
                   		QMessageBox::about(this, tr("Note", "Hinweis"),
          	     		tr("The partition is encrypted. Please enter the key\n", "Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein\n"));
-                   		return 0;
-               		} 
+               		return 0;
+              		} 
+*/
         	}
 		if (state1 == Qt::Checked) {
             		parameter[2] = "-c";
@@ -491,13 +497,15 @@ int pos;
                   		return 0 ; 
                	   		}
 			parameter[4] = folder_net;
- //                       int retour = 
+// fixme  
+//     int retour = 
  fsarchiver_aufruf(5, parameter[0].toAscii().data(),  
  parameter[1].toAscii().data(), parameter[2].toAscii().data(),
  parameter[3].toAscii().data(), parameter[4].toAscii().data());
 
+// fixme  
+/*
 
-int retour;
                         if ( werte_holen(4) == 103 && retour != 0){
                           QMessageBox::about(this, tr("Note","Hinweis"), tr("They have entered a wrong password.\n", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");
@@ -505,7 +513,9 @@ int retour;
                         }
 			optionkey = meldungen_holen(1);
                		dev_part = meldungen_holen(2);
+*/
                 }
+
 		//Überprüfen, ob in die Originalpartition zurückgeschrieben werden soll
             part_ = partition_net_.toAscii().data();
             char  dev_[50] = "/dev/";
