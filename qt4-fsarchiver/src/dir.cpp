@@ -20,6 +20,7 @@ extern "C" {
 #include "connect_c_cpp.h"
 }
 
+
 struct st_argv args;
 
 extern int t_dialog_auswertung;

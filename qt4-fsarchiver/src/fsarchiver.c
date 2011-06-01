@@ -40,6 +40,17 @@
 #include "error.h"
 #include "queue.h"
 
+
+
+struct st_argv {
+const char* argv[14];
+int   argc;
+};
+
+extern struct st_argv gl_arg;
+
+
+
 char *valid_magic[]={FSA_MAGIC_MAIN, FSA_MAGIC_VOLH, FSA_MAGIC_VOLF, 
     FSA_MAGIC_FSIN, FSA_MAGIC_FSYB, FSA_MAGIC_DATF, FSA_MAGIC_OBJT, 
     FSA_MAGIC_BLKH, FSA_MAGIC_FILF, FSA_MAGIC_DIRS, NULL};
@@ -432,7 +443,29 @@ int process_cmdline(int argc, char **argv)
     return ret;
 }
 
+//#define dummy 1
+#ifdef dummy
 int fsarchiver_main(int argc, char **argv)
+{
+int ret, i;
+int n;
+
+
+n=argc;
+//argv =  gl_arg.argv;
+
+fprintf (stderr, "argc=%d", argc);
+
+ for (i=0; i< n; i++)
+  fprintf (stderr, "argv[%d]=%s %s", i, argv[i] );
+
+fprintf (stderr, "\n");
+
+sleep (5);
+return 0;
+}
+#else  // dummy
+int fsarchiver_main(int argc, char**argv)
 {
     int ret;
     
@@ -466,3 +499,4 @@ int fsarchiver_main(int argc, char **argv)
     
     return !!ret;
 }
+#endif // dummy
