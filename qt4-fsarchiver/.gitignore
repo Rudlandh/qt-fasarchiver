@@ -35,8 +35,10 @@ Makefile
 /yachat
 /yapsi_revision
 
-/mac/YaChat.dmg
 /mac/template.dmg
 /mac/template.dmg.bz2
 /mac/wc.dmg
+
+*kdevelop*
+*.kdevses
 
