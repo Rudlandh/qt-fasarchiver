@@ -185,7 +185,7 @@
      <enum>QFrame::Raised</enum>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="3" column="0" colspan="7">
+     <item row="3" column="0" colspan="6">
       <widget class="QProgressBar" name="progressBar">
        <property name="maximum">
         <number>100</number>
@@ -295,6 +295,56 @@ files/directories:</string>
       <widget class="QLabel" name="label_10">
        <property name="text">
         <string>seconds</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="6">
+      <widget class="QPushButton" name="pushButton">
+       <property name="minimumSize">
+        <size>
+         <width>24</width>
+         <height>21</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>24</width>
+         <height>21</height>
+        </size>
+       </property>
+       <property name="sizeIncrement">
+        <size>
+         <width>24</width>
+         <height>21</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>21</width>
+         <height>21</height>
+        </size>
+       </property>
+       <property name="locale">
+        <locale language="English" country="UnitedStates"/>
+       </property>
+       <property name="text">
+        <string extracomment="Break process"/>
+       </property>
+       <property name="icon">
+        <iconset resource="../icon.qrc">
+         <normaloff>:/src/images/cancel.png</normaloff>:/src/images/cancel.png</iconset>
+       </property>
+       <property name="shortcut">
+        <string/>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -524,7 +574,7 @@ with fsarchiver</string>
      <x>0</x>
      <y>0</y>
      <width>770</width>
-     <height>25</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAktionen">
@@ -668,6 +718,15 @@ with fsarchiver</string>
    </property>
    <property name="text">
     <string>Restore a parttion on network</string>
+   </property>
+  </action>
+  <action name="breakProcess">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/cancel.png</normaloff>:/src/images/cancel.png</iconset>
+   </property>
+   <property name="text">
+    <string>breakprocess</string>
    </property>
   </action>
  </widget>

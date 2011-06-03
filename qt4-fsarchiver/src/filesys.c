@@ -56,7 +56,7 @@ cfilesys filesys[]=
 int generic_get_fstype(char *fsname, int *fstype)
 {
     int i;
-    
+
     for (i=0; filesys[i].name; i++)
     {
         if (strcmp(filesys[i].name, fsname)==0)
@@ -72,16 +72,16 @@ int generic_get_spacestats(char *dev, char *mnt, char *text, int textlen)
 {
     struct statfs stf;
     struct stat64 st;
-    
+
     // init
     memset(text, 0, textlen);
-    
+
     if (stat64(dev, &st)!=0)
         return -1;
-    
+
     if (statfs(dev, &stf)!=0)
         return -1;
-    
+
     if (!S_ISBLK(st.st_mode))
         return -1;
     else
@@ -94,16 +94,16 @@ int generic_get_fsrwstatus(char *options)
     char delims[]=",";
     char *saveptr;
     char *result;
-    
+
     snprintf(temp, sizeof(temp), "%s", options);
-    
+
     result=strtok_r(temp, delims, &saveptr);
     while(result != NULL)
     {   if (strcmp(result, "rw")==0)
             return 1; // true
         result = strtok_r(NULL, delims, &saveptr);
     }
-    
+
     return 0; // false
 }
 
@@ -127,7 +127,7 @@ int devcmp(char *dev1, char *dev2)
                 errprintf("Warning: cannot get details for device [%s]\n", devname[i]);
             return -1;
         }
-        
+
         if (!S_ISBLK(devstat[0].st_mode))
         {
             errprintf("Warning: [%s] is not a block device\n", devname[i]);
@@ -169,7 +169,7 @@ int generic_get_mntinfo(char *devname, int *readwrite, char *mntbuf, int maxmntb
     // of the actual root partition such as "/dev/sda1".
     // The consequence is that fsarchiver won't be able to realize
     // that the device it is archiving (such as "/dev/sda1") is the
-    // same as "/dev/root" and that it is actually mounted. This 
+    // same as "/dev/root" and that it is actually mounted. This
     // function would then say that the "/dev/sda1" device is not mounted
     // and fsarchiver would try to mount it and mount() fails with EBUSY
     if (stat64(devname, &devstat)==0 && stat64("/", &rootstat)==0 && (devstat.st_rdev==rootstat.st_dev))
@@ -230,7 +230,7 @@ int generic_get_mntinfo(char *devname, int *readwrite, char *mntbuf, int maxmntb
             }
         }
     }
-    
+
     fclose(f);
     return -1;
 }
@@ -241,10 +241,10 @@ int generic_mount(char *partition, char *mntbuf, char *fsbuf, char *mntopt, int 
     {   errprintf("invalid parameters\n");
         return -1;
     }
-    
+
     // optimization: don't change access times on the original partition
     flags|=MS_NOATIME|MS_NODIRATIME;
-    
+
     // if fsbuf is not empty, use the filesystem which is specified
     msgprintf(MSG_DEBUG1, "trying to mount [%s] on [%s] as [%s] with options [%s]\n", partition, mntbuf, fsbuf, mntopt);
     if (mount(partition, mntbuf, fsbuf, flags, mntopt)!=0)

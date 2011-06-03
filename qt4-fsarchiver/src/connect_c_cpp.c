@@ -104,15 +104,15 @@ void werte_uebergeben(float prozess, int auswahl){
      	    Anzahl_File_zu_sichern = prozess;
          }
      if (auswahl ==3)
-         if (prozess != 0){ 
+         if (prozess != 0){
      	    Anzahl_File_gesichert = prozess;
          }
      if (auswahl ==4)
-         if (prozess != 0){ 
+         if (prozess != 0){
      	    EndeThreadMeldung = prozess;
          }
      if (auswahl ==5)
-         if (prozess != 0){ 
+         if (prozess != 0){
      	    h_links = prozess;
          }
      if (auswahl ==6){
@@ -120,21 +120,21 @@ void werte_uebergeben(float prozess, int auswahl){
      	    numberfile = prozess;
          }
      if (auswahl ==7)
-         if (prozess != 0){ 
+         if (prozess != 0){
      	    numberfolder = prozess;
          }
      if (auswahl ==8)
-         if (prozess != 0){ 
+         if (prozess != 0){
      	    s_links = prozess;
          }
      if (auswahl ==9)
-         if (prozess != 0){ 
+         if (prozess != 0){
      	    s_links_ = prozess;
          }
    }
 
 float werte_holen(int auswahl){
-      if (auswahl ==1)        
+      if (auswahl ==1)
      	return prozent;
       if (auswahl ==2)
      	return Anzahl_File_zu_sichern;
@@ -153,10 +153,11 @@ float werte_holen(int auswahl){
       if (auswahl ==9)
      	return s_links_;
     }
- 
+
 void werte_reset(){
-      prozent = 0;        
+      prozent = 0;
       Anzahl_File_zu_sichern = 0;
+      Anzahl_File_gesichert=0;
     }
 
 void meldungen_uebergeben(char* meldung, int auswahl){
@@ -166,7 +167,7 @@ void meldungen_uebergeben(char* meldung, int auswahl){
      if (auswahl ==2) {
      	 strncpy(fsorigdev,meldung,30);
          fsorigdev[29] = 0;
-         }  
+         }
   }
 
 char *meldungen_holen(int auswahl){
@@ -176,7 +177,7 @@ char *meldungen_holen(int auswahl){
       if (auswahl ==2)  {
         return fsorigdev;
       }
-      
+
 }
 
 float df(char *device, const char *mountPoint, int flag )
@@ -208,10 +209,10 @@ float df(char *device, const char *mountPoint, int flag )
    if (flag == 2)
 		return (long) (s.f_blocks * (s.f_bsize / 1024000.0));
 	if (flag == 3)
-		return (long) ((s.f_blocks - s.f_bfree) * (s.f_bsize / 1024000.0));	
+		return (long) ((s.f_blocks - s.f_bfree) * (s.f_bsize / 1024000.0));
 	if (flag == 4)
-		return (long) (s.f_bavail * (s.f_bsize / 1024000.0));	
-			  
+		return (long) (s.f_bavail * (s.f_bsize / 1024000.0));
+
 }
 
 

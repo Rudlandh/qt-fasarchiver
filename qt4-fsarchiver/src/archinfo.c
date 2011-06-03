@@ -55,12 +55,13 @@ char *cryptalgostr(int algo)
 int archinfo_show_mainhead(carchreader *ai, cdico *dicomainhead)
 {
     char buffer[256];
-    
+
     if (!ai || !dicomainhead)
-    {   errprintf("a parameter is null\n");
+    {
+      errprintf ("a parameter is null\n");
         return -1;
     }
-    
+
     msgprintf(MSG_FORCE, "====================== archive information ======================\n");
     msgprintf(MSG_FORCE, "Archive type: \t\t\t%s\n", (ai->archtype==ARCHTYPE_FILESYSTEMS)?"filesystems":"flat files");
     if ((ai->archtype==ARCHTYPE_FILESYSTEMS))
@@ -71,13 +72,13 @@ int archinfo_show_mainhead(carchreader *ai, cdico *dicomainhead)
     msgprintf(MSG_FORCE, "Archive creation date: \t\t%s\n", format_time(buffer, sizeof(buffer), ai->creattime));
     msgprintf(MSG_FORCE, "Archive label: \t\t\t%s\n", ai->label);
     if (ai->minfsaver > 0) // fsarchiver < 0.6.7 had no per-archive minfsaver version requirement
-        msgprintf(MSG_FORCE, "Minimum fsarchiver version:\t%d.%d.%d.%d\n", (int)FSA_VERSION_GET_A(ai->minfsaver), 
+        msgprintf(MSG_FORCE, "Minimum fsarchiver version:\t%d.%d.%d.%d\n", (int)FSA_VERSION_GET_A(ai->minfsaver),
             (int)FSA_VERSION_GET_B(ai->minfsaver), (int)FSA_VERSION_GET_C(ai->minfsaver), (int)FSA_VERSION_GET_D(ai->minfsaver));
     msgprintf(MSG_FORCE, "Compression level: \t\t%d (%s level %d)\n", ai->fsacomp, compalgostr(ai->compalgo), ai->complevel);
     msgprintf(MSG_FORCE, "Encryption algorithm: \t\t%s\n", cryptalgostr(ai->cryptalgo));
     msgprintf(MSG_FORCE, "\n");
     meldungen_uebergeben(cryptalgostr(ai->cryptalgo),1);
-    
+
     return 0;
 }
 
@@ -92,15 +93,15 @@ int archinfo_show_fshead(cdico *dicofshead, int fsid)
     char fslabel[256];
     char fsuuid[256];
     char fsorigdev[256];
-    
+
     // init
     memset(magic, 0, sizeof(magic));
-    
+
     if (!dicofshead)
     {   errprintf("dicofshead is null\n");
         return -1;
     }
-    
+
     if (dico_get_data(dicofshead, 0, FSYSHEADKEY_FILESYSTEM, fsbuf, sizeof(fsbuf), NULL)!=0)
     {   errprintf("cannot find FSYSHEADKEY_FILESYSTEM in filesystem-header\n");
         return -1;
@@ -110,25 +111,25 @@ int archinfo_show_fshead(cdico *dicofshead, int fsid)
     {   errprintf("cannot find FSYSHEADKEY_BYTESTOTAL in filesystem-header\n");
         return -1;
     }
-    
+
     if (dico_get_u64(dicofshead, 0, FSYSHEADKEY_BYTESUSED, &fsbytesused)!=0)
     {   errprintf("cannot find FSYSHEADKEY_BYTESUSED in filesystem-header\n");
         return -1;
     }
-    
+
     if (dico_get_string(dicofshead, 0, FSYSHEADKEY_FSLABEL, fslabel, sizeof(fslabel))<0)
         snprintf(fslabel, sizeof(fslabel), "<none>");
-    
+
     if (dico_get_string(dicofshead, 0, FSYSHEADKEY_ORIGDEV, fsorigdev, sizeof(fsorigdev))<0)
         snprintf(fsorigdev, sizeof(fsorigdev), "<unknown>");
-    
+
     // filesystem uuid: maybe an ntfs uuid or an unix uuid
     snprintf(fsuuid, sizeof(fsuuid), "<none>");
     if (dico_get_u64(dicofshead, 0, FSYSHEADKEY_NTFSUUID, &temp64)==0)
         snprintf(fsuuid, sizeof(fsuuid), "%016llX", (long long unsigned int)temp64);
     else if (dico_get_string(dicofshead, 0, FSYSHEADKEY_FSUUID, buffer, sizeof(buffer))==0 && strlen(buffer)==36)
         snprintf(fsuuid, sizeof(fsuuid), "%s", buffer);
-    
+
     msgprintf(MSG_FORCE, "===================== filesystem information ====================\n");
     msgprintf(MSG_FORCE, "Filesystem id in archive: \t%ld\n", (long)fsid);
     msgprintf(MSG_FORCE, "Filesystem format: \t\t%s\n", fsbuf);
@@ -139,6 +140,6 @@ int archinfo_show_fshead(cdico *dicofshead, int fsid)
     msgprintf(MSG_FORCE, "Space used in filesystem: \t%s (%lld bytes)\n", format_size(fsbytesused, buffer, sizeof(buffer), 'h'), (long long)fsbytesused);
     msgprintf(MSG_FORCE, "\n");
     meldungen_uebergeben(fsorigdev,2);
-   
+
     return 0;
 }

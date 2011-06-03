@@ -41,7 +41,8 @@ extern "C" {
 
 using namespace std;
 
-int work_global, work_etap;
+int work_global, work_etap, work_resul;
+
 
 QString Datum_akt("");
 QString partition_;
@@ -79,6 +80,7 @@ int fsarchiver_aufruf(int argc, char *anlage0=NULL, char *anlage1=NULL, char *an
     int ret;
 
 
+
     argv[0] = anlage0;
     argv[1] = anlage1;
     argv[2] = anlage2;
@@ -96,8 +98,11 @@ int fsarchiver_aufruf(int argc, char *anlage0=NULL, char *anlage1=NULL, char *an
     argv[14] = anlage14;
 
     //msgprintf(MSG_FORCE, _("fsarchiver_aufruf in connect_cpp %d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s\n"),argc, argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6],argv[7], argv[8], argv[9], argv[10], argv[11], argv[12], argv[13], argv[14]);
+ work_global=1;
+ t_dialog_auswertung=work_resul=0;
     ret=fsarchiver_main(argc, argv);
- work_global=ret;
+ t_dialog_auswertung=work_resul=ret;
+ work_global=0;
  return ret;
 }
 
@@ -110,14 +115,14 @@ MWindow::MWindow()
    QStringList dummy;
    QStringList partition_kurz;
    QString partition1_;
-   QStringList items; 
+   QStringList items;
    int pos, pos1;
    string part_art;
    int i,j;
    QString befehl;
    QString homepath = QDir::homePath();
-   
-   
+
+
    setupUi(this);
    rdBt_saveFsArchiv->setChecked(Qt::Checked);
    dirModel = new QDirModel;
@@ -147,7 +152,7 @@ MWindow::MWindow()
    //schließt alle Fenster
    connect( pushButton_end, SIGNAL( clicked() ), qApp, SLOT(quit()));
    //schließt das aktuelle (this)Fenster:
-   //connect( pushButton_end, SIGNAL( clicked() ), this, SLOT(close()));	
+   //connect( pushButton_end, SIGNAL( clicked() ), this, SLOT(close()));
    connect( pushButton_save, SIGNAL( clicked() ), this, SLOT(savePartition()));
    connect( pushButton_restore, SIGNAL( clicked() ), this, SLOT(restorePartition()));
    // pushButton_partition und pushButton_folder sind dummy Button um einen Slot ansprechen zu können
@@ -156,7 +161,7 @@ MWindow::MWindow()
    connect( rdBt_saveFsArchiv, SIGNAL( clicked() ), this, SLOT(rdButton_auslesen()));
    connect( rdBt_restoreFsArchiv, SIGNAL( clicked() ), this, SLOT(rdButton_auslesen()));
    connect( chk_key, SIGNAL( clicked() ), this, SLOT(chkkey()));
-   
+
    timer = new QTimer ( this );
 
    /*
@@ -168,7 +173,7 @@ MWindow::MWindow()
    items_kerne_ << "1" << "2" << "3" << "4" <<  "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12";
    cmb_kerne->addItems (items_kerne_);
    items_kerne_.clear();
-   
+
    zip_[0]= "lzo";
    zip_[1]= "gzip fast";
    zip_[2]= "gzip standard";
@@ -195,32 +200,32 @@ MWindow::MWindow()
    	if (!file3.exists()) {
            system (befehl.toAscii().data());
         }
-   
+
    // Ini-Datei auslesen
    QFile file(homepath + "/.config/qt4-fsarchiver/qt4-fsarchiver.conf");
    if (file.exists()) {
         QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
         setting.beginGroup("Basiseinstellungen");
         int auswertung = setting.value("Kompression").toInt();
-        cmb_zip -> setCurrentIndex(auswertung); 
+        cmb_zip -> setCurrentIndex(auswertung);
         auswertung = setting.value("Kerne").toInt();
-        cmb_kerne -> setCurrentIndex(auswertung-1); 
+        cmb_kerne -> setCurrentIndex(auswertung-1);
         auswertung = setting.value("overwrite").toInt();
         if (auswertung ==1)
-           chk_overwrite->setChecked(Qt::Checked); 
+           chk_overwrite->setChecked(Qt::Checked);
         auswertung = setting.value("tip").toInt();
         if (auswertung ==1)
-           chk_Beschreibung->setChecked(Qt::Checked);  
+           chk_Beschreibung->setChecked(Qt::Checked);
         auswertung = setting.value("key").toInt();
         if (auswertung ==1)
-           chk_key->setChecked(Qt::Checked); 
+           chk_key->setChecked(Qt::Checked);
         setting.endGroup();
-        } 
+        }
    else {
         cmb_kerne -> setCurrentIndex(0);
         chk_Beschreibung->setChecked(Qt::Checked);
-        chk_overwrite->setChecked(Qt::Checked); 
-        cmb_zip -> setCurrentIndex(2); 
+        chk_overwrite->setChecked(Qt::Checked);
+        cmb_zip -> setCurrentIndex(2);
         }
    label_4->setEnabled(false);
    chk_overwrite->setEnabled(true);
@@ -240,7 +245,7 @@ MWindow::MWindow()
                     //qDebug() << "part[i][j]:" <<  part[i-1][j] << i << j;
                   }
                }
-           } 
+           }
            format();
            j = 2 ;
            i=0;
@@ -267,11 +272,11 @@ MWindow::MWindow()
                 pos1 = partition_typ.indexOf("ext4");
                 if (pos > -1 || pos1 > -1)
 		    partition_typ = "ext";
-		partition_ = "/dev/"+ partition_; 
+		partition_ = "/dev/"+ partition_;
                 //Prüfen ob System oder Home Partition
                 part_art = mtab_einlesen(partition_.toAscii().data());
                 if (!is_mounted(partition_.toAscii().data()))
-                   { 
+                   {
                    if (part_art !="system" || part_art != "home")
                      {
 			if (partition_typ == "ext" || partition_typ == "vfat" || partition_typ ==  "ntfs" )
@@ -280,7 +285,7 @@ MWindow::MWindow()
                          	strcat (mountpoint , part[i][0].toAscii().data());
                                 mkdir(mountpoint, 0777);
                          	char mountpoint1[100] = "mount ";
-                         	strcat (mountpoint1,partition_.toAscii().data()); 
+                         	strcat (mountpoint1,partition_.toAscii().data());
 			 	strcat (mountpoint1, " ");
 			 	strcat (mountpoint1, mountpoint);
 			 	int k = system (mountpoint1);
@@ -294,7 +299,7 @@ MWindow::MWindow()
            	}
            }
         partition_ = "" ;
-      	} 
+      	}
 }
 
 void MWindow::chkkey(){
@@ -302,7 +307,7 @@ void MWindow::chkkey(){
      state = chk_key->checkState();
      if (state == Qt::Checked)
         lineKey->setEnabled(true);
-     else 
+     else
         lineKey->setEnabled(false);
 }
 
@@ -339,10 +344,10 @@ void MWindow::rdButton_auslesen()
                 AnzahlsaveFile->setEnabled(false);
                 AnzahlgesicherteFile->setEnabled(false);
                 chk_key->setText (tr("Decrypt\nbackup. key:",
-		 "Sicherung\nentschlüsseln. Schlüssel")); 
-                chk_split->setEnabled(false); 
+		 "Sicherung\nentschlüsseln. Schlüssel"));
+                chk_split->setEnabled(false);
          }
-     } 
+     }
 
 void MWindow::starteinstellung(){
             label_folder->setText (tr("Backup directory", "Sicherungsverzeichnis"));
@@ -360,11 +365,11 @@ void MWindow::starteinstellung(){
             AnzahlsaveFile->setEnabled(true);
             AnzahlgesicherteFile->setEnabled(true);
             chk_key->setText (tr("Encrypt\nbackup. key:", "Sicherung\nverschlüsseln. Schlüssel"));
-            chk_split->setEnabled(true); 
-            chkkey(); 
+            chk_split->setEnabled(true);
+            chkkey();
             }
-       
-int MWindow::savePartition() 
+
+int MWindow::savePartition()
 {
      QFile file(folder);
      QString Befehl;
@@ -374,13 +379,13 @@ int MWindow::savePartition()
      char * part_;
      int err = 0;
      QString keyText = "";
-     int prozent;
+//     int prozent;
      int zip;
 
-     indicator_reset();
+     indicator_reset();  // reset endeThread and parametrs
      if (rdBt_saveFsArchiv->isChecked())
      {
-        
+
      	if (folder == "")
            {
           	QMessageBox::about(this,tr("Note", "Hinweis"),
@@ -397,7 +402,7 @@ int MWindow::savePartition()
         if (DateiName == "")
            {
           	QMessageBox::about(this, tr("Note", "Hinweis"),
-         	tr("Please select the file name of the backup.\n", 
+         	tr("Please select the file name of the backup.\n",
 		"Bitte wählen Sie den Dateinamen der Sicherung aus.\n"));
 		return 0 ;
            }
@@ -423,11 +428,11 @@ int MWindow::savePartition()
          int row = listWidget->currentRow();
        	 beschreibungstext("/dev/" + partition_, DateiName + "-" + _Datum + ".fsa", zip, row);
          partition_ = dummy;
-         if (is_mounted(dev_)) 
+         if (is_mounted(dev_))
             {
 		   part_art = mtab_einlesen(("/dev/" + partition_).toAscii().data());
                    //Überprüfung ob System oder Home Partition
-                   int ret = 1; 
+                   int ret = 1;
                    if (part_art == "system")
                 	{
                 	ret = questionMessage(tr("To back up the system partition is mounted. Do you want to do a live backup?", "Die zu sichernde Systempartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?"));
@@ -447,34 +452,34 @@ int MWindow::savePartition()
                    if (part_art != "system" || part_art != "home")
                 	{
                            //char * part_= new char [part_art.size()+1];  //Umwandlung von string nach char
-                           //strcpy (part_, part_art.c_str()); 
+                           //strcpy (part_, part_art.c_str());
                            char umountpoint[100] = "umount ";
-                           strcat (umountpoint,dev_); 
+                           strcat (umountpoint,dev_);
                            //cout << umountpoint << endl;
                           if (liveFlag == 0)
-                         	err = system (umountpoint);                              
+                         	err = system (umountpoint);
                            if (err != 0 && liveFlag == 0)
                                 {
 				QMessageBox::about(this,tr("Note", "Hinweis"),
          			tr("The partition", "Die Partition ")   + partition_ + tr("can not be unmounted. The program is terminated\n", " kann nicht ausgehängt werden. Das Programm wird abgebrochen\n"));
-                                return 0 ; 
-                                }  
+                                return 0 ;
+                                }
                  	}
                 }
          		if (rdBt_saveFsArchiv->isChecked())
            		{
                                 int indizierung;
                                 state = chk_overwrite->checkState();
-                                state1 = chk_key->checkState(); 
+                                state1 = chk_key->checkState();
                                 state3 = chk_split->checkState();
                                 keyText = lineKey->text();
                                 parameter[0] = "fsarchiver";
-       				parameter[1] = "savefs"; 
+       				parameter[1] = "savefs";
                                 zip = cmb_zip->currentIndex()+1;
                                 QString compress = QString::number(zip);
                                 compress = "-z" + compress;
 		                if (zip == -1)
-            				parameter[2] = "-z3"; 
+            				parameter[2] = "-z3";
         			else  {
             				parameter[2] = compress;
                                       }
@@ -486,20 +491,20 @@ int MWindow::savePartition()
                                     {
                                     parameter[4] = "-o";
                                     indizierung = 5;
-				    }	
+				    }
                                  if (state1 == Qt::Checked)   //Schlüssel ja
-                                    {     
+                                    {
                                     parameter[indizierung] = "-c";
 	    			    parameter[indizierung + 1] = keyText;
                                     int len = parameter[indizierung + 1].size();
                				if (len < 6 || len > 64) {
                   				QMessageBox::about(this,tr("Note", "Hinweis"),
          	  				tr("The key length must be between 6 and 64 characters\n", "Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
-                  				return 0 ; 
+                  				return 0 ;
                				        }
-                                     indizierung = indizierung + 2;  
+                                     indizierung = indizierung + 2;
 				     }
-                                  if (state3 == Qt::Checked)   //Archiv splitten 
+                                  if (state3 == Qt::Checked)   //Archiv splitten
                                      {
                                       parameter[indizierung] = "-s 4400";
                                       indizierung = indizierung + 1;
@@ -508,7 +513,7 @@ int MWindow::savePartition()
                                       {
                                       parameter[indizierung] = "-A";
 	    			      parameter[indizierung + 1] = "-a";
-                                      indizierung = indizierung + 2; 
+                                      indizierung = indizierung + 2;
                                       }
                                   parameter[indizierung] = (folder + "/" + DateiName + "-" + _Datum + ".fsa");
                                   // ! um Verschlüsselung zu erkennen
@@ -517,11 +522,11 @@ int MWindow::savePartition()
             			  parameter[indizierung + 1] = ("/dev/" + partition_);
                                   QFile f(parameter[indizierung]);
                                   if  (parameter[4] != "-o" && (f.exists())){
-				       QMessageBox::about(this, tr("Note", "Hinweis"), 
+				       QMessageBox::about(this, tr("Note", "Hinweis"),
 				       tr("The partition file", "Die Partitionsdatei") + parameter[6] + tr(" already exists. The backup is not performed\n", " ist bereits vorhanden. Die Sicherung wird nicht durchgeführt\n") );
-                  			  return 0 ; 
+                  			  return 0 ;
                				}
-                                  state = chk_Beschreibung->checkState(); 
+                                  state = chk_Beschreibung->checkState();
 				  if (rdBt_saveFsArchiv->isChecked() && (state == Qt::Checked))
             			  {
 			 	  extern int dialog_auswertung;
@@ -539,26 +544,29 @@ int MWindow::savePartition()
                 		  return 0;
                 		  }
              			}
+				this->repaint();
 				thread1.setValues(indizierung + 2,0);
-                                pushButton_save->setEnabled(false); 
-                                pushButton_end->setEnabled(false);  
-				timer->singleShot ( 1000, this , SLOT ( ViewProzent( ) ) ) ;
+                                pushButton_save->setEnabled(false);
+                                pushButton_end->setEnabled(false);
+// 				timer->singleShot ( 1000, this , SLOT ( ViewProzent( ) ) ) ;
 				startThread1(); // fsarchiver wird im Thread ausgeführt
 				work_etap=c_part; // !!!
-
+//        			statusBar()->showMessage(tr("The backup is performed", "Die Sicherung wird durchgeführt"), 15000);
+				werte_reset();
 
 // Fixme
 /*
-        			statusBar()->showMessage(tr("The backup is performed", "Die Sicherung wird durchgeführt"), 15000); 
+        			statusBar()->showMessage(tr("The backup is performed", "Die Sicherung wird durchgeführt"), 15000);
                                 werte_reset();
                                 QString text_integer;
+
                                 while (endeThread !=1)
        					{
-       					sleep(1);
-                                        elapsedTime();
-                                        int meldung = werte_holen(4);
-					if (meldung >= 100) // Thread Abschluss mit Fehler
-                    				break;
+//      					sleep(1);
+//                                       elapsedTime();
+//                                        int meldung = werte_holen(4);
+//					if (meldung >= 100) // Thread Abschluss mit Fehler
+//                  				break;
                                         int anzahl  = werte_holen(2);
                                         QString text_integer;
                                         text_integer = text_integer.setNum(anzahl);
@@ -571,7 +579,7 @@ int MWindow::savePartition()
                                         // bei mehrmaligem Aufruf von fsarchiver wird am Anfang der Sicherung kurzfristig 100 % angezeigt, was falsch ist
                                         if (prozent != 100)  {
                                             progressBar->setValue(prozent);
-                                            if (prozent >= 98 ) { 
+                                            if (prozent >= 98 ) {
           						progressBar->setValue(99);
                                                 	text_integer = text_integer.setNum(anzahl);
                                                 	AnzahlgesicherteFile ->setText(text_integer);
@@ -579,10 +587,11 @@ int MWindow::savePartition()
           						break;
                 					}
                                                }
-                                        
-       					} 
+
+       					}
+
 */
-                         }
+                          }
 
                     }
            return 0;
@@ -601,6 +610,8 @@ int err;
 int prozent;
 QString keyText = "";
 char * dev_part;
+char * optionkey;
+
 
   indicator_reset();
   if (rdBt_restoreFsArchiv->isChecked())
@@ -609,7 +620,7 @@ char * dev_part;
       keyText = lineKey->text();
       state1 = chk_key->checkState();
       {
-          if (state1 == Qt::Checked && keyText.isEmpty())  
+          if (state1 == Qt::Checked && keyText.isEmpty())
               {
                 QMessageBox::about(this,tr("Note", "Hinweis"),
          	tr("There was no key to decrypt specified.", "Es wurde kein Schlüssel für die Entschlüsselung angegeben.\n"));
@@ -631,7 +642,7 @@ char * dev_part;
         	{
                	if (rdBt_restoreFsArchiv->isChecked())
            		{
-                        pos = testDateiName("fsa"); 
+                        pos = testDateiName("fsa");
          		if (pos == 0)
          			   {
            			   QMessageBox::about(this, tr("Note", "Hinweis"),
@@ -640,7 +651,7 @@ char * dev_part;
          			   }
              		}
  		}
-           	
+
 	     else
                 {
                 QMessageBox::about(this,tr("Note", "Hinweis"),
@@ -650,13 +661,20 @@ char * dev_part;
                state = chk_Beschreibung->checkState();
             // Archinfo einholen um Originalpartition einzulesen und um Verschlüsselung zu überprüfen
             // Annahme zunächst kein Schlüssel
-               char * optionkey;
+
                parameter[0] = "fsarchiver";
        	       parameter[1] = "archinfo";
                if (state1 != Qt::Checked) {
                		parameter[2] = folder;
-               		fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
-/* fixme
+
+				thread1.setValues(3,0);
+				thread1.start();
+				thread1.wait();
+				
+
+//                		fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+// // fixme
+              
                		optionkey = meldungen_holen(1);
                		dev_part = meldungen_holen(2);
                         if (werte_holen(4) == 103){
@@ -664,8 +682,8 @@ char * dev_part;
                   		QMessageBox::about(this,tr("Note", "Hinweis"),
          	     		tr("The partition is encrypted. Please enter the key", "Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein\n"));
                    		return 0;
-               		} 
-*/
+               		}
+
         	}
                 if (state1 == Qt::Checked) {
             		parameter[2] = "-c";
@@ -673,21 +691,28 @@ char * dev_part;
                         if (parameter[3].size() < 6 || parameter[3].size() > 64) {
                   		QMessageBox::about(this,tr("Note", "Hinweis"),
          	  		tr("The key length must be between 6 and 64 characters\n", "Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
-                  		return 0 ; 
+                  		return 0 ;
                	   		}
 			parameter[4] = folder;
- //                       int retour = 
+				
+				thread1.setValues(4,0);
+				thread1.start();
+				thread1.wait();
+ 
+//                       int retour =
 // fixme
- fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
-/* fixme
-                        if ( werte_holen(4) == 103 && retour != 0){
+// fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+// fixme
+			  
+ 		int retour = work_resul;
+                      if ( werte_holen(4) == 103 && retour != 0){
                            QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");
                            return 0;
                         }
 			optionkey = meldungen_holen(1);
                		dev_part = meldungen_holen(2);
-*/
+
                 }
             //Überprüfen, ob in die Originalpartition zurückgeschrieben werden soll
             part_ = partition_.toAscii().data();
@@ -707,13 +732,13 @@ char * dev_part;
            if (rdBt_restoreFsArchiv->isChecked())
             	{
                 extern QString folder_file_;
-                folder_file();	
+                folder_file();
 		QString filename = folder_file_;
                 pos = filename.indexOf("fsa");
         	filename = filename.left(pos);
         	filename.insert(pos, QString("txt"));
                 QFile f(filename);
-                // Prüfen ob text-Datei vorhanden 
+                // Prüfen ob text-Datei vorhanden
 		if (f.exists())
                     {
            		extern int dialog_auswertung;
@@ -731,44 +756,44 @@ char * dev_part;
                 	   }
                        }
              	  }
-	   if (is_mounted(dev_)) 
+	   if (is_mounted(dev_))
               {
               part_art = mtab_einlesen(("/dev/" + partition_).toAscii().data());
-              //Überprüfung ob System oder Home Partition 
+              //Überprüfung ob System oder Home Partition
                    if (part_art == "system")
                 	{
                         QMessageBox::about(this,"Hinweis",
          			"Die wiederherzustellende Systempartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD\n");
 				return 0;
-				      } 
-                        
+				      }
+
                    if (part_art == "home")
                 	{
                         QMessageBox::about(this,"Hinweis",
          			"Die wiederherzustellende Homepartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD\n");
-				return 0; 
-                        
+				return 0;
+
                 	}
                    if (part_art != "system"|| part_art != "home")
                 	{
                           char umountpoint[100] = "umount ";
-                          strcat (umountpoint,dev_); 
-                          err = system (umountpoint);  
+                          strcat (umountpoint,dev_);
+                          err = system (umountpoint);
                           if (err != 0)
                                 {
 				QMessageBox::about(this,"Hinweis",
          			"Die Partition "   + partition_ + " kann nicht ausgehängt werden. Das Programm wird abgebrochen\n");
-                                return 0 ; 
-                                }  
+                                return 0 ;
+                                }
                           }
-                                
+
                 }
            if (rdBt_restoreFsArchiv->isChecked())
               {
                QString keyText = lineKey->text();
-               state1 = chk_key->checkState(); 
+               state1 = chk_key->checkState();
 	       parameter[0] = "fsarchiver";
-       	       parameter[1] = "restfs"; 
+       	       parameter[1] = "restfs";
                int kerne = cmb_kerne->currentIndex()+1;
                QString index = QString::number(kerne);
                parameter[2] = "-j" + index;
@@ -783,7 +808,7 @@ char * dev_part;
                	    if (len < 6 || len > 64) {
                   	QMessageBox::about(this,"Hinweis",
          	  	"Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n");
-                  	return 0 ; 
+                  	return 0 ;
                	   }
                  parameter[5] = folder;
                  parameter[6] = "id=0,dest=/dev/" + partition_;
@@ -793,7 +818,7 @@ char * dev_part;
                pushButton_end->setEnabled(false);
                timer->singleShot ( 1000, this , SLOT ( ViewProzent( ) ) ) ;
                startThread2(); // fsarchiver wird im Thread ausgeführt
-               statusBar()->showMessage(tr("The restoring is performed", "Die Wiederherstellung wird durchgeführt"), 15000); 
+               statusBar()->showMessage(tr("The restoring is performed", "Die Wiederherstellung wird durchgeführt"), 15000);
                prozent = 0;
 /*               while (endeThread != 1)
        		  {
@@ -810,19 +835,19 @@ char * dev_part;
                         SekundeRemaining ->setText("0");
           		break;
                 	}
-       		   } 
+       		   }
 */
   	      } // rdBt_restoreFsArchiv
      }
-  return 0;              
-}   
+  return 0;
+}
 
 QString MWindow::Zeit_auslesen(){
     int Tag;
     int Monat;
     int Jahr;
     QString Datum_akt;
-    
+
     string stringvariable;
     time_t Zeitstempel;
     tm *nun;
@@ -831,33 +856,52 @@ QString MWindow::Zeit_auslesen(){
     Tag = nun->tm_mday;
     Monat = nun->tm_mon+1;
     Jahr = nun->tm_year+1900;
-    _Datum = Datum_akt.setNum(Tag) + "-" ; 
+    _Datum = Datum_akt.setNum(Tag) + "-" ;
     _Datum = _Datum + Datum_akt.setNum(Monat) + "-" ;
     _Datum = _Datum + Datum_akt.setNum(Jahr) ;
     return _Datum;
 
 }
 
+void MWindow::breakProcess()
+{
+
+}
 
 void MWindow::ViewProzent()
 {
-int prozent;
+static float prozentf=0;
+static int prozent=0;
 QString sekunde;
-int sekunde_;
+int sekunde_=0;
 QString minute;
-int minute_;
-int meldung;
-int anzahl;
-int anzahl1;
+int minute_=0;
+int meldung=0;
+static int anzahl=0;
+static int anzahl1=0;
 QString text_integer;
+static int ncicl=0, scicl=0;
+static bool p_rem=false;
 
-if (endeThread !=1)
+ncicl++;
+if (work_global==1)
 {
  timer->singleShot( 1000, this , SLOT(ViewProzent( )) ) ;
   elapsedTime();
   meldung = werte_holen(4);
-  	if (meldung >= 100) // Thread Abschluss mit Fehler
+ if (meldung >= 100) // Thread Abschluss mit Fehler
    		return;
+
+if (ncicl>6 && !flag_View)
+{
+  flag_View=1;
+}
+if (anzahl1 >= 1 && !p_rem )
+{
+  p_rem=true;
+  scicl=ncicl;
+}
+
 if (flag_View == 1)
 	{
  	anzahl  = werte_holen(2);
@@ -865,44 +909,63 @@ if (flag_View == 1)
  	AnzahlsaveFile ->setText(text_integer);
  	anzahl1  = werte_holen(3);
  	text_integer = text_integer.setNum(anzahl1);
- 	AnzahlgesicherteFile ->setText(text_integer);
+        AnzahlgesicherteFile ->setText(text_integer);
 	}
- prozent = werte_holen(1);
+ prozent = prozentf = werte_holen(1);
+
  if (dummy_prozent != prozent)
+{
      remainingTime(prozent);
- else {
-        if (prozent > 5)
+
+ if (prozent > 5 && !p_rem)
+			p_rem=true;
+
+if (p_rem)
        {
         // Sekunden nach unten zählen
         // SekundenRemaining einlesen
-        sekunde = SekundeRemaining->text();
-        sekunde_ = sekunde.toInt();
-        minute = MinuteRemaining->text();
-        minute_ = minute.toInt();
-        if (sekunde_ > 0)
-        {
-            sekunde_ = sekunde_ - 1;
-            if (sekunde_ == 0) 
-            {
-		if (minute_ > 0)
-                {		
-			minute_ = minute_ - 1;
-                	minute = QString::number(minute_); 
-        		MinuteRemaining ->setText(minute);
-                       	sekunde_ = 59;
-                }
-	    }
-        }		
-        sekunde = QString::number(sekunde_); 
+//        if ( prozentf >= 25.0 )    {
+//         sekunde = SekundeRemaining->text();
+//         sekunde_ = sekunde.toInt();
+//         minute = MinuteRemaining->text();
+//         minute_ = minute.toInt();
+//         if (sekunde_ > 0)
+//         {
+//             sekunde_ = sekunde_ - 1;
+//             if (sekunde_ == 0)
+//             {
+// 		if (minute_ > 0)
+//                 {
+// 			minute_ = minute_ - 1;
+//                 	minute = QString::number(minute_);
+//         		MinuteRemaining ->setText(minute);
+//                        	sekunde_ = 59;
+//  			sekunde = QString::number(sekunde_);
+// 			SekundeRemaining ->setText(sekunde);
+//                 }
+// 	    }
+//         }
+//         sekunde = QString::number(sekunde_);
+// 	}
+	if (  (0.1 <= prozentf) && (prozentf <= 99.99) )
+	{
+		sekunde_= ((ncicl-scicl)*100.)/(prozentf+0.01)-ncicl;
+		sekunde_=((ncicl)*100/prozent-ncicl);
+		minute_=sekunde_/60;
+		minute = QString::number(minute_);
+		MinuteRemaining ->setText(minute);
+		sekunde_=sekunde_%60;
+	}
+	sekunde = QString::number(sekunde_);
         SekundeRemaining ->setText(sekunde);
-	    } 
-    }   
- dummy_prozent = prozent;
+     }
 
+  dummy_prozent = prozent;
+ }
 // bei mehrmaligem Aufruf von fsarchiver wird am Anfang der Sicherung kurzfristig 100 % angezeigt, was falsch ist
  if (prozent != 100)  {
   progressBar->setValue(prozent);
-   if (prozent >= 98 ) { 
+   if (prozentf >= 99.99 ) {
      progressBar->setValue(99);
       	text_integer = text_integer.setNum(anzahl);
 	AnzahlgesicherteFile ->setText(text_integer);
@@ -911,9 +974,21 @@ if (flag_View == 1)
      }
    }
      return;
- } //  endeThread = 1
+ } //   = 1
+ else
+ {
+ prozent=0;
+ sekunde_=0;
+ minute_=0;
+ meldung=0;
+ anzahl=0;
+ anzahl1=0;
+ ncicl=0, scicl=0;
+ p_rem=false;
+ werte_reset();
 
-} 
+ }
+}
 
 
 void MWindow::listWidget_auslesen() {
@@ -959,10 +1034,10 @@ int MWindow::Root_Auswertung(){
          tr("The program must be run with root privileges. The program is terminated.\n", "Das Programm muss mit Root-Rechten gestartet werden. Das Programm wird beendet.\n"));
       return 10;
 	}
-	else	
+	else
 	{
         return 20;
-    } 
+    }
 }
 
 int MWindow::testDateiName(string endung)
@@ -979,17 +1054,17 @@ int MWindow::testDateiName(string endung)
   else
      {
         return 0;
-     } 
+     }
 }
 
 int MWindow::is_mounted (char* dev_path) {
  	FILE * mtab = NULL;
  	struct mntent * part = NULL;
  	int is_mounted = 0;
- 
+
  	if ( ( mtab = setmntent ("/etc/mtab", "r") ) != NULL) {
   	while ( ( part = getmntent ( mtab) ) != NULL) {
-   	if ( ( part->mnt_fsname != NULL ) 
+   	if ( ( part->mnt_fsname != NULL )
     	&& ( strcmp ( part->mnt_fsname, dev_path ) ) == 0 ) {
     	is_mounted = 1;
    }
@@ -1076,7 +1151,7 @@ void MWindow::format() {
          if (part[i][0] != "") {
            teilstring = part[i][0];
            aa = teilstring.size();
-           j = 0; 
+           j = 0;
            for (k=4; k < 11; k++){
                bb = 36 -j -k;
                j = j +1;
@@ -1085,10 +1160,10 @@ void MWindow::format() {
            }
            space1.fill (' ',bb);
            teilstring = part[i][1];
-           aa = teilstring.size(); 
+           aa = teilstring.size();
            teilstring = part[i][2];
            aa = aa + teilstring.size();
-           bb = 35 - aa; 
+           bb = 35 - aa;
            if (part[i][1] == "<unknown>")
               bb = 26 - aa;
            space2.fill (' ',bb);
@@ -1099,20 +1174,23 @@ void MWindow::format() {
               add_part[i] = teilstring;
               }
          }
-      }  
+      }
 }
 
 void MWindow::startThread1() {
+
    if( thread1.isRunning() ) return;
    connect( &thread1, SIGNAL(finished()),
             this, SLOT( thread1Ready()));
+   timer->singleShot ( 1000, this , SLOT ( ViewProzent( ) ) ) ;
    thread1.start();
-   
+
 }
 void MWindow::startThread2() {
    if( thread2.isRunning() ) return;
    connect( &thread2, SIGNAL(finished()),
             this, SLOT( thread2Ready()));
+   timer->singleShot ( 1000, this , SLOT ( ViewProzent( ) ) ) ;
    thread2.start();
 }
 
@@ -1123,21 +1201,22 @@ void MWindow::closeEvent(QCloseEvent *event) {
 }
 
 void MWindow::thread1Ready()  {
-   endeThread = endeThread + 1;
-   extern int dialog_auswertung;
-   if (endeThread == 1) {
+//   endeThread = endeThread + 1;
+   extern int t_dialog_auswertung;
+   if (work_global == 0) {
+
       pushButton_end->setEnabled(true);
-     if (dialog_auswertung ==0){ 
+     if (t_dialog_auswertung ==0){
        pushButton_save->setEnabled(true);
-       progressBar->setValue(100); 
+       progressBar->setValue(100);
        int cnt_regfile = werte_holen(6);
        QString cnt_regfile_ = QString::number(cnt_regfile);
        int cnt_dir = werte_holen(7);
-       QString cnt_dir_ = QString::number(cnt_dir); 
+       QString cnt_dir_ = QString::number(cnt_dir);
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
-       QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
-       QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition has been backed up successfully.\n", "Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_ + 
+       QString cnt_hardlinks_ = QString::number(cnt_hardlinks);
+       QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition has been backed up successfully.\n", "Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_ +
 	tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been backed.", " Links wurden gesichert."));
      }
      else {
@@ -1148,7 +1227,7 @@ void MWindow::thread1Ready()  {
        	filename = filename.left(pos);
        	filename.insert(pos, QString("txt"));
         QFile f(filename);
-        // Prüfen ob text-Datei vorhanden 
+        // Prüfen ob text-Datei vorhanden
        if (f.exists())
           remove (filename.toAscii().data());
        // Anzahl nicht korrekt gesicherte Dateien ausgeben
@@ -1160,36 +1239,36 @@ void MWindow::thread1Ready()  {
        int err_regfile = werte_holen(1);
        QString err_regfile_ = QString::number(err_regfile);
        int err_dir = werte_holen(2);
-       QString err_dir_ = QString::number(err_dir); 
+       QString err_dir_ = QString::number(err_dir);
        int err_hardlinks = werte_holen(3);
        err_hardlinks = err_hardlinks + werte_holen(5);
-       QString err_hardlinks_ = QString::number(err_hardlinks); 
+       QString err_hardlinks_ = QString::number(err_hardlinks);
        if (part_testen != 108){
        	  QMessageBox::about(this, tr("Note", "Hinweis"),
           err_regfile_ + tr(" files, ", " Dateien, ")   + err_dir_ + tr("  directories and ", " Verzeichnisse und ") + err_hardlinks_ + tr(" links were not properly backed. The backup of the partition was only partially successful.\n", " Links wurden nicht korrekt gesichert. Die Sicherung der Partition war nur teilweise erfolgreich.\n") );
 	  }
         }
-       
+    thread1.exit();
      }
-  thread1.exit();
-  
+
 }
+
 void MWindow::thread2Ready()  {
-   endeThread = endeThread + 1;
-   extern int dialog_auswertung;
+//   endeThread = endeThread + 1;
+   extern int t_dialog_auswertung;
    int meldung = werte_holen(4);
-   if (endeThread == 1) { 
+   if (endeThread == 1) {
      pushButton_end->setEnabled(true);
-     if (dialog_auswertung ==0){
+     if (t_dialog_auswertung ==0){
        pushButton_restore->setEnabled(true);
        progressBar->setValue(100);
        int cnt_regfile = werte_holen(6);
        QString cnt_regfile_ = QString::number(cnt_regfile);
        int cnt_dir = werte_holen(7);
-       QString cnt_dir_ = QString::number(cnt_dir); 
+       QString cnt_dir_ = QString::number(cnt_dir);
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
-       QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
+       QString cnt_hardlinks_ = QString::number(cnt_hardlinks);
        QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition is successful back.\n", "Die Partition wurde erfolgreich wieder hergestellt.\n") + cnt_regfile_ + tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been restored.", " Links wurden wieder hergestellt."));
         }
      if (meldung == 100) {
@@ -1198,30 +1277,29 @@ void MWindow::thread2Ready()  {
        int err_regfile = werte_holen(1);
        QString err_regfile_ = QString::number(err_regfile);
        int err_dir = werte_holen(2);
-       QString err_dir_ = QString::number(err_dir); 
+       QString err_dir_ = QString::number(err_dir);
        int err_hardlinks = werte_holen(3);
        err_hardlinks = err_hardlinks + werte_holen(5);
-       QString err_hardlinks_ = QString::number(err_hardlinks); 
+       QString err_hardlinks_ = QString::number(err_hardlinks);
        QMessageBox::about(this, tr("Note", "Hinweis"),
          err_regfile_ + tr(" files, ", " Dateien, ")    + err_dir_ + tr(" directories and ",  " Verzeichnisse und ") + err_hardlinks_ + tr("  Links were not correctly restored. The recovery of the volume was only partially successful.", " Links wurden nicht korrekt wiederhergestellt. Die Wiederherstellung der Partition war nur teilweise erfolgreich.\n") );
         }
-     if (meldung == 102) { 
+     if (meldung == 102) {
         QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have tried restore a partition. The selected file can only restore directories. Please restart the program.\n", "Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.\n"));
       }
-     if (meldung == 103) { 
+     if (meldung == 103) {
         QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.\n", "Sie haben ein falsches Passwort eingegeben.\n"));
         endeThread = 0;
         lineKey->setText ("");
       }
     }
     thread2.exit();
-    
 }
 
 void MWindow::elapsedTime()
  {
-    sekunde_elapsed = sekunde_elapsed + 1; 
-    sekunde_summe = sekunde_summe + 1; 
+    sekunde_elapsed = sekunde_elapsed + 1;
+    sekunde_summe = sekunde_summe + 1;
     if (sekunde_elapsed == 60) {
         sekunde_elapsed = 0 ;
         minute_elapsed = minute_elapsed + 1;
@@ -1234,8 +1312,8 @@ void MWindow::elapsedTime()
 
 void MWindow::remainingTime(int prozent)
  {
-    int sekunde_tara; 
-    if (prozent <= 1) 
+    int sekunde_tara;
+    if (prozent <= 1)
        sekunde_tara = sekunde_summe ;
     int sekunde_netto = sekunde_summe - sekunde_tara;
 
@@ -1245,7 +1323,7 @@ void MWindow::remainingTime(int prozent)
        int min_remaining = (int)(remaining_time/60);
        QString minute_ = QString::number(min_remaining);
        MinuteRemaining ->setText(minute_);
-       int sek_remaining = (dummy % 60); 
+       int sek_remaining = (dummy % 60);
        QString sekunde_ = QString::number(sek_remaining);
        SekundeRemaining ->setText(sekunde_);
     }
@@ -1255,7 +1333,7 @@ void MWindow::indicator_reset() {
      // Anzeige zurücksetzen für neuen Aufruf fsarchiver
      progressBar->setValue(0);
      AnzahlgesicherteFile ->setText(0);
-     AnzahlsaveFile ->setText(0); 
+     AnzahlsaveFile ->setText(0);
      SekundeRemaining ->setText(" ");
      MinuteRemaining ->setText(" ");
      SekundeElapsed ->setText("0");
@@ -1277,7 +1355,7 @@ void MWindow::keyPressEvent(QKeyEvent *event) {
 }
 
 QString MWindow::beschreibungstext(QString partitiontext, QString text, int zip, int row)  {
-FileDialog filedialog; //Create the main widget; 
+FileDialog filedialog; //Create the main widget;
 //int row;
 float prozent;
 float compress_[10];
@@ -1306,7 +1384,7 @@ compress_[8] = 0.32; //lzma best
 	partition_ = widget[row];
 	mount_point = mountpoint(partitiontext);
         //prozentuale Belegung
-	prozent = freesize(partitiontext.toAscii().data(), mount_point.toAscii().data(), 1); 
+	prozent = freesize(partitiontext.toAscii().data(), mount_point.toAscii().data(), 1);
         // freier Bereich der Partition
         free_part_size = freesize(partitiontext.toAscii().data(), mount_point.toAscii().data(), 3);
        	free_part_size_ =  format(free_part_size);
@@ -1315,12 +1393,12 @@ compress_[8] = 0.32; //lzma best
         part_size_ =  format(part_size);
         free_part_size = free_part_size * compress_[zip - 1];
         part_size_compress = format(free_part_size);
-       	text = tr("Backup file name: ", "Sicherungsdateiname: ") + text + "\n" + 
-	tr("Partition  name: ", "Partitionsname: ")  
-	+ PartitionString(row+1,0) + "\n" + tr("Partition type: ", "Partitionsart: ") 
-       	+ PartitionString(row+1,1) + "\n" + tr("UUID: ") +  PartitionString(row+1,3) + "\n" + tr("Description: ", "Bezeichnung: ") + PartitionString(row+1,4) + "\n" + 
-       	tr("Partition size: ", "Partitionsgröße: ") + part_size_ + "\n" + tr("Assignment of the partition: ", "Belegung der Partition: ") + 
-       	free_part_size_ + "\n" + tr("Assignment of the partition: ", "Belegung der Partition: ") + QString::number(prozent)+ " %" + "\n" + tr("Compression: ", "Kompression: ") + compress + "\n" + 
+       	text = tr("Backup file name: ", "Sicherungsdateiname: ") + text + "\n" +
+	tr("Partition  name: ", "Partitionsname: ")
+	+ PartitionString(row+1,0) + "\n" + tr("Partition type: ", "Partitionsart: ")
+       	+ PartitionString(row+1,1) + "\n" + tr("UUID: ") +  PartitionString(row+1,3) + "\n" + tr("Description: ", "Bezeichnung: ") + PartitionString(row+1,4) + "\n" +
+       	tr("Partition size: ", "Partitionsgröße: ") + part_size_ + "\n" + tr("Assignment of the partition: ", "Belegung der Partition: ") +
+       	free_part_size_ + "\n" + tr("Assignment of the partition: ", "Belegung der Partition: ") + QString::number(prozent)+ " %" + "\n" + tr("Compression: ", "Kompression: ") + compress + "\n" +
        	tr("Approximate image file sizes: ", "ungefähre Sicherungsdateigröße: ") + part_size_compress + "\n" + "\n" + tr("Other notes: ", "weitere Hinweise:");
         ubuntu_root = tr("to be protected/secured partition: / (root system directory) ", "zu sichernde / gesicherte Partition: / (Wurzel-Systemverzeichnis) ");
 
@@ -1349,20 +1427,20 @@ int found;
             zahl_ = QString::number(zahl);
             found=zahl_.indexOf(".");
             if (found > 0)
-             	zahl_.replace(found, 1, ","); 
+             	zahl_.replace(found, 1, ",");
             return zahl_  + tr(" MB");
-	 } 
+	 }
         if (zahl >= 1000000){
-            zahl = zahl / 1000000/1.024/1.024/1.024; 
+            zahl = zahl / 1000000/1.024/1.024/1.024;
             zahl = (int) (zahl * 100);
             zahl = zahl/100;
             // Punkt in Komma wandeln
             zahl_ = QString::number(zahl);
             found=zahl_.indexOf(".");
             if (found > 0)
-             	zahl_.replace(found, 1, ","); 
+             	zahl_.replace(found, 1, ",");
             return zahl_  + tr(" TB");
-	 }    
+	 }
 	if (zahl >= 1000){
             zahl = zahl / 1000/1.024/1.024;
             zahl = (int) (zahl * 100);
@@ -1371,10 +1449,10 @@ int found;
             zahl_ = QString::number(zahl);
             found=zahl_.indexOf(".");
             if (found > 0)
-             	zahl_.replace(found, 1, ","); 
+             	zahl_.replace(found, 1, ",");
             return zahl_  + tr(" GB");
-	 }   
-         
+	 }
+
 
 }
 
@@ -1382,7 +1460,7 @@ QString MWindow::ubuntu_version()  {
 QString Dateiname;
 QStringList Ubuntu_;
 QString Ubuntuversion;
-	Dateiname = "/etc/issue.net";     
+	Dateiname = "/etc/issue.net";
         QFile file(Dateiname);
         //Datei auslesen
         if( file.open(QIODevice::ReadOnly|QIODevice::Text)) {
@@ -1430,33 +1508,34 @@ string MWindow::mtab_einlesen(string partition_if_home)
    	while (!ds.atEnd())
       	{
  	 text_str = text.toAscii().data();
-      	 pos = text_str.find(partition_if_home); 
+      	 pos = text_str.find(partition_if_home);
         if (pos > -1)  // Partitionsname gefunden
-      	    { 
+      	    {
               items = text.split(" ");  //Einhängepunkt ermitteln
     	      mount_dir = items[1];
               i = items[0].size();  //Überprüfen ob sda1 nicht mit sda10 verwechselt wird
               j =  partition_if_home.size();
               if (i == j){
                  pos1 = text_str.find(" /home");
-      	         if (pos1 > -1) 
+      	         if (pos1 > -1)
       	            return "home";
                  pos1 = text_str.find("/ ");
-      	         if (pos1 > -1) 
+      	         if (pos1 > -1)
       	           return "system";
                  pos1 = text_str.find("ext4");
-      	         if (pos1 > -1) 
+      	         if (pos1 > -1)
       	        	return "ext4";
                  pos1 = text_str.find("ext3");
-      	         if (pos1 > -1) 
+      	         if (pos1 > -1)
       	          return "ext3";
+//  /usr /var ant etc fixme
                }
       	    }
    	       if( text.isEmpty() )
          	 break;
        		line++;
             text = ds.readLine();
-      	} 
+      	}
    	file.close();
      }
   return mount_dir.toAscii().data();
@@ -1479,9 +1558,9 @@ QString MWindow::mountpoint(QString partition)
    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         text = ds.readLine();
         // hier wird die ersten Zeile der mtab überprüft
-	pos = text.indexOf(partition); 
+	pos = text.indexOf(partition);
         if (pos > -1)  // Partitionsname gefunden
-      	     { 
+      	     {
                 items = text.split(" ");  //Einhängepunkt ermitteln
                 i = items[0].size();
                 j =  text_str.size();
@@ -1490,19 +1569,19 @@ QString MWindow::mountpoint(QString partition)
        	     }
    	while (!ds.atEnd())
       	{
-	     // hier wird auch die letzte Zeile der mtab überprüft	   	     
+	     // hier wird auch die letzte Zeile der mtab überprüft
 	     line++;
              text = ds.readLine();
-             pos = text.indexOf(partition); 
+             pos = text.indexOf(partition);
              if (pos > -1)  // Partitionsname gefunden
-      	     { 
+      	     {
                 items = text.split(" ");  //Einhängepunkt ermitteln
                 i = items[0].size();
                 j =  text_str.size();
                 if (i == j)
     	      	   mount_dir = items[1];
        	    }
-      	} 
+      	}
    	file.close();
      }
   return mount_dir;
