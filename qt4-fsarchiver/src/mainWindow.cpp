@@ -64,6 +64,8 @@ QString partition_typ_;
 string part_art;
 QString zip_[10];
 QString SicherungsDateiName;
+int sekunde_tara;
+int thread_run;
 
 extern "C"
 {
@@ -679,6 +681,7 @@ char * optionkey;
                		dev_part = meldungen_holen(2);
                         if (werte_holen(4) == 103){
                   		chk_key->setChecked(Qt::Checked);
+                                lineKey->setEnabled(true);
                   		QMessageBox::about(this,tr("Note", "Hinweis"),
          	     		tr("The partition is encrypted. Please enter the key", "Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein\n"));
                    		return 0;
@@ -874,6 +877,7 @@ static float prozentf=0;
 static int prozent=0;
 QString sekunde;
 int sekunde_=0;
+static int dsecunde=0;
 QString minute;
 int minute_=0;
 int meldung=0;
@@ -922,34 +926,9 @@ if (flag_View == 1)
 
 if (p_rem)
        {
-        // Sekunden nach unten zählen
-        // SekundenRemaining einlesen
-//        if ( prozentf >= 25.0 )    {
-//         sekunde = SekundeRemaining->text();
-//         sekunde_ = sekunde.toInt();
-//         minute = MinuteRemaining->text();
-//         minute_ = minute.toInt();
-//         if (sekunde_ > 0)
-//         {
-//             sekunde_ = sekunde_ - 1;
-//             if (sekunde_ == 0)
-//             {
-// 		if (minute_ > 0)
-//                 {
-// 			minute_ = minute_ - 1;
-//                 	minute = QString::number(minute_);
-//         		MinuteRemaining ->setText(minute);
-//                        	sekunde_ = 59;
-//  			sekunde = QString::number(sekunde_);
-// 			SekundeRemaining ->setText(sekunde);
-//                 }
-// 	    }
-//         }
-//         sekunde = QString::number(sekunde_);
-// 	}
 	if (  (0.1 <= prozentf) && (prozentf <= 99.99) )
 	{
-		sekunde_= ((ncicl-scicl)*100.)/(prozentf+0.01)-ncicl;
+		dsecunde=sekunde_= ((ncicl-scicl)*100.)/(prozentf+0.01)-ncicl;
 		sekunde_=((ncicl)*100/prozent-ncicl);
 		minute_=sekunde_/60;
 		minute = QString::number(minute_);
@@ -961,7 +940,25 @@ if (p_rem)
      }
 
   dummy_prozent = prozent;
- }
+ } else   // dummy_prozent == prozent
+{
+ if ( p_rem && (dsecunde!=0) )
+       {
+	if (  (0.1 <= prozentf) && (prozentf <= 99.99) )
+	{
+		sekunde_= --dsecunde;
+		minute_=sekunde_/60;
+		minute = QString::number(minute_);
+		MinuteRemaining ->setText(minute);
+		sekunde_=sekunde_%60;
+	}
+	sekunde = QString::number(sekunde_);
+        SekundeRemaining ->setText(sekunde);
+     }
+
+
+}
+
 // bei mehrmaligem Aufruf von fsarchiver wird am Anfang der Sicherung kurzfristig 100 % angezeigt, was falsch ist
  if (prozent != 100)  {
   progressBar->setValue(prozent);
@@ -1178,21 +1175,24 @@ void MWindow::format() {
 }
 
 void MWindow::startThread1() {
-
    if( thread1.isRunning() ) return;
    connect( &thread1, SIGNAL(finished()),
             this, SLOT( thread1Ready()));
    timer->singleShot ( 1000, this , SLOT ( ViewProzent( ) ) ) ;
+   thread_run = 1;
    thread1.start();
-
+   
 }
+
 void MWindow::startThread2() {
    if( thread2.isRunning() ) return;
    connect( &thread2, SIGNAL(finished()),
             this, SLOT( thread2Ready()));
+   thread_run = 2;
    timer->singleShot ( 1000, this , SLOT ( ViewProzent( ) ) ) ;
    thread2.start();
 }
+
 
 void MWindow::closeEvent(QCloseEvent *event) {
    thread1.wait();
@@ -1248,7 +1248,9 @@ void MWindow::thread1Ready()  {
           err_regfile_ + tr(" files, ", " Dateien, ")   + err_dir_ + tr("  directories and ", " Verzeichnisse und ") + err_hardlinks_ + tr(" links were not properly backed. The backup of the partition was only partially successful.\n", " Links wurden nicht korrekt gesichert. Die Sicherung der Partition war nur teilweise erfolgreich.\n") );
 	  }
         }
+    folder_einlesen();
     thread1.exit();
+     
      }
 
 }
@@ -1292,7 +1294,8 @@ void MWindow::thread2Ready()  {
         endeThread = 0;
         lineKey->setText ("");
       }
-    }
+    }    
+    folder_einlesen();
     thread2.exit();
 }
 
@@ -1312,7 +1315,7 @@ void MWindow::elapsedTime()
 
 void MWindow::remainingTime(int prozent)
  {
-    int sekunde_tara;
+   // int sekunde_tara;
     if (prozent <= 1)
        sekunde_tara = sekunde_summe ;
     int sekunde_netto = sekunde_summe - sekunde_tara;
@@ -1457,19 +1460,29 @@ int found;
 }
 
 QString MWindow::ubuntu_version()  {
-QString Dateiname;
-QStringList Ubuntu_;
+QString homepath = QDir::homePath();
+QString befehl;
 QString Ubuntuversion;
-	Dateiname = "/etc/issue.net";
-        QFile file(Dateiname);
-        //Datei auslesen
+int i;
+int pos;
+	befehl = "cat /etc/*release 1> " +  homepath + "/.config/qt4-fsarchiver/version.txt";
+        system (befehl.toAscii().data());
+QString filename = homepath + "/.config/qt4-fsarchiver/version.txt";
+QFile file(filename);
         if( file.open(QIODevice::ReadOnly|QIODevice::Text)) {
            QTextStream ds(&file);
-           Ubuntuversion = ds.readLine();
+           for (i=1; i < 5; i++){
+           	Ubuntuversion = ds.readLine(); // Simply Linux
+           }}
            file.close();
-           }
-        return Ubuntuversion;
-    }
+           befehl = "rm " + filename;
+           system (befehl.toAscii().data());
+           if (Ubuntuversion.indexOf("DISTRIB_DESCRIPTION=") > 0); 
+               // Ubuntu, Debian       
+               Ubuntuversion = Ubuntuversion.right(Ubuntuversion.size() -20);
+           return Ubuntuversion;
+}
+
 
 QString MWindow::kernel_version()  {
 QString homepath = QDir::homePath();
@@ -1586,4 +1599,36 @@ QString MWindow::mountpoint(QString partition)
      }
   return mount_dir;
 }
+
+
+// void MWindow::esc_end()
+// {
+// QString befehl;
+// QStrinf  SicherungsFolderFileName /*=?*/;   // fixme
+//    if (thread_run > 0) {
+//     int ret = questionMessage(tr("Do you really want to break the save or restore from the partition?", "Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?"));
+//       if (thread_run == 1)
+//         {
+//      	befehl = "rm "  + SicherungsFolderFileName;  // name of the save/restore partitionfile
+//         system (befehl.toAscii().data()); 
+//         int pos = SicherungsFolderFileName.indexOf("fsa");
+//        	SicherungsFolderFileName = SicherungsFolderFileName.left(pos);
+//        	SicherungsFolderFileName.insert(pos, QString("txt"));
+//         befehl = "rm "  + SicherungsFolderFileName;
+//         system (befehl.toAscii().data()); 
+//         }
+// // No ! Fixme 
+// // 1 we also not want to just go out, we only want to interrupt the process of saving / restoring.
+// // 2. We must not use -9, but something softer, like SIGUSR1, SIGTERM
+// // 3. We must look for the thread control code strings in the code *. c. 
+// // Perhaps there is already a thread stops. If not, then we must change the code in C 
+// // (into thread)
+// 
+//      befehl = "kill -9 " + pid;  //fsarchiver abbrechen
+//      system (befehl.toAscii().data());
+//      befehl = "kill -9 " + pid1;  //fsarchiver abbrechen
+//      system (befehl.toAscii().data());
+//      }
+//    close(); 
+// }
 

@@ -22,6 +22,8 @@ extern "C" {
 
 
 struct st_argv args;
+void
+fsarchiver_aufruf(int argc, char *anlage0, char *anlage1=NULL, char *anlage2=NULL, char *anlage3=NULL, char *anlage4=NULL, char *anlage5=NULL, char *anlage6=NULL, char *anlage7=NULL, char *anlage8=NULL, char *anlage9=NULL, char *anlage10=NULL, char *anlage11=NULL, char *anlage12=NULL,char *anlage13=NULL,char *anlage14=NULL);
 
 extern int t_dialog_auswertung;
 int dialog_auswertung;
@@ -230,8 +232,8 @@ Qt::CheckState state1;
       	dummy.replace(0,1,"/");
         parameter[indizierung] = folder_path + dummy + ".fsa";
         // ! um Verschlüsselung zu erkennen
-	if (state1 == Qt::Checked)
-            parameter[indizierung] = folder_path + dummy + "!.fsa";
+	//if (state1 == Qt::Checked)
+         //   parameter[indizierung] = folder_path + dummy + "!.fsa";
         parameter[indizierung+1] = folder_dir;
         QFile f(parameter[indizierung]);
         if  (parameter[4] != "-o" && (f.exists())){
@@ -314,13 +316,19 @@ Qt::CheckState state1;
                 return 1;
          	}
         // prüfen ob Verzeichnis verschlüsselt
-        int pos = folder_dir.indexOf("!.fsa");
-        if (pos > 0 && state1 != Qt::Checked)  //Verzeichnis ist verschlüsselt
-           { chk_key->setChecked(Qt::Checked);
-             QMessageBox::about(this, tr("Note", "Hinweis"),
-              tr("The partition is encrypted. Please enter the Schlüsel\n", "Die Partition ist verschlüsselt. Bitte geben Sie den Schlüsel ein\n"));
-              return 0;
-           }
+                // Annahme zunächst kein Schlüssel
+        if (state1 != Qt::Checked) {
+        	parameter[0] = "fsarchiver";
+       		parameter[1] = "archinfo";
+		parameter[2] = folder_dir;
+               	fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+        if (werte_holen(4) == 103 ){
+                 chk_key->setChecked(Qt::Checked);
+                 lineKey->setEnabled(true);
+                 QMessageBox::about(this,tr("Note", "Hinweis"),
+         	 tr("The partition is encrypted. Please enter the key", "Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein\n"));
+                 return 1;
+               	 } }
         parameter[0] = "fsarchiver";
         parameter[1] = "restdir";
         int kerne = cmb_kerne->currentIndex()+1;

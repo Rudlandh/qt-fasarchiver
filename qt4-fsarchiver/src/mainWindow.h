@@ -88,7 +88,8 @@ private slots:
    void thread1Ready();
    void startThread2();
    void thread2Ready();
-
+//   void esc_end();
+//   void pid_ermitteln();
 };
 #endif
 

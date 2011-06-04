@@ -404,6 +404,7 @@ int extractar_restore_obj_symlink(cextractar *exar, char *fullpath, char *relpat
         msgprintf(MSG_DEBUG1, "LINK: symlink=[%s], target=[%s] (normal symlink)\n", relpath, buffer);
         if (symlink(buffer, fullpath)<0)
         {   sysprintf("symlink(%s, %s) failed\n", buffer, fullpath);
+            werte_uebergeben (107,4);
             goto extractar_restore_obj_symlink_err;
         }
     }
@@ -517,6 +518,7 @@ int extractar_restore_obj_devfile(cextractar *exar, char *fullpath, char *relpat
         goto extractar_restore_obj_devfile_err;
     if (mknod(fullpath, mode, dev)!=0)
     {   sysprintf("mknod failed on [%s]\n", relpath);
+        werte_uebergeben (107,4);
         goto extractar_restore_obj_devfile_err;
     }
     if (extractar_restore_attr_everything(exar, objtype, fullpath, relpath, d)!=0)
@@ -1161,6 +1163,7 @@ int extractar_read_mainhead(cextractar *exar, cdico **dicomainhead)
         passlen=(g_options.encryptpass==NULL)?(0):(strlen((char*)g_options.encryptpass));
         if ((g_options.encryptpass==NULL) || (passlen<FSA_MIN_PASSLEN) || (passlen>FSA_MAX_PASSLEN))
         {   errprintf("you have to provide the password which was used to create archive, no password given on the command line\n");
+            werte_uebergeben (103,4); 
             return -1;
         }
         
