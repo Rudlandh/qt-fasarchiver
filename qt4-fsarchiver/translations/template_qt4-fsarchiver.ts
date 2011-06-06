@@ -5,65 +5,65 @@
 <context>
     <name>DialogDIR</name>
     <message>
-        <location filename="../src/dir.cpp" line="61"/>
+        <location filename="../src/dir.cpp" line="69"/>
         <source>gzip fast</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="61"/>
+        <location filename="../src/dir.cpp" line="69"/>
         <source>gzip standard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="61"/>
+        <location filename="../src/dir.cpp" line="69"/>
         <source>qzip best</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="61"/>
+        <location filename="../src/dir.cpp" line="69"/>
         <source>bzip2 fast</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="64"/>
+        <location filename="../src/dir.cpp" line="72"/>
         <source>bzip2 good</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="64"/>
+        <location filename="../src/dir.cpp" line="72"/>
         <source>lzma fast</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="64"/>
+        <location filename="../src/dir.cpp" line="72"/>
         <source>lzma medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="64"/>
+        <location filename="../src/dir.cpp" line="72"/>
         <source>lzma best</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="101"/>
+        <location filename="../src/dir.cpp" line="109"/>
         <source>Directory save</source>
         <comment>Verzeichnis sichern</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="102"/>
+        <location filename="../src/dir.cpp" line="110"/>
         <source>to saved Directory</source>
         <comment>zu sicherndes Verzeichnis</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="103"/>
+        <location filename="../src/dir.cpp" line="111"/>
         <source>Location (path) of the backup</source>
         <comment>Ort (Pfad) der Sicherung</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="100"/>
+        <location filename="../src/dir.cpp" line="108"/>
         <source>Encrypt
 backup. key:</source>
         <comment>Sicherung
@@ -71,7 +71,7 @@ verschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="115"/>
+        <location filename="../src/dir.cpp" line="123"/>
         <source>Decrypt
 backup. key:</source>
         <comment>Sicherung
@@ -79,47 +79,47 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="116"/>
+        <location filename="../src/dir.cpp" line="124"/>
         <source>Directory restore</source>
         <comment>Verzeichnis zurückschreiben</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="117"/>
+        <location filename="../src/dir.cpp" line="125"/>
         <source>back to write backup file</source>
         <comment>zurück zu schreibende Sicherungsdatei</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="118"/>
+        <location filename="../src/dir.cpp" line="126"/>
         <source>Location (path) of the restore</source>
         <comment>Ort (Pfad) der Wiederherstellung</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="166"/>
-        <location filename="../src/dir.cpp" line="172"/>
-        <location filename="../src/dir.cpp" line="178"/>
-        <location filename="../src/dir.cpp" line="212"/>
-        <location filename="../src/dir.cpp" line="232"/>
-        <location filename="../src/dir.cpp" line="276"/>
-        <location filename="../src/dir.cpp" line="282"/>
-        <location filename="../src/dir.cpp" line="288"/>
-        <location filename="../src/dir.cpp" line="294"/>
-        <location filename="../src/dir.cpp" line="309"/>
-        <location filename="../src/dir.cpp" line="403"/>
-        <location filename="../src/dir.cpp" line="415"/>
-        <location filename="../src/dir.cpp" line="440"/>
-        <location filename="../src/dir.cpp" line="451"/>
-        <location filename="../src/dir.cpp" line="457"/>
-        <location filename="../src/dir.cpp" line="463"/>
-        <location filename="../src/dir.cpp" line="467"/>
+        <location filename="../src/dir.cpp" line="174"/>
+        <location filename="../src/dir.cpp" line="180"/>
+        <location filename="../src/dir.cpp" line="186"/>
+        <location filename="../src/dir.cpp" line="220"/>
+        <location filename="../src/dir.cpp" line="240"/>
+        <location filename="../src/dir.cpp" line="289"/>
+        <location filename="../src/dir.cpp" line="295"/>
+        <location filename="../src/dir.cpp" line="301"/>
+        <location filename="../src/dir.cpp" line="307"/>
+        <location filename="../src/dir.cpp" line="328"/>
+        <location filename="../src/dir.cpp" line="423"/>
+        <location filename="../src/dir.cpp" line="435"/>
+        <location filename="../src/dir.cpp" line="460"/>
+        <location filename="../src/dir.cpp" line="471"/>
+        <location filename="../src/dir.cpp" line="477"/>
+        <location filename="../src/dir.cpp" line="483"/>
+        <location filename="../src/dir.cpp" line="487"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="167"/>
+        <location filename="../src/dir.cpp" line="175"/>
         <source>There was no key for encryption specified.
 </source>
         <comment>Es wurde kein Schlüssel für die Verschlüsselung angegeben.
@@ -127,7 +127,7 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="173"/>
+        <location filename="../src/dir.cpp" line="181"/>
         <source>Please select the directory in which the to the directory or file to be saved is to be written.
 </source>
         <comment>Bitte wählen Sie das Verzeichnis aus, in das das zu sichernde Verzeichnis bzw die zu sichernde Datei geschrieben werden soll.
@@ -135,7 +135,7 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="179"/>
+        <location filename="../src/dir.cpp" line="187"/>
         <source>Please select the to be directory or file to be saved.
 </source>
         <comment>Bitte wählen Sie das zu sichernde Verzeichnis bzw. die zu sichernde Datei aus.
@@ -143,7 +143,7 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="185"/>
+        <location filename="../src/dir.cpp" line="193"/>
         <source>You have selected a file. You must select a directory
 </source>
         <comment>Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen
@@ -151,7 +151,7 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="213"/>
+        <location filename="../src/dir.cpp" line="221"/>
         <source>The key length must be between 6 and 64 characters
 </source>
         <comment>Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein
@@ -159,13 +159,13 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="233"/>
+        <location filename="../src/dir.cpp" line="241"/>
         <source>The partition file </source>
         <comment>Die Partitionsdatei </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="234"/>
+        <location filename="../src/dir.cpp" line="242"/>
         <source>already exists. The backup is not performed
 </source>
         <comment> ist bereits vorhanden. Die Sicherung wird nicht durchgeführt
@@ -173,7 +173,7 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="277"/>
+        <location filename="../src/dir.cpp" line="290"/>
         <source>There was no key to decrypt specified.
 </source>
         <comment>Es wurde kein Schlüssel für die Entschlüsselung angegeben.
@@ -181,7 +181,7 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="283"/>
+        <location filename="../src/dir.cpp" line="296"/>
         <source>Select the directory in which the saved image will be recovered.
 </source>
         <comment>Bitte wählen Sie das Verzeichnis aus, in das das das gesicherte Verzeichnis zurück geschrieben werden soll.
@@ -189,7 +189,7 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="289"/>
+        <location filename="../src/dir.cpp" line="302"/>
         <source>Please select the existing backup file.
 </source>
         <comment>Bitte wählen Sie die vorhandene Sicherungsdatei aus.
@@ -197,7 +197,7 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="295"/>
+        <location filename="../src/dir.cpp" line="308"/>
         <source>You have selected a directory. You need a backup file with the extension .fsa select
 </source>
         <comment>Sie haben ein Verzeichnis ausgewählt. Sie müssen eine Sicherungsdatei mit der Dateiendung .fsa auswählen
@@ -205,7 +205,7 @@ entschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="302"/>
+        <location filename="../src/dir.cpp" line="315"/>
         <source>You have chosen the wrong recovery file selected.
  The files should end with. fsa be</source>
         <comment>Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht 
@@ -213,15 +213,14 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="310"/>
-        <source>The partition is encrypted. Please enter the Schlüsel
-</source>
-        <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüsel ein
+        <location filename="../src/dir.cpp" line="329"/>
+        <source>The partition is encrypted. Please enter the key</source>
+        <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein
 </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="403"/>
+        <location filename="../src/dir.cpp" line="423"/>
         <source>The backup of the directory was successful.
 </source>
         <comment>Die Sicherung des Verzeichnisses war erfolgreich.
@@ -229,29 +228,29 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="404"/>
-        <location filename="../src/dir.cpp" line="416"/>
+        <location filename="../src/dir.cpp" line="424"/>
+        <location filename="../src/dir.cpp" line="436"/>
         <source> Files, </source>
         <comment> Dateien, </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="404"/>
-        <location filename="../src/dir.cpp" line="417"/>
-        <location filename="../src/dir.cpp" line="440"/>
-        <location filename="../src/dir.cpp" line="453"/>
+        <location filename="../src/dir.cpp" line="424"/>
+        <location filename="../src/dir.cpp" line="437"/>
+        <location filename="../src/dir.cpp" line="460"/>
+        <location filename="../src/dir.cpp" line="473"/>
         <source> directories, and </source>
         <comment> Verzeichnisse und </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="404"/>
+        <location filename="../src/dir.cpp" line="424"/>
         <source> links have been saved</source>
         <comment> Links wurden gesichert</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="418"/>
+        <location filename="../src/dir.cpp" line="438"/>
         <source> Links were not backed properly. The backup of the directories was only partially successful
 </source>
         <comment> Links wurden nicht korrekt gesichert. Die Sicherung der Verzeichnisse war nur teilweise erfolgreich
@@ -259,7 +258,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="440"/>
+        <location filename="../src/dir.cpp" line="460"/>
         <source>The restoring of the directory was successful.
 </source>
         <comment>Die Wiederherstellung des Verzeichnisses war erfolgreich.
@@ -267,32 +266,32 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="440"/>
+        <location filename="../src/dir.cpp" line="460"/>
         <source> files, </source>
         <comment> Dateien, </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="440"/>
+        <location filename="../src/dir.cpp" line="460"/>
         <source> links have been restored</source>
         <comment> Links wurden wieder hergestellt</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="452"/>
+        <location filename="../src/dir.cpp" line="472"/>
         <source> Files,</source>
         <comment> Dateien, </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="454"/>
+        <location filename="../src/dir.cpp" line="474"/>
         <source> links were not correctly restored. The restoring of the lists was only partially successful</source>
         <comment> Links wurden nicht korrekt wiederhergestellt. Die Wiederherstellung der Verzeichnisse war nur teilweise erfolgreich
 </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="457"/>
+        <location filename="../src/dir.cpp" line="477"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben.
@@ -300,7 +299,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="464"/>
+        <location filename="../src/dir.cpp" line="484"/>
         <source>You have tried to restore a directory. The selected file can only restore partitions.
 </source>
         <comment>Sie haben versucht ein Verzeichnis wiederherzustellen. Die gewählte Datei kann nur Partitionen wiederherstellen.
@@ -308,15 +307,15 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="467"/>
+        <location filename="../src/dir.cpp" line="487"/>
         <source>Error in fsarchiver. The directory can not be restored!</source>
         <comment>Fehler in fsarchiver. Das Verzeichnis kann nicht wiederhergestellt werden!!
 </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dir.cpp" line="184"/>
-        <location filename="../src/dir.cpp" line="301"/>
+        <location filename="../src/dir.cpp" line="192"/>
+        <location filename="../src/dir.cpp" line="314"/>
         <source>Hinweis</source>
         <translation type="unfinished"></translation>
     </message>
@@ -544,85 +543,83 @@ Die Dateiendung muss .fsa sein</comment>
 <context>
     <name>DialogNet</name>
     <message>
-        <location filename="../src/net.cpp" line="74"/>
+        <location filename="../src/net.cpp" line="79"/>
         <source>lzo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="75"/>
+        <location filename="../src/net.cpp" line="80"/>
         <source>gzip fast</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="76"/>
+        <location filename="../src/net.cpp" line="81"/>
         <source>gzip standard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="77"/>
+        <location filename="../src/net.cpp" line="82"/>
         <source>qzip best</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="78"/>
+        <location filename="../src/net.cpp" line="83"/>
         <source>bzip2 fast</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="79"/>
+        <location filename="../src/net.cpp" line="84"/>
         <source>bzip2 good</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="80"/>
+        <location filename="../src/net.cpp" line="85"/>
         <source>lzma fast</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="81"/>
+        <location filename="../src/net.cpp" line="86"/>
         <source>lzma medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="82"/>
+        <location filename="../src/net.cpp" line="87"/>
         <source>lzma best</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="211"/>
-        <location filename="../src/net.cpp" line="217"/>
-        <location filename="../src/net.cpp" line="224"/>
-        <location filename="../src/net.cpp" line="230"/>
-        <location filename="../src/net.cpp" line="279"/>
-        <location filename="../src/net.cpp" line="318"/>
-        <location filename="../src/net.cpp" line="342"/>
-        <location filename="../src/net.cpp" line="358"/>
-        <location filename="../src/net.cpp" line="425"/>
-        <location filename="../src/net.cpp" line="431"/>
-        <location filename="../src/net.cpp" line="437"/>
-        <location filename="../src/net.cpp" line="448"/>
-        <location filename="../src/net.cpp" line="457"/>
-        <location filename="../src/net.cpp" line="474"/>
-        <location filename="../src/net.cpp" line="483"/>
-        <location filename="../src/net.cpp" line="490"/>
-        <location filename="../src/net.cpp" line="533"/>
-        <location filename="../src/net.cpp" line="546"/>
-        <location filename="../src/net.cpp" line="553"/>
-        <location filename="../src/net.cpp" line="565"/>
-        <location filename="../src/net.cpp" line="591"/>
-        <location filename="../src/net.cpp" line="755"/>
-        <location filename="../src/net.cpp" line="772"/>
-        <location filename="../src/net.cpp" line="783"/>
-        <location filename="../src/net.cpp" line="811"/>
-        <location filename="../src/net.cpp" line="825"/>
-        <location filename="../src/net.cpp" line="831"/>
+        <location filename="../src/net.cpp" line="216"/>
+        <location filename="../src/net.cpp" line="222"/>
+        <location filename="../src/net.cpp" line="229"/>
+        <location filename="../src/net.cpp" line="235"/>
+        <location filename="../src/net.cpp" line="284"/>
+        <location filename="../src/net.cpp" line="323"/>
+        <location filename="../src/net.cpp" line="347"/>
+        <location filename="../src/net.cpp" line="363"/>
+        <location filename="../src/net.cpp" line="432"/>
+        <location filename="../src/net.cpp" line="438"/>
+        <location filename="../src/net.cpp" line="444"/>
+        <location filename="../src/net.cpp" line="455"/>
+        <location filename="../src/net.cpp" line="464"/>
+        <location filename="../src/net.cpp" line="497"/>
+        <location filename="../src/net.cpp" line="557"/>
+        <location filename="../src/net.cpp" line="570"/>
+        <location filename="../src/net.cpp" line="577"/>
+        <location filename="../src/net.cpp" line="589"/>
+        <location filename="../src/net.cpp" line="615"/>
+        <location filename="../src/net.cpp" line="779"/>
+        <location filename="../src/net.cpp" line="796"/>
+        <location filename="../src/net.cpp" line="807"/>
         <location filename="../src/net.cpp" line="835"/>
+        <location filename="../src/net.cpp" line="849"/>
+        <location filename="../src/net.cpp" line="855"/>
+        <location filename="../src/net.cpp" line="859"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="212"/>
+        <location filename="../src/net.cpp" line="217"/>
         <source>Please, select the saved directory..
 </source>
         <comment>Bitte wählen Sie das Sicherungsverzeichnis aus.
@@ -630,7 +627,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="218"/>
+        <location filename="../src/net.cpp" line="223"/>
         <source>Please, select the partition to be saved.
 </source>
         <comment>Bitte wählen Sie die zu sichernde Partition aus.
@@ -638,8 +635,8 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="225"/>
-        <location filename="../src/net.cpp" line="432"/>
+        <location filename="../src/net.cpp" line="230"/>
+        <location filename="../src/net.cpp" line="439"/>
         <source>Please, select the filename of the backup.
 </source>
         <comment>Bitte wählen Sie den Dateinamen der Sicherung aus.
@@ -647,7 +644,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="231"/>
+        <location filename="../src/net.cpp" line="236"/>
         <source>You have selected a file. You must select a directory
 </source>
         <comment>Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen
@@ -655,26 +652,26 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="257"/>
+        <location filename="../src/net.cpp" line="262"/>
         <source>The system partition to be saved is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Systempartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="265"/>
+        <location filename="../src/net.cpp" line="270"/>
         <source>The home partition to be saved is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Homepartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="280"/>
+        <location filename="../src/net.cpp" line="285"/>
         <source>The partition </source>
         <comment>Die Partition </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="281"/>
-        <location filename="../src/net.cpp" line="567"/>
+        <location filename="../src/net.cpp" line="286"/>
+        <location filename="../src/net.cpp" line="591"/>
         <source>can not be unmounted. The program is terminated
 </source>
         <comment> kann nicht ausgehängt werden. Das Programm wird abgebrochen
@@ -682,9 +679,9 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="319"/>
-        <location filename="../src/net.cpp" line="484"/>
-        <location filename="../src/net.cpp" line="592"/>
+        <location filename="../src/net.cpp" line="324"/>
+        <location filename="../src/net.cpp" line="498"/>
+        <location filename="../src/net.cpp" line="616"/>
         <source>The key length must be between 6 and 64 characters
 </source>
         <comment>Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein
@@ -692,13 +689,13 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="343"/>
+        <location filename="../src/net.cpp" line="348"/>
         <source>The partition file </source>
         <comment>Die Partitionsdatei </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="343"/>
+        <location filename="../src/net.cpp" line="348"/>
         <source>already exists. The backup is not performed
 </source>
         <comment> ist bereits vorhanden. Die Sicherung wird nicht durchgeführt
@@ -706,7 +703,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="359"/>
+        <location filename="../src/net.cpp" line="364"/>
         <source>The backup was aborted by the user
 </source>
         <comment>Die Sicherung wurde vom Benutzer abgebrochen
@@ -714,7 +711,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="426"/>
+        <location filename="../src/net.cpp" line="433"/>
         <source>No key was given for the decryption
 </source>
         <comment>Es wurde kein Schlüssel für die Entschlüsselung angegeben.
@@ -722,7 +719,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="438"/>
+        <location filename="../src/net.cpp" line="445"/>
         <source>Please, select the partition to be written back.
 </source>
         <comment>Bitte wählen Sie die zurück zu schreibende Partition aus.
@@ -730,7 +727,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="449"/>
+        <location filename="../src/net.cpp" line="456"/>
         <source>You have chosen the wrong recovery file selected.
 The files should end with. fsa be</source>
         <comment>Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht 
@@ -738,7 +735,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="458"/>
+        <location filename="../src/net.cpp" line="465"/>
         <source>You have selected a directory. You must select a file
 </source>
         <comment>Sie haben ein Verzeichnis ausgewählt. Sie müssen eine Datei auswählen
@@ -746,41 +743,25 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="475"/>
-        <source>The partition is encrypted. Please enter the key
-</source>
-        <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein
-</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/net.cpp" line="490"/>
-        <source>They have entered a wrong password.
-</source>
-        <comment>Sie haben ein falsches Passwort eingegeben. 
-</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/net.cpp" line="508"/>
+        <location filename="../src/net.cpp" line="532"/>
         <source>Partition to restore the </source>
         <comment>Die wiederherzustellende Partition </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="509"/>
+        <location filename="../src/net.cpp" line="533"/>
         <source> does not coincide with the saved  </source>
         <comment> stimmt nicht mit der gesicherten </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="509"/>
+        <location filename="../src/net.cpp" line="533"/>
         <source>Do you want to continue restore?</source>
         <comment> überein. Wollen Sie trotzdem die Wiederherstellung durchführen?</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="534"/>
+        <location filename="../src/net.cpp" line="558"/>
         <source>The restore was canceled by user
 </source>
         <comment>Das Zurückschreiben wurde vom Benutzer abgebrochen
@@ -788,7 +769,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="547"/>
+        <location filename="../src/net.cpp" line="571"/>
         <source>To restore system partition is mounted and can not be restored. Please use a live CD
 </source>
         <comment>Die wiederherzustellende Systempartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
@@ -796,7 +777,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="554"/>
+        <location filename="../src/net.cpp" line="578"/>
         <source>The restored home partition is mounted and can not be restored. Please use a live CD
 </source>
         <comment>Die wiederherzustellende Homepartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
@@ -804,37 +785,37 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="566"/>
+        <location filename="../src/net.cpp" line="590"/>
         <source>The partition</source>
         <comment>Die Partition </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="635"/>
+        <location filename="../src/net.cpp" line="659"/>
         <source>Backup directory</source>
         <comment>Sicherungsverzeichnis</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="636"/>
+        <location filename="../src/net.cpp" line="660"/>
         <source>Save partition</source>
         <comment>Partition sichern</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="664"/>
+        <location filename="../src/net.cpp" line="688"/>
         <source>Backup file</source>
         <comment>Sicherungsdatei</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="665"/>
+        <location filename="../src/net.cpp" line="689"/>
         <source>Partition restore</source>
         <comment>Partition zurückschreiben</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="755"/>
+        <location filename="../src/net.cpp" line="779"/>
         <source>The partition has been backed up successfully.
 </source>
         <comment>Die Partition wurde erfolgreich gesichert.
@@ -842,26 +823,26 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="756"/>
-        <location filename="../src/net.cpp" line="812"/>
+        <location filename="../src/net.cpp" line="780"/>
+        <location filename="../src/net.cpp" line="836"/>
         <source> files, </source>
         <comment> Dateien, </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="756"/>
+        <location filename="../src/net.cpp" line="780"/>
         <source> links have been saved.</source>
         <comment> Links wurden gesichert.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="813"/>
+        <location filename="../src/net.cpp" line="837"/>
         <source> links have been restored.</source>
         <comment> Links wurden wieder hergestellt.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="828"/>
+        <location filename="../src/net.cpp" line="852"/>
         <source> links were not recovered correctly. The recovery of the partition was only partly successful.
 </source>
         <comment> Links wurden nicht korrekt wiederhergestellt. Die Wiederherstellung der Partition war nur teilweise erfolgreich.
@@ -869,7 +850,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="832"/>
+        <location filename="../src/net.cpp" line="856"/>
         <source>You tried to restore a partition. The selected file can only restore directories. Please restart the program.
 </source>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
@@ -877,7 +858,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="773"/>
+        <location filename="../src/net.cpp" line="797"/>
         <source>The partition type is not supported. Maybe the partition is encrypted?
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?
@@ -885,7 +866,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="649"/>
+        <location filename="../src/net.cpp" line="673"/>
         <source>Encrypt
 backup. key:</source>
         <comment>Sicherung
@@ -893,7 +874,7 @@ verschlüsseln. Schlüssel:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="678"/>
+        <location filename="../src/net.cpp" line="702"/>
         <source>Decrypt
 backup. key:</source>
         <comment>Sicherung
@@ -901,14 +882,14 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="784"/>
-        <location filename="../src/net.cpp" line="826"/>
+        <location filename="../src/net.cpp" line="808"/>
+        <location filename="../src/net.cpp" line="850"/>
         <source> files</source>
         <comment> Dateien, </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="786"/>
+        <location filename="../src/net.cpp" line="810"/>
         <source> links were not saved properly. The backup of the partition was only partially successful
 </source>
         <comment> Links wurden nicht korrekt gesichert. Die Sicherung der Partition war nur teilweise erfolgreich
@@ -916,7 +897,7 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="812"/>
+        <location filename="../src/net.cpp" line="836"/>
         <source>The partition is successful back.
 </source>
         <comment>Die Partition wurde erfolgreich wieder hergestellt.
@@ -924,16 +905,16 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="756"/>
-        <location filename="../src/net.cpp" line="785"/>
-        <location filename="../src/net.cpp" line="813"/>
-        <location filename="../src/net.cpp" line="827"/>
+        <location filename="../src/net.cpp" line="780"/>
+        <location filename="../src/net.cpp" line="809"/>
+        <location filename="../src/net.cpp" line="837"/>
+        <location filename="../src/net.cpp" line="851"/>
         <source> directories and </source>
         <comment> Verzeichnisse und </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="835"/>
+        <location filename="../src/net.cpp" line="859"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben. 
@@ -1314,23 +1295,23 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MWindow</name>
     <message>
-        <location filename="../src/mainWindow.cpp" line="842"/>
+        <location filename="../src/mainWindow.cpp" line="1109"/>
         <source>qt4-fsarchiver</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1222"/>
+        <location filename="../src/mainWindow.cpp" line="1484"/>
         <source>UUID: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="285"/>
+        <location filename="../src/mainWindow.cpp" line="322"/>
         <source>Partition restore</source>
         <comment>Partition zurückschreiben</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="298"/>
+        <location filename="../src/mainWindow.cpp" line="335"/>
         <source>Decrypt
 backup. key:</source>
         <comment>Sicherung
@@ -1338,19 +1319,19 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="305"/>
+        <location filename="../src/mainWindow.cpp" line="342"/>
         <source>Backup directory</source>
         <comment>Sicherungsverzeichnis</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="306"/>
+        <location filename="../src/mainWindow.cpp" line="343"/>
         <source>Save partition</source>
         <comment>Partition sichern</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="319"/>
+        <location filename="../src/mainWindow.cpp" line="356"/>
         <source>Encrypt
 backup. key:</source>
         <comment>Sicherung
@@ -1358,37 +1339,42 @@ verschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="343"/>
-        <location filename="../src/mainWindow.cpp" line="349"/>
-        <location filename="../src/mainWindow.cpp" line="356"/>
-        <location filename="../src/mainWindow.cpp" line="363"/>
-        <location filename="../src/mainWindow.cpp" line="415"/>
-        <location filename="../src/mainWindow.cpp" line="453"/>
-        <location filename="../src/mainWindow.cpp" line="477"/>
-        <location filename="../src/mainWindow.cpp" line="493"/>
-        <location filename="../src/mainWindow.cpp" line="601"/>
-        <location filename="../src/mainWindow.cpp" line="607"/>
-        <location filename="../src/mainWindow.cpp" line="613"/>
-        <location filename="../src/mainWindow.cpp" line="624"/>
-        <location filename="../src/mainWindow.cpp" line="633"/>
-        <location filename="../src/mainWindow.cpp" line="650"/>
-        <location filename="../src/mainWindow.cpp" line="659"/>
-        <location filename="../src/mainWindow.cpp" line="666"/>
-        <location filename="../src/mainWindow.cpp" line="859"/>
-        <location filename="../src/mainWindow.cpp" line="905"/>
-        <location filename="../src/mainWindow.cpp" line="1041"/>
-        <location filename="../src/mainWindow.cpp" line="1058"/>
-        <location filename="../src/mainWindow.cpp" line="1069"/>
-        <location filename="../src/mainWindow.cpp" line="1094"/>
-        <location filename="../src/mainWindow.cpp" line="1106"/>
-        <location filename="../src/mainWindow.cpp" line="1110"/>
-        <location filename="../src/mainWindow.cpp" line="1113"/>
+        <location filename="../src/mainWindow.cpp" line="377"/>
+        <location filename="../src/mainWindow.cpp" line="382"/>
+        <location filename="../src/mainWindow.cpp" line="388"/>
+        <location filename="../src/mainWindow.cpp" line="394"/>
+        <location filename="../src/mainWindow.cpp" line="441"/>
+        <location filename="../src/mainWindow.cpp" line="476"/>
+        <location filename="../src/mainWindow.cpp" line="498"/>
+        <location filename="../src/mainWindow.cpp" line="512"/>
+        <location filename="../src/mainWindow.cpp" line="594"/>
+        <location filename="../src/mainWindow.cpp" line="599"/>
+        <location filename="../src/mainWindow.cpp" line="604"/>
+        <location filename="../src/mainWindow.cpp" line="612"/>
+        <location filename="../src/mainWindow.cpp" line="620"/>
+        <location filename="../src/mainWindow.cpp" line="646"/>
+        <location filename="../src/mainWindow.cpp" line="656"/>
+        <location filename="../src/mainWindow.cpp" line="673"/>
+        <location filename="../src/mainWindow.cpp" line="716"/>
+        <location filename="../src/mainWindow.cpp" line="728"/>
+        <location filename="../src/mainWindow.cpp" line="734"/>
+        <location filename="../src/mainWindow.cpp" line="745"/>
+        <location filename="../src/mainWindow.cpp" line="768"/>
+        <location filename="../src/mainWindow.cpp" line="1125"/>
+        <location filename="../src/mainWindow.cpp" line="1164"/>
+        <location filename="../src/mainWindow.cpp" line="1304"/>
+        <location filename="../src/mainWindow.cpp" line="1320"/>
+        <location filename="../src/mainWindow.cpp" line="1331"/>
+        <location filename="../src/mainWindow.cpp" line="1358"/>
+        <location filename="../src/mainWindow.cpp" line="1370"/>
+        <location filename="../src/mainWindow.cpp" line="1374"/>
+        <location filename="../src/mainWindow.cpp" line="1377"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="344"/>
+        <location filename="../src/mainWindow.cpp" line="378"/>
         <source>Please select from the backup directory.
 </source>
         <comment>Bitte wählen Sie das Sicherungsverzeichnis aus.
@@ -1396,15 +1382,15 @@ verschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="350"/>
+        <location filename="../src/mainWindow.cpp" line="383"/>
         <source>Please select the partition to be</source>
         <comment>Bitte wählen Sie die zu sichernde Partition aus.
 </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="357"/>
-        <location filename="../src/mainWindow.cpp" line="608"/>
+        <location filename="../src/mainWindow.cpp" line="389"/>
+        <location filename="../src/mainWindow.cpp" line="600"/>
         <source>Please select the file name of the backup.
 </source>
         <comment>Bitte wählen Sie den Dateinamen der Sicherung aus.
@@ -1412,7 +1398,7 @@ verschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="364"/>
+        <location filename="../src/mainWindow.cpp" line="395"/>
         <source>You have selected a file. You must select a directory
 </source>
         <comment>Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen
@@ -1420,25 +1406,27 @@ verschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="390"/>
+        <location filename="../src/mainWindow.cpp" line="419"/>
         <source>To back up the system partition is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Systempartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="398"/>
+        <location filename="../src/mainWindow.cpp" line="426"/>
         <source>To back up home partition is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Homepartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="416"/>
+        <location filename="../src/mainWindow.cpp" line="442"/>
+        <location filename="../src/mainWindow.cpp" line="746"/>
         <source>The partition</source>
         <comment>Die Partition </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="416"/>
+        <location filename="../src/mainWindow.cpp" line="442"/>
+        <location filename="../src/mainWindow.cpp" line="747"/>
         <source>can not be unmounted. The program is terminated
 </source>
         <comment> kann nicht ausgehängt werden. Das Programm wird abgebrochen
@@ -1446,8 +1434,8 @@ verschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="454"/>
-        <location filename="../src/mainWindow.cpp" line="660"/>
+        <location filename="../src/mainWindow.cpp" line="477"/>
+        <location filename="../src/mainWindow.cpp" line="657"/>
         <source>The key length must be between 6 and 64 characters
 </source>
         <comment>Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein
@@ -1455,13 +1443,13 @@ verschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="478"/>
+        <location filename="../src/mainWindow.cpp" line="499"/>
         <source>The partition file</source>
         <comment>Die Partitionsdatei</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="478"/>
+        <location filename="../src/mainWindow.cpp" line="499"/>
         <source> already exists. The backup is not performed
 </source>
         <comment> ist bereits vorhanden. Die Sicherung wird nicht durchgeführt
@@ -1469,7 +1457,7 @@ verschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="494"/>
+        <location filename="../src/mainWindow.cpp" line="513"/>
         <source>The backup was aborted by the user
 </source>
         <comment>Die Sicherung wurde vom Benutzer abgebrochen
@@ -1477,20 +1465,14 @@ verschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="504"/>
-        <source>The backup is performed</source>
-        <comment>Die Sicherung wird durchgeführt</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainWindow.cpp" line="602"/>
+        <location filename="../src/mainWindow.cpp" line="595"/>
         <source>There was no key to decrypt specified.</source>
         <comment>Es wurde kein Schlüssel für die Entschlüsselung angegeben.
 </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="614"/>
+        <location filename="../src/mainWindow.cpp" line="605"/>
         <source>Please select from the writing back to partition.
 </source>
         <comment>Bitte wählen Sie die zurück zu schreibende Partition aus.
@@ -1498,7 +1480,7 @@ verschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="625"/>
+        <location filename="../src/mainWindow.cpp" line="613"/>
         <source>You have chosen the wrong recovery file selected. 
 The files should end with. fsa be</source>
         <comment>Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht 
@@ -1506,7 +1488,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="634"/>
+        <location filename="../src/mainWindow.cpp" line="621"/>
         <source>You have selected a directory. You must select a file
 </source>
         <comment>Sie haben ein Verzeichnis ausgewählt. Sie müssen eine Datei auswählen
@@ -1514,27 +1496,27 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="651"/>
+        <location filename="../src/mainWindow.cpp" line="647"/>
         <source>The partition is encrypted. Please enter the key</source>
         <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein
 </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="666"/>
+        <location filename="../src/mainWindow.cpp" line="673"/>
         <source>You have entered an incorrect password.</source>
         <comment>Sie haben ein falsches Passwort eingegeben. 
 </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="776"/>
+        <location filename="../src/mainWindow.cpp" line="784"/>
         <source>The restoring is performed</source>
         <comment>Die Wiederherstellung wird durchgeführt</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="843"/>
+        <location filename="../src/mainWindow.cpp" line="1110"/>
         <source>Backup and restore
 partitions, directory and MBR
 Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.
@@ -1548,7 +1530,7 @@ Version 0.6.12-7, 31. Mai 2011</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="860"/>
+        <location filename="../src/mainWindow.cpp" line="1126"/>
         <source>The program must be run with root privileges. The program is terminated.
 </source>
         <comment>Das Programm muss mit Root-Rechten gestartet werden. Das Programm wird beendet.
@@ -1556,19 +1538,19 @@ Version 0.6.12-7, 31. Mai 2011</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="906"/>
+        <location filename="../src/mainWindow.cpp" line="1165"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="907"/>
+        <location filename="../src/mainWindow.cpp" line="1166"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1041"/>
+        <location filename="../src/mainWindow.cpp" line="1304"/>
         <source>The partition has been backed up successfully.
 </source>
         <comment>Die Partition wurde erfolgreich gesichert.
@@ -1576,7 +1558,7 @@ Version 0.6.12-7, 31. Mai 2011</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1059"/>
+        <location filename="../src/mainWindow.cpp" line="1321"/>
         <source>The partition type is not supported. Maybe the partition is encrypted?
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?
@@ -1584,24 +1566,72 @@ Version 0.6.12-7, 31. Mai 2011</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1042"/>
-        <location filename="../src/mainWindow.cpp" line="1070"/>
-        <location filename="../src/mainWindow.cpp" line="1094"/>
-        <location filename="../src/mainWindow.cpp" line="1107"/>
+        <location filename="../src/mainWindow.cpp" line="1305"/>
+        <location filename="../src/mainWindow.cpp" line="1332"/>
+        <location filename="../src/mainWindow.cpp" line="1358"/>
+        <location filename="../src/mainWindow.cpp" line="1371"/>
         <source> files, </source>
         <comment> Dateien, </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1042"/>
-        <location filename="../src/mainWindow.cpp" line="1070"/>
-        <location filename="../src/mainWindow.cpp" line="1094"/>
+        <location filename="../src/mainWindow.cpp" line="692"/>
+        <source>The partition to restory</source>
+        <comment>Die wiederherzustellende Partition </comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="693"/>
+        <source>  does not coincide with the saved </source>
+        <comment> stimmt nicht mit der gesicherten </comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="695"/>
+        <source>Do you want to continue restore?</source>
+        <comment> überein. Wollen Sie trotzdem die Wiederherstellung durchführen?</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="717"/>
+        <source>The restore was canceled by user
+</source>
+        <comment>Das Zurückschreiben wurde vom Benutzer abgebrochen
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="729"/>
+        <source>To restore system partition is mounted and can not be restored. Please use a live CD
+</source>
+        <comment>Die wiederherzustellende Systempartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="735"/>
+        <source>The restored home partition is mounted and can not be restored. Please use a live CD
+</source>
+        <comment>Die wiederherzustellende Homepartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="769"/>
+        <source>Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="1305"/>
+        <location filename="../src/mainWindow.cpp" line="1332"/>
+        <location filename="../src/mainWindow.cpp" line="1358"/>
         <source>  directories and </source>
         <comment> Verzeichnisse und </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1094"/>
+        <location filename="../src/mainWindow.cpp" line="1358"/>
         <source>The partition is successful back.
 </source>
         <comment>Die Partition wurde erfolgreich wieder hergestellt.
@@ -1609,13 +1639,13 @@ Version 0.6.12-7, 31. Mai 2011</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1107"/>
+        <location filename="../src/mainWindow.cpp" line="1371"/>
         <source> directories and </source>
         <comment> Verzeichnisse und </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1113"/>
+        <location filename="../src/mainWindow.cpp" line="1377"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben.
@@ -1623,81 +1653,81 @@ Version 0.6.12-7, 31. Mai 2011</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1173"/>
+        <location filename="../src/mainWindow.cpp" line="1435"/>
         <source>Do you want to exit the program really?</source>
         <comment>Wollen Sie das Programm wirklich beenden?</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1219"/>
+        <location filename="../src/mainWindow.cpp" line="1481"/>
         <source>Backup file name: </source>
         <comment>Sicherungsdateiname: </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1221"/>
+        <location filename="../src/mainWindow.cpp" line="1483"/>
         <source>Partition type: </source>
         <comment>Partitionsart: </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1222"/>
+        <location filename="../src/mainWindow.cpp" line="1484"/>
         <source>Description: </source>
         <comment>Bezeichnung: </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1223"/>
+        <location filename="../src/mainWindow.cpp" line="1485"/>
         <source>Partition size: </source>
         <comment>Partitionsgröße: </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1223"/>
-        <location filename="../src/mainWindow.cpp" line="1224"/>
+        <location filename="../src/mainWindow.cpp" line="1485"/>
+        <location filename="../src/mainWindow.cpp" line="1486"/>
         <source>Assignment of the partition: </source>
         <comment>Belegung der Partition: </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1224"/>
+        <location filename="../src/mainWindow.cpp" line="1486"/>
         <source>Compression: </source>
         <comment>Kompression: </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1225"/>
+        <location filename="../src/mainWindow.cpp" line="1487"/>
         <source>Approximate image file sizes: </source>
         <comment>ungefähre Sicherungsdateigröße: </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1233"/>
+        <location filename="../src/mainWindow.cpp" line="1495"/>
         <source>to be protected/secured partition: /home</source>
         <comment>zu sichernde/gesicherte Partition: /home</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1231"/>
-        <location filename="../src/mainWindow.cpp" line="1237"/>
+        <location filename="../src/mainWindow.cpp" line="1493"/>
+        <location filename="../src/mainWindow.cpp" line="1499"/>
         <source>Operating system: </source>
         <comment>Betriebsystem: </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="284"/>
+        <location filename="../src/mainWindow.cpp" line="321"/>
         <source>Backup File</source>
         <comment>Sicherungsdatei</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1042"/>
+        <location filename="../src/mainWindow.cpp" line="1305"/>
         <source> links have been backed.</source>
         <comment> Links wurden gesichert.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1070"/>
+        <location filename="../src/mainWindow.cpp" line="1332"/>
         <source> links were not properly backed. The backup of the partition was only partially successful.
 </source>
         <comment> Links wurden nicht korrekt gesichert. Die Sicherung der Partition war nur teilweise erfolgreich.
@@ -1705,20 +1735,20 @@ Version 0.6.12-7, 31. Mai 2011</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1094"/>
+        <location filename="../src/mainWindow.cpp" line="1358"/>
         <source> links have been restored.</source>
         <comment> Links wurden wieder hergestellt.</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1107"/>
+        <location filename="../src/mainWindow.cpp" line="1371"/>
         <source>  Links were not correctly restored. The recovery of the volume was only partially successful.</source>
         <comment> Links wurden nicht korrekt wiederhergestellt. Die Wiederherstellung der Partition war nur teilweise erfolgreich.
 </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1110"/>
+        <location filename="../src/mainWindow.cpp" line="1374"/>
         <source>You have tried restore a partition. The selected file can only restore directories. Please restart the program.
 </source>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
@@ -1726,41 +1756,41 @@ Version 0.6.12-7, 31. Mai 2011</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1220"/>
+        <location filename="../src/mainWindow.cpp" line="1482"/>
         <source>Partition  name: </source>
         <comment>Partitionsname: </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1225"/>
+        <location filename="../src/mainWindow.cpp" line="1487"/>
         <source>Other notes: </source>
         <comment>weitere Hinweise:</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1226"/>
+        <location filename="../src/mainWindow.cpp" line="1488"/>
         <source>to be protected/secured partition: / (root system directory) </source>
         <comment>zu sichernde / gesicherte Partition: / (Wurzel-Systemverzeichnis) </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1231"/>
-        <location filename="../src/mainWindow.cpp" line="1237"/>
+        <location filename="../src/mainWindow.cpp" line="1493"/>
+        <location filename="../src/mainWindow.cpp" line="1499"/>
         <source>Kernel: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1254"/>
+        <location filename="../src/mainWindow.cpp" line="1516"/>
         <source> MB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1265"/>
+        <location filename="../src/mainWindow.cpp" line="1527"/>
         <source> TB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1276"/>
+        <location filename="../src/mainWindow.cpp" line="1538"/>
         <source> GB</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1789,7 +1819,7 @@ Version 0.6.12-7, 31. Mai 2011</comment>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="72"/>
-        <location filename="../src/ui/fsarchiverMain.ui" line="560"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="610"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1799,19 +1829,19 @@ Version 0.6.12-7, 31. Mai 2011</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="341"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="391"/>
         <source>Number of processors
 cores for to be used fsarchiver:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="428"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="478"/>
         <source>Encrypt 
 backup key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="449"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="499"/>
         <source>Proposed action:</source>
         <extracomment>vorgesehene Aktion:</extracomment>
         <translation type="unfinished"></translation>
@@ -1827,13 +1857,13 @@ backup key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="365"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="415"/>
         <source>Compression
 setting:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="402"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="452"/>
         <source>available backup overwrite</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1861,78 +1891,83 @@ Files/directories:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="379"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="429"/>
         <source>Notes to  the backup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="415"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="465"/>
         <source>Stock Split on DVD size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="532"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="582"/>
         <source>Actions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="548"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="598"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="571"/>
-        <location filename="../src/ui/fsarchiverMain.ui" line="598"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="621"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="648"/>
         <source>Basic Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="580"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="630"/>
         <source>Backup partition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="589"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="639"/>
         <source>Restore partition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="616"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="666"/>
         <source>Save MBR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="625"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="675"/>
         <source>Restore MBR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="634"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="684"/>
         <source>Restore directory </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="643"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="693"/>
         <source>Save directory </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="652"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="702"/>
         <source>Exit program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="661"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="711"/>
         <source>Save a parttion on network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="670"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="720"/>
         <source>Restore a parttion on network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="554"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="729"/>
+        <source>breakprocess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/fsarchiverMain.ui" line="604"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1948,21 +1983,21 @@ files/directories:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="467"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="517"/>
         <source>Partition save 
 with fsarchiver</source>
         <extracomment>Partition mit * fsArchiver sichern:</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="481"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="531"/>
         <source>Restore partition
 with fsarchiver</source>
         <extracomment>Partition mit fs-Archiver * zurückschreiben</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/ui/fsarchiverMain.ui" line="607"/>
+        <location filename="../src/ui/fsarchiverMain.ui" line="657"/>
         <source>Information fsarchiver</source>
         <translation type="unfinished"></translation>
     </message>

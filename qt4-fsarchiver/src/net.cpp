@@ -493,6 +493,7 @@ int pos;
                         parameter[3] = keyText;
                         if (parameter[3].size() < 6 || parameter[3].size() > 64) {
 			        lineKey->setEnabled(true);
+                                chk_key->setChecked(Qt::Checked);
                   		QMessageBox::about(this, tr("Note", "Hinweis"),
          	  		tr("The key length must be between 6 and 64 characters\n", "Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein\n"));
                   		return 0 ;

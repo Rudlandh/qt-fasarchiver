@@ -45,6 +45,8 @@ public slots:
 
 protected slots:
    void ViewProzent();
+   void ViewProzent_save();
+   void ViewProzent_restore();
 
    int testDateiName(string endung);
    int savePartition();

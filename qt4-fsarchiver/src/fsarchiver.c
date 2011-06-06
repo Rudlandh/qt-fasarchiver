@@ -475,7 +475,7 @@ int ret, i;
 //argv =  gl_arg.argv;
 #define debug
 #ifdef debug
-fprintf(stderr, "fsarchiver\s");
+fprintf(stderr, "fsarchiver\n");
 
 fprintf (stderr, "argc=%d", argc);
 
