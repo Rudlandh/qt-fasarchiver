@@ -144,6 +144,11 @@ QString hostname_;
              } 
         }
 	file1.close();
+        // Dateien entfernen 
+  	if (file1.exists()){
+     		befehl = "rm ~/.config/qt4-fsarchiver/findsmb.txt";
+		system (befehl.toAscii().data());
+       }   
         if (i == 0 && flag == "1"){
    		QMessageBox::about(this,tr("Note","Hinweis"),
       		tr("There is currently no available network computer.\n","Es ist derzeit kein Netzwerkrechner erreichbar.\n"));
@@ -218,14 +223,14 @@ int NetEin:: setting_save()
         return 1;
    }
   // Dateien entfernen 
-  filename = homepath + "/.config/qt4-fsarchiver/ip.txt";
+  filename = "~/.config/qt4-fsarchiver/ip.txt";
 	if (f.exists()){
-     		befehl = "rm filename";
+     		befehl = "rm " +filename;
 		system (befehl.toAscii().data());
        }     
-       filename = homepath + "/.config/qt4-fsarchiver/smbtree.txt";
+       filename = "~/.config/qt4-fsarchiver/smbtree.txt";
        if (f.exists()){
-     		befehl = "rm filename";
+     		befehl = "rm " + filename;
 		system (befehl.toAscii().data());
        } 
    return 0;
@@ -531,3 +536,5 @@ int NetEin::questionMessage(QString frage)
 	else if (msg.clickedButton() == noButton)
     		return 2;
 }
+
+

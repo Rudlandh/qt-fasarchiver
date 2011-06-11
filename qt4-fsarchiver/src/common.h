@@ -20,8 +20,6 @@
 
 #include <stdio.h>
 
-
-
 struct timeval;
 struct s_strlist;
 struct s_stats;

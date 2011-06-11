@@ -40,32 +40,21 @@
 #include "error.h"
 #include "queue.h"
 
-
-
-struct st_argv {
-const char* argv[14];
-int   argc;
-};
-
-extern struct st_argv gl_arg;
-
-
-
-char *valid_magic[]={FSA_MAGIC_MAIN, FSA_MAGIC_VOLH, FSA_MAGIC_VOLF,
-    FSA_MAGIC_FSIN, FSA_MAGIC_FSYB, FSA_MAGIC_DATF, FSA_MAGIC_OBJT,
+char *valid_magic[]={FSA_MAGIC_MAIN, FSA_MAGIC_VOLH, FSA_MAGIC_VOLF, 
+    FSA_MAGIC_FSIN, FSA_MAGIC_FSYB, FSA_MAGIC_DATF, FSA_MAGIC_OBJT, 
     FSA_MAGIC_BLKH, FSA_MAGIC_FILF, FSA_MAGIC_DIRS, NULL};
 
 void usage(char *progname, bool examples)
 {
     int lzo=false, lzma=false;
-
+    
 #ifdef OPTION_LZO_SUPPORT
     lzo=true;
 #endif // OPTION_LZO_SUPPORT
 #ifdef OPTION_LZMA_SUPPORT
     lzma=true;
 #endif // OPTION_LZMA_SUPPORT
-
+    
     msgprintf(MSG_FORCE, "====> fsarchiver version %s (%s) - http://www.fsarchiver.org <====\n", FSA_VERSION, FSA_RELDATE);
     msgprintf(MSG_FORCE, "Distributed under the GPL v2 license (GNU General Public License v2).\n");
     msgprintf(MSG_FORCE, " * usage: %s [<options>] <command> <archive> [<part1> [<part2> [...]]]\n", progname);
@@ -93,7 +82,7 @@ void usage(char *progname, bool examples)
     msgprintf(MSG_FORCE, "<information>\n");
     msgprintf(MSG_FORCE, " * Support included for: lzo=%s, lzma=%s\n", (lzo==true)?"yes":"no", (lzma==true)?"yes":"no");
     msgprintf(MSG_FORCE, " * support for ntfs filesystems is unstable: don't use it for production.\n");
-
+    
     if (examples==true)
     {
         msgprintf(MSG_FORCE, "<examples>\n");
@@ -164,11 +153,11 @@ int process_cmdline(int argc, char **argv)
     int ret=0;
     int cmd;
     int c;
-
+    
     // init
     memset(partition, 0, sizeof(partition));
     progname=argv[0];
-
+    
     // set default options
     g_options.overwrite=false;
     g_options.allowsaverw=false;
@@ -183,25 +172,25 @@ int process_cmdline(int argc, char **argv)
     g_options.encryptalgo=ENCRYPT_NONE;
     snprintf(g_options.archlabel, sizeof(g_options.archlabel), "<none>");
     g_options.encryptpass[0]=0;
-
-    //  mehrmaliger Aufruf fsarchiver möglich!!
-    optind = 1;
-    optopt = 63;
-    optarg = 0;
-    //Aus unbekanntem Grund wird der nachfolgende c Aufruf erforderlich, sonst klappt der wiederholte fsarchiver Aufruf nicht
-    c = getopt_long(argc, argv, "oaAvdz:j:hVs:c:L:e:", long_options, NULL);
-    c = getopt_long(argc, argv, "oaAvdz:j:hVs:c:L:e:", long_options, NULL);
-    c = getopt_long(argc, argv, "oaAvdz:j:hVs:c:L:e:", long_options, NULL);
-    c = getopt_long(argc, argv, "oaAvdz:j:hVs:c:L:e:", long_options, NULL);
-    optind = 1;
-    optopt = 63;
-    optarg = 0;
-    c = 0 ;
-    while (c != -1)
-    {
-        c = getopt_long(argc, argv, "oaAvdz:j:hVs:c:L:e:", long_options, NULL);
-        if (c == -1)
-            break;
+    
+    //  mehrmaliger Aufruf fsarchiver möglich!! 
+    optind = 1; 
+    optopt = 63; 
+    optarg = 0; 
+    //Aus unbekanntem Grund wird der nachfolgende c Aufruf erforderlich, sonst klappt der wiederholte fsarchiver Aufruf nicht 
+    c = getopt_long(argc, argv, "oaAvdz:j:hVs:c:L:e:", long_options, NULL); 
+    c = getopt_long(argc, argv, "oaAvdz:j:hVs:c:L:e:", long_options, NULL); 
+    c = getopt_long(argc, argv, "oaAvdz:j:hVs:c:L:e:", long_options, NULL); 
+    c = getopt_long(argc, argv, "oaAvdz:j:hVs:c:L:e:", long_options, NULL); 
+    optind = 1; 
+    optopt = 63; 
+    optarg = 0; 
+    c = 0 ; 
+    while (c != -1) 
+    { 
+        c = getopt_long(argc, argv, "oaAvdz:j:hVs:c:L:e:", long_options, NULL); 
+        if (c == -1) 
+            break; 
         switch (c)
         {
             case 'o': // overwrite existing archives
@@ -281,10 +270,10 @@ int process_cmdline(int argc, char **argv)
                 return -1;
         }
     }
-
+    
     argc -= optind;
     argv += optind;
-
+    
     // in all cases we need at least 1 parameters
     if (argc < 1)
     {   fprintf(stderr, "No arguments provided, cannot continue\n");
@@ -292,14 +281,14 @@ int process_cmdline(int argc, char **argv)
         return -1;
     }
     else // mandatory and unique parameters
-    {
+    {   
         command=*argv++, argc--;
     }
-
+    
     // calculate threshold for small files that are compressed together
     g_options.smallfilethresh=min(g_options.datablocksize/4, FSA_MAX_SMALLFILESIZE);
     msgprintf(MSG_DEBUG1, "Files smaller than %ld will be packed with other small files\n", (long)g_options.smallfilethresh);
-
+    
     // convert commands to integers
     if (strcmp(command, "savefs")==0)
     {   cmd=OPER_SAVEFS;
@@ -336,26 +325,26 @@ int process_cmdline(int argc, char **argv)
         usage(progname, false);
         return -1;
     }
-
+    
     // check there are enough parameters on the cmd line
     if (argcok!=true)
     {   errprintf("invalid number of arguments.\n");
         usage(progname, false);
         return -1;
     }
-
+    
     // check if must be run as root
     if (runasroot==true && geteuid()!=0)
     {   errprintf("\"fsarchiver %s\" must be run as root. cannot continue.\n", command);
         return -1;
     }
-
+    
     // interactive password
     if (strcmp((char*)g_options.encryptpass, "-")==0)
     {
         int passconfirm;
         char *passtmp=NULL;
-
+         
         passconfirm = (cmd==OPER_SAVEFS || cmd==OPER_SAVEDIR);
         if ((passtmp=getpass("Enter password: "))==NULL)
         {   errprintf("failed to get interactive password from the console\n");
@@ -366,7 +355,7 @@ int process_cmdline(int argc, char **argv)
             return -1;
         }
         snprintf((char*)g_options.encryptpass, FSA_MAX_PASSLEN, "%s", passtmp);
-
+        
         if (passconfirm==true)
         {
             if ((passtmp=getpass("Confirm password: "))==NULL)
@@ -379,7 +368,7 @@ int process_cmdline(int argc, char **argv)
             }
         }
     }
-
+    
     // commands that require an archive as the first argument
     switch (cmd)
     {
@@ -401,20 +390,20 @@ int process_cmdline(int argc, char **argv)
             }
             break;
     }
-
+    
     // list of partitions to backup/restore
     for (fscount=0; (fscount < argc) && (argv[fscount]); fscount++)
         partition[fscount]=argv[fscount];
-
+    
     // install signal handlers
     sigemptyset(&mask_set);
     sigaddset(&mask_set, SIGINT);
     sigaddset(&mask_set, SIGTERM);
     sigprocmask(SIG_SETMASK, &mask_set, NULL);
-
+    
     if (g_options.debuglevel>0)
         logfile_open();
-
+    
     switch (cmd)
     {
         case OPER_SAVEFS:
@@ -437,55 +426,16 @@ int process_cmdline(int argc, char **argv)
             ret=-1;
             break;
     };
-
+    
     logfile_close();
-
+    
     return ret;
 }
 
-//#define dummy 1
-#ifdef dummy
 int fsarchiver_main(int argc, char **argv)
 {
-int ret, i;
-//int n, len;
-
-
-//argv =  gl_arg.argv;
-fprintf(stderr, "fsarchiver\s");
-
-fprintf (stderr, "argc=%d", argc);
-
- for (i=0; i<argc; i++)
- { 
-  fprintf (stderr, "argv[%d] = %s\n", i, argv[i] );
- }
-fprintf (stderr, "\n");
-
-sleep (5);
-return 0;
-}
-#else  // dummy
-int fsarchiver_main(int argc, char**argv)
-{
-
-int ret, i;
-//int n, len;
-
-//argv =  gl_arg.argv;
-#define debug
-#ifdef debug
-fprintf(stderr, "fsarchiver\n");
-
-fprintf (stderr, "argc=%d", argc);
-
- for (i=0; i<argc; i++)
- { 
-  fprintf (stderr, "argv[%d] = %s\n", i, argv[i] );
- }
-fprintf (stderr, "\n");
-#endif
-
+    int ret;
+    
     // init the lzo library
 #ifdef OPTION_LZO_SUPPORT
     if (lzo_init() != LZO_E_OK)
@@ -493,27 +443,26 @@ fprintf (stderr, "\n");
         exit(EXIT_FAILURE);
     }
 #endif // OPTION_LZO_SUPPORT
-
+    
     // init libgcrypt
     if (crypto_init()!=0)
     {   errprintf("cannot initialize the crypto environment\n");
         exit(EXIT_FAILURE);
     }
-
+    
     // init
     options_init();
     queue_init(&g_queue, FSA_MAX_QUEUESIZE);
-
+    
     // bulk of the program
     ret=process_cmdline(argc, argv);
 
     // cleanup
     queue_destroy(&g_queue);
     options_destroy();
-
+    
     // cleanup libgcrypt
     crypto_cleanup();
-
+    
     return !!ret;
 }
-#endif // dummy

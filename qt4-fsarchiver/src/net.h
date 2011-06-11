@@ -44,12 +44,17 @@ protected slots:
         void folder_einlesen();
         int testDateiName(string endung);
         void Daten_eintragen();
-       
+        void ViewProzent();
+        void keyPressEvent(QKeyEvent *event);
+        int questionMessage(QString frage);
+        void esc_end();
+               
 private:
 	QDirModel *dirModel;
     	QItemSelectionModel *selModel;
         Thread thread1;
-        Thread thread2;		
+        Thread thread2;
+        QTimer *timer; 		
 	
 private slots:
 	void end();

@@ -43,7 +43,7 @@ uid_t my_uid, my_euid, my_gid, my_egid; // experement mit uid
 
 FILE * g_fDebug; // debug file
 QString folder_file_;
-// int dialog_auswertung;
+int dialog_auswertung;
 int anzahl_disk;
 QString parameter[15];
 QString add_part[100];
@@ -52,14 +52,14 @@ int main(int argc, char *argv[])
 {
 
 //   setuid(500);
-/*
+
    my_euid=geteuid();   // experement
    my_uid=getuid();
    my_gid=getegid();   // experement
    my_egid=getgid();
-
+ 
    setuid(my_uid);     // experement
-*/
+
    /* Set locale via LC_LL.  */
    setlocale (LC_ALL, "");
    bindtextdomain ("" ,"qt-fsarchiver");
@@ -73,11 +73,11 @@ int main(int argc, char *argv[])
    QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
    setting.beginGroup("Basiseinstellungen");
    int auswertung = setting.value("Sprache").toInt();
-   if (auswertung > 0)
+   if (auswertung > 0) 
    	language_ = "qt4-fsarchiver_" + language[auswertung -1];
    setting.endGroup();
 //	/*---install translation file for application strings---*/
-//   ursprünglicher Code, Ausführung nur in Deutsch
+//   ursprünglicher Code, Ausführung nur in Deutsch  
 //   QString translatorFileName = QLatin1String("qt_");
 //   translatorFileName += QLocale::system().name();
 //   QTranslator *translator = new QTranslator(&app);
@@ -88,25 +88,25 @@ int main(int argc, char *argv[])
      QTranslator *translator = new QTranslator(0);
      if (auswertung == 0)
          translator->load(QString("qt4-fsarchiver_"+QLocale::system().name()), sLocPath);
-     if (auswertung != 0)
+     if (auswertung != 0) 
          translator->load(language_, sLocPath);
      app.installTranslator(translator);
-     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
-     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
+     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8")); 
+     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8")); 
+     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8")); 
      MWindow window;
-
+   
    if (window.Root_Auswertung() != 10)
-
+       
    {
    	window.show();
    	return app.exec();
   	}
   	else
   	{
-  	return 0;
+  	return 0;	
  		}
   // qDebug() << window.Root_Auswertung();
  }
-
+  
 

@@ -42,6 +42,7 @@ private:
     Thread thread1;
     Thread thread2;
     void indicator_reset();
+    QTimer *timer;
     
 
 protected slots:
@@ -49,7 +50,11 @@ protected slots:
     void elapsedTime();
     void remainingTime(int prozent);
     void chkkey();
-
+    void ViewProzent();
+    void keyPressEvent(QKeyEvent *event);
+    int questionMessage(QString frage);
+    void esc_end();
+    
 private slots:    
    void startThread1();
    void thread1Ready();

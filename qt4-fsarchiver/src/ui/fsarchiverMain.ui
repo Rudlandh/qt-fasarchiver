@@ -273,7 +273,7 @@ files/directories:</string>
      <item row="1" column="2">
       <widget class="QLabel" name="label_6">
        <property name="text">
-        <string>expected time:</string>
+        <string>remaining time:</string>
        </property>
       </widget>
      </item>
@@ -299,7 +299,7 @@ files/directories:</string>
       </widget>
      </item>
      <item row="3" column="6">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_break">
        <property name="minimumSize">
         <size>
          <width>24</width>
@@ -574,7 +574,7 @@ with fsarchiver</string>
      <x>0</x>
      <y>0</y>
      <width>770</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAktionen">

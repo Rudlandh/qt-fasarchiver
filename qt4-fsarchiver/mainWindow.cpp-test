@@ -44,6 +44,7 @@ extern "C" {
 
 
 using namespace std;
+int work_global, work_etap, work_resul;
 
 QString Datum_akt("");
 QString partition_;
@@ -76,6 +77,8 @@ extern "C"
 {
 int fsarchiver_main(int argc, char**argv);
 }
+int t_dialog_auswertung;
+
 int fsarchiver_aufruf(int argc, char *anlage0=NULL, char *anlage1=NULL, char *anlage2=NULL, char *anlage3=NULL, char *anlage4=NULL, char *anlage5=NULL, char *anlage6=NULL, char *anlage7=NULL, char *anlage8=NULL, char *anlage9=NULL, char *anlage10=NULL, char *anlage11=NULL, char *anlage12=NULL, char *anlage13=NULL, char *anlage14=NULL)
 {
     char *argv[15];
@@ -96,8 +99,11 @@ int fsarchiver_aufruf(int argc, char *anlage0=NULL, char *anlage1=NULL, char *an
     argv[13] = anlage13;
     argv[14] = anlage14;
 //    msgprintf(MSG_FORCE, ("fsarchiver_aufruf in connect_cpp %d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s\n"),argc, argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6],argv[7], argv[8], argv[9], argv[10], argv[11], argv[12], argv[13], argv[14]);
+    work_global=1;
+ t_dialog_auswertung=work_resul=0;
     ret=fsarchiver_main(argc, argv);
- return ret;
+ t_dialog_auswertung=work_resul=ret;
+ work_global=0;
 }
 
 MWindow::MWindow()
@@ -1049,13 +1055,17 @@ void MWindow::closeEvent(QCloseEvent *event) {
 }
 
 void MWindow::thread1Ready()  {
-int part_testen;
-   endeThread = endeThread + 1;
-   extern int dialog_auswertung;
-
-   if (endeThread == 1) {
+  // endeThread = endeThread + 1;
+ //  extern int dialog_auswertung;
+   if (flag_end == 1) {
+        QMessageBox::about(this, tr("Note", "Hinweis"),
+         tr("The backup of the partition was aborted by the user!\n", "Die Sicherung der Partition  wurde vom Benutzer abgebrochen!\n") );
+	}
+   if (work_global == 0) {
+  // if (endeThread == 1) {
      pushButton_end->setEnabled(true);
-     if (dialog_auswertung ==0){ 
+     if (t_dialog_auswertung ==0){
+     //if (dialog_auswertung ==0){ 
        pushButton_save->setEnabled(true);
        progressBar->setValue(100); 
        SekundeRemaining ->setText("0");
@@ -1070,8 +1080,7 @@ int part_testen;
 	tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been backed.", " Links wurden gesichert."));
      }
      else {
-   
-       pushButton_save->setEnabled(false);
+        pushButton_save->setEnabled(false);
        //Beschreibungsdaten löschen
      	QString filename = SicherungsDateiName;
         int pos = filename.indexOf("fsa");
@@ -1081,12 +1090,8 @@ int part_testen;
         // Prüfen ob text-Datei vorhanden 
        if (f.exists())
           remove (filename.toAscii().data());
-       if (flag_end == 1) {
-        QMessageBox::about(this, tr("Note", "Hinweis"),
-         tr("The backup of the partition was aborted by the user!\n", "Die Sicherung der Partition  wurde vom Benutzer abgebrochen!\n") );
-	}
-       // Anzahl nicht korrekt gesicherte Dateien ausgeben
-       part_testen = werte_holen(4);
+        // Anzahl nicht korrekt gesicherte Dateien ausgeben
+       int part_testen = werte_holen(4);
        if (part_testen == 108){
 	   QMessageBox::about(this, tr("Note", "Hinweis"),
           tr("The partition type is not supported. Maybe the partition is encrypted?\n", "Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?\n" ));
@@ -1105,21 +1110,29 @@ int part_testen;
         }
        
      }
+  
   thread_run = 0;
+  folder_einlesen();
   thread1.exit();
   
 }
 void MWindow::thread2Ready()  {
-   endeThread = endeThread + 1;
-   extern int dialog_auswertung;
+  // endeThread = endeThread + 1;
+  // extern int dialog_auswertung;
    int meldung = werte_holen(4);
    if (meldung == 105) {
       QMessageBox::about(this, tr("Note", "Hinweis"), tr("cannot restore an archive to a partition which is mounted, unmount it first \n", "Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!\n"));
       endeThread == 0;
        }
-   if (endeThread == 1) { 
+     if (flag_end == 1) {
+        QMessageBox::about(this, tr("Note", "Hinweis"),
+         tr("The restore of the partition was break by user!\n", "Die Wiederherstellung der Partition  wurde vom Benutzer abgebrochen!\n") );
+	}
+   //if (endeThread == 1) { 
+     if (work_global == 0) {
      pushButton_end->setEnabled(true);
-     if (dialog_auswertung ==0){
+     if (t_dialog_auswertung ==0){     
+	//if (dialog_auswertung ==0){
        pushButton_restore->setEnabled(true);
        progressBar->setValue(100);
        SekundeRemaining ->setText("0");
@@ -1131,12 +1144,7 @@ void MWindow::thread2Ready()  {
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
        QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition is successful back.\n", "Die Partition wurde erfolgreich wieder hergestellt.\n") + cnt_regfile_ + tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been restored.", " Links wurden wieder hergestellt."));
-        }
-     if (flag_end == 1) {
-        QMessageBox::about(this, tr("Note", "Hinweis"),
-         tr("The restore of the partition was break by user!\n", "Die Wiederherstellung der Partition  wurde vom Benutzer abgebrochen!\n") );
-	meldung == 0;
-        }
+        }     
      if (meldung == 100) {
           // Anzahl nicht korrekt zurückgeschriebene Dateien ausgeben
        pushButton_restore->setEnabled(false);
@@ -1468,13 +1476,15 @@ QString befehl;
        	SicherungsFolderFileName = SicherungsFolderFileName.left(pos);
        	SicherungsFolderFileName.insert(pos, QString("txt"));
         befehl = "rm "  + SicherungsFolderFileName;
-        system (befehl.toAscii().data()); 
+        system (befehl.toAscii().data());
+        pushButton_end->setEnabled(true); 
         thread1.terminate();
         thread1.wait();
         }
      if (thread_run == 2 && ret == 1)
         {
-        flag_end= 1; 
+        flag_end= 1;
+        pushButton_end->setEnabled(true); 
         thread2.terminate();
         thread2.wait();
 	}}

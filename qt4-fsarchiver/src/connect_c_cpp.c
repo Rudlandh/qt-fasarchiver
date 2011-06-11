@@ -20,25 +20,25 @@
 
 // nur für msgprintf(MSG_FORCE
 #include "dico.h"
-#include "dichl.h"
-#include "common.h"
-#include "oper_save.h"
-#include "strlist.h"
-#include "filesys.h"
-#include "fs_ext2.h"
-#include "fs_xfs.h"
-#include "fs_reiserfs.h"
-#include "fs_reiser4.h"
-#include "fs_jfs.h"
-#include "fs_btrfs.h"
-#include "fs_ntfs.h"
-#include "thread_comp.h"
-#include "thread_archio.h"
-#include "crypto.h"
+//	#include "dichl.h"
+//	#include "common.h"
+//#include "oper_save.h"
+//#include "strlist.h"
+//#include "filesys.h"
+//#include "fs_ext2.h"
+//#include "fs_xfs.h"
+//#include "fs_reiserfs.h"
+//#include "fs_reiser4.h"
+//#include "fs_jfs.h"
+//#include "fs_btrfs.h"
+//#include "fs_ntfs.h"
+//#include "thread_comp.h"
+//#include "thread_archio.h"
+//#include "crypto.h"
 #include "error.h"
 #include <stdio.h>
-#include <mntent.h>
-#include <sys/stat.h>
+//#include <mntent.h>
+//#include <sys/stat.h>
 #include <sys/vfs.h>
 // nur für msgprintf(MSG_FORCE
 
@@ -56,7 +56,7 @@ float numberfolder;
 float s_links;
 float s_links_;
 char* key ;
-char fsorigdev[30];
+char fsorigdev[100];
 
 
 int createar(){
@@ -66,30 +66,30 @@ int createar(){
    //test = oper_probe(probedetailed);
    return test;
 }
-
-// int fsarchiver_aufruf(int argc, char *anlage0, char *anlage1, char *anlage2, char *anlage3, char *anlage4, char *anlage5, char *anlage6, char *anlage7,char *anlage8,char *anlage9,char *anlage10, char *anlage11, char *anlage12,char *anlage13,char *anlage14)
-// {
-//     char *argv[15];
-//     int ret;
-//     argv[0] = anlage0;
-//     argv[1] = anlage1;
-//     argv[2] = anlage2;
-//     argv[3] = anlage3;
-//     argv[4] = anlage4;
-//     argv[5] = anlage5;
-//     argv[6] = anlage6;
-//     argv[7] = anlage7;
-//     argv[8] = anlage8;
-//     argv[9] = anlage9;
-//     argv[10] = anlage10;
-//     argv[11] = anlage11;
-//     argv[12] = anlage12;
-//     argv[13] = anlage13;
-//     argv[14] = anlage14;
-//     //msgprintf(MSG_FORCE, _("fsarchiver_aufruf in connect_cpp %d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s\n"),argc, argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6],argv[7], argv[8], argv[9], argv[10], argv[11], argv[12], argv[13], argv[14]);
-//     ret=fsarchiver_main(argc, argv);
-//     return ret;
-// }
+/*
+int fsarchiver_aufruf(int argc, char *anlage0, char *anlage1, char *anlage2, char *anlage3, char *anlage4, char *anlage5, char *anlage6, char *anlage7,char *anlage8,char *anlage9,char *anlage10, char *anlage11, char *anlage12,char *anlage13,char *anlage14)
+{
+    char *argv[15];
+    int ret;
+    argv[0] = anlage0;
+    argv[1] = anlage1;
+    argv[2] = anlage2;
+    argv[3] = anlage3;
+    argv[4] = anlage4;
+    argv[5] = anlage5;
+    argv[6] = anlage6;
+    argv[7] = anlage7;
+    argv[8] = anlage8;
+    argv[9] = anlage9;
+    argv[10] = anlage10;
+    argv[11] = anlage11;
+    argv[12] = anlage12;
+    argv[13] = anlage13;
+    argv[14] = anlage14;
+    msgprintf(MSG_FORCE, ("fsarchiver_aufruf in connect_cpp %d %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s\n"),argc, argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6],argv[7], argv[8], argv[9], argv[10], argv[11], argv[12], argv[13], argv[14]);
+    ret=fsarchiver_main(argc, argv);
+    return ret;
+} */
 
 void werte_uebergeben(float prozess, int auswahl){
      if (auswahl ==1){
@@ -104,15 +104,15 @@ void werte_uebergeben(float prozess, int auswahl){
      	    Anzahl_File_zu_sichern = prozess;
          }
      if (auswahl ==3)
-         if (prozess != 0){
+         if (prozess != 0){ 
      	    Anzahl_File_gesichert = prozess;
          }
      if (auswahl ==4)
-         if (prozess != 0){
+         if (prozess != 0){ 
      	    EndeThreadMeldung = prozess;
          }
      if (auswahl ==5)
-         if (prozess != 0){
+         if (prozess != 0){ 
      	    h_links = prozess;
          }
      if (auswahl ==6){
@@ -120,21 +120,21 @@ void werte_uebergeben(float prozess, int auswahl){
      	    numberfile = prozess;
          }
      if (auswahl ==7)
-         if (prozess != 0){
+         if (prozess != 0){ 
      	    numberfolder = prozess;
          }
      if (auswahl ==8)
-         if (prozess != 0){
+         if (prozess != 0){ 
      	    s_links = prozess;
          }
      if (auswahl ==9)
-         if (prozess != 0){
+         if (prozess != 0){ 
      	    s_links_ = prozess;
          }
    }
 
 float werte_holen(int auswahl){
-      if (auswahl ==1)
+      if (auswahl ==1)        
      	return prozent;
       if (auswahl ==2)
      	return Anzahl_File_zu_sichern;
@@ -153,11 +153,11 @@ float werte_holen(int auswahl){
       if (auswahl ==9)
      	return s_links_;
     }
-
+ 
 void werte_reset(){
-      prozent = 0;
+      prozent = 0;        
       Anzahl_File_zu_sichern = 0;
-      Anzahl_File_gesichert=0;
+      Anzahl_File_gesichert = 0;
     }
 
 void meldungen_uebergeben(char* meldung, int auswahl){
@@ -165,9 +165,9 @@ void meldungen_uebergeben(char* meldung, int auswahl){
          key = meldung;
          }
      if (auswahl ==2) {
-     	 strncpy(fsorigdev,meldung,30);
-         fsorigdev[29] = 0;
-         }
+     	 strncpy(fsorigdev,meldung,100);
+         fsorigdev[99] = 0;
+         }  
   }
 
 char *meldungen_holen(int auswahl){
@@ -177,7 +177,7 @@ char *meldungen_holen(int auswahl){
       if (auswahl ==2)  {
         return fsorigdev;
       }
-
+      
 }
 
 float df(char *device, const char *mountPoint, int flag )
@@ -209,10 +209,10 @@ float df(char *device, const char *mountPoint, int flag )
    if (flag == 2)
 		return (long) (s.f_blocks * (s.f_bsize / 1024000.0));
 	if (flag == 3)
-		return (long) ((s.f_blocks - s.f_bfree) * (s.f_bsize / 1024000.0));
+		return (long) ((s.f_blocks - s.f_bfree) * (s.f_bsize / 1024000.0));	
 	if (flag == 4)
-		return (long) (s.f_bavail * (s.f_bsize / 1024000.0));
-
+		return (long) (s.f_bavail * (s.f_bsize / 1024000.0));	
+			  
 }
 
 

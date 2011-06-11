@@ -34,20 +34,18 @@ public:
    ~MWindow() {}
    int Root_Auswertung();
    QString Zeit_auslesen();
-   string mtab_einlesen(string partition_if_home);
+   QString mtab_einlesen(QString partition_if_home);
    QString beschreibungstext(QString partitiontext, QString text, int zip, int row);
    int is_mounted (char* dev_path);
-   int questionMessage(QString frage);
-
-public slots:
+   int questionMessage(QString frage); 
+   
+public slots: 
    void folder_einlesen();
    void save_button();
-
+               
 protected slots:
    void ViewProzent();
-   void ViewProzent_save();
-   void ViewProzent_restore();
-
+   void esc_end();
    int testDateiName(string endung);
    int savePartition();
    int restorePartition();
@@ -75,23 +73,21 @@ protected slots:
    QString ubuntu_version();
    QString mountpoint(QString uuid);
    QString format(float zahl);
-   void breakProcess();
-
+ 
 private:
     QDirModel *dirModel;
     QItemSelectionModel *selModel;
     QLabel *questionLabel;
     Thread thread1;
     Thread thread2;
-    QTimer *timer;
+    QTimer *timer;   
 
-private slots:
+private slots:    
    void startThread1();
    void thread1Ready();
    void startThread2();
    void thread2Ready();
-//   void esc_end();
-//   void pid_ermitteln();
+     
 };
 #endif
 

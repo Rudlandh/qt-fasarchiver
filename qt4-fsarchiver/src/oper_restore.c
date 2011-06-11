@@ -1233,6 +1233,7 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
     if (res==0)
     {   errprintf("partition [%s] is mounted on [%s].\ncannot restore an archive to a partition "
             "which is mounted, unmount it first: umount %s\n", partition, mntbuf, mntbuf);
+         werte_uebergeben (105,4);
         return -1;
     }
     

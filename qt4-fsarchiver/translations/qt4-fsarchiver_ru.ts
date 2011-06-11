@@ -179,6 +179,14 @@ Die Dateiendung muss .fsa sein</comment>
 Файл должен иметь расширение .fsa</translation>
     </message>
     <message>
+        <source>The partition is encrypted. Please enter the Schlüsel
+</source>
+        <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüsel ein
+</comment>
+        <translation type="obsolete">Раздел зашифрован. Введите ключ
+</translation>
+    </message>
+    <message>
         <source>The backup of the directory was successful.
 </source>
         <comment>Die Sicherung des Verzeichnisses war erfolgreich.
@@ -269,6 +277,32 @@ Die Dateiendung muss .fsa sein</comment>
         <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein
 </comment>
         <translation type="unfinished">Раздел зашифрован. Введите ключ</translation>
+    </message>
+    <message>
+        <source>Do you want to exit the program really?</source>
+        <comment>Wollen Sie das Programm wirklich beenden?</comment>
+        <translation type="obsolete">Вы хотите выйти из программы?</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <comment>Ja</comment>
+        <translation type="unfinished">Да</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <comment>Nein</comment>
+        <translation type="unfinished">Нет</translation>
+    </message>
+    <message>
+        <source>Do you want really break the save or restore from the folder?</source>
+        <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Verzeichnisse beenden?</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error!  The restoring of the folder was only partially successful!</source>
+        <comment>Fehler! Das Verzeichnis wurde nur teilweise wiederhergestellt. 
+</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -615,6 +649,22 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>Вы выбрали каталог. Надо выбрать файл</translation>
     </message>
     <message>
+        <source>The partition is encrypted. Please enter the key
+</source>
+        <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein
+</comment>
+        <translation>Раздел зашифрован. Введите ключ
+</translation>
+    </message>
+    <message>
+        <source>They have entered a wrong password.
+</source>
+        <comment>Sie haben ein falsches Passwort eingegeben. 
+</comment>
+        <translation>Ошибка авторизации.
+</translation>
+    </message>
+    <message>
         <source>Partition to restore the </source>
         <comment>Die wiederherzustellende Partition </comment>
         <translation>Восстанавливаемый раздел </translation>
@@ -774,6 +824,26 @@ entschlüsseln. Schlüssel</comment>
 </comment>
         <translation>Ошибка авторизации.</translation>
     </message>
+    <message>
+        <source>Do you want to exit the program really?</source>
+        <comment>Wollen Sie das Programm wirklich beenden?</comment>
+        <translation type="obsolete">Вы хотите выйти из программы?</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <comment>Ja</comment>
+        <translation type="unfinished">Да</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <comment>Nein</comment>
+        <translation type="unfinished">Нет</translation>
+    </message>
+    <message>
+        <source>Do you want really break the save or restore from the partition?</source>
+        <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogSetting</name>
@@ -790,7 +860,7 @@ entschlüsseln. Schlüssel</comment>
     <message>
         <source>Russia</source>
         <comment>Russisch</comment>
-        <translation>Русский</translation>
+        <translation type="obsolete">Русский</translation>
     </message>
     <message>
         <source>lzo</source>
@@ -938,7 +1008,7 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;elapsed time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>vergangene Zeit:</extracomment>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -965,7 +1035,7 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;expected time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>noch zu erwartende Zeit:</extracomment>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -993,6 +1063,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>n</source>
         <translation>n</translation>
+    </message>
+    <message>
+        <source>elapsed time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>remaining time:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1219,6 +1297,11 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
+        <source>The backup is performed</source>
+        <comment>Die Sicherung wird durchgeführt</comment>
+        <translation>Сохранение выполнено</translation>
+    </message>
+    <message>
         <source>There was no key to decrypt specified.</source>
         <comment>Es wurde kein Schlüssel für die Entschlüsselung angegeben.
 </comment>
@@ -1387,7 +1470,7 @@ Version 3, 29 June 2007
     <message>
         <source>Do you want to exit the program really?</source>
         <comment>Wollen Sie das Programm wirklich beenden?</comment>
-        <translation>Вы хотите выйти из программы?</translation>
+        <translation type="obsolete">Вы хотите выйти из программы?</translation>
     </message>
     <message>
         <source>Backup file name: </source>
@@ -1486,48 +1569,8 @@ verschlüsseln. Schlüssel</comment>
         <translation> ГБ</translation>
     </message>
     <message>
-        <source>The partition to restory</source>
-        <comment>Die wiederherzustellende Partition </comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>  does not coincide with the saved </source>
-        <comment> stimmt nicht mit der gesicherten </comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do you want to continue restore?</source>
-        <comment> überein. Wollen Sie trotzdem die Wiederherstellung durchführen?</comment>
-        <translation type="unfinished"> Продолжать восстановление?</translation>
-    </message>
-    <message>
-        <source>The restore was canceled by user
-</source>
-        <comment>Das Zurückschreiben wurde vom Benutzer abgebrochen
-</comment>
-        <translation type="unfinished">Восстановление было прервано пользователем
-</translation>
-    </message>
-    <message>
-        <source>To restore system partition is mounted and can not be restored. Please use a live CD
-</source>
-        <comment>Die wiederherzustellende Systempartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
-</comment>
-        <translation type="unfinished">Восстанавливаемы системный раздел смонтирован и не может быть восстановлен
-Используйте Live-CD
-</translation>
-    </message>
-    <message>
-        <source>The restored home partition is mounted and can not be restored. Please use a live CD
-</source>
-        <comment>Die wiederherzustellende Homepartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
-</comment>
-        <translation type="unfinished">Восстанавливаемы домашний каталог смонтирован и не может быть восстановлен.
-Используйте Live-CD</translation>
-    </message>
-    <message>
-        <source>Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein
-</source>
+        <source>Do you really want to break the save or restore from the partition?</source>
+        <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1609,7 +1652,7 @@ Files/directories:</source>
     </message>
     <message>
         <source>elapsed time:</source>
-        <translation>прошло:</translation>
+        <translation type="obsolete">прошло:</translation>
     </message>
     <message>
         <source>already saved 
@@ -1701,7 +1744,7 @@ with fsarchiver</source>
         <translation>Сетевое восстановление раздела</translation>
     </message>
     <message>
-        <source>breakprocess</source>
+        <source>remaining time:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1798,7 +1841,7 @@ Verzeichnis sichern/zurückschreiben</extracomment>
     <message>
         <source>Close</source>
         <extracomment>Schließen</extracomment>
-        <translation>Закрыть</translation>
+        <translation type="obsolete">Закрыть</translation>
     </message>
     <message>
         <source>Saved directory</source>
@@ -1847,7 +1890,7 @@ Files/directories:</source>
     <message>
         <source>elapsed time:</source>
         <extracomment>vergangene Zeit:</extracomment>
-        <translation>Прошло:</translation>
+        <translation type="obsolete">Прошло:</translation>
     </message>
     <message>
         <source>expected time:</source>
@@ -1874,6 +1917,16 @@ for to be used fsarchiver:</source>
         <extracomment>Anzahl der Prozessorkerne, die für fsarchiver verwendet werden sollen:</extracomment>
         <translation>Число потоков 
 вычисления :</translation>
+    </message>
+    <message>
+        <source>remaining time:</source>
+        <extracomment>vergangene Zeit:</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <extracomment>Schließen</extracomment>
+        <translation type="unfinished">Выход</translation>
     </message>
 </context>
 <context>

@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Schließen">Close</string>
+    <string extracomment="Schließen">Exit</string>
    </property>
   </widget>
   <widget class="QPushButton" name="bt_save">
@@ -153,7 +153,7 @@ Files/directories:</string>
       <x>200</x>
       <y>60</y>
       <width>71</width>
-      <height>26</height>
+      <height>25</height>
      </rect>
     </property>
     <property name="alignment">
@@ -165,7 +165,7 @@ Files/directories:</string>
      <rect>
       <x>20</x>
       <y>100</y>
-      <width>661</width>
+      <width>631</width>
       <height>23</height>
      </rect>
     </property>
@@ -251,7 +251,7 @@ Files/directories:</string>
      </rect>
     </property>
     <property name="text">
-     <string extracomment="noch zu erwartende Zeit:">expected time:</string>
+     <string extracomment="noch zu erwartende Zeit:">remaining  time:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="MinuteRemaining">
@@ -304,6 +304,62 @@ Files/directories:</string>
     </property>
     <property name="text">
      <string extracomment="Sekunden">seconds</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_break">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>100</y>
+      <width>24</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>24</width>
+      <height>21</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>24</width>
+      <height>21</height>
+     </size>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>24</width>
+      <height>21</height>
+     </size>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>21</width>
+      <height>21</height>
+     </size>
+    </property>
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
+    </property>
+    <property name="text">
+     <string extracomment="Break process"/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../qt4-fsarchiver-4fcb10b/qt4-fsarchiver/src/icon.qrc">
+      <normaloff>:/src/images/cancel.png</normaloff>:/src/images/cancel.png</iconset>
+    </property>
+    <property name="shortcut">
+     <string/>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>
@@ -421,6 +477,8 @@ backup key</string>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../qt4-fsarchiver-4fcb10b/qt4-fsarchiver/src/icon.qrc"/>
+ </resources>
  <connections/>
 </ui>
