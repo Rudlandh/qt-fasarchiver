@@ -216,6 +216,8 @@ MWindow::MWindow()
         chk_overwrite->setChecked(Qt::Checked); 
         cmb_zip -> setCurrentIndex(2); 
         }
+   if (bit_version() != "64")
+      pushButton_break->setEnabled(false);
    label_4->setEnabled(false);
    chk_overwrite->setEnabled(true);
    cmb_zip->setEnabled(false);
@@ -535,11 +537,11 @@ int MWindow::savePartition()
                                 pushButton_end->setEnabled(false);  
                                 pushButton_save->setEnabled(false); 
                                 flag_View = 1;
+                                werte_reset();
   				timer->singleShot( 1000, this , SLOT(ViewProzent( ))) ;
 				startThread1(); // fsarchiver wird im Thread ausgeführt
                                 statusBar()->showMessage(tr("The backup is performed", "Die Sicherung wird durchgeführt"), 15000);
-        			werte_reset();
-                         }
+        		        }
                     }
            return 0;
 
@@ -547,7 +549,7 @@ int MWindow::savePartition()
 
 void MWindow::ViewProzent()
 {
-int prozent;
+int prozent ;
 QString sekunde;
 int sekunde_;
 QString minute;
@@ -556,8 +558,8 @@ int meldung;
 int anzahl;
 int anzahl1;
 QString text_integer;
-
-if (endeThread !=1)
+//if (endeThread !=1)
+if (endeThread ==0)
 {
  timer->singleShot( 1000, this , SLOT(ViewProzent( )) ) ;
   elapsedTime();
@@ -867,13 +869,13 @@ void MWindow::info() {
          "partitions, directory and MBR\n"
          "Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.\n"
          "All rights reserved.\n"
-         "Version 0.6.12-7, May 31, 2011",
+         "Version 0.6.12-7, June 17, 2011",
 
 	 "Sichern und Wiederherstellen\n"
          "von Partitionen, Verzeichnissen und MBR\n"
          "Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.\n"
          "All rights reserved.\n"
-         "Version 0.6.12-7, 31. Mai 2011"));
+         "Version 0.6.12-7, 17. Juni 2011"));
 }
 
 int MWindow::Root_Auswertung(){
@@ -1052,7 +1054,6 @@ void MWindow::thread1Ready()  {
 int part_testen;
    endeThread = endeThread + 1;
    extern int dialog_auswertung;
-
    if (endeThread == 1) {
      pushButton_end->setEnabled(true);
      if (dialog_auswertung ==0){ 
@@ -1198,6 +1199,7 @@ void MWindow::remainingTime(int prozent)
 
 void MWindow::indicator_reset() {
      // Anzeige zurücksetzen für neuen Aufruf fsarchiver
+     werte_reset();
      progressBar->setValue(0);
      AnzahlgesicherteFile ->setText(0);
      AnzahlsaveFile ->setText(0); 
@@ -1218,7 +1220,8 @@ void MWindow::keyPressEvent(QKeyEvent *event) {
          case Qt::Key_Escape:
             //  int ret = questionMessage(tr("Do you want really break the save or restore from the partition?", "Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?"));
            //   if (ret == 1)
-              esc_end();  
+              if (bit_version() == "64")
+                    esc_end();  
          break;
      }
 }
@@ -1468,7 +1471,8 @@ QString befehl;
        	SicherungsFolderFileName = SicherungsFolderFileName.left(pos);
        	SicherungsFolderFileName.insert(pos, QString("txt"));
         befehl = "rm "  + SicherungsFolderFileName;
-        system (befehl.toAscii().data()); 
+        system (befehl.toAscii().data());
+        flag_end= 1;
         thread1.terminate();
         thread1.wait();
         }
@@ -1489,5 +1493,27 @@ QString befehl;
     	system (befehl.toAscii().data());
      }
    close(); */
+}
+
+QString MWindow::bit_version()
+{
+QString bit;
+QString homepath = QDir::homePath();
+QString befehl;
+	befehl = "uname -m 1> " +  homepath + "/.config/qt4-fsarchiver/bit.txt";
+        system (befehl.toAscii().data());
+QString filename = homepath + "/.config/qt4-fsarchiver/bit.txt";
+QFile file(filename);
+        if( file.open(QIODevice::ReadOnly|QIODevice::Text)) {
+           QTextStream ds(&file);
+           bit = ds.readLine();
+           file.close();
+           befehl = "rm " + filename;
+           }
+           system (befehl.toAscii().data());
+           if (bit.indexOf("_64") > 0)
+		return "64";               
+           else 
+                return "32";
 }
 

@@ -372,10 +372,11 @@ QFile file(folder_net);
                                 thread1.setValues(indizierung + 2,0);
                                 pushButton_save->setEnabled(false);
                                 pushButton_end->setEnabled(false); 
+                                werte_reset();
                                 flag_View_net = 1;
   				timer->singleShot( 1000, this , SLOT(ViewProzent( ))) ; 
 				startThread1(); // fsarchiver wird im Thread ausgeführt
-        			werte_reset();
+        			
 			}
        }
        return 0;
@@ -859,6 +860,7 @@ void DialogNet::remainingTime(int prozent)
 
 void DialogNet::indicator_reset() {
      // Anzeige zurücksetzen für neuen Aufruf fsarchiver
+     werte_reset();
      progressBar->setValue(0);
      AnzahlgesicherteFile ->setText(0);
      AnzahlsaveFile ->setText(0); 
@@ -958,12 +960,14 @@ if (flag_View_net == 1)
 
 
 void DialogNet::keyPressEvent(QKeyEvent *event) {
+MWindow window;   
      QWidget::keyPressEvent(event);
      switch( event->key() ) {
          case Qt::Key_Escape:
              // int ret = questionMessage(tr("Do you want really break the save or restore from the partition?", "Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?"));
             //  if (ret == 1)
-               esc_end(); 
+               if (window.bit_version() == "64")
+               	esc_end(); 
          break;
      }
 }
@@ -1008,4 +1012,9 @@ QString befehl;
 	}}
 }
 
-
+void DialogNet:: bit()
+{
+ MWindow window;   
+	if (window.bit_version() == "32")
+	        pushButton_break->setEnabled(false);
+ }

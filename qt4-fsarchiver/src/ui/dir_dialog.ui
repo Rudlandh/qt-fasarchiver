@@ -346,7 +346,7 @@ Files/directories:</string>
      <string extracomment="Break process"/>
     </property>
     <property name="icon">
-     <iconset resource="../../../qt4-fsarchiver-4fcb10b/qt4-fsarchiver/src/icon.qrc">
+     <iconset resource="../icon.qrc">
       <normaloff>:/src/images/cancel.png</normaloff>:/src/images/cancel.png</iconset>
     </property>
     <property name="shortcut">
@@ -478,7 +478,7 @@ backup key</string>
   </widget>
  </widget>
  <resources>
-  <include location="../../../qt4-fsarchiver-4fcb10b/qt4-fsarchiver/src/icon.qrc"/>
+  <include location="../icon.qrc"/>
  </resources>
  <connections/>
 </ui>

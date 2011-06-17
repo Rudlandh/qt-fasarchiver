@@ -54,7 +54,8 @@ protected slots:
     void keyPressEvent(QKeyEvent *event);
     int questionMessage(QString frage);
     void esc_end();
-    
+    void bit();
+        
 private slots:    
    void startThread1();
    void thread1Ready();

@@ -38,7 +38,8 @@ public:
    QString beschreibungstext(QString partitiontext, QString text, int zip, int row);
    int is_mounted (char* dev_path);
    int questionMessage(QString frage); 
-   
+   QString bit_version();
+      
 public slots: 
    void folder_einlesen();
    void save_button();

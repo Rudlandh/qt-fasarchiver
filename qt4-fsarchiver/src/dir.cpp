@@ -41,6 +41,7 @@ QString SicherungsFolderFileName_dir;
 int thread_run_dir;
 int flag_end_dir;
 
+
 DialogDIR::DialogDIR(QWidget *parent)
 {
         setupUi(this); // this sets up GUI
@@ -71,7 +72,7 @@ DialogDIR::DialogDIR(QWidget *parent)
         items << tr("bzip2 good") << tr("lzma fast") << tr("lzma medium") << tr("lzma best");
         cmb_zip->addItems (items);
         items.clear();
-        // Ini-Datei auslesen
+          // Ini-Datei auslesen
         QString homepath = QDir::homePath();
         QFile file(homepath + "/.config/qt4-fsarchiver/qt4-fsarchiver.conf");
         if (file.exists()) {
@@ -309,8 +310,6 @@ Qt::CheckState state1;
                	}
                 parameter[4] = folder_dir;
                 int retour = fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
-int testen = werte_holen(4);
-qDebug() << "testen" << testen << retour;
                 if ( werte_holen(4) == 103 && retour != 0){
                            QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");
@@ -610,10 +609,12 @@ if (flag_View_dir == 1)
 } 
 
 void DialogDIR::keyPressEvent(QKeyEvent *event) {
+MWindow window;
      QWidget::keyPressEvent(event);
      switch( event->key() ) {
          case Qt::Key_Escape:
-              esc_end();
+              if (window.bit_version() == "64")
+               	esc_end(); 
          break;
      }
 }
@@ -653,4 +654,9 @@ QString befehl;
  	}}
 }
 
-
+void DialogDIR:: bit()
+{
+ MWindow window;   
+        if (window.bit_version() == "32")
+                pushButton_break->setEnabled(false);
+ }

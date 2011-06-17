@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.0" language="ru_RU" sourcelanguage="en">
 <defaultcodec>UTF-8</defaultcodec>
 <context>
     <name>DialogDIR</name>
@@ -57,7 +57,7 @@ verschlüsseln. Schlüssel:</comment>
     <message>
         <source>Location (path) of the backup</source>
         <comment>Ort (Pfad) der Sicherung</comment>
-        <translation>Место (путь) сохранения</translation>
+        <translation>Сохраняемый каталог</translation>
     </message>
     <message>
         <source>Decrypt
@@ -179,14 +179,6 @@ Die Dateiendung muss .fsa sein</comment>
 Файл должен иметь расширение .fsa</translation>
     </message>
     <message>
-        <source>The partition is encrypted. Please enter the Schlüsel
-</source>
-        <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüsel ein
-</comment>
-        <translation type="obsolete">Раздел зашифрован. Введите ключ
-</translation>
-    </message>
-    <message>
         <source>The backup of the directory was successful.
 </source>
         <comment>Die Sicherung des Verzeichnisses war erfolgreich.
@@ -276,33 +268,50 @@ Die Dateiendung muss .fsa sein</comment>
         <source>The partition is encrypted. Please enter the key</source>
         <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein
 </comment>
-        <translation type="unfinished">Раздел зашифрован. Введите ключ</translation>
-    </message>
-    <message>
-        <source>Do you want to exit the program really?</source>
-        <comment>Wollen Sie das Programm wirklich beenden?</comment>
-        <translation type="obsolete">Вы хотите выйти из программы?</translation>
+        <translation>Раздел зашифрован. Введите ключ</translation>
     </message>
     <message>
         <source>Yes</source>
         <comment>Ja</comment>
-        <translation type="unfinished">Да</translation>
+        <translation>Да</translation>
     </message>
     <message>
         <source>No</source>
         <comment>Nein</comment>
-        <translation type="unfinished">Нет</translation>
+        <translation>Нет</translation>
     </message>
     <message>
         <source>Do you want really break the save or restore from the folder?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Verzeichnisse beenden?</comment>
-        <translation type="unfinished"></translation>
+        <translation>Вы хотите прервать операцию сохранения или восстановления каталога?</translation>
     </message>
     <message>
         <source>Error!  The restoring of the folder was only partially successful!</source>
         <comment>Fehler! Das Verzeichnis wurde nur teilweise wiederhergestellt. 
 </comment>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка! Каталог был восстановлен частчно!</translation>
+    </message>
+    <message>
+        <source>You have entered an incorrect password.</source>
+        <comment>Sie haben ein falsches Passwort eingegeben. 
+</comment>
+        <translation>Ошибка авторизации.</translation>
+    </message>
+    <message>
+        <source>The backup of the folder was aborted by the user!
+</source>
+        <comment>Die Sicherung des Verzeichnisses wurde vom Benutzer abgebrochen!
+</comment>
+        <translation>Сохранение каталога было прервано пользователем!
+</translation>
+    </message>
+    <message>
+        <source>The restore of the folder was break by user!
+</source>
+        <comment>Die Wiederherstellung des Verzeichnisses wurde vom Benutzer abgebrochen!
+</comment>
+        <translation>Восстановление каталога было прервано пользователем!
+</translation>
     </message>
 </context>
 <context>
@@ -342,7 +351,7 @@ Die Dateiendung muss .fsa sein</comment>
 </source>
         <comment>Vorsicht: Wollen Sie wirklich den MBR komplett beziehungsweise teilweise zurückschreiben?
 </comment>
-        <translation> Внимание !  Вы хотите gjkyjcnm. bkb xfcnbxyj перезаписать MBR ?</translation>
+        <translation> Внимание !  Вы хотите полностью или частично перезаписать MBR ?</translation>
     </message>
     <message>
         <source>The Boot Loader section is successful return.
@@ -501,35 +510,35 @@ Die Dateiendung muss .fsa sein</comment>
     </message>
     <message>
         <source>gzip fast</source>
-        <translation>быстрый gzip</translation>
+        <translation>gzip fast</translation>
     </message>
     <message>
         <source>gzip standard</source>
-        <translation>стандартный gzip</translation>
+        <translation>gzip standard</translation>
     </message>
     <message>
         <source>qzip best</source>
-        <translation>наилучший gzip</translation>
+        <translation>qzip best</translation>
     </message>
     <message>
         <source>bzip2 fast</source>
-        <translation>быстрый bzip2</translation>
+        <translation>bzip2 fast</translation>
     </message>
     <message>
         <source>bzip2 good</source>
-        <translation>стандартный bzip2</translation>
+        <translation>bzip2 good</translation>
     </message>
     <message>
         <source>lzma fast</source>
-        <translation>быстрый lzma</translation>
+        <translation>lzma fast</translation>
     </message>
     <message>
         <source>lzma medium</source>
-        <translation>станартный lzma</translation>
+        <translation>lzma medium</translation>
     </message>
     <message>
         <source>lzma best</source>
-        <translation>лучший lzma</translation>
+        <translation>lzma best</translation>
     </message>
     <message>
         <source>Note</source>
@@ -825,24 +834,42 @@ entschlüsseln. Schlüssel</comment>
         <translation>Ошибка авторизации.</translation>
     </message>
     <message>
-        <source>Do you want to exit the program really?</source>
-        <comment>Wollen Sie das Programm wirklich beenden?</comment>
-        <translation type="obsolete">Вы хотите выйти из программы?</translation>
-    </message>
-    <message>
         <source>Yes</source>
         <comment>Ja</comment>
-        <translation type="unfinished">Да</translation>
+        <translation>Да</translation>
     </message>
     <message>
         <source>No</source>
         <comment>Nein</comment>
-        <translation type="unfinished">Нет</translation>
+        <translation>Нет</translation>
     </message>
     <message>
         <source>Do you want really break the save or restore from the partition?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
-        <translation type="unfinished"></translation>
+        <translation>ВыВы хотите прервать операцию сохранения или восстановления раздела?</translation>
+    </message>
+    <message>
+        <source>The backup of the partition was aborted by the user!
+</source>
+        <comment>Die Sicherung der Partition wurde vom Benutzer abgebrochen!
+</comment>
+        <translation>Сохранение раздела было прервано пользователем!
+</translation>
+    </message>
+    <message>
+        <source>cannot restore an archive to a partition which is mounted, unmount it first 
+</source>
+        <comment>Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!
+</comment>
+        <translation>Нельзя восстанавливать смонтированный раздел. Вначале его размонтируйте</translation>
+    </message>
+    <message>
+        <source>The restore of the partition was break by user!
+</source>
+        <comment>Die Wiederherstellung der Partition wurde vom Benutzer abgebrochen!
+</comment>
+        <translation>Восстановление раздела было прервано пользователем!
+</translation>
     </message>
 </context>
 <context>
@@ -860,7 +887,7 @@ entschlüsseln. Schlüssel</comment>
     <message>
         <source>Russia</source>
         <comment>Russisch</comment>
-        <translation type="obsolete">Русский</translation>
+        <translation>Русский</translation>
     </message>
     <message>
         <source>lzo</source>
@@ -969,13 +996,6 @@ backup key</source>
         <translation>Восстановить раздел</translation>
     </message>
     <message>
-        <source>Number of backup
-files/directories:</source>
-        <extracomment>Anzahl der zu sichernden * Dateien/Verzeichnisse:</extracomment>
-        <translation>Число сохранённых
-файлов/каталогов:</translation>
-    </message>
-    <message>
         <source>Proposed action:</source>
         <extracomment>vorgesehene Aktion:</extracomment>
         <translation>Возможные действия:</translation>
@@ -995,51 +1015,12 @@ with fsarchiver</source>
 раздела</translation>
     </message>
     <message>
-        <source>Already saved
-files/directories:</source>
-        <extracomment>bereits gesicherte * Datein/Verzeichnisse:</extracomment>
-        <translation>Сохранённые
-файлы/каталоги:</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;elapsed time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>vergangene Zeit:</extracomment>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Прошло :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>minutes</source>
-        <extracomment>Minuten
-----------
-Minuten</extracomment>
         <translation>минут</translation>
     </message>
     <message>
         <source>seconds</source>
-        <extracomment>Sekunden:
-----------
-Sekunden</extracomment>
         <translation>секунд</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;expected time:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>noch zu erwartende Zeit:</extracomment>
-        <translation type="obsolete">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ожидается:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>save partition</source>
@@ -1065,12 +1046,24 @@ p, li { white-space: pre-wrap; }
         <translation>n</translation>
     </message>
     <message>
-        <source>elapsed time</source>
-        <translation type="unfinished"></translation>
+        <source>elapsed time:</source>
+        <translation>Прошедшее время:</translation>
     </message>
     <message>
-        <source>remaining time:</source>
-        <translation type="unfinished"></translation>
+        <source>On the number saved
+Files/directories:</source>
+        <translation>Число сохранённых
+ файлов/каталогов:</translation>
+    </message>
+    <message>
+        <source>already saved 
+files/directories:</source>
+        <translation>Сохранено
+файлов/каталогов:</translation>
+    </message>
+    <message>
+        <source>remaining time</source>
+        <translation>оставшиеся время</translation>
     </message>
 </context>
 <context>
@@ -1388,30 +1381,7 @@ Die Dateiendung muss .fsa sein</comment>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
 </comment>
         <translation>Вы пытаетесь восстановить раздел. Выбранный файл только для восстановления каталогов
-Перезапустите программу заново</translation>
-    </message>
-    <message>
-        <source>Backup and restore
-partitions, directory and MBR
-Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.
-All rights reserved.
-Version 0.6.12-7, May 31, 2011</source>
-        <comment>Sichern und Wiederherstellen
-von Partitionen, Verzeichnissen und MBR
-Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.
-All rights reserved.
-Version 0.6.12-7, 31. Mai 2011</comment>
-        <translation>Сохранение и восстановление
-разделов, каталогов и MBR
-Версия 0.6.12.7- 24 мая 2011
-
-Copyright (C) 2008-2011 Francois Dupoux,
- Dieter Baum, Ruslan Hihin
-Охраняется авторским правом
-GNU GENERAL PUBLIC LICENSE
-Version 3, 29 June 2007
-
-</translation>
+Перезапустите программу заново.</translation>
     </message>
     <message>
         <source>The program must be run with root privileges. The program is terminated.
@@ -1466,11 +1436,6 @@ Version 3, 29 June 2007
         <comment>Sie haben ein falsches Passwort eingegeben.
 </comment>
         <translation>Ошибка авторизации.</translation>
-    </message>
-    <message>
-        <source>Do you want to exit the program really?</source>
-        <comment>Wollen Sie das Programm wirklich beenden?</comment>
-        <translation type="obsolete">Вы хотите выйти из программы?</translation>
     </message>
     <message>
         <source>Backup file name: </source>
@@ -1571,7 +1536,56 @@ verschlüsseln. Schlüssel</comment>
     <message>
         <source>Do you really want to break the save or restore from the partition?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
-        <translation type="unfinished"></translation>
+        <translation>Вы хотите прервать операцию сохранения или восстановления раздела?</translation>
+    </message>
+    <message>
+        <source>Backup and restore
+partitions, directory and MBR
+Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.
+All rights reserved.
+Version 0.6.12-7, June 17, 2011</source>
+        <comment>Sichern und Wiederherstellen
+von Partitionen, Verzeichnissen und MBR
+Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.
+All rights reserved.
+Version 0.6.12-7, 17. Juni 2011</comment>
+        <translation>Сохранение и восстановление
+разделов, каталогов и MBR
+версия  0.6.12-7, от 17 июня 2011
+
+Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum
+Охраняется законом об авторских правах
+Программа распространяется на условиях GPL v2.0
+
+
+
+
+
+
+</translation>
+    </message>
+    <message>
+        <source>The backup of the partition was aborted by the user!
+</source>
+        <comment>Die Sicherung der Partition  wurde vom Benutzer abgebrochen!
+</comment>
+        <translation>Сохранение раздела прервано пользователем!
+</translation>
+    </message>
+    <message>
+        <source>cannot restore an archive to a partition which is mounted, unmount it first 
+</source>
+        <comment>Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!
+</comment>
+        <translation>Нельзя восстанавливать смонтированный раздел. Вначале его размонтируйте</translation>
+    </message>
+    <message>
+        <source>The restore of the partition was break by user!
+</source>
+        <comment>Die Wiederherstellung der Partition  wurde vom Benutzer abgebrochen!
+</comment>
+        <translation>Восстановление раздела было прервано пользователем!
+</translation>
     </message>
 </context>
 <context>
@@ -1652,17 +1666,13 @@ Files/directories:</source>
     </message>
     <message>
         <source>elapsed time:</source>
-        <translation type="obsolete">прошло:</translation>
+        <translation>Прошедшее время:</translation>
     </message>
     <message>
         <source>already saved 
 files/directories:</source>
         <translation>Сохранено
 файлов/каталогов:</translation>
-    </message>
-    <message>
-        <source>expected time:</source>
-        <translation>Ожидается:</translation>
     </message>
     <message>
         <source>Notes to  the backup</source>
@@ -1689,11 +1699,11 @@ with fsarchiver</source>
     </message>
     <message>
         <source>Actions</source>
-        <translation>Функции</translation>
+        <translation>Действия</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Параметры</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1745,7 +1755,11 @@ with fsarchiver</source>
     </message>
     <message>
         <source>remaining time:</source>
-        <translation type="unfinished"></translation>
+        <translation>оставшиеся время:</translation>
+    </message>
+    <message>
+        <source>breakprocess</source>
+        <translation>Прервать</translation>
     </message>
 </context>
 <context>
@@ -1839,11 +1853,6 @@ Verzeichnis sichern/zurückschreiben</extracomment>
         <translation>Работа с каталогами</translation>
     </message>
     <message>
-        <source>Close</source>
-        <extracomment>Schließen</extracomment>
-        <translation type="obsolete">Закрыть</translation>
-    </message>
-    <message>
         <source>Saved directory</source>
         <extracomment>zu sicherndes Verzeichnis:</extracomment>
         <translation>Каталог</translation>
@@ -1890,12 +1899,7 @@ Files/directories:</source>
     <message>
         <source>elapsed time:</source>
         <extracomment>vergangene Zeit:</extracomment>
-        <translation type="obsolete">Прошло:</translation>
-    </message>
-    <message>
-        <source>expected time:</source>
-        <extracomment>noch zu erwartende Zeit:</extracomment>
-        <translation>Ожидается:</translation>
+        <translation>Прошедшее время:</translation>
     </message>
     <message>
         <source>minutes</source>
@@ -1919,14 +1923,14 @@ for to be used fsarchiver:</source>
 вычисления :</translation>
     </message>
     <message>
-        <source>remaining time:</source>
-        <extracomment>vergangene Zeit:</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Exit</source>
         <extracomment>Schließen</extracomment>
-        <translation type="unfinished">Выход</translation>
+        <translation>Выход</translation>
+    </message>
+    <message>
+        <source>remaining  time:</source>
+        <extracomment>noch zu erwartende Zeit:</extracomment>
+        <translation>оставшиеся время:</translation>
     </message>
 </context>
 <context>
