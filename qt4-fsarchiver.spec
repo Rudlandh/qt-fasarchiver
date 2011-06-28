@@ -15,9 +15,9 @@ License: GPLv2+
 Group: Archiving/Backup
 
 
-# Automatically added by buildreq on Fri May 13 2011
-# optimized out: fontconfig libcom_err-devel libgpg-error libgpg-error-devel libqt4-core libqt4-devel libqt4-gui libstdc++-devel zlib-devel
-BuildRequires: bzlib-devel gcc-c++ libattr-devel libblkid-devel libe2fs-devel libgcrypt-devel liblzma-devel liblzo2-devel libuuid-devel phonon-devel
+# Automatically added by buildreq on Wed Jun 29 2011
+# optimized out: fontconfig libX11-devel libXext-devel libcom_err-devel libgpg-error libgpg-error-devel libqt4-core libqt4-devel libqt4-gui libstdc++-devel zlib-devel
+BuildRequires: bzlib-devel gcc-c++ libattr-devel libblkid-devel libe2fs-devel libgcrypt-devel liblzma-devel liblzo2-devel libqt4-network libuuid-devel phonon-devel
 
 %description
 QT4-FSArchiver is GUI for fsarhiver.
