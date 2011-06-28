@@ -83,11 +83,21 @@ INSTALL_ROOT=%buildroot %makeinstall_std
 mkdir -p %buildroot%_datadir/qt4/translations
 cp translations/%{name}*.qm %buildroot%_datadir/qt4/translations
 
+install -pD -m640 %SOURCE1 %buildroot%_sysconfdir/pam.d/%name
+install -pD -m640 %SOURCE2 %buildroot%_sysconfdir/security/console.apps/%name
+install -d -m755 %buildroot%_sbindir
+mv %buildroot%_bindir/%name %buildroot%_sbindir/
+ln -s %_bindir/consolehelper %buildroot%_bindir/%name
+
+
 %files
 %_sbindir/%name
 %_desktopdir/qt4-fsarchiver.desktop
 %_pixmapsdir/*.png
 %_datadir/qt4/translations/%{name}*.qm
+%_bindir/%name
+%_sysconfdir/pam.d/*
+%_sysconfdir/security/console.apps/*
 
 %changelog
 * Wed May 18 2011 Hihin Ruslan <ruslandh@altlinux.ru> 0.6.12-alt1.1
