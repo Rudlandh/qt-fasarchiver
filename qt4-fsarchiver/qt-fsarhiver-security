@@ -1,0 +1,4 @@
+USER=root
+PROGRAM=/usr/sbin/qt-fsarchiver
+SESSION=true
+FALLBACK=true

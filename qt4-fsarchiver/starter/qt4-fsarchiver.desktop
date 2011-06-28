@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=QT-fsa
+Comment=Backup/Restore partition, directory or MBR
+Comment[de]=Speichern/Wiederherstellen der Partition, Verzeichnis oder MBR
+Comment[ru]=Сохранение-удаление разделов, каталогов и MBR
+Exec=qt4-fsarchiver
+Icon=qt4-fsarchiver.png
+Terminal=true
+Type=Application
+Categories=Qt;System;Filesystem;
+StartupNotify=true

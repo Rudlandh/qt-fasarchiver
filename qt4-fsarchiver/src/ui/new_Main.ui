@@ -1,0 +1,1724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>808</width>
+    <height>756</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Save/restore partition </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabVolume">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>791</width>
+      <height>511</height>
+     </rect>
+    </property>
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_backup_part">
+     <property name="toolTip">
+      <string>Save / restore prtition</string>
+     </property>
+     <property name="locale">
+      <locale language="English" country="UnitedStates"/>
+     </property>
+     <attribute name="title">
+      <string>Patition</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_restore">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>376</y>
+        <width>351</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Partition restore</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_save">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>335</y>
+        <width>351</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Stored partitions</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_end">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>418</y>
+        <width>351</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exit</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>282</y>
+        <width>291</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
+      <property name="text">
+       <string>Name the backup file:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_folder">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>430</y>
+        <width>21</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_DateiName">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>302</y>
+        <width>351</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>77</y>
+        <width>351</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <widget class="QComboBox" name="cmb_zip">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>160</y>
+         <width>161</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>271</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="locale">
+        <locale language="English" country="UnitedStates"/>
+       </property>
+       <property name="text">
+        <string>Number of processors
+cores for to be used fsarchiver:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cmb_kerne">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>130</y>
+         <width>51</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Compression
+setting:</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_Beschreibung">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>331</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Notes to  the backup</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineKey">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>60</y>
+         <width>121</width>
+         <height>26</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_overwrite">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>341</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>available backup overwrite</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_split">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>90</y>
+         <width>251</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Stock Split on DVD size</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_key">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>221</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Encrypt 
+backup key</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>362</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="title">
+       <string extracomment="vorgesehene Aktion:">Proposed action:</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <widget class="QRadioButton" name="rdBt_saveFsArchiv">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>165</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Partition mit * fsArchiver sichern:">Partition save 
+with fsarchiver</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rdBt_restoreFsArchiv">
+       <property name="geometry">
+        <rect>
+         <x>165</x>
+         <y>30</y>
+         <width>195</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Partition mit fs-Archiver * zurückschreiben">Restore partition
+with fsarchiver</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton_partition">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>430</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>S</string>
+      </property>
+     </widget>
+     <widget class="QTreeView" name="treeView">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>185</y>
+        <width>380</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <attribute name="headerDefaultSectionSize">
+       <number>400</number>
+      </attribute>
+     </widget>
+     <widget class="QLabel" name="label_Partition">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>10</y>
+        <width>371</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
+      <property name="text">
+       <string>Existing partitions:</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="listWidget">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>30</y>
+        <width>380</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_folder">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>165</y>
+        <width>371</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
+      <property name="text">
+       <string>Backup directory:</string>
+      </property>
+     </widget>
+     <zorder>pushButton_restore</zorder>
+     <zorder>pushButton_save</zorder>
+     <zorder>label_4</zorder>
+     <zorder>pushButton_folder</zorder>
+     <zorder>lineEdit_DateiName</zorder>
+     <zorder>frame_2</zorder>
+     <zorder>groupBox</zorder>
+     <zorder>pushButton_partition</zorder>
+     <zorder>treeView</zorder>
+     <zorder>label_Partition</zorder>
+     <zorder>listWidget</zorder>
+     <zorder>label_folder</zorder>
+     <zorder>pushButton_end</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Directoty</string>
+     </attribute>
+     <widget class="QPushButton" name="bt_save">
+      <property name="geometry">
+       <rect>
+        <x>375</x>
+        <y>405</y>
+        <width>321</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Verzeichnis sichern/zurückschreiben">Save/restore directory</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>355</y>
+        <width>251</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Anzahl der Prozessorkerne, die für fsarchiver verwendet werden sollen:">Number of processor cores
+for to be used fsarchiver:</string>
+      </property>
+     </widget>
+     <widget class="QTreeView" name="treeView_dir">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>47</y>
+        <width>331</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <attribute name="headerDefaultSectionSize">
+       <number>400</number>
+      </attribute>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>311</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="zu sicherndes Verzeichnis:">Saved directory</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>20</y>
+        <width>291</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Ort (Pfad) der Sicherung:">Location (path) of backup:</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>355</y>
+        <width>331</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label_32">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>191</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Kompressioneinstellung:">Compression setting:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cmb_zip_3">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>0</y>
+         <width>131</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_key_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>200</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Encrypt
+backup key</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineKey_3">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>40</y>
+         <width>131</width>
+         <height>26</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_overwrite_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>75</y>
+         <width>330</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="vorhandene Sicherung überschreiben">Overwrite existing backup</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_path_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>100</y>
+         <width>231</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Sicherung an den Ursprungsort zurückschreiben">Backup restore to the Origin</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTreeView" name="treeView_path">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>47</y>
+        <width>325</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <attribute name="headerDefaultSectionSize">
+       <number>400</number>
+      </attribute>
+     </widget>
+     <widget class="QComboBox" name="cmb_kerne_2">
+      <property name="geometry">
+       <rect>
+        <x>634</x>
+        <y>365</y>
+        <width>61</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bt_end">
+      <property name="geometry">
+       <rect>
+        <x>375</x>
+        <y>455</y>
+        <width>321</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Schließen">Close</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Backup MBR</string>
+     </attribute>
+     <widget class="QPushButton" name="bt_end_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>450</y>
+        <width>201</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Abbrechen">Cancel</string>
+      </property>
+     </widget>
+     <widget class="QTreeView" name="treeView_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>50</y>
+        <width>431</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <attribute name="headerDefaultSectionSize">
+       <number>400</number>
+      </attribute>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>400</y>
+        <width>311</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="MBR von dieser dieser Festplatte sichern / wiederherstellen:">MBR of that drive this
+Backup / restore:</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rdbt_sda">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>400</y>
+        <width>61</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="sda">sda</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmb_mbr">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>370</y>
+        <width>431</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string extracomment="nur den Bootloaderbereich wieder herstellen">Only the boot loader area to restore</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string extracomment="Bootloaderbereich und die Partitionstabelle wieder herstellen">Bootloader area and restore the partition table</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string extracomment="Partitionstabelle wiederherstellen">Restore partition table</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string extracomment="Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).">Secretly area to restore. (Without Boot Loader and without partition table).</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string/>
+       </property>
+      </item>
+     </widget>
+     <widget class="QRadioButton" name="rdbt_sdb">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>420</y>
+        <width>61</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="sdb">sdb</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>421</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="MBR Sicherungsverzeichnis:">MBR backup directory:</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rdbt_sdc">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>400</y>
+        <width>61</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="sdc">sdc</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bt_save_2">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>450</y>
+        <width>201</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="MBR sichern/zurückschreiben">Save / restore MBR</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="rdbt_sdd">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>420</y>
+        <width>61</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="sdd">sdd</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>Volume</string>
+     </attribute>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>741</width>
+        <height>441</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Functions in development</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Network Backup</string>
+     </attribute>
+     <widget class="QFrame" name="frame_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>90</y>
+        <width>351</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <widget class="QComboBox" name="cmb_zip_4">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>160</y>
+         <width>161</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>271</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="locale">
+        <locale language="English" country="UnitedStates"/>
+       </property>
+       <property name="text">
+        <string>Number of processors
+cores for to be used fsarchiver:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cmb_kerne_3">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>130</y>
+         <width>51</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_24">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>150</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Compression
+setting:</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_Beschreibung_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>331</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Notes to the backup</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_key_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>221</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Encrypt 
+backup key</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineKey_4">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>60</y>
+         <width>121</width>
+         <height>26</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_overwrite_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>341</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>available backup overwrite</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_split_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>90</y>
+         <width>251</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Stock Split on DVD size</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLineEdit" name="txt_rechner_net">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>435</y>
+        <width>211</width>
+        <height>27</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_end_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>435</y>
+        <width>351</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Beenden">Exit</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_partition_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>400</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>S</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_restore_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>392</y>
+        <width>351</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Partition wiederherstellen">Partition restore</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>360</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+      <property name="title">
+       <string extracomment="vorgesehene Aktion:">Proposed action:</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <widget class="QRadioButton" name="rdBt_saveFsArchiv_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>171</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Partition mit * fsArchiver sichern:">Partition save 
+with fsarchiver</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rdBt_restoreFsArchiv_2">
+       <property name="geometry">
+        <rect>
+         <x>155</x>
+         <y>30</y>
+         <width>205</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Partition mit fs-Archiver * zurückschreiben">Restore partition 
+with fsarchiver</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_Partition_2">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>0</y>
+        <width>361</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="vorhandene Partitionen:">Existing partitions:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>430</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Netzrechnername:">Network computer 
+ name:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_net">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>400</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>n</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_38">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>300</y>
+        <width>291</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Dateiname der Sicherung:">Name the backup file:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_DateiName_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>320</y>
+        <width>351</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="listWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>365</x>
+        <y>20</y>
+        <width>360</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_save_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>350</y>
+        <width>351</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Partition sichern">save partition</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_folder_2">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>185</y>
+        <width>371</width>
+        <height>18</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string extracomment="Sicherungsverzeichnis:">Backup directory:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_folder_2">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>400</y>
+        <width>21</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QTreeView" name="treeView_3">
+      <property name="geometry">
+       <rect>
+        <x>365</x>
+        <y>210</y>
+        <width>360</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <attribute name="headerDefaultSectionSize">
+       <number>400</number>
+      </attribute>
+     </widget>
+     <zorder>frame_3</zorder>
+     <zorder>txt_rechner_net</zorder>
+     <zorder>pushButton_end_2</zorder>
+     <zorder>pushButton_partition_2</zorder>
+     <zorder>groupBox_2</zorder>
+     <zorder>label_Partition_2</zorder>
+     <zorder>label_25</zorder>
+     <zorder>pushButton_net</zorder>
+     <zorder>label_38</zorder>
+     <zorder>lineEdit_DateiName_2</zorder>
+     <zorder>listWidget_2</zorder>
+     <zorder>pushButton_save_2</zorder>
+     <zorder>label_folder_2</zorder>
+     <zorder>pushButton_folder_2</zorder>
+     <zorder>treeView_3</zorder>
+     <zorder>pushButton_restore_2</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Basic settings</string>
+     </attribute>
+     <widget class="QFrame" name="frame_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>721</width>
+        <height>611</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label_26">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>17</y>
+         <width>225</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Anzahl Prozessorenkerne, * die für fsarchiver * verwendet werden sollen:">Number of processors
+cores, for fsarchiver
+should be used:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cmb_Kerne">
+       <property name="geometry">
+        <rect>
+         <x>241</x>
+         <y>29</y>
+         <width>200</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_27">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>81</y>
+         <width>225</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Standard*kompression:">Standard
+compression:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cmb_zip_5">
+       <property name="geometry">
+        <rect>
+         <x>241</x>
+         <y>84</y>
+         <width>200</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_28">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>128</y>
+         <width>225</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Language:</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="cmb_language">
+       <property name="geometry">
+        <rect>
+         <x>241</x>
+         <y>128</y>
+         <width>200</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_file">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>168</y>
+         <width>4441</width>
+         <height>39</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="vorhandene Dateien * standardmäßig überschreiben">existing files by default override</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_tip">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>208</y>
+         <width>441</width>
+         <height>39</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Hinweise zur Sicherung * standardmäßig aktivieren">Backup note enable by default</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_folder">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>288</y>
+         <width>441</width>
+         <height>39</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Verzeichnisse * standardmäßig an * den ursprünglichen * Ort zurückschreiben">Directories by default write 
+back to the original location</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_key_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>248</y>
+         <width>441</width>
+         <height>39</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Verschlüsselung * standardmäßig aktivieren">Enable encryption by default</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_split_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>328</y>
+         <width>441</width>
+         <height>39</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Archiv-Datei auf DVD * Größe aufteilen">Archive file size divided on DVD</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_password">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>368</y>
+         <width>441</width>
+         <height>39</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Passwort für Netzwerk * anzeigen">Password for network's view</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_datesave">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>408</y>
+         <width>441</width>
+         <height>39</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Netzwerkeingabedaten * speichern">Network input data save</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="cmd_save">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>460</y>
+         <width>431</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Einstellungen speichern">Save Settings</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="cmd_cancel">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>500</y>
+         <width>431</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string extracomment="Beenden">Exit</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>Logs</string>
+     </attribute>
+     <widget class="QFrame" name="frame_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>761</width>
+        <height>421</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QListView" name="listView">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>711</width>
+         <height>351</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>20</y>
+         <width>80</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Logs</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>520</y>
+      <width>791</width>
+      <height>153</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="3" column="0" colspan="7">
+      <widget class="QProgressBar" name="progressBar">
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>elapsed time:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="locale">
+        <locale language="German" country="Germany"/>
+       </property>
+       <property name="text">
+        <string>On the number saved
+Files/directories:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="AnzahlsaveFile">
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>already saved 
+files/directories:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="AnzahlgesicherteFile">
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLineEdit" name="MinuteElapsed">
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>seconds</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLineEdit" name="SekundeElapsed">
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>minutes</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLineEdit" name="MinuteRemaining">
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>expected time:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>minutes</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QLineEdit" name="SekundeRemaining">
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="6">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>seconds</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_partition_save"/>
+   <addaction name="action_partition_restore"/>
+   <addaction name="action_mbr_save"/>
+   <addaction name="action_mbr_restore"/>
+   <addaction name="action_dir_save"/>
+   <addaction name="action_dir_restore"/>
+   <addaction name="action_partition_save_net"/>
+   <addaction name="action_partition_restore_net"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>808</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAktionen">
+    <property name="title">
+     <string>Actions</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="action_partition_save"/>
+    <addaction name="action_partition_restore"/>
+    <addaction name="separator"/>
+    <addaction name="action_partition_save_net"/>
+    <addaction name="action_partition_restore_net"/>
+    <addaction name="action_mbr_save"/>
+    <addaction name="action_mbr_restore"/>
+    <addaction name="separator"/>
+    <addaction name="action_dir_save"/>
+    <addaction name="action_dir_restore"/>
+   </widget>
+   <widget class="QMenu" name="menu_Einstellungen">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="action_Einstellungen"/>
+   </widget>
+   <widget class="QMenu" name="menuInformation">
+    <property name="title">
+     <string>Information</string>
+    </property>
+    <addaction name="action_Information"/>
+   </widget>
+   <widget class="QMenu" name="menu_Beenden">
+    <property name="title">
+     <string>Exit</string>
+    </property>
+    <addaction name="action_Beenden"/>
+   </widget>
+   <addaction name="menuAktionen"/>
+   <addaction name="menu_Einstellungen"/>
+   <addaction name="menuInformation"/>
+   <addaction name="menu_Beenden"/>
+  </widget>
+  <action name="actionPfad_fuer_die_Sicherung_festlegen">
+   <property name="text">
+    <string>Basic Settings</string>
+   </property>
+  </action>
+  <action name="action_partition_save">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/disk.png</normaloff>:/src/images/disk.png</iconset>
+   </property>
+   <property name="text">
+    <string>Backup partition</string>
+   </property>
+  </action>
+  <action name="action_partition_restore">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/book_previous.png</normaloff>:/src/images/book_previous.png</iconset>
+   </property>
+   <property name="text">
+    <string>Restore partition</string>
+   </property>
+  </action>
+  <action name="action_Einstellungen">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/einstellung.png</normaloff>:/src/images/einstellung.png</iconset>
+   </property>
+   <property name="text">
+    <string>Basic Settings</string>
+   </property>
+  </action>
+  <action name="action_Information">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/information.png</normaloff>:/src/images/information.png</iconset>
+   </property>
+   <property name="text">
+    <string>Information fsarchiver</string>
+   </property>
+  </action>
+  <action name="action_mbr_save">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/mbr_save.png</normaloff>:/src/images/mbr_save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save MBR</string>
+   </property>
+  </action>
+  <action name="action_mbr_restore">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/mbr_restore.png</normaloff>:/src/images/mbr_restore.png</iconset>
+   </property>
+   <property name="text">
+    <string>Restore MBR</string>
+   </property>
+  </action>
+  <action name="action_dir_restore">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/folder_back.png</normaloff>:/src/images/folder_back.png</iconset>
+   </property>
+   <property name="text">
+    <string>Restore directory </string>
+   </property>
+  </action>
+  <action name="action_dir_save">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/folder_go.png</normaloff>:/src/images/folder_go.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save directory </string>
+   </property>
+  </action>
+  <action name="action_Beenden">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/cancel.png</normaloff>:/src/images/cancel.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit program</string>
+   </property>
+  </action>
+  <action name="action_partition_save_net">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/applications-internet.png</normaloff>:/src/images/applications-internet.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save a parttion on network</string>
+   </property>
+  </action>
+  <action name="action_partition_restore_net">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/applications-internet-ein.png</normaloff>:/src/images/applications-internet-ein.png</iconset>
+   </property>
+   <property name="text">
+    <string>Restore a parttion on network</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../icon.qrc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <signal>clicked(bool)</signal>
+ </slots>
+</ui>

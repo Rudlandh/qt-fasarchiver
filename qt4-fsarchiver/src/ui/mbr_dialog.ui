@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mbr_dialog</class>
+ <widget class="QWidget" name="mbr_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>469</width>
+    <height>505</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string extracomment="MBR sichern/zurückschreiben">Save / restore MBR</string>
+  </property>
+  <widget class="QComboBox" name="cmb_mbr">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>380</y>
+     <width>431</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string extracomment="nur den Bootloaderbereich wieder herstellen">Only the boot loader area to restore</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string extracomment="Bootloaderbereich und die Partitionstabelle wieder herstellen">Bootloader area and restore the partition table</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string extracomment="Partitionstabelle wiederherstellen">Restore partition table</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string extracomment="Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).">Secretly area to restore. (Without Boot Loader and without partition table).</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string/>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="bt_end">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>460</y>
+     <width>201</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string extracomment="Abbrechen">Cancel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bt_save">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>460</y>
+     <width>201</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string extracomment="MBR sichern/zurückschreiben">Save / restore MBR</string>
+   </property>
+  </widget>
+  <widget class="QTreeView" name="treeView">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>431</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <attribute name="headerDefaultSectionSize">
+    <number>400</number>
+   </attribute>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>421</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string extracomment="MBR Sicherungsverzeichnis:">MBR backup directory:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>410</y>
+     <width>311</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string extracomment="MBR von dieser dieser Festplatte sichern / wiederherstellen:">MBR of that drive this
+Backup / restore:</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="rdbt_sda">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>410</y>
+     <width>61</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string extracomment="sda">sda</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="rdbt_sdb">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>430</y>
+     <width>61</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string extracomment="sdb">sdb</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="rdbt_sdc">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>410</y>
+     <width>61</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string extracomment="sdc">sdc</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="rdbt_sdd">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>430</y>
+     <width>61</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string extracomment="sdd">sdd</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
