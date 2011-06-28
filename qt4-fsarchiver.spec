@@ -3,7 +3,7 @@
 Summary: GUI for Filesystem Archiver for Linux
 Name: qt4-fsarchiver
 Version: 0.6.12
-Release: alt1.2
+Release: alt1
 Url: http://www.fsarchiver.org
 Packager: Hihin Ruslan <ruslandh@altlinux.ru>
 
@@ -76,15 +76,15 @@ echo QMAKE_CFLAGS_RELEASE = %optflags >>  qt4-fsarchiver.pro
 %build
 export PATH=$PATH:%_qt4dir/bin
 
-#qmake QMAKE_CFLAGS_RELEASE="%optflags" \
-#	QMAKE_CXXFLAGS_RELEASE="%optflags" qt4-fsarchiver.pro
+qmake QMAKE_CFLAGS_RELEASE="%optflags" \
+	QMAKE_CXXFLAGS_RELEASE="%optflags" qt4-fsarchiver.pro
 
-#INSTALL_ROOT=%buildroot qmake qt4-fsarchiver.pro
+INSTALL_ROOT=%buildroot qmake qt4-fsarchiver.pro
 
-./configure  --prefix=/usr \
---bindir=/usr/bin \
---datadir=/usr/share \
---qtdir=%_qt4dir
+#./configure  --prefix=/usr \
+#--bindir=/usr/bin \
+#--datadir=/usr/share \
+#--qtdir=%_qt4dir
 
 
 
