@@ -120,13 +120,7 @@ install -pD -m640 %SOURCE2 %buildroot%_sysconfdir/security/console.apps/%name
 %_datadir/qt4/translations/*%{name}*.qm
 
 %changelog
-* Mon May 23 2011 Hihin Ruslan <ruslandh@altlinux.ru> 0.6.12-alt1.2
-- Update to 6.12.7
-
-* Wed May 18 2011 Hihin Ruslan <ruslandh@altlinux.ru> 0.6.12-alt1.1
-- add localisation
-
-* Wed May 11 2011 Hihin Ruslan <ruslandh@altlinux.ru> 0.6.12-alt1
+* Wed Jun 29 2011 Hihin Ruslan <ruslandh@altlinux> 0.6.12-alt1
 - Initial release for ALT Linux
 
 
