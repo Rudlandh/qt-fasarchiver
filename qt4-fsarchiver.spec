@@ -8,6 +8,8 @@ Url: http://www.fsarchiver.org
 Packager: Hihin Ruslan <ruslandh@altlinux.ru>
 
 Source: %name.tar
+Source1: %name-pam
+Source2: %name-security
 
 License: GPLv2+
 Group: Archiving/Backup
@@ -99,10 +101,20 @@ cp translations/%{name}*.qm %buildroot%_datadir/qt4/translations
 install -D -m644 %buildroot/%_pixmapsdir/harddrive.png %buildroot%_liconsdir/%name.png
 rm %buildroot/%_pixmapsdir/harddrive.png
 
+install -pD -m640 %SOURCE1 %buildroot%_sysconfdir/pam.d/%name
+install -pD -m640 %SOURCE2 %buildroot%_sysconfdir/security/console.apps/%name
+
+install -d -m 755 %buildroot%_bindir/
+ln -s %_bindir/consolehelper %buildroot%_bindir/%name
+
+
 %files
 %_sbindir/%name
+%_bindir/%name
 %_desktopdir/qt4-fsarchiver.desktop
 %_iconsdir/hicolor/*/apps/*
+%_sysconfdir/pam.d/*
+%_sysconfdir/security/console.apps/*
 %_datadir/qt4/translations/*%{name}*.qm
 
 %changelog
