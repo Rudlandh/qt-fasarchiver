@@ -1,1 +1,6 @@
+<<<<<<< HEAD
+=======
+copy: qt4-fsarchiver-pam
+copy: qt4-fsarchiver-security
+>>>>>>> a6fab4f8aa11d8823c46e106c29c7c4c72686fa0
 tar: qt4-fsarchiver name=qt4-fsarchiver

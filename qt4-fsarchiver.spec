@@ -101,11 +101,13 @@ cp translations/%{name}*.qm %buildroot%_datadir/qt4/translations
 install -D -m644 %buildroot/%_pixmapsdir/harddrive.png %buildroot%_liconsdir/%name.png
 rm %buildroot/%_pixmapsdir/harddrive.png
 
-install -pD -m640 %SOURCE1 %buildroot%_sysconfdir/pam.d/%name
-install -pD -m640 %SOURCE2 %buildroot%_sysconfdir/security/console.apps/%name
 
 install -d -m 755 %buildroot%_bindir/
+
 ln -s %_bindir/consolehelper %buildroot%_bindir/%name
+
+install -pD -m640 %SOURCE1 %buildroot%_sysconfdir/pam.d/%name
+install -pD -m640 %SOURCE2 %buildroot%_sysconfdir/security/console.apps/%name
 
 
 %files
