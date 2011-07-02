@@ -869,13 +869,13 @@ void MWindow::info() {
          "partitions, directory and MBR\n"
          "Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.\n"
          "All rights reserved.\n"
-         "Version 0.6.12-7, June 17, 2011",
+         "Version 0.6.12-8, July 1, 2011",
 
 	 "Sichern und Wiederherstellen\n"
          "von Partitionen, Verzeichnissen und MBR\n"
          "Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan, Dieter Baum.\n"
          "All rights reserved.\n"
-         "Version 0.6.12-7, 17. Juni 2011"));
+         "Version 0.6.12-8, 1. Juli 2011"));
 }
 
 int MWindow::Root_Auswertung(){
@@ -935,6 +935,7 @@ int MWindow::questionMessage(QString frage)
     		return 1;
 	else if (msg.clickedButton() == noButton)
     		return 2;
+   return -1;
 }
 
 
@@ -1060,15 +1061,21 @@ int part_testen;
        pushButton_save->setEnabled(true);
        progressBar->setValue(100); 
        SekundeRemaining ->setText("0");
+       int anzahl  = werte_holen(2);
+       QString text_integer = QString::number(anzahl);
+       AnzahlgesicherteFile ->setText(text_integer);
        int cnt_regfile = werte_holen(6);
        QString cnt_regfile_ = QString::number(cnt_regfile);
        int cnt_dir = werte_holen(7);
        QString cnt_dir_ = QString::number(cnt_dir); 
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
-       QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
+       QString cnt_hardlinks_ = QString::number(cnt_hardlinks);
+       int cnt_special = werte_holen(10);
+       QString cnt_special_;
+       cnt_special_ = QString::number(cnt_special);
        QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition has been backed up successfully.\n", "Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_ + 
-	tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been backed.", " Links wurden gesichert."));
+        tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr("  links and ", " Links und ") + cnt_special_ + tr(" specials have been backed.", " spezielle Daten wurden gesichert."));
      }
      else {
    
@@ -1130,8 +1137,11 @@ void MWindow::thread2Ready()  {
        QString cnt_dir_ = QString::number(cnt_dir); 
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
-       QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
-       QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition is successful back.\n", "Die Partition wurde erfolgreich wieder hergestellt.\n") + cnt_regfile_ + tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been restored.", " Links wurden wieder hergestellt."));
+       QString cnt_hardlinks_ = QString::number(cnt_hardlinks);
+       int cnt_special = werte_holen(10);
+       QString cnt_special_ = QString::number(cnt_special);   
+	QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition has been backed up successfully.\n", "Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_ + 
+        tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr("  links and ", " Links und ") + cnt_special_ + tr(" specials have been restored.", " spezielle Daten wurden wieder hergestellt."));
         }
      if (flag_end == 1) {
         QMessageBox::about(this, tr("Note", "Hinweis"),
@@ -1323,7 +1333,8 @@ int found;
             if (found > 0)
              	zahl_.replace(found, 1, ","); 
             return zahl_  + tr(" GB");
-	 }   
+    	 } 
+   return "-1";  
 }
 
 QString MWindow::ubuntu_version()  {

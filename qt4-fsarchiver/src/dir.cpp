@@ -629,6 +629,7 @@ int DialogDIR::questionMessage(QString frage)
     		return 1;
 	else if (msg.clickedButton() == noButton)
     		return 2;
+   return -1;
 }
 
 void DialogDIR::esc_end()

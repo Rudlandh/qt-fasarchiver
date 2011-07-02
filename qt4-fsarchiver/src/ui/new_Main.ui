@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>808</width>
-    <height>756</height>
+    <height>691</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@
       <locale language="English" country="UnitedStates"/>
      </property>
      <attribute name="title">
-      <string>Patition</string>
+      <string>Partition</string>
      </attribute>
      <widget class="QPushButton" name="pushButton_restore">
       <property name="geometry">
@@ -749,20 +749,109 @@ Backup / restore:</string>
      <attribute name="title">
       <string>Volume</string>
      </attribute>
-     <widget class="QLabel" name="label_12">
+     <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>40</x>
         <y>20</y>
-        <width>741</width>
-        <height>441</height>
+        <width>721</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Externel Volumes</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="listWidget_3">
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTreeWidget" name="treeWidget">
+         <column>
+          <property name="text">
+           <string>Directory tree</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>39</x>
+        <y>410</y>
+        <width>721</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="Ext_Vol">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>21</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
-       <string>Functions in development</string>
+       <string/>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="autoRepeat">
+       <bool>false</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>false</bool>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Dir_tree">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>
@@ -1415,17 +1504,17 @@ back to the original location</string>
       <x>0</x>
       <y>520</y>
       <width>791</width>
-      <height>153</height>
+      <height>101</height>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Panel</enum>
+     <enum>QFrame::StyledPanel</enum>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="3" column="0" colspan="7">
+     <item row="3" column="0" colspan="6">
       <widget class="QProgressBar" name="progressBar">
        <property name="maximum">
         <number>100</number>
@@ -1453,32 +1542,11 @@ Files/directories:</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="AnzahlsaveFile">
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_3">
        <property name="text">
         <string>already saved 
 files/directories:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="AnzahlgesicherteFile">
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QLineEdit" name="MinuteElapsed">
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -1489,24 +1557,10 @@ files/directories:</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="5">
-      <widget class="QLineEdit" name="SekundeElapsed">
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="4">
       <widget class="QLabel" name="label_7">
        <property name="text">
         <string>minutes</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="3">
-      <widget class="QLineEdit" name="MinuteRemaining">
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -1524,19 +1578,37 @@ files/directories:</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="5">
-      <widget class="QLineEdit" name="SekundeRemaining">
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="6">
       <widget class="QLabel" name="label_10">
        <property name="text">
         <string>seconds</string>
        </property>
       </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLCDNumber" name="SekundeElapsed"/>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLCDNumber" name="MinuteElapsed_2"/>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLCDNumber" name="MinuteRemaining"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLCDNumber" name="AnzahlsaveFile"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLCDNumber" name="AnzahlgesicherteFile"/>
+     </item>
+     <item row="3" column="6">
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QLCDNumber" name="SekundeRemaining"/>
      </item>
     </layout>
    </widget>
@@ -1567,7 +1639,7 @@ files/directories:</string>
      <x>0</x>
      <y>0</y>
      <width>808</width>
-     <height>27</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAktionen">
@@ -1717,7 +1789,40 @@ files/directories:</string>
  <resources>
   <include location="../icon.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>listWidget_3</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>Ext_Vol</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>308</x>
+     <y>222</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>18</x>
+     <y>206</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeWidget</sender>
+   <signal>clicked(QModelIndex)</signal>
+   <receiver>Dir_tree</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>408</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>18</x>
+     <y>389</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
   <signal>clicked(bool)</signal>
  </slots>

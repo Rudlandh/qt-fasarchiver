@@ -715,15 +715,20 @@ void DialogNet::thread1Ready()  {
        pushButton_save->setEnabled(true);
        progressBar->setValue(100);
        SekundeRemaining ->setText("0");
+       int anzahl  = werte_holen(2);
+       QString text_integer = QString::number(anzahl);
+       AnzahlgesicherteFile ->setText(text_integer);
        int cnt_regfile = werte_holen(6);
        QString cnt_regfile_ = QString::number(cnt_regfile);
        int cnt_dir = werte_holen(7);
        QString cnt_dir_ = QString::number(cnt_dir); 
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
-       QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
-       QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition has been backed up successfully.\n", "Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_
-        + tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been saved.", " Links wurden gesichert."));
+       QString cnt_hardlinks_ = QString::number(cnt_hardlinks);
+       int cnt_special = werte_holen(10);
+       QString cnt_special_ = QString::number(cnt_special);   
+       QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition has been backed up successfully.\n", "Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_ + 
+	tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr("  links and ", " Links und ") + cnt_special_ + tr(" specials have been backed.", " Spezielle Daten wurden gesichert."));
      }
      else {
        pushButton_save->setEnabled(false);
@@ -788,11 +793,12 @@ void DialogNet::thread2Ready()  {
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
-       QMessageBox::about(this, tr("Note", "Hinweis"), 
-       tr("The partition is successful back.\n", "Die Partition wurde erfolgreich wieder hergestellt.\n") + cnt_regfile_ + tr(" files, ", " Dateien, ") + cnt_dir_ + 
-       tr(" directories and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been restored.", " Links wurden wieder hergestellt."));
+       int cnt_special = werte_holen(10);
+       QString cnt_special_ = QString::number(cnt_special);   
+	QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition has been backed up successfully.\n", "Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_ + 
+	tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr("  links and ", " Links und ") + cnt_special_ + tr(" specials have been restored.", " Spezielle Daten wurden wieder hergestellt."));
         }
-     if (flag_end_net == 1) {
+       if (flag_end_net == 1) {
         QMessageBox::about(this, tr("Note", "Hinweis"),
          tr("The restore of the partition was break by user!\n", "Die Wiederherstellung der Partition wurde vom Benutzer abgebrochen!\n") );
 	meldung == 0;
@@ -982,6 +988,7 @@ int DialogNet::questionMessage(QString frage)
     		return 1;
 	else if (msg.clickedButton() == noButton)
     		return 2;
+   return -1;
 }
 
 void DialogNet::esc_end()

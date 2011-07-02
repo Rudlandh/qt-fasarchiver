@@ -41,7 +41,9 @@
 //#include <sys/stat.h>
 #include <sys/vfs.h>
 // nur für msgprintf(MSG_FORCE
-
+#include <string.h>
+#include <unistd.h>
+#include <sys/socket.h>
 
 #include "fsarchiver.h"
 #include "connect_c_cpp.h"
@@ -55,6 +57,8 @@ float numberfile;
 float numberfolder;
 float s_links;
 float s_links_;
+float s_special;
+float s_special_;
 char* key ;
 char fsorigdev[100];
 
@@ -131,6 +135,14 @@ void werte_uebergeben(float prozess, int auswahl){
          if (prozess != 0){ 
      	    s_links_ = prozess;
          }
+     if (auswahl ==10)
+         if (prozess != 0){ 
+     	    s_special = prozess;
+         }
+     if (auswahl ==11)
+         if (prozess != 0){ 
+     	    s_special_ = prozess;
+         } 
    }
 
 float werte_holen(int auswahl){
@@ -152,6 +164,10 @@ float werte_holen(int auswahl){
      	return s_links;
       if (auswahl ==9)
      	return s_links_;
+      if (auswahl ==10)
+     	return s_special;
+      if (auswahl ==11)
+     	return s_special_;
     }
  
 void werte_reset(){

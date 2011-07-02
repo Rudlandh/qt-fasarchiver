@@ -304,7 +304,7 @@ QString NetEin::Namen_holen()
   return comNet + " " + comNet_name;
 }
 
-int NetEin:: end()
+void NetEin:: end()
 { 
    close();
 }
@@ -354,6 +354,7 @@ setting.beginGroup(comNet_name);
      if (dialog_auswertung == 7 && i == 0)
 	restore_net(); 
      close();
+     return -1;
 }
 
 void NetEin::save_net () {
@@ -535,6 +536,7 @@ int NetEin::questionMessage(QString frage)
     		return 1;
 	else if (msg.clickedButton() == noButton)
     		return 2;
+   return -1;
 }
 
 

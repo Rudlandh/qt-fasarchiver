@@ -4,7 +4,7 @@ qt4-fsarchiver: Sichern und Wiederherstellen von Partitionen für (K)Ubuntu. [ht
 
 Copyright (C) 2008-2011 Francois Dupoux, Hihin Ruslan und Dieter Baum.  All rights reserved.
 Kopieren der Dateien, mit und ohne Änderung ist erlaubt. Der Code ist ohne jegliche Garantie- Die Benutzung erfolgt auf eigene Gefahr.
-Francois Dupoux entwickelte das Basisprogramm fsarchiver, Hihin Ruslan hat das Programm verbessert und nach Englisch und Russisch (noch nicht abgeschlossen) übersetzt. Dieter Baum erstellte die GUI.
+Francois Dupoux entwickelte das Basisprogramm fsarchiver, Hihin Ruslan hat das Programm verbessert und nach Englisch und Russisch übersetzt. Dieter Baum erstellte die GUI.
 
 qt4-fsarchiver ist ein Programm mit einer grafischen Oberfläche zur einfachen Bedienung des Archivierungsprogramms fsarchiver.
 

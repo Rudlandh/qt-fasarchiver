@@ -1,9 +1,13 @@
 ==================================================================================================
 * qt4-fsarchiver: Grafische Oberfläche für fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ==================================================================================================
-* qt4-fsarchiver-6.12.7 (17. Juni 2011)
+* qt4-fsarchiver-6.12.8 (1. Juli 2011)
+   - Lizenzdaten für gpl-2 und gpl-3 hinzugefügt.
+   - Anzahl korrekt gesicherte Daten in der Schlussanzeige korrigiert
+* qt4-fsarchiver-6.12.7 (26. Juni 2011)
    - Übersetzung für Englisch hinzugefügt.
-   - korrektes Abbrechen einer Sicherung/Wiederherstellung in 64-bit Systemen hinzugefügt.
+   - Abbrechen einer Sicherung/Wiederherstellung hinzugefügt.
+   - Anzeige des Fortschrittbalkens im Einsekunden-Intervall
 * qt4-fsarchiver-6.12.6 (6. Mai 2011)
    - Sichern und Wiederherstellen von Partitonen über ein Netzwerk hinzugefügt.
 * qt4-fsarchiver-6.12.5 (2. April 2011)

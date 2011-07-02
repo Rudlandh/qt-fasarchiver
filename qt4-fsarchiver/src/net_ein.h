@@ -53,8 +53,8 @@ private:
 	QDirModel *dirModel;
 	
 private slots:
-	int end();
-        int go();
+	void end();
+   int go();
 };
 
 #endif

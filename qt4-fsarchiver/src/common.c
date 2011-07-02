@@ -545,11 +545,13 @@ int stats_show(cstats stats, int fsid)
     werte_uebergeben((long long)stats.cnt_dir,7);
     werte_uebergeben((long long)stats.cnt_symlink,8);
     werte_uebergeben((long long)stats.cnt_hardlink,9);
+    werte_uebergeben((long long)stats.cnt_special,10);
     
     werte_uebergeben((long long)stats.err_regfile,1);
     werte_uebergeben((long long)stats.err_dir,2);
     werte_uebergeben((long long)stats.err_symlink,3);
     werte_uebergeben((long long)stats.err_hardlink,5);
+    werte_uebergeben((long long)stats.err_special,11);
     return 0;
 }
 
