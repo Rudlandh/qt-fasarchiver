@@ -2,7 +2,7 @@
 
 Summary: GUI for Filesystem Archiver for Linux
 Name: qt4-fsarchiver
-Version: 0.6.12
+Version: 6.12.8
 Release: alt1
 Url: http://www.fsarchiver.org
 Packager: Hihin Ruslan <ruslandh@altlinux.ru>
@@ -120,7 +120,8 @@ install -pD -m640 %SOURCE2 %buildroot%_sysconfdir/security/console.apps/%name
 %_datadir/qt4/translations/*%{name}*.qm
 
 %changelog
-* Wed Jun 29 2011 Hihin Ruslan <ruslandh@altlinux> 0.6.12-alt1
-- Initial release for ALT Linux
+* Sat Jul 02 2011 Hihin Ruslan <ruslandh@altlinux.ru> 6.12.8-alt1
+- New Version
 
-
+* Wed Jun 29 2011 Hihin Ruslan <ruslandh@altlinux.ru> 0.6.12-alt1
+- Initial build for ALT Linux
