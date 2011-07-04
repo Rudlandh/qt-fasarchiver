@@ -6,15 +6,9 @@ TEMPLATE = app
 TARGET = bin/qt4-fsarchiver
 DEPENDPATH += """"""". src translations src/ui"""""""
 
-TRANSLATIONS = translations/template_qt4-fsarchiver.ts \
-		translations/qt4-fsarchiver_ru.ts \
-		translations/qt4-fsarchiver_de.ts 
-
 CONFIG += qt thread
 CONFIG += link_pkgconfig \
- debug \
- x11 \
- debug_and_release
+ x11
 
 DEFINES +=  HAVE_CONFIG_H _REENTRANT _FILE_OFFSET_BITS=64 _LARGEFILE64_SOURCE _GNU_SOURCE 
 INCLUDEPATH += . src /usr/include/ext2fs /usr/include/et /usr/include/e2p /usr/include/blkid /usr/include/uuid 
@@ -141,16 +135,16 @@ icon.files = src/images/harddrive.png
 icon.path = /usr/share/pixmaps/
 autostart.files = starter/qt4-fsarchiver.desktop
 autostart.path = /usr/share/applications
+
+TRANSLATIONS += translations/qt4-fsarchiver_de.ts \
+                translations/qt4-fsarchiver_ru.ts
+QMAKE_EXTRA_COMPILERS += lrelease
+lrelease.input  = TRANSLATIONS
+lrelease.output = ${QMAKE_FILE_BASE}.qm
+lrelease.commands = $$[QT_INSTALL_BINS]/lrelease ${QMAKE_FILE_IN} -qm translations/${QMA
+lrelease.CONFIG += no_link target_predeps
 translation.files = translations/qt4-fsarchiver_ru.qm \
     translations/qt4-fsarchiver_de.qm 
 translation.path = /usr/share/qt4/translations
 
-CONFIG -= release
-
-QT += network
-
-QMAKE_CXXFLAGS_DEBUG += -O1 \
-  -g
-
-QMAKE_CXXFLAGS_RELEASE += -O2
 
