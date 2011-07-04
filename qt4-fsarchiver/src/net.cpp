@@ -794,9 +794,10 @@ void DialogNet::thread2Ready()  {
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
        int cnt_special = werte_holen(10);
-       QString cnt_special_ = QString::number(cnt_special);   
-	QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition has been backed up successfully.\n", "Die Partition wurde erfolgreich gesichert.\n") + cnt_regfile_ + 
-	tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr("  links and ", " Links und ") + cnt_special_ + tr(" specials have been restored.", " Spezielle Daten wurden wieder hergestellt."));
+       QString cnt_special_;
+       cnt_special_ = QString::number(cnt_special);
+       QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition is successful back..\n", "Die Partition wurde erfolgreich wieder hergestellt..\n") + cnt_regfile_ + 
+        tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr("  links and ", " Links und ") + cnt_special_ + tr(" specials have been restored.", " spezielle Daten wurden wieder hergestellt."));
         }
        if (flag_end_net == 1) {
         QMessageBox::about(this, tr("Note", "Hinweis"),

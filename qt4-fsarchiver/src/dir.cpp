@@ -387,6 +387,9 @@ void DialogDIR::thread1Ready()  {
      if (dialog_auswertung ==0){
        progressBar->setValue(100);
        SekundeRemaining ->setText("0");
+       int anzahl  = werte_holen(2);
+       QString text_integer = QString::number(anzahl);
+       AnzahlgesicherteFile ->setText(text_integer);
        int cnt_regfile = werte_holen(6);
        QString cnt_regfile_ = QString::number(cnt_regfile);
        int cnt_dir = werte_holen(7);
@@ -394,10 +397,12 @@ void DialogDIR::thread1Ready()  {
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
-       QMessageBox::about(this, tr("Note", "Hinweis"), tr("The backup of the directory was successful.\n", "Die Sicherung des Verzeichnisses war erfolgreich.\n") + cnt_regfile_ +
-        tr(" Files, ", " Dateien, ") + cnt_dir_ + tr(" directories, and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been saved", " Links wurden gesichert"));
-       }
-      
+       int cnt_special = werte_holen(10);
+       QString cnt_special_;
+       cnt_special_ = QString::number(cnt_special);
+QMessageBox::about(this, tr("Note", "Hinweis"), tr("The backup of the directory was successful.\n", "Die Sicherung des Verzeichnisses war erfolgreich.\n") + cnt_regfile_ + 
+        tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr("  links and ", " Links und ") + cnt_special_ + tr(" specials have been backed.", " spezielle Daten wurden gesichert."));
+     }
       else if (flag_end_dir == 1)
       {
          QMessageBox::about(this, tr("Note", "Hinweis"),
@@ -442,7 +447,11 @@ void DialogDIR::thread2Ready()  {
        int cnt_hardlinks = werte_holen(8);
        cnt_hardlinks = cnt_hardlinks + werte_holen(9);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
-       QMessageBox::about(this,tr("Note", "Hinweis"), tr("The restoring of the directory was successful.\n", "Die Wiederherstellung des Verzeichnisses war erfolgreich.\n") + cnt_regfile_ + tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories, and ", " Verzeichnisse und ") + cnt_hardlinks_ + tr(" links have been restored", " Links wurden wieder hergestellt"));
+       int cnt_special = werte_holen(10);
+       QString cnt_special_;
+       cnt_special_ = QString::number(cnt_special);
+       QMessageBox::about(this, tr("Note", "Hinweis"), tr("The restoring of the directory was successful.\n", "Die Wiederherstellung des Verzeichnisses war erfolgreich.\n") + cnt_regfile_ + 
+        tr(" files, ", " Dateien, ") + cnt_dir_ + tr("  directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr("  links and ", " Links und ") + cnt_special_ + tr(" specials have been restored.", " spezielle Daten wurden wieder hergestellt."));
         }
    if (flag_end_dir == 1) {
         QMessageBox::about(this, tr("Note", "Hinweis"),
