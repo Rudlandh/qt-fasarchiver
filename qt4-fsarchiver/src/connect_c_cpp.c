@@ -220,14 +220,14 @@ float df(char *device, const char *mountPoint, int flag )
 			   blocks_percent_used, mountPoint);
 */
 	}
-   if (flag == 1)
-		return (blocks_percent_used);
-   if (flag == 2)
-		return (long) (s.f_blocks * (s.f_bsize / 1024000.0));
-	if (flag == 3)
-		return (long) ((s.f_blocks - s.f_bfree) * (s.f_bsize / 1024000.0));	
-	if (flag == 4)
-		return (long) (s.f_bavail * (s.f_bsize / 1024000.0));	
+	switch (flag)
+        {
+   	case 1:		return (blocks_percent_used);
+      case 2:		return (long) (s.f_blocks * (s.f_bsize / 1024000.0));
+	   case 3:		return (long) ((s.f_blocks - s.f_bfree) * (s.f_bsize / 1024000.0));	
+	   case 4:		return (long) (s.f_bavail * (s.f_bsize / 1024000.0));
+	   default:		return 0;
+       }	
 			  
 }
 

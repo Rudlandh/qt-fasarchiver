@@ -48,6 +48,12 @@ int flag_end_net;
 int sekunde_tara_net; 
 int thread_run_net;
 QString pid_net, pid1_net;
+extern int fsarchiver_aufruf(int argc, char *anlage0=NULL, char 
+*anlage1=NULL, char *anlage2=NULL, char *anlage3=NULL, char 
+*anlage4=NULL, char *anlage5=NULL, char *anlage6=NULL, char 
+*anlage7=NULL, char *anlage8=NULL, char *anlage9=NULL, char 
+*anlage10=NULL, char *anlage11=NULL, char *anlage12=NULL, char 
+*anlage13=NULL, char *anlage14=NULL);
 
 DialogNet::DialogNet(QWidget *parent)
 {
@@ -447,7 +453,7 @@ int pos;
        	       parameter[1] = "archinfo";
 		if (state1 != Qt::Checked) {
                		parameter[2] = folder_net;
-               		fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+               		fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data());
                		optionkey = meldungen_holen(1);
                		dev_part = meldungen_holen(2);
                         if (werte_holen(4) == 103){
@@ -467,7 +473,7 @@ int pos;
                   		return 0 ; 
                	   		}
 			parameter[4] = folder_net;
-                        int retour =  fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+                        int retour = fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data());
                         if ( werte_holen(4) == 103 && retour != 0){
                           QMessageBox::about(this, tr("Note","Hinweis"), tr("They have entered a wrong password.\n", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");

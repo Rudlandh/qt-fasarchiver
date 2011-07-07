@@ -40,6 +40,13 @@ int sekunde_tara_dir ;
 QString SicherungsFolderFileName_dir;
 int thread_run_dir;
 int flag_end_dir;
+extern int fsarchiver_aufruf(int argc, char *anlage0=NULL, char 
+*anlage1=NULL, char *anlage2=NULL, char *anlage3=NULL, char 
+*anlage4=NULL, char *anlage5=NULL, char *anlage6=NULL, char 
+*anlage7=NULL, char *anlage8=NULL, char *anlage9=NULL, char 
+*anlage10=NULL, char *anlage11=NULL, char *anlage12=NULL, char 
+*anlage13=NULL, char *anlage14=NULL);
+
 
 
 DialogDIR::DialogDIR(QWidget *parent)
@@ -291,7 +298,8 @@ Qt::CheckState state1;
         	parameter[0] = "fsarchiver";
        		parameter[1] = "archinfo";
 		parameter[2] = folder_dir;
-        	fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+        	fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data());
+
         if (werte_holen(4) == 103){
                  chk_key->setChecked(Qt::Checked);
                  lineKey->setEnabled(true);
@@ -309,7 +317,7 @@ Qt::CheckState state1;
                 	return 0 ; 
                	}
                 parameter[4] = folder_dir;
-                int retour = fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data(),parameter[6].toAscii().data(),parameter[7].toAscii().data(),parameter[8].toAscii().data(),parameter[9].toAscii().data(),parameter[10].toAscii().data(),parameter[11].toAscii().data(),parameter[12].toAscii().data(),parameter[13].toAscii().data(),parameter[14].toAscii().data());
+                int retour = fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data());
                 if ( werte_holen(4) == 103 && retour != 0){
                            QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");

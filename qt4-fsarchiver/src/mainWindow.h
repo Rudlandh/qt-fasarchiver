@@ -39,7 +39,7 @@ public:
    int is_mounted (char* dev_path);
    int questionMessage(QString frage); 
    QString bit_version();
-      
+         
 public slots: 
    void folder_einlesen();
    void save_button();
