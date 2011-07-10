@@ -168,6 +168,7 @@ float werte_holen(int auswahl){
      	return s_special;
       if (auswahl ==11)
      	return s_special_;
+     	return -1;
     }
  
 void werte_reset(){
@@ -193,7 +194,7 @@ char *meldungen_holen(int auswahl){
       if (auswahl ==2)  {
         return fsorigdev;
       }
-      
+      return "-1";
 }
 
 float df(char *device, const char *mountPoint, int flag )
