@@ -136,8 +136,12 @@ RESOURCES += src/icon.qrc
  target.path = /usr/sbin
  icon.files = src/images/harddrive.png
  icon.path = /usr/share/app-install/icons
- autostart.files = starter/qt4-fsarchiver.desktop
+ autostart.files = starter/gnome-qt4-fsarchiver.desktop
  autostart.path = /usr/share/applications
+ autostart1.files = starter/kde-qt4-fsarchiver.desktop 
+ autostart1.path = /usr/share/applications
+ autostart2.files = starter/mate-qt4-fsarchiver.desktop 
+ autostart2.path = /usr/share/applications
  doc.files = doc
  doc.path = /usr/share/doc/qt4-fsarchiver
  smbfind.files = src/sbin
@@ -224,6 +228,6 @@ translations.files = translations/qt4-fsarchiver_de.qm \
                 translations/qt4-fsarchiver_uk.qm
 translations.path = /usr/share/qt4/translations
  
- INSTALLS = target icon autostart translations doc smbfind polkit
+ INSTALLS = target icon autostart autostart1 autostart2 translations doc smbfind polkit
  #QMAKE_CXXFLAGS_RELEASE = -pipe -Wall -g -O2
  #QMAKE_CFLAGS_RELEASE = -pipe -Wall -g -O2

@@ -531,12 +531,12 @@ int get_parent_dir_time_attrib(char *filepath, char *parentdirbuf, int bufsize, 
 
 int stats_show(cstats stats, int fsid)
 {
-    msgprintf(MSG_FORCE, "Statistics for filesystem %d\n", fsid);
-    msgprintf(MSG_FORCE, "* files successfully processed:....regfiles=%lld, directories=%lld, "
+    printf("Statistics for filesystem %d\n", fsid);
+    printf("* files successfully processed:....regfiles=%lld, directories=%lld, "
         "symlinks=%lld, hardlinks=%lld, specials=%lld\n", 
         (long long)stats.cnt_regfile, (long long)stats.cnt_dir, (long long)stats.cnt_symlink, 
         (long long)stats.cnt_hardlink, (long long)stats.cnt_special);
-    msgprintf(MSG_FORCE, "* files with errors:...............regfiles=%lld, directories=%lld, "
+    printf("* files with errors:...............regfiles=%lld, directories=%lld, "
         "symlinks=%lld, hardlinks=%lld, specials=%lld\n", 
         (long long)stats.err_regfile, (long long)stats.err_dir, (long long)stats.err_symlink, 
         (long long)stats.err_hardlink, (long long)stats.err_special);

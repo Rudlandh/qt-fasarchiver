@@ -2,13 +2,13 @@
 qt4-fsarchiver: Sichern und Wiederherstellen von Partitionen Debian, Ubuntu, Linux-Mint, Suse und Fedora. [http://wiki.ubuntuusers.de/qt4-fsarchiver]
 ==================================================================================================================================
 
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.  All rights reserved.
+Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.  All rights reserved.
 Kopieren der Dateien, mit und ohne Änderung ist erlaubt. Der Code ist ohne jegliche Garantie. Die Benutzung erfolgt auf eigene Gefahr.
 Francois Dupoux entwickelte das Basisprogramm fsarchiver, Hihin Ruslan hat das Programm verbessert und nach Englisch und Russisch übersetzt. Michael R. Lawrence und sein Team übersetzte nach Spanisch und Italienisch, Zhenneng Li übersetzte nach Chinesisch, Dieter Baum erstellte die GUI.
 
 qt4-fsarchiver ist ein Programm mit einer grafischen Oberfläche zur einfachen Bedienung des Archivierungsprogramms fsarchiver.
 Qt4-fsarchiver wurde mit diesen Programmpunkten erweiter:
-Sichern und Wiederherstellen von Partitionstabellen, Klonen von Festplatten, Abbilder von Festplatten erstellen und zurückschreiben.
+Sichern und Wiederherstellen von Partitionen, Klonen von Festplatten, Abbilder von Festplatten erstellen und zurückschreiben.
 
 Der Quellcode kann auf allen auf Debian basierenden System, auf Suse und Fedora installiert werden.
 Für Debian, Ubuntu und Linux-Mint sind deb-Pakete, für Suse und Fedora sind rpm-Pakete vorhanden.
@@ -16,14 +16,13 @@ Für Debian, Ubuntu und Linux-Mint sind deb-Pakete, für Suse und Fedora sind rp
 Installation des Programms aus den Quelldateien:
 Für die Installation von qt4-fsarchiver müssen die für fsarchiver notwendigen Abhängigkeiten und die qt4-Entwicklungsumgebung installiert werden.
 Dies erreichen Sie, bei auf Debian aufbauenden Distributionen, mit folgendem Befehl:
-sudo apt-get install libzip-dev libbz2-dev liblzma-dev liblzo2-2 liblzo2-dev libgcrypt11-dev e2fslibs-dev libblkid-dev libattr1-dev build-essential libqt4-core libqt4-dev btrfs-tools gdisk sshfs sshpass nmap samba nfs-kernel-server nfs-common smbclient
+sudo apt-get install libzip-dev libbz2-dev liblzma-dev liblzo2-2 liblzo2-dev libgcrypt11-dev e2fslibs-dev libblkid-dev libattr1-dev build-essential libqt4-core libqt4-dev btrfs-tools gdisk sshfs sshpass nmap samba nfs-kernel-server nfs-common smbclient gksu
 
 In Suse werden die Abhängigkeiten mit Root-Rechten (su -l) mit diesem Befehl installiert: zypper in libqt4-devel make libzip-devel libbz2-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel btrfsprogs gdisk sshfs nmap samba nfs-kernel-server
-
 Wenn Sie ssh (secureshell) für den Zugriff auf weitere Rechner im Netzwerk nutzen wollen, müssen Sie noch sshpass individuell installieren.
-Verwenden Sie die KDE-Oberfläche müssen Sie nach der Installation in der Datei /usr/share/applications/qt4-fsarchiver.desktop die Eigenschaften von sudo qt4-fsarchiver in kdesu qt4-fsarchiver ändern. 
 
 In Fedora werden die Abhängigkeiten mit Root-Rechten (su -l) mit diesem Befehl installiert: yum install  gcc gcc-c++ zlib-devel bzip2-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel qt4-devel gdisk sshfs sshpass nmap samba samba-client nfs-utils
+yum install wurde ab Fedora22 durch dnf install ersetzt.
 
 In dem Terminal wechseln Sie in den Ordner qt4-fsarchiver, der bei der Entpackung des Quellcodes installiert wurde.
 Mit der Eingabe von dem Befehl qmake && make && sudo make install wird das Programm installiert.
@@ -31,19 +30,18 @@ Bei Fedora müssen Sie eingeben: qmake-qt4 && make && sudo make install
 
 Installation des Programms aus den DEB-Paketen:
 Ein Doppelklick auf die DEB-Datei installiert in der Regel das Programm.
-Eventuell müssen Sie im Terminal mit root-Rechten dieses Kommando eingeben: dpkg -i qt4-fsarchiver-0.6.17-1.deb, wobei die Versionsnummer angepasst werden muss
+Eventuell müssen Sie im Terminal mit root-Rechten dieses Kommando eingeben: dpkg -i qt4-fsarchiver-0.6.19-15.deb, wobei die Versionsnummer angepasst werden muss
 
 Programmaufruf:
-Teilweise werden Starter installiert. Mit Doppelklick wird qt4-fsarchiver gestartet.
-Debian: Geben Sie im Terminal ein: gksu /usr/sbin/qt4-fsarchiver.
-Ubuntu, Linux Mint: Geben Sie im Terminal ein: sudo /usr/sbin/qt4-fsarchiver.
-Ubuntu mit Unity: Starten Sie das Programm über das Dash. 
-Suse 12, Fedora 21 mit Gnome: Geben Sie im Terminal ein: /usr/sbin/qt4-fsarchiver_polkit %f.
-Anwendungen mit KDE: Geben Sie im Terminal ein: kdesu /usr/sbin/qt4-fsarchiver.
-Immer funktioniert der Programmaufruf aus einem Root-Terminal(su -l): /usr/sbin/qt4-fsarchiver
+Meistens werden Starter unter Zubehör installiert. Mit Doppelklick wird qt4-fsarchiver gestartet.
+qt4-fsarchiver im Terminal starten:
+Gnome: /usr/sbin/qt4-fsarchiver_polkit %f oder gksu qt4-fsarchiver.
+KDE: kdesu qt4-fsarchiver oder kdesudo qt4-fsarchiver. 
+XFCE,Unity,MATE,Cinnamon,LXDE: gksu qt4-fsarchiver.
+gksu muss eventuell nachinstalliert werden
+Immer funktioniert der Programmaufruf aus einem Root-Terminal(su -l): /usr/sbin/qt4-fsarchiver.
 
-Anpassungsmöglichkeit der Oberfläche: Sie starten mit sudo qtconfig (aus dem Paket qt4-qtconfig) die Qt Configuration. Unter Appearance > GUI Style wählen Sie GTK+ aus. Speichern Sie die Änderung und schließen Sie Qt Configuration.
-Danach starten Sie die Qt Configuration mit gksudo qtconfig erneut und ändern ebenfalls den GUI Style.
+Anpassungsmöglichkeit der Oberfläche: Sie starten mit gksudo qtconfig (aus dem Paket qt4-qtconfig) die Qt Configuration. Unter Appearance > GUI Style wählen Sie GTK+ aus. Speichern Sie die Änderung und schließen Sie Qt Configuration.
 Wegen Problemen  bei der Installation von qt4-qtconfig aus den Ubuntuquellen, wird qt4-qtconfig nicht mehr mit dem deb-Paket installiert und muss manuell nachinstalliert werden. Meistens hilft bei der Installation von qt4-qtconfig aus den Ubuntuquellen wenn zunächst der Befehl sudo apt-get update im Terminal eingegeben wird.
 
 Die Handhabung von qt4-fsarchiver ist einfach:

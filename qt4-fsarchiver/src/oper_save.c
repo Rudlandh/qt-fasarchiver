@@ -434,16 +434,18 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
     concatenate_paths(fullpath, sizeof(fullpath), root, relpath);
     if (meldeflag  == 0) { 
            // Anzeige im Terminal 
-           msgprintf(MSG_FORCE, "Es müssen insgesamt %.5lld  Verzeichnisse bzw. Dateien gesichert werden.\r", (long long)save->objectid);
+           printf ("Es müssen insgesamt %.5lld  Verzeichnisse bzw. Dateien gesichert werden.\r", (long long)save->objectid);
             anzahlfile = save->objectid; 
             werte_uebergeben(anzahlfile,2); 
             } 
     	if (meldeflag  == 1 ) { 
             // Anzeige im Terminal 
+           //if (save->objectid == 1)
+           //    printf("\n");   
            if (save->objectid >= 1000) 
-               msgprintf(MSG_FORCE, "     %.5lld            %.0f%%             \r ",save->objectid,progress); 
+               printf("     %.5lld            %.0f%%             \r ",save->objectid,progress); 
           if (save->objectid <= 1000)  
-               msgprintf(MSG_FORCE, "     %.5lld            %.0f%%             \r ",save->objectid,progress); 
+               printf("     %.5lld            %.0f%%             \r ",save->objectid,progress);
            werte_uebergeben(progress,1); 
            anzahlfile = save->objectid; 
            werte_uebergeben(anzahlfile,3); 
@@ -1311,8 +1313,8 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
     save.objectid=0;
     meldeflag = 1;
 	// Anzeige im Terminal 
-	msgprintf(MSG_FORCE, "\n"); 
-	msgprintf(MSG_FORCE, "[ Anzahl Dateien  prozentualer Anteil ]  \n");
+	printf("\n"); 
+	printf("[ Anzahl Dateien  prozentualer Anteil ]  \n");
     
     // copy contents to archive
     switch (archtype)
@@ -1368,7 +1370,7 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
     if (get_interrupted()==false)
         goto do_create_success;
     if (get_abort()==true)
-        msgprintf(MSG_FORCE, "operation aborted by user\n");
+        printf("operation aborted by user\n");
     
 do_create_error:
     msgprintf(MSG_DEBUG1, "THREAD-MAIN1: exit error\n");

@@ -2,10 +2,11 @@
 Name=qt4-fsarchiver
 Name[de_DE]=qt4-fsarchiver
 Comment=Qt GUI for fsarchiver
-Exec=sudo qt4-fsarchiver
+Exec=gksu qt4-fsarchiver
 Icon=/usr/share/app-install/icons/harddrive.png
-Terminal=true
+Terminal=false
 Type=Application
 Categories=GNOME;GTK;Utility;
-StartupNotify=true
+StartupNotify=false
+OnlyShowIn=XFCE;Unity;MATE;Cinnamon;LXDE
 

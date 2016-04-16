@@ -1,6 +1,9 @@
 ==================================================================================================
 * qt4-fsarchiver: Graphical interface for fsarchiver fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ==================================================================================================
+* qt4-fsarchiver-6.19-15 August 1, 2015 
+    -Starter changed from sudo to gksu.
+    -Added starter for Gnome, KDE, Unity, Mate, Cinnamon, Xfce und  Lxde.
 * qt4-fsarchiver-6.19-14 June 10, 2015 
     -Fixes and improvements in networking.
 * qt4-fsarchiver-6.19-13 May 4, 2015

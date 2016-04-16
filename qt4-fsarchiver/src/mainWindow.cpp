@@ -253,11 +253,10 @@ MWindow::MWindow()
         if (auswertung ==1)
            chk_hidden->setChecked(Qt::Checked);
         auswertung = setting.value("Passwort").toInt(); 
-        if (auswertung ==1){
+        if (auswertung ==1)
            	lineKey ->setEchoMode(QLineEdit::Normal);
-        } 
-   	else
-		lineKey ->setEchoMode(QLineEdit::Password); 
+        else
+		     lineKey ->setEchoMode(QLineEdit::Password); 
         setting.endGroup();
         } 
    else {
@@ -1082,8 +1081,8 @@ void MWindow::folder_file() {
 void MWindow::info() {
    QMessageBox::information(
       0, tr("qt4-fsarchiver"),
-      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-14, June 10, 2015",
-	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-4, 10. Juni 2015"));
+      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-15, August 1, 2015",
+	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-15, 1. August 2015"));
       }
 
 int MWindow::Root_Auswertung(){

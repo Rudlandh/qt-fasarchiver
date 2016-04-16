@@ -181,7 +181,7 @@ int extractar_listing_print_file(cextractar *exar, int objtype, char *relpath)
     }
     msgprintf(MSG_VERB1, "-[%.2d]%s[%s] %s\n", exar->fsid, strprogress, get_objtype_name(objtype), relpath);
     // Terminal Ausgabe 
-    	msgprintf(MSG_FORCE, "       %.0f%%       \r ", progress); 
+    	printf("       %.0f%%       \r ", progress); 
 	werte_uebergeben(progress,1);
     
     return 0;
@@ -1359,7 +1359,7 @@ int oper_restore(char *archive, int argc, char **argv, int oper)
     int ret=0;
     int i;
     //Terminal Ausgabe 
-    msgprintf(MSG_FORCE, "[ prozentualer Anteil ]  \n");
+    printf("[ prozentualer Anteil ]  \n");
     
     // init
     memset(&exar, 0, sizeof(exar));
@@ -1584,7 +1584,7 @@ int oper_restore(char *archive, int argc, char **argv, int oper)
     }
     
     if (get_abort()==true)
-        msgprintf(MSG_FORCE, "operation aborted by user\n");
+        printf("operation aborted by user\n");
     
     if (get_abort()==false && get_stopfillqueue()==false)
         goto do_extract_success;

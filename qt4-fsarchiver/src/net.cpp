@@ -1679,14 +1679,15 @@ void DialogNet::listWidget_tree_eintragen(QString rechner, QString pass, QString
 QString homepath = QDir::homePath();
 QStringList filters;
 QString befehl;
+//qDebug() << "homepath" << homepath;
 int ret_;
         QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
         setting.beginGroup("Basiseinstellungen");
         int auswertung = setting.value("ssh").toInt();
         setting.endGroup();
         if (auswertung ==1){
- QMessageBox::about(this, tr("Note", "Hinweis"), 
-        tr("When you first contact the computer with ssh, you must do the following:  In a terminal enter these commands: 1.In the open terminal you must confirm the RSA key fingerprint with yes. 2.Enter the password for accessing the server and 3.leave the server with the command exit.\n", "Wenn Sie noch nicht erfolgreich per ssh auf den Rechner(Server) zugegriffen haben, müssen Sie nun folgendes tun: 1.In dem geöffneten Terminal müssen Sie den RSA key fingerprint mit yes bestätigen. 2.Geben Sie das Passwort für den Zugriff auf den Server ein  und 3.verlassen Sie den Server mit dem Befehl exit.\n")); 
+/* QMessageBox::about(this, tr("Note", "Hinweis"), 
+        tr("When you first contact the computer with ssh, you must do the following:  In a terminal enter these commands: 1.In the open terminal you must confirm the RSA key fingerprint with yes. 2.Enter the password for accessing the server and 3.leave the server with the command exit.\n", "Wenn Sie noch nicht erfolgreich per ssh auf den Rechner(Server) zugegriffen haben, müssen Sie nun folgendes tun: 1.In dem geöffneten Terminal müssen Sie den RSA key fingerprint mit yes bestätigen. 2.Geben Sie das Passwort für den Zugriff auf den Server ein  und 3.verlassen Sie den Server mit dem Befehl exit.\n")); */
         befehl = "ssh " + user_net + "@" +  rechner_IP;
 	ret_ = system (befehl.toAscii().data());
         //Basiseinstellungen ändern
