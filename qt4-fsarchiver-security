@@ -1,4 +1,0 @@
-USER=root
-PROGRAM=/usr/sbin/qt4-fsarchiver
-SESSION=true
-FALLBACK=true

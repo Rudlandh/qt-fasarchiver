@@ -1,3 +1,0 @@
-copy: qt4-fsarchiver-pam
-copy: qt4-fsarchiver-security
-tar: qt4-fsarchiver name=qt4-fsarchiver

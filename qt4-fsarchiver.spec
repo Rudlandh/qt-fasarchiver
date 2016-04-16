@@ -1,1 +1,0 @@
-../qt4-fsarchiver/qt4-fsarchiver/qt4-fsarchiver.spec
