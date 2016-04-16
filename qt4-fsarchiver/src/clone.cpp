@@ -535,7 +535,7 @@ QString befehl;
    bt_save->setEnabled(false);
    // flag=0: Platte klonen, Image ohne zip schreiben
 if (flag == 0)
-   read_write_hd_1();
+   read_write_hd_1(); //Fortschrittsbalken
 }
 
 void DialogClone::startThread2(int flag) {
@@ -548,7 +548,7 @@ void DialogClone::startThread2(int flag) {
    bt_save->setEnabled(false);
    // flag = 0: ungezipptes Image zurückschreiben
    if (flag == 0)
-      read_write_hd_1();
+      read_write_hd_1(); //Fortschrittsbalken anzeigen
 }
 
 void DialogClone::closeEvent(QCloseEvent *event) {

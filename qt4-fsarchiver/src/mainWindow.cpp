@@ -185,8 +185,6 @@ MWindow::MWindow()
    items_GB << "2" << "4" << "4,7";
    cmb_GB->addItems (items_GB);
    items_GB.clear();
-   
-   
    zip_[0]=(tr("lzo", "lzo"));
    zip_[1]=(tr("gzip fast","gzip fast"));
    zip_[2]=(tr("gzip standard","gzip standard"));
@@ -196,7 +194,6 @@ MWindow::MWindow()
    zip_[6]=(tr("lzma fast","lzma fast"));
    zip_[7]=(tr("lzma medium","lzma medium"));
    zip_[8]=(tr("lzma best","lzma best"));
-
    items << zip_[0] << zip_[1] << zip_[2] << zip_[3] <<  zip_[4];
    cmb_zip->addItems (items);
    items.clear();
@@ -204,8 +201,10 @@ MWindow::MWindow()
    cmb_zip->addItems (items);
    items.clear();
    QDir dir1(homepath + "/.config/qt4-fsarchiver");
-   if (!dir1.exists())
+   if (!dir1.exists()){
+      befehl = "mkdir " + homepath + "/qt4-fsarchiver 2>/dev/null" ;
       system (befehl.toAscii().data());
+      }
    QDir dir(homepath + "/.qt4-fs-client");
    if (!dir.exists()){
        befehl = "mkdir " + homepath + "/.qt4-fs-client 2>/dev/null" ;
@@ -220,6 +219,14 @@ MWindow::MWindow()
        befehl = "mkdir " + media + " 2>/dev/null" ;
        system (befehl.toAscii().data());
        }
+   }
+   // beim Abbruch einer Sicherung bleiben eventuell Daten in /tmp/fsa erhalten.
+   // Bei ersten Start werden eventuell vorhandene Dateien gelöscht.
+   // Beim Öffnen einer weiteren Instanz von qt4-fsarchiver, darf /tmp/fsa keinenfalls gelöscht werden.
+   // Das System sürzt ab!!
+   if (is_running() == 0) {
+       befehl = "rm -r -f /tmp/fsa 2>/dev/null"; 
+       system (befehl.toAscii().data());
    }
    // Ini-Datei auslesen
    QFile file(homepath + "/.config/qt4-fsarchiver/qt4-fsarchiver.conf");
@@ -261,11 +268,11 @@ MWindow::MWindow()
         cmb_zip -> setCurrentIndex(2);
         setting.beginGroup("Basiseinstellungen");
         setting.setValue("showPrg",1); 
+        setting.setValue("ssh",1); 
+        setting.setValue("sshfs",1); 
+        setting.setValue("dummy",2);
         setting.endGroup();
         }
-    
-  // if (bit_version() != "64")
-      //pushButton_break->setEnabled(false);
    label_4->setEnabled(false);
    chk_overwrite->setEnabled(true);
    cmb_zip->setEnabled(false);
@@ -474,7 +481,7 @@ int MWindow::savePartition()
      char * part_;
      int err = 0;
      QString keyText = "";
-   
+     int found = 0; 
      int zip;
 
      indicator_reset();
@@ -501,6 +508,12 @@ int MWindow::savePartition()
 		"Bitte wählen Sie den Dateinamen der Sicherung aus.\n"));
 		return 0 ;
            }
+        //Überprüfen ob im Dateinamen "/" enthalten ist. Wird durch "-" ersetzt
+        while (found > -1){
+          found = DateiName.indexOf("/");
+          if (found > -1)
+             	DateiName.replace(found, 1, "-"); 
+        }
         if (file.open(QIODevice::ReadOnly))
         	  {
                 QMessageBox::about(this, tr("Note", "Hinweis"),
@@ -684,15 +697,7 @@ int MWindow::savePartition()
                 		  return 0;
                 		  }
              			}
-   // beim Abbruch einer Sicherung bleiben eventuell Daten in /tmp/fsa erhalten.
-   // Bei ersten Start werden eventuell vorhandene Dateien gelöscht.
-   // Beim Öffnen einer weiteren Instanz von qt4-fsarchiver, darf /tmp/fsa keinenfalls gelöscht werden.
-   // Das System sürzt ab!!
-                                if (liveFlag != 1 && is_running() == 0) {
-                                    if (is_running() == 0) {
-					befehl = "rm -r -f /tmp/fsa 2>/dev/null"; 
-   					system (befehl.toAscii().data());
-   				}}
+   
 //qDebug() << "Befehl" << parameter[0] << parameter[1] << parameter[2] << parameter[3] << parameter[4] << parameter[5] << parameter[6] << parameter[7] << parameter[8] << indizierung + 2;
 				thread1.setValues(indizierung + 2,"0"); 
                                 pushButton_end->setEnabled(false);  
@@ -1077,8 +1082,8 @@ void MWindow::folder_file() {
 void MWindow::info() {
    QMessageBox::information(
       0, tr("qt4-fsarchiver"),
-      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-13, May 4, 2015",
-	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-13, 4. Mai 2015"));
+      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-14, June 10, 2015",
+	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-4, 10. Juni 2015"));
       }
 
 int MWindow::Root_Auswertung(){
@@ -1097,8 +1102,12 @@ int MWindow::Root_Auswertung(){
 int MWindow::is_running(){
       QString homepath = QDir::homePath();
       QString running;
-      QString befehl = "ps --user root | grep -w qt4-fsarchiver 1> " +  homepath + "/.config/qt4-fsarchiver/running.txt";
-      system (befehl.toAscii().data());
+      QString befehl;
+      QDir dir1(homepath + "/.config/qt4-fsarchiver");
+      if (dir1.exists()){  //vermeidet Fehlermeldung beim ersten Start
+          befehl = "ps --user root | grep -w qt4-fsarchiver 1> " +  homepath + "/.config/qt4-fsarchiver/running.txt";
+          system (befehl.toAscii().data());
+      }
       QString filename = homepath + "/.config/qt4-fsarchiver/running.txt";
       QFile file(filename);
       int zaehler = 0;
@@ -1111,7 +1120,7 @@ int MWindow::is_running(){
                    zaehler = zaehler + 1;
            } }
            file.close();
-           befehl = "rm " + filename;
+           befehl = "rm " + filename + " 2>/dev/null";
            system (befehl.toAscii().data());
            if (zaehler > 1) {
                // qt4-fsarchiver läuft bereits in einer Instanz 
@@ -1333,7 +1342,8 @@ int part_testen;
        int cnt_special = werte_holen(10);
        QString cnt_special_;
        cnt_special_ = QString::number(cnt_special);
-       if (dialog_auswertung ==0){
+       if (dialog_auswertung ==0){ 
+           //Rückmeldung von fsarchiver: Sicherung erfolgreich
            // Ausgabe progressBar durch Timer unterbinden
            stopFlag = 1; 
            QMessageBox::about(this, tr("Note", "Hinweis"), 

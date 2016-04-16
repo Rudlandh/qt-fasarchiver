@@ -1124,50 +1124,50 @@ Die Dateiendung muss .fsa sein</comment>
     <message>
         <location filename="../src/net.cpp" line="332"/>
         <location filename="../src/net.cpp" line="374"/>
-        <location filename="../src/net.cpp" line="498"/>
-        <location filename="../src/net.cpp" line="504"/>
-        <location filename="../src/net.cpp" line="510"/>
-        <location filename="../src/net.cpp" line="517"/>
-        <location filename="../src/net.cpp" line="523"/>
-        <location filename="../src/net.cpp" line="541"/>
-        <location filename="../src/net.cpp" line="596"/>
-        <location filename="../src/net.cpp" line="640"/>
-        <location filename="../src/net.cpp" line="682"/>
-        <location filename="../src/net.cpp" line="687"/>
-        <location filename="../src/net.cpp" line="705"/>
-        <location filename="../src/net.cpp" line="759"/>
-        <location filename="../src/net.cpp" line="765"/>
-        <location filename="../src/net.cpp" line="771"/>
-        <location filename="../src/net.cpp" line="777"/>
+        <location filename="../src/net.cpp" line="500"/>
+        <location filename="../src/net.cpp" line="506"/>
+        <location filename="../src/net.cpp" line="512"/>
+        <location filename="../src/net.cpp" line="519"/>
+        <location filename="../src/net.cpp" line="531"/>
+        <location filename="../src/net.cpp" line="550"/>
+        <location filename="../src/net.cpp" line="605"/>
+        <location filename="../src/net.cpp" line="649"/>
+        <location filename="../src/net.cpp" line="691"/>
+        <location filename="../src/net.cpp" line="696"/>
+        <location filename="../src/net.cpp" line="714"/>
+        <location filename="../src/net.cpp" line="768"/>
+        <location filename="../src/net.cpp" line="774"/>
+        <location filename="../src/net.cpp" line="780"/>
         <location filename="../src/net.cpp" line="786"/>
-        <location filename="../src/net.cpp" line="794"/>
-        <location filename="../src/net.cpp" line="799"/>
-        <location filename="../src/net.cpp" line="821"/>
+        <location filename="../src/net.cpp" line="795"/>
+        <location filename="../src/net.cpp" line="803"/>
+        <location filename="../src/net.cpp" line="808"/>
         <location filename="../src/net.cpp" line="830"/>
-        <location filename="../src/net.cpp" line="837"/>
-        <location filename="../src/net.cpp" line="885"/>
-        <location filename="../src/net.cpp" line="910"/>
-        <location filename="../src/net.cpp" line="917"/>
-        <location filename="../src/net.cpp" line="929"/>
-        <location filename="../src/net.cpp" line="988"/>
-        <location filename="../src/net.cpp" line="1156"/>
-        <location filename="../src/net.cpp" line="1222"/>
-        <location filename="../src/net.cpp" line="1239"/>
-        <location filename="../src/net.cpp" line="1246"/>
-        <location filename="../src/net.cpp" line="1253"/>
-        <location filename="../src/net.cpp" line="1266"/>
-        <location filename="../src/net.cpp" line="1297"/>
-        <location filename="../src/net.cpp" line="1323"/>
-        <location filename="../src/net.cpp" line="1326"/>
-        <location filename="../src/net.cpp" line="1331"/>
-        <location filename="../src/net.cpp" line="1348"/>
-        <location filename="../src/net.cpp" line="1355"/>
-        <location filename="../src/net.cpp" line="1361"/>
-        <location filename="../src/net.cpp" line="1365"/>
-        <location filename="../src/net.cpp" line="1529"/>
-        <location filename="../src/net.cpp" line="1662"/>
-        <location filename="../src/net.cpp" line="1679"/>
-        <location filename="../src/net.cpp" line="1719"/>
+        <location filename="../src/net.cpp" line="839"/>
+        <location filename="../src/net.cpp" line="846"/>
+        <location filename="../src/net.cpp" line="894"/>
+        <location filename="../src/net.cpp" line="919"/>
+        <location filename="../src/net.cpp" line="926"/>
+        <location filename="../src/net.cpp" line="938"/>
+        <location filename="../src/net.cpp" line="997"/>
+        <location filename="../src/net.cpp" line="1165"/>
+        <location filename="../src/net.cpp" line="1231"/>
+        <location filename="../src/net.cpp" line="1248"/>
+        <location filename="../src/net.cpp" line="1255"/>
+        <location filename="../src/net.cpp" line="1262"/>
+        <location filename="../src/net.cpp" line="1275"/>
+        <location filename="../src/net.cpp" line="1306"/>
+        <location filename="../src/net.cpp" line="1332"/>
+        <location filename="../src/net.cpp" line="1335"/>
+        <location filename="../src/net.cpp" line="1340"/>
+        <location filename="../src/net.cpp" line="1357"/>
+        <location filename="../src/net.cpp" line="1364"/>
+        <location filename="../src/net.cpp" line="1370"/>
+        <location filename="../src/net.cpp" line="1374"/>
+        <location filename="../src/net.cpp" line="1538"/>
+        <location filename="../src/net.cpp" line="1671"/>
+        <location filename="../src/net.cpp" line="1688"/>
+        <location filename="../src/net.cpp" line="1729"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>नोट</translation>
@@ -1191,7 +1191,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="499"/>
+        <location filename="../src/net.cpp" line="501"/>
         <source>Please, select a folder.
 </source>
         <comment>Bitte wählen Sie einen Ordner aus.
@@ -1200,7 +1200,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="505"/>
+        <location filename="../src/net.cpp" line="507"/>
         <source>Please, select the partition to be saved.
 </source>
         <comment>Bitte wählen Sie die zu sichernde Partition aus.
@@ -1209,7 +1209,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="511"/>
+        <location filename="../src/net.cpp" line="513"/>
         <source>Please, select the directorie to be saved.
 </source>
         <comment>Bitte wählen Sie das zu sichernde Verzeichnis aus.
@@ -1217,8 +1217,8 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="518"/>
-        <location filename="../src/net.cpp" line="766"/>
+        <location filename="../src/net.cpp" line="520"/>
+        <location filename="../src/net.cpp" line="775"/>
         <source>Please, select the filename of the backup.
 </source>
         <comment>Bitte wählen Sie den Dateinamen der Sicherung aus.
@@ -1227,7 +1227,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="524"/>
+        <location filename="../src/net.cpp" line="532"/>
         <source>You have selected a file. You must select a directory
 </source>
         <comment>Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen
@@ -1236,15 +1236,15 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="542"/>
-        <location filename="../src/net.cpp" line="1157"/>
+        <location filename="../src/net.cpp" line="551"/>
+        <location filename="../src/net.cpp" line="1166"/>
         <source>The network computer </source>
         <comment>Der Netzwerkrechner </comment>
         <translation>नेटवर्क कंप्यूटर </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="542"/>
-        <location filename="../src/net.cpp" line="1157"/>
+        <location filename="../src/net.cpp" line="551"/>
+        <location filename="../src/net.cpp" line="1166"/>
         <source> could not be integrated. The program is aborted
 </source>
         <comment> konnte nicht eingebunden werden. Das Programm wird abgebrochen
@@ -1253,26 +1253,26 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="574"/>
+        <location filename="../src/net.cpp" line="583"/>
         <source>The system partition to be saved is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Systempartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
         <translation>बचाया जा करने के लिए सिस्टम विभाजन मुहिम शुरू की है। क्या आप एक लाइव बैकअप करने के लिए चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="582"/>
+        <location filename="../src/net.cpp" line="591"/>
         <source>The home partition to be saved is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Homepartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
         <translation>बचाया जा करने के लिए घर विभाजन मुहिम शुरू की है। क्या आप एक लाइव बैकअप करने के लिए चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="597"/>
+        <location filename="../src/net.cpp" line="606"/>
         <source>The partition </source>
         <comment>Die Partition </comment>
         <translation>The partition </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="598"/>
-        <location filename="../src/net.cpp" line="931"/>
+        <location filename="../src/net.cpp" line="607"/>
+        <location filename="../src/net.cpp" line="940"/>
         <source>can not be unmounted. The program is terminated
 </source>
         <comment> kann nicht ausgehängt werden. Das Programm wird abgebrochen
@@ -1281,9 +1281,9 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="641"/>
-        <location filename="../src/net.cpp" line="831"/>
-        <location filename="../src/net.cpp" line="989"/>
+        <location filename="../src/net.cpp" line="650"/>
+        <location filename="../src/net.cpp" line="840"/>
+        <location filename="../src/net.cpp" line="998"/>
         <source>The key length must be between 6 and 64 characters
 </source>
         <comment>Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein
@@ -1292,14 +1292,14 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="683"/>
+        <location filename="../src/net.cpp" line="692"/>
         <source>The partition file </source>
         <comment>Die Partitionsdatei </comment>
         <translation>विभाजन फ़ाइल </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="683"/>
-        <location filename="../src/net.cpp" line="688"/>
+        <location filename="../src/net.cpp" line="692"/>
+        <location filename="../src/net.cpp" line="697"/>
         <source>already exists. The backup is not performed
 </source>
         <comment> ist bereits vorhanden. Die Sicherung wird nicht durchgeführt
@@ -1308,13 +1308,13 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="688"/>
+        <location filename="../src/net.cpp" line="697"/>
         <source>The directorie file </source>
         <comment>Die Verzeichnisdatei </comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="706"/>
+        <location filename="../src/net.cpp" line="715"/>
         <source>The backup was aborted by the user
 </source>
         <comment>Die Sicherung wurde vom Benutzer abgebrochen
@@ -1323,7 +1323,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="760"/>
+        <location filename="../src/net.cpp" line="769"/>
         <source>No key was given for the decryption
 </source>
         <comment>Es wurde kein Schlüssel für die Entschlüsselung angegeben.
@@ -1332,7 +1332,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="772"/>
+        <location filename="../src/net.cpp" line="781"/>
         <source>Please, select the partition to be written back.
 </source>
         <comment>Bitte wählen Sie die zurück zu schreibende Partition aus.
@@ -1341,7 +1341,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="778"/>
+        <location filename="../src/net.cpp" line="787"/>
         <source>Please, select the directorie to be written back.
 </source>
         <comment>Bitte wählen Sie das zurück zu schreibende Verzeichnis aus.
@@ -1349,7 +1349,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="787"/>
+        <location filename="../src/net.cpp" line="796"/>
         <source>You have chosen the wrong recovery file selected.
 The files should end with. fsa be</source>
         <comment>Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht 
@@ -1358,7 +1358,7 @@ Die Dateiendung muss .fsa sein</comment>
  फाइलों के साथ समाप्त होना चाहिए। fsa हो</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="794"/>
+        <location filename="../src/net.cpp" line="803"/>
         <source>The file contains a partition backup. The file can not be restored as a directory.
 </source>
         <comment>Die Datei enthält eine Partitionssicherung. Die Datei kann nicht als Verzeichnis zurückgeschrieben werden. 
@@ -1366,7 +1366,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="799"/>
+        <location filename="../src/net.cpp" line="808"/>
         <source>The file contains a directory backup. The file can not be restored as a partition.
 </source>
         <comment>Die Datei enthält eine Verzeichnissicherung. Die Datei kann nicht als Partition zurückgeschrieben werden. 
@@ -1374,7 +1374,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="822"/>
+        <location filename="../src/net.cpp" line="831"/>
         <source>The partition is encrypted. Please enter the key
 </source>
         <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein
@@ -1383,7 +1383,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="837"/>
+        <location filename="../src/net.cpp" line="846"/>
         <source>They have entered a wrong password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben. 
@@ -1391,25 +1391,25 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>They have entered a wrong password.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="857"/>
+        <location filename="../src/net.cpp" line="866"/>
         <source>Partition to restore the </source>
         <comment>Die wiederherzustellende Partition </comment>
         <translation>पार्टीशन को पुनर्स्थापित करने के लिए</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="858"/>
+        <location filename="../src/net.cpp" line="867"/>
         <source> does not coincide with the saved  </source>
         <comment> stimmt nicht mit der gesicherten </comment>
         <translation> के साथ सहेजे गए मेल नहीं करता है  </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="858"/>
+        <location filename="../src/net.cpp" line="867"/>
         <source>Do you want to continue restore?</source>
         <comment> überein. Wollen Sie trotzdem die Wiederherstellung durchführen?</comment>
         <translation>क्या आप पुनर्स्थापना जारी रखने के लिए चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="886"/>
+        <location filename="../src/net.cpp" line="895"/>
         <source>The restore was canceled by user
 </source>
         <comment>Das Zurückschreiben wurde vom Benutzer abgebrochen
@@ -1418,13 +1418,13 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="898"/>
+        <location filename="../src/net.cpp" line="907"/>
         <source>There is a file with the contents of the partition boot sector present. Do you want to perform the restoration of the PBR?</source>
         <comment>Es ist eine Datei mit dem Inhalt des Partition Boot Sektors vorhanden. Wollen Sie die Wiederherstellung des PBR durchführen?</comment>
         <translation>वहाँ मौजूद पार्टीशन बूट सेक्टर की सामग्री के साथ एक फ़ाइल है। क्या आप PBR की बहाली करने के लिए चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="911"/>
+        <location filename="../src/net.cpp" line="920"/>
         <source>To restore system partition is mounted and can not be restored. Please use a live CD
 </source>
         <comment>Die wiederherzustellende Systempartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
@@ -1433,7 +1433,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="918"/>
+        <location filename="../src/net.cpp" line="927"/>
         <source>The restored home partition is mounted and can not be restored. Please use a live CD
 </source>
         <comment>Die wiederherzustellende Homepartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
@@ -1442,25 +1442,25 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="930"/>
+        <location filename="../src/net.cpp" line="939"/>
         <source>The partition</source>
         <comment>Die Partition </comment>
         <translation>The partition </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="943"/>
+        <location filename="../src/net.cpp" line="952"/>
         <source>If the existing btrfs partition to be formatted? The new UUID is defined here. If you choose &lt;no&gt;, the UUID remains preserved.</source>
         <comment>Soll die vorhandene btrfs-Partition formatiert werden? Die UUID wird dabei neu festgelegt. Wenn Sie  nein wählen, bleibt die UUID erhalten.</comment>
         <translation>अगर मौजूदा btrfs विभाजन स्वरूपित किया जा करने के लिए? नई UUID यहाँ परिभाषित किया गया है। यदि आप &lt;no&gt;का चयन, UUID संरक्षित रहता है।</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1022"/>
+        <location filename="../src/net.cpp" line="1031"/>
         <source>Save partition/directorie</source>
         <comment>Partition/Verzeichnis sichern</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1032"/>
+        <location filename="../src/net.cpp" line="1041"/>
         <source>Encrypt
 backup. key:</source>
         <comment>Sicherung
@@ -1468,13 +1468,13 @@ verschlüsseln. Schlüssel:</comment>
         <translation>बैकअप एन्क्रिप्ट करें। कुंजी:</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1059"/>
+        <location filename="../src/net.cpp" line="1068"/>
         <source>Partition/directorie restore</source>
         <comment>Partition/Verzeichnis zurückschreiben</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1069"/>
+        <location filename="../src/net.cpp" line="1078"/>
         <source>Decrypt
 backup. key:</source>
         <comment>Sicherung
@@ -1482,7 +1482,7 @@ entschlüsseln. Schlüssel</comment>
         <translation>बैकअप डीक्रिप्ट करें। कुंजी:</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1223"/>
+        <location filename="../src/net.cpp" line="1232"/>
         <source>The partition/directorie has been backed up successfully.
 </source>
         <comment>Die Partition/das Verzeichnis wurde erfolgreich gesichert.
@@ -1490,51 +1490,51 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1224"/>
-        <location filename="../src/net.cpp" line="1267"/>
-        <location filename="../src/net.cpp" line="1268"/>
-        <location filename="../src/net.cpp" line="1323"/>
-        <location filename="../src/net.cpp" line="1327"/>
-        <location filename="../src/net.cpp" line="1349"/>
-        <location filename="../src/net.cpp" line="1350"/>
-        <location filename="../src/net.cpp" line="1356"/>
-        <location filename="../src/net.cpp" line="1357"/>
+        <location filename="../src/net.cpp" line="1233"/>
+        <location filename="../src/net.cpp" line="1276"/>
+        <location filename="../src/net.cpp" line="1277"/>
+        <location filename="../src/net.cpp" line="1332"/>
+        <location filename="../src/net.cpp" line="1336"/>
+        <location filename="../src/net.cpp" line="1358"/>
+        <location filename="../src/net.cpp" line="1359"/>
+        <location filename="../src/net.cpp" line="1365"/>
+        <location filename="../src/net.cpp" line="1366"/>
         <source> files, </source>
         <comment> Dateien, </comment>
         <translation>फ़ाइलें,</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1224"/>
-        <location filename="../src/net.cpp" line="1267"/>
-        <location filename="../src/net.cpp" line="1268"/>
-        <location filename="../src/net.cpp" line="1323"/>
-        <location filename="../src/net.cpp" line="1327"/>
-        <location filename="../src/net.cpp" line="1349"/>
-        <location filename="../src/net.cpp" line="1356"/>
+        <location filename="../src/net.cpp" line="1233"/>
+        <location filename="../src/net.cpp" line="1276"/>
+        <location filename="../src/net.cpp" line="1277"/>
+        <location filename="../src/net.cpp" line="1332"/>
+        <location filename="../src/net.cpp" line="1336"/>
+        <location filename="../src/net.cpp" line="1358"/>
+        <location filename="../src/net.cpp" line="1365"/>
         <source> directories, </source>
         <comment> Verzeichnisse, </comment>
         <translation> निर्देशिकाएँ, </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1224"/>
-        <location filename="../src/net.cpp" line="1267"/>
-        <location filename="../src/net.cpp" line="1269"/>
-        <location filename="../src/net.cpp" line="1323"/>
-        <location filename="../src/net.cpp" line="1349"/>
-        <location filename="../src/net.cpp" line="1351"/>
-        <location filename="../src/net.cpp" line="1357"/>
+        <location filename="../src/net.cpp" line="1233"/>
+        <location filename="../src/net.cpp" line="1276"/>
+        <location filename="../src/net.cpp" line="1278"/>
+        <location filename="../src/net.cpp" line="1332"/>
+        <location filename="../src/net.cpp" line="1358"/>
+        <location filename="../src/net.cpp" line="1360"/>
+        <location filename="../src/net.cpp" line="1366"/>
         <source> links and </source>
         <comment> Links und </comment>
         <translation> कड़ियाँ और </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1224"/>
+        <location filename="../src/net.cpp" line="1233"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
         <translation>विशिष्ट डेटा का बैकअप लिया गया था।.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1240"/>
+        <location filename="../src/net.cpp" line="1249"/>
         <source>The backup of the partition/directorie was aborted by the user!
 </source>
         <comment>Die Sicherung der Partition/des Verzeichnisses wurde vom Benutzer abgebrochen!
@@ -1542,7 +1542,7 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1247"/>
+        <location filename="../src/net.cpp" line="1256"/>
         <source>The partition type is not supported.
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt
@@ -1550,7 +1550,7 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1254"/>
+        <location filename="../src/net.cpp" line="1263"/>
         <source>The partition type is not supported. Maybe the partition is encrypted?
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?
@@ -1559,7 +1559,7 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1267"/>
+        <location filename="../src/net.cpp" line="1276"/>
         <source>The backup of the partition/directorie was only partially successful.
 </source>
         <comment>Die Sicherung der Partition/des Verzeichnis war nur teilweise erfolgreich
@@ -1567,7 +1567,7 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1267"/>
+        <location filename="../src/net.cpp" line="1276"/>
         <source> specials have been backed
 .</source>
         <comment> spezielle Daten wurden gesichert
@@ -1575,7 +1575,7 @@ entschlüsseln. Schlüssel</comment>
         <translation>विशिष्ट डेटा का बैकअप लिया गया था।.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1269"/>
+        <location filename="../src/net.cpp" line="1278"/>
         <source> specials were not properly backed
 .</source>
         <comment> spezielle Daten wurden nicht korrekt gesichert.
@@ -1583,7 +1583,7 @@ entschlüsseln. Schlüssel</comment>
         <translation>स्पेशल ठीक से समर्थन नहीं थे।</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1297"/>
+        <location filename="../src/net.cpp" line="1306"/>
         <source>cannot restore an archive to a partition which is mounted, unmount it first 
 </source>
         <comment>Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!
@@ -1592,7 +1592,7 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1323"/>
+        <location filename="../src/net.cpp" line="1332"/>
         <source>The partition/directorie is successful back.
 </source>
         <comment>Die Partition/das Verzeichnis wurde erfolgreich wieder hergestellt.
@@ -1600,13 +1600,13 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1323"/>
+        <location filename="../src/net.cpp" line="1332"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
         <translation> विशेष डेटा बहाल कर दिया गया।</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1326"/>
+        <location filename="../src/net.cpp" line="1335"/>
         <source>The partition is successful back.
 </source>
         <comment>Die Partition wurde erfolgreich wieder hergestellt.
@@ -1615,19 +1615,19 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1327"/>
+        <location filename="../src/net.cpp" line="1336"/>
         <source> links </source>
         <comment> Links </comment>
         <translation> कड़ियाँ </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1327"/>
+        <location filename="../src/net.cpp" line="1336"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
         <translation> स्पेशल और पार्टीशन बूट रिकॉर्ड बहाल कर दिया गया है।</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1332"/>
+        <location filename="../src/net.cpp" line="1341"/>
         <source>The restore of the partition/directorie was break by user!
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeichnisses wurde vom Benutzer abgebrochen!
@@ -1635,7 +1635,7 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1349"/>
+        <location filename="../src/net.cpp" line="1358"/>
         <source>The restore of the partition/directorie was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeichnisses war nur teilweise erfolgreich
@@ -1643,7 +1643,7 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1349"/>
+        <location filename="../src/net.cpp" line="1358"/>
         <source> specials have been restored
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
@@ -1651,15 +1651,15 @@ entschlüsseln. Schlüssel</comment>
         <translation> विशेष डेटा बहाल कर दिया गया।</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1350"/>
-        <location filename="../src/net.cpp" line="1357"/>
+        <location filename="../src/net.cpp" line="1359"/>
+        <location filename="../src/net.cpp" line="1366"/>
         <source> directories and </source>
         <comment> Verzeichnisse und </comment>
         <translation> निर्देशिकाएँ और </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1352"/>
-        <location filename="../src/net.cpp" line="1357"/>
+        <location filename="../src/net.cpp" line="1361"/>
+        <location filename="../src/net.cpp" line="1366"/>
         <source> specials were not properly restored
 .</source>
         <comment> spezielle Daten wurden nicht korrekt wiederhergestellt.
@@ -1667,7 +1667,7 @@ entschlüsseln. Schlüssel</comment>
         <translation>स्पेशल ठीक से पुनर्स्थापित नहीं थे।</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1356"/>
+        <location filename="../src/net.cpp" line="1365"/>
         <source>The restore of the partition/directorie was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeicnisses war nur teilweise erfolgreich
@@ -1675,7 +1675,7 @@ entschlüsseln. Schlüssel</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1357"/>
+        <location filename="../src/net.cpp" line="1366"/>
         <source> specials and the Partition Boot Record have been restored
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
@@ -1683,7 +1683,7 @@ entschlüsseln. Schlüssel</comment>
         <translation> स्पेशल और पार्टीशन बूट रिकॉर्ड बहाल कर दिया गया है।</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1362"/>
+        <location filename="../src/net.cpp" line="1371"/>
         <source>You tried to restore a partition. The selected file can only restore directories. Please restart the program.
 </source>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
@@ -1692,7 +1692,7 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1365"/>
+        <location filename="../src/net.cpp" line="1374"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben. 
@@ -1701,32 +1701,32 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1530"/>
+        <location filename="../src/net.cpp" line="1539"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>हाँ</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1531"/>
+        <location filename="../src/net.cpp" line="1540"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>नहीं</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1544"/>
+        <location filename="../src/net.cpp" line="1553"/>
         <source>Do you want really break the save or restore from the partition?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
         <translation>आप वास्तव में सहेजें तोड़ने या पार्टीशन से पुनर्स्थापित करना चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1647"/>
+        <location filename="../src/net.cpp" line="1656"/>
         <source>If you have not set up SSH authentication, you must now enter the password in the terminal. Should this continue to be displayed? You can change this in the basic settings.</source>
         <comment>Wenn Sie keine SSH-Authentifizierung eingerichtet haben, müssen Sie nun das Passwort in dem Terminal eingeben. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern</comment>
         <translation>अगर तुम SSH प्रमाणन सेट नहीं है, तुम अब टर्मिनल में पासवर्ड दर्ज करना होगा। यह प्रदर्शित करने के लिए जारी रखना चाहिए? आप इस में मूल सेटिंग्स बदल सकते हैं।</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1662"/>
-        <location filename="../src/net.cpp" line="1719"/>
+        <location filename="../src/net.cpp" line="1671"/>
+        <location filename="../src/net.cpp" line="1729"/>
         <source>The SSH server is not reachable. Try again or with another network protocol.
 </source>
         <comment>Der SSH-Server ist nicht erreichbar. Versuchen Sie es nochmals oder mit einem anderen Netzwerkprotokoll.
@@ -1735,7 +1735,7 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1680"/>
+        <location filename="../src/net.cpp" line="1689"/>
         <source>When you first contact the computer with ssh, you must do the following:  In a terminal enter these commands: 1.In the open terminal you must confirm the RSA key fingerprint with yes. 2.Enter the password for accessing the server and 3.leave the server with the command exit.
 </source>
         <comment>Wenn Sie noch nicht erfolgreich per ssh auf den Rechner(Server) zugegriffen haben, müssen Sie nun folgendes tun: 1.In dem geöffneten Terminal müssen Sie den RSA key fingerprint mit yes bestätigen. 2.Geben Sie das Passwort für den Zugriff auf den Server ein  und 3.verlassen Sie den Server mit dem Befehl exit.
@@ -1744,7 +1744,7 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1818"/>
+        <location filename="../src/net.cpp" line="1828"/>
         <source>Name</source>
         <translation>नाम</translation>
     </message>
@@ -2043,13 +2043,13 @@ entschlüsseln. Schlüssel</comment>
         <translation>NFS</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="185"/>
+        <location filename="../src/setting.cpp" line="188"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>नोट</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="186"/>
+        <location filename="../src/setting.cpp" line="189"/>
         <source>The settings have been saved. Be restarted, the program modified the language setting.</source>
         <comment>Die Einstellungen wurden gespeichert. Bei geänderter Spracheinstellung muss das Programm neu gestartet werden.
 </comment>
@@ -2411,79 +2411,79 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MWindow</name>
     <message>
-        <location filename="../src/mainWindow.cpp" line="190"/>
+        <location filename="../src/mainWindow.cpp" line="188"/>
         <source>lzo</source>
         <comment>lzo</comment>
         <translation>lzo</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="191"/>
+        <location filename="../src/mainWindow.cpp" line="189"/>
         <source>gzip fast</source>
         <comment>gzip fast</comment>
         <translation>gzip फास्ट</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="192"/>
+        <location filename="../src/mainWindow.cpp" line="190"/>
         <source>gzip standard</source>
         <comment>gzip standard</comment>
         <translation>gzip मानक</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="193"/>
+        <location filename="../src/mainWindow.cpp" line="191"/>
         <source>qzip best</source>
         <comment>qzip best</comment>
         <translation>qzip उत्तम</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="194"/>
+        <location filename="../src/mainWindow.cpp" line="192"/>
         <source>bzip2 fast</source>
         <comment>bzip2 fast</comment>
         <translation>bzip2 फास्ट</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="195"/>
+        <location filename="../src/mainWindow.cpp" line="193"/>
         <source>bzip2 good</source>
         <comment> bzip2 good</comment>
         <translation>bzip2 अच्छा</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="196"/>
+        <location filename="../src/mainWindow.cpp" line="194"/>
         <source>lzma fast</source>
         <comment>lzma fast</comment>
         <translation>lzma तेज</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="197"/>
+        <location filename="../src/mainWindow.cpp" line="195"/>
         <source>lzma medium</source>
         <comment>lzma medium</comment>
         <translation>lzma मध्यम</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="198"/>
+        <location filename="../src/mainWindow.cpp" line="196"/>
         <source>lzma best</source>
         <comment>lzma best</comment>
         <translation>lzma उत्तम</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="339"/>
+        <location filename="../src/mainWindow.cpp" line="344"/>
         <source>In the file /usr/share/doc/qt4-fsarchiver/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.</source>
         <comment>In der Datei /usr/share/doc/qt4-fsarchiver/Liesmich sind Hinweise zur Nutzung des Programms enthalten. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern.</comment>
         <translation>In the file /usr/share/doc/qt4-fsarchiver/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="401"/>
+        <location filename="../src/mainWindow.cpp" line="406"/>
         <source>Backup File</source>
         <comment>Sicherungsdatei</comment>
         <translation>बैकअप फ़ाइल</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="402"/>
+        <location filename="../src/mainWindow.cpp" line="407"/>
         <source>Partition restore</source>
         <comment>Partition zurückschreiben</comment>
         <translation>विभाजन बहाल</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="415"/>
+        <location filename="../src/mainWindow.cpp" line="420"/>
         <source>Decrypt
 backup. key:</source>
         <comment>Sicherung
@@ -2491,7 +2491,7 @@ entschlüsseln. Schlüssel</comment>
         <translation>बैकअप डीक्रिप्ट करें। कुंजी:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="433"/>
+        <location filename="../src/mainWindow.cpp" line="438"/>
         <source>Backup directory</source>
         <comment>Sicherungsverzeichnis</comment>
         <translation>बैकअप निर्देशिका</translation>
@@ -2502,7 +2502,7 @@ entschlüsseln. Schlüssel</comment>
         <translation type="obsolete">पार्टीशन को बचाने</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="447"/>
+        <location filename="../src/mainWindow.cpp" line="452"/>
         <source>Encrypt
 backup. key:</source>
         <comment>Sicherung
@@ -2510,49 +2510,49 @@ verschlüsseln. Schlüssel</comment>
         <translation>बैकअप एन्क्रिप्ट करें। कुंजी:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="486"/>
-        <location filename="../src/mainWindow.cpp" line="492"/>
-        <location filename="../src/mainWindow.cpp" line="499"/>
-        <location filename="../src/mainWindow.cpp" line="506"/>
-        <location filename="../src/mainWindow.cpp" line="560"/>
-        <location filename="../src/mainWindow.cpp" line="600"/>
-        <location filename="../src/mainWindow.cpp" line="665"/>
-        <location filename="../src/mainWindow.cpp" line="681"/>
-        <location filename="../src/mainWindow.cpp" line="803"/>
-        <location filename="../src/mainWindow.cpp" line="809"/>
-        <location filename="../src/mainWindow.cpp" line="815"/>
-        <location filename="../src/mainWindow.cpp" line="826"/>
-        <location filename="../src/mainWindow.cpp" line="835"/>
-        <location filename="../src/mainWindow.cpp" line="853"/>
-        <location filename="../src/mainWindow.cpp" line="862"/>
-        <location filename="../src/mainWindow.cpp" line="869"/>
-        <location filename="../src/mainWindow.cpp" line="912"/>
-        <location filename="../src/mainWindow.cpp" line="936"/>
-        <location filename="../src/mainWindow.cpp" line="943"/>
-        <location filename="../src/mainWindow.cpp" line="955"/>
-        <location filename="../src/mainWindow.cpp" line="1003"/>
-        <location filename="../src/mainWindow.cpp" line="1087"/>
-        <location filename="../src/mainWindow.cpp" line="1162"/>
-        <location filename="../src/mainWindow.cpp" line="1339"/>
-        <location filename="../src/mainWindow.cpp" line="1360"/>
-        <location filename="../src/mainWindow.cpp" line="1367"/>
-        <location filename="../src/mainWindow.cpp" line="1374"/>
+        <location filename="../src/mainWindow.cpp" line="491"/>
+        <location filename="../src/mainWindow.cpp" line="497"/>
+        <location filename="../src/mainWindow.cpp" line="504"/>
+        <location filename="../src/mainWindow.cpp" line="517"/>
+        <location filename="../src/mainWindow.cpp" line="571"/>
+        <location filename="../src/mainWindow.cpp" line="611"/>
+        <location filename="../src/mainWindow.cpp" line="676"/>
+        <location filename="../src/mainWindow.cpp" line="692"/>
+        <location filename="../src/mainWindow.cpp" line="806"/>
+        <location filename="../src/mainWindow.cpp" line="812"/>
+        <location filename="../src/mainWindow.cpp" line="818"/>
+        <location filename="../src/mainWindow.cpp" line="829"/>
+        <location filename="../src/mainWindow.cpp" line="838"/>
+        <location filename="../src/mainWindow.cpp" line="856"/>
+        <location filename="../src/mainWindow.cpp" line="865"/>
+        <location filename="../src/mainWindow.cpp" line="872"/>
+        <location filename="../src/mainWindow.cpp" line="915"/>
+        <location filename="../src/mainWindow.cpp" line="939"/>
+        <location filename="../src/mainWindow.cpp" line="946"/>
+        <location filename="../src/mainWindow.cpp" line="958"/>
+        <location filename="../src/mainWindow.cpp" line="1006"/>
+        <location filename="../src/mainWindow.cpp" line="1090"/>
+        <location filename="../src/mainWindow.cpp" line="1165"/>
+        <location filename="../src/mainWindow.cpp" line="1343"/>
+        <location filename="../src/mainWindow.cpp" line="1364"/>
+        <location filename="../src/mainWindow.cpp" line="1371"/>
         <location filename="../src/mainWindow.cpp" line="1378"/>
-        <location filename="../src/mainWindow.cpp" line="1391"/>
-        <location filename="../src/mainWindow.cpp" line="1413"/>
-        <location filename="../src/mainWindow.cpp" line="1440"/>
+        <location filename="../src/mainWindow.cpp" line="1382"/>
+        <location filename="../src/mainWindow.cpp" line="1395"/>
+        <location filename="../src/mainWindow.cpp" line="1417"/>
         <location filename="../src/mainWindow.cpp" line="1444"/>
-        <location filename="../src/mainWindow.cpp" line="1449"/>
-        <location filename="../src/mainWindow.cpp" line="1466"/>
-        <location filename="../src/mainWindow.cpp" line="1475"/>
-        <location filename="../src/mainWindow.cpp" line="1486"/>
-        <location filename="../src/mainWindow.cpp" line="1489"/>
+        <location filename="../src/mainWindow.cpp" line="1448"/>
+        <location filename="../src/mainWindow.cpp" line="1453"/>
+        <location filename="../src/mainWindow.cpp" line="1470"/>
+        <location filename="../src/mainWindow.cpp" line="1479"/>
+        <location filename="../src/mainWindow.cpp" line="1490"/>
+        <location filename="../src/mainWindow.cpp" line="1493"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>नोट</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="487"/>
+        <location filename="../src/mainWindow.cpp" line="492"/>
         <source>Please select from the backup directory.
 </source>
         <comment>Bitte wählen Sie das Sicherungsverzeichnis aus.
@@ -2561,15 +2561,15 @@ verschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="493"/>
+        <location filename="../src/mainWindow.cpp" line="498"/>
         <source>Please select the partition to be</source>
         <comment>Bitte wählen Sie die zu sichernde Partition aus.
 </comment>
         <translation>कृपया विभाजन किया जा करने के लिए का चयन करें</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="500"/>
-        <location filename="../src/mainWindow.cpp" line="810"/>
+        <location filename="../src/mainWindow.cpp" line="505"/>
+        <location filename="../src/mainWindow.cpp" line="813"/>
         <source>Please select the file name of the backup.
 </source>
         <comment>Bitte wählen Sie den Dateinamen der Sicherung aus.
@@ -2578,7 +2578,7 @@ verschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="507"/>
+        <location filename="../src/mainWindow.cpp" line="518"/>
         <source>You have selected a file. You must select a directory
 </source>
         <comment>Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen
@@ -2587,25 +2587,25 @@ verschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="535"/>
+        <location filename="../src/mainWindow.cpp" line="546"/>
         <source>To back up the system partition is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Systempartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
         <translation>To back up the system partition is mounted. Do you want to do a live backup?</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="543"/>
+        <location filename="../src/mainWindow.cpp" line="554"/>
         <source>To back up home partition is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Homepartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
         <translation>To back up home partition is mounted. Do you want to do a live backup?</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="561"/>
+        <location filename="../src/mainWindow.cpp" line="572"/>
         <source>The partition</source>
         <comment>Die Partition </comment>
         <translation>The partition </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="561"/>
+        <location filename="../src/mainWindow.cpp" line="572"/>
         <source>can not be unmounted. The program is terminated
 </source>
         <comment> kann nicht ausgehängt werden. Das Programm wird abgebrochen
@@ -2614,8 +2614,8 @@ verschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="601"/>
-        <location filename="../src/mainWindow.cpp" line="863"/>
+        <location filename="../src/mainWindow.cpp" line="612"/>
+        <location filename="../src/mainWindow.cpp" line="866"/>
         <source>The key length must be between 6 and 64 characters
 </source>
         <comment>Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein
@@ -2624,13 +2624,13 @@ verschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="666"/>
+        <location filename="../src/mainWindow.cpp" line="677"/>
         <source>The partition file</source>
         <comment>Die Partitionsdatei</comment>
         <translation>विभाजन फ़ाइल </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="666"/>
+        <location filename="../src/mainWindow.cpp" line="677"/>
         <source> already exists. The backup is not performed
 </source>
         <comment> ist bereits vorhanden. Die Sicherung wird nicht durchgeführt
@@ -2639,7 +2639,7 @@ verschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="682"/>
+        <location filename="../src/mainWindow.cpp" line="693"/>
         <source>The backup was aborted by the user
 </source>
         <comment>Die Sicherung wurde vom Benutzer abgebrochen
@@ -2648,20 +2648,20 @@ verschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="706"/>
+        <location filename="../src/mainWindow.cpp" line="709"/>
         <source>The backup is performed</source>
         <comment>Die Sicherung wird durchgeführt</comment>
         <translation>बैकअप प्रदर्शन किया है</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="804"/>
+        <location filename="../src/mainWindow.cpp" line="807"/>
         <source>There was no key to decrypt specified.</source>
         <comment>Es wurde kein Schlüssel für die Entschlüsselung angegeben.
 </comment>
         <translation>वहाँ गया था करने के लिए कोई कुंजी निर्दिष्ट decrypt.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="816"/>
+        <location filename="../src/mainWindow.cpp" line="819"/>
         <source>Please select from the writing back to partition.
 </source>
         <comment>Bitte wählen Sie die zurück zu schreibende Partition aus.
@@ -2670,7 +2670,7 @@ verschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="827"/>
+        <location filename="../src/mainWindow.cpp" line="830"/>
         <source>You have chosen the wrong recovery file selected. 
 The files should end with. fsa be</source>
         <comment>Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht 
@@ -2679,7 +2679,7 @@ Die Dateiendung muss .fsa sein</comment>
  फाइलों के साथ समाप्त होना चाहिए। fsa हो</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="836"/>
+        <location filename="../src/mainWindow.cpp" line="839"/>
         <source>You have selected a directory. You must select a file
 </source>
         <comment>Sie haben ein Verzeichnis ausgewählt. Sie müssen eine Datei auswählen
@@ -2688,110 +2688,110 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="854"/>
+        <location filename="../src/mainWindow.cpp" line="857"/>
         <source>The partition is encrypted. Please enter the key</source>
         <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein
 </comment>
         <translation>विभाजन एन्क्रिप्ट किया गया है। कृपया कुंजी दर्ज करें</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="869"/>
+        <location filename="../src/mainWindow.cpp" line="872"/>
         <source>You have entered an incorrect password.</source>
         <comment>Sie haben ein falsches Passwort eingegeben. 
 </comment>
         <translation>आपने ग़लत पासवर्ड दर्ज किया है।</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="887"/>
+        <location filename="../src/mainWindow.cpp" line="890"/>
         <source>Partition to restore the </source>
         <comment>Die wiederherzustellende Partition </comment>
         <translation>पार्टीशन को पुनर्स्थापित करने के लिए</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="888"/>
+        <location filename="../src/mainWindow.cpp" line="891"/>
         <source> does not coincide with the saved  </source>
         <comment> stimmt nicht mit der gesicherten </comment>
         <translation> के साथ सहेजे गए मेल नहीं करता है  </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="888"/>
+        <location filename="../src/mainWindow.cpp" line="891"/>
         <source>Do you want to continue restore?</source>
         <comment> überein. Wollen Sie trotzdem die Wiederherstellung durchführen?</comment>
         <translation>क्या आप पुनर्स्थापना जारी रखने के लिए चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="913"/>
+        <location filename="../src/mainWindow.cpp" line="916"/>
         <source>The restore was aborted by the user</source>
         <comment>Das Zurückschreiben wurde vom Benutzer abgebrochen
 </comment>
         <translation>The restore was aborted by the user</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="925"/>
+        <location filename="../src/mainWindow.cpp" line="928"/>
         <source>There is a file with the contents of the partition boot sector present. Do you want to perform the restoration of the PBR?</source>
         <comment>Es ist eine Datei mit dem Inhalt des Partition Boot Sektors vorhanden. Wollen Sie die Wiederherstellung des PBR durchführen?</comment>
         <translation>वहाँ मौजूद पार्टीशन बूट सेक्टर की सामग्री के साथ एक फ़ाइल है। क्या आप PBR की बहाली करने के लिए चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="937"/>
+        <location filename="../src/mainWindow.cpp" line="940"/>
         <source>Restore the system partition is mounted and can not be written back. Please use a live CD.</source>
         <comment>Die wiederherzustellende Systempartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
 </comment>
         <translation>Restore the system partition is mounted and can not be written back. Please use a live CD.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="944"/>
+        <location filename="../src/mainWindow.cpp" line="947"/>
         <source>Restore the home partition is mounted and can not be written back. Please use a live CD.</source>
         <comment>Die wiederherzustellende Homepartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
 </comment>
         <translation>Restore the home partition is mounted and can not be written back. Please use a live CD.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="956"/>
+        <location filename="../src/mainWindow.cpp" line="959"/>
         <source>The partition </source>
         <comment>Die Partition </comment>
         <translation>The partition </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="956"/>
+        <location filename="../src/mainWindow.cpp" line="959"/>
         <source> can not be unmounted. The program is terminated</source>
         <comment> kann nicht ausgehängt werden. Das Programm wird abgebrochen
 </comment>
         <translation> पैदाल नहीं हो सकता। कार्यक्रम समाप्त होता है</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="966"/>
+        <location filename="../src/mainWindow.cpp" line="969"/>
         <source>If the existing btrfs partition to be formatted? The new UUID is defined here. If you choose &lt;no&gt;, the UUID remains preserved.</source>
         <comment>Soll die vorhandene btrfs-Partition formatiert werden? Die UUID wird dabei neu festgelegt. Wenn Sie  nein wählen, bleibt die UUID erhalten.</comment>
         <translation>अगर मौजूदा btrfs विभाजन स्वरूपित किया जा करने के लिए? नई UUID यहाँ परिभाषित किया गया है। यदि आप &lt;no&gt;का चयन, UUID संरक्षित रहता है।</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1004"/>
+        <location filename="../src/mainWindow.cpp" line="1007"/>
         <source>The key length must be between 6 and 64 characters.</source>
         <comment>Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein.
 </comment>
         <translation>कुंजी की लंबाई 6 और 64 वर्णों के बीच होना चाहिए</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1019"/>
+        <location filename="../src/mainWindow.cpp" line="1022"/>
         <source>The restoring is performed</source>
         <comment>Die Wiederherstellung wird durchgeführt</comment>
         <translation>The restoring is performed</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1079"/>
+        <location filename="../src/mainWindow.cpp" line="1082"/>
         <source>qt4-fsarchiver</source>
         <translation>qt4-fsarchiver</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1080"/>
+        <location filename="../src/mainWindow.cpp" line="1083"/>
         <source>Backup and restore partitions, directory and MBR
-Version 0.6.19-13, May 4, 2015</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-13, 4. Mai 2015</comment>
+Version 0.6.19-14, June 10, 2015</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-4, 10. Juni 2015</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1088"/>
+        <location filename="../src/mainWindow.cpp" line="1091"/>
         <source>The program must be run with root privileges. The program is terminated.
 </source>
         <comment>Das Programm muss mit Root-Rechten gestartet werden. Das Programm wird beendet.
@@ -2800,19 +2800,19 @@ Version 0.6.19-13, May 4, 2015</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1163"/>
+        <location filename="../src/mainWindow.cpp" line="1166"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>हाँ</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1164"/>
+        <location filename="../src/mainWindow.cpp" line="1167"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>नहीं</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1340"/>
+        <location filename="../src/mainWindow.cpp" line="1344"/>
         <source>The partition has been backed up successfully.
 </source>
         <comment>Die Partition wurde erfolgreich gesichert.
@@ -2821,52 +2821,52 @@ Version 0.6.19-13, May 4, 2015</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1341"/>
-        <location filename="../src/mainWindow.cpp" line="1393"/>
-        <location filename="../src/mainWindow.cpp" line="1395"/>
-        <location filename="../src/mainWindow.cpp" line="1441"/>
+        <location filename="../src/mainWindow.cpp" line="1345"/>
+        <location filename="../src/mainWindow.cpp" line="1397"/>
+        <location filename="../src/mainWindow.cpp" line="1399"/>
         <location filename="../src/mainWindow.cpp" line="1445"/>
-        <location filename="../src/mainWindow.cpp" line="1468"/>
-        <location filename="../src/mainWindow.cpp" line="1470"/>
-        <location filename="../src/mainWindow.cpp" line="1477"/>
-        <location filename="../src/mainWindow.cpp" line="1480"/>
+        <location filename="../src/mainWindow.cpp" line="1449"/>
+        <location filename="../src/mainWindow.cpp" line="1472"/>
+        <location filename="../src/mainWindow.cpp" line="1474"/>
+        <location filename="../src/mainWindow.cpp" line="1481"/>
+        <location filename="../src/mainWindow.cpp" line="1484"/>
         <source> files, </source>
         <comment> Dateien, </comment>
         <translation>फ़ाइलें,</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1341"/>
-        <location filename="../src/mainWindow.cpp" line="1393"/>
-        <location filename="../src/mainWindow.cpp" line="1395"/>
-        <location filename="../src/mainWindow.cpp" line="1441"/>
+        <location filename="../src/mainWindow.cpp" line="1345"/>
+        <location filename="../src/mainWindow.cpp" line="1397"/>
+        <location filename="../src/mainWindow.cpp" line="1399"/>
         <location filename="../src/mainWindow.cpp" line="1445"/>
-        <location filename="../src/mainWindow.cpp" line="1468"/>
-        <location filename="../src/mainWindow.cpp" line="1477"/>
+        <location filename="../src/mainWindow.cpp" line="1449"/>
+        <location filename="../src/mainWindow.cpp" line="1472"/>
+        <location filename="../src/mainWindow.cpp" line="1481"/>
         <source> directories, </source>
         <comment> Verzeichnisse, </comment>
         <translation> निर्देशिकाएँ, </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1341"/>
-        <location filename="../src/mainWindow.cpp" line="1393"/>
-        <location filename="../src/mainWindow.cpp" line="1396"/>
-        <location filename="../src/mainWindow.cpp" line="1441"/>
-        <location filename="../src/mainWindow.cpp" line="1468"/>
-        <location filename="../src/mainWindow.cpp" line="1471"/>
-        <location filename="../src/mainWindow.cpp" line="1478"/>
-        <location filename="../src/mainWindow.cpp" line="1481"/>
+        <location filename="../src/mainWindow.cpp" line="1345"/>
+        <location filename="../src/mainWindow.cpp" line="1397"/>
+        <location filename="../src/mainWindow.cpp" line="1400"/>
+        <location filename="../src/mainWindow.cpp" line="1445"/>
+        <location filename="../src/mainWindow.cpp" line="1472"/>
+        <location filename="../src/mainWindow.cpp" line="1475"/>
+        <location filename="../src/mainWindow.cpp" line="1482"/>
+        <location filename="../src/mainWindow.cpp" line="1485"/>
         <source> links and </source>
         <comment> Links und </comment>
         <translation> कड़ियाँ और </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1342"/>
+        <location filename="../src/mainWindow.cpp" line="1346"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
         <translation>विशिष्ट डेटा का बैकअप लिया गया था।.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1361"/>
+        <location filename="../src/mainWindow.cpp" line="1365"/>
         <source>The backup of the partition was aborted by the user!
 </source>
         <comment>Die Sicherung der Partition  wurde vom Benutzer abgebrochen!
@@ -2875,7 +2875,7 @@ Version 0.6.19-13, May 4, 2015</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1368"/>
+        <location filename="../src/mainWindow.cpp" line="1372"/>
         <source>The partition type is not supported.
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt.
@@ -2883,7 +2883,7 @@ Version 0.6.19-13, May 4, 2015</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1375"/>
+        <location filename="../src/mainWindow.cpp" line="1379"/>
         <source>The partition type is not supported. Maybe the partition is encrypted?
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?
@@ -2892,7 +2892,7 @@ Version 0.6.19-13, May 4, 2015</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1379"/>
+        <location filename="../src/mainWindow.cpp" line="1383"/>
         <source>Error saving partition. File too large. Use is FAT-partition?
 </source>
         <comment>Die Sicherung der Partition war nicht erfolgreich. Die Datei ist zu groß. Nutzen Sie eine FAT-Partition?
@@ -2901,7 +2901,7 @@ Version 0.6.19-13, May 4, 2015</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1392"/>
+        <location filename="../src/mainWindow.cpp" line="1396"/>
         <source>The backup of the partition was only partially successful.
 </source>
         <comment>Die Sicherung der Partition war nur teilweise erfolgreich
@@ -2909,7 +2909,7 @@ Version 0.6.19-13, May 4, 2015</source>
         <translation>विभाजन का बैकअप केवल आंशिक रूप से सफल थी।</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1394"/>
+        <location filename="../src/mainWindow.cpp" line="1398"/>
         <source> specials have been backed
 .</source>
         <comment> spezielle Daten wurden gesichert
@@ -2917,7 +2917,7 @@ Version 0.6.19-13, May 4, 2015</source>
         <translation>विशिष्ट डेटा का बैकअप लिया गया था।.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1397"/>
+        <location filename="../src/mainWindow.cpp" line="1401"/>
         <source> specials were not properly backed
 .</source>
         <comment> spezielle Daten wurden nicht korrekt gesichert.
@@ -2925,7 +2925,7 @@ Version 0.6.19-13, May 4, 2015</source>
         <translation>स्पेशल ठीक से समर्थन नहीं थे।</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1413"/>
+        <location filename="../src/mainWindow.cpp" line="1417"/>
         <source>cannot restore an archive to a partition which is mounted, unmount it first 
 </source>
         <comment>Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!
@@ -2934,8 +2934,8 @@ Version 0.6.19-13, May 4, 2015</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1440"/>
         <location filename="../src/mainWindow.cpp" line="1444"/>
+        <location filename="../src/mainWindow.cpp" line="1448"/>
         <source>The partition is successful back.
 </source>
         <comment>Die Partition wurde erfolgreich wieder hergestellt.
@@ -2944,25 +2944,25 @@ Version 0.6.19-13, May 4, 2015</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1441"/>
+        <location filename="../src/mainWindow.cpp" line="1445"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
         <translation> विशेष डेटा बहाल कर दिया गया।</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1445"/>
+        <location filename="../src/mainWindow.cpp" line="1449"/>
         <source> links </source>
         <comment> Links </comment>
         <translation> कड़ियाँ </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1445"/>
+        <location filename="../src/mainWindow.cpp" line="1449"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
         <translation> स्पेशल और पार्टीशन बूट रिकॉर्ड बहाल कर दिया गया है।</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1450"/>
+        <location filename="../src/mainWindow.cpp" line="1454"/>
         <source>The restore of the partition was break by user!
 </source>
         <comment>Die Wiederherstellung der Partition  wurde vom Benutzer abgebrochen!
@@ -2970,8 +2970,8 @@ Version 0.6.19-13, May 4, 2015</source>
         <translation>विभाजन की पुनर्स्थापना उपयोगकर्ता द्वारा तोड़ गया था!</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1467"/>
-        <location filename="../src/mainWindow.cpp" line="1476"/>
+        <location filename="../src/mainWindow.cpp" line="1471"/>
+        <location filename="../src/mainWindow.cpp" line="1480"/>
         <source>The restore of the partition was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition war nur teilweise erfolgreich
@@ -2979,7 +2979,7 @@ Version 0.6.19-13, May 4, 2015</source>
         <translation>विभाजन की पुनर्स्थापना केवल आंशिक रूप से सफल थी।</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1469"/>
+        <location filename="../src/mainWindow.cpp" line="1473"/>
         <source> specials have been restored
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
@@ -2987,15 +2987,15 @@ Version 0.6.19-13, May 4, 2015</source>
         <translation> विशेष डेटा बहाल कर दिया गया।</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1470"/>
-        <location filename="../src/mainWindow.cpp" line="1480"/>
+        <location filename="../src/mainWindow.cpp" line="1474"/>
+        <location filename="../src/mainWindow.cpp" line="1484"/>
         <source> directories and </source>
         <comment> Verzeichnisse und </comment>
         <translation> निर्देशिकाएँ और </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1472"/>
-        <location filename="../src/mainWindow.cpp" line="1482"/>
+        <location filename="../src/mainWindow.cpp" line="1476"/>
+        <location filename="../src/mainWindow.cpp" line="1486"/>
         <source> specials were not properly restored
 .</source>
         <comment> spezielle Daten wurden nicht korrekt wiederhergestellt.
@@ -3003,7 +3003,7 @@ Version 0.6.19-13, May 4, 2015</source>
         <translation>स्पेशल ठीक से पुनर्स्थापित नहीं थे।</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1479"/>
+        <location filename="../src/mainWindow.cpp" line="1483"/>
         <source> specials and the Partition Boot Record have been restored
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
@@ -3011,7 +3011,7 @@ Version 0.6.19-13, May 4, 2015</source>
         <translation> स्पेशल और पार्टीशन बूट रिकॉर्ड बहाल कर दिया गया है।</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1486"/>
+        <location filename="../src/mainWindow.cpp" line="1490"/>
         <source>You have tried restore a partition. The selected file can only restore directories. Please restart the program.
 </source>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
@@ -3020,7 +3020,7 @@ Version 0.6.19-13, May 4, 2015</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1489"/>
+        <location filename="../src/mainWindow.cpp" line="1493"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben.
@@ -3029,107 +3029,107 @@ Version 0.6.19-13, May 4, 2015</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1595"/>
+        <location filename="../src/mainWindow.cpp" line="1599"/>
         <source>Backup file name: </source>
         <comment>Sicherungsdateiname: </comment>
         <translation>बैकअप फ़ाइल नाम: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1596"/>
+        <location filename="../src/mainWindow.cpp" line="1600"/>
         <source>Partition  name: </source>
         <comment>Partitionsname: </comment>
         <translation>विभाजन नाम: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1597"/>
+        <location filename="../src/mainWindow.cpp" line="1601"/>
         <source>Partition type: </source>
         <comment>Partitionsart: </comment>
         <translation>विभाजन प्रकार: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1598"/>
+        <location filename="../src/mainWindow.cpp" line="1602"/>
         <source>UUID: </source>
         <translation>UUID:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1598"/>
+        <location filename="../src/mainWindow.cpp" line="1602"/>
         <source>Description: </source>
         <comment>Bezeichnung: </comment>
         <translation>वर्णन:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1599"/>
+        <location filename="../src/mainWindow.cpp" line="1603"/>
         <source>Partition size: </source>
         <comment>Partitionsgröße: </comment>
         <translation>विभाजन का आकार: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1599"/>
-        <location filename="../src/mainWindow.cpp" line="1600"/>
+        <location filename="../src/mainWindow.cpp" line="1603"/>
+        <location filename="../src/mainWindow.cpp" line="1604"/>
         <source>Assignment of the partition: </source>
         <comment>Belegung der Partition: </comment>
         <translation>Assignment of the partition: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1600"/>
+        <location filename="../src/mainWindow.cpp" line="1604"/>
         <source>Compression: </source>
         <comment>Kompression: </comment>
         <translation>संपीड़न: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1601"/>
+        <location filename="../src/mainWindow.cpp" line="1605"/>
         <source>Approximate image file sizes: </source>
         <comment>ungefähre Sicherungsdateigröße: </comment>
         <translation>अनुमानित छवि फ़ाइल आकार: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1601"/>
+        <location filename="../src/mainWindow.cpp" line="1605"/>
         <source>Other notes: </source>
         <comment>weitere Hinweise:</comment>
         <translation>अन्य नोट्स: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1602"/>
+        <location filename="../src/mainWindow.cpp" line="1606"/>
         <source>to be protected/secured partition: / (root system directory) </source>
         <comment>zu sichernde / gesicherte Partition: / (Wurzel-Systemverzeichnis) </comment>
         <translation>हो संरक्षित/सुरक्षित विभाजन करना: / (जड़ सिस्टम निर्देशिका) </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1607"/>
-        <location filename="../src/mainWindow.cpp" line="1613"/>
+        <location filename="../src/mainWindow.cpp" line="1611"/>
+        <location filename="../src/mainWindow.cpp" line="1617"/>
         <source>Operating system: </source>
         <comment>Betriebsystem: </comment>
         <translation>ऑपरेटिंग सिस्टम:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1607"/>
-        <location filename="../src/mainWindow.cpp" line="1613"/>
+        <location filename="../src/mainWindow.cpp" line="1611"/>
+        <location filename="../src/mainWindow.cpp" line="1617"/>
         <source>Kernel: </source>
         <translation>कर्नेल:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1609"/>
+        <location filename="../src/mainWindow.cpp" line="1613"/>
         <source>to be protected/secured partition: /home</source>
         <comment>zu sichernde/gesicherte Partition: /home</comment>
         <translation>हो संरक्षित/सुरक्षित विभाजन करना: / होम</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1630"/>
+        <location filename="../src/mainWindow.cpp" line="1634"/>
         <source> MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1641"/>
+        <location filename="../src/mainWindow.cpp" line="1645"/>
         <source> TB</source>
         <translation>TB</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1652"/>
+        <location filename="../src/mainWindow.cpp" line="1656"/>
         <source> GB</source>
         <translation>GB</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1843"/>
+        <location filename="../src/mainWindow.cpp" line="1847"/>
         <source>Do you really want to break the save or restore from the partition?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
         <translation>क्या तुम सच में सहेजें तोड़ने या पार्टीशन से पुनर्स्थापित करने के लिए चाहते हैं?</translation>
@@ -3425,17 +3425,17 @@ with fsarchiver</translation>
 <context>
     <name>NetEin</name>
     <message>
-        <location filename="../src/net_ein.cpp" line="264"/>
-        <location filename="../src/net_ein.cpp" line="449"/>
-        <location filename="../src/net_ein.cpp" line="455"/>
-        <location filename="../src/net_ein.cpp" line="461"/>
-        <location filename="../src/net_ein.cpp" line="670"/>
+        <location filename="../src/net_ein.cpp" line="273"/>
+        <location filename="../src/net_ein.cpp" line="458"/>
+        <location filename="../src/net_ein.cpp" line="464"/>
+        <location filename="../src/net_ein.cpp" line="470"/>
+        <location filename="../src/net_ein.cpp" line="679"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>नोट</translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="265"/>
+        <location filename="../src/net_ein.cpp" line="274"/>
         <source>There is currently no available network computer.
 </source>
         <comment>Es ist derzeit kein Netzwerkrechner.
@@ -3444,7 +3444,7 @@ with fsarchiver</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="450"/>
+        <location filename="../src/net_ein.cpp" line="459"/>
         <source>You must select the computer on which the backup data to be written
 </source>
         <comment>Sie müssen den Rechner auswählen, auf den die Sicherungsdaten geschrieben werden sollen
@@ -3453,7 +3453,7 @@ with fsarchiver</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="456"/>
+        <location filename="../src/net_ein.cpp" line="465"/>
         <source>You must select your computer from which the backup data to be written back
 </source>
         <comment>Sie müssen den Rechner auswählen, von dem die Sicherungsdaten zurück geschrieben werden sollen
@@ -3462,7 +3462,7 @@ with fsarchiver</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="462"/>
+        <location filename="../src/net_ein.cpp" line="471"/>
         <source>You must enter the user name. Can not otherwise be accessible to network computers
 </source>
         <comment>Sie müssen den Benutzernamen eingeben. Sonst kann nicht auf Netzrechner zugegriffen werden
@@ -3471,19 +3471,19 @@ with fsarchiver</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="466"/>
+        <location filename="../src/net_ein.cpp" line="475"/>
         <source>Is it true that you have entered a key? (NFS dont need a key)</source>
         <comment>Ist das richtig, dass Sie keinen Schlüssel eingegeben haben? (NFS benötigt keinen Schlüssel)</comment>
         <translation>यह सच है कि आप एक कुंजी प्रवेश किया है? (NFS एक चाबी की जरूरत नहीं है)</translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="671"/>
+        <location filename="../src/net_ein.cpp" line="680"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>हाँ</translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="672"/>
+        <location filename="../src/net_ein.cpp" line="681"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>नहीं</translation>

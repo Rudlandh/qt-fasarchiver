@@ -58,8 +58,8 @@ Beim Wiederherstellen einer btrfs-Partiiton kann gewählt werden, ob die Partiti
 Beim Wiederherstellen von Verzeichnissen wird ausgewählt, ob das Verzeichnis an den Ursprungsort oder an einen anderen Ort zurückgeschrieben werden soll. Den Button "Partition wiederherstellen" betätigen und die Partition oder das Verzeichnis wird zurückgeschrieben.
 
 Bei der Sicherung über ein Netzwerk wird eine zusätzliche Maske geöffnet, in dem der Benutzername und das Kennwort für den Netzwerkrechner eingegeben werden muss. Von der Speicherung des Kennworts ist außerhalb des privaten Bereiches abzuraten, da die Verschlüsselung des Kennwortes auf einfache Art durchgeführt wird.
-Vorausetzungen für die Arbeit mit dem Netzwerk: 
 
+Vorausetzungen für die Arbeit mit dem Netzwerk: 
 Mit Netzwerprotokoll Samba:
 Im Linux-Bereich müssen auf dem Rechner, der die Sicherung durchführt/wiederherstellt(Client) und auf dem Rechner, auf dem die Daten abgelegt werden (Server), Samba installiert sein. Das Einbinden des virtuellen Dateisystem "cifs-vfs" auf dem Linux-Rechner muss möglich sein. Sie hierzu den Ubuntu-Wiki Artikel "http://wiki.ubuntuusers.de/Samba_Client_cifs".
 Mit diesem Befehl können Sie überprüfen, ob ein freigegebener Ordner angesprochen werden kann: sudo mount -t cifs -o username=ABCD,password=xyz,uid=0,gid=0 //192.168.2.5/Name des freigegebenen Verzeichnisses /home/username/.qt4-fs-client. Der Username, das Passwort, die IP-Adresse und der Name des freigegebenen Verzeichnisses ist den bestehenden Verhältnissen anzupassen.
@@ -73,7 +73,7 @@ Für das Mounten eines ssh-Servers, muss im Terminal das Passwort für den Zugri
 In den Basiseinstellungen kann festgelegt werden, ob der Hinweis für das Eingeben des Passworts angezeigt werden soll oder nicht.
 
 Mit Netzwerprotokoll NFS (Network File System):
-Es können nur Linux-Rechner als Client oder Server verwendet werden. Auf den Rechnern, auf dem die Daten abgelegt werden (Server), muss nfs-kernel-server installiert sein. In der Datei  /etc/exports müssen zusätzlich die freizugebenden Verzeichnisse eingetragen werden. Der Eintrag /home/user/Bilder 192.168.2.0/255.255.255.0(rw) erlaubt allen Rechnern mit der IP-Adresse 192.168.2.0 bis 192.168.2.255 einen Lese-Schreibezugriff auf das Verzeichnis /home/user/Bilder des Clients.
+Es können nur Linux-Rechner als Client oder Server verwendet werden. Auf den Rechnern, auf dem die Daten abgelegt werden (Server), muss nfs-kernel-server installiert sein. In der Datei  /etc/exports müssen zusätzlich die freizugebenden Verzeichnisse eingetragen werden. Der Namen darf keine Leerzeichen enthalten. Auf das freigegebne Verzeichnis muss lesend und schreibend zugegriffen werden können. Der Eintrag /home/user/Bilder 192.168.2.0/255.255.255.0(rw) erlaubt allen Rechnern mit der IP-Adresse 192.168.2.0 bis 192.168.2.255 einen Lese-Schreibezugriff auf das Verzeichnis /home/user/Bilder des Clients.
 
 Nach dem Start der Live-CD oder des Computers kann es eine Weile dauern, bis andere Rechner im Netzwerk angezeigt werden. 
 

@@ -52,6 +52,11 @@ DialogSetting::DialogSetting(QWidget *parent)
         setting.beginGroup("Basiseinstellungen");
         int auswertung = setting.value("Sprache").toInt(); 
         cmb_language -> setCurrentIndex(auswertung-1); 
+        auswertung = setting.value("dummy").toInt();
+        if (auswertung ==2){
+           chk_ssh ->setEnabled(false);
+           chk_sshfs ->setEnabled(false); 
+        } 
         auswertung = setting.value("Kompression").toInt();
         cmb_zip -> setCurrentIndex(auswertung); 
         auswertung = setting.value("Kerne").toInt();
@@ -59,8 +64,6 @@ DialogSetting::DialogSetting(QWidget *parent)
         auswertung = setting.value("Network").toInt();
         cmb_network -> setCurrentIndex(auswertung-1); 
         auswertung = setting.value("overwrite").toInt();
-        //chk_ssh->setChecked(Qt::Checked);
-        //chk_sshfs->setChecked(Qt::Checked);
         if (auswertung ==1)
            chk_file->setChecked(Qt::Checked); 
         auswertung = setting.value("tip").toInt();
@@ -185,7 +188,6 @@ void DialogSetting:: setting_save()
      QMessageBox::about(this,tr("Note", "Hinweis"),
          tr("The settings have been saved. Be restarted, the program modified the language setting.","Die Einstellungen wurden gespeichert. Bei geänderter Spracheinstellung muss das Programm neu gestartet werden.\n"));
 }
-
 
 
 

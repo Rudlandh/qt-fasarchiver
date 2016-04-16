@@ -63,6 +63,7 @@ The restoring is similar: In the backup directory the file name is selected to b
 When restoring a btrfs Partiiton you can choose whether the partition should be formatted or not. When you format a new UUID is generated when format is not the UUID get.
 
 When restoring directories is selected, whether the directory should be restored to its original location or to another location. Press the  button "Restore Partition" and the partition or directory being restored.
+
 Requisites for the work with the network:
 When the backup over a network, an additional form is opened, in which the user name and password must be entered for the network. Of storing the password is not recommended outside of the private sector, because the encryption of the password is performed in a simple way.
 
@@ -79,7 +80,7 @@ For mounting a ssh server, the terminal must be the password for access to the s
 In the basic settings can be determined whether the reference for setting the password to be displayed or not.
 
 With the protocoll NFS (Network File System):
-Only Linux machine as a client or server can be used. Must be installed on the server nfs-kernel-server. In the file /etc/exports to be released in addition to the directories listed. The entry /home/user/images 192.168.2.0/255.255.255.0(rw) allows any computer with the IP address 192.168.2.0 through 192.168.2.255 a read-write access to the directory /home/user/pictures of the client.
+Only Linux machine as a client or server can be used. Must be installed on the server nfs-kernel-server. In the file /etc/exports to be released in addition to the directories listed. The name can not contain spaces. In the directory must have read and write can be accessed. The entry /home/user/images 192.168.2.0/255.255.255.0(rw) allows any computer with the IP address 192.168.2.0 through 192.168.2.255 a read-write access to the directory /home/user/pictures of the client.
 
 After starting the live CD or the computer it may .ake a while to show up other computers on the network. 
 

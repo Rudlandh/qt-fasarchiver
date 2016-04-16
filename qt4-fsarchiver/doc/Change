@@ -1,6 +1,8 @@
 ==================================================================================================
 * qt4-fsarchiver: Graphical interface for fsarchiver fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ==================================================================================================
+* qt4-fsarchiver-6.19-14 June 10, 2015 
+    -Fixes and improvements in networking.
 * qt4-fsarchiver-6.19-13 May 4, 2015
     - 32 translations were added.
 * qt4-fsarchiver-6.19-12 February 25, 2015

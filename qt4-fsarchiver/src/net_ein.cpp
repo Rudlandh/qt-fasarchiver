@@ -94,6 +94,7 @@ int i = 0;
      	     	adresse = ds1.readLine();
              	adresse = ds1.readLine();
              	adresse = ds1.readLine();
+            if (adresse != ""){  //verhindert Absturz wenn weder WLan noch Kabelnetzverbindung vorhanden ist
 		do{
     			k=adresse.indexOf("  ");
 			if (k > 0)
@@ -102,6 +103,7 @@ int i = 0;
 			while  (k >= 0);
 	     adresse_ = adresse.split(" ");
              adresse_router = adresse_[1];
+           }
 	}
         file.close();
         hostname_ = hostname();
@@ -233,23 +235,30 @@ QString hostname_;
              	adresse = ds1.readLine();
                 adresse = adresse.toLower();
                 k = adresse.size();
-                adresse_ = adresse.split(" ");
-                j = adresse_[0].size();
-				adresse2 =adresse_[0];
-				adresse = adresse.right(k-j);
-                adresse = adresse.trimmed();
-                adresse_ = adresse.split(" ");
-                adresse = adresse_[0];
-                adresse = IP(adresse);
-		// Prüfung ob adresse im Array widget_net schon vorhanden ist
-                k = 0;
-                if (adresse2 != adresse_eigen) // Eigenen Rechner nicht anzeigen
+                if (k > 0)
+                { //findsmb findet die IP-Adresse nicht
+                   adresse_ = adresse.split(" ");
+                   j = adresse_[0].size();
+		   adresse2 = adresse_[0];
+		   adresse = adresse.right(k-j);
+                   adresse = adresse.trimmed();
+                   adresse_ = adresse.split(" ");
+                   adresse = adresse_[0];
+                   pos = adresse.indexOf("+");
+                   if (pos == -1)
+                   {
+                      adresse = IP(adresse);
+		      // Prüfung ob adresse im Array widget_net schon vorhanden ist
+                      k = 0;
+                      if (adresse2 != adresse_eigen) // Eigenen Rechner nicht anzeigen
                 	k = Array_pruefen(adresse2);
-                if (k == 2) {
-         	     listWidget_net->addItem(adresse);
-                     widget_net[i]= adresse;
-                     i++;
+                      if (k == 2) {
+         	        listWidget_net->addItem(adresse);
+                        widget_net[i]= adresse;
+                        i++;
+                    }
                 }
+               }
              } 
         }
 	file1.close();
@@ -257,7 +266,7 @@ QString hostname_;
   	if (file1.exists()){
      		befehl = "rm ~/.config/qt4-fsarchiver/findsmb-qt.txt";
 		system (befehl.toAscii().data());
-       } 	
+       } 
         list_net_ssh(" ");
         //Ermitteln widget_net Belegung
         if (widget_net[0] == "" && flag == "1"){
@@ -357,7 +366,7 @@ QString homepath = QDir::homePath();
 QFile file(homepath + "/.config/qt4-fsarchiver/ip.txt");
 QTextStream ds(&file);
 QString text;
-	befehl = "nmblookup -R " + adresse + " 1> " +  homepath + "/.config/qt4-fsarchiver/ip.txt";
+	befehl = "nmblookup -R " + adresse + " 1> " +  homepath + "/.config/qt4-fsarchiver/ip.txt 2>/dev/null";
 	system (befehl.toAscii().data()); 
         // IP-Adresse auslesen
         int i = 0;

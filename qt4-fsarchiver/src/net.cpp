@@ -417,6 +417,7 @@ int DialogNet::search_folder_free(QString rechner_IP){
 QString befehl;
 int line;
 int i = 0;
+int pos = 0;
 QString text;
 QStringList items;
 QString homepath = QDir::homePath(); 
@@ -432,8 +433,8 @@ listWidget_free_folder -> clear();
       	{
  	       if (text.indexOf("Disk") > -1)  {
                    if (text.indexOf("print$") == -1){
-                     items = text.split(" ");
-                     folder_free = items[0];
+                     pos = text.indexOf("Disk");
+                     folder_free = text.left(pos);
                      folder_free = folder_free.trimmed();
                      listWidget_free_folder ->addItem (folder_free);
                      folder_free_[i] = folder_free;
@@ -491,6 +492,7 @@ QString homepath = QDir::homePath();
      int zip;
      indicator_reset();
      int net_art = cmb_Net->currentIndex();
+     int found = 0;
      if (rdBt_saveFsArchiv->isChecked())
      {
      	if (folder_free == "")
@@ -518,6 +520,12 @@ QString homepath = QDir::homePath();
          	tr("Please, select the filename of the backup.\n", "Bitte wählen Sie den Dateinamen der Sicherung aus.\n"));
 		return 0 ;
            }
+        //Überprüfen ob im Dateinamen "/" enthalten ist. Wird durch "-" ersetzt
+        while (found > -1){
+          found = DateiName_net.indexOf("/");
+          if (found > -1)
+             	DateiName_net.replace(found, 1, "-"); 
+        }
         if (file.open(QIODevice::ReadOnly) && rdBt_showPartition->isChecked())
         	  {
                 QMessageBox::about(this, tr("Note", "Hinweis"),
@@ -526,11 +534,12 @@ QString homepath = QDir::homePath();
 		return 0 ;
  	        }
 this->setCursor(Qt::WaitCursor);
+QString zeichen = "'";
        if (net_art == 1) //SSH
          folder_free_mounten();
        if (net_art == 0){  //Samba
-         QString befehl = "mount -t cifs -o username=" + user_net + ",password=" + key_net + ",uid=0,gid=0 //" + rechner_IP + "/" + folder_free + " " + homepath + "/.qt4-fs-client";
-         k = system (befehl.toAscii().data()); 
+         QString befehl = "mount -t cifs -o username=" + user_net + ",password=" + key_net + ",uid=0,gid=0 //" + rechner_IP + "/'" + folder_free + "' " + homepath + "/.qt4-fs-client";
+         k = system (befehl.toAscii().data());
 	}
        if (net_art == 2){ //NFS
            QString befehl = "mount " + rechner_IP + ":" + folder_free +  " " + homepath + "/.qt4-fs-client" ;
@@ -1139,7 +1148,7 @@ int net_art = cmb_Net->currentIndex();
        this->setCursor(Qt::WaitCursor);
        befehl = "umount " + homepath + "/.qt4-fs-client 2>/dev/null";
        k = system (befehl.toAscii().data()); 
-       befehl = "mount -t cifs -o username=" + user_net + ",password=" + key_net + ",uid=0,gid=0 //" + rechner_IP + "/" + folder_free + " " + homepath + "/.qt4-fs-client" ;
+       befehl = "mount -t cifs -o username=" + user_net + ",password=" + key_net + ",uid=0,gid=0 //" + rechner_IP + "/'" + folder_free + "' " + homepath + "/.qt4-fs-client" ;
        k = system (befehl.toAscii().data()); 
        this->setCursor(Qt::ArrowCursor); 
        }
@@ -1677,12 +1686,13 @@ int ret_;
         setting.endGroup();
         if (auswertung ==1){
  QMessageBox::about(this, tr("Note", "Hinweis"), 
-        tr("When you first contact the computer with ssh, you must do the following:  In a terminal enter these commands: 1.In the open terminal you must confirm the RSA key fingerprint with yes. 2.Enter the password for accessing the server and 3.leave the server with the command exit.\n", "Wenn Sie noch nicht erfolgreich per ssh auf den Rechner(Server) zugegriffen haben, müssen Sie nun folgendes tun: 1.In dem geöffneten Terminal müssen Sie den RSA key fingerprint mit yes bestätigen. 2.Geben Sie das Passwort für den Zugriff auf den Server ein  und 3.verlassen Sie den Server mit dem Befehl exit.\n"));
+        tr("When you first contact the computer with ssh, you must do the following:  In a terminal enter these commands: 1.In the open terminal you must confirm the RSA key fingerprint with yes. 2.Enter the password for accessing the server and 3.leave the server with the command exit.\n", "Wenn Sie noch nicht erfolgreich per ssh auf den Rechner(Server) zugegriffen haben, müssen Sie nun folgendes tun: 1.In dem geöffneten Terminal müssen Sie den RSA key fingerprint mit yes bestätigen. 2.Geben Sie das Passwort für den Zugriff auf den Server ein  und 3.verlassen Sie den Server mit dem Befehl exit.\n")); 
         befehl = "ssh " + user_net + "@" +  rechner_IP;
 	ret_ = system (befehl.toAscii().data());
         //Basiseinstellungen ändern
         //QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
         setting.beginGroup("Basiseinstellungen");
+        setting.setValue("dummy",0);
         auswertung = setting.value("ssh").toInt();
         if (ret_ == 0)
         	setting.setValue("ssh",0);
