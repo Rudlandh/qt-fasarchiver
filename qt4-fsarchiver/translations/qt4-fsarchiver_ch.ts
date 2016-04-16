@@ -5,136 +5,136 @@
 <context>
     <name>DialogClone</name>
     <message>
-        <location filename="../src/clone.cpp" line="70"/>
-        <location filename="../src/clone.cpp" line="343"/>
+        <location filename="../src/clone.cpp" line="71"/>
+        <location filename="../src/clone.cpp" line="350"/>
         <source>Clone Harddrive</source>
         <comment>Festplatte klonen</comment>
         <translation>克隆硬盘</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="151"/>
-        <location filename="../src/clone.cpp" line="211"/>
+        <location filename="../src/clone.cpp" line="158"/>
+        <location filename="../src/clone.cpp" line="218"/>
         <source>already saved</source>
         <comment>bereits gesichert</comment>
         <translation>已经保存</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="178"/>
-        <location filename="../src/clone.cpp" line="183"/>
-        <location filename="../src/clone.cpp" line="189"/>
-        <location filename="../src/clone.cpp" line="225"/>
-        <location filename="../src/clone.cpp" line="229"/>
-        <location filename="../src/clone.cpp" line="235"/>
-        <location filename="../src/clone.cpp" line="286"/>
-        <location filename="../src/clone.cpp" line="290"/>
-        <location filename="../src/clone.cpp" line="298"/>
-        <location filename="../src/clone.cpp" line="331"/>
-        <location filename="../src/clone.cpp" line="418"/>
-        <location filename="../src/clone.cpp" line="566"/>
-        <location filename="../src/clone.cpp" line="568"/>
-        <location filename="../src/clone.cpp" line="570"/>
-        <location filename="../src/clone.cpp" line="572"/>
-        <location filename="../src/clone.cpp" line="595"/>
-        <location filename="../src/clone.cpp" line="597"/>
+        <location filename="../src/clone.cpp" line="185"/>
+        <location filename="../src/clone.cpp" line="190"/>
+        <location filename="../src/clone.cpp" line="196"/>
+        <location filename="../src/clone.cpp" line="232"/>
+        <location filename="../src/clone.cpp" line="236"/>
+        <location filename="../src/clone.cpp" line="242"/>
+        <location filename="../src/clone.cpp" line="293"/>
+        <location filename="../src/clone.cpp" line="297"/>
+        <location filename="../src/clone.cpp" line="305"/>
+        <location filename="../src/clone.cpp" line="338"/>
+        <location filename="../src/clone.cpp" line="422"/>
+        <location filename="../src/clone.cpp" line="575"/>
+        <location filename="../src/clone.cpp" line="577"/>
+        <location filename="../src/clone.cpp" line="579"/>
+        <location filename="../src/clone.cpp" line="581"/>
+        <location filename="../src/clone.cpp" line="608"/>
+        <location filename="../src/clone.cpp" line="610"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>注意</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="178"/>
-        <location filename="../src/clone.cpp" line="225"/>
-        <location filename="../src/clone.cpp" line="286"/>
+        <location filename="../src/clone.cpp" line="185"/>
+        <location filename="../src/clone.cpp" line="232"/>
+        <location filename="../src/clone.cpp" line="293"/>
         <source>You must select a hard drive.</source>
         <comment>Sie müssen eine Festplatte auswählen.
 </comment>
         <translation>请选择一块硬盘。</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="183"/>
+        <location filename="../src/clone.cpp" line="190"/>
         <source>The selected hard drive is too small.</source>
         <comment>Die gewählte Festplatte ist zu klein.
 </comment>
         <translation>所选硬盘太小</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="189"/>
-        <location filename="../src/clone.cpp" line="235"/>
-        <location filename="../src/clone.cpp" line="298"/>
+        <location filename="../src/clone.cpp" line="196"/>
+        <location filename="../src/clone.cpp" line="242"/>
+        <location filename="../src/clone.cpp" line="305"/>
         <source>On the hard drive exist a root or a home partition. You must need a live-CD.</source>
         <comment>Auf der Festplatte ist eine root- oder home Partition. Sie müssen eine Live-CD benutzen.
 </comment>
         <translation>硬盘上有root分区或者home分区，请使用live-cd</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="193"/>
+        <location filename="../src/clone.cpp" line="200"/>
         <source> Do you want really clone the hard drive? All dates on  </source>
         <comment> Wollen Sie wirklich die Festplatte klonen? Alle Daten auf der Festplatte </comment>
         <translation>确定克隆整块硬盘吗？所有数据会被</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="193"/>
+        <location filename="../src/clone.cpp" line="200"/>
         <source> are deleted!</source>
         <comment> werden gelöscht!</comment>
         <translation>覆盖！</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="229"/>
+        <location filename="../src/clone.cpp" line="236"/>
         <source>You must select a folder.</source>
         <comment>Sie müssen ein Verzeichnis auswählen.
 </comment>
         <translation>请至少选择一个目录</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="245"/>
+        <location filename="../src/clone.cpp" line="252"/>
         <source> Do you want really built a image from the hard drive? </source>
         <comment> Wollen Sie wirklich ein Abbild der Festplatte erstellen? </comment>
         <translation>您确定要从硬盘克隆一个映像文件吗？</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="272"/>
+        <location filename="../src/clone.cpp" line="279"/>
         <source>already restored</source>
         <comment>bereits zurückgeschrieben</comment>
         <translation>已经恢复</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="290"/>
+        <location filename="../src/clone.cpp" line="297"/>
         <source>You must select a gz.fsa file or an img.fsa file.</source>
         <comment>Sie müssen eine gz.fsa- oder eine img.fsa-Datei auswählen.
 </comment>
         <translation>请选择一个gz.fsa或者img.fsa为后缀的文件</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="307"/>
+        <location filename="../src/clone.cpp" line="314"/>
         <source> Do you want really restore the image of the hard drive? </source>
         <comment> Wollen Sie wirklich ein Abbild der Festplatte zurückschreiben? </comment>
         <translation>您确定要将映像文件恢复到硬盘吗？</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="332"/>
+        <location filename="../src/clone.cpp" line="339"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="333"/>
+        <location filename="../src/clone.cpp" line="340"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="353"/>
+        <location filename="../src/clone.cpp" line="358"/>
         <source>Save Harddrive Image</source>
         <comment>Festplatten Abbild erstellen</comment>
         <translation>备份整个硬盘</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="363"/>
+        <location filename="../src/clone.cpp" line="367"/>
         <source>Restore Harddrive Image</source>
         <comment>Festplatten Abbild zurückschreiben</comment>
         <translation>恢复硬盘</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="419"/>
+        <location filename="../src/clone.cpp" line="423"/>
         <source>You have selected a folder. You must select a gz.fsa file.
 </source>
         <comment>Sie haben ein Verzeichnis ausgewählt. Sie müssen eine gz.fsa Datei auswählen
@@ -142,49 +142,49 @@
         <translation>您已经选择了一个目录。请选择一个gz.fsa为后缀的文件</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="566"/>
+        <location filename="../src/clone.cpp" line="575"/>
         <source>The clone of the hard drive was successfully.</source>
         <comment>Das Klonen der Festplatte war erfolgreich.
 </comment>
         <translation>克隆硬盘成功</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="568"/>
+        <location filename="../src/clone.cpp" line="577"/>
         <source>The backup of the image was successfully.</source>
         <comment>Die Sichern des Abbildes war erfolgreich.
 </comment>
         <translation>映像备份成功</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="570"/>
+        <location filename="../src/clone.cpp" line="579"/>
         <source>The clone of the hard drive was not successfully.</source>
         <comment>Das Klonen der Festplatte war nicht erfolgreich.
 </comment>
         <translation>克隆硬盘失败。</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="572"/>
+        <location filename="../src/clone.cpp" line="581"/>
         <source>The backup of the image was not successfully.</source>
         <comment>Die Sichern des Abbildes war nicht erfolgreich.
 </comment>
         <translation>映像备份失败。</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="595"/>
+        <location filename="../src/clone.cpp" line="608"/>
         <source>The restore from the image was successfully.</source>
         <comment>Die Wiederherstellung des Abbildes war erfolgreich.
 </comment>
         <translation>映像恢复成功。</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="597"/>
+        <location filename="../src/clone.cpp" line="610"/>
         <source>The restore from the image was not successfully.</source>
         <comment>Die Wiederherstellung des Abbildes war nicht erfolgreich.
 </comment>
         <translation>映像恢复失败.</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="664"/>
+        <location filename="../src/clone.cpp" line="677"/>
         <source>Do you want really break clone, save or restore an image from the partition?</source>
         <comment>Wollen Sie wirklich das Klonen der Festplatte, die Erstellung oder die Wiederherstellung eines Images der Festplatte beenden?</comment>
         <translation>您确定要中止分区的克隆、备份或恢复？</translation>
@@ -758,28 +758,29 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>MBR/GPT恢复</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="150"/>
-        <location filename="../src/mbr.cpp" line="152"/>
-        <location filename="../src/mbr.cpp" line="154"/>
-        <location filename="../src/mbr.cpp" line="156"/>
-        <location filename="../src/mbr.cpp" line="176"/>
-        <location filename="../src/mbr.cpp" line="178"/>
-        <location filename="../src/mbr.cpp" line="200"/>
-        <location filename="../src/mbr.cpp" line="202"/>
-        <location filename="../src/mbr.cpp" line="216"/>
-        <location filename="../src/mbr.cpp" line="218"/>
-        <location filename="../src/mbr.cpp" line="226"/>
-        <location filename="../src/mbr.cpp" line="228"/>
-        <location filename="../src/mbr.cpp" line="256"/>
-        <location filename="../src/mbr.cpp" line="258"/>
-        <location filename="../src/mbr.cpp" line="314"/>
-        <location filename="../src/mbr.cpp" line="371"/>
-        <location filename="../src/mbr.cpp" line="377"/>
-        <location filename="../src/mbr.cpp" line="383"/>
-        <location filename="../src/mbr.cpp" line="389"/>
-        <location filename="../src/mbr.cpp" line="395"/>
-        <location filename="../src/mbr.cpp" line="401"/>
-        <location filename="../src/mbr.cpp" line="434"/>
+        <location filename="../src/mbr.cpp" line="136"/>
+        <location filename="../src/mbr.cpp" line="142"/>
+        <location filename="../src/mbr.cpp" line="169"/>
+        <location filename="../src/mbr.cpp" line="171"/>
+        <location filename="../src/mbr.cpp" line="173"/>
+        <location filename="../src/mbr.cpp" line="175"/>
+        <location filename="../src/mbr.cpp" line="195"/>
+        <location filename="../src/mbr.cpp" line="197"/>
+        <location filename="../src/mbr.cpp" line="219"/>
+        <location filename="../src/mbr.cpp" line="221"/>
+        <location filename="../src/mbr.cpp" line="235"/>
+        <location filename="../src/mbr.cpp" line="237"/>
+        <location filename="../src/mbr.cpp" line="245"/>
+        <location filename="../src/mbr.cpp" line="247"/>
+        <location filename="../src/mbr.cpp" line="275"/>
+        <location filename="../src/mbr.cpp" line="277"/>
+        <location filename="../src/mbr.cpp" line="309"/>
+        <location filename="../src/mbr.cpp" line="336"/>
+        <location filename="../src/mbr.cpp" line="394"/>
+        <location filename="../src/mbr.cpp" line="400"/>
+        <location filename="../src/mbr.cpp" line="406"/>
+        <location filename="../src/mbr.cpp" line="412"/>
+        <location filename="../src/mbr.cpp" line="445"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>注意</translation>
@@ -799,39 +800,39 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="obsolete">主引导记录/分区表(MBR/GPT)未备份.</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="150"/>
+        <location filename="../src/mbr.cpp" line="169"/>
         <source>MBR was successfully backed up.
 </source>
         <comment>MBR wurde erfolgreich gesichert.
 </comment>
-        <translation type="unfinished">MBR成功备份</translation>
+        <translation>MBR成功备份</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="152"/>
+        <location filename="../src/mbr.cpp" line="171"/>
         <source>MBR has not been backeed.
 </source>
         <comment>MBR wurde nicht gesichert.
 </comment>
-        <translation type="unfinished">主引导记录/分区表(MBR)未备份.</translation>
+        <translation>主引导记录/分区表(MBR)未备份.</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="154"/>
+        <location filename="../src/mbr.cpp" line="173"/>
         <source>GPT was successfully backed up.
 </source>
         <comment>GPT wurde erfolgreich gesichert.
 </comment>
-        <translation type="unfinished">GPT成功备份</translation>
+        <translation>GPT成功备份</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="156"/>
+        <location filename="../src/mbr.cpp" line="175"/>
         <source>GPT has not been backeed.
 </source>
         <comment>GPT wurde nicht gesichert.
 </comment>
-        <translation type="unfinished">主引导记录/分区表(GPT)未备份.</translation>
+        <translation>主引导记录/分区表(GPT)未备份.</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="166"/>
+        <location filename="../src/mbr.cpp" line="185"/>
         <source>Caution: If you really want to to write back the GUID partition table?
 </source>
         <comment>Vorsicht: Wollen Sie wirklich die GUID Partitionstabelle zurückschreiben?
@@ -839,7 +840,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>警告：您确定要恢复GUID分区表吗?</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="176"/>
+        <location filename="../src/mbr.cpp" line="195"/>
         <source>The GUID partition table is successful return.
 </source>
         <comment>Die GUID Partitionstabelle wurde erfolgreich wieder hergestellt.
@@ -847,15 +848,15 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>GUID分区表恢复成功。</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="178"/>
+        <location filename="../src/mbr.cpp" line="197"/>
         <source>The GUID partition table was not restored.
 </source>
         <comment>Die GUID Partitionstabelle wurde nicht wieder hergestellt.
 </comment>
-        <translation type="unfinished">GUID分区表未恢复</translation>
+        <translation>GUID分区表未恢复</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="190"/>
+        <location filename="../src/mbr.cpp" line="209"/>
         <source>Caution: If you really want to to write back the MBR completely or partially?
 </source>
         <comment>Vorsicht: Wollen Sie wirklich den MBR komplett beziehungsweise teilweise zurückschreiben?
@@ -863,7 +864,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>警告：您确定要全部或者部分恢复MBR吗?</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="200"/>
+        <location filename="../src/mbr.cpp" line="219"/>
         <source>The Boot Loader section is successful return.
 </source>
         <comment>Der Bootloaderbereich wurde erfolgreich wieder hergestellt.
@@ -871,7 +872,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>引导装载程序(boot loader)恢复成功.</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="202"/>
+        <location filename="../src/mbr.cpp" line="221"/>
         <source>The boot loader area was not restored.
 </source>
         <comment>Der Bootloaderbereich wurde nicht wieder hergestellt.
@@ -879,14 +880,14 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>引导装载程序未恢复。</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="216"/>
+        <location filename="../src/mbr.cpp" line="235"/>
         <source>The partition table is successful return.</source>
         <comment>Die Partitionstabelle wurde erfolgreich wieder hergestellt.
 </comment>
         <translation>分区表恢复成功.</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="218"/>
+        <location filename="../src/mbr.cpp" line="237"/>
         <source>The partition table was not restored.
 </source>
         <comment>Die Partitionstabelle wurde nicht wieder hergestellt.
@@ -894,7 +895,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>分区表未恢复。</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="226"/>
+        <location filename="../src/mbr.cpp" line="245"/>
         <source>The MBR is successful return.
 </source>
         <comment>Der MBR wurde erfolgreich wieder hergestellt.
@@ -902,7 +903,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>主引导记录（MBR）恢复成功.</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="228"/>
+        <location filename="../src/mbr.cpp" line="247"/>
         <source>The MBR is not restored.
 </source>
         <comment>Der MBR wurde nicht wieder hergestellt.
@@ -910,7 +911,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>主引导记录（MBR）未恢复。</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="239"/>
+        <location filename="../src/mbr.cpp" line="258"/>
         <source>Caution: If you really want to to write back the secret field?
 </source>
         <comment>Vorsicht: Wollen Sie wirklich den verborgenen Bereich zurückschreiben? 
@@ -918,7 +919,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>警告：您确定要恢复分区中的用户数据？</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="256"/>
+        <location filename="../src/mbr.cpp" line="275"/>
         <source>The hidden area is successful return.
 </source>
         <comment>Der verborgene Bereich wurde erfolgreich wieder hergestellt.
@@ -926,7 +927,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>隐藏区域恢复成功。</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="258"/>
+        <location filename="../src/mbr.cpp" line="277"/>
         <source>The hidden area was not restored.
 </source>
         <comment>Der verborgene Bereich wurde nicht wieder hergestellt.
@@ -934,21 +935,28 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>隐藏区域未恢复</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="314"/>
+        <location filename="../src/mbr.cpp" line="309"/>
+        <source>Mistake. The partition table can not be read. The program is terminated</source>
+        <comment>Fehler. Die Partitionstabelle kann nicht ausgelesen werden. Das Programm wird abgebrochen.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mbr.cpp" line="336"/>
         <source>The end of hidden area of the 1st Partition could not be read. Only 512 bytes are saved.</source>
         <comment>Das Ende des verborgenen Bereiches der 1. Partition konnte nicht ausgelesen werden. Es werden nur 512 Bytes gesichert.
 </comment>
         <translation>第一个分区隐藏区域的结尾部分无法读，只有512字节被保存。</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="372"/>
+        <location filename="../src/mbr.cpp" line="395"/>
         <source>You must select a directory</source>
         <comment>Sie müssen ein Verzeichnis auswählen
 </comment>
         <translation>请选择一个目录</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="378"/>
+        <location filename="../src/mbr.cpp" line="401"/>
         <source>You have selected a file. You must select a directory.
 </source>
         <comment>Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen
@@ -956,7 +964,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>您选择的是文件，请选择一个目录。</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="384"/>
+        <location filename="../src/mbr.cpp" line="407"/>
         <source>You must choose the MBR/GPT file
 </source>
         <comment>Sie müssen die MBR/GPT Sicherungsdatei auswählen.
@@ -964,7 +972,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>您必须选择MBR/GPT文件</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="390"/>
+        <location filename="../src/mbr.cpp" line="413"/>
         <source>You have selected a directory. You must select the MBR/GPT backup file
 </source>
         <comment>Sie haben ein Verzeichnis ausgewählt. Sie müssen die MBR/GPT Sicherungsdatei auswählen
@@ -972,7 +980,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>您选择的是目录，请选择MBR/GPT备份文件</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="396"/>
+        <location filename="../src/mbr.cpp" line="137"/>
         <source>You must choose the MBR file
 </source>
         <comment>Sie müssen eine MBR Sicherungsdatei auswählen.
@@ -980,7 +988,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>您必须选择MBR文件</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="402"/>
+        <location filename="../src/mbr.cpp" line="143"/>
         <source>You must choose the GPT file
 </source>
         <comment>Sie müssen eine GPT Sicherungsdatei auswählen.
@@ -988,55 +996,55 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>您必须选择GPT文件</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="411"/>
+        <location filename="../src/mbr.cpp" line="422"/>
         <source>You may have the wrong disk is selected. The restore disk is </source>
         <comment>Sie haben eventuell eine falsche Festplatte ausgewählt. Die wiederherzustellende Festplatte ist </comment>
         <translation>磁盘选择错误。要恢复的磁盘是</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="411"/>
+        <location filename="../src/mbr.cpp" line="422"/>
         <source>, the saved hard drive is </source>
         <comment>,  die gesicherte Festplatte ist aber </comment>
         <translation>要保存的硬盘是</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="411"/>
+        <location filename="../src/mbr.cpp" line="422"/>
         <source> Are you sure?</source>
         <comment> Wollen Sie fortfahren?</comment>
         <translation>确定？</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="419"/>
+        <location filename="../src/mbr.cpp" line="430"/>
         <source>You may have a wrong file selected. Restore the hidden field has a size of </source>
         <comment>Sie haben eventuell eine falsche Datei ausgewählt. Der wiederherzustellende verborgene Bereich hat eine Größe von</comment>
         <translation>文件选择错误。要恢复的隐藏部分大小单位为</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="420"/>
+        <location filename="../src/mbr.cpp" line="431"/>
         <source> bytes. The hidden area of the disk </source>
         <comment> Byte. Der verborgene Bereich von der Festplatte </comment>
         <translation>字节。磁盘隐藏区域</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="420"/>
+        <location filename="../src/mbr.cpp" line="431"/>
         <source> has a size of </source>
         <comment> hat eine Größe von </comment>
         <translation>大小单位为</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="420"/>
+        <location filename="../src/mbr.cpp" line="431"/>
         <source> bytes. Are you sure?</source>
         <comment> Byte. Wollen Sie fortfahren?</comment>
         <translation>字节。确定?</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="435"/>
+        <location filename="../src/mbr.cpp" line="446"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../src/mbr.cpp" line="436"/>
+        <location filename="../src/mbr.cpp" line="447"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>取消</translation>
@@ -1409,7 +1417,7 @@ Die Dateiendung muss .fsa sein</comment>
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt
 </comment>
-        <translation type="unfinished">分区类型不支持。</translation>
+        <translation>分区类型不支持。</translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="1332"/>
@@ -1788,55 +1796,229 @@ entschlüsseln. Schlüssel</comment>
         <translation>日语</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="39"/>
+        <location filename="../src/setting.cpp" line="34"/>
+        <source>Arabic</source>
+        <comment>Arabisch</comment>
+        <translation>阿拉伯语</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="34"/>
+        <source>Catalan</source>
+        <comment>Katalanisch</comment>
+        <translation type="unfinished">加泰罗尼亚</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="34"/>
+        <source>Danish</source>
+        <comment>Dänisch</comment>
+        <translation type="unfinished">丹麦</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="34"/>
+        <source>French</source>
+        <comment>Französisch</comment>
+        <translation type="unfinished">法国</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="34"/>
+        <source>Czech</source>
+        <comment>Tschechisch</comment>
+        <translation type="unfinished">捷克</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="35"/>
+        <source>Greek</source>
+        <comment>Griechisch</comment>
+        <translation type="unfinished">希腊人</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="35"/>
+        <source>Finnish</source>
+        <comment>Finnisch</comment>
+        <translation type="unfinished">芬兰</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="35"/>
+        <source>Hindi</source>
+        <comment>Hindi</comment>
+        <translation type="unfinished">印地文</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="35"/>
+        <source>Hungarian</source>
+        <comment>Ungarisch</comment>
+        <translation type="unfinished">匈牙利</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="35"/>
+        <source>Armenian</source>
+        <comment>Armenisch</comment>
+        <translation type="unfinished">亚美尼亚</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="35"/>
+        <source>Estonian</source>
+        <comment>Estnisch</comment>
+        <translation type="unfinished">爱沙尼亚语</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="35"/>
+        <source>Hebrew</source>
+        <comment>Hebräisch</comment>
+        <translation type="unfinished">希伯来语</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="35"/>
+        <source>Indonesian</source>
+        <comment>Indonesisch</comment>
+        <translation type="unfinished">印度尼西亚</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="36"/>
+        <source>Korean</source>
+        <comment>Koreanisch</comment>
+        <translation type="unfinished">朝鲜的</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="36"/>
+        <source>Norwegian</source>
+        <comment>Norwegisch</comment>
+        <translation type="unfinished">挪威</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="36"/>
+        <source>Polish</source>
+        <comment>Polnisch</comment>
+        <translation type="unfinished">抛光</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="36"/>
+        <source>Romanian</source>
+        <comment>Rumänisch</comment>
+        <translation type="unfinished">罗马尼亚</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="36"/>
+        <source>Latvian</source>
+        <comment>Lettisch</comment>
+        <translation type="unfinished">拉脱维亚</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="36"/>
+        <source>Lithuanian</source>
+        <comment>Litauisch</comment>
+        <translation type="unfinished">立陶宛</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="36"/>
+        <source>Portuguese</source>
+        <comment>Portugisisch</comment>
+        <translation type="unfinished">葡萄牙</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="36"/>
+        <source>Persian</source>
+        <comment>Persisch</comment>
+        <translation type="unfinished">波斯语</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="37"/>
+        <source>Slovak</source>
+        <comment>Slowakisch</comment>
+        <translation type="unfinished">斯洛伐克</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="37"/>
+        <source>Serbian</source>
+        <comment>Serbisch</comment>
+        <translation type="unfinished">塞尔维亚</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="37"/>
+        <source>Swedish</source>
+        <comment>Schwedisch</comment>
+        <translation type="unfinished">瑞典</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="37"/>
+        <source>Turkish</source>
+        <comment>Türkisch</comment>
+        <translation type="unfinished">土耳其</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="37"/>
+        <source>Ukrainian</source>
+        <comment>Ukrainisch</comment>
+        <translation type="unfinished">乌克兰</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="37"/>
+        <source>Urdu</source>
+        <comment>Urdu</comment>
+        <translation type="unfinished">乌尔都语</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="37"/>
+        <source>Thai</source>
+        <comment>Thailändisch</comment>
+        <translation type="unfinished">泰国</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="37"/>
+        <source>Vietnamese</source>
+        <comment>Vietnamesich</comment>
+        <translation type="unfinished">越南</translation>
+    </message>
+    <message>
+        <location filename="../src/setting.cpp" line="42"/>
         <source>lzo</source>
         <comment>lzo</comment>
         <translation>lzn算法</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="39"/>
+        <location filename="../src/setting.cpp" line="42"/>
         <source>gzip fast</source>
         <comment>gzip fast</comment>
         <translation>gzip算法快速压缩</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="39"/>
+        <location filename="../src/setting.cpp" line="42"/>
         <source>gzip standard</source>
         <comment>gzip standard</comment>
         <translation>gzip算法标准压缩</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="39"/>
+        <location filename="../src/setting.cpp" line="42"/>
         <source>qzip best</source>
         <comment>qzip best</comment>
         <translation>gzip算法最小压缩</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="39"/>
+        <location filename="../src/setting.cpp" line="42"/>
         <source>bzip2 fast</source>
         <comment>bzip2 fast</comment>
         <translation>bzip2算法快速压缩</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="42"/>
+        <location filename="../src/setting.cpp" line="45"/>
         <source>bzip2 good</source>
         <comment>bzip2 good</comment>
         <translation>bzip2算法最小压缩</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="42"/>
+        <location filename="../src/setting.cpp" line="45"/>
         <source>lzma fast</source>
         <comment>lzma fast</comment>
         <translation>lzma算法快速压缩</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="42"/>
+        <location filename="../src/setting.cpp" line="45"/>
         <source>lzma medium</source>
         <comment>lzma medium</comment>
         <translation>lzma算法标准压缩</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="42"/>
+        <location filename="../src/setting.cpp" line="45"/>
         <source>lzma best</source>
         <comment>lzma best</comment>
         <translation>lzma算法最小压缩</translation>
@@ -1878,23 +2060,22 @@ entschlüsseln. Schlüssel</comment>
         <translation type="obsolete">lzma算法最小压缩</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="45"/>
+        <location filename="../src/setting.cpp" line="48"/>
         <source>Samba</source>
-        <translation></translation>
+        <translation type="unfinished">Samba</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="45"/>
+        <location filename="../src/setting.cpp" line="48"/>
         <source>SSH</source>
-        <translation></translation>
+        <translation type="unfinished">SSH</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="45"/>
+        <location filename="../src/setting.cpp" line="48"/>
         <source>NFS</source>
         <translation>NFS(网络文件系统）</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="112"/>
-        <location filename="../src/setting.cpp" line="182"/>
+        <location filename="../src/setting.cpp" line="185"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>注意</translation>
@@ -1907,15 +2088,14 @@ entschlüsseln. Schlüssel</comment>
         <translation type="obsolete">俄语翻译未完成</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="113"/>
         <source>The translation is in progress. Please choose another language
 </source>
         <comment>Die  Übersetzung ist in Arbeit. Wählen Sie eine andere Sprache
 </comment>
-        <translation>翻译正在进行中，请选择另一种语言</translation>
+        <translation type="obsolete">翻译正在进行中，请选择另一种语言</translation>
     </message>
     <message>
-        <location filename="../src/setting.cpp" line="183"/>
+        <location filename="../src/setting.cpp" line="186"/>
         <source>The settings have been saved. Be restarted, the program modified the language setting.</source>
         <comment>Die Einstellungen wurden gespeichert. Bei geänderter Spracheinstellung muss das Programm neu gestartet werden.
 </comment>
@@ -1945,7 +2125,7 @@ entschlüsseln. Schlüssel</comment>
     <message>
         <location filename="../src/ui/net.ui" line="58"/>
         <source>S</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="71"/>
@@ -1978,7 +2158,7 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/net.ui" line="155"/>
         <source>n</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="168"/>
@@ -2215,7 +2395,7 @@ transmission:</source>
     <message>
         <location filename="../src/ui/net_ein.ui" line="130"/>
         <source>n</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="143"/>
@@ -2263,7 +2443,7 @@ transmission:</source>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/filedialog.cpp" line="41"/>
@@ -2333,10 +2513,9 @@ entschlüsseln. Schlüssel</comment>
         <translation>备份文件位置:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="434"/>
         <source>Save partition</source>
         <comment>Partition sichern</comment>
-        <translation>备份分区</translation>
+        <translation type="obsolete">备份分区</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="447"/>
@@ -2368,22 +2547,22 @@ verschlüsseln. Schlüssel</comment>
         <location filename="../src/mainWindow.cpp" line="943"/>
         <location filename="../src/mainWindow.cpp" line="955"/>
         <location filename="../src/mainWindow.cpp" line="1003"/>
-        <location filename="../src/mainWindow.cpp" line="1096"/>
-        <location filename="../src/mainWindow.cpp" line="1171"/>
-        <location filename="../src/mainWindow.cpp" line="1348"/>
-        <location filename="../src/mainWindow.cpp" line="1369"/>
-        <location filename="../src/mainWindow.cpp" line="1376"/>
-        <location filename="../src/mainWindow.cpp" line="1383"/>
-        <location filename="../src/mainWindow.cpp" line="1387"/>
-        <location filename="../src/mainWindow.cpp" line="1400"/>
-        <location filename="../src/mainWindow.cpp" line="1422"/>
+        <location filename="../src/mainWindow.cpp" line="1087"/>
+        <location filename="../src/mainWindow.cpp" line="1162"/>
+        <location filename="../src/mainWindow.cpp" line="1339"/>
+        <location filename="../src/mainWindow.cpp" line="1360"/>
+        <location filename="../src/mainWindow.cpp" line="1367"/>
+        <location filename="../src/mainWindow.cpp" line="1374"/>
+        <location filename="../src/mainWindow.cpp" line="1378"/>
+        <location filename="../src/mainWindow.cpp" line="1391"/>
+        <location filename="../src/mainWindow.cpp" line="1413"/>
+        <location filename="../src/mainWindow.cpp" line="1440"/>
+        <location filename="../src/mainWindow.cpp" line="1444"/>
         <location filename="../src/mainWindow.cpp" line="1449"/>
-        <location filename="../src/mainWindow.cpp" line="1453"/>
-        <location filename="../src/mainWindow.cpp" line="1458"/>
+        <location filename="../src/mainWindow.cpp" line="1466"/>
         <location filename="../src/mainWindow.cpp" line="1475"/>
-        <location filename="../src/mainWindow.cpp" line="1484"/>
-        <location filename="../src/mainWindow.cpp" line="1495"/>
-        <location filename="../src/mainWindow.cpp" line="1498"/>
+        <location filename="../src/mainWindow.cpp" line="1486"/>
+        <location filename="../src/mainWindow.cpp" line="1489"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>注意</translation>
@@ -2608,7 +2787,7 @@ Die Dateiendung muss .fsa sein</comment>
     <message>
         <location filename="../src/mainWindow.cpp" line="1079"/>
         <source>qt4-fsarchiver</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Backup and restore
@@ -2761,7 +2940,6 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
 版本 0.6.19-11, 2015年2月20日</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1080"/>
         <source>Backup and restore
 partitions, directory and MBR
 Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
@@ -2772,13 +2950,21 @@ von Partitionen, Verzeichnissen und MBR
 Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
 All rights reserved.
 Version 0.6.19-12, 25. Februar 2015</comment>
-        <translation type="unfinished">分区、目录和MBR 备份/恢复工具。
+        <translation type="obsolete">分区、目录和MBR 备份/恢复工具。
 Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
 版权所有。
 版本 0.6.19-12, 2015年2月25日</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1097"/>
+        <location filename="../src/mainWindow.cpp" line="1080"/>
+        <source>Backup and restore partitions, directory and MBR
+Version 0.6.19-13, May 4, 2015</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-13, 4. Mai 2015</comment>
+<translation>分区、目录和MBR 备份/恢复工具。
+版本 0.6.19-13, 2015. 五月. 4</translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="1088"/>
         <source>The program must be run with root privileges. The program is terminated.
 </source>
         <comment>Das Programm muss mit Root-Rechten gestartet werden. Das Programm wird beendet.
@@ -2786,19 +2972,19 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>程序必须以root权限运行。程序终止。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1172"/>
+        <location filename="../src/mainWindow.cpp" line="1163"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1173"/>
+        <location filename="../src/mainWindow.cpp" line="1164"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1349"/>
+        <location filename="../src/mainWindow.cpp" line="1340"/>
         <source>The partition has been backed up successfully.
 </source>
         <comment>Die Partition wurde erfolgreich gesichert.
@@ -2806,52 +2992,52 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>分区备份成功。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1350"/>
-        <location filename="../src/mainWindow.cpp" line="1402"/>
-        <location filename="../src/mainWindow.cpp" line="1404"/>
-        <location filename="../src/mainWindow.cpp" line="1450"/>
-        <location filename="../src/mainWindow.cpp" line="1454"/>
+        <location filename="../src/mainWindow.cpp" line="1341"/>
+        <location filename="../src/mainWindow.cpp" line="1393"/>
+        <location filename="../src/mainWindow.cpp" line="1395"/>
+        <location filename="../src/mainWindow.cpp" line="1441"/>
+        <location filename="../src/mainWindow.cpp" line="1445"/>
+        <location filename="../src/mainWindow.cpp" line="1468"/>
+        <location filename="../src/mainWindow.cpp" line="1470"/>
         <location filename="../src/mainWindow.cpp" line="1477"/>
-        <location filename="../src/mainWindow.cpp" line="1479"/>
-        <location filename="../src/mainWindow.cpp" line="1486"/>
-        <location filename="../src/mainWindow.cpp" line="1489"/>
+        <location filename="../src/mainWindow.cpp" line="1480"/>
         <source> files, </source>
         <comment> Dateien, </comment>
         <translation>个文件，</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1350"/>
-        <location filename="../src/mainWindow.cpp" line="1402"/>
-        <location filename="../src/mainWindow.cpp" line="1404"/>
-        <location filename="../src/mainWindow.cpp" line="1450"/>
-        <location filename="../src/mainWindow.cpp" line="1454"/>
+        <location filename="../src/mainWindow.cpp" line="1341"/>
+        <location filename="../src/mainWindow.cpp" line="1393"/>
+        <location filename="../src/mainWindow.cpp" line="1395"/>
+        <location filename="../src/mainWindow.cpp" line="1441"/>
+        <location filename="../src/mainWindow.cpp" line="1445"/>
+        <location filename="../src/mainWindow.cpp" line="1468"/>
         <location filename="../src/mainWindow.cpp" line="1477"/>
-        <location filename="../src/mainWindow.cpp" line="1486"/>
         <source> directories, </source>
         <comment> Verzeichnisse, </comment>
         <translation>个目录，</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1350"/>
-        <location filename="../src/mainWindow.cpp" line="1402"/>
-        <location filename="../src/mainWindow.cpp" line="1405"/>
-        <location filename="../src/mainWindow.cpp" line="1450"/>
-        <location filename="../src/mainWindow.cpp" line="1477"/>
-        <location filename="../src/mainWindow.cpp" line="1480"/>
-        <location filename="../src/mainWindow.cpp" line="1487"/>
-        <location filename="../src/mainWindow.cpp" line="1490"/>
+        <location filename="../src/mainWindow.cpp" line="1341"/>
+        <location filename="../src/mainWindow.cpp" line="1393"/>
+        <location filename="../src/mainWindow.cpp" line="1396"/>
+        <location filename="../src/mainWindow.cpp" line="1441"/>
+        <location filename="../src/mainWindow.cpp" line="1468"/>
+        <location filename="../src/mainWindow.cpp" line="1471"/>
+        <location filename="../src/mainWindow.cpp" line="1478"/>
+        <location filename="../src/mainWindow.cpp" line="1481"/>
         <source> links and </source>
         <comment> Links und </comment>
         <translation>个链接和</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1351"/>
+        <location filename="../src/mainWindow.cpp" line="1342"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
         <translation>个其他文件已经备份。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1370"/>
+        <location filename="../src/mainWindow.cpp" line="1361"/>
         <source>The backup of the partition was aborted by the user!
 </source>
         <comment>Die Sicherung der Partition  wurde vom Benutzer abgebrochen!
@@ -2859,15 +3045,15 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>用户中止了分区备份！</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1377"/>
+        <location filename="../src/mainWindow.cpp" line="1368"/>
         <source>The partition type is not supported.
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt.
 </comment>
-        <translation type="unfinished">分区类型不支持。</translation>
+        <translation>分区类型不支持。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1384"/>
+        <location filename="../src/mainWindow.cpp" line="1375"/>
         <source>The partition type is not supported. Maybe the partition is encrypted?
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?
@@ -2875,7 +3061,7 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>分区类型不支持。分区是否被加密了？</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1388"/>
+        <location filename="../src/mainWindow.cpp" line="1379"/>
         <source>Error saving partition. File too large. Use is FAT-partition?
 </source>
         <comment>Die Sicherung der Partition war nicht erfolgreich. Die Datei ist zu groß. Nutzen Sie eine FAT-Partition?
@@ -2883,7 +3069,7 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>备份分区错误。备份文件太大，您的备份文件是存储在FAT格式的文件系统上吗？</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1401"/>
+        <location filename="../src/mainWindow.cpp" line="1392"/>
         <source>The backup of the partition was only partially successful.
 </source>
         <comment>Die Sicherung der Partition war nur teilweise erfolgreich
@@ -2891,7 +3077,7 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>分区只备份了一部分。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1403"/>
+        <location filename="../src/mainWindow.cpp" line="1394"/>
         <source> specials have been backed
 .</source>
         <comment> spezielle Daten wurden gesichert
@@ -2899,7 +3085,7 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>个其他文件已经备份。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1406"/>
+        <location filename="../src/mainWindow.cpp" line="1397"/>
         <source> specials were not properly backed
 .</source>
         <comment> spezielle Daten wurden nicht korrekt gesichert.
@@ -2907,7 +3093,7 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>个其他文件备份未完成。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1422"/>
+        <location filename="../src/mainWindow.cpp" line="1413"/>
         <source>cannot restore an archive to a partition which is mounted, unmount it first 
 </source>
         <comment>Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!
@@ -2915,8 +3101,8 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>无法恢复到已挂载分区，请先卸载此分区。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1449"/>
-        <location filename="../src/mainWindow.cpp" line="1453"/>
+        <location filename="../src/mainWindow.cpp" line="1440"/>
+        <location filename="../src/mainWindow.cpp" line="1444"/>
         <source>The partition is successful back.
 </source>
         <comment>Die Partition wurde erfolgreich wieder hergestellt.
@@ -2924,25 +3110,25 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>分区成功备份。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1450"/>
+        <location filename="../src/mainWindow.cpp" line="1441"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
         <translation>个其他文件已经恢复。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1454"/>
+        <location filename="../src/mainWindow.cpp" line="1445"/>
         <source> links </source>
         <comment> Links </comment>
         <translation>个链接</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1454"/>
+        <location filename="../src/mainWindow.cpp" line="1445"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
         <translation>个其他文件和分区引导记录恢复成功。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1459"/>
+        <location filename="../src/mainWindow.cpp" line="1450"/>
         <source>The restore of the partition was break by user!
 </source>
         <comment>Die Wiederherstellung der Partition  wurde vom Benutzer abgebrochen!
@@ -2950,8 +3136,8 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>用户终止了分区恢复！</translation>
     </message>
     <message>
+        <location filename="../src/mainWindow.cpp" line="1467"/>
         <location filename="../src/mainWindow.cpp" line="1476"/>
-        <location filename="../src/mainWindow.cpp" line="1485"/>
         <source>The restore of the partition was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition war nur teilweise erfolgreich
@@ -2959,7 +3145,7 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>分区只恢复了一部分。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1478"/>
+        <location filename="../src/mainWindow.cpp" line="1469"/>
         <source> specials have been restored
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
@@ -2967,15 +3153,15 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>个其他文件已经恢复。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1479"/>
-        <location filename="../src/mainWindow.cpp" line="1489"/>
+        <location filename="../src/mainWindow.cpp" line="1470"/>
+        <location filename="../src/mainWindow.cpp" line="1480"/>
         <source> directories and </source>
         <comment> Verzeichnisse und </comment>
         <translation>个目录和</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1481"/>
-        <location filename="../src/mainWindow.cpp" line="1491"/>
+        <location filename="../src/mainWindow.cpp" line="1472"/>
+        <location filename="../src/mainWindow.cpp" line="1482"/>
         <source> specials were not properly restored
 .</source>
         <comment> spezielle Daten wurden nicht korrekt wiederhergestellt.
@@ -2983,7 +3169,7 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>个特殊文件恢复还未完成。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1488"/>
+        <location filename="../src/mainWindow.cpp" line="1479"/>
         <source> specials and the Partition Boot Record have been restored
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
@@ -2991,7 +3177,7 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>个其他文件和分区引导记录恢复成功。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1495"/>
+        <location filename="../src/mainWindow.cpp" line="1486"/>
         <source>You have tried restore a partition. The selected file can only restore directories. Please restart the program.
 </source>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
@@ -2999,7 +3185,7 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>您正在尝试恢复分区。所选备份文件只能恢复到目录。请重新输入。</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1498"/>
+        <location filename="../src/mainWindow.cpp" line="1489"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben.
@@ -3007,107 +3193,107 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <translation>密码有误</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1604"/>
+        <location filename="../src/mainWindow.cpp" line="1595"/>
         <source>Backup file name: </source>
         <comment>Sicherungsdateiname: </comment>
         <translation>备份文件名：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1605"/>
+        <location filename="../src/mainWindow.cpp" line="1596"/>
         <source>Partition  name: </source>
         <comment>Partitionsname: </comment>
         <translation>要备份的分区：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1606"/>
+        <location filename="../src/mainWindow.cpp" line="1597"/>
         <source>Partition type: </source>
         <comment>Partitionsart: </comment>
         <translation>分区文件系统：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1607"/>
+        <location filename="../src/mainWindow.cpp" line="1598"/>
         <source>UUID: </source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1607"/>
+        <location filename="../src/mainWindow.cpp" line="1598"/>
         <source>Description: </source>
         <comment>Bezeichnung: </comment>
         <translation>描述信息：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1608"/>
+        <location filename="../src/mainWindow.cpp" line="1599"/>
         <source>Partition size: </source>
         <comment>Partitionsgröße: </comment>
         <translation>分区大小：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1608"/>
-        <location filename="../src/mainWindow.cpp" line="1609"/>
+        <location filename="../src/mainWindow.cpp" line="1599"/>
+        <location filename="../src/mainWindow.cpp" line="1600"/>
         <source>Assignment of the partition: </source>
         <comment>Belegung der Partition: </comment>
         <translation>已用大小：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1609"/>
+        <location filename="../src/mainWindow.cpp" line="1600"/>
         <source>Compression: </source>
         <comment>Kompression: </comment>
         <translation>压缩算法：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1610"/>
+        <location filename="../src/mainWindow.cpp" line="1601"/>
         <source>Approximate image file sizes: </source>
         <comment>ungefähre Sicherungsdateigröße: </comment>
         <translation>预估生成的备份文件大小：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1610"/>
+        <location filename="../src/mainWindow.cpp" line="1601"/>
         <source>Other notes: </source>
         <comment>weitere Hinweise:</comment>
         <translation>其它事项：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1611"/>
+        <location filename="../src/mainWindow.cpp" line="1602"/>
         <source>to be protected/secured partition: / (root system directory) </source>
         <comment>zu sichernde / gesicherte Partition: / (Wurzel-Systemverzeichnis) </comment>
         <translation>被安全保护的分区：/(根系统目录)</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1616"/>
-        <location filename="../src/mainWindow.cpp" line="1622"/>
+        <location filename="../src/mainWindow.cpp" line="1607"/>
+        <location filename="../src/mainWindow.cpp" line="1613"/>
         <source>Operating system: </source>
         <comment>Betriebsystem: </comment>
         <translation>操作系统：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1616"/>
-        <location filename="../src/mainWindow.cpp" line="1622"/>
+        <location filename="../src/mainWindow.cpp" line="1607"/>
+        <location filename="../src/mainWindow.cpp" line="1613"/>
         <source>Kernel: </source>
         <translation>内核：</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1618"/>
+        <location filename="../src/mainWindow.cpp" line="1609"/>
         <source>to be protected/secured partition: /home</source>
         <comment>zu sichernde/gesicherte Partition: /home</comment>
         <translation>被安全保护的分区：/home</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1639"/>
+        <location filename="../src/mainWindow.cpp" line="1630"/>
         <source> MB</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1650"/>
+        <location filename="../src/mainWindow.cpp" line="1641"/>
         <source> TB</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1661"/>
+        <location filename="../src/mainWindow.cpp" line="1652"/>
         <source> GB</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1852"/>
+        <location filename="../src/mainWindow.cpp" line="1843"/>
         <source>Do you really want to break the save or restore from the partition?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
         <translation>您确定要终止当前操作吗？</translation>
@@ -3159,7 +3345,7 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="126"/>
         <source>S</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="162"/>
@@ -3503,7 +3689,7 @@ with fsarchiver</source>
         <location filename="../src/ui/clone_dialog.ui" line="125"/>
         <location filename="../src/ui/clone_dialog.ui" line="138"/>
         <source>CommandLinkButton</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="166"/>
@@ -3535,7 +3721,7 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="400"/>
         <source>MB</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="413"/>
@@ -3556,7 +3742,7 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="505"/>
         <source>f</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="518"/>
@@ -3634,7 +3820,7 @@ with fsarchiver</source>
         <location filename="../src/ui/clone_dialog_net.ui" line="78"/>
         <source>Image einer Festplatte zurückschreiben:</source>
         <extracomment>sdc</extracomment>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog_net.ui" line="123"/>
@@ -3666,7 +3852,7 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/clone_dialog_net.ui" line="351"/>
         <source>MB</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog_net.ui" line="364"/>
@@ -3677,7 +3863,7 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/clone_dialog_net.ui" line="411"/>
         <source>f</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog_net.ui" line="434"/>
@@ -3699,7 +3885,7 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/clone_dialog_net.ui" line="493"/>
         <source>l</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3873,7 +4059,7 @@ backup key</source>
         <location filename="../src/ui/mbr_dialog.ui" line="61"/>
         <source>Exit</source>
         <extracomment>Abbrechen</extracomment>
-        <translation type="unfinished">退出</translation>
+        <translation>退出</translation>
     </message>
     <message>
         <source>End</source>
@@ -3884,7 +4070,7 @@ backup key</source>
         <location filename="../src/ui/mbr_dialog.ui" line="140"/>
         <source>Existing
 harddrive:</source>
-        <translation type="unfinished">现有磁盘：</translation>
+        <translation>现有磁盘：</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -4066,7 +4252,7 @@ back to the original location</source>
     <message>
         <location filename="../src/ui/treeview.ui" line="105"/>
         <source>a</source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

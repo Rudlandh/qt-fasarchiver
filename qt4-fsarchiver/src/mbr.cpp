@@ -117,21 +117,40 @@ int DialogMBR::mbr()
 {
 QString befehl;
 int i;
-int efi=0;
+int success = 0;
+int pos=0;
+int pos2=0;
 QString partition;
 QString homepath = QDir::homePath();
+QModelIndex index = treeView->currentIndex();
+QModelIndexList indexes = selModel->selectedIndexes();
     //Ubuntu Version einlesen, nur wenn Systempartition
     Ubuntuversion_auslesen();
     i = cmb_disk->currentIndex();
     partition = disk_name[i];
-    efi = is_gpt("/dev/" + partition);
-    if (efi == 0)
-        sektor_auslesen();
-    else
-       efiflag = 1;
-    if (efi == 1 &&  (dialog_auswertung == 5))
+    efiflag = is_gpt("/dev/" + partition);
+    folder_ =  (dirModel->filePath(index));
+    pos = folder_.indexOf("mbr_sd");
+    pos2 = folder_.indexOf("gpt_sd");
+    if (efiflag == 0 && (pos == -1) && (dialog_auswertung == 5)){
+          QMessageBox::about(this, tr("Note", "Hinweis"),
+      tr("You must choose the MBR file\n","Sie müssen eine MBR Sicherungsdatei auswählen.\n"));
+      return 1 ;
+     }
+    if (efiflag == 1 && (pos2 == -1) && (dialog_auswertung == 5))
+      {
+       QMessageBox::about(this, tr("Note", "Hinweis"),
+      tr("You must choose the GPT file\n","Sie müssen eine GPT Sicherungsdatei auswählen.\n"));
+      return 1 ;
+      } 
+    if (efiflag == 0){
+        success = sektor_auslesen();
+        if (success == 1)
+           return 1;
+    } 
+    if (efiflag == 1 &&  (dialog_auswertung == 5))
 	     cmb_mbr->setEnabled(false);
-    if (efi == 0 &&  (dialog_auswertung == 5))
+    if (efiflag == 0 &&  (dialog_auswertung == 5))
 	     cmb_mbr->setEnabled(true);
     if (dialog_auswertung == 4)	
        {
@@ -261,25 +280,21 @@ QString homepath = QDir::homePath();
     return 0;
 }
 
-void DialogMBR::sektor_auslesen() {
+int  DialogMBR::sektor_auslesen() {
 QString Dateiname;
 QString befehl;
 QString text;
 QString partition;
 QString homepath = QDir::homePath();
 int sektor_ = 0;
-int efi= 0;
 int i = 0;
 int j = 0;
 QString dummy[10];
 QStringList hidden_size;
 QString hidden_size_;
-        efiflag = 0;
         i = cmb_disk->currentIndex();
         partition = disk_name[i];
-        efi = is_gpt("/dev/" + partition);
-        if (efi == 1)
-	   efiflag = 1; 
+        efiflag = is_gpt("/dev/" + partition);
         // fdisk -lu , mit diesem Befehl Startsektor von sda1 ermitteln.
         // derzeit für Ubuntu:  Startsektor sda1 = 63*512 = 32256 
 	// Sektornummer in Datei abspeichern
@@ -287,6 +302,13 @@ QString hidden_size_;
         befehl = "fdisk -lu | grep " + partition + "1 > " + homepath + "/.config/qt4-fsarchiver/sektornummer.txt";
         i = system (befehl.toAscii().data());
         QFile file(Dateiname);
+        QFileInfo info(Dateiname); 
+        size_ = info.size();  //Wenn Dateigröße = 0 ist verhindert diese Abfrage einen Abstaurz
+qDebug() << "befehl" << befehl << size_;
+        if (size_ == 0){
+           QMessageBox::about(this, tr("Note", "Hinweis"), tr("Mistake. The partition table can not be read. The program is terminated", "Fehler. Die Partitionstabelle kann nicht ausgelesen werden. Das Programm wird abgebrochen.\n")); 
+           return 1;
+        }
         //Datei auslesen
         if( file.open(QIODevice::ReadOnly|QIODevice::Text)) {
             QTextStream ds(&file);
@@ -308,7 +330,7 @@ QString hidden_size_;
                sektor_ = dummy[1].toInt(); //Festplatte hat keinen Bootsektor
             }
        //Datei löschen
-       befehl = "rm "  + homepath + "/.config/qt4-fsarchiver/sektornummer.txt";;
+    //   befehl = "rm "  + homepath + "/.config/qt4-fsarchiver/sektornummer.txt";;
        system (befehl.toAscii().data()); 
        if (sektor_ < 2 && efiflag == 0) {
 	    QMessageBox::about(this, tr("Note", "Hinweis"), tr("The end of hidden area of the 1st Partition could not be read. Only 512 bytes are saved.", "Das Ende des verborgenen Bereiches der 1. Partition konnte nicht ausgelesen werden. Es werden nur 512 Bytes gesichert.\n"));
@@ -317,7 +339,8 @@ QString hidden_size_;
         sektor_byte = sektor_  * 512;
         Sektor_byte =  QString::number(sektor_byte);
         sektor_byte_1 = (sektor_ -1) * 512 ;
-        Sektor_byte_1=  QString::number(sektor_byte_1);  
+        Sektor_byte_1=  QString::number(sektor_byte_1);
+        return 0;  
 }
 
 void DialogMBR::Ubuntuversion_auslesen() {
@@ -390,18 +413,6 @@ int DialogMBR::folder_einlesen() {
       tr("You have selected a directory. You must select the MBR/GPT backup file\n", "Sie haben ein Verzeichnis ausgewählt. Sie müssen die MBR/GPT Sicherungsdatei auswählen\n"));
       return 1 ;
        }
-    if (efiflag == 0 && (pos == -1) && (dialog_auswertung == 5))
-      {
-       QMessageBox::about(this, tr("Note", "Hinweis"),
-      tr("You must choose the MBR file\n","Sie müssen eine MBR Sicherungsdatei auswählen.\n"));
-      return 1 ;
-      } 
-    if (efiflag == 1 && (pos2 == -1) && (dialog_auswertung == 5))
-      {
-       QMessageBox::about(this, tr("Note", "Hinweis"),
-      tr("You must choose the GPT file\n","Sie müssen eine GPT Sicherungsdatei auswählen.\n"));
-      return 1 ;
-      } 
     i = cmb_disk->currentIndex();
     partition = disk_name[i];
     if (dialog_auswertung == 5 )

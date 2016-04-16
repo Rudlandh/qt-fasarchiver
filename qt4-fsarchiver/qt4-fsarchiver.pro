@@ -149,21 +149,79 @@ TRANSLATIONS += translations/qt4-fsarchiver_de.ts \
                 translations/qt4-fsarchiver_es.ts \
 		translations/qt4-fsarchiver_ru.ts \
                 translations/qt4-fsarchiver_nl.ts \
+                translations/qt4-fsarchiver_id.ts \
 		translations/qt4-fsarchiver_it.ts \
                 translations/qt4-fsarchiver_ch.ts \
-		translations/qt4-fsarchiver_jp.ts
+                translations/qt4-fsarchiver_cs.ts \
+		translations/qt4-fsarchiver_jp.ts \
+                translations/qt4-fsarchiver_ar.ts \
+                translations/qt4-fsarchiver_ca.ts \
+		translations/qt4-fsarchiver_da.ts \
+                translations/qt4-fsarchiver_el.ts \
+                translations/qt4-fsarchiver_et.ts \
+                translations/qt4-fsarchiver_fa.ts \
+		translations/qt4-fsarchiver_fi.ts \
+                translations/qt4-fsarchiver_fr.ts \
+                translations/qt4-fsarchiver_he.ts \
+                translations/qt4-fsarchiver_hi.ts \
+		translations/qt4-fsarchiver_hu.ts \
+                translations/qt4-fsarchiver_hy.ts \
+                translations/qt4-fsarchiver_ko.ts \
+                translations/qt4-fsarchiver_lv.ts \ 
+                translations/qt4-fsarchiver_lt.ts \
+		translations/qt4-fsarchiver_no.ts \
+                translations/qt4-fsarchiver_pl.ts \
+                translations/qt4-fsarchiver_pt.ts \
+		translations/qt4-fsarchiver_ro.ts \
+                translations/qt4-fsarchiver_sl.ts \
+		translations/qt4-fsarchiver_sr.ts \
+                translations/qt4-fsarchiver_sv.ts \
+                translations/qt4-fsarchiver_th.ts \
+		translations/qt4-fsarchiver_tr.ts \
+                translations/qt4-fsarchiver_vi.ts \
+                translations/qt4-fsarchiver_ur.ts \ 
+                translations/qt4-fsarchiver_uk.ts
 QMAKE_EXTRA_COMPILERS += lrelease
 lrelease.input  = TRANSLATIONS
 lrelease.output = ${QMAKE_FILE_BASE}.qm
 lrelease.commands = $$[QT_INSTALL_BINS]/lrelease ${QMAKE_FILE_IN} -qm translations/${QMAKE_FILE_BASE}.qm
 lrelease.CONFIG += no_link target_predeps
 translations.files = translations/qt4-fsarchiver_de.qm \
-                     translations/qt4-fsarchiver_es.qm \
-		     translations/qt4-fsarchiver_ru.qm \
-                     translations/qt4-fsarchiver_nl.qm \
-		     translations/qt4-fsarchiver_it.qm \
-                     translations/qt4-fsarchiver_ch.qm \
-		     translations/qt4-fsarchiver_jp.qm
+                translations/qt4-fsarchiver_es.qm \
+		translations/qt4-fsarchiver_ru.qm \
+                translations/qt4-fsarchiver_nl.qm \
+                translations/qt4-fsarchiver_id.qm \
+		translations/qt4-fsarchiver_it.qm \
+                translations/qt4-fsarchiver_ch.qm \
+                translations/qt4-fsarchiver_cs.qm \
+		translations/qt4-fsarchiver_jp.qm \
+                translations/qt4-fsarchiver_ar.qm \
+                translations/qt4-fsarchiver_ca.qm \
+		translations/qt4-fsarchiver_da.qm \
+                translations/qt4-fsarchiver_el.qm \
+                translations/qt4-fsarchiver_et.qm \
+                translations/qt4-fsarchiver_fa.qm \
+		translations/qt4-fsarchiver_fi.qm \
+                translations/qt4-fsarchiver_fr.qm \
+                translations/qt4-fsarchiver_he.qm \
+                translations/qt4-fsarchiver_hi.qm \
+		translations/qt4-fsarchiver_hu.qm \
+                translations/qt4-fsarchiver_hy.qm \
+                translations/qt4-fsarchiver_ko.qm \
+                translations/qt4-fsarchiver_lv.qm \ 
+                translations/qt4-fsarchiver_lt.qm \
+		translations/qt4-fsarchiver_no.qm \
+                translations/qt4-fsarchiver_pl.qm \
+                translations/qt4-fsarchiver_pt.qm \
+		translations/qt4-fsarchiver_ro.qm \
+                translations/qt4-fsarchiver_sl.qm \
+		translations/qt4-fsarchiver_sr.qm \
+                translations/qt4-fsarchiver_sv.qm \
+                translations/qt4-fsarchiver_th.qm \
+		translations/qt4-fsarchiver_tr.qm \
+                translations/qt4-fsarchiver_vi.qm \
+                translations/qt4-fsarchiver_ur.qm \ 
+                translations/qt4-fsarchiver_uk.qm
 translations.path = /usr/share/qt4/translations
  
  INSTALLS = target icon autostart translations doc smbfind polkit

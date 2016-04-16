@@ -29,9 +29,12 @@ DialogSetting::DialogSetting(QWidget *parent)
         setupUi(this); // this sets up GUI
 	connect( cmd_save, SIGNAL( clicked() ), this, SLOT( setting_save())); 
         connect( cmd_cancel, SIGNAL( clicked() ), this, SLOT(close()));
-        //items_language << tr("German", "Deutsch") << tr("English", "Englisch") ;
+        items_language.clear();
         items_language << tr("German", "Deutsch") << tr("English", "Englisch") << tr("Russian", "Russisch") << tr("Spanish", "Spanisch") << tr("Italian", "Italienisch") << tr("Chinese", "Chinesisch");
-        items_language << tr("Dutch", "Niederländisch") << tr("Japanese", "Japanisch") ;
+        items_language << tr("Dutch", "Niederländisch") << tr("Japanese", "Japanisch") <<  tr("French", "Französisch")<<  tr("Arabic", "Arabisch") <<tr("Catalan", "Katalanisch") << tr("Czech", "Tschechisch")<< tr("Danish", "Dänisch");
+        items_language  << tr("Greek", "Griechisch") << tr("Estonian", "Estnisch") << tr("Finnish", "Finnisch") <<  tr("Hebrew","Hebräisch")  <<  tr("Hindi", "Hindi") <<tr("Hungarian", "Ungarisch") << tr("Armenian", "Armenisch") << tr("Indonesian", "Indonesisch");
+        items_language << tr("Latvian", "Lettisch") << tr("Lithuanian", "Litauisch") << tr("Korean", "Koreanisch") << tr("Norwegian", "Norwegisch") <<  tr("Polish", "Polnisch") << tr("Portuguese", "Portugisisch") <<tr("Persian", "Persisch")<< tr("Romanian", "Rumänisch");
+        items_language << tr("Slovak", "Slowakisch") << tr("Serbian", "Serbisch") << tr("Swedish", "Schwedisch") <<  tr("Thai", "Thailändisch") <<tr("Turkish", "Türkisch") << tr("Ukrainian", "Ukrainisch") << tr("Urdu", "Urdu") << tr("Vietnamese", "Vietnamesich");
         cmb_language->addItems (items_language);
          items_kerne << "1" << "2" << "3" << "4" <<  "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12" << "13" << "14" << "15" << "16" ;
         cmb_Kerne->addItems (items_kerne);
@@ -108,11 +111,11 @@ void DialogSetting:: setting_save()
     // if (cmb_language->currentIndex() == 2)
     //    QMessageBox::about(this,tr("Note", "Hinweis"),
     //     	tr("The Russian translation is not completely.\n", "Die russische Übersetzung ist nicht komplett.\n"));
-     if (cmb_language->currentIndex() >= 6){
-        QMessageBox::about(this,tr("Note", "Hinweis"),
-         	tr("The translation is in progress. Please choose another language\n", "Die  Übersetzung ist in Arbeit. Wählen Sie eine andere Sprache\n"));
-        return;
-     }
+   //  if (cmb_language->currentIndex() >= 6){
+   //     QMessageBox::about(this,tr("Note", "Hinweis"),
+   //      	tr("The translation is in progress. Please choose another language\n", "Die  Übersetzung ist in Arbeit. Wählen Sie eine andere Sprache\n"));
+   //     return;
+   //  }
      setting.setValue("Sprache",cmb_language->currentIndex()+1);
      int zip = cmb_zip->currentIndex();
      setting.setValue("Kompression",zip);

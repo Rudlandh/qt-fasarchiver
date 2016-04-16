@@ -32,7 +32,7 @@ public slots:
 	int mbr();
 	int folder_einlesen();
         int questionMessage(QString frage);
-        void sektor_auslesen();
+        int sektor_auslesen();
         void Ubuntuversion_auslesen();
         int is_gpt(QString partition_efi);
         void disk_exist();

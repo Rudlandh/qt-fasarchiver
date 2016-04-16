@@ -174,15 +174,15 @@ public:
         pushButton_break->setFlat(false);
         savedBytes = new QLineEdit(frame_2);
         savedBytes->setObjectName(QString::fromUtf8("savedBytes"));
-        savedBytes->setGeometry(QRect(355, 85, 61, 27));
+        savedBytes->setGeometry(QRect(365, 85, 51, 27));
         savedBytes->setAlignment(Qt::AlignCenter);
         lbl_save = new QLabel(frame_2);
         lbl_save->setObjectName(QString::fromUtf8("lbl_save"));
-        lbl_save->setGeometry(QRect(270, 80, 71, 41));
+        lbl_save->setGeometry(QRect(270, 80, 91, 41));
         lbl_save->setWordWrap(true);
         lbl_hd_size = new QLabel(frame_2);
         lbl_hd_size->setObjectName(QString::fromUtf8("lbl_hd_size"));
-        lbl_hd_size->setGeometry(QRect(420, 90, 31, 17));
+        lbl_hd_size->setGeometry(QRect(430, 90, 31, 17));
         label_11 = new QLabel(frame_2);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(183, 15, 75, 20));
@@ -257,7 +257,7 @@ public:
         QMetaObject::connectSlotsByName(clone_dialog);
     } // setupUi
 
-    void retranslateUi(QWidget *clone_dialog)
+   void retranslateUi(QWidget *clone_dialog)
     {
 	int w,h, mw, mh, cw, ch;
         QWidget *d = QApplication::desktop();
@@ -271,7 +271,6 @@ public:
         cw = (w/2) - (mw/2);
         ch = (h/2) - (mh/2); 
         clone_dialog->setGeometry(QRect(cw, ch, 516, 700));
-
         clone_dialog->setWindowTitle(QApplication::translate("clone_dialog", "Clone hard drive", 0, QApplication::UnicodeUTF8));
         bt_end->setText(QApplication::translate("clone_dialog", "Exit", 0, QApplication::UnicodeUTF8));
         bt_save->setText(QApplication::translate("clone_dialog", "Save / Restore MBR", 0, QApplication::UnicodeUTF8));

@@ -431,7 +431,7 @@ void MWindow::starteinstellung()
      state= chk_hidden->checkState();
      QStringList filters;
             label_folder->setText (tr("Backup directory", "Sicherungsverzeichnis"));
-            pushButton_save->setText (tr("Save partition", "Partition sichern"));
+           // pushButton_save->setText (tr("Save partition", "Partition sichern"));
             lineEdit_DateiName->setEnabled(true);
             pushButton_restore->setEnabled(false);
             pushButton_save->setEnabled(true);
@@ -1077,18 +1077,9 @@ void MWindow::folder_file() {
 void MWindow::info() {
    QMessageBox::information(
       0, tr("qt4-fsarchiver"),
-      tr("Backup and restore\n"
-         "partitions, directory and MBR\n"
-         "Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.\n"
-         "All rights reserved.\n"
-         "Version 0.6.19-12, February 25, 2015",
-
-	 "Sichern und Wiederherstellen\n"
-         "von Partitionen, Verzeichnissen und MBR\n"
-         "Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.\n"
-         "All rights reserved.\n"
-         "Version 0.6.19-12, 25. Februar 2015"));
-}
+      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-13, May 4, 2015",
+	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-13, 4. Mai 2015"));
+      }
 
 int MWindow::Root_Auswertung(){
        if (geteuid() != 0) // 0 is the UID of the root  1000 von Dieter

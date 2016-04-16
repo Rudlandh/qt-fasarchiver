@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
    textdomain ("qt-fsarchiver");
    QApplication app(argc, argv);
    QString language_;
-   QString language[20];
+   QString language[100];
    language[0] = "de_DE";
    language[1] = "en_EN";
    language[2] = "ru_RU";
@@ -77,7 +77,36 @@ int main(int argc, char *argv[])
    language[5] = "ch_CH";
    language[6] = "nl_NL";
    language[7] = "jp_JP";
-        
+   language[8] = "fr_FR";
+   language[9] = "ar_AR";
+   language[10] = "ca_CA";
+   language[11] = "cs_CS";
+   language[12] = "da_DA";
+   language[13] = "el_EL";
+   language[14] = "et_ET";
+   language[15] = "fn_FN";
+   language[16] = "he_HE";
+   language[17] = "hi_HI";
+   language[18] = "hu_HU";
+   language[19] = "hy_HY";
+   language[20] = "id_ID";
+   language[21] = "lt_LT";
+   language[22] = "lv_LV";
+   language[23] = "ko_KO";
+   language[24] = "no_NO";
+   language[25] = "pl_PL";
+   language[26] = "pt_PT";
+   language[27] = "fa_FA";
+   language[28] = "ro_RO";
+   language[29] = "sl_SL";
+   language[30] = "sr_SR";
+   language[31] = "sv_SV";
+   language[32] = "th_TH";
+   language[33] = "tr_TR";
+   language[34] = "uk_UK";
+   language[35] = "ur_UR";
+   language[36] = "vi_VI";
+           
    QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
    setting.beginGroup("Basiseinstellungen");
    int auswertung = setting.value("Sprache").toInt();

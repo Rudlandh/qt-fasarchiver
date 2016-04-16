@@ -44,6 +44,7 @@ float read_write_space_summe = 0;
 QString homepath = QDir::homePath();
 float partition_exist_size_int;
 int dummy_prozent_clone;
+float size_clone;
 float size_clone_dummy;
 QString read_write_space_sec;
 
@@ -82,17 +83,18 @@ void DialogClone::format_Disk() {
 QString disk_part_name = "a b c d e f g h i j k l m n o p q r s t u v w x y z";
 QStringList disk_part_name_list;
 QString disk_part_name_1;
-QString teilstring, space1;
+QString teilstring, space1, space2;
 QString befehl;
 QString disk_clone[50];
 QStringList disk_kurz;
 int  i = 0, j=0 ,k=0, m=0;
 int pos;
+//float  dummy1;
 QString dummy;
         QString filename = homepath + "/.config/qt4-fsarchiver/disk.txt";
 	QFile file(filename);
         disk_part_name_list = disk_part_name.split(" ") ;
-        for (m=0; m< 26; m++){
+        for (m=0; m < 26; m++){
              befehl = "fdisk -l | grep ' /dev/sd" + disk_part_name_list[m] + "': 1> " +  homepath + "/.config/qt4-fsarchiver/disk.txt"; //Festplatten auslesen
              system (befehl.toAscii().data());
              if (file.open(QIODevice::ReadOnly|QIODevice::Text)) {
@@ -102,18 +104,19 @@ QString dummy;
                 disk_kurz = disk_clone[m].split(" ") ;
                 part_clone[i][0] = disk_kurz[1];
                 dummy = disk_kurz[4];
-                dummy = dummy.left(dummy.size() -9);
-                part_clone[i][1] = dummy;
+                part_clone[i][1] = disk_kurz[4].left(disk_kurz[4].size() -6);
+                part_clone[i][2] = disk_kurz[4].left(disk_kurz[4].size() -9);
+                //dummy1 = disk_kurz[4].toDouble();
+                //dummy1 = qRound(dummy1);
 		i = i + 1;
                 }
 		}
 		file.close();
 	}
-		
                 befehl = "rm " + filename;
                 system (befehl.toAscii().data());
-	        j = i;
-
+	        
+	j = i;
         for (i=0; i< j; i++)
        {
            teilstring = part_clone[i][1];
@@ -121,7 +124,11 @@ QString dummy;
            teilstring = part_clone[i][0];
            pos = teilstring.indexOf("/sd");
            space1.fill (' ',12 - k);
-	   disk_clone[i] = teilstring.right(pos) + space1 + part_clone[i][1] + " GB";
+           space2.fill (' ',15 - k);
+           if (part_clone[i][1].toInt() > 10000)
+   	      disk_clone[i] = teilstring.right(pos) + space2 + part_clone[i][2] + " GB";
+           if (part_clone[i][1].toInt() < 10000)
+              disk_clone[i] = teilstring.right(pos) + space1 + part_clone[i][1] + " MB";
            listWidget_clone->addItem (disk_clone[i]);
            listWidget_exist->addItem (disk_clone[i]);
  
@@ -341,7 +348,6 @@ int DialogClone::questionMessage(QString frage)
 void DialogClone::rdbutton_clone(){
 	treeView_clone->setEnabled(false);
 	bt_save->setText (tr("Clone Harddrive", "Festplatte klonen"));
-        lbl_hd_size ->setText("Exist harddrive");
         listWidget_clone->setEnabled(true);
         //chk_zip->setHidden(true);
         chk_zip->setEnabled(false);
@@ -349,8 +355,7 @@ void DialogClone::rdbutton_clone(){
 
 void DialogClone::rdbutton_image_save(){
 	treeView_clone->setEnabled(true);
-        lbl_hd_size ->setText("Exist harddrive");
-	bt_save->setText (tr("Save Harddrive Image", "Festplatten Abbild erstellen"));
+        bt_save->setText (tr("Save Harddrive Image", "Festplatten Abbild erstellen"));
         dirModel->setFilter(QDir::AllDirs  | QDir::NoDotAndDotDot);
    	dirModel->setNameFilters(filters_clone); 
         listWidget_clone->setEnabled(false); 
@@ -359,8 +364,7 @@ void DialogClone::rdbutton_image_save(){
 
 void DialogClone::rdbutton_image_restore(){
 	treeView_clone->setEnabled(true);
-        lbl_hd_size ->setText("Restore harddrive");
-	bt_save->setText (tr("Restore Harddrive Image", "Festplatten Abbild zurückschreiben"));
+        bt_save->setText (tr("Restore Harddrive Image", "Festplatten Abbild zurückschreiben"));
         filters_clone << "*gz.fsa" << "*img.fsa" ;
    	dirModel->setFilter(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot);
    	dirModel->setNameFilters(filters_clone); 
@@ -435,7 +439,7 @@ int hour_;
 QString text_integer;
 QString size;
 int size_1;
-float size_clone;
+
 QString letzte_zeile;
 QString befehl;
 int diff;
@@ -451,7 +455,7 @@ QString mb_sec;
         size_clone_dummy = size_clone; 
         lbl_hd_size ->setText("MB");
         prozent = size_clone/(partition_exist_size_int)/10;
-	//prozent = 100 * size_clone/(partition_exist_size_int);
+	prozent = 100 * size_clone/(partition_exist_size_int);
         if (prozent > 100)
             prozent = 100;
         sekunde_summe_clone_1 = sekunde_summe_clone;
@@ -462,6 +466,7 @@ QString mb_sec;
             lbl_hd_size ->setText("GB");}
         size = QString::number(size_1);
         mb_sec = QString::number(read_write_space_sum, 'f',1);
+        //qDebug() << "prozent size_clone read_write_space_sum sekunde_summe_clone size mb_sec" << prozent <<read_write_space_sum << sekunde_summe_clone<< size << mb_sec;
         if (read_write_space_sum > 0)
         	bytes_sec ->setText(mb_sec);
         if (read_write_space_sec != "")
@@ -469,7 +474,7 @@ QString mb_sec;
         if (size_clone > 0) 
         	savedBytes->setText(size);
         // verhindert dass mehr gesicherte Bytes angezeigt werden als Festplattengröße
-        if (size_clone/1000 > partition_exist_size_int)
+        if (size_clone > partition_exist_size_int)
             savedBytes->setText(QString::number(partition_exist_size_int));
         this->repaint();
         elapsedTime();
@@ -557,10 +562,14 @@ QString befehl;
         extern int dialog_auswertung;
 	endeThread_clone = endeThread_clone + 1;
         if (endeThread_clone == 1) {
-	           bt_end->setEnabled(true);
+	    bt_end->setEnabled(true);
             bt_save->setEnabled(true);
             progressBar->setValue(100);
        	    SekundeRemaining ->setText("0");
+            if (size_clone > 10000) { 
+               partition_exist_size_int = qRound(partition_exist_size_int)/ 1000;
+               lbl_hd_size ->setText("GB");
+            }
             savedBytes->setText(QString::number(partition_exist_size_int));
             if (flag_clone==1 && dialog_auswertung == 0)
             	QMessageBox::about(this, tr("Note", "Hinweis"), tr("The clone of the hard drive was successfully.", "Das Klonen der Festplatte war erfolgreich.\n"));
@@ -590,6 +599,10 @@ void DialogClone::thread2Ready()  {
             bt_save->setEnabled(true);
       	    progressBar->setValue(100);
        	    SekundeRemaining ->setText("0");
+            if (size_clone > 10000) { 
+               partition_exist_size_int = qRound(partition_exist_size_int) / 1000;
+               lbl_hd_size ->setText("GB");
+            }
             savedBytes->setText(QString::number(partition_exist_size_int));
             if (flag_clone==2 && dialog_auswertung == 0)
             	QMessageBox::about(this, tr("Note", "Hinweis"), tr("The restore from the image was successfully.", "Die Wiederherstellung des Abbildes war erfolgreich.\n"));
@@ -739,9 +752,11 @@ QString pid_nummer;
 QStringList pid;
       befehl = "ps -C " + prozess + " 1> " +  homepath + "/.config/qt4-fsarchiver/pid.txt";
       system (befehl.toAscii().data());
-	QString filename = homepath + "/.config/qt4-fsarchiver/pid.txt";
+    QString filename = homepath + "/.config/qt4-fsarchiver/pid.txt";
 	QFile file(filename);
-        if (file.open(QIODevice::ReadOnly|QIODevice::Text)) {
+    if(file.size() == 0) 
+       return " ";
+    if (file.open(QIODevice::ReadOnly|QIODevice::Text)) {
            QTextStream ds(&file);
         pid_nummer = ds.readLine();
         pid_nummer = ds.readLine();
@@ -749,10 +764,13 @@ QStringList pid;
      }
         befehl = "rm " + filename;
         system (befehl.toAscii().data());
-        pid = pid_nummer.split(" ") ;
-        pid_nummer = pid[0]; // 5-stellig
-        if (pid_nummer == "")
-           pid_nummer = pid[1];// 4-stellig
+      if (pid_nummer != "")
+        {
+          pid = pid_nummer.split(" ") ;
+          pid_nummer = pid[0]; // 5-stellig
+          if (pid_nummer == "")
+             pid_nummer = pid[1];// 4-stellig
+         }
         return pid_nummer;
 }
 
@@ -772,9 +790,9 @@ int found;
        if (endeThread_clone !=0)
             return;
        read_write_space= 0;
-       if (partition_exist_size_int < 20 )
+       if (partition_exist_size_int < 20000 )
        		QTimer::singleShot(3000, this, SLOT(read_write_hd()));
-       if (partition_exist_size_int > 20 )
+       if (partition_exist_size_int > 20000 )
        		QTimer::singleShot(10000, this, SLOT(read_write_hd()));
        
        read_write_counter = read_write_counter +1;
@@ -835,13 +853,17 @@ QString bytes_;
 QStringList bytes;
 	if (endeThread_clone !=0)
             return;
-        if (pid_dd == " ") 
+         while (pid_dd.size() < 4) 
+        //if (pid_dd.size() < 4) 
            pid_dd = pid_ermitteln("dd"); 
         QTimer::singleShot(10000, this, SLOT(read_write_hd_1()));  //10 sekunden
         // Wird für den Fortschrittsbalken benötigt
+        if (pid_dd.size() > 3)
+        {
         befehl = "kill -USR1 " + pid_dd;
-        //  befehl = "sudo kill -USR1 " + pid_dd + " 2>" + homepath + "/.config/qt4-fsarchiver/disk.txt";
+       //befehl = "kill -USR1 " + pid_dd + " 2>" + homepath + "/.config/qt4-fsarchiver/disk.txt";
         system (befehl.toAscii().data());
+        } 
 	QString filename = homepath + "/.config/qt4-fsarchiver/disk.txt";
 	QFile file(filename);
         if(file.size() == 0)
