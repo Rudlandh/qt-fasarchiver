@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2010, 2011 Dieter Baum.  All rights reserved.
+ * 
+* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -26,5 +26,14 @@ void werte_reset();
 char *meldungen_holen(int auswahl);
 float df(char *device, const char *mountPoint, int flag);
 float freesize(char *Partition,char *mount, int flag);
+int btrfs_flag_uebergeben();
 
 #endif // __CONNECT_C_CPP_H__
+
+
+
+
+
+
+
+

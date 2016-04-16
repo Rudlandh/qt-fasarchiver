@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -55,7 +55,7 @@ char *cryptalgostr(int algo)
 int archinfo_show_mainhead(carchreader *ai, cdico *dicomainhead)
 {
     char buffer[256];
-    
+    werte_uebergeben(210,15); 
     if (!ai || !dicomainhead)
     {   errprintf("a parameter is null\n");
         return -1;
@@ -65,6 +65,7 @@ int archinfo_show_mainhead(carchreader *ai, cdico *dicomainhead)
     msgprintf(MSG_FORCE, "Archive type: \t\t\t%s\n", (ai->archtype==ARCHTYPE_FILESYSTEMS)?"filesystems":"flat files");
     if ((ai->archtype==ARCHTYPE_FILESYSTEMS))
         msgprintf(0, "Filesystems count: \t\t%ld\n", (long)ai->fscount);
+         
     msgprintf(MSG_FORCE, "Archive id: \t\t\t%.8x\n", (unsigned int)ai->archid);
     msgprintf(MSG_FORCE, "Archive file format: \t\t%s\n", ai->filefmt);
     msgprintf(MSG_FORCE, "Archive created with: \t\t%s\n", ai->creatver);
@@ -76,8 +77,7 @@ int archinfo_show_mainhead(carchreader *ai, cdico *dicomainhead)
     msgprintf(MSG_FORCE, "Compression level: \t\t%d (%s level %d)\n", ai->fsacomp, compalgostr(ai->compalgo), ai->complevel);
     msgprintf(MSG_FORCE, "Encryption algorithm: \t\t%s\n", cryptalgostr(ai->cryptalgo));
     msgprintf(MSG_FORCE, "\n");
-    meldungen_uebergeben(cryptalgostr(ai->cryptalgo),1);
-    
+    meldungen_uebergeben(cryptalgostr(ai->cryptalgo),1); 
     return 0;
 }
 
@@ -128,7 +128,6 @@ int archinfo_show_fshead(cdico *dicofshead, int fsid)
         snprintf(fsuuid, sizeof(fsuuid), "%016llX", (long long unsigned int)temp64);
     else if (dico_get_string(dicofshead, 0, FSYSHEADKEY_FSUUID, buffer, sizeof(buffer))==0 && strlen(buffer)==36)
         snprintf(fsuuid, sizeof(fsuuid), "%s", buffer);
-    
     msgprintf(MSG_FORCE, "===================== filesystem information ====================\n");
     msgprintf(MSG_FORCE, "Filesystem id in archive: \t%ld\n", (long)fsid);
     msgprintf(MSG_FORCE, "Filesystem format: \t\t%s\n", fsbuf);
@@ -139,6 +138,9 @@ int archinfo_show_fshead(cdico *dicofshead, int fsid)
     msgprintf(MSG_FORCE, "Space used in filesystem: \t%s (%lld bytes)\n", format_size(fsbytesused, buffer, sizeof(buffer), 'h'), (long long)fsbytesused);
     msgprintf(MSG_FORCE, "\n");
     meldungen_uebergeben(fsorigdev,2);
-   
+    werte_uebergeben(200,15);
     return 0;
 }
+
+
+

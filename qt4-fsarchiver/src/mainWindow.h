@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2010, 2011 Hihin Ruslan und Dieter Baum.  All rights reserved.
+ * 
+* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -21,6 +21,9 @@
 #include "ui_fsarchiverMain.h"
 #include "thread.h"
 
+#include <QDialog>
+#include <QMap>
+
 using namespace std;
 
 
@@ -32,21 +35,25 @@ class MWindow : public QMainWindow,
 public:
    MWindow();
    ~MWindow() {}
+   //int show_flag = 0; Zugriff auf eine Variable von beispielsweise net.cpp
    int Root_Auswertung();
+   int is_running();
    QString Zeit_auslesen();
    QString mtab_einlesen(QString partition_if_home);
+   QString identify_save_part(QString save_partition);
    QString beschreibungstext(QString partitiontext, QString text, int zip, int row);
    int is_mounted (char* dev_path);
    int questionMessage(QString frage); 
    QString bit_version();
-         
+   QString UUID_auslesen(int row);
+        
 public slots: 
    void folder_einlesen();
    void save_button();
-               
+                    
 protected slots:
-   void ViewProzent();
    void esc_end();
+   void ViewProzent();
    int testDateiName(string endung);
    int savePartition();
    int restorePartition();
@@ -70,19 +77,26 @@ protected slots:
    void eingabe_net_save();
    void eingabe_net_restore();
    void chkkey();
+   void chkhidden();
+   void chkGB();
    QString kernel_version();
-   QString ubuntu_version();
+   QString linux_version();
    QString mountpoint(QString uuid);
    QString format(float zahl);
- 
+   void pid_ermitteln();
+   void del_mediafolder();
+   void clone_save();
+   void clone_save_net();
+     
 private:
     QDirModel *dirModel;
     QItemSelectionModel *selModel;
     QLabel *questionLabel;
     Thread thread1;
     Thread thread2;
-    QTimer *timer;   
-
+    QTimer *timer;  
+    
+    
 private slots:    
    void startThread1();
    void thread1Ready();
@@ -91,4 +105,12 @@ private slots:
      
 };
 #endif
+
+
+
+
+
+
+
+
 

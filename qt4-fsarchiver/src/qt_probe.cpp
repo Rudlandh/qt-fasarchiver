@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2011 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -81,7 +81,7 @@ int qt_probe()
             {
 		partition[i][0] = partlist_getinfo(temp, sizeof(temp), &blkdev[i], 0), strlen(partlist_getinfo(temp, sizeof(temp), &blkdev[i], 0));
                 // qDebug() << " partition[i][0]" << partition[i][0] << partition[i][1]  << partition[i][3] ;
-                if (partition[i][0] != "" && partition[i][0] != "ramzswap0" && partition[i][0] != "" && partition[i][0] != "loop0"){
+                if (partition[i][0] != "" && partition[i][0] != "ramzswap0" && partition[i][0] != "" && partition[i][0] != "loop0" && partition[i][0] != "" && partition[i][0] != "zram0"){
                    j = j + 1;
                 //Daten in ein Array übernehmen vielleicht für einen bessere Formatierung im Listfeld
                   //Device
@@ -105,6 +105,14 @@ int qt_probe()
     return 0;
 
 }
+
+
+
+
+
+
+
+
 
 
 

@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=qt4-fsarchiver
-Comment=Backup/Restore partition, directory or MBR
-Comment[de]=Speichern/Wiederherstellen der Partition, Verzeichnis oder MBR
-Comment[ru]=Сохранение-удаление разделов, каталогов и MBR
-Exec=qt4-fsarchiver
-Icon=qt4-fsarchiver.png
+Name[de_DE]=qt4-fsarchiver
+Comment=Qt GUI for fsarchiver
+Exec=sudo qt4-fsarchiver
+Icon=/usr/share/app-install/icons/harddrive.png
 Terminal=true
 Type=Application
-Categories=Qt;System;Filesystem;
+Categories=GNOME;GTK;Utility;
 StartupNotify=true
+

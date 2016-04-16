@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2010 Dieter Baum.  All rights reserved.
+ * 
+* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -32,8 +32,9 @@ public:
 public slots:
 	int folder_dir_path_einlesen();
         void treeview_show();
-        
+              
 private:
+    //QFileSystemModel *model;
     QDirModel *dirModel;
     QItemSelectionModel *selModel;
     QDirModel *dirModel1;
@@ -54,8 +55,9 @@ protected slots:
     void keyPressEvent(QKeyEvent *event);
     int questionMessage(QString frage);
     void esc_end();
-    void bit();
-        
+    void pid_ermitteln();
+    void chkhidden();
+              
 private slots:    
    void startThread1();
    void thread1Ready();
@@ -65,3 +67,11 @@ private slots:
 };
 
 #endif
+
+
+
+
+
+
+
+

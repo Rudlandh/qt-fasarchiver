@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -47,3 +47,6 @@ int  strlist_count(cstrlist *l);
 int  strlist_show(cstrlist *l);
 
 #endif // __STRLIST_H__
+
+
+

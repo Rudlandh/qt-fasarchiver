@@ -13,5 +13,9 @@
         <file>images/setting.png</file>
         <file>images/applications-internet.png</file>
         <file>images/applications-internet-ein.png</file>
+        <file>images/clone1.png</file>
+        <file>images/dir.png</file>
+        <file>images/file.png</file>
+        <file>images/cdtoparent.png</file>
     </qresource>
 </RCC>

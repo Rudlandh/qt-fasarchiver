@@ -30,10 +30,13 @@
    <property name="geometry">
     <rect>
      <x>375</x>
-     <y>410</y>
+     <y>415</y>
      <width>321</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>Start the backup or the restore of a folder.</string>
    </property>
    <property name="text">
     <string extracomment="Verzeichnis sichern/zurückschreiben">Save/restore directory</string>
@@ -61,6 +64,9 @@
      <height>18</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Select the folder to be backed up or restored.</string>
+   </property>
    <property name="text">
     <string extracomment="zu sicherndes Verzeichnis:">Saved directory</string>
    </property>
@@ -86,6 +92,9 @@
      <width>291</width>
      <height>18</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>Directory in which the folder is backed up or from the recovery file is removed.</string>
    </property>
    <property name="text">
     <string extracomment="Ort (Pfad) der Sicherung:">Location (path) of backup:</string>
@@ -367,7 +376,7 @@ Files/directories:</string>
    <property name="geometry">
     <rect>
      <x>634</x>
-     <y>370</y>
+     <y>355</y>
      <width>61</width>
      <height>27</height>
     </rect>
@@ -377,7 +386,7 @@ Files/directories:</string>
    <property name="geometry">
     <rect>
      <x>370</x>
-     <y>360</y>
+     <y>350</y>
      <width>251</width>
      <height>41</height>
     </rect>
@@ -458,6 +467,9 @@ backup key</string>
       <height>23</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>Same backup files are overwritten without prior consultation.</string>
+    </property>
     <property name="text">
      <string extracomment="vorhandene Sicherung überschreiben">Overwrite existing backup</string>
     </property>
@@ -466,15 +478,31 @@ backup key</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>100</y>
-      <width>231</width>
-      <height>41</height>
+      <y>105</y>
+      <width>321</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>The directory will be written back to the original path</string>
     </property>
     <property name="text">
      <string extracomment="Sicherung an den Ursprungsort zurückschreiben">Backup restore to the Origin</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QCheckBox" name="chk_hidden">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>390</y>
+     <width>321</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>show hidden directories/files</string>
+   </property>
   </widget>
  </widget>
  <resources>

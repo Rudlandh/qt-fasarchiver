@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -21,7 +21,7 @@
 struct s_dico;
 struct s_strlist;
 
-int jfs_mkfs(struct s_dico *d, char *partition);
+int jfs_mkfs(struct s_dico *d, char *partition, char *fsoptions);
 int jfs_getinfo(struct s_dico *d, char *devname);
 int jfs_mount(char *partition, char *mntbuf, char *fsbuf, int flags, char *mntinfo);
 int jfs_get_reqmntopt(char *partition, struct s_strlist *reqopt, struct s_strlist *badopt);
@@ -129,3 +129,6 @@ struct jfs_superblock {
 };
 
 #endif // __FS_JFS_H__
+
+
+

@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2010, 2011 Dieter Baum.  All rights reserved.
+ * 
+* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -22,25 +22,29 @@ extern int dialog_auswertung;
 QStringList items_kerne;
 QStringList items_zip;
 QStringList items_language; 
+QStringList items_network;
 
 DialogSetting::DialogSetting(QWidget *parent)
 {
-	
         setupUi(this); // this sets up GUI
 	connect( cmd_save, SIGNAL( clicked() ), this, SLOT( setting_save())); 
         connect( cmd_cancel, SIGNAL( clicked() ), this, SLOT(close()));
         //items_language << tr("German", "Deutsch") << tr("English", "Englisch") ;
-        items_language << tr("German", "Deutsch") << tr("English", "Englisch") << tr("Russia", "Russisch") ;
+        items_language << tr("German", "Deutsch") << tr("English", "Englisch") << tr("Russian", "Russisch") << tr("Spanish", "Spanisch") << tr("Italian", "Italienisch") << tr("Chinese", "Chinesisch");
+        items_language << tr("Dutch", "Niederländisch") << tr("Japanese", "Japanisch") ;
         cmb_language->addItems (items_language);
-        items_kerne << "1" << "2" << "3" << "4" <<  "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12" ;
+         items_kerne << "1" << "2" << "3" << "4" <<  "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12" << "13" << "14" << "15" << "16" ;
         cmb_Kerne->addItems (items_kerne);
    	items_kerne.clear();
-        items_zip << tr("lzo") << tr("gzip fast") << tr("gzip standard") << tr("qzip best") <<  tr("bzip2 fast");
+        items_zip << tr("lzo", "lzo") << tr("gzip fast","gzip fast") << tr("gzip standard","gzip standard") << tr("qzip best","qzip best") <<  tr("bzip2 fast","bzip2 fast");
    	cmb_zip->addItems (items_zip);
    	items_zip.clear();
-   	items_zip << tr("bzip2 good") << tr("lzma fast") << tr("lzma medium") << tr("lzma best");
+   	items_zip << tr("bzip2 good", "bzip2 good") << tr("lzma fast","lzma fast") << tr("lzma medium","lzma medium") << tr("lzma best","lzma best");
    	cmb_zip->addItems (items_zip);
    	items_zip.clear();
+        items_network << tr("Samba") << tr("SSH") << tr("NFS");
+   	cmb_network->addItems (items_network);
+   	items_network.clear();
         QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
         setting.beginGroup("Basiseinstellungen");
         int auswertung = setting.value("Sprache").toInt(); 
@@ -49,7 +53,11 @@ DialogSetting::DialogSetting(QWidget *parent)
         cmb_zip -> setCurrentIndex(auswertung); 
         auswertung = setting.value("Kerne").toInt();
         cmb_Kerne -> setCurrentIndex(auswertung-1); 
+        auswertung = setting.value("Network").toInt();
+        cmb_network -> setCurrentIndex(auswertung-1); 
         auswertung = setting.value("overwrite").toInt();
+        //chk_ssh->setChecked(Qt::Checked);
+        //chk_sshfs->setChecked(Qt::Checked);
         if (auswertung ==1)
            chk_file->setChecked(Qt::Checked); 
         auswertung = setting.value("tip").toInt();
@@ -70,6 +78,21 @@ DialogSetting::DialogSetting(QWidget *parent)
         auswertung = setting.value("save").toInt();
         if (auswertung ==1)
            chk_datesave->setChecked(Qt::Checked);
+        auswertung = setting.value("pbr").toInt();
+        if (auswertung ==1)
+           chk_pbr->setChecked(Qt::Checked);
+        auswertung = setting.value("ssh").toInt();
+        if (auswertung ==1)
+           chk_ssh->setChecked(Qt::Checked);
+        auswertung = setting.value("sshfs").toInt();
+        if (auswertung ==1)
+           chk_sshfs->setChecked(Qt::Checked);
+        auswertung = setting.value("showPrg").toInt();
+        if (auswertung ==1)
+           chk_prg->setChecked(Qt::Checked);
+        auswertung = setting.value("hidden").toInt();
+	if (auswertung ==1)
+           chk_hidden->setChecked(Qt::Checked);
         setting.endGroup();
 }        
 
@@ -82,9 +105,19 @@ void DialogSetting:: setting_save()
      	setting.setValue("Kerne",cmb_Kerne->currentText());
      else
         setting.setValue("Kerne","1");
+    // if (cmb_language->currentIndex() == 2)
+    //    QMessageBox::about(this,tr("Note", "Hinweis"),
+    //     	tr("The Russian translation is not completely.\n", "Die russische Übersetzung ist nicht komplett.\n"));
+     if (cmb_language->currentIndex() >= 6){
+        QMessageBox::about(this,tr("Note", "Hinweis"),
+         	tr("The translation is in progress. Please choose another language\n", "Die  Übersetzung ist in Arbeit. Wählen Sie eine andere Sprache\n"));
+        return;
+     }
      setting.setValue("Sprache",cmb_language->currentIndex()+1);
      int zip = cmb_zip->currentIndex();
      setting.setValue("Kompression",zip);
+     int net = cmb_network->currentIndex()+1;
+     setting.setValue("Network",net);
      state = chk_file->checkState();
      if (state == Qt::Checked) 
             setting.setValue("overwrite",1);
@@ -120,8 +153,41 @@ void DialogSetting:: setting_save()
             setting.setValue("save",1);
      else
             setting.setValue("save",0);
+     state = chk_pbr->checkState();
+     if (state == Qt::Checked) 
+            setting.setValue("pbr",1);
+     else
+            setting.setValue("pbr",0);
+     state = chk_ssh->checkState();
+     if (state == Qt::Checked) 
+            setting.setValue("ssh",1);
+     else
+            setting.setValue("ssh",0);
+     state = chk_sshfs->checkState();
+     if (state == Qt::Checked) 
+            setting.setValue("sshfs",1);
+     else
+            setting.setValue("sshfs",0);
+     state = chk_prg->checkState();
+     if (state == Qt::Checked) 
+            setting.setValue("showPrg",1);
+     else
+            setting.setValue("showPrg",0);
+     state = chk_hidden->checkState();
+     if (state == Qt::Checked) 
+            setting.setValue("hidden",1);
+     else
+            setting.setValue("hidden",0);	
      setting.endGroup();
      QMessageBox::about(this,tr("Note", "Hinweis"),
          tr("The settings have been saved. Be restarted, the program modified the language setting.","Die Einstellungen wurden gespeichert. Bei geänderter Spracheinstellung muss das Programm neu gestartet werden.\n"));
 }
+
+
+
+
+
+
+
+
 

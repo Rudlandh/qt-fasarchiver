@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -531,7 +531,7 @@ int get_parent_dir_time_attrib(char *filepath, char *parentdirbuf, int bufsize, 
 
 int stats_show(cstats stats, int fsid)
 {
-    /* msgprintf(MSG_FORCE, "Statistics for filesystem %d\n", fsid);
+    msgprintf(MSG_FORCE, "Statistics for filesystem %d\n", fsid);
     msgprintf(MSG_FORCE, "* files successfully processed:....regfiles=%lld, directories=%lld, "
         "symlinks=%lld, hardlinks=%lld, specials=%lld\n", 
         (long long)stats.cnt_regfile, (long long)stats.cnt_dir, (long long)stats.cnt_symlink, 
@@ -540,18 +540,17 @@ int stats_show(cstats stats, int fsid)
         "symlinks=%lld, hardlinks=%lld, specials=%lld\n", 
         (long long)stats.err_regfile, (long long)stats.err_dir, (long long)stats.err_symlink, 
         (long long)stats.err_hardlink, (long long)stats.err_special);
-    */
-    werte_uebergeben((long long)stats.cnt_regfile,6);
+   
+    werte_uebergeben((long long)stats.cnt_regfile,6); 
     werte_uebergeben((long long)stats.cnt_dir,7);
-    werte_uebergeben((long long)stats.cnt_symlink,8);
-    werte_uebergeben((long long)stats.cnt_hardlink,9);
-    werte_uebergeben((long long)stats.cnt_special,10);
-    
-    werte_uebergeben((long long)stats.err_regfile,1);
-    werte_uebergeben((long long)stats.err_dir,2);
-    werte_uebergeben((long long)stats.err_symlink,3);
+    werte_uebergeben((long long)stats.cnt_symlink,8); 
+    werte_uebergeben((long long)stats.cnt_hardlink,9); 
+    werte_uebergeben((long long)stats.cnt_special,10);   
+    werte_uebergeben((long long)stats.err_regfile,12); 
+    werte_uebergeben((long long)stats.err_dir,13); 
+    werte_uebergeben((long long)stats.err_symlink,14); 
     werte_uebergeben((long long)stats.err_hardlink,5);
-    werte_uebergeben((long long)stats.err_special,11);
+    werte_uebergeben((long long)stats.err_special,11); 
     return 0;
 }
 
@@ -622,4 +621,7 @@ int get_path_to_volume(char *newvolbuf, int bufsize, char *basepath, long curvol
     
     return 0;
 }
+
+
+
 

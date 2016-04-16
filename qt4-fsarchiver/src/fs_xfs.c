@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -34,7 +34,7 @@
 #include "strlist.h"
 #include "error.h"
 
-int xfs_mkfs(cdico *d, char *partition)
+int xfs_mkfs(cdico *d, char *partition, char *fsoptions)
 {
     char command[2048];
     char buffer[2048];
@@ -48,6 +48,9 @@ int xfs_mkfs(cdico *d, char *partition)
     }
     
     memset(options, 0, sizeof(options));
+
+    strlcatf(options, sizeof(options), " %s ", fsoptions);
+
     if (dico_get_string(d, 0, FSYSHEADKEY_FSLABEL, buffer, sizeof(buffer))==0 && strlen(buffer)>0)
         strlcatf(options, sizeof(options), " -L '%.12s' ", buffer);
     
@@ -179,3 +182,6 @@ int xfs_get_reqmntopt(char *partition, cstrlist *reqopt, cstrlist *badopt)
 
     return 0;
 }
+
+
+

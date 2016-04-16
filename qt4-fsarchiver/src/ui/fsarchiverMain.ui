@@ -23,6 +23,9 @@
       <height>18</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>Select the partition to be backed up or restored.</string>
+    </property>
     <property name="locale">
      <locale language="English" country="UnitedStates"/>
     </property>
@@ -39,6 +42,9 @@
       <height>18</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>Directory in which the partition is backed up or from the recovery file is removed.</string>
+    </property>
     <property name="locale">
      <locale language="English" country="UnitedStates"/>
     </property>
@@ -54,6 +60,9 @@
       <width>351</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>Start the backup of a partition.</string>
     </property>
     <property name="text">
      <string>Stored partitions</string>
@@ -91,7 +100,7 @@
       <x>370</x>
       <y>185</y>
       <width>380</width>
-      <height>271</height>
+      <height>240</height>
      </rect>
     </property>
     <attribute name="headerDefaultSectionSize">
@@ -134,7 +143,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>302</y>
+      <y>303</y>
       <width>351</width>
       <height>26</height>
      </rect>
@@ -149,6 +158,9 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string>Start restore a partition.</string>
+    </property>
     <property name="text">
      <string>Partition restore</string>
     </property>
@@ -157,7 +169,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>282</y>
+      <y>283</y>
       <width>291</width>
       <height>18</height>
      </rect>
@@ -354,9 +366,9 @@ files/directories:</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>77</y>
+      <y>60</y>
       <width>351</width>
-      <height>201</height>
+      <height>220</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -368,8 +380,8 @@ files/directories:</string>
     <widget class="QComboBox" name="cmb_zip">
      <property name="geometry">
       <rect>
-       <x>180</x>
-       <y>160</y>
+       <x>185</x>
+       <y>185</y>
        <width>161</width>
        <height>27</height>
       </rect>
@@ -379,8 +391,8 @@ files/directories:</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>110</y>
-       <width>271</width>
+       <y>137</y>
+       <width>290</width>
        <height>41</height>
       </rect>
      </property>
@@ -395,9 +407,9 @@ cores for to be used fsarchiver:</string>
     <widget class="QComboBox" name="cmb_kerne">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>130</y>
-       <width>51</width>
+       <x>300</x>
+       <y>145</y>
+       <width>45</width>
        <height>27</height>
       </rect>
      </property>
@@ -406,7 +418,7 @@ cores for to be used fsarchiver:</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>150</y>
+       <y>175</y>
        <width>161</width>
        <height>41</height>
       </rect>
@@ -425,6 +437,9 @@ setting:</string>
        <height>23</height>
       </rect>
      </property>
+     <property name="toolTip">
+      <string>Notes to the backup is written to a file</string>
+     </property>
      <property name="text">
       <string>Notes to  the backup</string>
      </property>
@@ -432,8 +447,8 @@ setting:</string>
     <widget class="QLineEdit" name="lineKey">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>60</y>
+       <x>225</x>
+       <y>58</y>
        <width>121</width>
        <height>26</height>
       </rect>
@@ -443,10 +458,13 @@ setting:</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>30</y>
+       <y>28</y>
        <width>341</width>
        <height>23</height>
       </rect>
+     </property>
+     <property name="toolTip">
+      <string>Same backup files are overwritten without prior consultation</string>
      </property>
      <property name="text">
       <string>available backup overwrite</string>
@@ -456,27 +474,69 @@ setting:</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>90</y>
+       <y>88</y>
        <width>251</width>
        <height>23</height>
       </rect>
      </property>
      <property name="text">
-      <string>Stock Split on DVD size</string>
+      <string>Stock Split on size:</string>
      </property>
     </widget>
     <widget class="QCheckBox" name="chk_key">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>50</y>
+       <y>51</y>
        <width>221</width>
-       <height>41</height>
+       <height>35</height>
       </rect>
+     </property>
+     <property name="toolTip">
+      <string/>
      </property>
      <property name="text">
       <string>Encrypt 
 backup key</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chk_pbr">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>114</y>
+       <width>261</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>PBR is first block of any bootable partition</string>
+     </property>
+     <property name="text">
+      <string extracomment="PBR sichern">Save PBR</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cmb_GB">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>90</y>
+       <width>51</width>
+       <height>27</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>318</x>
+       <y>95</y>
+       <width>21</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>GB</string>
      </property>
     </widget>
    </widget>
@@ -508,7 +568,7 @@ backup key</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>30</y>
+       <y>20</y>
        <width>165</width>
        <height>40</height>
       </rect>
@@ -522,16 +582,32 @@ with fsarchiver</string>
      <property name="geometry">
       <rect>
        <x>165</x>
-       <y>30</y>
+       <y>20</y>
        <width>195</width>
        <height>40</height>
       </rect>
+     </property>
+     <property name="toolTip">
+      <string/>
      </property>
      <property name="text">
       <string extracomment="Partition mit fs-Archiver * zurückschreiben">Restore partition
 with fsarchiver</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QCheckBox" name="chk_hidden">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>430</y>
+      <width>361</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Show hidden directories and files</string>
+    </property>
    </widget>
    <zorder>pushButton_partition</zorder>
    <zorder>pushButton_folder</zorder>
@@ -547,9 +623,13 @@ with fsarchiver</string>
    <zorder>frame</zorder>
    <zorder>frame_2</zorder>
    <zorder>groupBox</zorder>
+   <zorder>chk_hidden</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
+   <property name="toolTip">
+    <string/>
+   </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
@@ -567,6 +647,7 @@ with fsarchiver</string>
    <addaction name="action_dir_restore"/>
    <addaction name="action_partition_save_net"/>
    <addaction name="action_partition_restore_net"/>
+   <addaction name="action_CloneDrive"/>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -592,6 +673,8 @@ with fsarchiver</string>
     <addaction name="separator"/>
     <addaction name="action_dir_save"/>
     <addaction name="action_dir_restore"/>
+    <addaction name="separator"/>
+    <addaction name="actionClone_HD"/>
    </widget>
    <widget class="QMenu" name="menu_Einstellungen">
     <property name="title">
@@ -663,7 +746,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/mbr_save.png</normaloff>:/src/images/mbr_save.png</iconset>
    </property>
    <property name="text">
-    <string>Save MBR</string>
+    <string>Save MBR/GPT</string>
    </property>
   </action>
   <action name="action_mbr_restore">
@@ -672,7 +755,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/mbr_restore.png</normaloff>:/src/images/mbr_restore.png</iconset>
    </property>
    <property name="text">
-    <string>Restore MBR</string>
+    <string>Restore MBR/GPT</string>
    </property>
   </action>
   <action name="action_dir_restore">
@@ -708,7 +791,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/applications-internet.png</normaloff>:/src/images/applications-internet.png</iconset>
    </property>
    <property name="text">
-    <string>Save a parttion on network</string>
+    <string>Save a partition/directorie on network</string>
    </property>
   </action>
   <action name="action_partition_restore_net">
@@ -717,7 +800,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/applications-internet-ein.png</normaloff>:/src/images/applications-internet-ein.png</iconset>
    </property>
    <property name="text">
-    <string>Restore a parttion on network</string>
+    <string>Restore a partition/directorie on network</string>
    </property>
   </action>
   <action name="breakProcess">
@@ -727,6 +810,39 @@ with fsarchiver</string>
    </property>
    <property name="text">
     <string>breakprocess</string>
+   </property>
+  </action>
+  <action name="action_CloneDrive">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/clone1.png</normaloff>:/src/images/clone1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clone Drive HD-Image save/restore </string>
+   </property>
+  </action>
+  <action name="action_CloneDrive_net">
+   <property name="text">
+    <string>HD-Image save/restore on network</string>
+   </property>
+  </action>
+  <action name="actionClone_HD">
+   <property name="icon">
+    <iconset resource="../icon.qrc">
+     <normaloff>:/src/images/clone1.png</normaloff>:/src/images/clone1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clone HD, HD-Image built and restore</string>
+   </property>
+  </action>
+  <action name="action_Save_directories_on_network">
+   <property name="text">
+    <string>Save directories on network</string>
+   </property>
+  </action>
+  <action name="action_Restore_directories_from_network">
+   <property name="text">
+    <string>Restore directories from network</string>
    </property>
   </action>
  </widget>

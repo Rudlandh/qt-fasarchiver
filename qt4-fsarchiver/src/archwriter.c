@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -37,6 +37,7 @@
 #include "comp_gzip.h"
 #include "comp_bzip2.h"
 #include "error.h"
+#include "connect_c_cpp.h"
 
 #define FSA_SMB_SUPER_MAGIC 0x517B
 #define FSA_CIFS_MAGIC_NUMBER 0xFF534D42
@@ -210,6 +211,7 @@ int archwriter_write_buffer(carchwriter *ai, struct s_writebuf *wb)
                 "If the archive is being written to a FAT filesystem, you may have reached \n"
                 "the maximum filesize that it can handle (in general 2 GB)\n", 
                 format_size(freebytes, textbuf, sizeof(textbuf), 'h'));
+            werte_uebergeben (109,4);    
             return -1;
         }
         else // another error
@@ -428,3 +430,6 @@ int archwriter_dowrite_header(carchwriter *ai, struct s_headinfo *headinfo)
     writebuf_destroy(wb);
     return 0;
 }
+
+
+

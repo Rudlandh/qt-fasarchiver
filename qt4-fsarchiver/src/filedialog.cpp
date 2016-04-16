@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2010, 2011 Dieter Baum.  All rights reserved.
+ * 
+* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -59,10 +59,11 @@ void FileDialog::file_save()
         extern QString folder_file_;
         QString text;
       	QString filename = folder_file_;
-        if (filename .isEmpty())
+        if (filename.isEmpty())
    		return;
 	QFile file(filename);
-        if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) 
+        //if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) 
+        if (!file.open(QIODevice::ReadWrite | QIODevice::Text)) 
            {
              QMessageBox::about(this,tr("Note", "Hinweis"),
               tr("Instructions for partition were not recorded written to the file.\n", "Die Hinweise zur Partition wurden nicht in eine Datei geschrieben.\n"));
@@ -84,7 +85,6 @@ void FileDialog::file_read()
         	if (file.open(QIODevice::ReadOnly | QIODevice::Text)) 
                {
                textEdit->setPlainText(file.readAll());
-//textEdit->setPlainText("Hallo");
                }
  	  }
   }
@@ -97,3 +97,11 @@ return  tr("hello", "hallo");
 void FileDialog::werte_uebergeben(QString wert) {
 	wort = wert;
 }
+
+
+
+
+
+
+
+

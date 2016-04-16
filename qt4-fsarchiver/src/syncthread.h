@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -27,10 +27,10 @@ int get_abort(); // returns true if threads must exit because an error or signal
 bool get_interrupted(); // returns true if either abort is true of stopfillqueue is true
 
 // say to the thread that is filling the queue to stop
-// say to the thread that is filling der queue kann weiter gefüllt werden
-void set_stopfillqueue_false();
 void set_stopfillqueue();
 bool get_stopfillqueue();
+// say to the thread that is filling der queue kann weiter gefüllt werden
+void set_stopfillqueue_false();
 
 // secondary threads counter
 void inc_secthreads();
@@ -42,3 +42,6 @@ int get_secthreads();
 extern u8 g_fsbitmap[FSA_MAX_FSPERARCH];
 
 #endif // __SYNCTHREAD_H__
+
+
+

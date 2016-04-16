@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2010-2011 Hihin Ruslan, Dieter Baum.  All rights reserved.
+ * 
+* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -39,12 +39,13 @@
 #include <gettext.h>
 
 using namespace std;
-uid_t my_uid, my_euid, my_gid, my_egid; // experement mit uid
+// experement mit uid: uid_t my_uid, my_euid, my_gid, my_egid; 
 
 FILE * g_fDebug; // debug file
 QString folder_file_;
 int dialog_auswertung;
-int anzahl_disk;
+int btrfs_flag;
+int show_flag = 0;
 QString parameter[15];
 QString add_part[100];
 
@@ -52,13 +53,14 @@ int main(int argc, char *argv[])
 {
 
 //   setuid(500);
-
+/*
    my_euid=geteuid();   // experement
    my_uid=getuid();
    my_gid=getegid();   // experement
    my_egid=getgid();
  
    setuid(my_uid);     // experement
+*/
 
    /* Set locale via LC_LL.  */
    setlocale (LC_ALL, "");
@@ -70,6 +72,12 @@ int main(int argc, char *argv[])
    language[0] = "de_DE";
    language[1] = "en_EN";
    language[2] = "ru_RU";
+   language[3] = "es_ES";
+   language[4] = "it_IT";
+   language[5] = "ch_CH";
+   language[6] = "nl_NL";
+   language[7] = "jp_JP";
+        
    QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
    setting.beginGroup("Basiseinstellungen");
    int auswertung = setting.value("Sprache").toInt();
@@ -95,10 +103,9 @@ int main(int argc, char *argv[])
      QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8")); 
      QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8")); 
      MWindow window;
-   
+  
    if (window.Root_Auswertung() != 10)
-       
-   {
+    {
    	window.show();
    	return app.exec();
   	}
@@ -109,4 +116,12 @@ int main(int argc, char *argv[])
   // qDebug() << window.Root_Auswertung();
  }
   
+
+
+
+
+
+
+
+
 

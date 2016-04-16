@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -33,7 +33,7 @@ struct s_ntfsinfo
     u64 uuid;
 };
 
-int ntfs_mkfs(struct s_dico *d, char *partition);
+int ntfs_mkfs(struct s_dico *d, char *partition, char *fsoptions);
 int ntfs_getinfo(struct s_dico *d, char *devname);
 int ntfs_mount(char *partition, char *mntbuf, char *fsbuf, int flags, char *mntinfo);
 int ntfs_get_reqmntopt(char *partition, struct s_strlist *reqopt, struct s_strlist *badopt);
@@ -42,3 +42,6 @@ int ntfs_umount(char *partition, char *mntbuf);
 int ntfs_test(char *devname);
 
 #endif // __FS_NTFS_H__
+
+
+

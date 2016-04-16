@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -76,10 +76,9 @@ typedef struct s_devinfo
     bool        mountedbyfsa;
     int         fstype;
 } cdevinfo;
-
-int meldeflag = 0;
-long long anzahlfile = 0;
-float progress = 0;
+   int meldeflag = 0; 
+	long long anzahlfile = 0; 
+	float progress = 0;
 
 int createar_obj_regfile_multi(csavear *save, cdico *header, char *relpath, char *fullpath, u64 filesize)
 {
@@ -268,7 +267,9 @@ int createar_item_xattr(csavear *save, char *root, char *relpath, struct stat64 
     int ret=0;
     int pos;
     int len;
-    
+    int compare;
+    char comparepath[] = "/Windows/winsxs/";
+
     // init
     concatenate_paths(fullpath, sizeof(fullpath), root, relpath);
     attrcnt=0;
@@ -294,7 +295,12 @@ int createar_item_xattr(csavear *save, char *root, char *relpath, struct stat64 
             continue; // ignore the current xattr
         }
         errno=0;
+         //vergleichen ob es sich um eine Datei,Folder handelt die/das im Verzeichnis /windows/winsxs vorhanden ist.
+        compare = strstr(fullpath, comparepath);
         valsize=lgetxattr(fullpath, buffer+pos, valbuf, attrsize);
+        //if (errno!=ENOATTR && compare > 0)
+        if (errno!=ENOATTR ) 
+                errno = 61;
         msgprintf(MSG_VERB2, "            xattr:lgetxattr(%s,%s)=%d\n", relpath, buffer+pos, valsize);
         if (valsize>=0)
         {
@@ -333,6 +339,8 @@ int createar_item_winattr(csavear *save, char *root, char *relpath, struct stat6
     u64 attrcnt;
     int ret=0;
     int i;
+    int compare;
+    char comparepath[] = "/Windows/winsxs/";
     
     char *winattr[]= {"system.ntfs_acl", "system.ntfs_attrib", "system.ntfs_reparse_data", "system.ntfs_times", "system.ntfs_dos_name", NULL};
     
@@ -344,17 +352,23 @@ int createar_item_winattr(csavear *save, char *root, char *relpath, struct stat6
     {
         if ((strcmp(relpath, "/")==0) && (strcmp(winattr[i], "system.ntfs_dos_name")==0)) // the root inode does not require a short name
             continue;
-        
-        errno=0;
+         errno=0;
+        //vergleichen ob es sich um eine Datei,Folder handelt die/das im Verzeichnis /windows/winsxs vorhanden ist.
+        compare = strstr(fullpath, comparepath);
         if ((attrsize=lgetxattr(fullpath, winattr[i], NULL, 0)) < 0) // get the size of the attribute
         {
+            //if (errno!=ENOATTR && compare > 0)
+            if (errno!=ENOATTR)   
+                errno = 61;
             if (errno!=ENOATTR)
-            {
+            {  
+		//printf( "fullpath, comparepath, compare, errno %s %s  %i %i\n", fullpath, comparepath, compare, errno);  
                 sysprintf("           winattr:lgetxattr(%s,%s): returned negative attribute size\n", relpath, winattr[i]); // output if there are any other error
                 ret=-1;
             }
             continue; // ignore the current xattr
         }
+   
         msgprintf(MSG_VERB2, "            winattr:file=[%s], attrcnt=%d, name=[%s], size=%ld\n", relpath, (int)attrcnt, winattr[i], (long)attrsize);
         if ((attrsize>0) && (attrsize>65535LL))
         {
@@ -418,7 +432,6 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
     *objtype=OBJTYPE_NULL;
     *filecost=FSA_COST_PER_FILE; // fixed cost per file
     concatenate_paths(fullpath, sizeof(fullpath), root, relpath);
-    
     if (meldeflag  == 0) { 
            // Anzeige im Terminal 
            msgprintf(MSG_FORCE, "Es müssen insgesamt %.5lld  Verzeichnisse bzw. Dateien gesichert werden.\r", (long long)save->objectid);
@@ -946,6 +959,7 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
     int res;
     int i;
     meldeflag = 0;
+    
     res=generic_get_mntinfo(devinfo->devpath, &readwrite, curmntdir, sizeof(curmntdir), optbuf, sizeof(optbuf), fsbuf, sizeof(fsbuf));
     if (res==0) // partition is already mounted
     {
@@ -1051,7 +1065,7 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
         }
         if (tmptype==-1)
         {   errprintf("cannot mount partition [%s]: filesystem may not be supported by either fsarchiver or the kernel.\n", devinfo->devpath);
-            werte_uebergeben (108,4); 
+            werte_uebergeben (110,3); // Partitionsart wird nicht unterstützt
             return -1;
         }
         devinfo->fstype=tmptype;
@@ -1394,3 +1408,6 @@ do_create_success:
     archwriter_destroy(&save.ai);
     return ret;
 }
+
+
+

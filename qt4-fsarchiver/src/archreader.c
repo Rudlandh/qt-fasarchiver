@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -121,14 +121,12 @@ int archreader_open(carchreader *ai)
 
 int archreader_close(carchreader *ai)
 {
-    int res;
-    
     assert(ai);
     
     if (ai->archfd<0)
         return -1;
     
-    res=lockf(ai->archfd, F_ULOCK, 0);
+    lockf(ai->archfd, F_ULOCK, 0);
     close(ai->archfd);
     ai->archfd=-1;
 
@@ -545,3 +543,6 @@ int archreader_read_block(carchreader *ai, cdico *in_blkdico, int in_skipblock, 
     
     return 0;
 }
+
+
+

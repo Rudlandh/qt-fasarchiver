@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
- *
-  * Copyright (C) 2010, 2011 Hihin Ruslan und Dieter Baum.  All rights reserved.
+ * 
+* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -31,7 +31,10 @@ class NetEin : public QDialog, private Ui::Eingabe_Net
 public:
 	NetEin(QWidget *parent = 0);
         int list_net(QString flag);
+        int list_net_ssh(QString flag);
         QString Namen_holen(); 
+	QString user_holen(); 
+	QString key_holen(); 
      
 public slots:
         
@@ -39,6 +42,7 @@ public slots:
 protected slots:
         void save_net ();
    	void restore_net ();
+        void save_clone ();
         QString hostname();
         QString IP(QString adresse);
         void listWidget_show();
@@ -53,8 +57,16 @@ private:
 	QDirModel *dirModel;
 	
 private slots:
-	void end();
-   int go();
+	int end();
+        int go();
 };
 
 #endif
+
+
+
+
+
+
+
+

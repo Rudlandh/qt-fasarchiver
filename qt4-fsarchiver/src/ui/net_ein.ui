@@ -48,6 +48,9 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Username and password are stored.</string>
+   </property>
    <property name="text">
     <string extracomment="Daten speichern">Save data</string>
    </property>
@@ -73,6 +76,9 @@
      <width>151</width>
      <height>27</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_go">
@@ -108,7 +114,7 @@
     </rect>
    </property>
    <property name="text">
-    <string extracomment="Im Netz erreichbare Rechner:">Achievable in the network computer:</string>
+    <string extracomment="Im Netz erreichbare Rechner:">Achievable network computer:</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_net">
@@ -162,6 +168,16 @@
   <zorder>chk_password</zorder>
   <zorder>pushButton_end</zorder>
  </widget>
+ <tabstops>
+  <tabstop>listWidget_net</tabstop>
+  <tabstop>txt_user</tabstop>
+  <tabstop>txt_key</tabstop>
+  <tabstop>pushButton_go</tabstop>
+  <tabstop>pushButton_end</tabstop>
+  <tabstop>pushButton_net</tabstop>
+  <tabstop>chk_password</tabstop>
+  <tabstop>chk_datesave</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2010, 2011 Dieter Baum.  All rights reserved.
+ * 
+* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -23,13 +23,21 @@ class Thread : public QThread {
    Q_OBJECT
 public:
    Thread();
-   void setValues( int anzahl_, int dummy);
+   void setValues( int anzahl_, QString dummy);
    //int progressbar();
 protected:
    void run();
 private:
-   int anzahl, qdummy;
-  
+   int anzahl;
+   QString qdummy; 
 };
 #endif
+
+
+
+
+
+
+
+
 

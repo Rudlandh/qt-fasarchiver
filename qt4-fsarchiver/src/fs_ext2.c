@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -51,18 +51,25 @@ struct s_features
 };
 
 // TODO: check the real mke2fs version that supports the features
-struct s_features mkfeatures[] = // cf e2fsprogs-1.41.4/lib/e2p/feature.c
+struct s_features mkfeatures[] = // cf e2fsprogs-1.42.3/lib/e2p/feature.c
 {
     {"has_journal",  FSA_EXT3_FEATURE_COMPAT_HAS_JOURNAL,     E2P_FEATURE_COMPAT,      EXTFSTYPE_EXT3, PROGVER(1,39,0)},
+    {"ext_attr",     FSA_EXT2_FEATURE_COMPAT_EXT_ATTR,        E2P_FEATURE_COMPAT,      EXTFSTYPE_EXT2, PROGVER(1,40,5)},
     {"resize_inode", FSA_EXT2_FEATURE_COMPAT_RESIZE_INODE,    E2P_FEATURE_COMPAT,      EXTFSTYPE_EXT2, PROGVER(1,39,0)},
     {"dir_index",    FSA_EXT2_FEATURE_COMPAT_DIR_INDEX,       E2P_FEATURE_COMPAT,      EXTFSTYPE_EXT2, PROGVER(1,33,0)},
     {"filetype",     FSA_EXT2_FEATURE_INCOMPAT_FILETYPE,      E2P_FEATURE_INCOMPAT,    EXTFSTYPE_EXT2, PROGVER(1,16,0)},
     {"extent",       FSA_EXT4_FEATURE_INCOMPAT_EXTENTS,       E2P_FEATURE_INCOMPAT,    EXTFSTYPE_EXT4, PROGVER(1,41,0)},
     {"journal_dev",  FSA_EXT3_FEATURE_INCOMPAT_JOURNAL_DEV,   E2P_FEATURE_INCOMPAT,    EXTFSTYPE_EXT3, PROGVER(1,39,0)},
     {"flex_bg",      FSA_EXT4_FEATURE_INCOMPAT_FLEX_BG,       E2P_FEATURE_INCOMPAT,    EXTFSTYPE_EXT4, PROGVER(1,41,0)},
+    {"meta_bg",      FSA_EXT2_FEATURE_INCOMPAT_META_BG,       E2P_FEATURE_INCOMPAT,    EXTFSTYPE_EXT2, PROGVER(1,39,0)},
+    {"mmp",          FSA_EXT4_FEATURE_INCOMPAT_MMP,           E2P_FEATURE_INCOMPAT,    EXTFSTYPE_EXT4, PROGVER(1,42,0)},
     {"large_file",   FSA_EXT2_FEATURE_RO_COMPAT_LARGE_FILE,   E2P_FEATURE_RO_INCOMPAT, EXTFSTYPE_EXT2, PROGVER(1,40,7)},
+    {"huge_file",    FSA_EXT4_FEATURE_RO_COMPAT_HUGE_FILE,    E2P_FEATURE_RO_INCOMPAT, EXTFSTYPE_EXT4, PROGVER(1,41,0)},
     {"sparse_super", FSA_EXT2_FEATURE_RO_COMPAT_SPARSE_SUPER, E2P_FEATURE_RO_INCOMPAT, EXTFSTYPE_EXT2, PROGVER(1,8,0)},
     {"uninit_bg",    FSA_EXT4_FEATURE_RO_COMPAT_GDT_CSUM,     E2P_FEATURE_RO_INCOMPAT, EXTFSTYPE_EXT4, PROGVER(1,41,0)},
+    {"dir_nlink",    FSA_EXT4_FEATURE_RO_COMPAT_DIR_NLINK,    E2P_FEATURE_RO_INCOMPAT, EXTFSTYPE_EXT4, PROGVER(1,41,0)},
+    {"extra_isize",  FSA_EXT4_FEATURE_RO_COMPAT_EXTRA_ISIZE,  E2P_FEATURE_RO_INCOMPAT, EXTFSTYPE_EXT4, PROGVER(1,41,0)},
+    {"bigalloc",     FSA_EXT4_FEATURE_RO_COMPAT_BIGALLOC,     E2P_FEATURE_RO_INCOMPAT, EXTFSTYPE_EXT4, PROGVER(1,42,0)},
     {NULL,           0,                                       0,                       0,              0},
 };
 
@@ -77,19 +84,19 @@ char *format_fstype(int fstype)
     }
 }
 
-int ext2_mkfs(cdico *d, char *partition)
+int ext2_mkfs(cdico *d, char *partition, char *fsoptions)
 {
-    return extfs_mkfs(d, partition, EXTFSTYPE_EXT2);
+    return extfs_mkfs(d, partition, EXTFSTYPE_EXT2, fsoptions);
 }
 
-int ext3_mkfs(cdico *d, char *partition)
+int ext3_mkfs(cdico *d, char *partition, char *fsoptions)
 {
-    return extfs_mkfs(d, partition, EXTFSTYPE_EXT3);
+    return extfs_mkfs(d, partition, EXTFSTYPE_EXT3, fsoptions);
 }
 
-int ext4_mkfs(cdico *d, char *partition)
+int ext4_mkfs(cdico *d, char *partition, char *fsoptions)
 {
-    return extfs_mkfs(d, partition, EXTFSTYPE_EXT4);
+    return extfs_mkfs(d, partition, EXTFSTYPE_EXT4, fsoptions);
 }
 
 int extfs_get_fstype_from_compat_flags(u32 compat, u32 incompat, u32 ro_compat)
@@ -130,7 +137,7 @@ int extfs_check_compatibility(u64 compat, u64 incompat, u64 ro_compat)
     return 0;
 }
 
-int extfs_mkfs(cdico *d, char *partition, int extfstype)
+int extfs_mkfs(cdico *d, char *partition, int extfstype, char *fsoptions)
 {
     cstrlist strfeatures;
     u64 features_tab[3];
@@ -171,6 +178,8 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype)
     
     // filesystem revision: good-old-rev or dynamic
     strlcatf(options, sizeof(options), " -r %d ", (int)fsextrevision);
+
+    strlcatf(options, sizeof(options), " %s ", fsoptions);
     
     // ---- set the advanced filesystem settings from the dico
     if (dico_get_string(d, 0, FSYSHEADKEY_FSLABEL, buffer, sizeof(buffer))==0 && strlen(buffer)>0)
@@ -564,3 +573,6 @@ u64 check_prog_version(char *prog)
     
     return PROGVER(x,y,z);
 }
+
+
+

@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2010, 2011 Dieter Baum.  All rights reserved.
+ * 
+* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -34,12 +34,22 @@ public slots:
         int questionMessage(QString frage);
         void sektor_auslesen();
         void Ubuntuversion_auslesen();
+        int is_gpt(QString partition_efi);
+        void disk_exist();
+        void disk_art();
+
 private:
     QDirModel *dirModel;
     QItemSelectionModel *selModel;
     QLabel *questionLabel;
     string mtab_einlesen(string partition_if_home);
-	
 };
-
 #endif
+
+
+
+
+
+
+
+

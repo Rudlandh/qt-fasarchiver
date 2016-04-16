@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2010 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2015 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -62,10 +62,9 @@ typedef struct s_extractar
     u64         cost_global;
     u64         cost_current;
 } cextractar;
-
 long long anzahlfile; 
-float progress; 
-int zeitflag = 0;
+	float progress; 
+	int zeitflag = 0;
 
 // returns true if this file of a parent directory has been excluded
 int is_filedir_excluded(char *relpath)
@@ -126,7 +125,7 @@ int convert_argv_to_strdicos(cstrdico *dicoargv[], int argc, char *cmdargv[])
             return -1;
         
         // parse argument and write (key,value) pairs in the strdico object
-        if ((strdico_set_valid_keys(tmpdico, "id,dest,mkfs")!=0) ||
+        if ((strdico_set_valid_keys(tmpdico, "id,dest,mkfs,mkfsopt")!=0) ||
             (strdico_parse_string(tmpdico, cmdargv[i])!=0))
         {   strdico_destroy(tmpdico);
             return -1;
@@ -183,7 +182,8 @@ int extractar_listing_print_file(cextractar *exar, int objtype, char *relpath)
     msgprintf(MSG_VERB1, "-[%.2d]%s[%s] %s\n", exar->fsid, strprogress, get_objtype_name(objtype), relpath);
     // Terminal Ausgabe 
     	msgprintf(MSG_FORCE, "       %.0f%%       \r ", progress); 
-		werte_uebergeben(progress,1);
+	werte_uebergeben(progress,1);
+    
     return 0;
 }
 
@@ -215,7 +215,7 @@ int extractar_restore_attr_xattr(cextractar *exar, u32 objtype, char *fullpath, 
             ret=-1;
             continue;
         }
-        
+       
         if ((res=lsetxattr(fullpath, xattrname, xattrvalue, xattrdatasize, 0))!=0)
         {   sysprintf("xattr:lsetxattr(%s,%s) failed\n", relpath, xattrname);
             ret=-1;
@@ -256,7 +256,7 @@ int extractar_restore_attr_windows(cextractar *exar, u32 objtype, char *fullpath
             ret=-1;
             continue;
         }
-        
+/* Um Fehlermeldungen beim Zurückschreiben zu vermeiden        
         if ((res=lsetxattr(fullpath, xattrname, xattrvalue, xattrdatasize, 0))!=0)
         {
             sysprintf("winattr:lsetxattr(%s,%s) failed\n", relpath, xattrname);
@@ -265,7 +265,7 @@ int extractar_restore_attr_windows(cextractar *exar, u32 objtype, char *fullpath
         else // success
         {
             msgprintf(MSG_VERB2, "            winattr:lsetxattr(%s, %s)=%d\n", relpath, xattrname, res);
-        }
+        } */
     }
     
     return ret;
@@ -404,7 +404,6 @@ int extractar_restore_obj_symlink(cextractar *exar, char *fullpath, char *relpat
         msgprintf(MSG_DEBUG1, "LINK: symlink=[%s], target=[%s] (normal symlink)\n", relpath, buffer);
         if (symlink(buffer, fullpath)<0)
         {   sysprintf("symlink(%s, %s) failed\n", buffer, fullpath);
-            werte_uebergeben (107,4);
             goto extractar_restore_obj_symlink_err;
         }
     }
@@ -1172,7 +1171,7 @@ int extractar_read_mainhead(cextractar *exar, cdico **dicomainhead)
         
         if (memcmp(md5sumar, md5sumnew, 16)!=0)
         {   errprintf("you have to provide the password which was used to create archive, cannot decrypt the test buffer.\n");
-             werte_uebergeben (103,4); 
+            werte_uebergeben (103,4);
             return -1;
         }
     }
@@ -1188,6 +1187,7 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
     char magic[FSA_SIZEOF_MAGIC+1];
     char mountinfo[4096];
     char partition[1024];
+    char mkfsoptions[1024];
     char tempbuf[1024];
     cdico *dicobegin=NULL;
     cdico *dicoend=NULL;
@@ -1233,7 +1233,7 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
     if (res==0)
     {   errprintf("partition [%s] is mounted on [%s].\ncannot restore an archive to a partition "
             "which is mounted, unmount it first: umount %s\n", partition, mntbuf, mntbuf);
-         werte_uebergeben (105,4);
+            werte_uebergeben (105,4); 
         return -1;
     }
     
@@ -1258,6 +1258,12 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
     {   errprintf("dico_get_string(FSYSHEADKEY_FILESYSTEM) failed\n");
         return -1;
     }
+
+    // read make file system options from dicocmdline
+    if (strdico_get_string(dicocmdline, mkfsoptions, sizeof(mkfsoptions), "mkfsopt")!=0)
+    {
+        msgprintf(MSG_VERB2,"strdico_get_string(dicocmdline, 'mkfsopt') doesn't exist\n");
+    }
        
     if (dico_get_u64(dicofs, 0, FSYSHEADKEY_BYTESTOTAL, &fsbytestotal)!=0)
     {   errprintf("dico_get_string(FSYSHEADKEY_BYTESTOTAL) failed\n");
@@ -1270,6 +1276,7 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
     }
     
     msgprintf(MSG_VERB2, "filesystem=[%s]\n", filesystem);
+    msgprintf(MSG_VERB2, "filesystemoptions=[%s]\n", mkfsoptions);
     msgprintf(MSG_VERB2, "fsbytestotal=[%s]\n", format_size(fsbytestotal, text, sizeof(text), 'h'));
     msgprintf(MSG_VERB2, "fsbytesused=[%s]\n", format_size(fsbytesused, text, sizeof(text), 'h'));
     
@@ -1280,11 +1287,11 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
     }
     
     // ---- make the filesystem
-    if (filesys[fstype].mkfs(dicofs, partition)!=0)
+    if (filesys[fstype].mkfs(dicofs, partition, mkfsoptions)!=0)
     {   errprintf("cannot format the filesystem %s on partition %s\n", filesystem, partition);
         return -1;
     }
-    
+
     // ---- mount the new filesystem
     mkdir_recursive(mntbuf);
     generate_random_tmpdir(mntbuf, sizeof(mntbuf), 0);
@@ -1449,7 +1456,7 @@ int oper_restore(char *archive, int argc, char **argv, int oper)
         case ARCHTYPE_FILESYSTEMS:
             if (oper==OPER_RESTDIR)
             {   errprintf("this archive does not contain simple directories, cannot use \"restdir\". Try \"restfs\" instead.\n");
-                werte_uebergeben(104,4); 
+                 werte_uebergeben(104,4); 
                 goto do_extract_error;
             }
             break;
@@ -1599,7 +1606,7 @@ do_extract_success:
     while (get_secthreads()>0 && queue_get_end_of_queue(&g_queue)==false)
         queue_destroy_first_item(&g_queue);
         // Damit die wiederholte Wiederherstellung der Verzeichnisse und Partitionen klappt!!
-			set_stopfillqueue_false();
+	 set_stopfillqueue_false();
     msgprintf(MSG_DEBUG1, "THREAD-MAIN2: queue is now empty\n");
     // the queue is empty, so thread_compress should now exit
     
@@ -1631,3 +1638,6 @@ do_extract_success:
     archreader_destroy(&exar.ai);
     return ret;
 }
+
+
+
