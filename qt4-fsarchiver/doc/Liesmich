@@ -8,7 +8,7 @@ Francois Dupoux entwickelte das Basisprogramm fsarchiver, Hihin Ruslan hat das P
 
 qt4-fsarchiver ist ein Programm mit einer grafischen Oberfläche zur einfachen Bedienung des Archivierungsprogramms fsarchiver.
 Qt4-fsarchiver wurde mit diesen Programmpunkten erweiter:
-Sichern und Wiederherstellen von Partitionen, Klonen von Festplatten, Abbilder von Festplatten erstellen und zurückschreiben.
+Sichern und Wiederherstellen von Partitionen, Klonen von Festplatten, Abbilder von Festplatten und Partitionen erstellen und zurückschreiben.
 
 Der Quellcode kann auf allen auf Debian basierenden System, auf Suse und Fedora installiert werden.
 Für Debian, Ubuntu und Linux-Mint sind deb-Pakete, für Suse und Fedora sind rpm-Pakete vorhanden.
@@ -30,7 +30,7 @@ Bei Fedora müssen Sie eingeben: qmake-qt4 && make && sudo make install
 
 Installation des Programms aus den DEB-Paketen:
 Ein Doppelklick auf die DEB-Datei installiert in der Regel das Programm.
-Eventuell müssen Sie im Terminal mit root-Rechten dieses Kommando eingeben: dpkg -i qt4-fsarchiver-0.6.19-15.deb, wobei die Versionsnummer angepasst werden muss
+Eventuell müssen Sie im Terminal mit root-Rechten dieses Kommando eingeben: dpkg -i qt4-fsarchiver-0.6.19-16.deb, wobei die Versionsnummer angepasst werden muss
 
 Programmaufruf:
 Meistens werden Starter unter Zubehör installiert. Mit Doppelklick wird qt4-fsarchiver gestartet.
@@ -79,19 +79,19 @@ Die Sicherungen können auch verschlüsselt vorgenommen werde. Dabei muss die Sc
 
 Die Sicherung von eingehängten Partitionen ist, nach einer Abfrage ob dies gewünscht wird, möglich. Das Wiederherstellen von Partitionen kann nur dann vorgenommen werden, wenn die Partition ausgehängt ist. Die Wiederherstellung einer Root- oder Homepartition ist mit der Live-CD qt4-fsarchiver (http://sourceforge.net/projects/qt4-fsarchiver/files/Live-CD/") möglich. Auf der bekannten SystemRescueCD ist das Programm fsarchiver ebenfalls vorhanden, so dass diese Live-CDs auch zum Zurückschreiben von mit qt4-fsarchiver erstellten Archiven geeignet ist. 
 
-Bei der Sicherung des MBR muss lediglich (bei mehreren Festplatten) die Festplatte und das Sicherungsverzeichnis ausgewählt werden. Der verborgene Bereich der Festplatte zwischen dem Ende des MBR und Beginn der ersten Partition wird mitgesichert. Beim Zurückschreiben des MBR kann bei mehreren Festplatten die Festplatte ausgewählt werden, deren MBR zurück geschrieben werden soll. Zusätzlich hat man die Wahl, ob der Bootloaderbereich, die Partitionstabelle oder der verborgene Bereich der Festplatte wiederhergestellt werden soll. Die letzte Option ist dann von Bedeutung, wenn beispielsweise auf dem Rechner Ubuntu Maverick installiert ist und eine Lucid Version zurück gesichert wird. In solch einem Fall wird Grub zerstört und der Rechner ist nicht mehr bootbar. Die Wiederherstellung des verborgenen Bereiches einer Lucid-Installation verhindert dies.
+Bei der Sicherung des MBR/GPT muss lediglich (bei mehreren Festplatten) die Festplatte und das Sicherungsverzeichnis ausgewählt werden. Der verborgene Bereich der Festplatte zwischen dem Ende des MBR und Beginn der ersten Partition wird mitgesichert. Beim Zurückschreiben des MBR/GPT kann bei mehreren Festplatten die Festplatte ausgewählt werden, deren MBR/GPT zurück geschrieben werden soll. Zusätzlich hat man die Wahl, ob der Bootloaderbereich, die Partitionstabelle oder der verborgene Bereich der Festplatte wiederhergestellt werden soll. Die letzte Option ist dann von Bedeutung, wenn beispielsweise auf dem Rechner Ubuntu Maverick installiert ist und eine Lucid Version zurück gesichert wird. In solch einem Fall wird Grub zerstört und der Rechner ist nicht mehr bootbar. Die Wiederherstellung des verborgenen Bereiches einer Lucid-Installation verhindert dies.
 
 qt4-fsarchiver kann ecryptfs verschlüsselte Home-Verzeichnisse sichern und wiederherstellen. Das ist unabhängig davon, ob das Home-Verzeichnis in einer eigenen Partition oder innerhalb des Wurzelverzeichnisses gespeichert ist.
 
 Mit TrueCrypt verschlüsselte Partitionen können nicht gesichert werden.
 
-Die Sicherung einer Windows Fat-Partitionen wird nicht unterstützt. Es kann allerdings auf eine FAT-Partition gesichert werden. Die Sicherungsdatei wird gesplittet, wenn die Dateigröße 4GB überschreitet.
+Die Sicherung einer Windows Fat-Partitionen ist nur als Image möglich (Aktionen>Festplattenimage erzeugen/zurückspielen). Es kann allerdings auf eine FAT-Partition gesichert werden. Die Sicherungsdatei wird gesplittet, wenn die Dateigröße 4GB überschreitet.
 
 Klonen der Festplatte: Man wählt im linken Verzeichnisfeld die existierende Festplatte aus, die geklont werden soll und im rechten Verzeichnisfeld die Festplatte aus, die neu erzeugt werden soll. Dann den Button "Festplatte klonen" betätigen.
-Abbild der Festplatte erzeugen:
-Man wählt im linken Verzeichnisfeld die existierende Festplatte aus, von der ein Abbild erzeugt werden soll. Sicherungsverzeichnis auswählen. Zusätzlich auswählen, ob das Image komprimiert werden soll. Dann den Button "Festplatte Abbild erstellen" betätigen.
+Abbild der Festplatte/Partitionen erzeugen:
+Man wählt im linken Verzeichnisfeld die existierende Festplatte/Partition aus, von der ein Abbild erzeugt werden soll. Sicherungsverzeichnis auswählen. Zusätzlich auswählen, ob das Image komprimiert werden soll. Dann den Button "Festplatte Abbild erstellen" betätigen.
 Abbild der Festplatte zurückschreiben:
-Man wählt im linken Verzeichnisfeld die Festplatte aus, von deren ein Abbild zurückgeschrieben werden soll. Vorhandene Sicherungsdatei (Endung: img.fsa oder gz.fsa) auswählen. Dann den Button "Festplatte Abbild zurückschreiben" betätigen.
+Man wählt im linken Verzeichnisfeld die Festplatte/Partition aus, von deren ein Abbild zurückgeschrieben werden soll. Vorhandene Sicherungsdatei (Endung: img.fsa oder gz.fsa bei Festplatten, gz.part.fsa oder part.fsa bei Partitionen) auswählen. Dann den Button "Festplatte/partition Abbild zurückschreiben" betätigen.
 
 Beim Starten von qt4-fsarchiver werden alle nicht eingebundenen Partionen unter /media/sda..., /media/sdb... eingebunden und sind somit leicht auf der Oberfläche erreichbar. Das Verzeichnis, in dem die Sicherung gespeichert werden soll beziehungsweise das Verzeichnis, in dem die gesicherte Partition abgelegt ist, ist somit in qt4-fsarchiver unter /media/sd.... ansprechbar. Die zu sichernde oder wiederherzustellende Partition wird beim Start der Sicherung oder Wiederherstellung selbsttätig ausgehängt. Beim erneuten Aufruf von qt4-fsarchiver wird die gerade gesicherte oder wiederhergestellte Partition wieder eingebunden.
 

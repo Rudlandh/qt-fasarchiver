@@ -5,136 +5,237 @@
 <context>
     <name>DialogClone</name>
     <message>
-        <location filename="../src/clone.cpp" line="71"/>
-        <location filename="../src/clone.cpp" line="350"/>
+        <location filename="../src/clone.cpp" line="77"/>
+        <location filename="../src/clone.cpp" line="515"/>
         <source>Clone Harddrive</source>
         <comment>Festplatte klonen</comment>
         <translation>کلون حردراوی</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="158"/>
-        <location filename="../src/clone.cpp" line="218"/>
+        <location filename="../src/clone.cpp" line="179"/>
+        <location filename="../src/clone.cpp" line="304"/>
+        <location filename="../src/clone.cpp" line="366"/>
         <source>already saved</source>
         <comment>bereits gesichert</comment>
         <translation>پہلے ہی محفوظ</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="185"/>
-        <location filename="../src/clone.cpp" line="190"/>
-        <location filename="../src/clone.cpp" line="196"/>
-        <location filename="../src/clone.cpp" line="232"/>
-        <location filename="../src/clone.cpp" line="236"/>
-        <location filename="../src/clone.cpp" line="242"/>
-        <location filename="../src/clone.cpp" line="293"/>
-        <location filename="../src/clone.cpp" line="297"/>
-        <location filename="../src/clone.cpp" line="305"/>
-        <location filename="../src/clone.cpp" line="338"/>
-        <location filename="../src/clone.cpp" line="422"/>
-        <location filename="../src/clone.cpp" line="575"/>
-        <location filename="../src/clone.cpp" line="577"/>
-        <location filename="../src/clone.cpp" line="579"/>
-        <location filename="../src/clone.cpp" line="581"/>
-        <location filename="../src/clone.cpp" line="608"/>
-        <location filename="../src/clone.cpp" line="610"/>
+        <location filename="../src/clone.cpp" line="183"/>
+        <location filename="../src/clone.cpp" line="187"/>
+        <location filename="../src/clone.cpp" line="194"/>
+        <location filename="../src/clone.cpp" line="234"/>
+        <location filename="../src/clone.cpp" line="238"/>
+        <location filename="../src/clone.cpp" line="263"/>
+        <location filename="../src/clone.cpp" line="331"/>
+        <location filename="../src/clone.cpp" line="336"/>
+        <location filename="../src/clone.cpp" line="342"/>
+        <location filename="../src/clone.cpp" line="382"/>
+        <location filename="../src/clone.cpp" line="386"/>
+        <location filename="../src/clone.cpp" line="392"/>
+        <location filename="../src/clone.cpp" line="443"/>
+        <location filename="../src/clone.cpp" line="447"/>
+        <location filename="../src/clone.cpp" line="470"/>
+        <location filename="../src/clone.cpp" line="503"/>
+        <location filename="../src/clone.cpp" line="668"/>
+        <location filename="../src/clone.cpp" line="821"/>
+        <location filename="../src/clone.cpp" line="823"/>
+        <location filename="../src/clone.cpp" line="825"/>
+        <location filename="../src/clone.cpp" line="830"/>
+        <location filename="../src/clone.cpp" line="837"/>
+        <location filename="../src/clone.cpp" line="844"/>
+        <location filename="../src/clone.cpp" line="871"/>
+        <location filename="../src/clone.cpp" line="873"/>
+        <location filename="../src/clone.cpp" line="878"/>
+        <location filename="../src/clone.cpp" line="884"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>نوٹ</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="185"/>
-        <location filename="../src/clone.cpp" line="232"/>
-        <location filename="../src/clone.cpp" line="293"/>
+        <location filename="../src/clone.cpp" line="331"/>
+        <location filename="../src/clone.cpp" line="443"/>
         <source>You must select a hard drive.</source>
         <comment>Sie müssen eine Festplatte auswählen.
 </comment>
         <translation>آپ ایک ہارڈ ڈرائیو منتخب کریں ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="190"/>
+        <location filename="../src/clone.cpp" line="336"/>
         <source>The selected hard drive is too small.</source>
         <comment>Die gewählte Festplatte ist zu klein.
 </comment>
         <translation>منتخب ہارڈ ڈرائیو بہت چھوٹا ہے ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="196"/>
-        <location filename="../src/clone.cpp" line="242"/>
-        <location filename="../src/clone.cpp" line="305"/>
+        <location filename="../src/clone.cpp" line="194"/>
+        <location filename="../src/clone.cpp" line="263"/>
+        <location filename="../src/clone.cpp" line="342"/>
+        <location filename="../src/clone.cpp" line="392"/>
+        <location filename="../src/clone.cpp" line="470"/>
         <source>On the hard drive exist a root or a home partition. You must need a live-CD.</source>
         <comment>Auf der Festplatte ist eine root- oder home Partition. Sie müssen eine Live-CD benutzen.
 </comment>
         <translation>ہارڈ ڈرائیو پر ایک جڑ یا ایک گھر تقسیم موجود ہے ۔ آپ ایک لائیو-سی ڈی کی ضرورت چاہیے ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="200"/>
+        <location filename="../src/clone.cpp" line="346"/>
         <source> Do you want really clone the hard drive? All dates on  </source>
         <comment> Wollen Sie wirklich die Festplatte klonen? Alle Daten auf der Festplatte </comment>
         <translation> آپ واقعی ہارڈ ڈرائیو ہے پیوند کاری کریں گے؟ تمام تاریخیں پر  </translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="200"/>
+        <location filename="../src/clone.cpp" line="346"/>
         <source> are deleted!</source>
         <comment> werden gelöscht!</comment>
         <translation> حذف کردیے جاتے ہیں!</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="236"/>
+        <location filename="../src/clone.cpp" line="187"/>
+        <location filename="../src/clone.cpp" line="386"/>
         <source>You must select a folder.</source>
         <comment>Sie müssen ein Verzeichnis auswählen.
 </comment>
         <translation>آپ ایک پوشہ منتخب کریں ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="252"/>
+        <location filename="../src/clone.cpp" line="402"/>
         <source> Do you want really built a image from the hard drive? </source>
         <comment> Wollen Sie wirklich ein Abbild der Festplatte erstellen? </comment>
         <translation>آپ کی ہارڈ ڈرائیو سے ایک تصویر میں واقعی تعمیر چاہیں گے؟</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="279"/>
+        <location filename="../src/clone.cpp" line="229"/>
+        <location filename="../src/clone.cpp" line="429"/>
         <source>already restored</source>
         <comment>bereits zurückgeschrieben</comment>
         <translation>پہلے ہی بحال</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="297"/>
+        <location filename="../src/clone.cpp" line="183"/>
+        <location filename="../src/clone.cpp" line="382"/>
+        <source>You must select a partition.</source>
+        <comment>Sie müssen eine Partition auswählen.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="202"/>
+        <source> Do you want really built a image from a partition? </source>
+        <comment> Wollen Sie wirklich ein Abbild einer Partition erstellen? </comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="234"/>
+        <source>You must select a partition.</source>
+        <comment>Sie müssen eine Partitiom auswählen.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="238"/>
+        <source>You must select a part.fsa file or an part.fsa.gz file.</source>
+        <comment>Sie müssen eine part.fsa- oder eine part.fsa.gz-Datei auswählen.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="256"/>
+        <location filename="../src/clone.cpp" line="463"/>
+        <source>Partition to restore </source>
+        <comment>Die wiederherzustellende Partition </comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="257"/>
+        <location filename="../src/clone.cpp" line="464"/>
+        <source> does not coincide with the saved  </source>
+        <comment> stimmt nicht mit der gesicherten </comment>
+        <translation> does not coincide with the saved  </translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="257"/>
+        <location filename="../src/clone.cpp" line="464"/>
+        <source> Do you want to continue restore?</source>
+        <comment> überein. Wollen Sie trotzdem die Wiederherstellung durchführen?</comment>
+        <translation>Do you want to continue restore?</translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="272"/>
+        <source> Do you want really restore an image of a partition? </source>
+        <comment> Wollen Sie wirklich ein Abbild einer Partition zurückschreiben? </comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="447"/>
         <source>You must select a gz.fsa file or an img.fsa file.</source>
         <comment>Sie müssen eine gz.fsa- oder eine img.fsa-Datei auswählen.
 </comment>
         <translation>آپ ایک gz.fsa فائل یا img.fsa فائل منتخب کرنا چاہیئے ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="314"/>
+        <location filename="../src/clone.cpp" line="479"/>
         <source> Do you want really restore the image of the hard drive? </source>
         <comment> Wollen Sie wirklich ein Abbild der Festplatte zurückschreiben? </comment>
         <translation> آپ واقعی ہارڈ ڈرائیو کے تصور کی بحالی چاہتے ہیں ۔ </translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="339"/>
+        <location filename="../src/clone.cpp" line="504"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>جی ہاں</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="340"/>
+        <location filename="../src/clone.cpp" line="505"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>نہيں</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="358"/>
+        <location filename="../src/clone.cpp" line="533"/>
         <source>Save Harddrive Image</source>
         <comment>Festplatten Abbild erstellen</comment>
         <translation>حردراوی نقش محفوظ کریں</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="367"/>
+        <location filename="../src/clone.cpp" line="521"/>
+        <location filename="../src/clone.cpp" line="538"/>
+        <location filename="../src/clone.cpp" line="557"/>
+        <source>Exist harddrive</source>
+        <comment>Existierende Festplatte</comment>
+        <translation>حردراوی موجود ہیں:</translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="551"/>
         <source>Restore Harddrive Image</source>
         <comment>Festplatten Abbild zurückschreiben</comment>
         <translation>حردراوی نقش بحال کریں</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="423"/>
+        <location filename="../src/clone.cpp" line="573"/>
+        <source>Save Partition Image</source>
+        <comment>Image einer Partition erstellen</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="575"/>
+        <source>Save Partition Image</source>
+        <comment>Partition Abbild erstellen</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="586"/>
+        <source>Restore Partition Image</source>
+        <comment>Image einer Partition zurückschreiben</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="588"/>
+        <source>Restore Partition Image</source>
+        <comment>Partition Abbild zurückschreiben</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="669"/>
         <source>You have selected a folder. You must select a gz.fsa file.
 </source>
         <comment>Sie haben ein Verzeichnis ausgewählt. Sie müssen eine gz.fsa Datei auswählen
@@ -143,49 +244,101 @@
 </translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="575"/>
+        <location filename="../src/clone.cpp" line="821"/>
         <source>The clone of the hard drive was successfully.</source>
         <comment>Das Klonen der Festplatte war erfolgreich.
 </comment>
         <translation>ہارڈ ڈرائیو کے کلون کامیابی سے تھا ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="577"/>
+        <location filename="../src/clone.cpp" line="823"/>
+        <source>Backing up the image of the hard disk was successful.</source>
+        <comment>Das Sichern des Abbildes der Festplatte war erfolgreich.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="825"/>
+        <source>Backing up the image of a partition was successful.</source>
+        <comment>Die Sichern des Abbildes der Partition war erfolgreich.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="837"/>
+        <source>Backing up the image of the hard disk was not successful.</source>
+        <comment>Die Sichern des Abbildes der Festplatte war nicht erfolgreich.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="844"/>
+        <source>Backing up the image of a partition was not successful.</source>
+        <comment>Die Sichern des Abbildes der Partition war nicht erfolgreich.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="871"/>
+        <source>The restore of the image of the hard disk was successful.</source>
+        <comment>Die Wiederherstellung des Abbildes der Festplatte war erfolgreich.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="873"/>
+        <source>The restore of the image of the partition was successful.</source>
+        <comment>Die Wiederherstellung des Abbildes der Partition war erfolgreich.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="878"/>
+        <source>The restore of the image of the hard disk was not successful.</source>
+        <comment>Die Wiederherstellung des Abbildes der Festplatte war nicht erfolgreich.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clone.cpp" line="884"/>
+        <source>The restore of the image of the partition was not successful.</source>
+        <comment>Die Wiederherstellung des Abbildes der Partition war nicht erfolgreich.
+</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The backup of the image was successfully.</source>
         <comment>Die Sichern des Abbildes war erfolgreich.
 </comment>
-        <translation>تصویر کا پشتارہ کامیابی سے تھا ۔</translation>
+        <translation type="obsolete">تصویر کا پشتارہ کامیابی سے تھا ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="579"/>
+        <location filename="../src/clone.cpp" line="830"/>
         <source>The clone of the hard drive was not successfully.</source>
         <comment>Das Klonen der Festplatte war nicht erfolgreich.
 </comment>
         <translation>ہارڈ ڈرائیو کے کلون کامیابی سے نہیں تھا ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="581"/>
         <source>The backup of the image was not successfully.</source>
         <comment>Die Sichern des Abbildes war nicht erfolgreich.
 </comment>
-        <translation>تصویر کا پشتارہ کامیابی سے نہیں تھا ۔</translation>
+        <translation type="obsolete">تصویر کا پشتارہ کامیابی سے نہیں تھا ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="608"/>
         <source>The restore from the image was successfully.</source>
         <comment>Die Wiederherstellung des Abbildes war erfolgreich.
 </comment>
-        <translation>بحالی تصویر سے کامیابی کے ساتھ تھا ۔</translation>
+        <translation type="obsolete">بحالی تصویر سے کامیابی کے ساتھ تھا ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="610"/>
         <source>The restore from the image was not successfully.</source>
         <comment>Die Wiederherstellung des Abbildes war nicht erfolgreich.
 </comment>
-        <translation>تصویر سے بحالی کامیابی سے نہیں تھا ۔</translation>
+        <translation type="obsolete">تصویر سے بحالی کامیابی سے نہیں تھا ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone.cpp" line="677"/>
+        <location filename="../src/clone.cpp" line="952"/>
         <source>Do you want really break clone, save or restore an image from the partition?</source>
         <comment>Wollen Sie wirklich das Klonen der Festplatte, die Erstellung oder die Wiederherstellung eines Images der Festplatte beenden?</comment>
         <translation>کیا آپ واقعی کلون توڑنے کے لئے، محفوظ کریں یا ایک تصویر سے تقسیم بحال چاہتے ہیں؟</translation>
@@ -194,166 +347,128 @@
 <context>
     <name>DialogClone_net</name>
     <message>
-        <location filename="../src/clone_net.cpp" line="71"/>
-        <location filename="../src/clone_net.cpp" line="353"/>
         <source>Save Harddrive Image</source>
         <comment>Festplatten Abbild erstellen</comment>
-        <translation>حردراوی نقش محفوظ کریں</translation>
+        <translation type="obsolete">حردراوی نقش محفوظ کریں</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="152"/>
-        <location filename="../src/clone_net.cpp" line="156"/>
-        <location filename="../src/clone_net.cpp" line="162"/>
-        <location filename="../src/clone_net.cpp" line="170"/>
-        <location filename="../src/clone_net.cpp" line="237"/>
-        <location filename="../src/clone_net.cpp" line="241"/>
-        <location filename="../src/clone_net.cpp" line="250"/>
-        <location filename="../src/clone_net.cpp" line="290"/>
-        <location filename="../src/clone_net.cpp" line="341"/>
-        <location filename="../src/clone_net.cpp" line="408"/>
-        <location filename="../src/clone_net.cpp" line="523"/>
-        <location filename="../src/clone_net.cpp" line="525"/>
-        <location filename="../src/clone_net.cpp" line="542"/>
-        <location filename="../src/clone_net.cpp" line="544"/>
-        <location filename="../src/clone_net.cpp" line="776"/>
         <source>Note</source>
         <comment>Hinweis</comment>
-        <translation>نوٹ</translation>
+        <translation type="obsolete">نوٹ</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="152"/>
-        <location filename="../src/clone_net.cpp" line="237"/>
         <source>You must select a hard drive.</source>
         <comment>Sie müssen eine Festplatte auswählen.
 </comment>
-        <translation>آپ ایک ہارڈ ڈرائیو منتخب کریں ۔</translation>
+        <translation type="obsolete">آپ ایک ہارڈ ڈرائیو منتخب کریں ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="156"/>
         <source>You must select a folder.</source>
         <comment>Sie müssen ein Verzeichnis auswählen.
 </comment>
-        <translation>آپ ایک پوشہ منتخب کریں ۔</translation>
+        <translation type="obsolete">آپ ایک پوشہ منتخب کریں ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="163"/>
         <source>Please, select the filename of the backup.
 </source>
         <comment>Bitte wählen Sie den Dateinamen der Sicherung aus.
 </comment>
-        <translation>پشتارہ نام مسل کا انتخاب کریں، ۔
+        <translation type="obsolete">پشتارہ نام مسل کا انتخاب کریں، ۔
 </translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="170"/>
-        <location filename="../src/clone_net.cpp" line="250"/>
         <source>On the hard drive exist a root or a home partition. You must need a live-CD.</source>
         <comment>Auf der Festplatte ist eine root- oder home Partition. Sie müssen eine Live-CD benutzen.
 </comment>
-        <translation>ہارڈ ڈرائیو پر ایک جڑ یا ایک گھر تقسیم موجود ہے ۔ آپ ایک لائیو-سی ڈی کی ضرورت چاہیے ۔</translation>
+        <translation type="obsolete">ہارڈ ڈرائیو پر ایک جڑ یا ایک گھر تقسیم موجود ہے ۔ آپ ایک لائیو-سی ڈی کی ضرورت چاہیے ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="182"/>
         <source> Do you want really built a image from the hard drive? </source>
         <comment> Wollen Sie wirklich ein Abbild der Festplatte erstellen? </comment>
-        <translation>آپ کی ہارڈ ڈرائیو سے ایک تصویر میں واقعی تعمیر چاہیں گے؟</translation>
+        <translation type="obsolete">آپ کی ہارڈ ڈرائیو سے ایک تصویر میں واقعی تعمیر چاہیں گے؟</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="241"/>
         <source>You must select a fsa.gz file.</source>
         <comment>Sie müssen eine fsa.gz Datei auswählen.
 </comment>
-        <translation>آپ ایک fsa.gz مسل منتخب کرنا چاہیئے ۔</translation>
+        <translation type="obsolete">آپ ایک fsa.gz مسل منتخب کرنا چاہیئے ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="258"/>
         <source> Do you want really restore the image of the hard drive? </source>
         <comment> Wollen Sie wirklich ein Abbild der Festplatte zurückschreiben? </comment>
-        <translation> آپ واقعی ہارڈ ڈرائیو کے تصور کی بحالی چاہتے ہیں ۔ </translation>
+        <translation type="obsolete"> آپ واقعی ہارڈ ڈرائیو کے تصور کی بحالی چاہتے ہیں ۔ </translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="291"/>
         <source>Can not find a shared directory. The program is terminated.
 </source>
         <comment>Es wurde kein freigegebenes Verzeichnis gefunden. Das Programm kann nicht fortgesetzt werden.
 </comment>
-        <translation>حصہ دارانہ ڈائریکٹری نہیں ڈھونڈ سکتا ۔ اس پروگرام کو ختم کر دیا ہے ۔
+        <translation type="obsolete">حصہ دارانہ ڈائریکٹری نہیں ڈھونڈ سکتا ۔ اس پروگرام کو ختم کر دیا ہے ۔
 </translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="342"/>
         <source>Yes</source>
         <comment>Ja</comment>
-        <translation>جی ہاں</translation>
+        <translation type="obsolete">جی ہاں</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="343"/>
         <source>No</source>
         <comment>Nein</comment>
-        <translation>نہيں</translation>
+        <translation type="obsolete">نہيں</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="362"/>
         <source>Restore Harddrive Image</source>
         <comment>Festplatten Abbild zurückschreiben</comment>
-        <translation>حردراوی نقش بحال کریں</translation>
+        <translation type="obsolete">حردراوی نقش بحال کریں</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="409"/>
         <source>You have selected a folder. You must select a fsa.gz file.
 </source>
         <comment>Sie haben ein Verzeichnis ausgewählt. Sie müssen eine fsa.gz Datei auswählen
 </comment>
-        <translation>آپ ایک فولڈر منتخب کیا ہے ۔ آپ ایک fsa.gz مسل منتخب کرنا چاہیئے ۔
+        <translation type="obsolete">آپ ایک فولڈر منتخب کیا ہے ۔ آپ ایک fsa.gz مسل منتخب کرنا چاہیئے ۔
 </translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="523"/>
         <source>The backup of the image was successfully.</source>
         <comment>Die Sichern des Abbildes war erfolgreich.
 </comment>
-        <translation>تصویر کا پشتارہ کامیابی سے تھا ۔</translation>
+        <translation type="obsolete">تصویر کا پشتارہ کامیابی سے تھا ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="525"/>
         <source>The backup of the image was not successfully.</source>
         <comment>Die Sichern des Abbildes war nicht erfolgreich.
 </comment>
-        <translation>تصویر کا پشتارہ کامیابی سے نہیں تھا ۔</translation>
+        <translation type="obsolete">تصویر کا پشتارہ کامیابی سے نہیں تھا ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="542"/>
         <source>The restore from the image was successfully.</source>
         <comment>Die Wiederherstellung des Abbildes war erfolgreich.
 </comment>
-        <translation>بحالی تصویر سے کامیابی کے ساتھ تھا ۔</translation>
+        <translation type="obsolete">بحالی تصویر سے کامیابی کے ساتھ تھا ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="544"/>
         <source>The restore from the image was not successfully.</source>
         <comment>Die Wiederherstellung des Abbildes war nicht erfolgreich.
 </comment>
-        <translation>تصویر سے بحالی کامیابی سے نہیں تھا ۔</translation>
+        <translation type="obsolete">تصویر سے بحالی کامیابی سے نہیں تھا ۔</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="602"/>
         <source>Do you want really break save or restore an image from the partition?</source>
         <comment>Wollen Sie wirklich die Erstellung oder das Zurückschreiben eines Images der Festplatte beenden?</comment>
-        <translation>کیا آپ واقعی محفوظ توڑنے کے لئے یا ایک تصویر سے تقسیم بحال چاہتے ہیں؟</translation>
+        <translation type="obsolete">کیا آپ واقعی محفوظ توڑنے کے لئے یا ایک تصویر سے تقسیم بحال چاہتے ہیں؟</translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="777"/>
         <source>The network computer </source>
         <comment>Der Netzwerkrechner </comment>
-        <translation>کمپیوٹر نیٹ ورک </translation>
+        <translation type="obsolete">کمپیوٹر نیٹ ورک </translation>
     </message>
     <message>
-        <location filename="../src/clone_net.cpp" line="777"/>
         <source> could not be integrated. The program is aborted
 </source>
         <comment> konnte nicht eingebunden werden. Das Programm wird abgebrochen
 </comment>
-        <translation> انٹیگریٹڈ ہو سکتا نہیں ہے ۔ اس پروگرام کو ساقط کر دیا ہے
+        <translation type="obsolete"> انٹیگریٹڈ ہو سکتا نہیں ہے ۔ اس پروگرام کو ساقط کر دیا ہے
 </translation>
     </message>
 </context>
@@ -532,7 +647,7 @@ backup. key:</translation>
         <location filename="../src/dir.cpp" line="269"/>
         <source>The partition file </source>
         <comment>Die Partitionsdatei </comment>
-        <translation>مسل کی تقسیم</translation>
+        <translation>مسل کی تقسیم </translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="270"/>
@@ -616,25 +731,25 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/dir.cpp" line="492"/>
         <source> files, </source>
         <comment> Dateien, </comment>
-        <translation> مسلیں، </translation>
+        <translation> مسلیں،</translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="439"/>
         <source>  directories, </source>
         <comment> Verzeichnisse, </comment>
-        <translation>ڈائریکٹریاں،</translation>
+        <translation> ڈائریکٹریاں، </translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="439"/>
         <source>  links and </source>
         <comment> Links und </comment>
-        <translation>روابط اور</translation>
+        <translation> روابط اور </translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="439"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
-        <translation>خصوصی کی حمایت نہیں کی گئی ہے ۔</translation>
+        <translation> خصوصی کی حمایت نہیں کی گئی ہے ۔</translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="444"/>
@@ -679,19 +794,19 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/dir.cpp" line="492"/>
         <source> directories, </source>
         <comment> Verzeichnisse, </comment>
-        <translation>ڈائریکٹریاں،</translation>
+        <translation> ڈائریکٹریاں، </translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="492"/>
         <source> links and </source>
         <comment> Links und </comment>
-        <translation>روابط اور</translation>
+        <translation> روابط اور </translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="492"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
-        <translation>خصوصی بحال نہیں کی گئی ہے ۔</translation>
+        <translation> خصوصی بحال نہیں کی گئی ہے ۔</translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="496"/>
@@ -706,7 +821,7 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/dir.cpp" line="509"/>
         <source> files,</source>
         <comment> Dateien, </comment>
-        <translation> مسلیں، </translation>
+        <translation> مسلیں،</translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="511"/>
@@ -1081,7 +1196,7 @@ Die Dateiendung muss .fsa sein</comment>
     <message>
         <location filename="../src/net.cpp" line="129"/>
         <source>lzo</source>
-        <translation>لزو</translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="130"/>
@@ -1137,39 +1252,38 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/net.cpp" line="691"/>
         <location filename="../src/net.cpp" line="696"/>
         <location filename="../src/net.cpp" line="714"/>
-        <location filename="../src/net.cpp" line="768"/>
-        <location filename="../src/net.cpp" line="774"/>
-        <location filename="../src/net.cpp" line="780"/>
-        <location filename="../src/net.cpp" line="786"/>
-        <location filename="../src/net.cpp" line="795"/>
-        <location filename="../src/net.cpp" line="803"/>
-        <location filename="../src/net.cpp" line="808"/>
-        <location filename="../src/net.cpp" line="830"/>
-        <location filename="../src/net.cpp" line="839"/>
-        <location filename="../src/net.cpp" line="846"/>
-        <location filename="../src/net.cpp" line="894"/>
-        <location filename="../src/net.cpp" line="919"/>
-        <location filename="../src/net.cpp" line="926"/>
-        <location filename="../src/net.cpp" line="938"/>
-        <location filename="../src/net.cpp" line="997"/>
-        <location filename="../src/net.cpp" line="1165"/>
-        <location filename="../src/net.cpp" line="1231"/>
-        <location filename="../src/net.cpp" line="1248"/>
-        <location filename="../src/net.cpp" line="1255"/>
-        <location filename="../src/net.cpp" line="1262"/>
-        <location filename="../src/net.cpp" line="1275"/>
-        <location filename="../src/net.cpp" line="1306"/>
-        <location filename="../src/net.cpp" line="1332"/>
-        <location filename="../src/net.cpp" line="1335"/>
-        <location filename="../src/net.cpp" line="1340"/>
-        <location filename="../src/net.cpp" line="1357"/>
-        <location filename="../src/net.cpp" line="1364"/>
-        <location filename="../src/net.cpp" line="1370"/>
-        <location filename="../src/net.cpp" line="1374"/>
-        <location filename="../src/net.cpp" line="1538"/>
-        <location filename="../src/net.cpp" line="1671"/>
-        <location filename="../src/net.cpp" line="1688"/>
-        <location filename="../src/net.cpp" line="1729"/>
+        <location filename="../src/net.cpp" line="769"/>
+        <location filename="../src/net.cpp" line="775"/>
+        <location filename="../src/net.cpp" line="781"/>
+        <location filename="../src/net.cpp" line="787"/>
+        <location filename="../src/net.cpp" line="797"/>
+        <location filename="../src/net.cpp" line="805"/>
+        <location filename="../src/net.cpp" line="810"/>
+        <location filename="../src/net.cpp" line="832"/>
+        <location filename="../src/net.cpp" line="841"/>
+        <location filename="../src/net.cpp" line="848"/>
+        <location filename="../src/net.cpp" line="896"/>
+        <location filename="../src/net.cpp" line="921"/>
+        <location filename="../src/net.cpp" line="928"/>
+        <location filename="../src/net.cpp" line="940"/>
+        <location filename="../src/net.cpp" line="999"/>
+        <location filename="../src/net.cpp" line="1167"/>
+        <location filename="../src/net.cpp" line="1233"/>
+        <location filename="../src/net.cpp" line="1250"/>
+        <location filename="../src/net.cpp" line="1257"/>
+        <location filename="../src/net.cpp" line="1264"/>
+        <location filename="../src/net.cpp" line="1277"/>
+        <location filename="../src/net.cpp" line="1308"/>
+        <location filename="../src/net.cpp" line="1334"/>
+        <location filename="../src/net.cpp" line="1337"/>
+        <location filename="../src/net.cpp" line="1342"/>
+        <location filename="../src/net.cpp" line="1359"/>
+        <location filename="../src/net.cpp" line="1366"/>
+        <location filename="../src/net.cpp" line="1372"/>
+        <location filename="../src/net.cpp" line="1376"/>
+        <location filename="../src/net.cpp" line="1540"/>
+        <location filename="../src/net.cpp" line="1673"/>
+        <location filename="../src/net.cpp" line="1732"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>نوٹ</translation>
@@ -1220,7 +1334,7 @@ Die Dateiendung muss .fsa sein</comment>
     </message>
     <message>
         <location filename="../src/net.cpp" line="520"/>
-        <location filename="../src/net.cpp" line="775"/>
+        <location filename="../src/net.cpp" line="776"/>
         <source>Please, select the filename of the backup.
 </source>
         <comment>Bitte wählen Sie den Dateinamen der Sicherung aus.
@@ -1239,14 +1353,14 @@ Die Dateiendung muss .fsa sein</comment>
     </message>
     <message>
         <location filename="../src/net.cpp" line="551"/>
-        <location filename="../src/net.cpp" line="1166"/>
+        <location filename="../src/net.cpp" line="1168"/>
         <source>The network computer </source>
         <comment>Der Netzwerkrechner </comment>
         <translation>کمپیوٹر نیٹ ورک </translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="551"/>
-        <location filename="../src/net.cpp" line="1166"/>
+        <location filename="../src/net.cpp" line="1168"/>
         <source> could not be integrated. The program is aborted
 </source>
         <comment> konnte nicht eingebunden werden. Das Programm wird abgebrochen
@@ -1258,7 +1372,7 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/net.cpp" line="583"/>
         <source>The system partition to be saved is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Systempartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
-        <translation>محفوظ کرنے کے نظام بٹوار واقع ہے ۔ آپ ایک براہ راست بیک اپ کرنا چاہتے ہیں؟</translation>
+        <translation>The system partition to be saved is mounted. Do you want to do a live backup?</translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="591"/>
@@ -1270,11 +1384,11 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/net.cpp" line="606"/>
         <source>The partition </source>
         <comment>Die Partition </comment>
-        <translation>تقسیم</translation>
+        <translation>The partition </translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="607"/>
-        <location filename="../src/net.cpp" line="940"/>
+        <location filename="../src/net.cpp" line="942"/>
         <source>can not be unmounted. The program is terminated
 </source>
         <comment> kann nicht ausgehängt werden. Das Programm wird abgebrochen
@@ -1284,8 +1398,8 @@ Die Dateiendung muss .fsa sein</comment>
     </message>
     <message>
         <location filename="../src/net.cpp" line="650"/>
-        <location filename="../src/net.cpp" line="840"/>
-        <location filename="../src/net.cpp" line="998"/>
+        <location filename="../src/net.cpp" line="842"/>
+        <location filename="../src/net.cpp" line="1000"/>
         <source>The key length must be between 6 and 64 characters
 </source>
         <comment>Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein
@@ -1297,7 +1411,7 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/net.cpp" line="692"/>
         <source>The partition file </source>
         <comment>Die Partitionsdatei </comment>
-        <translation>مسل کی تقسیم</translation>
+        <translation>مسل کی تقسیم </translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="692"/>
@@ -1325,7 +1439,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="769"/>
+        <location filename="../src/net.cpp" line="770"/>
         <source>No key was given for the decryption
 </source>
         <comment>Es wurde kein Schlüssel für die Entschlüsselung angegeben.
@@ -1334,7 +1448,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="781"/>
+        <location filename="../src/net.cpp" line="782"/>
         <source>Please, select the partition to be written back.
 </source>
         <comment>Bitte wählen Sie die zurück zu schreibende Partition aus.
@@ -1343,7 +1457,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="787"/>
+        <location filename="../src/net.cpp" line="788"/>
         <source>Please, select the directorie to be written back.
 </source>
         <comment>Bitte wählen Sie das zurück zu schreibende Verzeichnis aus.
@@ -1351,7 +1465,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="796"/>
+        <location filename="../src/net.cpp" line="798"/>
         <source>You have chosen the wrong recovery file selected.
 The files should end with. fsa be</source>
         <comment>Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht 
@@ -1360,7 +1474,7 @@ Die Dateiendung muss .fsa sein</comment>
  مسلوں کے ساتھ ختم کرنا چاہیے ۔ fsa ہو</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="803"/>
+        <location filename="../src/net.cpp" line="805"/>
         <source>The file contains a partition backup. The file can not be restored as a directory.
 </source>
         <comment>Die Datei enthält eine Partitionssicherung. Die Datei kann nicht als Verzeichnis zurückgeschrieben werden. 
@@ -1368,7 +1482,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="808"/>
+        <location filename="../src/net.cpp" line="810"/>
         <source>The file contains a directory backup. The file can not be restored as a partition.
 </source>
         <comment>Die Datei enthält eine Verzeichnissicherung. Die Datei kann nicht als Partition zurückgeschrieben werden. 
@@ -1376,7 +1490,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="831"/>
+        <location filename="../src/net.cpp" line="833"/>
         <source>The partition is encrypted. Please enter the key
 </source>
         <comment>Die Partition ist verschlüsselt. Bitte geben Sie den Schlüssel ein
@@ -1385,7 +1499,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="846"/>
+        <location filename="../src/net.cpp" line="848"/>
         <source>They have entered a wrong password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben. 
@@ -1393,25 +1507,25 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>They have entered a wrong password.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="866"/>
+        <location filename="../src/net.cpp" line="868"/>
         <source>Partition to restore the </source>
         <comment>Die wiederherzustellende Partition </comment>
-        <translation>تقسیم کو بحال کرنے کے لیے</translation>
+        <translation>Partition to restore the </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="867"/>
+        <location filename="../src/net.cpp" line="869"/>
         <source> does not coincide with the saved  </source>
         <comment> stimmt nicht mit der gesicherten </comment>
-        <translation>نجات یافتہ کے ساتھ ہم آہنگ ہوتے نہیں</translation>
+        <translation> does not coincide with the saved  </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="867"/>
+        <location filename="../src/net.cpp" line="869"/>
         <source>Do you want to continue restore?</source>
         <comment> überein. Wollen Sie trotzdem die Wiederherstellung durchführen?</comment>
         <translation>Do you want to continue restore?</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="895"/>
+        <location filename="../src/net.cpp" line="897"/>
         <source>The restore was canceled by user
 </source>
         <comment>Das Zurückschreiben wurde vom Benutzer abgebrochen
@@ -1420,13 +1534,13 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="907"/>
+        <location filename="../src/net.cpp" line="909"/>
         <source>There is a file with the contents of the partition boot sector present. Do you want to perform the restoration of the PBR?</source>
         <comment>Es ist eine Datei mit dem Inhalt des Partition Boot Sektors vorhanden. Wollen Sie die Wiederherstellung des PBR durchführen?</comment>
-        <translation>ایک مسل تقسیم بوٹ سیکٹر کی موجودہ مشمولات کے ساتھ موجود ہے ۔ آپ بر کی بحالی سرانجام دہی کے لیے چاہتے ہیں ۔</translation>
+        <translation>There is a file with the contents of the partition boot sector present. Do you want to perform the restoration of the PBR?</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="920"/>
+        <location filename="../src/net.cpp" line="922"/>
         <source>To restore system partition is mounted and can not be restored. Please use a live CD
 </source>
         <comment>Die wiederherzustellende Systempartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
@@ -1435,7 +1549,7 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="927"/>
+        <location filename="../src/net.cpp" line="929"/>
         <source>The restored home partition is mounted and can not be restored. Please use a live CD
 </source>
         <comment>Die wiederherzustellende Homepartition ist eingehängt und kann nicht zurückgeschrieben werden. Benutzen Sie bitte eine Live-CD
@@ -1444,25 +1558,25 @@ Die Dateiendung muss .fsa sein</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="939"/>
+        <location filename="../src/net.cpp" line="941"/>
         <source>The partition</source>
         <comment>Die Partition </comment>
-        <translation>تقسیم</translation>
+        <translation>The partition </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="952"/>
+        <location filename="../src/net.cpp" line="954"/>
         <source>If the existing btrfs partition to be formatted? The new UUID is defined here. If you choose &lt;no&gt;, the UUID remains preserved.</source>
         <comment>Soll die vorhandene btrfs-Partition formatiert werden? Die UUID wird dabei neu festgelegt. Wenn Sie  nein wählen, bleibt die UUID erhalten.</comment>
-        <translation>اگر موجودہ بٹرفس وضع نہیں کی جا کے لیے تقسیم؟ نئے یوواڈ یہاں وضاحت نہیں ہے ۔ اگر آپ &lt;no&gt;چاہتے ہیں، یوواڈ محفوظ رہتا ہے ۔</translation>
+        <translation>اگر موجودہ بٹرفس وضع نہیں کی جا کے لیے تقسیم؟ نئے یوواڈ یہاں وضاحت نہیں ہے ۔ اگر آپ چاہتے ہیں &lt;no&gt;، یوواڈ محفوظ رہتا ہے ۔&lt;/no&gt;</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1031"/>
+        <location filename="../src/net.cpp" line="1033"/>
         <source>Save partition/directorie</source>
         <comment>Partition/Verzeichnis sichern</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1041"/>
+        <location filename="../src/net.cpp" line="1043"/>
         <source>Encrypt
 backup. key:</source>
         <comment>Sicherung
@@ -1471,13 +1585,13 @@ verschlüsseln. Schlüssel:</comment>
 backup. key:</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1068"/>
+        <location filename="../src/net.cpp" line="1070"/>
         <source>Partition/directorie restore</source>
         <comment>Partition/Verzeichnis zurückschreiben</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1078"/>
+        <location filename="../src/net.cpp" line="1080"/>
         <source>Decrypt
 backup. key:</source>
         <comment>Sicherung
@@ -1486,7 +1600,7 @@ entschlüsseln. Schlüssel</comment>
 backup. key:</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1232"/>
+        <location filename="../src/net.cpp" line="1234"/>
         <source>The partition/directorie has been backed up successfully.
 </source>
         <comment>Die Partition/das Verzeichnis wurde erfolgreich gesichert.
@@ -1494,51 +1608,51 @@ backup. key:</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1233"/>
-        <location filename="../src/net.cpp" line="1276"/>
-        <location filename="../src/net.cpp" line="1277"/>
-        <location filename="../src/net.cpp" line="1332"/>
-        <location filename="../src/net.cpp" line="1336"/>
-        <location filename="../src/net.cpp" line="1358"/>
-        <location filename="../src/net.cpp" line="1359"/>
-        <location filename="../src/net.cpp" line="1365"/>
-        <location filename="../src/net.cpp" line="1366"/>
+        <location filename="../src/net.cpp" line="1235"/>
+        <location filename="../src/net.cpp" line="1278"/>
+        <location filename="../src/net.cpp" line="1279"/>
+        <location filename="../src/net.cpp" line="1334"/>
+        <location filename="../src/net.cpp" line="1338"/>
+        <location filename="../src/net.cpp" line="1360"/>
+        <location filename="../src/net.cpp" line="1361"/>
+        <location filename="../src/net.cpp" line="1367"/>
+        <location filename="../src/net.cpp" line="1368"/>
         <source> files, </source>
         <comment> Dateien, </comment>
-        <translation> مسلیں، </translation>
+        <translation> مسلیں،</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1233"/>
-        <location filename="../src/net.cpp" line="1276"/>
-        <location filename="../src/net.cpp" line="1277"/>
-        <location filename="../src/net.cpp" line="1332"/>
-        <location filename="../src/net.cpp" line="1336"/>
-        <location filename="../src/net.cpp" line="1358"/>
-        <location filename="../src/net.cpp" line="1365"/>
+        <location filename="../src/net.cpp" line="1235"/>
+        <location filename="../src/net.cpp" line="1278"/>
+        <location filename="../src/net.cpp" line="1279"/>
+        <location filename="../src/net.cpp" line="1334"/>
+        <location filename="../src/net.cpp" line="1338"/>
+        <location filename="../src/net.cpp" line="1360"/>
+        <location filename="../src/net.cpp" line="1367"/>
         <source> directories, </source>
         <comment> Verzeichnisse, </comment>
-        <translation>ڈائریکٹریاں،</translation>
+        <translation> ڈائریکٹریاں، </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1233"/>
-        <location filename="../src/net.cpp" line="1276"/>
+        <location filename="../src/net.cpp" line="1235"/>
         <location filename="../src/net.cpp" line="1278"/>
-        <location filename="../src/net.cpp" line="1332"/>
-        <location filename="../src/net.cpp" line="1358"/>
+        <location filename="../src/net.cpp" line="1280"/>
+        <location filename="../src/net.cpp" line="1334"/>
         <location filename="../src/net.cpp" line="1360"/>
-        <location filename="../src/net.cpp" line="1366"/>
+        <location filename="../src/net.cpp" line="1362"/>
+        <location filename="../src/net.cpp" line="1368"/>
         <source> links and </source>
         <comment> Links und </comment>
-        <translation>روابط اور</translation>
+        <translation> روابط اور </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1233"/>
+        <location filename="../src/net.cpp" line="1235"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
-        <translation>خصوصی کی حمایت نہیں کی گئی ہے ۔</translation>
+        <translation> خصوصی کی حمایت نہیں کی گئی ہے ۔</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1249"/>
+        <location filename="../src/net.cpp" line="1251"/>
         <source>The backup of the partition/directorie was aborted by the user!
 </source>
         <comment>Die Sicherung der Partition/des Verzeichnisses wurde vom Benutzer abgebrochen!
@@ -1546,7 +1660,7 @@ backup. key:</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1256"/>
+        <location filename="../src/net.cpp" line="1258"/>
         <source>The partition type is not supported.
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt
@@ -1554,7 +1668,7 @@ backup. key:</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1263"/>
+        <location filename="../src/net.cpp" line="1265"/>
         <source>The partition type is not supported. Maybe the partition is encrypted?
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?
@@ -1563,7 +1677,7 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1276"/>
+        <location filename="../src/net.cpp" line="1278"/>
         <source>The backup of the partition/directorie was only partially successful.
 </source>
         <comment>Die Sicherung der Partition/des Verzeichnis war nur teilweise erfolgreich
@@ -1571,15 +1685,15 @@ backup. key:</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1276"/>
+        <location filename="../src/net.cpp" line="1278"/>
         <source> specials have been backed
 .</source>
         <comment> spezielle Daten wurden gesichert
 .</comment>
-        <translation>خصوصی کی حمایت نہیں کی گئی ہے ۔</translation>
+        <translation> خصوصی کی حمایت نہیں کی گئی ہے ۔</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1278"/>
+        <location filename="../src/net.cpp" line="1280"/>
         <source> specials were not properly backed
 .</source>
         <comment> spezielle Daten wurden nicht korrekt gesichert.
@@ -1587,7 +1701,7 @@ backup. key:</translation>
         <translation>specials were not properly backed.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1306"/>
+        <location filename="../src/net.cpp" line="1308"/>
         <source>cannot restore an archive to a partition which is mounted, unmount it first 
 </source>
         <comment>Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!
@@ -1596,7 +1710,7 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1332"/>
+        <location filename="../src/net.cpp" line="1334"/>
         <source>The partition/directorie is successful back.
 </source>
         <comment>Die Partition/das Verzeichnis wurde erfolgreich wieder hergestellt.
@@ -1604,13 +1718,13 @@ backup. key:</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1332"/>
+        <location filename="../src/net.cpp" line="1334"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
-        <translation>خصوصی بحال نہیں کی گئی ہے ۔</translation>
+        <translation> خصوصی بحال نہیں کی گئی ہے ۔</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1335"/>
+        <location filename="../src/net.cpp" line="1337"/>
         <source>The partition is successful back.
 </source>
         <comment>Die Partition wurde erfolgreich wieder hergestellt.
@@ -1619,19 +1733,19 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1336"/>
+        <location filename="../src/net.cpp" line="1338"/>
         <source> links </source>
         <comment> Links </comment>
-        <translation>لنکس</translation>
+        <translation> links </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1336"/>
+        <location filename="../src/net.cpp" line="1338"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
-        <translation> خاص اور تقسیم بوٹ ریکارڈ بحال کر دیا گیا ہے ۔</translation>
+        <translation>خاص اور تقسیم بوٹ ریکارڈ بحال کر دیا گیا ہے ۔</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1341"/>
+        <location filename="../src/net.cpp" line="1343"/>
         <source>The restore of the partition/directorie was break by user!
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeichnisses wurde vom Benutzer abgebrochen!
@@ -1639,7 +1753,7 @@ backup. key:</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1358"/>
+        <location filename="../src/net.cpp" line="1360"/>
         <source>The restore of the partition/directorie was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeichnisses war nur teilweise erfolgreich
@@ -1647,23 +1761,23 @@ backup. key:</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1358"/>
+        <location filename="../src/net.cpp" line="1360"/>
         <source> specials have been restored
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
 .</comment>
-        <translation>خصوصی بحال نہیں کی گئی ہے ۔</translation>
-    </message>
-    <message>
-        <location filename="../src/net.cpp" line="1359"/>
-        <location filename="../src/net.cpp" line="1366"/>
-        <source> directories and </source>
-        <comment> Verzeichnisse und </comment>
-        <translation>ڈائریکٹریاں اور</translation>
+        <translation> خصوصی بحال نہیں کی گئی ہے ۔</translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="1361"/>
-        <location filename="../src/net.cpp" line="1366"/>
+        <location filename="../src/net.cpp" line="1368"/>
+        <source> directories and </source>
+        <comment> Verzeichnisse und </comment>
+        <translation> directories and </translation>
+    </message>
+    <message>
+        <location filename="../src/net.cpp" line="1363"/>
+        <location filename="../src/net.cpp" line="1368"/>
         <source> specials were not properly restored
 .</source>
         <comment> spezielle Daten wurden nicht korrekt wiederhergestellt.
@@ -1671,7 +1785,7 @@ backup. key:</translation>
         <translation>specials were not properly restored.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1365"/>
+        <location filename="../src/net.cpp" line="1367"/>
         <source>The restore of the partition/directorie was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeicnisses war nur teilweise erfolgreich
@@ -1679,15 +1793,15 @@ backup. key:</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1366"/>
+        <location filename="../src/net.cpp" line="1368"/>
         <source> specials and the Partition Boot Record have been restored
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
 .</comment>
-        <translation> خاص اور تقسیم بوٹ ریکارڈ بحال کر دیا گیا ہے ۔</translation>
+        <translation>خاص اور تقسیم بوٹ ریکارڈ بحال کر دیا گیا ہے ۔</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1371"/>
+        <location filename="../src/net.cpp" line="1373"/>
         <source>You tried to restore a partition. The selected file can only restore directories. Please restart the program.
 </source>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
@@ -1696,7 +1810,7 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1374"/>
+        <location filename="../src/net.cpp" line="1376"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben. 
@@ -1705,32 +1819,32 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1539"/>
+        <location filename="../src/net.cpp" line="1541"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>جی ہاں</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1540"/>
+        <location filename="../src/net.cpp" line="1542"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>نہيں</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1553"/>
+        <location filename="../src/net.cpp" line="1555"/>
         <source>Do you want really break the save or restore from the partition?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
         <translation>آپ واقعی بہت محفوظ توڑنے سے تقسیم کی بحالی چاہتے ہیں؟</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1656"/>
+        <location filename="../src/net.cpp" line="1658"/>
         <source>If you have not set up SSH authentication, you must now enter the password in the terminal. Should this continue to be displayed? You can change this in the basic settings.</source>
         <comment>Wenn Sie keine SSH-Authentifizierung eingerichtet haben, müssen Sie nun das Passwort in dem Terminal eingeben. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern</comment>
         <translation>اگر آپ SSH توثیق اپ سیٹ نہیں کیا، آپ اب پاس ورڈ ٹرمینل میں داخل کرنا چاہیئے ۔ یہ دکھانے کے لیے جاری رکھنا چاہیے؟ آپ نے اس بنیادی ترتیبات تبدیل کرسکتے ہیں ۔</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1671"/>
-        <location filename="../src/net.cpp" line="1729"/>
+        <location filename="../src/net.cpp" line="1673"/>
+        <location filename="../src/net.cpp" line="1732"/>
         <source>The SSH server is not reachable. Try again or with another network protocol.
 </source>
         <comment>Der SSH-Server ist nicht erreichbar. Versuchen Sie es nochmals oder mit einem anderen Netzwerkprotokoll.
@@ -1739,18 +1853,17 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1689"/>
         <source>When you first contact the computer with ssh, you must do the following:  In a terminal enter these commands: 1.In the open terminal you must confirm the RSA key fingerprint with yes. 2.Enter the password for accessing the server and 3.leave the server with the command exit.
 </source>
         <comment>Wenn Sie noch nicht erfolgreich per ssh auf den Rechner(Server) zugegriffen haben, müssen Sie nun folgendes tun: 1.In dem geöffneten Terminal müssen Sie den RSA key fingerprint mit yes bestätigen. 2.Geben Sie das Passwort für den Zugriff auf den Server ein  und 3.verlassen Sie den Server mit dem Befehl exit.
 </comment>
-        <translation>When you first contact the computer with ssh, you must do the following:  In a terminal enter these commands: 1.In the open terminal you must confirm the RSA key fingerprint with yes. 2.Enter the password for accessing the server and 3.leave the server with the command exit.
+        <translation type="obsolete">When you first contact the computer with ssh, you must do the following:  In a terminal enter these commands: 1.In the open terminal you must confirm the RSA key fingerprint with yes. 2.Enter the password for accessing the server and 3.leave the server with the command exit.
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1828"/>
+        <location filename="../src/net.cpp" line="1831"/>
         <source>Name</source>
-        <translation>نام</translation>
+        <translation>Name</translation>
     </message>
 </context>
 <context>
@@ -1759,25 +1872,25 @@ backup. key:</translation>
         <location filename="../src/setting.cpp" line="33"/>
         <source>German</source>
         <comment>Deutsch</comment>
-        <translation>جرمن</translation>
+        <translation>German</translation>
     </message>
     <message>
         <location filename="../src/setting.cpp" line="33"/>
         <source>English</source>
         <comment>Englisch</comment>
-        <translation type="unfinished">انگريزی</translation>
+        <translation>English</translation>
     </message>
     <message>
         <location filename="../src/setting.cpp" line="33"/>
         <source>Russian</source>
         <comment>Russisch</comment>
-        <translation>رشئن</translation>
+        <translation>Russian</translation>
     </message>
     <message>
         <location filename="../src/setting.cpp" line="33"/>
         <source>Spanish</source>
         <comment>Spanisch</comment>
-        <translation>سپينش</translation>
+        <translation>Spanish</translation>
     </message>
     <message>
         <location filename="../src/setting.cpp" line="33"/>
@@ -1795,13 +1908,13 @@ backup. key:</translation>
         <location filename="../src/setting.cpp" line="34"/>
         <source>Dutch</source>
         <comment>Niederländisch</comment>
-        <translation type="unfinished">ڈچ</translation>
+        <translation>Dutch</translation>
     </message>
     <message>
         <location filename="../src/setting.cpp" line="34"/>
         <source>Japanese</source>
         <comment>Japanisch</comment>
-        <translation type="unfinished">جاپانی</translation>
+        <translation>Japanese</translation>
     </message>
     <message>
         <location filename="../src/setting.cpp" line="34"/>
@@ -1915,7 +2028,7 @@ backup. key:</translation>
         <location filename="../src/setting.cpp" line="36"/>
         <source>Portuguese</source>
         <comment>Portugisisch</comment>
-        <translation type="unfinished">پرتگالی</translation>
+        <translation>Portuguese</translation>
     </message>
     <message>
         <location filename="../src/setting.cpp" line="36"/>
@@ -1981,7 +2094,7 @@ backup. key:</translation>
         <location filename="../src/setting.cpp" line="42"/>
         <source>lzo</source>
         <comment>lzo</comment>
-        <translation>لزو</translation>
+        <translation>lzo</translation>
     </message>
     <message>
         <location filename="../src/setting.cpp" line="42"/>
@@ -2034,7 +2147,7 @@ backup. key:</translation>
     <message>
         <location filename="../src/setting.cpp" line="48"/>
         <source>Samba</source>
-        <translation>سامبا</translation>
+        <translation>Samba</translation>
     </message>
     <message>
         <location filename="../src/setting.cpp" line="48"/>
@@ -2044,7 +2157,7 @@ backup. key:</translation>
     <message>
         <location filename="../src/setting.cpp" line="48"/>
         <source>NFS</source>
-        <translation>نف</translation>
+        <translation>NFS</translation>
     </message>
     <message>
         <location filename="../src/setting.cpp" line="188"/>
@@ -2057,7 +2170,7 @@ backup. key:</translation>
         <source>The settings have been saved. Be restarted, the program modified the language setting.</source>
         <comment>Die Einstellungen wurden gespeichert. Bei geänderter Spracheinstellung muss das Programm neu gestartet werden.
 </comment>
-        <translation>سیٹنگیں محفوظ نہیں کی گئی ہے ۔ ہو پھر شروع، پروگرام زبان سیٹنگ بار ترمیم ہے ۔</translation>
+        <translation>The settings have been saved. Be restarted, the program modified the language setting.</translation>
     </message>
 </context>
 <context>
@@ -2106,14 +2219,14 @@ backup. key:</translation>
         <location filename="../src/ui/net.ui" line="111"/>
         <source>Save partition
  or directory</source>
-        <translation>تقسیم محفوظ کریں</translation>
+        <translation>Save partition</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="125"/>
         <source>Restore partition 
  or directory</source>
         <extracomment>Partition mit fs-Archiver * zurückschreiben</extracomment>
-        <translation>بٹوار کی بحالی</translation>
+        <translation>Restore partition</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="155"/>
@@ -2163,7 +2276,8 @@ backup. key:</translation>
         <location filename="../src/ui/net.ui" line="288"/>
         <source>On the number saved
 Files/directories:</source>
-        <translation>نمبر پر محفوظ مسلیں/ڈائریکٹریاں:</translation>
+        <translation>On the number saved
+Files/directories:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="303"/>
@@ -2187,7 +2301,7 @@ files/directories:</translation>
     <message>
         <location filename="../src/ui/net.ui" line="353"/>
         <source>remaining time</source>
-        <translation>باقی وقت:</translation>
+        <translation>باقی وقت</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="440"/>
@@ -2217,7 +2331,7 @@ setting:</translation>
     <message>
         <location filename="../src/ui/net.ui" line="542"/>
         <source>Notes to the backup is written to a file.</source>
-        <translation>نوٹ پشتارہ کے لیے ایک مسل میں لکھا ہے ۔</translation>
+        <translation>Compression: </translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="545"/>
@@ -2260,7 +2374,7 @@ backup key</translation>
     <message>
         <location filename="../src/ui/net.ui" line="627"/>
         <source>Backup restore to the Origin</source>
-        <translation>پشتارہ بحال کرنا اصل</translation>
+        <translation>Backup restore to the Origin</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="651"/>
@@ -2290,42 +2404,42 @@ transmission:</source>
         <location filename="../src/ui/net_ein.ui" line="14"/>
         <source>Data network</source>
         <extracomment>Daten Netzwerk</extracomment>
-        <translation>کوائف نیٹ ورک</translation>
+        <translation>Data network</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="26"/>
         <source>Username:</source>
         <extracomment>Benutzername:</extracomment>
-        <translation>صارف کا نام:</translation>
+        <translation>Username:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="39"/>
         <source>Password:</source>
         <extracomment>Kennwort:</extracomment>
-        <translation>پاس ورڈ:</translation>
+        <translation>Password:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="52"/>
         <source>Username and password are stored.</source>
-        <translation>صارف نام اور پاس ورڈ ذخیرہ ہیں ۔</translation>
+        <translation>Username and password are stored.</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="55"/>
         <source>Save data</source>
         <extracomment>Daten speichern</extracomment>
-        <translation>کوائف محفوظ کریں</translation>
+        <translation>Save data</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="94"/>
         <source>Next</source>
         <extracomment>Weiter</extracomment>
-        <translation>اگلا</translation>
+        <translation>Next</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="117"/>
         <source>Achievable network computer:</source>
         <extracomment>Im Netz erreichbare Rechner:</extracomment>
-        <translation>حصول کمپیوٹر نیٹ ورک:</translation>
+        <translation>Achievable network computer:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="130"/>
@@ -2336,7 +2450,7 @@ transmission:</source>
         <location filename="../src/ui/net_ein.ui" line="143"/>
         <source>Show Password</source>
         <extracomment>Kennwort anzeigen</extracomment>
-        <translation>پاس ورڈ کی نمایش کریں</translation>
+        <translation>Show Password</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="156"/>
@@ -2369,7 +2483,7 @@ transmission:</source>
         <location filename="../src/ui/filedialog.ui" line="52"/>
         <source>Back partition</source>
         <extracomment>Partition sichern</extracomment>
-        <translation>کمر کی تقسیم</translation>
+        <translation>Back partition</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="80"/>
@@ -2390,7 +2504,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/filedialog.cpp" line="50"/>
         <source>Save partition</source>
         <comment>Partition sichern</comment>
-        <translation>تقسیم محفوظ کریں</translation>
+        <translation>Save partition</translation>
     </message>
     <message>
         <location filename="../src/filedialog.cpp" line="68"/>
@@ -2411,85 +2525,84 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/filedialog.cpp" line="94"/>
         <source>hello</source>
         <comment>hallo</comment>
-        <translation>اسلام و عليکم</translation>
+        <translation>hello</translation>
     </message>
 </context>
 <context>
     <name>MWindow</name>
     <message>
-        <location filename="../src/mainWindow.cpp" line="188"/>
+        <location filename="../src/mainWindow.cpp" line="187"/>
         <source>lzo</source>
         <comment>lzo</comment>
-        <translation>لزو</translation>
+        <translation>lzo</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="189"/>
+        <location filename="../src/mainWindow.cpp" line="188"/>
         <source>gzip fast</source>
         <comment>gzip fast</comment>
         <translation>گزاپ تیز</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="190"/>
+        <location filename="../src/mainWindow.cpp" line="189"/>
         <source>gzip standard</source>
         <comment>gzip standard</comment>
         <translation>معیاری گزاپ</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="191"/>
+        <location filename="../src/mainWindow.cpp" line="190"/>
         <source>qzip best</source>
         <comment>qzip best</comment>
         <translation>قزاپ سب سے بہتر</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="192"/>
+        <location filename="../src/mainWindow.cpp" line="191"/>
         <source>bzip2 fast</source>
         <comment>bzip2 fast</comment>
         <translation>bzip2 تیز</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="193"/>
+        <location filename="../src/mainWindow.cpp" line="192"/>
         <source>bzip2 good</source>
         <comment> bzip2 good</comment>
         <translation>اچھا bzip2</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="194"/>
+        <location filename="../src/mainWindow.cpp" line="193"/>
         <source>lzma fast</source>
         <comment>lzma fast</comment>
         <translation>لزمہ روزہ</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="195"/>
+        <location filename="../src/mainWindow.cpp" line="194"/>
         <source>lzma medium</source>
         <comment>lzma medium</comment>
         <translation>لزمہ میڈیم</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="196"/>
+        <location filename="../src/mainWindow.cpp" line="195"/>
         <source>lzma best</source>
         <comment>lzma best</comment>
         <translation>سب سے بہترین لزمہ</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="346"/>
         <source>In the file /usr/share/doc/qt4-fsarchiver/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.</source>
         <comment>In der Datei /usr/share/doc/qt4-fsarchiver/Liesmich sind Hinweise zur Nutzung des Programms enthalten. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern.</comment>
-        <translation>In the file /usr/share/doc/qt4-fsarchiver/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.</translation>
+        <translation type="obsolete">In the file /usr/share/doc/qt4-fsarchiver/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="408"/>
+        <location filename="../src/mainWindow.cpp" line="406"/>
         <source>Backup File</source>
         <comment>Sicherungsdatei</comment>
-        <translation>پشتارہ مسل</translation>
+        <translation>Backup File</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="409"/>
+        <location filename="../src/mainWindow.cpp" line="407"/>
         <source>Partition restore</source>
         <comment>Partition zurückschreiben</comment>
         <translation>بٹوار کی بحالی</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="422"/>
+        <location filename="../src/mainWindow.cpp" line="420"/>
         <source>Decrypt
 backup. key:</source>
         <comment>Sicherung
@@ -2498,18 +2611,24 @@ entschlüsseln. Schlüssel</comment>
 backup. key:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="440"/>
+        <location filename="../src/mainWindow.cpp" line="438"/>
         <source>Backup directory</source>
         <comment>Sicherungsverzeichnis</comment>
-        <translation>پشتارہ ڈائریکٹری</translation>
+        <translation>پشتارہ ڈائریکٹری:</translation>
     </message>
     <message>
         <source>Save partition</source>
         <comment>Partition sichern</comment>
-        <translation type="obsolete">تقسیم محفوظ کریں</translation>
+        <translation type="obsolete">Save partition</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="454"/>
+        <location filename="../src/mainWindow.cpp" line="344"/>
+        <source>In the file /usr/share/doc/qt4-fsarchiver/doc/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.</source>
+        <comment>In der Datei /usr/share/doc/qt4-fsarchiver/doc/Liesmich sind Hinweise zur Nutzung des Programms enthalten. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern.</comment>
+        <translation type="unfinished">In the file /usr/share/doc/qt4-fsarchiver/doc/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="452"/>
         <source>Encrypt
 backup. key:</source>
         <comment>Sicherung
@@ -2518,17 +2637,17 @@ verschlüsseln. Schlüssel</comment>
 backup. key:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="493"/>
-        <location filename="../src/mainWindow.cpp" line="499"/>
-        <location filename="../src/mainWindow.cpp" line="506"/>
-        <location filename="../src/mainWindow.cpp" line="519"/>
-        <location filename="../src/mainWindow.cpp" line="573"/>
-        <location filename="../src/mainWindow.cpp" line="613"/>
-        <location filename="../src/mainWindow.cpp" line="678"/>
-        <location filename="../src/mainWindow.cpp" line="694"/>
-        <location filename="../src/mainWindow.cpp" line="808"/>
-        <location filename="../src/mainWindow.cpp" line="814"/>
-        <location filename="../src/mainWindow.cpp" line="820"/>
+        <location filename="../src/mainWindow.cpp" line="491"/>
+        <location filename="../src/mainWindow.cpp" line="497"/>
+        <location filename="../src/mainWindow.cpp" line="504"/>
+        <location filename="../src/mainWindow.cpp" line="517"/>
+        <location filename="../src/mainWindow.cpp" line="571"/>
+        <location filename="../src/mainWindow.cpp" line="611"/>
+        <location filename="../src/mainWindow.cpp" line="676"/>
+        <location filename="../src/mainWindow.cpp" line="692"/>
+        <location filename="../src/mainWindow.cpp" line="807"/>
+        <location filename="../src/mainWindow.cpp" line="813"/>
+        <location filename="../src/mainWindow.cpp" line="819"/>
         <location filename="../src/mainWindow.cpp" line="831"/>
         <location filename="../src/mainWindow.cpp" line="840"/>
         <location filename="../src/mainWindow.cpp" line="858"/>
@@ -2560,23 +2679,24 @@ backup. key:</translation>
         <translation>نوٹ</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="494"/>
+        <location filename="../src/mainWindow.cpp" line="492"/>
         <source>Please select from the backup directory.
 </source>
         <comment>Bitte wählen Sie das Sicherungsverzeichnis aus.
 </comment>
-        <translation>سے پشتارہ ڈائریکٹری منتخب کریں ۔</translation>
+        <translation>Please select from the backup directory.
+</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="500"/>
+        <location filename="../src/mainWindow.cpp" line="498"/>
         <source>Please select the partition to be</source>
         <comment>Bitte wählen Sie die zu sichernde Partition aus.
 </comment>
-        <translation>تقسیم کو منتخب کریں</translation>
+        <translation>Please select the partition to be</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="507"/>
-        <location filename="../src/mainWindow.cpp" line="815"/>
+        <location filename="../src/mainWindow.cpp" line="505"/>
+        <location filename="../src/mainWindow.cpp" line="814"/>
         <source>Please select the file name of the backup.
 </source>
         <comment>Bitte wählen Sie den Dateinamen der Sicherung aus.
@@ -2585,7 +2705,7 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="520"/>
+        <location filename="../src/mainWindow.cpp" line="518"/>
         <source>You have selected a file. You must select a directory
 </source>
         <comment>Sie haben eine Datei ausgewählt. Sie müssen ein Verzeichnis auswählen
@@ -2594,25 +2714,25 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="548"/>
+        <location filename="../src/mainWindow.cpp" line="546"/>
         <source>To back up the system partition is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Systempartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
         <translation>To back up the system partition is mounted. Do you want to do a live backup?</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="556"/>
+        <location filename="../src/mainWindow.cpp" line="554"/>
         <source>To back up home partition is mounted. Do you want to do a live backup?</source>
         <comment>Die zu sichernde Homepartition ist eingehängt. Wollen Sie eine Live-Sicherung durchführen?</comment>
         <translation>To back up home partition is mounted. Do you want to do a live backup?</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="574"/>
+        <location filename="../src/mainWindow.cpp" line="572"/>
         <source>The partition</source>
         <comment>Die Partition </comment>
-        <translation>تقسیم</translation>
+        <translation>The partition </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="574"/>
+        <location filename="../src/mainWindow.cpp" line="572"/>
         <source>can not be unmounted. The program is terminated
 </source>
         <comment> kann nicht ausgehängt werden. Das Programm wird abgebrochen
@@ -2621,7 +2741,7 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="614"/>
+        <location filename="../src/mainWindow.cpp" line="612"/>
         <location filename="../src/mainWindow.cpp" line="868"/>
         <source>The key length must be between 6 and 64 characters
 </source>
@@ -2631,13 +2751,13 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="679"/>
+        <location filename="../src/mainWindow.cpp" line="677"/>
         <source>The partition file</source>
         <comment>Die Partitionsdatei</comment>
-        <translation>مسل کی تقسیم</translation>
+        <translation>مسل کی تقسیم </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="679"/>
+        <location filename="../src/mainWindow.cpp" line="677"/>
         <source> already exists. The backup is not performed
 </source>
         <comment> ist bereits vorhanden. Die Sicherung wird nicht durchgeführt
@@ -2646,7 +2766,7 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="695"/>
+        <location filename="../src/mainWindow.cpp" line="693"/>
         <source>The backup was aborted by the user
 </source>
         <comment>Die Sicherung wurde vom Benutzer abgebrochen
@@ -2655,20 +2775,20 @@ backup. key:</translation>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="711"/>
+        <location filename="../src/mainWindow.cpp" line="709"/>
         <source>The backup is performed</source>
         <comment>Die Sicherung wird durchgeführt</comment>
         <translation>The backup is performed</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="809"/>
+        <location filename="../src/mainWindow.cpp" line="808"/>
         <source>There was no key to decrypt specified.</source>
         <comment>Es wurde kein Schlüssel für die Entschlüsselung angegeben.
 </comment>
         <translation>کوئی کلید تھا اختصاصی کی خفیہ کشائی ۔</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="821"/>
+        <location filename="../src/mainWindow.cpp" line="820"/>
         <source>Please select from the writing back to partition.
 </source>
         <comment>Bitte wählen Sie die zurück zu schreibende Partition aus.
@@ -2712,13 +2832,13 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/mainWindow.cpp" line="892"/>
         <source>Partition to restore the </source>
         <comment>Die wiederherzustellende Partition </comment>
-        <translation>تقسیم کو بحال کرنے کے لیے</translation>
+        <translation>Partition to restore the </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="893"/>
         <source> does not coincide with the saved  </source>
         <comment> stimmt nicht mit der gesicherten </comment>
-        <translation>نجات یافتہ کے ساتھ ہم آہنگ ہوتے نہیں</translation>
+        <translation> does not coincide with the saved  </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="893"/>
@@ -2731,13 +2851,13 @@ Die Dateiendung muss .fsa sein</comment>
         <source>The restore was aborted by the user</source>
         <comment>Das Zurückschreiben wurde vom Benutzer abgebrochen
 </comment>
-        <translation>صارف نے بحالی ساقط کر دیا گیا</translation>
+        <translation>The restore was aborted by the user</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="930"/>
         <source>There is a file with the contents of the partition boot sector present. Do you want to perform the restoration of the PBR?</source>
         <comment>Es ist eine Datei mit dem Inhalt des Partition Boot Sektors vorhanden. Wollen Sie die Wiederherstellung des PBR durchführen?</comment>
-        <translation>ایک مسل تقسیم بوٹ سیکٹر کی موجودہ مشمولات کے ساتھ موجود ہے ۔ آپ بر کی بحالی سرانجام دہی کے لیے چاہتے ہیں ۔</translation>
+        <translation>There is a file with the contents of the partition boot sector present. Do you want to perform the restoration of the PBR?</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="942"/>
@@ -2757,7 +2877,7 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/mainWindow.cpp" line="961"/>
         <source>The partition </source>
         <comment>Die Partition </comment>
-        <translation>تقسیم</translation>
+        <translation>The partition </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="961"/>
@@ -2770,7 +2890,7 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/mainWindow.cpp" line="971"/>
         <source>If the existing btrfs partition to be formatted? The new UUID is defined here. If you choose &lt;no&gt;, the UUID remains preserved.</source>
         <comment>Soll die vorhandene btrfs-Partition formatiert werden? Die UUID wird dabei neu festgelegt. Wenn Sie  nein wählen, bleibt die UUID erhalten.</comment>
-        <translation>اگر موجودہ بٹرفس وضع نہیں کی جا کے لیے تقسیم؟ نئے یوواڈ یہاں وضاحت نہیں ہے ۔ اگر آپ &lt;no&gt;چاہتے ہیں، یوواڈ محفوظ رہتا ہے ۔</translation>
+        <translation>اگر موجودہ بٹرفس وضع نہیں کی جا کے لیے تقسیم؟ نئے یوواڈ یہاں وضاحت نہیں ہے ۔ اگر آپ چاہتے ہیں &lt;no&gt;، یوواڈ محفوظ رہتا ہے ۔&lt;/no&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1009"/>
@@ -2783,18 +2903,18 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/mainWindow.cpp" line="1024"/>
         <source>The restoring is performed</source>
         <comment>Die Wiederherstellung wird durchgeführt</comment>
-        <translation>بحال کارکردگی کا مظاہرہ کیا ہے</translation>
+        <translation>The restoring is performed</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1084"/>
         <source>qt4-fsarchiver</source>
-        <translation>qt4-فسآرچاور</translation>
+        <translation>qt4-fsarchiver</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1085"/>
         <source>Backup and restore partitions, directory and MBR
-Version 0.6.19-15, August 1, 2015</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-15, 1. August 2015</comment>
+Version 0.6.19-16, December 15, 2015</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-16, 15. Dezember 2015</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2839,7 +2959,7 @@ Version 0.6.19-15, August 1, 2015</source>
         <location filename="../src/mainWindow.cpp" line="1490"/>
         <source> files, </source>
         <comment> Dateien, </comment>
-        <translation> مسلیں، </translation>
+        <translation> مسلیں،</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1351"/>
@@ -2851,7 +2971,7 @@ Version 0.6.19-15, August 1, 2015</source>
         <location filename="../src/mainWindow.cpp" line="1487"/>
         <source> directories, </source>
         <comment> Verzeichnisse, </comment>
-        <translation>ڈائریکٹریاں،</translation>
+        <translation> ڈائریکٹریاں، </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1351"/>
@@ -2864,13 +2984,13 @@ Version 0.6.19-15, August 1, 2015</source>
         <location filename="../src/mainWindow.cpp" line="1491"/>
         <source> links and </source>
         <comment> Links und </comment>
-        <translation>روابط اور</translation>
+        <translation> روابط اور </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1352"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
-        <translation>خصوصی کی حمایت نہیں کی گئی ہے ۔</translation>
+        <translation> خصوصی کی حمایت نہیں کی گئی ہے ۔</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1371"/>
@@ -2921,7 +3041,7 @@ Version 0.6.19-15, August 1, 2015</source>
 .</source>
         <comment> spezielle Daten wurden gesichert
 .</comment>
-        <translation>خصوصی کی حمایت نہیں کی گئی ہے ۔</translation>
+        <translation> خصوصی کی حمایت نہیں کی گئی ہے ۔</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1407"/>
@@ -2954,19 +3074,19 @@ Version 0.6.19-15, August 1, 2015</source>
         <location filename="../src/mainWindow.cpp" line="1451"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
-        <translation>خصوصی بحال نہیں کی گئی ہے ۔</translation>
+        <translation> خصوصی بحال نہیں کی گئی ہے ۔</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1455"/>
         <source> links </source>
         <comment> Links </comment>
-        <translation>لنکس</translation>
+        <translation> links </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1455"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
-        <translation> خاص اور تقسیم بوٹ ریکارڈ بحال کر دیا گیا ہے ۔</translation>
+        <translation>خاص اور تقسیم بوٹ ریکارڈ بحال کر دیا گیا ہے ۔</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1460"/>
@@ -2974,7 +3094,7 @@ Version 0.6.19-15, August 1, 2015</source>
 </source>
         <comment>Die Wiederherstellung der Partition  wurde vom Benutzer abgebrochen!
 </comment>
-        <translation>بحالی تقسیم کے صارف کی طرف سے توڑ تھا!</translation>
+        <translation>The restore of the partition was break by user!</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1477"/>
@@ -2991,14 +3111,14 @@ Version 0.6.19-15, August 1, 2015</source>
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
 .</comment>
-        <translation>خصوصی بحال نہیں کی گئی ہے ۔</translation>
+        <translation> خصوصی بحال نہیں کی گئی ہے ۔</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1480"/>
         <location filename="../src/mainWindow.cpp" line="1490"/>
         <source> directories and </source>
         <comment> Verzeichnisse und </comment>
-        <translation>ڈائریکٹریاں اور</translation>
+        <translation> directories and </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1482"/>
@@ -3015,7 +3135,7 @@ Version 0.6.19-15, August 1, 2015</source>
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
 .</comment>
-        <translation> خاص اور تقسیم بوٹ ریکارڈ بحال کر دیا گیا ہے ۔</translation>
+        <translation>خاص اور تقسیم بوٹ ریکارڈ بحال کر دیا گیا ہے ۔</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1496"/>
@@ -3039,36 +3159,36 @@ Version 0.6.19-15, August 1, 2015</source>
         <location filename="../src/mainWindow.cpp" line="1605"/>
         <source>Backup file name: </source>
         <comment>Sicherungsdateiname: </comment>
-        <translation>پشتارہ نام مسل: </translation>
+        <translation>Backup file name: </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1606"/>
         <source>Partition  name: </source>
         <comment>Partitionsname: </comment>
-        <translation>تقسیم کا نام: </translation>
+        <translation>Partition  name: </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1607"/>
         <source>Partition type: </source>
         <comment>Partitionsart: </comment>
-        <translation>تقسیم کی قسم: </translation>
+        <translation>Partition type: </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1608"/>
         <source>UUID: </source>
-        <translation>یوواڈ:</translation>
+        <translation>UUID:</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1608"/>
         <source>Description: </source>
         <comment>Bezeichnung: </comment>
-        <translation>تصریح: </translation>
+        <translation>Description: </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1609"/>
         <source>Partition size: </source>
         <comment>Partitionsgröße: </comment>
-        <translation>تقسیم کا سائز: </translation>
+        <translation>Partition size: </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1609"/>
@@ -3093,7 +3213,7 @@ Version 0.6.19-15, August 1, 2015</source>
         <location filename="../src/mainWindow.cpp" line="1611"/>
         <source>Other notes: </source>
         <comment>weitere Hinweise:</comment>
-        <translation>دیگر نوٹ:</translation>
+        <translation>Other notes: </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1612"/>
@@ -3106,7 +3226,7 @@ Version 0.6.19-15, August 1, 2015</source>
         <location filename="../src/mainWindow.cpp" line="1623"/>
         <source>Operating system: </source>
         <comment>Betriebsystem: </comment>
-        <translation>نظام عمل کاری:</translation>
+        <translation>Operating system: </translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1617"/>
@@ -3118,7 +3238,7 @@ Version 0.6.19-15, August 1, 2015</source>
         <location filename="../src/mainWindow.cpp" line="1619"/>
         <source>to be protected/secured partition: /home</source>
         <comment>zu sichernde/gesicherte Partition: /home</comment>
-        <translation>حفاظت/محفوظ تقسیم کی جائے: / ہوم</translation>
+        <translation>to be protected/secured partition: /home</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1640"/>
@@ -3147,7 +3267,7 @@ Version 0.6.19-15, August 1, 2015</source>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="14"/>
         <source>Save/restore partition </source>
-        <translation>محفوظ کریں/تقسیم بحال کریں</translation>
+        <translation>Save/restore partition</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="27"/>
@@ -3167,7 +3287,7 @@ Version 0.6.19-15, August 1, 2015</source>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="52"/>
         <source>Backup directory:</source>
-        <translation>پشتارہ ڈائریکٹری</translation>
+        <translation>پشتارہ ڈائریکٹری:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="65"/>
@@ -3214,7 +3334,8 @@ Version 0.6.19-15, August 1, 2015</source>
         <location filename="../src/ui/fsarchiverMain.ui" line="223"/>
         <source>On the number saved
 Files/directories:</source>
-        <translation>نمبر پر محفوظ مسلیں/ڈائریکٹریاں:</translation>
+        <translation>On the number saved
+Files/directories:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="238"/>
@@ -3238,7 +3359,7 @@ files/directories:</translation>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="288"/>
         <source>remaining time:</source>
-        <translation>باقی وقت:</translation>
+        <translation>باقی وقت</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="403"/>
@@ -3257,7 +3378,7 @@ setting:</translation>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="441"/>
         <source>Notes to the backup is written to a file</source>
-        <translation>نوٹ پشتارہ کے لیے ایک مسل میں لکھا ہے ۔</translation>
+        <translation>Compression: </translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="444"/>
@@ -3313,14 +3434,16 @@ backup key</translation>
         <source>Partition save 
 with fsarchiver</source>
         <extracomment>Partition mit * fsArchiver sichern:</extracomment>
-        <translation>فسآرچاور کے ساتھ محفوظ تقسیم</translation>
+        <translation>Partition save 
+with fsarchiver</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="594"/>
         <source>Restore partition
 with fsarchiver</source>
         <extracomment>Partition mit fs-Archiver * zurückschreiben</extracomment>
-        <translation>تقسیم فسآرچاور کے ساتھ بحال کریں</translation>
+        <translation>Restore partition 
+with fsarchiver</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="609"/>
@@ -3340,7 +3463,7 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="687"/>
         <source>Information</source>
-        <translation>معلومات</translation>
+        <translation>Information</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="704"/>
@@ -3356,32 +3479,32 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="722"/>
         <source>Restore partition</source>
-        <translation>بٹوار کی بحالی</translation>
+        <translation>Restore partition</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="740"/>
         <source>Information fsarchiver</source>
-        <translation>معلومات فسآرچاور</translation>
+        <translation>Information fsarchiver</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="749"/>
         <source>Save MBR/GPT</source>
-        <translation>MBR/گ محفوظ کریں</translation>
+        <translation>Save MBR/GPT</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="758"/>
         <source>Restore MBR/GPT</source>
-        <translation>MBR/گ بحال کریں</translation>
+        <translation>Restore MBR/GPT</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="767"/>
         <source>Restore directory </source>
-        <translation>ڈائریکٹری بحال کریں</translation>
+        <translation>Restore directory</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="776"/>
         <source>Save directory </source>
-        <translation>ڈائریکٹری میں محفوظ کریں</translation>
+        <translation>Save directory</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="785"/>
@@ -3411,7 +3534,7 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="826"/>
         <source>HD-Image save/restore on network</source>
-        <translation>ایچ ڈی تصویر محفوظ کرنا/بحالی کے نیٹ ورک پر</translation>
+        <translation>HD-Image save/restore on network</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="835"/>
@@ -3432,17 +3555,17 @@ with fsarchiver</source>
 <context>
     <name>NetEin</name>
     <message>
-        <location filename="../src/net_ein.cpp" line="273"/>
-        <location filename="../src/net_ein.cpp" line="458"/>
-        <location filename="../src/net_ein.cpp" line="464"/>
-        <location filename="../src/net_ein.cpp" line="470"/>
-        <location filename="../src/net_ein.cpp" line="679"/>
+        <location filename="../src/net_ein.cpp" line="272"/>
+        <location filename="../src/net_ein.cpp" line="457"/>
+        <location filename="../src/net_ein.cpp" line="463"/>
+        <location filename="../src/net_ein.cpp" line="469"/>
+        <location filename="../src/net_ein.cpp" line="668"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>نوٹ</translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="274"/>
+        <location filename="../src/net_ein.cpp" line="273"/>
         <source>There is currently no available network computer.
 </source>
         <comment>Es ist derzeit kein Netzwerkrechner.
@@ -3451,7 +3574,7 @@ with fsarchiver</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="459"/>
+        <location filename="../src/net_ein.cpp" line="458"/>
         <source>You must select the computer on which the backup data to be written
 </source>
         <comment>Sie müssen den Rechner auswählen, auf den die Sicherungsdaten geschrieben werden sollen
@@ -3460,7 +3583,7 @@ with fsarchiver</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="465"/>
+        <location filename="../src/net_ein.cpp" line="464"/>
         <source>You must select your computer from which the backup data to be written back
 </source>
         <comment>Sie müssen den Rechner auswählen, von dem die Sicherungsdaten zurück geschrieben werden sollen
@@ -3469,7 +3592,7 @@ with fsarchiver</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="471"/>
+        <location filename="../src/net_ein.cpp" line="470"/>
         <source>You must enter the user name. Can not otherwise be accessible to network computers
 </source>
         <comment>Sie müssen den Benutzernamen eingeben. Sonst kann nicht auf Netzrechner zugegriffen werden
@@ -3478,19 +3601,19 @@ with fsarchiver</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="475"/>
+        <location filename="../src/net_ein.cpp" line="474"/>
         <source>Is it true that you have entered a key? (NFS dont need a key)</source>
         <comment>Ist das richtig, dass Sie keinen Schlüssel eingegeben haben? (NFS benötigt keinen Schlüssel)</comment>
         <translation>Is it true that you have entered a key? (NFS dont need a key)</translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="680"/>
+        <location filename="../src/net_ein.cpp" line="669"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>جی ہاں</translation>
     </message>
     <message>
-        <location filename="../src/net_ein.cpp" line="681"/>
+        <location filename="../src/net_ein.cpp" line="670"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>نہيں</translation>
@@ -3505,118 +3628,135 @@ with fsarchiver</source>
         <translation>کلون کی ہارڈ ڈرائیو</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="26"/>
+        <location filename="../src/ui/clone_dialog.ui" line="590"/>
+        <source>Image of a partition to create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/clone_dialog.ui" line="603"/>
+        <source>Image of a partition write back</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/clone_dialog.ui" line="630"/>
+        <source>p</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/ui/clone_dialog.ui" line="656"/>
         <source>Exit</source>
         <extracomment>Abbrechen</extracomment>
         <translation>خروج</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="39"/>
         <source>Save / Restore MBR</source>
         <extracomment>MBR sichern/zurückschreiben</extracomment>
-        <translation>محفوظ کریں / MBR بحال کریں</translation>
+        <translation type="obsolete">محفوظ کریں / MBR بحال کریں</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="65"/>
+        <location filename="../src/ui/clone_dialog.ui" line="39"/>
         <source>Exist harddrive:</source>
         <extracomment>MBR Sicherungsverzeichnis:</extracomment>
         <translation>حردراوی موجود ہیں:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="112"/>
+        <location filename="../src/ui/clone_dialog.ui" line="86"/>
         <source>New harddrive:</source>
         <extracomment>MBR Sicherungsverzeichnis:</extracomment>
         <translation>نیا حردراوی:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="125"/>
-        <location filename="../src/ui/clone_dialog.ui" line="138"/>
+        <location filename="../src/ui/clone_dialog.ui" line="99"/>
+        <location filename="../src/ui/clone_dialog.ui" line="112"/>
+        <location filename="../src/ui/clone_dialog.ui" line="669"/>
+        <location filename="../src/ui/clone_dialog.ui" line="682"/>
+        <location filename="../src/ui/clone_dialog.ui" line="695"/>
         <source>CommandLinkButton</source>
         <translation>کومانڈلانکبٹون</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="166"/>
-        <location filename="../src/ui/clone_dialog.ui" line="231"/>
+        <location filename="../src/ui/clone_dialog.ui" line="140"/>
+        <location filename="../src/ui/clone_dialog.ui" line="205"/>
         <source>seconds</source>
         <translation>سیکنڈ</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="192"/>
-        <location filename="../src/ui/clone_dialog.ui" line="257"/>
+        <location filename="../src/ui/clone_dialog.ui" line="166"/>
+        <location filename="../src/ui/clone_dialog.ui" line="231"/>
         <source>minutes</source>
         <translation>منٹ</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="218"/>
+        <location filename="../src/ui/clone_dialog.ui" line="192"/>
         <source>elapsed time:</source>
         <translation>گزرا ہوا وقت:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="283"/>
+        <location filename="../src/ui/clone_dialog.ui" line="257"/>
         <source>remaining time:</source>
-        <translation>باقی وقت:</translation>
+        <translation>باقی وقت</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="384"/>
+        <location filename="../src/ui/clone_dialog.ui" line="358"/>
         <source>already saved:</source>
         <translation>پہلے ہی محفوظ</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="400"/>
+        <location filename="../src/ui/clone_dialog.ui" line="374"/>
         <source>MB</source>
         <translation>ایم بی</translation>
     </message>
     <message>
+        <location filename="../src/ui/clone_dialog.ui" line="387"/>
         <location filename="../src/ui/clone_dialog.ui" line="413"/>
-        <location filename="../src/ui/clone_dialog.ui" line="439"/>
         <source>hours</source>
         <translation>گھنٹے</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="465"/>
+        <location filename="../src/ui/clone_dialog.ui" line="439"/>
         <source>Transmission speed:</source>
         <translation>منتقلی کی رفتار</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="491"/>
+        <location filename="../src/ui/clone_dialog.ui" line="465"/>
         <source>MB/sec</source>
         <translation>MB/سیکنڈ</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="505"/>
+        <location filename="../src/ui/clone_dialog.ui" line="479"/>
         <source>f</source>
         <translation>f</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="518"/>
+        <location filename="../src/ui/clone_dialog.ui" line="492"/>
         <source>Directory in which the image is written</source>
         <translation>ڈائریکٹری جس میں نقش لکھا ہے</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="524"/>
+        <location filename="../src/ui/clone_dialog.ui" line="498"/>
         <source>Backup directory:</source>
-        <translation>پشتارہ ڈائریکٹری</translation>
+        <translation>پشتارہ ڈائریکٹری:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="552"/>
+        <location filename="../src/ui/clone_dialog.ui" line="526"/>
         <source>Image of a hard disk write back</source>
         <extracomment>sdc</extracomment>
         <translation>واپس ایک ہارڈ ڈسک لکھنے کی تصویر</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="565"/>
+        <location filename="../src/ui/clone_dialog.ui" line="539"/>
         <source>Clone hard disk</source>
         <extracomment>sda</extracomment>
         <translation>کلون ہارڈ ڈسک</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="584"/>
+        <location filename="../src/ui/clone_dialog.ui" line="558"/>
         <source>Proposed action:</source>
         <extracomment>vorgesehene Aktion:</extracomment>
         <translation>مجوزہ عمل:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog.ui" line="603"/>
+        <location filename="../src/ui/clone_dialog.ui" line="577"/>
         <source>Image of a hard disk to create</source>
         <extracomment>sdb</extracomment>
         <translation>تصویر کا ایک ہارڈ ڈسک بنانے کے لیے:</translation>
@@ -3626,109 +3766,93 @@ with fsarchiver</source>
         <source>Use gzip</source>
         <translation>گزاپ استعمال کریں</translation>
     </message>
+    <message>
+        <location filename="../src/ui/clone_dialog.ui" line="643"/>
+        <source>Save/Restore</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>clone_dialog_net</name>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="14"/>
         <source>Clone hard drive</source>
         <extracomment>MBR sichern/zurückschreiben</extracomment>
-        <translation>کلون کی ہارڈ ڈرائیو</translation>
+        <translation type="obsolete">کلون کی ہارڈ ڈرائیو</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="26"/>
         <source>Cancel</source>
         <extracomment>Abbrechen</extracomment>
-        <translation>منسوخ کریں</translation>
+        <translation type="obsolete">منسوخ کریں</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="39"/>
         <source>Save / restore MBR</source>
         <extracomment>MBR sichern/zurückschreiben</extracomment>
-        <translation>محفوظ کریں / MBR بحال کریں</translation>
+        <translation type="obsolete">محفوظ کریں / MBR بحال کریں</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="52"/>
         <source>Exist harddrive:</source>
         <extracomment>MBR Sicherungsverzeichnis:</extracomment>
-        <translation>حردراوی موجود ہیں:</translation>
+        <translation type="obsolete">حردراوی موجود ہیں:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="65"/>
         <source>Image einer Festplatte erstellen:</source>
         <extracomment>sdb</extracomment>
-        <translation>نقش ایانار فیسٹپلتٹی ارسٹللان:</translation>
+        <translation type="obsolete">نقش ایانار فیسٹپلتٹی ارسٹللان:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="78"/>
         <source>Image einer Festplatte zurückschreiben:</source>
         <extracomment>sdc</extracomment>
-        <translation>نقش ایانار فیسٹپلتٹی zurückschreiben:</translation>
+        <translation type="obsolete">نقش ایانار فیسٹپلتٹی zurückschreiben:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="123"/>
-        <location filename="../src/ui/clone_dialog_net.ui" line="188"/>
         <source>seconds</source>
-        <translation>سیکنڈ</translation>
+        <translation type="obsolete">سیکنڈ</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="149"/>
-        <location filename="../src/ui/clone_dialog_net.ui" line="214"/>
         <source>minutes</source>
-        <translation>منٹ</translation>
+        <translation type="obsolete">منٹ</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="175"/>
         <source>elapsed time:</source>
-        <translation>گزرا ہوا وقت:</translation>
+        <translation type="obsolete">گزرا ہوا وقت:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="240"/>
         <source>remaining time:</source>
-        <translation>باقی وقت:</translation>
+        <translation type="obsolete">باقی وقت</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="338"/>
         <source>already saved:</source>
-        <translation>پہلے ہی محفوظ</translation>
+        <translation type="obsolete">پہلے ہی محفوظ</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="351"/>
         <source>MB</source>
-        <translation>ایم بی</translation>
+        <translation type="obsolete">ایم بی</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="364"/>
-        <location filename="../src/ui/clone_dialog_net.ui" line="387"/>
         <source>hours</source>
-        <translation>گھنٹے</translation>
+        <translation type="obsolete">گھنٹے</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="411"/>
         <source>f</source>
-        <translation>f</translation>
+        <translation type="obsolete">f</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="434"/>
         <source>Image name:</source>
         <extracomment>Name der Sicherungsdatei:</extracomment>
-        <translation>نقش نام:</translation>
+        <translation type="obsolete">نقش نام:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="467"/>
         <source>Network computer  name:</source>
         <extracomment>Netzrechnername:</extracomment>
-        <translation>نیٹ ورک کمپیوٹر نام:</translation>
+        <translation type="obsolete">نیٹ ورک کمپیوٹر نام:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="480"/>
         <source>Exist Image:</source>
-        <translation>تصویر میں موجود ہیں:</translation>
+        <translation type="obsolete">تصویر میں موجود ہیں:</translation>
     </message>
     <message>
-        <location filename="../src/ui/clone_dialog_net.ui" line="493"/>
         <source>l</source>
-        <translation>l</translation>
+        <translation type="obsolete">l</translation>
     </message>
 </context>
 <context>
@@ -3740,7 +3864,7 @@ with fsarchiver</source>
         <extracomment>Verzeichnis sichern/zurückschreiben
 ----------
 Verzeichnis sichern/zurückschreiben</extracomment>
-        <translation>محفوظ کریں/بحالی ڈائریکٹری</translation>
+        <translation>Save/restore directory</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="26"/>
@@ -3751,43 +3875,45 @@ Verzeichnis sichern/zurückschreiben</extracomment>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="39"/>
         <source>Start the backup or the restore of a folder.</source>
-        <translation>پشتارہ یا بحالی ایک پوشہ شروع کریں ۔</translation>
+        <translation>Start the backup or the restore of a folder.</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="68"/>
         <source>Select the folder to be backed up or restored.</source>
-        <translation>پشتارہ یا بحال کے لیے پوشہ منتخب کریں ۔</translation>
+        <translation>Select the folder to be backed up or restored.</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="71"/>
         <source>Saved directory</source>
         <extracomment>zu sicherndes Verzeichnis:</extracomment>
-        <translation>محفوظ شدہ ڈائریکٹری</translation>
+        <translation>Saved directory</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="97"/>
         <source>Directory in which the folder is backed up or from the recovery file is removed.</source>
-        <translation>جس میں فولڈر کو اپ یا بحالی مسل سے بیک ہے ڈائریکٹری ہٹا دیا جاتا ہے ۔</translation>
+        <translation>Directory in which the folder is backed up or from the recovery file is removed.</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="100"/>
         <source>Location (path) of backup:</source>
         <extracomment>Ort (Pfad) der Sicherung:</extracomment>
-        <translation>پشتارہ کی (راہ) مقام:</translation>
+        <translation>Location (path) of backup:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="128"/>
         <source>On the number of
 captive Files/directories:</source>
         <extracomment>Anzahl der zu sichernden Dateien/Verzeichnisse:</extracomment>
-        <translation>اسیر مسلیں/ڈائریکٹریاں کی تعداد پر:</translation>
+        <translation>On the number of
+captive Files/directories:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="155"/>
         <source>Already backed
 Files/directories:</source>
         <extracomment>bereits gesicherte Datein/Verzeichnisse:</extracomment>
-        <translation>پہلے ہی حمایت یافتہ مسلیں/ڈائریکٹریاں:</translation>
+        <translation>Already backed
+Files/directories:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="198"/>
@@ -3817,7 +3943,7 @@ Sekunden</extracomment>
         <location filename="../src/ui/dir_dialog.ui" line="263"/>
         <source>remaining  time:</source>
         <extracomment>noch zu erwartende Zeit:</extracomment>
-        <translation>باقی وقت:</translation>
+        <translation>remaining  time:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="395"/>
@@ -3831,7 +3957,7 @@ for to be used fsarchiver:</translation>
         <location filename="../src/ui/dir_dialog.ui" line="424"/>
         <source>Compression setting:</source>
         <extracomment>Kompressioneinstellung:</extracomment>
-        <translation>سکڑاؤ سیٹنگ:</translation>
+        <translation>Compression setting:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="447"/>
@@ -3849,18 +3975,18 @@ backup key</translation>
         <location filename="../src/ui/dir_dialog.ui" line="474"/>
         <source>Overwrite existing backup</source>
         <extracomment>vorhandene Sicherung überschreiben</extracomment>
-        <translation>موجودہ پشتارہ برتحریر کریں</translation>
+        <translation>Overwrite existing backup</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="487"/>
         <source>The directory will be written back to the original path</source>
-        <translation>ڈائریکٹری واپس اصل راستے سے لکھے جائیں گے</translation>
+        <translation>The directory will be written back to the original path</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="490"/>
         <source>Backup restore to the Origin</source>
         <extracomment>Sicherung an den Ursprungsort zurückschreiben</extracomment>
-        <translation>پشتارہ بحال کرنا اصل</translation>
+        <translation>Backup restore to the Origin</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="504"/>
@@ -3880,7 +4006,7 @@ backup key</translation>
         <location filename="../src/ui/mbr_dialog.ui" line="27"/>
         <source>Only the boot loader area to restore</source>
         <extracomment>nur den Bootloaderbereich wieder herstellen</extracomment>
-        <translation>بحال کرنے کے لیے صرف بوٹ لوڈر علاقے</translation>
+        <translation>Only the boot loader area to restore</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="32"/>
@@ -3892,7 +4018,7 @@ backup key</translation>
         <location filename="../src/ui/mbr_dialog.ui" line="37"/>
         <source>Restore partition table</source>
         <extracomment>Partitionstabelle wiederherstellen</extracomment>
-        <translation>تقسیم ٹیبل بحال کریں</translation>
+        <translation>Restore partition table</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="42"/>
@@ -3966,7 +4092,7 @@ compression:</translation>
     <message>
         <location filename="../src/ui/setting.ui" line="90"/>
         <source>Language:</source>
-        <translation>زبان:</translation>
+        <translation>Language:</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="113"/>
@@ -4009,7 +4135,7 @@ back to the original location</translation>
         <location filename="../src/ui/setting.ui" line="192"/>
         <source>Network input data save</source>
         <extracomment>Netzwerkeingabedaten * speichern</extracomment>
-        <translation>نیٹ ورک ان پٹ کوائف محفوظ کریں</translation>
+        <translation>Network input data save</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="205"/>
@@ -4064,7 +4190,7 @@ back to the original location</translation>
         <location filename="../src/ui/treeview.ui" line="14"/>
         <source>Select restore file</source>
         <extracomment>Wiederherstellungsdatei auswählen</extracomment>
-        <translation>منتخب بحالی مسل</translation>
+        <translation>Select restore file</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="41"/>
@@ -4076,18 +4202,18 @@ back to the original location</translation>
         <location filename="../src/ui/treeview.ui" line="60"/>
         <source>Next</source>
         <extracomment>Mit der Wiederherstellung fortfahren</extracomment>
-        <translation>اگلا</translation>
+        <translation>Next</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="92"/>
         <source>Existing restore files:</source>
         <extracomment>Vorhandene Wiederherstellungsdateien:</extracomment>
-        <translation>موجود مسلیں بحال کریں:</translation>
+        <translation>Existing restore files:</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="105"/>
         <source>a</source>
-        <translation>ایک</translation>
+        <translation>a</translation>
     </message>
 </context>
 </TS>

@@ -32,7 +32,6 @@
 #include "net_ein.h"
 #include "mbr.h"
 #include "clone.h"
-#include "clone_net.h"
 #include "dir.h"
 #include "qt_probe.h"
 extern "C" {
@@ -342,7 +341,7 @@ MWindow::MWindow()
         int auswertung = setting.value("showPrg").toInt();
         setting.endGroup();
         if (auswertung ==1 and show_flag == 0){
-        int ret = questionMessage(tr("In the file /usr/share/doc/qt4-fsarchiver/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.", "In der Datei /usr/share/doc/qt4-fsarchiver/Liesmich sind Hinweise zur Nutzung des Programms enthalten. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern."));
+        int ret = questionMessage(tr("In the file /usr/share/doc/qt4-fsarchiver/doc/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.", "In der Datei /usr/share/doc/qt4-fsarchiver/doc/Liesmich sind Hinweise zur Nutzung des Programms enthalten. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern."));
     		if (ret == 2){
 		//Basiseinstellungen ändern
         	QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
@@ -657,8 +656,8 @@ int MWindow::savePartition()
        				 int pos_a = partitionsart_.indexOf("ntfs");
                 		 if (pos_a > -1)
 		                    {
-				  // Windows Auslagerungsdatei pagefile.sys  und hiberfil.sys von der Sicherung immer ausschließen
-                                  parameter[indizierung] = "--exclude=pagefile.sys";
+				  // Windows Auslagerungsdatei swapfile.sys  und hiberfil.sys von der Sicherung immer ausschließen
+                                  parameter[indizierung] = "--exclude=swapfile.sys";
                                   indizierung = indizierung + 1;
                                  // parameter[indizierung] = "--exclude=hyberfil.sys";
                                  // indizierung = indizierung + 1;
@@ -799,6 +798,7 @@ char * dev_part;
   if (rdBt_restoreFsArchiv->isChecked())
       string dateiname;
       int pos;
+      int pos1;
       keyText = lineKey->text();
       state1 = chk_key->checkState();
       {
@@ -824,8 +824,9 @@ char * dev_part;
         	{
                	if (rdBt_restoreFsArchiv->isChecked())
            		{
-                        pos = testDateiName("fsa"); 
-         		if (pos == 0)
+                        pos = testDateiName(".fsa"); 
+                        pos1= testDateiName("part.fsa");
+         		if (pos > 0 && pos1 >0)
          			   {
            			   QMessageBox::about(this, tr("Note", "Hinweis"),
          			   tr("You have chosen the wrong recovery file selected. \nThe files should end with. fsa be", "Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht \nDie Dateiendung muss .fsa sein"));
@@ -1081,8 +1082,8 @@ void MWindow::folder_file() {
 void MWindow::info() {
    QMessageBox::information(
       0, tr("qt4-fsarchiver"),
-      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-15, August 1, 2015",
-	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-15, 1. August 2015"));
+      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-16, December 15, 2015",
+	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-16, 15. Dezember 2015"));
       }
 
 int MWindow::Root_Auswertung(){
@@ -1428,24 +1429,26 @@ void MWindow::thread2Ready()  {
      QString cnt_regfile_ = QString::number(cnt_regfile);
      int cnt_dir = werte_holen(7);
      QString cnt_dir_ = QString::number(cnt_dir); 
-     int cnt_hardlinks = werte_holen(8);
-     cnt_hardlinks = cnt_hardlinks + werte_holen(9);
+     int cnt_hardlinks = 0;
+     cnt_hardlinks = werte_holen(8) + werte_holen(9) + werte_holen(16);
      QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
      int cnt_special = werte_holen(10);
      QString cnt_special_;
      cnt_special_ = QString::number(cnt_special);
-     if (dialog_auswertung ==0){
+     int err = werte_holen(5) + werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) - werte_holen(16);
+     // if (dialog_auswertung ==0){
+     //Rückmeldung von fsarchiver: Zurückschreiben erfolgreich
+     if (err ==0){
        // Ausgabe progressBar durch Timer unterbinden
        stopFlag = 1; 
        pushButton_restore->setEnabled(true);
        progressBar->setValue(100);
        SekundeRemaining ->setText("0");
-       
       //PBR herstellen
       i = 2;
       if (befehl_pbr != "") 
     	i = system (befehl_pbr.toAscii().data());
-      if (i!=0) { 
+      if (i!=0 ) { 
        QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition is successful back.\n", "Die Partition wurde erfolgreich wieder hergestellt.\n") + cnt_regfile_ + 
         tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr(" links and ", " Links und ") + cnt_special_ + tr(" specials have been restored.", " spezielle Daten wurden wieder hergestellt."));
         }
@@ -1459,7 +1462,7 @@ void MWindow::thread2Ready()  {
          tr("The restore of the partition was break by user!\n", "Die Wiederherstellung der Partition  wurde vom Benutzer abgebrochen!\n") );
 	meldung == 0;
         }
-     if (meldung == 100) {
+     if (err > 0) {
           // Anzahl nicht korrekt zurückgeschriebene Dateien ausgeben
        pushButton_restore->setEnabled(false);
        int err_regfile = werte_holen(12);
@@ -1779,7 +1782,7 @@ QString MWindow::mtab_einlesen(QString partition_if_home)
               if (items[0].size() == partition_if_home.size()){
                  if (text.indexOf(" /home") > -1) 
       	            return "home";
-                 if (text.indexOf("/ ") > -1) 
+                 if (text.indexOf(" / ") > -1) 
       	           return "system";
                  if (text.indexOf("ext4") > -1) 
       	        	return "ext4";
@@ -1973,6 +1976,12 @@ void MWindow::del_mediafolder()
            befehl = "rm " + filename + " 2>/dev/null";
            system (befehl.toAscii().data());
            filename = homepath + "/.config/qt4-fsarchiver/smbtree.txt";
+           befehl = "rm " + filename + " 2>/dev/null";
+           system (befehl.toAscii().data());
+           filename = homepath + "/.config/qt4-fsarchiver/crypt1.txt";
+           befehl = "rm " + filename + " 2>/dev/null";
+           system (befehl.toAscii().data());
+           filename = homepath + "/.config/qt4-fsarchiver/sektornummer.txt";
            befehl = "rm " + filename + " 2>/dev/null";
            system (befehl.toAscii().data());
            

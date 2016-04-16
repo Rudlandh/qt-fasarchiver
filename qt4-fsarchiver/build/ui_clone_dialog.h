@@ -33,8 +33,6 @@ QT_BEGIN_NAMESPACE
 class Ui_clone_dialog
 {
 public:
-    QPushButton *bt_end;
-    QPushButton *bt_save;
     QTreeView *treeView_clone;
     QLabel *lbl_hd;
     QListWidget *listWidget_exist;
@@ -72,29 +70,32 @@ public:
     QRadioButton *rdbt_clone;
     QGroupBox *groupBox;
     QRadioButton *rdbt_image_save;
+    QRadioButton *rdbt_partition_save;
+    QRadioButton *rdbt_partition_restore;
     QCheckBox *chk_zip;
+    QPushButton *pushButton_partition;
+    QPushButton *bt_save;
+    QPushButton *bt_end;
+    QCommandLinkButton *commandLinkButton_3;
+    QCommandLinkButton *commandLinkButton_4;
+    QCommandLinkButton *commandLinkButton_5;
+    QListWidget *listWidget;
 
     void setupUi(QWidget *clone_dialog)
     {
         if (clone_dialog->objectName().isEmpty())
             clone_dialog->setObjectName(QString::fromUtf8("clone_dialog"));
-        clone_dialog->resize(516, 700);
-        bt_end = new QPushButton(clone_dialog);
-        bt_end->setObjectName(QString::fromUtf8("bt_end"));
-        bt_end->setGeometry(QRect(20, 640, 171, 41));
-        bt_save = new QPushButton(clone_dialog);
-        bt_save->setObjectName(QString::fromUtf8("bt_save"));
-        bt_save->setGeometry(QRect(210, 640, 281, 41));
+        clone_dialog->resize(752, 607);
         treeView_clone = new QTreeView(clone_dialog);
         treeView_clone->setObjectName(QString::fromUtf8("treeView_clone"));
-        treeView_clone->setGeometry(QRect(20, 280, 471, 171));
+        treeView_clone->setGeometry(QRect(410, 170, 321, 231));
         treeView_clone->header()->setDefaultSectionSize(400);
         lbl_hd = new QLabel(clone_dialog);
         lbl_hd->setObjectName(QString::fromUtf8("lbl_hd"));
-        lbl_hd->setGeometry(QRect(20, 120, 181, 18));
+        lbl_hd->setGeometry(QRect(20, 150, 351, 18));
         listWidget_exist = new QListWidget(clone_dialog);
         listWidget_exist->setObjectName(QString::fromUtf8("listWidget_exist"));
-        listWidget_exist->setGeometry(QRect(20, 140, 210, 111));
+        listWidget_exist->setGeometry(QRect(20, 170, 168, 231));
         QFont font;
         font.setFamily(QString::fromUtf8("Courier New"));
         font.setBold(true);
@@ -102,20 +103,20 @@ public:
         listWidget_exist->setFont(font);
         listWidget_clone = new QListWidget(clone_dialog);
         listWidget_clone->setObjectName(QString::fromUtf8("listWidget_clone"));
-        listWidget_clone->setGeometry(QRect(280, 140, 210, 111));
+        listWidget_clone->setGeometry(QRect(220, 170, 168, 231));
         listWidget_clone->setFont(font);
         label_3 = new QLabel(clone_dialog);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(280, 120, 191, 18));
+        label_3->setGeometry(QRect(230, 150, 171, 18));
         commandLinkButton = new QCommandLinkButton(clone_dialog);
         commandLinkButton->setObjectName(QString::fromUtf8("commandLinkButton"));
-        commandLinkButton->setGeometry(QRect(240, 200, 31, 41));
+        commandLinkButton->setGeometry(QRect(190, 210, 31, 41));
         commandLinkButton_2 = new QCommandLinkButton(clone_dialog);
         commandLinkButton_2->setObjectName(QString::fromUtf8("commandLinkButton_2"));
-        commandLinkButton_2->setGeometry(QRect(240, 150, 31, 41));
+        commandLinkButton_2->setGeometry(QRect(190, 170, 31, 41));
         frame_2 = new QFrame(clone_dialog);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
-        frame_2->setGeometry(QRect(20, 470, 471, 161));
+        frame_2->setGeometry(QRect(20, 420, 471, 161));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         label_8 = new QLabel(frame_2);
@@ -209,22 +210,22 @@ public:
         label_2->setGeometry(QRect(205, 90, 51, 17));
         pushButton_folder = new QPushButton(clone_dialog);
         pushButton_folder->setObjectName(QString::fromUtf8("pushButton_folder"));
-        pushButton_folder->setGeometry(QRect(80, 650, 16, 21));
+        pushButton_folder->setGeometry(QRect(550, 540, 16, 21));
         label_folder = new QLabel(clone_dialog);
         label_folder->setObjectName(QString::fromUtf8("label_folder"));
-        label_folder->setGeometry(QRect(20, 260, 171, 18));
+        label_folder->setGeometry(QRect(410, 150, 171, 18));
         label_folder->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         frame = new QFrame(clone_dialog);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(20, 10, 471, 105));
+        frame->setGeometry(QRect(20, 10, 711, 131));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         rdbt_image_restore = new QRadioButton(frame);
         rdbt_image_restore->setObjectName(QString::fromUtf8("rdbt_image_restore"));
-        rdbt_image_restore->setGeometry(QRect(170, 30, 301, 23));
+        rdbt_image_restore->setGeometry(QRect(410, 30, 301, 25));
         rdbt_clone = new QRadioButton(frame);
         rdbt_clone->setObjectName(QString::fromUtf8("rdbt_clone"));
-        rdbt_clone->setGeometry(QRect(10, 30, 161, 23));
+        rdbt_clone->setGeometry(QRect(410, 90, 161, 25));
         groupBox = new QGroupBox(frame);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         groupBox->setGeometry(QRect(20, 0, 221, 31));
@@ -233,13 +234,38 @@ public:
         groupBox->setCheckable(false);
         rdbt_image_save = new QRadioButton(frame);
         rdbt_image_save->setObjectName(QString::fromUtf8("rdbt_image_save"));
-        rdbt_image_save->setGeometry(QRect(10, 60, 311, 40));
+        rdbt_image_save->setGeometry(QRect(20, 30, 251, 25));
+        rdbt_partition_save = new QRadioButton(frame);
+        rdbt_partition_save->setObjectName(QString::fromUtf8("rdbt_partition_save"));
+        rdbt_partition_save->setGeometry(QRect(20, 60, 301, 25));
+        rdbt_partition_restore = new QRadioButton(frame);
+        rdbt_partition_restore->setObjectName(QString::fromUtf8("rdbt_partition_restore"));
+        rdbt_partition_restore->setGeometry(QRect(410, 60, 301, 25));
         chk_zip = new QCheckBox(frame);
         chk_zip->setObjectName(QString::fromUtf8("chk_zip"));
-        chk_zip->setGeometry(QRect(330, 60, 131, 40));
+        chk_zip->setGeometry(QRect(20, 90, 391, 25));
+        pushButton_partition = new QPushButton(clone_dialog);
+        pushButton_partition->setObjectName(QString::fromUtf8("pushButton_partition"));
+        pushButton_partition->setGeometry(QRect(520, 430, 31, 27));
+        bt_save = new QPushButton(clone_dialog);
+        bt_save->setObjectName(QString::fromUtf8("bt_save"));
+        bt_save->setGeometry(QRect(500, 420, 231, 71));
+        bt_end = new QPushButton(clone_dialog);
+        bt_end->setObjectName(QString::fromUtf8("bt_end"));
+        bt_end->setGeometry(QRect(500, 510, 231, 71));
+        commandLinkButton_3 = new QCommandLinkButton(clone_dialog);
+        commandLinkButton_3->setObjectName(QString::fromUtf8("commandLinkButton_3"));
+        commandLinkButton_3->setGeometry(QRect(190, 250, 31, 41));
+        commandLinkButton_4 = new QCommandLinkButton(clone_dialog);
+        commandLinkButton_4->setObjectName(QString::fromUtf8("commandLinkButton_4"));
+        commandLinkButton_4->setGeometry(QRect(190, 290, 31, 41));
+        commandLinkButton_5 = new QCommandLinkButton(clone_dialog);
+        commandLinkButton_5->setObjectName(QString::fromUtf8("commandLinkButton_5"));
+        commandLinkButton_5->setGeometry(QRect(190, 330, 31, 41));
+        listWidget = new QListWidget(clone_dialog);
+        listWidget->setObjectName(QString::fromUtf8("listWidget"));
+        listWidget->setGeometry(QRect(20, 170, 371, 231));
         pushButton_folder->raise();
-        bt_end->raise();
-        bt_save->raise();
         treeView_clone->raise();
         lbl_hd->raise();
         listWidget_exist->raise();
@@ -250,30 +276,24 @@ public:
         frame_2->raise();
         label_folder->raise();
         frame->raise();
+        pushButton_partition->raise();
+        bt_save->raise();
+        bt_end->raise();
+        commandLinkButton_3->raise();
+        commandLinkButton_4->raise();
+        commandLinkButton_5->raise();
+        listWidget->raise();
 
         retranslateUi(clone_dialog);
         QObject::connect(treeView_clone, SIGNAL(clicked(QModelIndex)), pushButton_folder, SLOT(click()));
+        QObject::connect(listWidget, SIGNAL(clicked(QModelIndex)), pushButton_partition, SLOT(click()));
 
         QMetaObject::connectSlotsByName(clone_dialog);
     } // setupUi
 
-   void retranslateUi(QWidget *clone_dialog)
+    void retranslateUi(QWidget *clone_dialog)
     {
-	int w,h, mw, mh, cw, ch;
-        QWidget *d = QApplication::desktop();
-        w=d->width();                   // returns screen width
-        h=d->height();                  // returns screen height
-        //qDebug() << "Bildschrimbreite";
-        //qDebug() << h;
-        //Center position calculation
-        mw = clone_dialog->width();
-        mh = clone_dialog->height();
-        cw = (w/2) - (mw/2);
-        ch = (h/2) - (mh/2); 
-        clone_dialog->setGeometry(QRect(cw, ch, 516, 700));
         clone_dialog->setWindowTitle(QApplication::translate("clone_dialog", "Clone hard drive", 0, QApplication::UnicodeUTF8));
-        bt_end->setText(QApplication::translate("clone_dialog", "Exit", 0, QApplication::UnicodeUTF8));
-        bt_save->setText(QApplication::translate("clone_dialog", "Save / Restore MBR", 0, QApplication::UnicodeUTF8));
         lbl_hd->setText(QApplication::translate("clone_dialog", "Exist harddrive:", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("clone_dialog", "New harddrive:", 0, QApplication::UnicodeUTF8));
         commandLinkButton->setText(QApplication::translate("clone_dialog", "CommandLinkButton", 0, QApplication::UnicodeUTF8));
@@ -301,7 +321,15 @@ public:
         rdbt_clone->setText(QApplication::translate("clone_dialog", "Clone hard disk", 0, QApplication::UnicodeUTF8));
         groupBox->setTitle(QApplication::translate("clone_dialog", "Proposed action:", 0, QApplication::UnicodeUTF8));
         rdbt_image_save->setText(QApplication::translate("clone_dialog", "Image of a hard disk to create", 0, QApplication::UnicodeUTF8));
+        rdbt_partition_save->setText(QApplication::translate("clone_dialog", "Image of a partition to create", 0, QApplication::UnicodeUTF8));
+        rdbt_partition_restore->setText(QApplication::translate("clone_dialog", "Image of a partition write back", 0, QApplication::UnicodeUTF8));
         chk_zip->setText(QApplication::translate("clone_dialog", "Use gzip", 0, QApplication::UnicodeUTF8));
+        pushButton_partition->setText(QApplication::translate("clone_dialog", "p", 0, QApplication::UnicodeUTF8));
+        bt_save->setText(QApplication::translate("clone_dialog", "Save/Restore", 0, QApplication::UnicodeUTF8));
+        bt_end->setText(QApplication::translate("clone_dialog", "Exit", 0, QApplication::UnicodeUTF8));
+        commandLinkButton_3->setText(QApplication::translate("clone_dialog", "CommandLinkButton", 0, QApplication::UnicodeUTF8));
+        commandLinkButton_4->setText(QApplication::translate("clone_dialog", "CommandLinkButton", 0, QApplication::UnicodeUTF8));
+        commandLinkButton_5->setText(QApplication::translate("clone_dialog", "CommandLinkButton", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

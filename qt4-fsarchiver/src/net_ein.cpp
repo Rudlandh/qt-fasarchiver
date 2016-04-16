@@ -17,7 +17,6 @@
 #include <QtGui> 
 #include "net_ein.h"
 #include "net.h"
-#include "clone_net.h"
 #include "mainWindow.h"
 #include <iostream>
 
@@ -488,8 +487,6 @@ setting.beginGroup(comNet_name);
 	save_net();
      if (dialog_auswertung == 7 && i == 0)
 	restore_net(); 
-     if (dialog_auswertung == 8 && i == 0)
-	save_clone();
      return 0;
 }
 
@@ -510,14 +507,6 @@ extern int dialog_auswertung;
         dialog2->show();
         this->setCursor(Qt::ArrowCursor);
         close();
-}
-
-void NetEin::save_clone () {
-extern int dialog_auswertung;
-        close();
-      	dialog_auswertung = 8;
-      	DialogClone_net *dialog2 = new DialogClone_net;
-        dialog2->show();
 }
 
 QString NetEin::crypt(QString key){

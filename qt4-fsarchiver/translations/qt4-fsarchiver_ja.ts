@@ -405,7 +405,8 @@
 backup. key:</source>
         <comment>Sicherung
 verschlüsseln. Schlüssel:</comment>
-        <translation type="unfinished">暗号化キー:</translation>
+        <translation>Encrypt
+backup. key:</translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="133"/>
@@ -431,7 +432,8 @@ verschlüsseln. Schlüssel:</comment>
 backup. key:</source>
         <comment>Sicherung
 entschlüsseln. Schlüssel:</comment>
-        <translation type="unfinished"></translation>
+        <translation>Decrypt
+backup. key:</translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="149"/>
@@ -632,7 +634,7 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/dir.cpp" line="439"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
-        <translation>dati specifico è stato eseguito il backup.</translation>
+        <translation>specials have been backed.</translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="444"/>
@@ -689,7 +691,7 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/dir.cpp" line="492"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
-        <translation>dati specifici è stato restaurato</translation>
+        <translation>具体的なデータが書き戻されています。</translation>
     </message>
     <message>
         <location filename="../src/dir.cpp" line="496"/>
@@ -1533,7 +1535,7 @@ backup. key:</translation>
         <location filename="../src/net.cpp" line="1224"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
-        <translation>dati specifico è stato eseguito il backup.</translation>
+        <translation>specials have been backed.</translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="1240"/>
@@ -1574,7 +1576,7 @@ backup. key:</translation>
 .</source>
         <comment> spezielle Daten wurden gesichert
 .</comment>
-        <translation>dati specifico è stato eseguito il backup.</translation>
+        <translation>specials have been backed.</translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="1269"/>
@@ -1605,7 +1607,7 @@ backup. key:</translation>
         <location filename="../src/net.cpp" line="1323"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
-        <translation>dati specifici è stato restaurato</translation>
+        <translation>具体的なデータが書き戻されています。</translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="1326"/>
@@ -1626,7 +1628,7 @@ backup. key:</translation>
         <location filename="../src/net.cpp" line="1327"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
-        <translation>specificati i dati e il settore di avvio della partizione è stata restaurata.</translation>
+        <translation>specials and the Partition Boot Record have been restored.</translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="1332"/>
@@ -1650,7 +1652,7 @@ backup. key:</translation>
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
 .</comment>
-        <translation>dati specifici è stato restaurato</translation>
+        <translation>具体的なデータが書き戻されています。</translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="1350"/>
@@ -1682,7 +1684,7 @@ backup. key:</translation>
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
 .</comment>
-        <translation>specificati i dati e il settore di avvio della partizione è stata restaurata.</translation>
+        <translation>specials and the Partition Boot Record have been restored.</translation>
     </message>
     <message>
         <location filename="../src/net.cpp" line="1362"/>
@@ -2306,7 +2308,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainWindow.cpp" line="339"/>
         <source>In the file /usr/share/doc/qt4-fsarchiver/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.</source>
         <comment>In der Datei /usr/share/doc/qt4-fsarchiver/Liesmich sind Hinweise zur Nutzung des Programms enthalten. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern.</comment>
-        <translation>ファイルの/usr/share/doc/qt4-fsarchiver/私を読む プログラム の使用方法 が含まれていた。 これは 表示 され続けます か？ あなたは、基本設定 で変更できます。はじめにお読みください</translation>
+        <translation type="unfinished">ファイルの/usr/share/doc/qt4-fsarchiver/doc/ 私を読む プログラム の使用方法 が含まれていた。 これは 表示 され続けます か？ あなたは、基本設定 で変更できます。はじめにお読みください</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="401"/>
@@ -2711,7 +2713,7 @@ Version 0.6.19-12, 25. Februar 2015</comment>
         <location filename="../src/mainWindow.cpp" line="1351"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
-        <translation>dati specifico è stato eseguito il backup.</translation>
+        <translation>specials have been backed.</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1370"/>
@@ -2762,7 +2764,7 @@ Version 0.6.19-12, 25. Februar 2015</comment>
 .</source>
         <comment> spezielle Daten wurden gesichert
 .</comment>
-        <translation>dati specifico è stato eseguito il backup.</translation>
+        <translation>specials have been backed.</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1406"/>
@@ -2795,7 +2797,7 @@ Version 0.6.19-12, 25. Februar 2015</comment>
         <location filename="../src/mainWindow.cpp" line="1450"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
-        <translation>dati specifici è stato restaurato</translation>
+        <translation>具体的なデータが書き戻されています。</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1454"/>
@@ -2807,7 +2809,7 @@ Version 0.6.19-12, 25. Februar 2015</comment>
         <location filename="../src/mainWindow.cpp" line="1454"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
-        <translation>specificati i dati e il settore di avvio della partizione è stata restaurata.</translation>
+        <translation>specials and the Partition Boot Record have been restored.</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1459"/>
@@ -2832,7 +2834,7 @@ Version 0.6.19-12, 25. Februar 2015</comment>
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
 .</comment>
-        <translation>dati specifici è stato restaurato</translation>
+        <translation>具体的なデータが書き戻されています。</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1479"/>
@@ -2856,7 +2858,7 @@ Version 0.6.19-12, 25. Februar 2015</comment>
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
 .</comment>
-        <translation>specificati i dati e il settore di avvio della partizione è stata restaurata.</translation>
+        <translation>specials and the Partition Boot Record have been restored.</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1495"/>

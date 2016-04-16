@@ -1,6 +1,9 @@
 ==================================================================================================
 * qt4-fsarchiver: Grafische Oberfläche für fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ==================================================================================================
+* qt4-fsarchiver-6.19-16 15. Dezember 2015
+    - Imagebildung von Partitionen hinzugefügt.
+    - kleinere Verbesserungen.
 * qt4-fsarchiver-6.19-15 1. August 2015
     - Starter von sudo nach gksu geändert.
     - Starter für Gnome, KDE, Unity, Mate, Cinnamon, Xfce und  Lxde hinzugefügt.

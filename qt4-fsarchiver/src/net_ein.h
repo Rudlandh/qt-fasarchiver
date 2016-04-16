@@ -42,7 +42,6 @@ public slots:
 protected slots:
         void save_net ();
    	void restore_net ();
-        void save_clone ();
         QString hostname();
         QString IP(QString adresse);
         void listWidget_show();

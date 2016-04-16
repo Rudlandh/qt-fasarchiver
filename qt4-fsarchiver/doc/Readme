@@ -9,7 +9,7 @@ François Dupoux has developed the basic program fsarchiver, Hihin Ruslan has im
 
 qt4-fsarchiver a program with a graphical interface for easy operation the archiving program fsarchiver.
 qt4 fsarchiver program was extended with these points:
-Backup and restore partition table, HD cloning, images of hard drives write and restore.
+Backup and restore partition table, HD cloning, images of hard drives and partitions write and restore.
 
 The source code can be installed on any Debian-based system on Suse and Fedora.
 For Debian, Ubuntu and Linux Mint are deb packages for Suse and Fedora rpm packages are available.
@@ -31,7 +31,7 @@ This is the command for Fedora: qmake-qt4 && make && sudo make install.
 
 Installing the program from the DEB packages:
 A double click on the deb file installs the program.
-If the installation is unsuccessful you enter this command in a terminal(you must be administrator): dpkg -i qt4-fsarchiver-0.6.17-1.deb. The version number needs to be adjusted.
+If the installation is unsuccessful you enter this command in a terminal(you must be administrator): dpkg -i qt4-fsarchiver-0.6.19-16.deb. The version number needs to be adjusted.
 
 Program call:
 Partial starters are installed. By double-qt4-fsarchiver is started.
@@ -88,19 +88,19 @@ The backup of mounted partitions is possible after asking for confirmation. Rest
 The restoration of a root or a home partition is possible with the live CD qt4-fsarchiver (http://sourceforge.net/projects/qt4-fsarchiver/files/Live-CD/ ").
 On the SystemRescueCd is the program available fsarchiver. With fsarchiver it is posible root- and home-partitions can be restore​​.
 
-When backing up the MBR only needs to select (with multiple hard drives), the hard disk and the backup directory. The hidden area of ​​the disk between the end of the MBR and the start of the first partition will be backed up. While restoring the MBR with multiple hard drives, the hard disk can be selected, the MBR will be written back. In addition, you can choose whether the boot loader area, the partition table or hidden area of ​​the disk to be restored.
+When backing up the MBR/GPT only needs to select (with multiple hard drives), the hard disk and the backup directory. The hidden area of ​​the disk between the end of the MBR and the start of the first partition will be backed up. While restoring the MBR/GPT with multiple hard drives, the hard disk can be selected, the MBR/GPT will be written back. In addition, you can choose whether the boot loader area, the partition table or hidden area of ​​the disk to be restored.
 
 qt4-fsarchiver  can back up and restore with ecryptfs encrypted home directories. This is regardless of whether the user's home directory is stored in a separate partition or within the root directory.
 
 With TrueCrypt encrypted partitions can not be backed up.
 
-Securing a Windows FAT partition is not supported. However, it can be stored on a FAT partition. The backup file will be split if the file size is greater than 4GB.
+Securing a Windows FAT partitions is only possible as Image.(Actions>HD-Image built and restore) However, it can be stored on a FAT partition. The backup file will be split if the file size is greater than 4GB.
 
 Clone hard drive: You choose in the left list box, select the existing drive that is to be cloned, and the right list box, the hard drive, which is to be rebuilt. Click on the button "Clone disk".
-Image of the hard disk create:
-Choose in the left list box of the existing hard drive, from which an image is to be create. Choose a backup directory. In addition, select whether the image is compressed. Click on the button "Image create".
-Image of the hard disk restore:
-Choose in the left list box from the hard drive, from which an image is to be written back. Choose existing backup file (ending img.fsa or gz.fsa). Click on the button "Image restore".
+Image of the hard disk/partition create:
+Choose in the left list box of the existing hard drive/partition, from which an image is to be create. Choose a backup directory. In addition, select whether the image is compressed. Click on the button "Image create".
+Image of the hard disk/partition restore:
+Choose in the left list box from the hard drive/partiiton, from which an image is to be written back. Choose existing backup file (ending img.fsa or gz.fsa or gz.part.fsa or part.fsa). Click on the button "Image restore".
 
 When starting qt4-fsarchiver are not all unmounted partitions under / media / sda ... / media / sdb ... mounted. The partitions are easily reachable on the desktop. The directory where the backup should be saved or the directory in which the secured partition is stored, can be selected in qt4-fsarchiver under / media / sd .... 
 qt4-fsarchiver can be started multiple times. So it is possible for instance to secure the same time the root partition and home partition. (Prerequisite is, of course, that there are two separate partitions).

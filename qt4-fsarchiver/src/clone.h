@@ -54,7 +54,13 @@ public slots:
         void read_write_hd();
 	void read_write_hd_1();
 	void keyPressEvent(QKeyEvent *event) ;
-                
+        int do_image_partition();
+        int restore_image_partition(); 
+        void rdbutton_partition_image_save();
+        void rdbutton_partition_image_restore();
+        void addWidget();
+        void listWidget_auslesen();
+                       
 private:
     QDirModel *dirModel;
     QItemSelectionModel *selModel;

@@ -63,8 +63,9 @@ typedef struct s_extractar
     u64         cost_current;
 } cextractar;
 long long anzahlfile; 
-	float progress; 
-	int zeitflag = 0;
+float progress; 
+int zeitflag = 0;
+int symlink_ = 0;
 
 // returns true if this file of a parent directory has been excluded
 int is_filedir_excluded(char *relpath)
@@ -239,6 +240,7 @@ int extractar_restore_attr_windows(cextractar *exar, u32 objtype, char *fullpath
     int i;
     
     xattrdicsize=dico_count_one_section(dicoattr, DICO_OBJ_SECTION_WINATTR);
+//printf("extractar_restore_attr_windows relpath %s\n", relpath);
     
     for (i=0; i < xattrdicsize; i+=2)
     {
@@ -256,16 +258,18 @@ int extractar_restore_attr_windows(cextractar *exar, u32 objtype, char *fullpath
             ret=-1;
             continue;
         }
-/* Um Fehlermeldungen beim Zurückschreiben zu vermeiden        
+// Um Fehlermeldungen beim Zurückschreiben zu vermeiden        
         if ((res=lsetxattr(fullpath, xattrname, xattrvalue, xattrdatasize, 0))!=0)
         {
-            sysprintf("winattr:lsetxattr(%s,%s) failed\n", relpath, xattrname);
+            //sysprintf("winattr:lsetxattr(%s,%s) failed\n", relpath, xattrname);
+            symlink_ = symlink_ + 1;
+            werte_uebergeben (symlink_,16);
             ret=-1;
         }
         else // success
         {
             msgprintf(MSG_VERB2, "            winattr:lsetxattr(%s, %s)=%d\n", relpath, xattrname, res);
-        } */
+        } 
     }
     
     return ret;

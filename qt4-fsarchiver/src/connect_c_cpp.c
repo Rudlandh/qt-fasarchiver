@@ -62,6 +62,7 @@ float s_links;
 float s_links_;
 float s_special;
 float s_special_;
+float s_err_;
 float arch_art;
 char* key ;
 char fsorigdev[100];
@@ -152,6 +153,8 @@ void werte_uebergeben(float prozess, int auswahl){
      	    s_links_ = prozess;
      if (auswahl ==15)
      	    arch_art = prozess;
+     if (auswahl ==16)
+     	    s_err_ = prozess;
    }
 
 float werte_holen(int auswahl){
@@ -185,6 +188,8 @@ float werte_holen(int auswahl){
      	return s_links_;
       if (auswahl ==15)
      	return arch_art;
+      if (auswahl ==16)
+     	return s_err_;
       return -1;
     }
  
@@ -202,6 +207,7 @@ void werte_reset(){
       s_links_ = 0;
       s_special = 0;
       s_special_ = 0;
+      s_err_ = 0;
    }
 
 void meldungen_uebergeben(char* meldung, int auswahl){

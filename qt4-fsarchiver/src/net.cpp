@@ -752,6 +752,7 @@ QString keyText = "";
 char * dev_part;
 string dateiname;
 int pos;
+int pos1;
 int cmp;
 char  dev_[50] = "/dev/";
 QString str = ""; 
@@ -789,8 +790,9 @@ QString str1 = "";
            }
            if (rdBt_restoreFsArchiv->isChecked())
            	{
-                pos = testDateiName("fsa"); 
-         	if (pos == 0)
+                 pos = testDateiName(".fsa"); 
+                 pos1= testDateiName("part.fsa");
+         		if (pos > 0 && pos1 >0)
          	   {
            	   QMessageBox::about(this, tr("Note", "Hinweis"),
          	   tr("You have chosen the wrong recovery file selected.\nThe files should end with. fsa be", "Sie haben eine falsche Wiederherstellungsdatei ausgesucht ausgesucht \nDie Dateiendung muss .fsa sein"));
@@ -1312,13 +1314,16 @@ void DialogNet::thread2Ready()  {
        QString cnt_regfile_ = QString::number(cnt_regfile);
        int cnt_dir = werte_holen(7);
        QString cnt_dir_ = QString::number(cnt_dir); 
-       int cnt_hardlinks = werte_holen(8);
-       cnt_hardlinks = cnt_hardlinks + werte_holen(9);
+       int cnt_hardlinks = 0;
+       cnt_hardlinks = werte_holen(8) + werte_holen(9) + werte_holen(16);
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks); 
        int cnt_special = werte_holen(10);
        QString cnt_special_;
        cnt_special_ = QString::number(cnt_special);
-     if (dialog_auswertung ==0){
+       int err = werte_holen(5) + werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) - werte_holen(16);
+       //if (dialog_auswertung ==0){
+       //Rückmeldung von fsarchiver: Zurückschreiben erfolgreich
+     if (err ==0){
        // Ausgabe progressBar durch Timer unterbinden
        stopFlag_ = 1; 
        pushButton_restore->setEnabled(true);
@@ -1328,7 +1333,7 @@ void DialogNet::thread2Ready()  {
        i = 2;
 	if (befehl_pbr_net != "") 
     	i = system (befehl_pbr_net.toAscii().data());
-	if (i!=0) { 
+	if (i!=0 ) { 
        		QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition/directorie is successful back.\n", "Die Partition/das Verzeichnis wurde erfolgreich wieder hergestellt.\n") + 		cnt_regfile_ + tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr(" links and ", " Links und ") + cnt_special_ + tr(" specials have been restored.", " spezielle Daten wurden wieder hergestellt."));
         }
 	if (i==0) { 
@@ -1341,7 +1346,7 @@ void DialogNet::thread2Ready()  {
          tr("The restore of the partition/directorie was break by user!\n", "Die Wiederherstellung der Partition/des Verzeichnisses wurde vom Benutzer abgebrochen!\n") );
 	meldung == 0;
         }
-     if (meldung == 100) {
+     if (err > 0) {
           // Anzahl nicht korrekt zurückgeschriebene Dateien ausgeben
        pushButton_restore->setEnabled(false);
        int err_regfile = werte_holen(12);

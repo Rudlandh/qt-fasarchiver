@@ -22,7 +22,6 @@ HEADERS += src/archinfo.h \
            src/archreader.h \
            src/archwriter.h \
            src/clone.h \
-           src/clone_net.h \
            src/common.h \
            src/comp_bzip2.h \
            src/comp_gzip.h \
@@ -72,7 +71,6 @@ HEADERS += src/archinfo.h \
            src/types.h \
            src/writebuf.h
 FORMS += src/ui/clone_dialog.ui \
-         src/ui/clone_dialog_net.ui \
          src/ui/dir_dialog.ui \
          src/ui/filedialog.ui \
          src/ui/fsarchiverMain.ui \
@@ -85,7 +83,6 @@ SOURCES += src/archinfo.c \
            src/archreader.c \
            src/archwriter.c \
            src/clone.cpp \
-           src/clone_net.cpp \
            src/common.c \
            src/comp_bzip2.c \
            src/comp_gzip.c \
