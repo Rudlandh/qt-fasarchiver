@@ -3,10 +3,12 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = bin/qt4-fsarchiver
+TARGET = bin/qt5-fsarchiver
 DEPENDPATH += . src translations src/ui
 
-DEFINES +=  HAVE_CONFIG_H _REENTRANT _FILE_OFFSET_BITS=64 _LARGEFILE64_SOURCE _GNU_SOURCE 
+QT += widgets gui core
+
+DEFINES +=  HAVE_CONFIG_H _REENTRANT _FILE_OFFSET_BITS=64 _LARGEFILE64_SOURCE _GNU_SOURCE HAVE_QT5
 INCLUDEPATH += . src /usr/include/ext2fs /usr/include/et /usr/include/e2p /usr/include/blkid /usr/include/uuid 
 LIBS += -L/usr/lib -lQtGui -lQtCore -lpthread -lrt -llzma -lext2fs -lcom_err -le2p -lblkid -luuid -lz -lbz2 -llzo2 -lgcrypt -lgpg-error
 OBJECTS_DIR = build

@@ -62,9 +62,9 @@ DialogDIR::DialogDIR(QWidget *parent)
         connect( pushButton_break, SIGNAL( clicked() ), this, SLOT( esc_end() ) ); 
         connect( chk_hidden, SIGNAL( clicked() ), this, SLOT(chkhidden()));
         timer = new QTimer(this);
-        dirModel = new QDirModel;
+        dirModel = new QFileSystemModel;
    	selModel = new QItemSelectionModel(dirModel);
-        dirModel1 = new QDirModel;
+        dirModel1 = new QFileSystemModel;
    	selModel1 = new QItemSelectionModel(dirModel1);
    	QModelIndex cwdIndex = dirModel->index(QDir::rootPath());
         treeView_dir->setModel(dirModel);
@@ -323,7 +323,7 @@ Qt::CheckState state1;
         	parameter[0] = "fsarchiver";
        		parameter[1] = "archinfo";
 		parameter[2] = folder_dir;
-        	fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data());
+        	fsarchiver_aufruf(3,parameter[0].toLatin1().data(),parameter[1].toLatin1().data(),parameter[2].toLatin1().data(),parameter[3].toLatin1().data());
         if (werte_holen(4) == 103){
                  chk_key->setChecked(Qt::Checked);
                  lineKey->setEnabled(true);
@@ -341,7 +341,7 @@ Qt::CheckState state1;
                 	return 0 ; 
                	}
                 parameter[4] = folder_dir;
-                int retour = fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data());
+                int retour = fsarchiver_aufruf(5,parameter[0].toLatin1().data(),parameter[1].toLatin1().data(),parameter[2].toLatin1().data(),parameter[3].toLatin1().data(),parameter[4].toLatin1().data (),parameter[5].toLatin1().data());
                 if ( werte_holen(4) == 103 && retour != 0){
                            QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");
@@ -690,7 +690,7 @@ QString befehl;
         {
         flag_end_dir= 1;
      	befehl = "rm "  + SicherungsFolderFileName_dir;
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
         if (window.bit_version() == "64")
 		{ 
       		thread1.terminate();
@@ -700,9 +700,9 @@ QString befehl;
         if (window.bit_version() == "32")
         	{
 		befehl = "kill -15 " + pid1_dir;  //fsarchiver abbrechen
-     		system (befehl.toAscii().data());
+     		system (befehl.toLatin1().data());
     		befehl = "kill -15 " + pid_dir;  //fsarchiver abbrechen
-    		system (befehl.toAscii().data());
+    		system (befehl.toLatin1().data());
                 close();
                 }
         }
@@ -718,9 +718,9 @@ QString befehl;
 	if (window.bit_version() == "32")
         	{
 		befehl = "kill -15 " + pid1_dir;  //fsarchiver abbrechen
-     		system (befehl.toAscii().data());
+     		system (befehl.toLatin1().data());
     		befehl = "kill -15 " + pid_dir;  //fsarchiver abbrechen
-    		system (befehl.toAscii().data());
+    		system (befehl.toLatin1().data());
                 close();
                 }
         }

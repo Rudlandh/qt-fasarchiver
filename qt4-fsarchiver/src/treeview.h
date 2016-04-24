@@ -17,6 +17,8 @@
 #ifndef TREEVIEW_H
 #define TREEVIEW_H
 #include <QtGui>
+#include <QFileSystemModel>
+#include <QMessageBox>
 #include <QDialog>
 #include "ui_treeview.h"
 
@@ -31,7 +33,7 @@ public:
         QString folder_treeview_holen();
 
 private:
-	QDirModel *dirModel;
+	QFileSystemModel *dirModel;
     	QItemSelectionModel *selModel;       
 	
 private slots:	

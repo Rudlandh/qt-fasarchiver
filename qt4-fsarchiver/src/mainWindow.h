@@ -17,6 +17,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <QtGui>
+#include <QFileSystemModel> 
+
 #include <string.h>
 #include "ui_fsarchiverMain.h"
 #include "thread.h"
@@ -89,7 +91,7 @@ protected slots:
    void clone_save_net();
      
 private:
-    QDirModel *dirModel;
+    QFileSystemModel *dirModel;
     QItemSelectionModel *selModel;
     QLabel *questionLabel;
     Thread thread1;

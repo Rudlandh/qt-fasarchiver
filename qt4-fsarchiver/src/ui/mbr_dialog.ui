@@ -137,7 +137,7 @@ Backup / restore:</string>
     </rect>
    </property>
    <property name="text">
-    <string>Existing
+    <string>&amp;Existing
 harddrive:</string>
    </property>
    <property name="buddy">

@@ -108,7 +108,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Save partition
+     <string>&amp;Save partition
  or directory</string>
     </property>
    </widget>
@@ -122,7 +122,7 @@
      </rect>
     </property>
     <property name="text">
-     <string extracomment="Partition mit fs-Archiver * zurückschreiben">Restore partition 
+     <string extracomment="Partition mit fs-Archiver * zurückschreiben">&amp;Restore partition 
  or directory</string>
     </property>
    </widget>
@@ -748,7 +748,7 @@ transmission:</string>
      </rect>
     </property>
     <property name="text">
-     <string>Show partitions</string>
+     <string>Show &amp;partitions</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="rdBt_showDirectories">
@@ -761,7 +761,7 @@ transmission:</string>
      </rect>
     </property>
     <property name="text">
-     <string>Show directories</string>
+     <string>Show &amp;directories</string>
     </property>
    </widget>
   </widget>

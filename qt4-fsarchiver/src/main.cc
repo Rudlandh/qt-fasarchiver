@@ -14,6 +14,8 @@
  *
  */
 
+#define HAVE_QT5 (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
+
 #ifdef HAVE_GETOPT_H
   #include <getopt.h>
 #endif
@@ -22,6 +24,7 @@
   #include <sys/param.h>
 #endif
 #include <QApplication>
+#include <QTextCodec>
 #include <QTranslator>
 #include <QLocale>
 #include <QLibraryInfo>
@@ -128,9 +131,9 @@ int main(int argc, char *argv[])
      if (auswertung != 0) 
          translator->load(language_, sLocPath);
      app.installTranslator(translator);
-     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8")); 
+//     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8")); 
      QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8")); 
-     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8")); 
+//     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8")); 
      MWindow window;
   
    if (window.Root_Auswertung() != 10)

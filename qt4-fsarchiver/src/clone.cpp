@@ -15,6 +15,7 @@
  */
 
 #include <QtGui> 
+#include <QMessageBox> 
 #include "clone.h"
 #include <string.h>
 #include <unistd.h>
@@ -65,7 +66,7 @@ DialogClone::DialogClone(QWidget *parent)
         connect( bt_end, SIGNAL( clicked() ), this, SLOT(close()));
         connect( pushButton_folder, SIGNAL( clicked() ), this, SLOT(folder_einlesen()));
         connect( pushButton_partition, SIGNAL( clicked() ), this, SLOT(listWidget_auslesen()));
-        dirModel = new QDirModel;
+        dirModel = new QFileSystemModel;
    	selModel = new QItemSelectionModel(dirModel);
    	treeView_clone->setModel(dirModel);
    	treeView_clone->setSelectionModel(selModel);
@@ -79,7 +80,7 @@ DialogClone::DialogClone(QWidget *parent)
         timer_read_write = new QTimer(this);
        // Erforderlich um Textdatei vor dem ersten Auslesen mit 3 Zeilen zu füllen
         QString befehl = "vmstat 1 2 1> " +  homepath + "/.config/qt4-fsarchiver/disk.txt";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1());
         chk_zip->setEnabled(false);
         chk_zip->setChecked(Qt::Checked);
         //chk_zip->set| grepHidden(true);
@@ -104,7 +105,7 @@ QString dummy;
         disk_part_name_list = disk_part_name.split(" ") ;
         for (m=0; m < 26; m++){
              befehl = "fdisk -l | grep ' /dev/sd" + disk_part_name_list[m] + "': 1> " +  homepath + "/.config/qt4-fsarchiver/disk.txt"; //Festplatten auslesen
-             system (befehl.toAscii().data());
+             system (befehl.toLatin1().data());
              if (file.open(QIODevice::ReadOnly|QIODevice::Text)) {
                 QTextStream ds(&file);
                 disk_clone[m] = ds.readLine();
@@ -122,7 +123,7 @@ QString dummy;
 		file.close();
 	}
                 befehl = "rm " + filename;
-                system (befehl.toAscii().data());
+                system (befehl.toLatin1().data());
 	        
 	j = i;
         for (i=0; i< j; i++)
@@ -305,7 +306,7 @@ lbl_save->setText (tr("already saved", "bereits gesichert"));
 QFile file(homepath + "/.config/qt4-fsarchiver/disk.txt");
       befehl = "rm "  + homepath + "/.config/qt4-fsarchiver/disk.txt";	
       if (file.exists()) 
-	  system (befehl.toAscii().data()); 
+	  system (befehl.toLatin1().data()); 
       flag_clone =1;
       row = listWidget_exist->currentRow();
       if (row > -1){
@@ -847,7 +848,7 @@ QMessageBox::about(this, tr("Note", "Hinweis"), tr("The clone of the hard drive 
 	thread_run_clone = 0;
 	thread1.exit();
         befehl = "rm " +  homepath + "/.config/qt4-fsarchiver/disk.txt";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
         SekundeRemaining ->setText("0");
         MinuteRemaining ->setText("0");
         HourRemaining ->setText("0");
@@ -887,7 +888,7 @@ void DialogClone::thread2Ready()  {
         thread_run_clone = 0; 
         thread2.exit();	
         QString befehl = "rm " +  homepath + "/.config/qt4-fsarchiver/disk.txt";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
         progressBar->setValue(100);
         if (dialog_auswertung != 0) 
            progressBar->setValue(0);
@@ -955,11 +956,11 @@ QString befehl;
         befehl = "rm "  + folder_clone +  partition_name + ".gz.fsa";	
         QFile file(folder_clone +  partition_name + ".gz.fsa");
       if (file.exists()) 
-	  system (befehl.toAscii().data()); 
+	  system (befehl.toLatin1().data()); 
       befehl = "kill -15 " + pid_2_dd[0];  //dd abbrechen
-      system (befehl.toAscii().data());
+      system (befehl.toLatin1().data());
       befehl = "kill -15 " + pid_2_dd[1];  //dd abbrechen
-      system (befehl.toAscii().data());
+      system (befehl.toLatin1().data());
        //  qApp->quit();
         flag_clone =0;
     	close();
@@ -978,10 +979,10 @@ int k = 0;
       if (file.exists())
       {
          befehl = "rm " + filename;
-         system (befehl.toAscii().data());
+         system (befehl.toLatin1().data());
       }  
       befehl = "ps -aux  1> " +  homepath + "/.config/qt4-fsarchiver/pid_2.txt";
-      system (befehl.toAscii().data());
+      system (befehl.toLatin1().data());
       if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream ds(&file);        
         pid_nummer = ds.readLine();
@@ -999,7 +1000,7 @@ int k = 0;
    	file.close();
      }
         befehl = "rm " + filename;
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
         pid_nummer = pid_2_dd[0];
         do{
     	   k=pid_nummer.indexOf("  ");
@@ -1026,7 +1027,7 @@ QString befehl;
 QString pid_nummer;
 QStringList pid;
       befehl = "ps -C " + prozess + " 1> " +  homepath + "/.config/qt4-fsarchiver/pid.txt";
-      system (befehl.toAscii().data());
+      system (befehl.toLatin1().data());
     QString filename = homepath + "/.config/qt4-fsarchiver/pid.txt";
 	QFile file(filename);
     if(file.size() == 0) 
@@ -1038,7 +1039,7 @@ QStringList pid;
         file.close();
      }
         befehl = "rm " + filename;
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
       if (pid_nummer != "")
         {
           pid = pid_nummer.split(" ") ;
@@ -1075,7 +1076,7 @@ int found;
 	    read_write_counter = 0;
             read_write_counter_1 = read_write_counter_1 +1;}
         befehl = "vmstat 2 2 1> " +  homepath + "/.config/qt4-fsarchiver/disk.txt";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
 
         if (sekunde_elapsed_clone < 59)
         	sekunde_elapsed_clone = sekunde_elapsed_clone +1;
@@ -1137,7 +1138,7 @@ QStringList bytes;
         {
         befehl = "kill -USR1 " + pid_dd;
        //befehl = "kill -USR1 " + pid_dd + " 2>" + homepath + "/.config/qt4-fsarchiver/disk.txt";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
         } 
 	QString filename = homepath + "/.config/qt4-fsarchiver/disk.txt";
 	QFile file(filename);

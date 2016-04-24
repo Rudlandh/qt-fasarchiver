@@ -17,6 +17,7 @@
 #ifndef SETTING_H
 #define SETTING_H
 #include <QtGui>
+#include <QMessageBox>
 #include <QDialog>
 #include "ui_setting.h"
 

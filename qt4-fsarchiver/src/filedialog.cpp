@@ -68,8 +68,8 @@ void FileDialog::file_save()
              QMessageBox::about(this,tr("Note", "Hinweis"),
               tr("Instructions for partition were not recorded written to the file.\n", "Die Hinweise zur Partition wurden nicht in eine Datei geschrieben.\n"));
             }
-        text = textEdit->toPlainText().toAscii();
-	file.write((textEdit->toPlainText()).toAscii());
+        text = textEdit->toPlainText().toLatin1();
+	file.write((textEdit->toPlainText()).toLatin1());
   }
 
 void FileDialog::file_read()

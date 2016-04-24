@@ -574,7 +574,7 @@ backup key</string>
       </rect>
      </property>
      <property name="text">
-      <string extracomment="Partition mit * fsArchiver sichern:">Partition save 
+      <string extracomment="Partition mit * fsArchiver sichern:">&amp;Partition save 
 with fsarchiver</string>
      </property>
     </widget>
@@ -591,7 +591,7 @@ with fsarchiver</string>
       <string/>
      </property>
      <property name="text">
-      <string extracomment="Partition mit fs-Archiver * zurückschreiben">Restore partition
+      <string extracomment="Partition mit fs-Archiver * zurückschreiben">&amp;Restore partition
 with fsarchiver</string>
      </property>
     </widget>
@@ -655,12 +655,12 @@ with fsarchiver</string>
      <x>0</x>
      <y>0</y>
      <width>770</width>
-     <height>25</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAktionen">
     <property name="title">
-     <string>Actions</string>
+     <string>&amp;Actions</string>
     </property>
     <addaction name="separator"/>
     <addaction name="action_partition_save"/>
@@ -678,19 +678,19 @@ with fsarchiver</string>
    </widget>
    <widget class="QMenu" name="menu_Einstellungen">
     <property name="title">
-     <string>Settings</string>
+     <string>&amp;Settings</string>
     </property>
     <addaction name="action_Einstellungen"/>
    </widget>
    <widget class="QMenu" name="menuInformation">
     <property name="title">
-     <string>Information</string>
+     <string>&amp;Information</string>
     </property>
     <addaction name="action_Information"/>
    </widget>
    <widget class="QMenu" name="menu_Beenden">
     <property name="title">
-     <string>Exit</string>
+     <string>&amp;Exit</string>
     </property>
     <addaction name="action_Beenden"/>
    </widget>
@@ -710,7 +710,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/disk.png</normaloff>:/src/images/disk.png</iconset>
    </property>
    <property name="text">
-    <string>Backup partition</string>
+    <string>&amp;Backup partition</string>
    </property>
   </action>
   <action name="action_partition_restore">
@@ -719,7 +719,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/book_previous.png</normaloff>:/src/images/book_previous.png</iconset>
    </property>
    <property name="text">
-    <string>Restore partition</string>
+    <string>&amp;Restore partition</string>
    </property>
   </action>
   <action name="action_Einstellungen">
@@ -728,7 +728,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/einstellung.png</normaloff>:/src/images/einstellung.png</iconset>
    </property>
    <property name="text">
-    <string>Basic Settings</string>
+    <string>&amp;Basic Settings</string>
    </property>
   </action>
   <action name="action_Information">
@@ -737,7 +737,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/information.png</normaloff>:/src/images/information.png</iconset>
    </property>
    <property name="text">
-    <string>Information fsarchiver</string>
+    <string>&amp;Information fsarchiver</string>
    </property>
   </action>
   <action name="action_mbr_save">
@@ -746,7 +746,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/mbr_save.png</normaloff>:/src/images/mbr_save.png</iconset>
    </property>
    <property name="text">
-    <string>Save MBR/GPT</string>
+    <string>Save &amp;MBR/GPT</string>
    </property>
   </action>
   <action name="action_mbr_restore">
@@ -755,7 +755,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/mbr_restore.png</normaloff>:/src/images/mbr_restore.png</iconset>
    </property>
    <property name="text">
-    <string>Restore MBR/GPT</string>
+    <string>Restore MBR/&amp;GPT</string>
    </property>
   </action>
   <action name="action_dir_restore">
@@ -764,7 +764,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/folder_back.png</normaloff>:/src/images/folder_back.png</iconset>
    </property>
    <property name="text">
-    <string>Restore directory </string>
+    <string>R&amp;estore directory </string>
    </property>
   </action>
   <action name="action_dir_save">
@@ -773,7 +773,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/folder_go.png</normaloff>:/src/images/folder_go.png</iconset>
    </property>
    <property name="text">
-    <string>Save directory </string>
+    <string>Save &amp;directory </string>
    </property>
   </action>
   <action name="action_Beenden">
@@ -782,7 +782,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/cancel.png</normaloff>:/src/images/cancel.png</iconset>
    </property>
    <property name="text">
-    <string>Exit program</string>
+    <string>&amp;Exit program</string>
    </property>
   </action>
   <action name="action_partition_save_net">
@@ -791,7 +791,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/applications-internet.png</normaloff>:/src/images/applications-internet.png</iconset>
    </property>
    <property name="text">
-    <string>Save a partition/directorie on network</string>
+    <string>&amp;Save a partition/directorie on network</string>
    </property>
   </action>
   <action name="action_partition_restore_net">
@@ -800,7 +800,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/applications-internet-ein.png</normaloff>:/src/images/applications-internet-ein.png</iconset>
    </property>
    <property name="text">
-    <string>Restore a partition/directorie on network</string>
+    <string>Restore &amp;a partition/directorie on network</string>
    </property>
   </action>
   <action name="breakProcess">
@@ -832,7 +832,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/clone1.png</normaloff>:/src/images/clone1.png</iconset>
    </property>
    <property name="text">
-    <string>Clone HD, HD-Image built and restore</string>
+    <string>&amp;Clone HD, HD-Image built and restore</string>
    </property>
   </action>
   <action name="action_Save_directories_on_network">

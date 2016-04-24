@@ -17,9 +17,12 @@
 #ifndef CLONE_H
 #define CLONE_H
 #include <QtGui>
+#include <QFileSystemModel> 
+
 #include <string.h>
 #include "ui_clone_dialog.h"
 #include <qthread.h>
+
 #include "thread.h"
 using namespace std;
 
@@ -62,7 +65,7 @@ public slots:
         void listWidget_auslesen();
                        
 private:
-    QDirModel *dirModel;
+    QFileSystemModel *dirModel;
     QItemSelectionModel *selModel;
     QLabel *questionLabel;
     int mountpoint(QString partition);

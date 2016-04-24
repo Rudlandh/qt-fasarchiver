@@ -89,7 +89,7 @@ setupUi(this); // this sets up GUI
         	rdBt_saveFsArchiv->setChecked(Qt::Checked);
         else
 		rdBt_restoreFsArchiv->setChecked(Qt::Checked);
-        dirModel = new QDirModel;
+        dirModel = new QFileSystemModel;
    	selModel = new QItemSelectionModel(dirModel);
         QModelIndex cwdIndex = dirModel->index(QDir::rootPath());
         treeView_dir->setModel(dirModel);
@@ -285,29 +285,29 @@ QString befehl;
 QString filename;
 QString homepath = QDir::homePath();
         befehl = "umount -f" + homepath + "/.qt4-fs-client 2>/dev/null";
-	system (befehl.toAscii().data());   
+	system (befehl.toLatin1().data());   
         befehl = "fusermount -u " + homepath + "/.qt4-fs-client 2>/dev/null";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
         befehl = "umount -a -t nfs 2>/dev/null";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
 
  	QFile file1(homepath + "/.config/qt4-fsarchiver/ip.txt");
 	filename = homepath + "/.config/qt4-fsarchiver/ip.txt";
 	if (file1.exists()) {
      		befehl = "rm " + filename;
-		system (befehl.toAscii().data());
+		system (befehl.toLatin1().data());
         } 
 	QFile file2(homepath + "/.config/qt4-fsarchiver/smbtree.txt");    
         filename = homepath + "/.config/qt4-fsarchiver/smbtree.txt";
         if (file2.exists()){
      		befehl = "rm " + filename;
-		system (befehl.toAscii().data());
+		system (befehl.toLatin1().data());
         }
         QFile file3(homepath + "/.config/qt4-fsarchiver/smbclient.txt");    
         filename = homepath + "/.config/qt4-fsarchiver/smbclient.txt";
         if (file3.exists()){
      		befehl = "rm " + filename;
-		system (befehl.toAscii().data()); 
+		system (befehl.toLatin1().data()); 
        } 
        cmbFlag = 0;
        close(); 
@@ -388,7 +388,7 @@ QString homepath = QDir::homePath();
 listWidget_free_folder -> clear();
 	// freigegebene Verzeichnisse ermitteln
     	befehl = "showmount -e " + rechner_IP + " 1> " +  homepath + "/.config/qt4-fsarchiver/smbclient.txt";
-	system (befehl.toAscii().data()); 
+	system (befehl.toLatin1().data()); 
         QFile file(homepath + "/.config/qt4-fsarchiver/smbclient.txt");
 	QTextStream ds(&file);
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -424,7 +424,7 @@ QString homepath = QDir::homePath();
 listWidget_free_folder -> clear();
 	// freigegebene Verzeichnisse ermitteln
     	befehl = "smbclient -N -L" + rechner_IP + " 1> " +  homepath + "/.config/qt4-fsarchiver/smbclient.txt";
-	system (befehl.toAscii().data()); 
+	system (befehl.toLatin1().data()); 
         QFile file(homepath + "/.config/qt4-fsarchiver/smbclient.txt");
 	QTextStream ds(&file);
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -539,11 +539,11 @@ QString zeichen = "'";
          folder_free_mounten();
        if (net_art == 0){  //Samba
          QString befehl = "mount -t cifs -o username=" + user_net + ",password=" + key_net + ",uid=0,gid=0 //" + rechner_IP + "/'" + folder_free + "' " + homepath + "/.qt4-fs-client";
-         k = system (befehl.toAscii().data());
+         k = system (befehl.toLatin1().data());
 	}
        if (net_art == 2){ //NFS
            QString befehl = "mount " + rechner_IP + ":" + folder_free +  " " + homepath + "/.qt4-fs-client" ;
-           k = system (befehl.toAscii().data()); 
+           k = system (befehl.toLatin1().data()); 
 	}  
 this->setCursor(Qt::ArrowCursor); 
 	 if (k != 0){
@@ -562,7 +562,7 @@ this->setCursor(Qt::ArrowCursor);
          if (rdBt_showPartition->isChecked())
          {
          	//Überprüfung ob gemounted
-         	part_ = partition_net_.toAscii().data();
+         	part_ = partition_net_.toLatin1().data();
          	strcat (dev_ , part_);  // String zusammenfügen: dev_  = dev_ + part_
          	dummy = partition_net_;
 	 	// Werte sammeln und nach file_dialog übergeben, Partition ist eingehängt
@@ -678,7 +678,7 @@ this->setCursor(Qt::ArrowCursor);
 				QString befehl = ("dd if=/dev/" + partition_net_ + " of=" + folder_net + "/" + DateiName_net + "-" + _Datum_net + ".pbr" + " bs=512 count=1");
 				state = chk_pbr->checkState();
 				if (state == Qt::Checked)
-					  system (befehl.toAscii().data());
+					  system (befehl.toLatin1().data());
  }                                 
                                   parameter[indizierung] = (folder_net + "/" + DateiName_net + "-" + _Datum_net + ".fsa");
                                   SicherungsFolderFileName_net = parameter[indizierung];
@@ -823,7 +823,7 @@ QString str1 = "";
        	       parameter[1] = "archinfo";
 		if (state1 != Qt::Checked) {
                		parameter[2] = file_net;
-               		fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data());
+               		fsarchiver_aufruf(3,parameter[0].toLatin1().data(),parameter[1].toLatin1().data(),parameter[2].toLatin1().data(),parameter[3].toLatin1().data());
                		optionkey = meldungen_holen(1);
                		dev_part = meldungen_holen(2);
                         if (werte_holen(4) == 103){
@@ -843,7 +843,7 @@ QString str1 = "";
                   		return 0 ; 
                	   		}
 			parameter[4] = file_net;
-                        int retour =  fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data());
+                        int retour =  fsarchiver_aufruf(5,parameter[0].toLatin1().data(),parameter[1].toLatin1().data(),parameter[2].toLatin1().data(),parameter[3].toLatin1().data(),parameter[4].toLatin1().data (),parameter[5].toLatin1().data());
                         if ( werte_holen(4) == 103 && retour != 0){
                           QMessageBox::about(this, tr("Note","Hinweis"), tr("They have entered a wrong password.\n", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");
@@ -853,7 +853,7 @@ QString str1 = "";
                		dev_part = meldungen_holen(2);
                 }
 		//Überprüfen, ob in die Originalpartition zurückgeschrieben werden soll
-            part_ = partition_net_.toAscii().data();
+            part_ = partition_net_.toLatin1().data();
 	    strcat (dev_ , part_);  // String zusammenfügen: dev_  = dev_ + part_
             // Hier wird verglichen dev_ = die Partition, die zu sichern ist. dev_part = Originalpartition
             cmp = strcmp ( dev_ , dev_part );
@@ -958,17 +958,17 @@ QString str1 = "";
         			// Partition muss gelöscht werden
                                 // Partition mounten, damit sie gelöscht werden kann
 				QString befehl = "mkdir /tmp/btrfs";
-				int y =  system (befehl.toAscii().data());
+				int y =  system (befehl.toLatin1().data());
                                 befehl = "mount /dev/" + partition_net_ + " /tmp/btrfs";
-                                y =  system (befehl.toAscii().data());
+                                y =  system (befehl.toLatin1().data());
 				//der Inhalt von tmp/btrfs und somit der Inhalt der btrfs Partition wird gelöscht
 				befehl = "rm -r -f /tmp/btrfs 2> /dev/null";
- 				y =  system (befehl.toAscii().data());
+ 				y =  system (befehl.toLatin1().data());
 				befehl = "umount /dev/" + partition_net_;
- 				y =  system (befehl.toAscii().data());
+ 				y =  system (befehl.toLatin1().data());
 				//tmp/btrfs wird gelöscht
 				befehl = "rm -r -f /tmp/btrfs";
- 				y =  system (befehl.toAscii().data());
+ 				y =  system (befehl.toLatin1().data());
 		       } }   
                QString keyText = lineKey->text();
                state1 = chk_key->checkState();
@@ -1149,18 +1149,18 @@ int net_art = cmb_Net->currentIndex();
        //Verzeichnis mounten
        this->setCursor(Qt::WaitCursor);
        befehl = "umount " + homepath + "/.qt4-fs-client 2>/dev/null";
-       k = system (befehl.toAscii().data()); 
+       k = system (befehl.toLatin1().data()); 
        befehl = "mount -t cifs -o username=" + user_net + ",password=" + key_net + ",uid=0,gid=0 //" + rechner_IP + "/'" + folder_free + "' " + homepath + "/.qt4-fs-client" ;
-       k = system (befehl.toAscii().data()); 
+       k = system (befehl.toLatin1().data()); 
        this->setCursor(Qt::ArrowCursor); 
        }
     if (rdBt_restoreFsArchiv->isChecked() && net_art == 2) //NFS
        {
        //Verzeichnis mounten
        this->setCursor(Qt::WaitCursor);
-       k = system (befehl.toAscii().data()); 
+       k = system (befehl.toLatin1().data()); 
        befehl = "mount " + rechner_IP + ":" + folder_free + " " + homepath + "/.qt4-fs-client" ;
-       k = system (befehl.toAscii().data());
+       k = system (befehl.toLatin1().data());
        this->setCursor(Qt::ArrowCursor); 
        }
     if (k != 0){
@@ -1245,7 +1245,7 @@ void DialogNet::thread1Ready()  {
         // Prüfen ob text-Datei vorhanden 
        if (f.exists())
           befehl = "rm "  + filename;
-          system (befehl.toAscii().data());
+          system (befehl.toLatin1().data());
         if (flag_end_net == 1) {
         QMessageBox::about(this, tr("Note", "Hinweis"),
          tr("The backup of the partition/directorie was aborted by the user!\n", "Die Sicherung der Partition/des Verzeichnisses wurde vom Benutzer abgebrochen!\n") );
@@ -1291,7 +1291,7 @@ void DialogNet::thread1Ready()  {
   if (net_art == 2) //NFS
       // befehl = "/etc/init.d/nfs-kernel-server restart";
          befehl = "umount -a -t nfs 2>/dev/null";
-  system (befehl.toAscii().data());
+  system (befehl.toLatin1().data());
   thread_run_net = 0;
   thread1.exit();
 }
@@ -1332,7 +1332,7 @@ void DialogNet::thread2Ready()  {
        //PBR herstellen
        i = 2;
 	if (befehl_pbr_net != "") 
-    	i = system (befehl_pbr_net.toAscii().data());
+    	i = system (befehl_pbr_net.toLatin1().data());
 	if (i!=0 ) { 
        		QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition/directorie is successful back.\n", "Die Partition/das Verzeichnis wurde erfolgreich wieder hergestellt.\n") + 		cnt_regfile_ + tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr(" links and ", " Links und ") + cnt_special_ + tr(" specials have been restored.", " spezielle Daten wurden wieder hergestellt."));
         }
@@ -1390,7 +1390,7 @@ void DialogNet::thread2Ready()  {
     if (net_art == 2) //NFS
       //befehl = "/etc/init.d/nfs-kernel-server restart";
        befehl = "umount -a -t nfs 2>/dev/null";
-    system (befehl.toAscii().data());
+    system (befehl.toLatin1().data());
     thread_run_net = 0;
     thread2.exit();
 }
@@ -1446,7 +1446,7 @@ void DialogNet::indicator_reset() {
 
 int DialogNet::testDateiName(string endung)
 {
-  string str (file_net.toAscii().data());
+  string str (file_net.toLatin1().data());
   string str2;
   size_t found;
   // different member versions of find in the same order as above:
@@ -1560,12 +1560,12 @@ QString befehl;
         {
 	flag_end_net= 1;     	
 	befehl = "rm "  + SicherungsFolderFileName_net;
-        system (befehl.toAscii().data()); 
+        system (befehl.toLatin1().data()); 
         int pos = SicherungsFolderFileName_net.indexOf("fsa");
        	SicherungsFolderFileName_net = SicherungsFolderFileName_net.left(pos);
        	SicherungsFolderFileName_net.insert(pos, QString("txt"));
         befehl = "rm "  + SicherungsFolderFileName_net;
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
         if (window.bit_version() == "64")
         	{
         	thread1.terminate();
@@ -1576,9 +1576,9 @@ QString befehl;
         if (window.bit_version() == "32")
         	{
 		befehl = "kill -15 " + pid1_net;  //fsarchiver abbrechen
-     		system (befehl.toAscii().data());
+     		system (befehl.toLatin1().data());
     		befehl = "kill -15 " + pid_net;  //fsarchiver abbrechen
-    		system (befehl.toAscii().data());
+    		system (befehl.toLatin1().data());
 		close();
                 }
      if (thread_run_net == 2 && ret == 1)
@@ -1593,9 +1593,9 @@ QString befehl;
         if (window.bit_version() == "32")
         	{
 		befehl = "kill -15 " + pid1_net;  //fsarchiver abbrechen
-     		system (befehl.toAscii().data());
+     		system (befehl.toLatin1().data());
     		befehl = "kill -15 " + pid_net;  //fsarchiver abbrechen
-    		system (befehl.toAscii().data());
+    		system (befehl.toLatin1().data());
                 close();
                 }
 	}
@@ -1671,7 +1671,7 @@ int i = 0;
 		befehl = "sshfs " + user_net+ "@" + rechner_IP + ":" + folder_free + " " +  homepath + "/.qt4-fs-client";
         if (folder_free != "" && rdBt_restoreFsArchiv->isChecked() )
 		befehl = "sshfs " + user_net+ "@" + rechner_IP + ":" + pfad_forward + " " + homepath + "/.qt4-fs-client";
-        i =system (befehl.toAscii().data()); 
+        i =system (befehl.toLatin1().data()); 
         if ( i==1){
             QMessageBox::about(this, tr("Note", "Hinweis"), tr("The SSH server is not reachable. Try again or with another network protocol.\n", "Der SSH-Server ist nicht erreichbar. Versuchen Sie es nochmals oder mit einem anderen Netzwerkprotokoll.\n"));
         return;
@@ -1694,7 +1694,7 @@ int ret_;
 /* QMessageBox::about(this, tr("Note", "Hinweis"), 
         tr("When you first contact the computer with ssh, you must do the following:  In a terminal enter these commands: 1.In the open terminal you must confirm the RSA key fingerprint with yes. 2.Enter the password for accessing the server and 3.leave the server with the command exit.\n", "Wenn Sie noch nicht erfolgreich per ssh auf den Rechner(Server) zugegriffen haben, müssen Sie nun folgendes tun: 1.In dem geöffneten Terminal müssen Sie den RSA key fingerprint mit yes bestätigen. 2.Geben Sie das Passwort für den Zugriff auf den Server ein  und 3.verlassen Sie den Server mit dem Befehl exit.\n")); */
         befehl = "ssh " + user_net + "@" +  rechner_IP;
-	ret_ = system (befehl.toAscii().data());
+	ret_ = system (befehl.toLatin1().data());
         //Basiseinstellungen ändern
         //QSettings setting("qt4-fsarchiver", "qt4-fsarchiver");
         setting.beginGroup("Basiseinstellungen");
@@ -1730,7 +1730,7 @@ int ret_;
 		    befehl = "sshpass -p " + pass + " ssh " + user+ "@" + rechner + " ls -l " + pfad_forward + " 1>" + filename;
 	if (flag==1 && rdBt_restoreFsArchiv->isChecked())
 		     befehl = "sshpass -p " + pass + " ssh " + user+ "@" + rechner + " ls -l " + pfad_back + " 1>" + filename;
-	ret_ = system (befehl.toAscii().data());
+	ret_ = system (befehl.toLatin1().data());
         if ( ret_ != 0) {
 	QMessageBox::about(this, tr("Note", "Hinweis"), tr("The SSH server is not reachable. Try again or with another network protocol.\n", "Der SSH-Server ist nicht erreichbar. Versuchen Sie es nochmals oder mit einem anderen Netzwerkprotokoll.\n"));
         return ;
@@ -1787,9 +1787,9 @@ int jj= 0;
  	}      
  	file1.close();
         }
- 
+  
  	befehl = "rm " + homepath + "/.config/qt4-fsarchiver/folder.txt";
- 	//system (befehl.toAscii().data()); 
+ 	//system (befehl.toLatin1().data()); 
  	treeWidget->clear();
         QDir dir2(QString("%1").arg(""));
    	dir2.setNameFilters(filters);
@@ -1876,7 +1876,7 @@ QString homepath = QDir::homePath();
       parameter[0] = "fsarchiver";
       parameter[1] = "archinfo";
       parameter[2] = archname;
-      fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data());
+      fsarchiver_aufruf(3,parameter[0].toLatin1().data(),parameter[1].toLatin1().data(),parameter[2].toLatin1().data(),parameter[3].toLatin1().data());
       int archart = werte_holen(15);
       if (archart == 200)
 	 return 2;

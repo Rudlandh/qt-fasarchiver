@@ -17,6 +17,8 @@
 #ifndef NET_Ein_H
 #define NET_Ein_H
 #include <QtGui>
+#include <QFileSystemModel>
+#include <QMessageBox>
 #include <QDialog>
 #include "ui_net_ein.h"
 
@@ -53,7 +55,7 @@ protected slots:
         int questionMessage(QString frage);
 
 private:
-	QDirModel *dirModel;
+	QFileSystemModel *dirModel;
 	
 private slots:
 	int end();

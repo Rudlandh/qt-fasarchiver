@@ -17,6 +17,7 @@
 #ifndef FILEDIALOG_H
 #define FILEDIALOG_H
 #include "ui_filedialog.h"
+#include <QMessageBox>
 
 class FileDialog: public QDialog, private Ui::FileDialog {
   Q_OBJECT

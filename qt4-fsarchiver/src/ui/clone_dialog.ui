@@ -523,7 +523,7 @@
      </rect>
     </property>
     <property name="text">
-     <string extracomment="sdc">Image of a hard disk write back</string>
+     <string extracomment="sdc">&amp;Image of a hard disk write back</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="rdbt_clone">
@@ -536,7 +536,7 @@
      </rect>
     </property>
     <property name="text">
-     <string extracomment="sda">Clone hard disk</string>
+     <string extracomment="sda">&amp;Clone hard disk</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
@@ -574,7 +574,7 @@
      </rect>
     </property>
     <property name="text">
-     <string extracomment="sdb">Image of a hard disk to create</string>
+     <string extracomment="sdb">Image &amp;of a hard disk to create</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="rdbt_partition_save">
@@ -587,7 +587,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Image of a partition to create</string>
+     <string>Image of &amp;a partition to create</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="rdbt_partition_restore">
@@ -600,7 +600,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Image of a partition write back</string>
+     <string>Image of a &amp;partition write back</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="chk_zip">

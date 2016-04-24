@@ -86,7 +86,7 @@ int k = 0;
 int i = 0;
         // Routeradresse ermitteln
         befehl = "route -n 1> " +  homepath + "/.config/qt4-fsarchiver/smbtree.txt";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
         QFile file(homepath + "/.config/qt4-fsarchiver/smbtree.txt");
         QTextStream ds1(&file);
         if (file.open(QIODevice::ReadWrite | QIODevice::Text)) {
@@ -129,7 +129,7 @@ int i = 0;
         //Zahl zwischen 3. und 4. Punkt ermitteln
         //route -n ermittelt die Routeradresse
         befehl = "nmap -sP " + adresse_eigen + ".0/24 1> " +  homepath + "/.config/qt4-fsarchiver/smbtree.txt";
-        system (befehl.toAscii().data()); 
+        system (befehl.toLatin1().data()); 
        	QTextStream ds(&file);
         if (file.open(QIODevice::ReadWrite | QIODevice::Text)) {
      	     adresse = ds.readLine();
@@ -180,7 +180,7 @@ QString hostname_;
  //smbtree: zuverlässige und schnelle Linux-Rechner Suche. Windows-Rechner werden aber nicht erkannt
 // -N verhindert die sudo-Abfrage
         befehl = "smbtree -N 1> " +  homepath + "/.config/qt4-fsarchiver/smbtree.txt";
-	system (befehl.toAscii().data()); 
+	system (befehl.toLatin1().data()); 
         QFile file(homepath + "/.config/qt4-fsarchiver/smbtree.txt");
     	QTextStream ds(&file);
         QString text = ds.readLine();
@@ -212,7 +212,7 @@ QString hostname_;
 	file.close();
 //Auswertung findsmb-qts Windows-Rechner werden erkannt
         befehl = "findsmb-qt 1> " +  homepath + "/.config/qt4-fsarchiver/findsmb-qt.txt";
-	system (befehl.toAscii().data()); 
+	system (befehl.toLatin1().data()); 
         QFile file1(homepath + "/.config/qt4-fsarchiver/findsmb-qt.txt");
     	QTextStream ds1(&file1);
         QString adresse = ds1.readLine();
@@ -264,7 +264,7 @@ QString hostname_;
         // Dateien entfernen 
   	if (file1.exists()){
      		befehl = "rm ~/.config/qt4-fsarchiver/findsmb-qt.txt";
-		system (befehl.toAscii().data());
+		system (befehl.toLatin1().data());
        } 
         list_net_ssh(" ");
         //Ermitteln widget_net Belegung
@@ -329,12 +329,12 @@ dummykey = key;
   filename = "~/.config/qt4-fsarchiver/ip.txt";
 	if (f.exists()){
      		befehl = "rm " +filename;
-		system (befehl.toAscii().data());
+		system (befehl.toLatin1().data());
        }     
        filename = "~/.config/qt4-fsarchiver/smbtree.txt";
        if (f.exists()){
      		befehl = "rm " + filename;
-		system (befehl.toAscii().data());
+		system (befehl.toLatin1().data());
        } 
    return 0;
 } 
@@ -346,13 +346,13 @@ QString befehl;
 QString text;
 QString homepath = QDir::homePath();
 	befehl = "hostname > " +  homepath + "/.config/qt4-fsarchiver/hostname.txt";
-	system (befehl.toAscii().data()); 
+	system (befehl.toLatin1().data()); 
         QFile file(homepath + "/.config/qt4-fsarchiver/hostname.txt");
     	QTextStream ds(&file);
         if (file.open(QIODevice::ReadWrite | QIODevice::Text)) 
             text = ds.readLine();
         befehl = "rm " + homepath + "/.config/qt4-fsarchiver/hostname.txt";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
         return text;
 }
         
@@ -366,7 +366,7 @@ QFile file(homepath + "/.config/qt4-fsarchiver/ip.txt");
 QTextStream ds(&file);
 QString text;
 	befehl = "nmblookup -R " + adresse + " 1> " +  homepath + "/.config/qt4-fsarchiver/ip.txt 2>/dev/null";
-	system (befehl.toAscii().data()); 
+	system (befehl.toLatin1().data()); 
         // IP-Adresse auslesen
         int i = 0;
         // Anzahl Zeilen der Datei /.config/qt4-fsarchiver/ip.txt ermitteln
@@ -530,7 +530,7 @@ QTextStream stream(&file);
 	  stream << key << "\n";
           file.close(); 
        }
-homepath_ =  homepath.toAscii().data();
+homepath_ =  homepath.toLatin1().data();
 suffix = "/.config/qt4-fsarchiver/crypt.txt";
 strcpy (dateiname_eingabe, homepath_);
 strcat (dateiname_eingabe, suffix);
@@ -608,7 +608,7 @@ if (file.open(QIODevice::ReadWrite | QIODevice::Text)) {
 j = file.size();
 if (j == 0) // Datei noch nicht vorhanden
     return "";
-homepath_ =  homepath.toAscii().data();
+homepath_ =  homepath.toLatin1().data();
 suffix = "/.config/qt4-fsarchiver/crypt1.txt";
 strcpy (dateiname_eingabe, homepath_);
 strcat (dateiname_eingabe, suffix);

@@ -28,7 +28,7 @@ QString homepath = QDir::homePath();
         connect( cmd_cancel, SIGNAL( clicked() ), this, SLOT(close()));
         connect( pushButton_treeview, SIGNAL( clicked() ), this, SLOT(folder_einlesen()));
 
-	dirModel = new QDirModel;
+	dirModel = new QFileSystemModel;
    	selModel = new QItemSelectionModel(dirModel);
    	treeView->setModel(dirModel);
    	treeView->setSelectionModel(selModel);

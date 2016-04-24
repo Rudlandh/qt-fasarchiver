@@ -38,7 +38,7 @@ QStringList filters;
         connect( bt_end, SIGNAL( clicked() ), this, SLOT(close()));
         connect( bt_save, SIGNAL( clicked() ), this, SLOT(mbr()));
         connect( bt_dummy, SIGNAL( clicked() ), this, SLOT(disk_art()));
-        dirModel = new QDirModel;
+        dirModel = new QFileSystemModel;
    	selModel = new QItemSelectionModel(dirModel);
    	treeView->setModel(dirModel);
    	treeView->setSelectionModel(selModel);
@@ -72,7 +72,7 @@ QFile file(filename);
 QStringList disk;
 QString disk_;
         befehl = "fdisk -l 1> " + homepath + "/.config/qt4-fsarchiver/disk.txt";
-        i = system (befehl.toAscii().data());
+        i = system (befehl.toLatin1().data());
         if( file.open(QIODevice::ReadOnly|QIODevice::Text)) {
             QTextStream ds(&file);
            while (!ds.atEnd()){
@@ -89,7 +89,7 @@ QString disk_;
            } 
            file.close();
            befehl = "rm " + filename;
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
 //Anzahl Festplatten ermitteln 
           j = 0;
           while (disk_name[j]!= "")
@@ -163,7 +163,7 @@ QModelIndexList indexes = selModel->selectedIndexes();
              this->setCursor(Qt::ArrowCursor);	     
 	     if (efiflag == 1)
                 befehl = ("sgdisk -b '" + folder_ + "'/" + Ubuntuversion + "_gpt_" + partition + " /dev/" + partition);
-                i = system (befehl.toAscii().data());
+                i = system (befehl.toLatin1().data());
              this->setCursor(Qt::ArrowCursor);
    		if (i == 0 && efiflag == 0)
       			QMessageBox::about(this,tr("Note", "Hinweis"), tr("MBR was successfully backed up.\n", "MBR wurde erfolgreich gesichert.\n"));
@@ -189,7 +189,7 @@ QModelIndexList indexes = selModel->selectedIndexes();
              this->setCursor(Qt::WaitCursor);	
 	      if (cmb_mbr->currentIndex() == 0) {
               befehl = ("sgdisk -l '" + folder_ + "' /dev/" + partition);
-              i = system (befehl.toAscii().data());
+              i = system (befehl.toLatin1().data());
               this->setCursor(Qt::ArrowCursor); 
    	      if (i == 0)
       		QMessageBox::about(this, tr("Note", "Hinweis"), tr("The GUID partition table is successful return.\n", "Die GUID Partitionstabelle wurde erfolgreich wieder hergestellt.\n"));
@@ -213,7 +213,7 @@ QModelIndexList indexes = selModel->selectedIndexes();
         	this->setCursor(Qt::WaitCursor);
 	   if (cmb_mbr->currentIndex() == 0) {
               befehl = ("dd if='"+ folder_ + "' of=/dev/" + partition + " bs=1 count=446");
-              i = system (befehl.toAscii().data());
+              i = system (befehl.toLatin1().data());
               this->setCursor(Qt::ArrowCursor);  
    	      if (i == 0)
       		QMessageBox::about(this, tr("Note", "Hinweis"), tr("The Boot Loader section is successful return.\n", "Der Bootloaderbereich wurde erfolgreich wieder hergestellt.\n"));
@@ -223,13 +223,13 @@ QModelIndexList indexes = selModel->selectedIndexes();
               if (cmb_mbr->currentIndex() == 2) {
 		   //Partitionstabelle extrahieren                   
                    befehl = ("dd if='"+ folder_ + "' of=" + homepath + "/.mbr.txt  bs=1 skip=446 count=66");
-                   i = system (befehl.toAscii().data());
+                   i = system (befehl.toLatin1().data());
                    //Partitionstabelle wiederherstellen 
                    befehl = ("dd if=" + homepath + "/.mbr.txt of=/dev/" + partition + " bs=1 seek=446 count=66");
-                   i = i + system (befehl.toAscii().data());  	
+                   i = i + system (befehl.toLatin1().data());  	
                    //Datei löschen
                    befehl = "rm " + homepath + "/.mbr.txt";
-                   system (befehl.toAscii().data());
+                   system (befehl.toLatin1().data());
                    this->setCursor(Qt::ArrowCursor);    
    	           if (i == 0)
       			QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition table is successful return.", "Die Partitionstabelle wurde erfolgreich wieder hergestellt.\n"));
@@ -239,7 +239,7 @@ QModelIndexList indexes = selModel->selectedIndexes();
                if (cmb_mbr->currentIndex() == 1) {
                  // MBR und Pasrtitionstabelle wieder herstellen
                  befehl = ("dd if='"+ folder_ + "' of=/dev/" + partition + " bs=1 count=512");
-                 i = system (befehl.toAscii().data());
+                 i = system (befehl.toLatin1().data());
                this->setCursor(Qt::ArrowCursor); 
    	       if (i == 0) 
       		   QMessageBox::about(this, tr("Note","Hinweis"), tr("The MBR is successful return.\n", "Der MBR wurde erfolgreich wieder hergestellt.\n"));
@@ -263,13 +263,13 @@ QModelIndexList indexes = selModel->selectedIndexes();
             if (i ==0) {
 		   //verborgenen Bereich extrahieren                   
                    befehl = ("dd if='"+ folder_ + "' of=" + homepath + "/.mbr.txt  bs=1 skip=512 count=" + Sektor_byte_1);
-                   i = system (befehl.toAscii().data());
+                   i = system (befehl.toLatin1().data());
                    //verborgenen Bereich wiederherstellen 	
                    befehl = ("dd if=" + homepath + "/.mbr.txt of=/dev/" + partition + " bs=1 seek=512 count=" + Sektor_byte_1);
-                   i = i + system (befehl.toAscii().data());  	
+                   i = i + system (befehl.toLatin1().data());  	
                    //Datei löschen
                    befehl = "rm " + homepath + "/.mbr.txt";
-                   i = system (befehl.toAscii().data());
+                   i = system (befehl.toLatin1().data());
                    this->setCursor(Qt::ArrowCursor);       
       	        if (i == 0) 
       		   QMessageBox::about(this, tr("Note", "Hinweis"), tr("The hidden area is successful return.\n", "Der verborgene Bereich wurde erfolgreich wieder hergestellt.\n"));
@@ -300,7 +300,7 @@ QString hidden_size_;
 	// Sektornummer in Datei abspeichern
         Dateiname = homepath + "/.config/qt4-fsarchiver/sektornummer.txt";
         befehl = "fdisk -lu | grep " + partition + "1 > " + homepath + "/.config/qt4-fsarchiver/sektornummer.txt";
-        i = system (befehl.toAscii().data());
+        i = system (befehl.toLatin1().data());
         QFile file(Dateiname);
         QFileInfo info(Dateiname); 
         size_ = info.size();  //Wenn Dateigröße = 0 ist verhindert diese Abfrage einen Abstaurz
@@ -331,7 +331,7 @@ qDebug() << "befehl" << befehl << size_;
             }
        //Datei löschen
     //   befehl = "rm "  + homepath + "/.config/qt4-fsarchiver/sektornummer.txt";;
-       system (befehl.toAscii().data()); 
+       system (befehl.toLatin1().data()); 
        if (sektor_ < 2 && efiflag == 0) {
 	    QMessageBox::about(this, tr("Note", "Hinweis"), tr("The end of hidden area of the 1st Partition could not be read. Only 512 bytes are saved.", "Das Ende des verborgenen Bereiches der 1. Partition konnte nicht ausgelesen werden. Es werden nur 512 Bytes gesichert.\n"));
             sektor_ = 2;
@@ -354,7 +354,7 @@ int i = 0;
         partition = disk_name[i];
         partition = "/dev/"+ partition;
         //Prüfen ob System Partition
-        if (mtab_einlesen(partition.toAscii().data()) == "system") {
+        if (mtab_einlesen(partition.toLatin1().data()) == "system") {
              	Dateiname = "/etc/issue";     
         	QFile file(Dateiname);
         	//Datei auslesen
@@ -461,7 +461,7 @@ string DialogMBR::mtab_einlesen(string partition_if_home)
    int pos;
    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
      text = ds.readLine();
-     text_str = text.toAscii().data();
+     text_str = text.toLatin1().data();
      pos = text_str.find(partition_if_home); 
      if (pos > -1)  // Partitionsname gefunden
         return "system";
@@ -476,7 +476,7 @@ int DialogMBR::is_gpt(QString partition_efi)
       QString text;
       QString befehl = "gdisk -l " + partition_efi +  " 1> " +  homepath + "/.config/qt4-fsarchiver/efi.txt";
       //QString befehl = "sgdisk -p " + partition_efi +  " 1> " +  homepath + "/.config/qt4-fsarchiver/efi.txt";
-      system (befehl.toAscii().data());
+      system (befehl.toLatin1().data());
       QString filename = homepath + "/.config/qt4-fsarchiver/efi.txt";
       QFile file(filename);
       int pos, pos1,i,j;

@@ -17,6 +17,8 @@
 #ifndef NET_H
 #define NET_H
 #include <QtGui>
+#include <QFileSystemModel> 
+#include <QMessageBox>
 #include "ui_net.h"
 #include "thread.h"
 using namespace std;
@@ -67,7 +69,7 @@ private:
         QTimer *timer; 
         QIcon folderIcon;
         QIcon fileIcon;	
-        QDirModel *dirModel;
+        QFileSystemModel *dirModel;
         QItemSelectionModel *selModel;	
 	
 private slots:

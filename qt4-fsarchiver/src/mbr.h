@@ -17,8 +17,11 @@
 #ifndef MBR_H
 #define MBR_H
 #include <QtGui>
+#include <QFileSystemModel> 
+#include <QMessageBox>
 #include <string.h>
 #include "ui_mbr_dialog.h"
+
 using namespace std;
 
 class DialogMBR : public QWidget, private Ui::mbr_dialog
@@ -39,7 +42,7 @@ public slots:
         void disk_art();
 
 private:
-    QDirModel *dirModel;
+    QFileSystemModel *dirModel;
     QItemSelectionModel *selModel;
     QLabel *questionLabel;
     string mtab_einlesen(string partition_if_home);

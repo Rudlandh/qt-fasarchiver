@@ -128,7 +128,7 @@ MWindow::MWindow()
       
    setupUi(this);
    rdBt_saveFsArchiv->setChecked(Qt::Checked);
-   dirModel = new QDirModel;
+   dirModel = new QFileSystemModel;
    selModel = new QItemSelectionModel(dirModel);
    treeView->setModel(dirModel);
    treeView->setSelectionModel(selModel);
@@ -202,21 +202,21 @@ MWindow::MWindow()
    QDir dir1(homepath + "/.config/qt4-fsarchiver");
    if (!dir1.exists()){
       befehl = "mkdir " + homepath + "/qt4-fsarchiver 2>/dev/null" ;
-      system (befehl.toAscii().data());
+      system (befehl.toLatin1().data());
       }
    QDir dir(homepath + "/.qt4-fs-client");
    if (!dir.exists()){
        befehl = "mkdir " + homepath + "/.qt4-fs-client 2>/dev/null" ;
-       system (befehl.toAscii().data());
+       system (befehl.toLatin1().data());
    	//Rechte setzen
        befehl = "chmod a+rwx " + homepath + "/.qt4-fs-client 2>/dev/null";
-       system (befehl.toAscii().data());
+       system (befehl.toLatin1().data());
    // wegen Suse
    QDir dir2("/media");
    QString media = "/media";
    if (!dir2.exists()){
        befehl = "mkdir " + media + " 2>/dev/null" ;
-       system (befehl.toAscii().data());
+       system (befehl.toLatin1().data());
        }
    }
    // beim Abbruch einer Sicherung bleiben eventuell Daten in /tmp/fsa erhalten.
@@ -225,7 +225,7 @@ MWindow::MWindow()
    // Das System sürzt ab!!
    if (is_running() == 0) {
        befehl = "rm -r -f /tmp/fsa 2>/dev/null"; 
-       system (befehl.toAscii().data());
+       system (befehl.toLatin1().data());
    }
    // Ini-Datei auslesen
    QFile file(homepath + "/.config/qt4-fsarchiver/qt4-fsarchiver.conf");
@@ -312,17 +312,17 @@ MWindow::MWindow()
                 partition_ = "/dev/"+ partition_; 
                 //Prüfen ob System oder Home Partition
                 part_art = mtab_einlesen(partition_); // Partition übergeben
-                if (!is_mounted(partition_.toAscii().data()))
+                if (!is_mounted(partition_.toLatin1().data()))
                    { 
                    if (part_art !="system" || part_art != "home")
                      {
 			if (partition_typ == "ext" || partition_typ == "btrfs"|| partition_typ == "vfat" || partition_typ ==  "ntfs" )
                    		{
                    	 	char mountpoint[100] = "/media/";
-                         	strcat (mountpoint , part[i][0].toAscii().data());
+                         	strcat (mountpoint , part[i][0].toLatin1().data());
                                 mkdir(mountpoint, 0777);
                          	char mountpoint1[100] = "mount ";
-                         	strcat (mountpoint1,partition_.toAscii().data()); 
+                         	strcat (mountpoint1,partition_.toLatin1().data()); 
 			 	strcat (mountpoint1, " ");
 			 	strcat (mountpoint1, mountpoint);
 			 	int k = system (mountpoint1);
@@ -523,7 +523,7 @@ int MWindow::savePartition()
  	 Zeit_auslesen();
          state= chk_Beschreibung->checkState();
          //Überprüfung ob gemounted
-         part_ = partition_.toAscii().data();
+         part_ = partition_.toLatin1().data();
          char  dev_[50] = "/dev/";
 	 strcat (dev_ , part_);  // String zusammenfügen: dev_  = dev_ + part_
 	 int liveFlag = 0;
@@ -668,7 +668,7 @@ int MWindow::savePartition()
 				QString befehl = ("dd if=/dev/" + partition_ + " of=" + folder + "/" + DateiName + "-" + _Datum + ".pbr" + " bs=512 count=1");
 				state = chk_pbr->checkState();
 				if (state == Qt::Checked)
-					int  i = system (befehl.toAscii().data());
+					int  i = system (befehl.toLatin1().data());
                                   SicherungsFolderFileName = parameter[indizierung];
                                   parameter[indizierung + 1] = ("/dev/" + partition_);
                                   QFile f(parameter[indizierung]);
@@ -849,7 +849,7 @@ char * dev_part;
        	       parameter[1] = "archinfo";
                if (state1 != Qt::Checked) {
                		parameter[2] = folder;
-               		fsarchiver_aufruf(3,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data());
+               		fsarchiver_aufruf(3,parameter[0].toLatin1().data(),parameter[1].toLatin1().data(),parameter[2].toLatin1().data(),parameter[3].toLatin1().data());
                		optionkey = meldungen_holen(1);
                		dev_part = meldungen_holen(2);
                         if (werte_holen(4) == 103){
@@ -869,7 +869,7 @@ char * dev_part;
                   		return 0 ; 
                	   		}
 			parameter[4] = folder;
-                        int retour =  fsarchiver_aufruf(5,parameter[0].toAscii().data(),parameter[1].toAscii().data(),parameter[2].toAscii().data(),parameter[3].toAscii().data(),parameter[4].toAscii().data (),parameter[5].toAscii().data());
+                        int retour =  fsarchiver_aufruf(5,parameter[0].toLatin1().data(),parameter[1].toLatin1().data(),parameter[2].toLatin1().data(),parameter[3].toLatin1().data(),parameter[4].toLatin1().data (),parameter[5].toLatin1().data());
                         if ( werte_holen(4) == 103 && retour != 0){
                            QMessageBox::about(this, tr("Note", "Hinweis"), tr("You have entered an incorrect password.", "Sie haben ein falsches Passwort eingegeben. \n"));
            		   lineKey->setText ("");
@@ -879,7 +879,7 @@ char * dev_part;
                		dev_part = meldungen_holen(2);
                 }
             //Überprüfen, ob in die Originalpartition zurückgeschrieben werden soll
-            part_ = partition_.toAscii().data();
+            part_ = partition_.toLatin1().data();
             char  dev_[50] = "/dev/";
 	    strcat (dev_ , part_);  // String zusammenfügen: dev_  = dev_ + part_
             // Hier wird verglichen dev_ = die Partition, die zu sichern ist. dev_part = Originalpartition
@@ -975,17 +975,17 @@ char * dev_part;
         			// Partition muss gelöscht werden
                                 // Partition mounten, damit sie gelöscht werden kann
 				QString befehl = "mkdir /tmp/btrfs";
-				int y =  system (befehl.toAscii().data());
+				int y =  system (befehl.toLatin1().data());
                                 befehl = "mount /dev/" + partition_ + " /tmp/btrfs";
-                                y =  system (befehl.toAscii().data());
+                                y =  system (befehl.toLatin1().data());
 				//der Inhalt von tmp/btrfs und somit der Inhalt der btrfs Partition wird gelöscht
 				befehl = "rm -r -f /tmp/btrfs 2> /dev/null"; 
- 				y =  system (befehl.toAscii().data());
+ 				y =  system (befehl.toLatin1().data());
 				befehl = "umount /dev/" + partition_;
- 				y =  system (befehl.toAscii().data());
+ 				y =  system (befehl.toLatin1().data());
 				//tmp/btrfs wird gelöscht
 				befehl = "rm -r -f /tmp/btrfs";
- 				y =  system (befehl.toAscii().data());
+ 				y =  system (befehl.toLatin1().data());
 		       } }             
 	       QString keyText = lineKey->text();
                state1 = chk_key->checkState(); 
@@ -1106,7 +1106,7 @@ int MWindow::is_running(){
       QDir dir1(homepath + "/.config/qt4-fsarchiver");
       if (dir1.exists()){  //vermeidet Fehlermeldung beim ersten Start
           befehl = "ps --user root | grep -w qt4-fsarchiver 1> " +  homepath + "/.config/qt4-fsarchiver/running.txt";
-          system (befehl.toAscii().data());
+          system (befehl.toLatin1().data());
       }
       QString filename = homepath + "/.config/qt4-fsarchiver/running.txt";
       QFile file(filename);
@@ -1121,7 +1121,7 @@ int MWindow::is_running(){
            } }
            file.close();
            befehl = "rm " + filename + " 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            if (zaehler > 1) {
                // qt4-fsarchiver läuft bereits in einer Instanz 
                return 2;
@@ -1131,7 +1131,7 @@ int MWindow::is_running(){
 
 int MWindow::testDateiName(string endung)
 {
-  string str (folder.toAscii().data());
+  string str (folder.toLatin1().data());
   string str2;
   size_t found;
   // different member versions of find in the same order as above:
@@ -1157,7 +1157,7 @@ int MWindow::is_mounted (char* dev_path) {
     	&& ( strcmp ( part->mnt_fsname, dev_path ) ) == 0 ) 
     		return  1;
     	if ( ( part->mnt_fsname != NULL ) 
-    	&& ( strcmp ( part->mnt_fsname, UUID.toAscii().data() ) ) == 0 ) 
+    	&& ( strcmp ( part->mnt_fsname, UUID.toLatin1().data() ) ) == 0 ) 
     		return 1;	
    
   }
@@ -1364,7 +1364,7 @@ int part_testen;
         // Prüfen ob text-Datei vorhanden 
        if (f.exists())  {
           QString befehl = "rm "  + filename;
-          system (befehl.toAscii().data());
+          system (befehl.toLatin1().data());
           }
        if (flag_end == 1) {
         QMessageBox::about(this, tr("Note", "Hinweis"),
@@ -1447,7 +1447,7 @@ void MWindow::thread2Ready()  {
       //PBR herstellen
       i = 2;
       if (befehl_pbr != "") 
-    	i = system (befehl_pbr.toAscii().data());
+    	i = system (befehl_pbr.toLatin1().data());
       if (i!=0 ) { 
        QMessageBox::about(this, tr("Note", "Hinweis"), tr("The partition is successful back.\n", "Die Partition wurde erfolgreich wieder hergestellt.\n") + cnt_regfile_ + 
         tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr(" links and ", " Links und ") + cnt_special_ + tr(" specials have been restored.", " spezielle Daten wurden wieder hergestellt."));
@@ -1595,12 +1595,12 @@ compress_[8] = 0.32; //lzma best
 	partition_ = widget[row];
 	mount_point = mountpoint(partitiontext);
         //prozentuale Belegung
-	prozent = freesize(partitiontext.toAscii().data(), mount_point.toAscii().data(), 1); 
+	prozent = freesize(partitiontext.toLatin1().data(), mount_point.toLatin1().data(), 1); 
         // freier Bereich der Partition
-        free_part_size = freesize(partitiontext.toAscii().data(), mount_point.toAscii().data(), 3);
+        free_part_size = freesize(partitiontext.toLatin1().data(), mount_point.toLatin1().data(), 3);
        	free_part_size_ =  format(free_part_size);
         // Gesamter Bereich der Partition
-       	part_size = freesize(partitiontext.toAscii().data(), mount_point.toAscii().data(), 2);
+       	part_size = freesize(partitiontext.toLatin1().data(), mount_point.toLatin1().data(), 2);
         part_size_ =  format(part_size);
         free_part_size = free_part_size * compress_[zip - 1];
         part_size_compress = format(free_part_size);
@@ -1672,7 +1672,7 @@ QString Linuxversion;
 int i;
 int pos;
 	befehl = "cat /etc/*release 1> " +  homepath + "/.config/qt4-fsarchiver/version.txt";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
 QString filename = homepath + "/.config/qt4-fsarchiver/version.txt";
 QFile file(filename);
         if( file.open(QIODevice::ReadOnly|QIODevice::Text)) {
@@ -1692,7 +1692,7 @@ QFile file(filename);
            }}
            file.close();
            befehl = "rm " + filename;
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            if (Linuxversion.indexOf("DISTRIB_DESCRIPTION=") > 0); 
                // Ubuntu, Debian       
                Linuxversion = Linuxversion.right(Linuxversion.size() -20);
@@ -1705,7 +1705,7 @@ QStringList kernel;
 QString kernel_;
 QString befehl;
 	befehl = "uname -a 1> " +  homepath + "/.config/qt4-fsarchiver/kernel.txt";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
 QString filename = homepath + "/.config/qt4-fsarchiver/kernel.txt";
 	QFile file(filename);
         if( file.open(QIODevice::ReadOnly|QIODevice::Text)) {
@@ -1715,7 +1715,7 @@ QString filename = homepath + "/.config/qt4-fsarchiver/kernel.txt";
            kernel = kernel_.split(" ");
          }
          befehl = "rm " + filename;
-         system (befehl.toAscii().data());
+         system (befehl.toLatin1().data());
          if (kernel_.indexOf("Debian") > -1)         
 		return kernel[0] + " " + kernel[2] ;
          else
@@ -1748,7 +1748,7 @@ QString MWindow::identify_save_part(QString save_partition)
       	} 
    	file.close();
      }
-  return save_part.toAscii().data();
+  return save_part.toLatin1().data();
 }
 
 QString MWindow::mtab_einlesen(QString partition_if_home)
@@ -1799,7 +1799,7 @@ QString MWindow::mtab_einlesen(QString partition_if_home)
       	} 
    	file.close();
      }
-  //return mount_dir.toAscii().data();
+  //return mount_dir.toLatin1().data();
   return "";
 }
 
@@ -1815,7 +1815,7 @@ QString MWindow::mountpoint(QString partition)
    string text_str;
    int i,j,pos;
    int line = 0;
-   text_str = partition.toAscii().data();
+   text_str = partition.toLatin1().data();
    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         text = ds.readLine();
         // hier wird die ersten Zeile der mtab überprüft
@@ -1857,7 +1857,7 @@ QString befehl;
         {
         flag_end= 1;
      	befehl = "rm "  + SicherungsFolderFileName;
-        system (befehl.toAscii().data()); 
+        system (befehl.toLatin1().data()); 
         int pos = SicherungsFolderFileName.indexOf("fsa");
        	SicherungsFolderFileName = SicherungsFolderFileName.left(pos);
        	SicherungsFolderFileName.insert(pos, QString("txt"));
@@ -1868,14 +1868,14 @@ QString befehl;
 SicherungsFolderFileName = SicherungsFolderFileName.left(pos);
  SicherungsFolderFileName.insert(pos, QString("pbr"));
  befehl = "rm "  + SicherungsFolderFileName;
- system (befehl.toAscii().data());
+ system (befehl.toLatin1().data());
         flag_end= 1;
         if (bit_version() == "32")
                 {
         	befehl = "kill -15 " + pid1;  //fsarchiver abbrechen
-        	system (befehl.toAscii().data());
+        	system (befehl.toLatin1().data());
         	befehl = "kill -15 " + pid;  //fsarchiver abbrechen
-        	system (befehl.toAscii().data());
+        	system (befehl.toLatin1().data());
         	} 
         if (bit_version() == "64") 
 		{
@@ -1889,9 +1889,9 @@ SicherungsFolderFileName = SicherungsFolderFileName.left(pos);
 	if (bit_version() == "32") 
                 {
         	befehl = "kill -15 " + pid1;  //fsarchiver abbrechen
-        	system (befehl.toAscii().data());
+        	system (befehl.toLatin1().data());
         	befehl = "kill -15 " + pid;  //fsarchiver abbrechen
-        	system (befehl.toAscii().data());
+        	system (befehl.toLatin1().data());
         	} 
         if (bit_version() == "64") 
 		{
@@ -1909,7 +1909,7 @@ QString bit;
 QString homepath = QDir::homePath();
 QString befehl;
 	befehl = "uname -m 1> " +  homepath + "/.config/qt4-fsarchiver/bit.txt";
-        system (befehl.toAscii().data());
+        system (befehl.toLatin1().data());
 QString filename = homepath + "/.config/qt4-fsarchiver/bit.txt";
 QFile file(filename);
         if( file.open(QIODevice::ReadOnly|QIODevice::Text)) {
@@ -1918,7 +1918,7 @@ QFile file(filename);
            file.close();
            befehl = "rm " + filename;
            }
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            if (bit.indexOf("_64") > 0)
 		return "64";               
            else 
@@ -1941,7 +1941,7 @@ void MWindow::del_mediafolder()
       QString foldername[100];
       QString homepath = QDir::homePath();
       QString befehl = "cd /media; ls 1> " +  homepath + "/.config/qt4-fsarchiver/media.txt; cd /";
-      system (befehl.toAscii().data());
+      system (befehl.toLatin1().data());
       QString media;
       QString filename = homepath + "/.config/qt4-fsarchiver/media.txt";
       QFile file(filename);
@@ -1955,42 +1955,42 @@ void MWindow::del_mediafolder()
                 if (media.indexOf("sd") > -1){
                    foldername[zaehler] = "/media/" + media;
                    befehl = "umount " + foldername[zaehler] + " 2>/dev/null";
-                   system (befehl.toAscii().data());
+                   system (befehl.toLatin1().data());
                    befehl = "rmdir " + foldername[zaehler] + " 2>/dev/null";
-                   system (befehl.toAscii().data());
+                   system (befehl.toLatin1().data());
                    zaehler = zaehler + 1;
            } } }
            file.close();
            befehl = "rm " + filename + " 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            filename = homepath + "/.config/qt4-fsarchiver/disk.txt";
            befehl = "rm " + filename + " 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            filename = homepath + "/.config/qt4-fsarchiver/efi.txt";
            befehl = "rm " + filename + " 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            filename = homepath + "/.config/qt4-fsarchiver/folder.txt";
            befehl = "rm " + filename + " 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            filename = homepath + "/.config/qt4-fsarchiver/ip.txt";
            befehl = "rm " + filename + " 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            filename = homepath + "/.config/qt4-fsarchiver/smbtree.txt";
            befehl = "rm " + filename + " 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            filename = homepath + "/.config/qt4-fsarchiver/crypt1.txt";
            befehl = "rm " + filename + " 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            filename = homepath + "/.config/qt4-fsarchiver/sektornummer.txt";
            befehl = "rm " + filename + " 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            
            befehl = "umount -f" + homepath + "/.qt4-fs-client 2>/dev/null";
-	   system (befehl.toAscii().data());   
+	   system (befehl.toLatin1().data());   
            befehl = "fusermount -u " + homepath + "/.qt4-fs-client 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            befehl = "umount -a -t nfs 2>/dev/null";
-           system (befehl.toAscii().data());
+           system (befehl.toLatin1().data());
            qApp->quit();
           //close ();
 }
