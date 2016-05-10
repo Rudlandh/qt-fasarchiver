@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
  * 
-* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
+* Copyright (C) 2008-2016 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -1082,8 +1082,8 @@ void MWindow::folder_file() {
 void MWindow::info() {
    QMessageBox::information(
       0, tr("qt4-fsarchiver"),
-      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-16, December 15, 2015",
-	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-16, 15. Dezember 2015"));
+      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-18, May 11, 2016",
+	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-18, 11. Mai 2016"));
       }
 
 int MWindow::Root_Auswertung(){
@@ -1994,6 +1994,7 @@ void MWindow::del_mediafolder()
            qApp->quit();
           //close ();
 }
+
 
 
 

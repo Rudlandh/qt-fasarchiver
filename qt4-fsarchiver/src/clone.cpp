@@ -1,7 +1,7 @@
 /*
  * qt4-fsarchiver: Filesystem Archiver
  * 
-* Copyright (C) 2008-2015 Dieter Baum.  All rights reserved.
+* Copyright (C) 2008-2016 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -252,6 +252,7 @@ Qt::CheckState state;
          pos = part_name.indexOf("sd");
          if (pos == -1)
             part_name= "s" + part_name;
+         pos = 0;
          if (folder_clone.indexOf(img_partition_clone) == -1)
             pos = questionMessage(tr("Partition to restore ", "Die wiederherzustellende Partition ") + part_name + 
                tr(" does not coincide with the saved  ", " stimmt nicht mit der gesicherten ") + img_partition_clone + tr(" Do you want to continue restore?", " überein. Wollen Sie trotzdem die Wiederherstellung durchführen?"));
@@ -720,8 +721,10 @@ QString mb_sec;
         if (size_clone > 0) 
         	savedBytes->setText(size);
         // verhindert dass mehr gesicherte Bytes angezeigt werden als Festplattengröße
-        if (size_clone > partition_exist_size_int)
+	if (size_clone > partition_exist_size_int && (size_clone < 10000))
             savedBytes->setText(QString::number(partition_exist_size_int));
+        if (size_clone > partition_exist_size_int && (size_clone > 10000))
+            savedBytes->setText(QString::number(qRound(partition_exist_size_int/1000)));
         this->repaint();
         elapsedTime();
        	progressBar->setValue(prozent);
@@ -1162,6 +1165,7 @@ QStringList bytes;
 
 
         
+
 
 
 
