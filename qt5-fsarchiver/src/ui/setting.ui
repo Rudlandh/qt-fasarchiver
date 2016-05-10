@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>setting_dialog</class>
+ <widget class="QDialog" name="setting_dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>473</width>
+    <height>808</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Basic settings</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>451</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>17</y>
+      <width>225</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Anzahl Prozessorenkerne, * die für fsarchiver * verwendet werden sollen:">Number of processors
+cores, for fsarchiver
+should be used:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cmb_Kerne">
+    <property name="geometry">
+     <rect>
+      <x>241</x>
+      <y>29</y>
+      <width>200</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>81</y>
+      <width>225</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Standard*kompression:">Standard
+compression:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cmb_zip">
+    <property name="geometry">
+     <rect>
+      <x>241</x>
+      <y>84</y>
+      <width>200</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>128</y>
+      <width>225</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Language:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cmb_language">
+    <property name="geometry">
+     <rect>
+      <x>241</x>
+      <y>128</y>
+      <width>200</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_file">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>168</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="vorhandene Dateien * standardmäßig überschreiben">Existing files by default override</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_tip">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>198</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Hinweise zur Sicherung * standardmäßig aktivieren">Backup note enable by default</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_folder">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>293</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Verzeichnisse * standardmäßig an * den ursprünglichen * Ort zurückschreiben">Directories by default write 
+back to the original location</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_key">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>228</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Verschlüsselung * standardmäßig aktivieren">Enable encryption by default</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_split">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>328</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Archiv-Datei auf DVD * Größe aufteilen">Archive file size divided on DVD</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_password">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>388</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Show passwords</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_datesave">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>418</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Netzwerkeingabedaten * speichern">Network input data save</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cmd_save">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>610</y>
+      <width>431</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Einstellungen speichern">Save Settings</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cmd_cancel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>650</y>
+      <width>431</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Beenden">Exit</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_pbr">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>258</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="PBR standradmäßig sichern">Safe PBR by default</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cmb_network">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>460</y>
+      <width>200</width>
+      <height>27</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>460</y>
+      <width>225</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Network protocol:</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_ssh">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>490</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Hinweis  für den Zugriff auf Netzwerkrechner anzeigen">Show Note for accessing network computer</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_sshfs">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>530</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Hinweis über das Mounten des Netzwerkrechners anzeigen">Show  Note to mount the network computer</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_prg">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>570</y>
+      <width>441</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string extracomment="Hinweise zum Gebrauch des Programms anzeigen">Show  Note about the programm qt5-fsarchiver</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chk_hidden">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>368</y>
+      <width>401</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Show hidden directories and files</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>cmb_Kerne</tabstop>
+  <tabstop>cmb_zip</tabstop>
+  <tabstop>cmb_language</tabstop>
+  <tabstop>chk_file</tabstop>
+  <tabstop>chk_tip</tabstop>
+  <tabstop>chk_key</tabstop>
+  <tabstop>chk_folder</tabstop>
+  <tabstop>chk_split</tabstop>
+  <tabstop>chk_password</tabstop>
+  <tabstop>chk_datesave</tabstop>
+  <tabstop>cmd_save</tabstop>
+  <tabstop>cmd_cancel</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,124 @@
+=================================================================================================================================
+qt4 - FSArchiver : Haga una copia de seguridad y restaurar particiones para Debian , Ubuntu , Linux Mint - , Suse y Fedora [ http://wiki.ubuntuusers.de/qt4-fsarchiver ]
+=================================================================================================================================-
+
+Copyright (C ) 2008-2014 Francois Dupoux y Dieter Baum. Todos los derechos reservados .
+Copia de los archivos se permite con o sin modificaciones . El código es , sin garantía de ningún tipo. Utilice a su propio riesgo.
+François Dupoux ha desarrollado el FSArchiver básica del programa , Hihin Ruslan ha mejorado el programa y traducir al Inglés und ruso . Dieter Baum creó la interfaz gráfica de usuario y el código para utilizar la interfaz gráfica de usuario. Michael R. Lawrence y su equipo traducidos al español.
+
+qt4 - FSArchiver un programa con una interfaz gráfica para facilitar el funcionamiento del FSArchiver programa de archivo.
+programa FSArchiver qt4 se amplió con los siguientes puntos:
+Copia de seguridad y restaurar la tabla de particiones, HD clonación, las imágenes de los discos duros de escribir y restauración.
+
+El código fuente se puede instalar en cualquier sistema basado en Debian en Suse y Fedora.
+Para Debian, Ubuntu y Linux Mint son paquetes deb para Suse y Fedora paquetes rpm están disponibles.
+
+Instalación del programa a partir de los archivos de origen:
+Para instalar Qt4 - FSArchiver se deben instalar las dependencias necesarias para FSArchiver y el entorno de desarrollo Qt4.
+De distribuciones basadas en Debian : Este es el comando:
+Dies erreichen Sie, bei auf Debian aufbauenden Distributionen, mit folgendem Befehl:
+sudo apt-get install libzip-dev libbz2-dev liblzma-dev liblzo2-2 liblzo2-dev libgcrypt11-dev e2fslibs-dev libblkid-dev libattr1-dev build-essential qtbase5-dev qttools5-dev-tools btrfs-tools gdisk sshfs sshpass nmap samba nfs-kernel-server nfs-common smbclient gksu
+
+El comando para Suse : ( debe ser un administrador do -l) zypper in libqt4 -devel hacer libbz2 -devel e2fsprogs -devel libattr -devel btrfsprogs gdisk sshfs nmap samba- libzip desa -xz desa- lzo desa- libgcrypt desa- libblkid desarrollo nfs- kernel-server
+
+Si usa ssh (secure shell) que desee acceder a otros ordenadores de la red, usted todavía necesita para instalar individualmente sshpass.
+
+Utilice el escritorio KDE , debe cambiar las propiedades del archivo / usr/share/applications/qt4-fsarchiver.desktop de sudo qt4 - FSArchiver en kdesu qt4 - FSArchiver.
+
+El comando para Fedora: (debe ser un administrador do -l) yum install gcc gcc -c + + zlib -devel bzip2 -devel e2fsprogs -devel libattr -devel sshfs Gdisk - xz desa- lzo desa- libgcrypt desa- libblkid desa- qt4 desarrollo sshpass nmap samba nfs- utils samba-client
+Cambia en la terminal a la carpeta qt4 - FSArchiver (extraído de las fuentes).
+
+Este es el comando para instalar el programa : qmake && make && sudo make install.
+Este es el comando para Fedora : - qmake qt4 && make && sudo make install.
+
+Instalación del programa desde los paquetes DEB:
+Un doble clic sobre el archivo deb instala el programa .
+Si la instalación no se realiza correctamente que introduzca este comando en un terminal ( usted debe ser administrador) : dpkg -i 
+qt4-fsarchiver-0.6.19-4.deb. El número de versión necesita ser ajustado.
+
+Convocatoria del programa:
+Debian, Fedora y Suse 12: Este es el comando en una raíz -terminal: qt4-fsarchiver .
+Ubuntu: En " Aplicaciones> Accesorios" es un arrancador para qt4-fsarchiver. Comience con doble clic .
+Ubuntu con Unity: Inicio qt4-fsarchiver sobre el tablero.
+LinuxMint: En la sección " Menú> Aplicaciones> Accesorios " es un motor de arranque para qt4-fsarchiver. Comience con doble clic.
+Suse 11 : Unter " Aplicaciones > Aplicaciones " es un motor de arranque para qt4-fsarchiver. Comience con doble clic.
+
+Nota para Ubuntu: La superficie tiene Ubuntu 10.10 ya no se adapta Gnome.
+Adaptabilidad: Comando para el terminal: sudo qtconfig. Under Aspecto> Estilo de GUI que elija GTK+. Guarde el cambio y cerró la Qt-configuration.
+A continuación, ejecute Qt-Configuration qtconfig nuevo con qtconfig sudo. Cambiar el estilo de interfaz gráfica de usuario y se cierra el programm.
+
+Debido a problemas con la instalación de Qt4-qtconfig de las fuentes de Ubuntu, qt4 - qtconfig ya no se instala con el paquete deb . qt4-qtconfig debe instalarse manualmente. Por lo general, ayuda con la instalación de Qt4-qtconfig de las fuentes de Ubuntu cuando se introduce el primer comando sudo apt- get update en la terminal.
+
+El manejo de qt4-fsarchiver es simple:
+Usando el menú de opciones "Acciones" de la barra de herramientas o las siguientes acciones pueden ser seleccionados:
+" Particiones de copia de seguridad de la partición/restore", "backup de la partición/restaurar a través de una red", "backup MBR/GPT/ restaurar los archivos", "Directorios guardar/restaurar" y "clon HD, crean oder restaurar una imagen" .
+
+El programa detecta automáticamente si el registro maestro de arranque o la tabla de particiones GUID deben ser seguras.
+Además, el menú del elemento "Configuración" ajustes básicos tales como el número de núcleos o de resistencia a la compresión y se pueden ajustar aún más.
+Cuando las copias de seguridad de particiones pueden ser utilizados para determinar si la partición de arranque (PBR) debe ser respaldado. Grub no admite el PBR. Con Grub, la copia de seguridad es por lo general carece de importancia.
+
+La copia de seguridad es siempre seguía el mismo esquema: Usted elige el nombre para la copia de seguridad, el programa añade automáticamente el nombre de una marca de fecha y , a continuación, elige la partición a una copia de seguridad o en el directorio de una copia de seguridad. Ahora, el directorio se seleccionan en el que se debe guardar la copia de seguridad. a continuación, seleccione el directorio donde se debe almacenar la copia de seguridad. el botón pulsador "partición segura" y comenzar la copia de seguridad.
+
+La restauración es similar: en el directorio de copia de seguridad se selecciona el nombre del archivo a restaurar. Cuando se restaura una partición para restaurar la partición está seleccionada. Se evalúa si el nombre de la partición de restauración ( por ejemplo, /dev/sda5 ), coincide con el nombre de la partición segura. Tras recibir el aviso, la partición se puede escribir de nuevo a cualquier ubicación. Si existe un archivo con el sector de arranque de la partición como el contenido, se le preguntó si el PBR ha de ser restaurada.
+
+Cuando se restaura una btrfs Partiiton puede elegir si la partición debe ser formateada o no. Al formatear se genera un nuevo UUID cuando el formato no es el get UUID.
+
+Al restaurar directorios se selecciona, si el directorio debería ser restaurado a su ubicación original o en otro lugar. Pulse el botón "Restaurar partición" y la partición o directorio se restauran.
+
+Requisitos para el trabajo con la red:
+Cuando la copia de seguridad en una red, una forma adicional se abre, en la que el nombre de usuario y la contraseña deben ingresarse para la red. De almacenamiento de la contraseña, no se recomienda el exterior del sector privado, debido a que el cifrado de la contraseña se realiza de una manera sencilla.
+
+Con la samba Protocoll :
+Si se utiliza la red debe estar instalado en ambos equipos (cliente y servidor) de Samba. El cliente es el equipo que realiza la copia de seguridad/restauración. Server es el equipo en el que se almacenan los datos.
+La integración de los sistemas de archivos " vfs cifs " virtuales debe ser posible en la máquina Linux. Por favor, consulte el artículo de wiki de Ubuntu "http://wiki.ubuntuusers.de/Samba_Client_cifs".
+Para el acceso a una carpeta compartida de Windows 7 debe agregar el grupo o nombre de usuario "Todos" en Propiedades > Compartir> Uso compartido avanzado > Permisos. Como los permisos para "Todo el mundo" debería de "acceso total", "Change" y "leer" puede ser activado.
+
+Con el SSH protocol (seguro compartido ) :
+En el área de Linux debe ser openssh-server instalado en el equipo en el que se almacenan los datos (servidor) Para acceder es posible que el servidor individual que introducir de nuevo en la terminal para identificar estos comandos:
+sudo ssh user @ Adresse des Servidores. (Ejemplo: sudo ssh peter@192.168.2.10 ). La convocatoria debe hacerse con los derechos administrativos. Confirme la cuestión de la huella de la clave RSA con un sí. Introduzca la contraseña para acceder al servidor. Si esto tiene éxito que tiene con los contactos de conexión al servidor. Esto se indica mediante el símbolo cambiado. Deje el servidor con el comando exit. Este procedimiento tiene que ser realizado una vez para todos los servidores.
+
+El primer momento el acceso al programa qt4-fsarchiver en el servidor, el comando sudo ssh usuario@ServerAddress se introduce directamente en el terminal. En los ajustes básicos del programa se puede configurar si la entrada automática para acceder a servidores adicionales se debe repetir o no.
+
+Para montar un servidor ssh, el terminal debe ser la contraseña de acceso al servidor a introducir. Para evitar esto, es aconsejable establecer una clave pública. Importante: La clave pública del servidor (archivo : authorized_keys ) necesita en el directorio/root/.ssh puede copiar.
+
+En la configuración básica se puede determinar si la referencia para establecer la contraseña para que se muestre o no.
+
+Con el Protocoll NFS ( Network File System ) :
+Sólo máquina Linux como cliente o servidor puede ser utilizado. Debe instalarse en el nfs-kernel-server servidor. En el archivo 
+/etc/ exports sean liberados, además de los directorios listados. La entrada /home/user/images 192.168.2.0/255.255.255.0 (rw ) permite que cualquier computadora con el 192.168.2.0 dirección IP a través 192.168.2.255 un acceso de lectura y escritura para el directorio 
+/home/ usuario/imágenes del cliente.
+Después de arrancar el Live CD o la computadora puede. Ake un poco en aparecer otros equipos de la red.
+
+Las copias de seguridad también se puede hacer cifrada. En este caso, la longitud de la clave de entre 6 y 64 caracteres. La división de archivos en DVD de tamaño es posible.
+
+La copia de seguridad de las particiones es posible después de pedir confirmación. Restauración de particiones sólo pueden hacerse si la partición se desmonta.
+
+La restauración de una raíz o una partición de casa es posible con el CD qt4-fsarchiver vivo ("http://sourceforge.net/projects/qt4-fsarchiver/files/Live-CD/") .
+
+Por SystemRescueCd es el programa disponible FSArchiver. Con FSArchiver es Posible raíz y los autónomos particiones se pueden restaurar.
+
+Cuando la copia de seguridad del MBR sólo tiene que seleccionar (con múltiples unidades de disco duro), el disco duro y el directorio de copia de seguridad. El área oculta del disco entre el final de la RBM y el inicio de la primera partición será respaldado. Al restaurar el MBR con múltiples unidades de disco duro, el disco duro puede ser seleccionado, el MBR se escribirá de nuevo. Además, puede elegir si el área del gestor de arranque, la tabla de particiones o área oculta del disco para ser restaurados.
+
+qt4-fsarchiver puede realizar copias de seguridad y restaurar con ecryptfs cifrados directorios de inicio. Esto es independientemente de si el directorio personal del usuario se almacena en una partición independiente o dentro del directorio raíz.
+
+Con TrueCrypt particiones cifradas no se pueden copiar .
+
+Asegurar una partición FAT de Windows no es compatible. Sin embargo, se puede almacenar en una partición FAT. El archivo de copia de seguridad se dividirá si el tamaño del archivo es mayor que 4 GB.
+
+Clonar disco duro: Usted elige en el cuadro de lista de la izquierda, seleccione la unidad existente que va a ser clonado, y el cuadro de lista de la derecha, el disco duro, que va a ser reconstruido. Haga clic en el botón "Clonar disco".
+
+Imagen del disco duro a crear:
+En el cuadro de lista de la izquierda de la unidad de disco duro existente, de la que una imagen se va a crear en Elegir. Elija un directorio de copia de seguridad. Además, seleccione si la imagen se comprime. Haga clic en la "Imagen de crear" botón.
+
+Imagen del disco duro de restauración :
+En el cuadro de lista de la izquierda desde el disco duro, de la que una imagen se va a escribir de nuevo en Elegir. Elija el archivo de copia de seguridad existente (que termina img.fsa o gz.fsa ). Haga clic en el botón "Imagen de restauración".
+
+Al iniciar qt4-fsarchiver no son todas las particiones sin montar en /media/sda... /media/sdb... montado. Las particiones son de fácil acceso en el escritorio. El directorio en la copia de seguridad se debe guardar o en el directorio en el que la partición segura se almacena, se puede seleczed en qt4-fsarchiver en /media/sd....
+
+qt4-fsarchiver se puede iniciar varias veces. Así que es posible, por ejemplo, para asegurar al mismo tiempo la partición raíz y la partición casa. (Pre-requisito es, por supuesto, que hay dos particiones separadas).
+
+Más información se puede encontrar en los sitios web alemán y http://wiki.ubuntuusers.de/qt4-fsarchiver http://wiki.ubuntuusers.de/fsarchiver.
+
+Usted puede obtener información sobre FSArchiver en la página web de Inglés FSArchiver http://www.fsarchiver.org/Main_Page .
+
+
