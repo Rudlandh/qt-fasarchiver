@@ -3095,8 +3095,8 @@ Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
         <source>Backup and restore partitions, directory and MBR
 Version 0.6.19-16, December 15, 2015</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-16, 15. Dezember 2015</comment>
-        <translation type="vanished">分区、目录和MBR 备份/恢复工具。
-版本 0.6.19-17, 2016. 五月. 4</translation>
+<translation>分区、目录和MBR 备份/恢复工具。
+版本 0.6.19-19, 2016. 六月. 1</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1090"/>

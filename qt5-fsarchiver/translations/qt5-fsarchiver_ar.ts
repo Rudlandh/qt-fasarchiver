@@ -2926,8 +2926,8 @@ Die Dateiendung muss .fsa sein</comment>
         <source>Backup and restore partitions, directory and MBR
 Version 0.6.19-16, December 15, 2015</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-16, 15. Dezember 2015</comment>
-        <translation type="vanished">أقسام الدليل 
-17-19.6.0,مايو.2016</translation>
+<translation>أقسام الدليل 
+19-19.6.0,يونيو.2016</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1090"/>

@@ -3134,7 +3134,8 @@ Los archivos deben terminar al fsa</translation>
         <source>Backup and restore partitions, directory and MBR
 Version 0.6.19-19, June 1, 2016</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-19, 1. Juni 2016</comment>
-        <translation type="unfinished"></translation>
+<translation>Copia de seguridad y restauración de particiones, directorios y MBR
+versione 0.6.19-19, 1. Junio. 2016</translation>
     </message>
     <message>
         <source>Backup and restore partitions, directory and MBR

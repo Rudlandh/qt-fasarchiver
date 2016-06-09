@@ -1,11 +1,13 @@
 =================================================================================================================================
-qt5-fsarchiver: Back up and restore partitions for Debian,Ubuntu, Linux-Mint, Suse and Fedora [http://wiki.ubuntuusers.de/qt5-fsarchiver]
+qt5-fsarchiver: Back up and restore partitions for Debian,Ubuntu, Linux-Mint, Suse and Fedora [http://wiki.ubuntuusers.de/qt4-fsarchiver]
 =================================================================================================================================
 
-Copyright (C) 2008-2015 Francois Dupoux and Dieter Baum.  All rights reserved.
+Copyright (C) 2008-2016 Francois Dupoux and Dieter Baum.  All rights reserved.
 Copying the files is permitted with or without modifications. The code is without warranty of any kind. Use at your own risk.
 
 François Dupoux has developed the basic program fsarchiver, Hihin Ruslan has improved the program and tranlate to englisch und russian. Michael R. Lawrence and his team translated to Spanish and Italian, Zhenneng Li translated to Chinese, Dieter Baum created the GUI and the code to use the GUI.
+
+qt4-fsarchiver was translated QT5 environment and renamed in QT5-fsarchiver.
 
 qt5-fsarchiver a program with a graphical interface for easy operation the archiving program fsarchiver.
 qt5 fsarchiver program was extended with these points:
@@ -19,19 +21,27 @@ To install qt5-fsarchiver the necessary dependencies for fsarchiver and the qt5 
 Of Debian based distributions: This is the command:
 sudo apt-get install libzip-dev libbz2-dev liblzma-dev liblzo2-2 liblzo2-dev libgcrypt11-dev e2fslibs-dev libblkid-dev libattr1-dev build-essential qtbase5-dev qttools5-dev-tools btrfs-tools gdisk sshfs sshpass nmap samba nfs-kernel-server nfs-common smbclient gksu
  
-The command for Suse: (you must be an administrator su -l) zypper in libqt5-devel make libzip-devel libbz2-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel btrfsprogs gdisk sshfs nmap samba nfs-kernel-server
+The command for Suse: (you must be an administrator su -l) zypper in libQt5Core5 libqt5-qttools libqt5-qtbase-devel make libzip-devel libbz2-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel btrfsprogs gdisk sshfs nmap samba nfs-kernel-server
 If you use ssh (secure shell) want to access other computers in the network, you still need to install individually sshpass.
 
 The command for Fedora: (you must be an administrator su -l) yum install  gcc gcc-c++ zlib-devel bzip2-devel xz-devel lzo-devel libgcrypt-devel   e2fsprogs-devel libblkid-devel libattr-devel qt5-devel gdisk sshfs sshpass nmap samba samba-client nfs-utils
 yum install was replaced from Fedora22 by dnf install.
 
 You change in the terminal to the folder qt5-fsarchiver (extracted from the sources).
-This is the command to install the program: qmake && make && sudo make install. 
-This is the command for Fedora: qmake-qt5 && make && sudo make install.
+
+This is the command to install the program with Debian8, Ubuntu 16.04 64-bit and und Mint 17.1 64-bit: /usr/lib/x86_64-linux-gnu/qt5/bin/qmake && make && sudo make install
+This is the command to install the program with Debian8, Ubuntu 16.04 32-bit and und Mint 17.1 32-bit: /usr/lib/i386-linux-gnu/qt5/bin/qmake && make && sudo make install
+In Debian you must instead sudo make install this: su -l, make install
+
+This is the command for Fedora and Suse: qmake-qt5 && make && sudo make install.
+Before you can compile the program in Fedora, you must copy file lrelease from /usr/lib64/qt4/bin/ to /usr/lib64/qt5/bin/ 
 
 Installing the program from the DEB packages:
 A double click on the deb file installs the program.
-If the installation is unsuccessful you enter this command in a terminal(you must be administrator): dpkg -i qt5-fsarchiver-0.6.19-16.deb. The version number needs to be adjusted.
+If the installation is unsuccessful you enter this command in a terminal(you must be administrator): dpkg -i qt5-fsarchiver-0.6.19-19.deb. The version number needs to be adjusted.
+In Ubuntu 4.16 the double is not working. The correct command is: sudo apt-get install qt5-fsarchiver-0.6.19-19.deb.
+In Debian8 is this the command: gpk-install-local-file qt5-fsarchiver-0.6.19-19.deb. The version number needs to be adjusted.
+Is in Debian8 gpk is not installed, then you must enter: su -l dpkg-i, qt5-fsarchiver-0.6.19-19.deb und apt-get install -f. The output of dpkg error message can be ignored.
 
 Program call:
 Partial starters are installed. By double-qt5-fsarchiver is started.

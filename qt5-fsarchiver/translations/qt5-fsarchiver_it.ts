@@ -2924,8 +2924,8 @@ Die Dateiendung muss .fsa sein</comment>
         <source>Backup and restore partitions, directory and MBR
 Version 0.6.19-16, December 15, 2015</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-16, 15. Dezember 2015</comment>
-        <translation type="vanished">Backup e ripristino partizioni, directory e MBR.
-La versione 0.6.19-17, 4. Maggio. 2016</translation>
+<translation>Backup e ripristino partizioni, directory e MBR.
+La versione 0.6.19-19, 1. Giugno. 2016</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1098"/>

@@ -3180,13 +3180,6 @@ Sie müssen eine Datei auswählen</translation>
         <translation>Die Wiederherstellung wird durchgeführt</translation>
     </message>
     <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.6.19-16, December 15, 2015</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-16, 15. Dezember 2015</comment>
-        <translation type="vanished">Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR.
-Version 0.6.19-17, 4. Mai. 2016</translation>
-    </message>
-    <message>
         <location filename="../src/mainWindow.cpp" line="1407"/>
         <source>The backup of the partition was only partially successful.
 </source>
@@ -3395,7 +3388,8 @@ Vielleicht ist die Partition verschlüsselt?</translation>
         <source>Backup and restore partitions, directory and MBR
 Version 0.6.19-19, June 1, 2016</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-19, 1. Juni 2016</comment>
-        <translation type="unfinished"></translation>
+        <translation>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR.
+Version 0.6.19-19, 1. Juni. 2016</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1462"/>
@@ -3667,7 +3661,7 @@ entschlüsseln Schlüssel:</translation>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="731"/>
         <source>&amp;Basic Settings</source>
-        <translation type="unfinished">&amp;Einstellungen sichern</translation>
+        <translation type="unfinished">&amp;Basiseinstellungen</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="740"/>
