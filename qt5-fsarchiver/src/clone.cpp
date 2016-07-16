@@ -175,7 +175,6 @@ int DialogClone::do_image_partition()
 {
 MWindow window;
 QString befehl;
-int pos;
 QString _Datum_clone = window.Zeit_auslesen();
 Qt::CheckState state;
       lbl_save->setText (tr("already saved", "bereits gesichert"));
@@ -595,7 +594,7 @@ void DialogClone::rdbutton_partition_image_restore(){
 }
 
 void DialogClone::listWidget_auslesen() {
-    int row;
+    int row = 0, pos = 0, pos1 = 0, pos2 = 0;;
     extern QString add_part[100];
     QStringList partition_kurz;  
     QString widget[100];
@@ -606,9 +605,9 @@ void DialogClone::listWidget_auslesen() {
     img_partition_clone = partition_kurz[0]; // z.B. sda1
     img_partition_clone = img_partition_clone.trimmed();
     img_partition_size = img_partition_size.right(12);
-    int pos = img_partition_size.indexOf("GB");
-    int pos1 = img_partition_size.indexOf("MB");
-    int pos2 = img_partition_size.indexOf("TB");
+    pos = img_partition_size.indexOf("GB");
+    pos1 = img_partition_size.indexOf("MB");
+    pos2 = img_partition_size.indexOf("TB");
     img_partition_size = img_partition_size.left(9);
     img_partition_size = img_partition_size.trimmed();
     img_partition_size = img_partition_size.replace(",","");
@@ -677,19 +676,19 @@ int DialogClone::file_check() {
 
 void DialogClone::ViewProzent()
 {
-int prozent ;
+int prozent = 0 ;
 QString sekunde;
-int sekunde_;
+int sekunde_ = 0;
 QString minute;
-int minute_;
+int minute_ = 0;
 QString hour;
-int hour_;
+int hour_ = 0;
 QString text_integer;
 QString size;
-int size_1;
+int size_1 = 0;
 QString letzte_zeile;
 QString befehl;
-int diff;
+int diff = 0;
 QString mb_sec;
         if (endeThread_clone ==0)
 	{
@@ -1024,8 +1023,8 @@ int k = 0;
 
 QString DialogClone::pid_ermitteln(QString prozess)
 {
-QString befehl;
-QString pid_nummer;
+QString befehl = "";
+QString pid_nummer = "";
 QStringList pid;
       befehl = "ps -C " + prozess + " 1> " +  homepath + "/.config/qt5-fsarchiver/pid.txt";
       system (befehl.toLatin1().data());
@@ -1053,15 +1052,15 @@ QStringList pid;
 
 
 void DialogClone::read_write_hd(){
-QString teilstring;
-QString befehl;
+QString teilstring = "";
+QString befehl = "";
 QString harddrive;
 int  i = 0;
 QStringList read_write;
 QString rw_;
 QString rw_1;
 int read_write_space = 0;
-int found;
+int found = 0;
        
        if (endeThread_clone !=0)
             return;

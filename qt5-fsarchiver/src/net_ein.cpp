@@ -78,10 +78,10 @@ QString befehl;
 QString homepath = QDir::homePath(); 
 QString hostname_;
 QStringList adresse_;
-QString adresse; 
+QString adresse = ""; 
 QString adresse_router;
-QString adresse_eigen;
-QString adresse_eigen_;
+QString adresse_eigen = "";
+QString adresse_eigen_ = "";
 int k = 0;
 int i = 0;
         // Routeradresse ermitteln
@@ -162,7 +162,6 @@ int pos = 0;
 int pos1 = 0;
 int i = 0;
 int j;
-int m;
 QStringList adresse_;
 QString adresse_eigen;
 QString adresse2;
@@ -360,7 +359,6 @@ QString NetEin:: IP(QString adresse)
 {
 QString befehl;
 int pos;
-int pos1;
 QString homepath = QDir::homePath();
 QFile file(homepath + "/.config/qt5-fsarchiver/ip.txt");
 QTextStream ds(&file);

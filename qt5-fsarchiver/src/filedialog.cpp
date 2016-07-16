@@ -34,6 +34,7 @@ FileDialog::FileDialog(QWidget *parent)
   setupUi(this);
   connect( cmd_save, SIGNAL(clicked()), this, SLOT(folder_einlesen()));
   connect( cmd_cancel, SIGNAL( clicked() ), this, SLOT(reject()));
+  //textEdit->setPlainText(QString::fromUtf8(wort));
   textEdit->setPlainText(wort);
  
  if (dialog_auswertung ==3)
@@ -84,7 +85,7 @@ void FileDialog::file_read()
       		QFile file(filename);
         	if (file.open(QIODevice::ReadOnly | QIODevice::Text)) 
                {
-               textEdit->setPlainText(file.readAll());
+               textEdit-> setPlainText(QString::fromLatin1(file.readAll()));
                }
  	  }
   }

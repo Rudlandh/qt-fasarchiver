@@ -1,9 +1,13 @@
 ==================================================================================================
 * qt5-fsarchiver: Graphical interface for fsarchiver fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ==================================================================================================
+*  qt5-fsarchiver-6.19-20 June 30, 2016.
+     - Displaying restore the fsa file over the network again available.
+     - With ssh backup and restore over the network there is not longer possible.
+     - Minor improvements.
 *  qt5-fsarchiver-6.19-19 June 1, 2016.
      - qt4-fsarchiver was translated from Qt4 to QT5.
-     - New name of the program: qt5-fsarchiver
+     - New name of the program: qt5-fsarchiver.
      - Minor improvements.
 * qt4-fsarchiver-6.19-18 May 11, 2016
     - Minor improvements.

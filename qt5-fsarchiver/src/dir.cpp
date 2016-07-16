@@ -496,7 +496,7 @@ void DialogDIR::thread2Ready()  {
    if (flag_end_dir == 1) {
         QMessageBox::about(this, tr("Note", "Hinweis"),
          tr("The restore of the folder was break by user!\n", "Die Wiederherstellung des Verzeichnisses wurde vom Benutzer abgebrochen!\n") );
-	meldung == 0;
+	meldung = 0;
         }
    if (meldung == 100) {
        // Anzahl nicht korrekt gesicherte Dateien ausgeben

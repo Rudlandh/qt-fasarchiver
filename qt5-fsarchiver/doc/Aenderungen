@@ -1,6 +1,10 @@
 ==================================================================================================
 * qt5-fsarchiver: Grafische Oberfläche für fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ==================================================================================================
+* qt5-fsarchiver-6.19-20 30. Juni 2016
+    - Anzeige der zurückzuschreibenden fsa-Datei über das Netzwerk wieder vorhanden.
+    - Mit ssh über das Netzwerk sichern und zurückschreiben ist vorläufig nicht mehr möglich.
+    - kleinere Verbesserungen.
 * qt5-fsarchiver-6.19-19 1. Juni 2016
     - qt4-fsarchiver wurde ind die Qt5 Entwicklungumgebung übersetzt.
     - Umbenennung von qt4-fsarchiver in qt5-fsarchiver.

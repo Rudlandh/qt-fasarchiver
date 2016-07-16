@@ -121,7 +121,8 @@ setupUi(this); // this sets up GUI
   	    pushButton_restore->setEnabled(true);
             pushButton_save->setEnabled(false);}
         timer = new QTimer(this);
-        items_Net << "Samba" << "SSH" << "NFS";
+        //items_Net << "Samba" << "SSH" << "NFS";
+        items_Net << "Samba" << "NFS";
 	cmb_Net->addItems (items_Net);
 	items_Net.clear();
         items_kerne_ << "1" << "2" << "3" << "4" <<  "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12";
@@ -381,7 +382,6 @@ int i = 0;
 
 int DialogNet::nfs_search_folder_free(QString rechner_IP){
 QString befehl;
-int line;
 int i = 0;
 QString text;
 QStringList items;
@@ -416,7 +416,7 @@ listWidget_free_folder -> clear();
 
 int DialogNet::search_folder_free(QString rechner_IP){
 QString befehl;
-int line;
+int line = 0;
 int i = 0;
 int pos = 0;
 QString text;
@@ -745,16 +745,13 @@ folder_dir_net =  (dirModel->filePath(index));
 QFileInfo info(folder_dir_net); 
 QFile file(file_net);
 QString DateiName("") ;
-string part_art;
 char * part_;
-int err;
-int prozent;
+int err = 0, y = 0;
 QString keyText = "";
 char * dev_part;
-string dateiname;
-int pos;
-int pos1;
-int cmp;
+int pos= 0;
+int pos1 = 0;
+int cmp = 0;
 char  dev_[50] = "/dev/";
 QString str = ""; 
 QString str1 = "";
@@ -959,7 +956,7 @@ QString str1 = "";
         			// Partition muss gelöscht werden
                                 // Partition mounten, damit sie gelöscht werden kann
 				QString befehl = "mkdir /tmp/btrfs";
-				int y =  system (befehl.toLatin1().data());
+				y =  system (befehl.toLatin1().data());
                                 befehl = "mount /dev/" + partition_net_ + " /tmp/btrfs";
                                 y =  system (befehl.toLatin1().data());
 				//der Inhalt von tmp/btrfs und somit der Inhalt der btrfs Partition wird gelöscht
@@ -1105,8 +1102,6 @@ QString DialogNet::Zeit_auslesen(){
     int Monat;
     int Jahr;
     QString Datum_akt;
-    
-    string stringvariable;
     time_t Zeitstempel;
     tm *nun;
     Zeitstempel = time(0);
@@ -1138,10 +1133,13 @@ MWindow window;
 int DialogNet::listWidget_folder_free_auslesen() {
 	QString homepath = QDir::homePath();
 QString befehl;
+QString dummy;
 int k = 0;
+int pos = 0;
 int net_art = cmb_Net->currentIndex();
     TreeviewRead treeviewread;
     int row;
+    restore_file_name_txt ->setText("");
     row = listWidget_free_folder->currentRow();
     if (row > -1)
     	folder_free = folder_free_[row];
@@ -1173,13 +1171,15 @@ int net_art = cmb_Net->currentIndex();
   	TreeviewRead *dialog1 = new TreeviewRead;
         dialog1->exec();
         file_net = treeviewread.folder_treeview_holen(); 
-        restore_file_name_txt ->setText(file_net);
+        dummy = file_net;
+        pos = dummy.indexOf("qt5-fs-client");
+        dummy = dummy.right(dummy.size() -pos - 14); 
+        restore_file_name_txt ->setText(dummy);
         if (file_net != "")
 	    pushButton_restore->setEnabled(true);
         }
         return 0;
 }
-
 void DialogNet::folder_file() {
    extern QString folder_file_;
    folder_file_ = folder_net + "/" + DateiName_net + "-" + _Datum_net + ".txt";
@@ -1448,7 +1448,6 @@ void DialogNet::indicator_reset() {
 int DialogNet::testDateiName(string endung)
 {
   string str (file_net.toLatin1().data());
-  string str2;
   size_t found;
   // different member versions of find in the same order as above:
   found=str.find(endung);
@@ -1463,14 +1462,14 @@ int DialogNet::testDateiName(string endung)
 }
 void DialogNet::ViewProzent()
 {
-int prozent;
+int prozent = 0;
 QString sekunde;
-int sekunde_;
+int sekunde_ = 0;
 QString minute;
-int minute_;
-int meldung;
-int anzahl;
-int anzahl1;
+int minute_ = 0;
+int meldung = 0;
+int anzahl = 0;
+int anzahl1 = 0;
 QString text_integer;
 
 if (endeThread_net !=1)
@@ -1637,17 +1636,22 @@ QString rechner;
 
 void DialogNet::treeWidget_auslesen()
 {
+int pos = 0;
 	QString homepath = QDir::homePath();
 	QTreeWidgetItem *current = treeWidget->currentItem();
 	QString currentFile = current->text(0);
+        restore_file_name_txt ->setText("");
 	//Verzeichnis, in dem gesichert oder zurückgeschrieben wird
         //Name folder_free wurde aus dem Code Samba-Sicherung übernommen
         folder_free = pfad_forward + "/" + currentFile;
         // Prüfen ob 2 Flash vorhanden sind
         if (folder_free.indexOf ("/", 1) == 1)
 		folder_free.replace(1,1,"");
-        if (rdBt_restoreFsArchiv->isChecked())
+        if (rdBt_restoreFsArchiv->isChecked()){
             file_net = homepath + "/.qt5-fs-client/" + currentFile;
+            int pos = file_net.indexOf(".fsa");
+            if (pos > 1)
+            	restore_file_name_txt ->setText(currentFile);}
 }
 
 void DialogNet::folder_free_mounten(){  //ssh mounten

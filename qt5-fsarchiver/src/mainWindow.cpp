@@ -121,8 +121,8 @@ MWindow::MWindow()
    QStringList partition_kurz;
    QString partition1_;
    QStringList items; 
-   int pos, pos1;
-   int i,j;
+   int pos = 0, pos1 = 0;
+   int i = 0,j = 0, k = 0;
    QString befehl;
    QString homepath = QDir::homePath();
    QString rootpath = QDir::rootPath();
@@ -330,7 +330,7 @@ MWindow::MWindow()
                          	strcat (mountpoint1,partition_.toLatin1().data()); 
 			 	strcat (mountpoint1, " ");
 			 	strcat (mountpoint1, mountpoint);
-			 	int k = system (mountpoint1);
+			 	k = system (mountpoint1);
                          	}
                         }
  		     }
@@ -720,14 +720,14 @@ int MWindow::savePartition()
 
 void MWindow::ViewProzent()
 {
-int prozent ;
+int prozent = 0 ;
 QString sekunde;
-int sekunde_;
+int sekunde_ = 0;
 QString minute;
-int minute_;
-int meldung;
-int anzahl;
-int anzahl1;
+int minute_ = 0;
+int meldung = 0;
+int anzahl = 0;
+int anzahl1 = 0;
 QString text_integer;
 //if (endeThread !=1)
 if (endeThread ==0)
@@ -794,10 +794,9 @@ QFile file(folder);
 QString DateiName("") ;
 char * part_;
 int err;
-int prozent;
 QString keyText = "";
 char * dev_part;
-
+int y = 0;
 
   indicator_reset();
   if (rdBt_restoreFsArchiv->isChecked())
@@ -980,7 +979,7 @@ char * dev_part;
         			// Partition muss gelöscht werden
                                 // Partition mounten, damit sie gelöscht werden kann
 				QString befehl = "mkdir /tmp/btrfs";
-				int y =  system (befehl.toLatin1().data());
+				y =  system (befehl.toLatin1().data());
                                 befehl = "mount /dev/" + partition_ + " /tmp/btrfs";
                                 y =  system (befehl.toLatin1().data());
 				//der Inhalt von tmp/btrfs und somit der Inhalt der btrfs Partition wird gelöscht
@@ -1037,8 +1036,6 @@ QString MWindow::Zeit_auslesen(){
     int Monat;
     int Jahr;
     QString Datum_akt;
-    
-    string stringvariable;
     time_t Zeitstempel;
     tm *nun;
     Zeitstempel = time(0);
@@ -1087,8 +1084,8 @@ void MWindow::folder_file() {
 void MWindow::info() {
    QMessageBox::information(
       0, tr("qt5-fsarchiver"),
-      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-19, June 1, 2016",
-	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-19, 1. Juni 2016"));
+      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-20, June 30, 2016",
+	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-20, 30. Juni 2016"));
       }
 
 int MWindow::Root_Auswertung(){
@@ -1137,7 +1134,6 @@ int MWindow::is_running(){
 int MWindow::testDateiName(string endung)
 {
   string str (folder.toLatin1().data());
-  string str2;
   size_t found;
   // different member versions of find in the same order as above:
   found=str.find(endung);
@@ -1675,7 +1671,6 @@ QString homepath = QDir::homePath();
 QString befehl;
 QString Linuxversion;
 int i;
-int pos;
 	befehl = "cat /etc/*release 1> " +  homepath + "/.config/qt5-fsarchiver/version.txt";
         system (befehl.toLatin1().data());
 QString filename = homepath + "/.config/qt5-fsarchiver/version.txt";
@@ -1735,7 +1730,6 @@ QString MWindow::identify_save_part(QString save_partition)
    QString save_part;
    QFile file("/etc/mtab");
    QTextStream ds(&file);
-   int pos, pos1,i,j;
    int line = 0;
    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
      text = ds.readLine();
@@ -1855,7 +1849,7 @@ QString MWindow::mountpoint(QString partition)
 
 void MWindow::esc_end()
 {
-QString befehl;
+QString befehl = "";
    if (thread_run > 0) {
     int ret = questionMessage(tr("Do you really want to break the save or restore from the partition?", "Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?"));
       if (thread_run == 1 && ret == 1)
@@ -1951,7 +1945,6 @@ void MWindow::del_mediafolder()
       QString filename = homepath + "/.config/qt5-fsarchiver/media.txt";
       QFile file(filename);
       int zaehler = 0;
-      int i = 0;
       qApp->quit();
       if( file.open(QIODevice::ReadOnly|QIODevice::Text)) {
            QTextStream ds(&file);
