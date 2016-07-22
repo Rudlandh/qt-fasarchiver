@@ -36,6 +36,10 @@ connect( pushButton_net, SIGNAL( clicked() ), this, SLOT(listWidget_show()));
 connect( pushButton_go, SIGNAL( clicked() ), this, SLOT(go()));
 connect( pushButton_end, SIGNAL( clicked() ), this, SLOT(end()));
 connect( chk_password, SIGNAL( clicked() ), this, SLOT(Kennwort()));
+// Vorsichtshalver ./qt4-fs-client löschen und neu anlegen, da eventuell nicht leer
+       rmDir(homepath + "/.qt5-fs-client");
+       QString befehl = "mkdir " + homepath + "/.qt5-fs-client 2>/dev/null" ;
+       system (befehl.toLatin1().data());
 // Ini-Datei auslesen
    QFile file(homepath + "/.config/qt5-fsarchiver/qt5-fsarchiver.conf");
    if (file.exists()) {
@@ -195,7 +199,7 @@ QString hostname_;
                 text = text.trimmed();
                 j = text.size();
 		        text = text.right(j-2);
-                if (pos1 == -1) {
+               // if (pos1 == -1) {
                      text = text.toLower();
                      text = IP(text); // IP ermitteln
                      adresse_ = text.split(" ");
@@ -205,7 +209,7 @@ QString hostname_;
                       i++;}
                    if (i > 99)
                       break;
-                }
+              //  }
              }} 
         } 
 	file.close();
@@ -671,6 +675,24 @@ int NetEin::questionMessage(QString frage)
     		return 1;
 	else if (msg.clickedButton() == noButton)
     		return 2;
+}
+
+bool NetEin::rmDir(const QString &dirPath)
+{
+    QDir dir(dirPath);
+    if (!dir.exists())
+        return true;
+    foreach(const QFileInfo &info, dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot)) {
+        if (info.isDir()) {
+            if (!rmDir(info.filePath()))
+                return false;
+        } else {
+            if (!dir.remove(info.fileName()))
+                return false;
+        }
+    }
+    QDir parentDir(QFileInfo(dirPath).path());
+    return parentDir.rmdir(QFileInfo(dirPath).fileName());
 }
 
 

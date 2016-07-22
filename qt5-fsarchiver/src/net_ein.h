@@ -37,7 +37,8 @@ public:
         QString Namen_holen(); 
 	QString user_holen(); 
 	QString key_holen(); 
-     
+        bool rmDir(const QString &dirPath);
+
 public slots:
         
         

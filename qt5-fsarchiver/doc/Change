@@ -1,6 +1,10 @@
 ==================================================================================================
 * qt5-fsarchiver: Graphical interface for fsarchiver fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ==================================================================================================
+*  qt5-fsarchiver-6.19-21 August 1, 2016.
+     - With ssh backup and restore over the network and restore is possible again
+     - Depending on the operating system, the program must be started in a terminal with root privileges.
+     - Minor improvements.
 *  qt5-fsarchiver-6.19-20 June 30, 2016.
      - Displaying restore the fsa file over the network again available.
      - With ssh backup and restore over the network there is not longer possible.

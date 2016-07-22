@@ -121,8 +121,8 @@ setupUi(this); // this sets up GUI
   	    pushButton_restore->setEnabled(true);
             pushButton_save->setEnabled(false);}
         timer = new QTimer(this);
-        //items_Net << "Samba" << "SSH" << "NFS";
-        items_Net << "Samba" << "NFS";
+        items_Net << "Samba" << "SSH" << "NFS";
+        //items_Net << "Samba" << "NFS";
 	cmb_Net->addItems (items_Net);
 	items_Net.clear();
         items_kerne_ << "1" << "2" << "3" << "4" <<  "5" << "6" << "7" << "8" << "9" << "10" << "11" << "12";
@@ -494,6 +494,7 @@ QString homepath = QDir::homePath();
      indicator_reset();
      int net_art = cmb_Net->currentIndex();
      int found = 0;
+     int stop = 0;
      if (rdBt_saveFsArchiv->isChecked())
      {
      	if (folder_free == "")
@@ -537,7 +538,10 @@ QString homepath = QDir::homePath();
 this->setCursor(Qt::WaitCursor);
 QString zeichen = "'";
        if (net_art == 1) //SSH
-         folder_free_mounten();
+         stop = folder_free_mounten();
+         if (stop == 256){
+             this->setCursor(Qt::ArrowCursor); 
+            return 1;}
        if (net_art == 0){  //Samba
          QString befehl = "mount -t cifs -o username=" + user_net + ",password=" + key_net + ",uid=0,gid=0 //" + rechner_IP + "/'" + folder_free + "' " + homepath + "/.qt5-fs-client";
          k = system (befehl.toLatin1().data());
@@ -753,6 +757,7 @@ int pos= 0;
 int pos1 = 0;
 int cmp = 0;
 char  dev_[50] = "/dev/";
+int stop = 0;
 QString str = ""; 
 QString str1 = "";
         state = chk_path->checkState();
@@ -810,7 +815,7 @@ QString str1 = "";
 		return 0;
             }  
           if (net_art == 1)
-              folder_free_mounten();
+              stop = folder_free_mounten();
           this->setCursor(Qt::WaitCursor);  
                state = chk_Beschreibung->checkState();
               this->setCursor(Qt::ArrowCursor);
@@ -1654,7 +1659,7 @@ int pos = 0;
             	restore_file_name_txt ->setText(currentFile);}
 }
 
-void DialogNet::folder_free_mounten(){  //ssh mounten
+int DialogNet::folder_free_mounten(){  //ssh mounten
 QString homepath = QDir::homePath();
 QString befehl;
 int i = 0;
@@ -1679,8 +1684,14 @@ int i = 0;
         i =system (befehl.toLatin1().data()); 
         if ( i==1){
             QMessageBox::about(this, tr("Note", "Hinweis"), tr("The SSH server is not reachable. Try again or with another network protocol.\n", "Der SSH-Server ist nicht erreichbar. Versuchen Sie es nochmals oder mit einem anderen Netzwerkprotokoll.\n"));
-        return;
+        return 1;
         }
+        if ( i==256){
+		QString str= QString::number(i);
+		QMessageBox::about(this, tr("Note", "Hinweis"),
+         			tr("The backup or restore with ssh is not possible. Exit the program and restart it again in the terminal with root right.\n", " Die Sicherung oder Wiederherstellung mit ssh ist nicht möglich. Beenden Sie  das Programm und starten es erneut im Terminal mit Root-Rechten\n"));
+         return 256;
+         }
 }
 
 
