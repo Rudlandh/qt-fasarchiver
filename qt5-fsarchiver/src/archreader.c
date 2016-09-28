@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -543,7 +543,3 @@ int archreader_read_block(carchreader *ai, cdico *in_blkdico, int in_skipblock, 
     
     return 0;
 }
-
-
-
-

@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -26,12 +26,14 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <sys/mount.h>
+#include <sys/param.h>
 #include <sys/statvfs.h>
 #include <sys/stat.h>
 #include <attr/xattr.h>
 #include <zlib.h>
 #include <assert.h>
 #include <gcrypt.h>
+#include <uuid.h>
 
 #include "fsarchiver.h"
 #include "dico.h"
@@ -76,9 +78,9 @@ typedef struct s_devinfo
     bool        mountedbyfsa;
     int         fstype;
 } cdevinfo;
-   int meldeflag = 0; 
+int meldeflag = 0; 
 	long long anzahlfile = 0; 
-	float progress = 0;
+	float progress = 0; 
 
 int createar_obj_regfile_multi(csavear *save, cdico *header, char *relpath, char *fullpath, u64 filesize)
 {
@@ -281,7 +283,7 @@ int createar_item_xattr(csavear *save, char *root, char *relpath, struct stat64 
         len=strlen(buffer+pos)+1;
         attrsize=lgetxattr(fullpath, buffer+pos, NULL, 0);
         msgprintf(MSG_VERB2, "            xattr:file=[%s], attrid=%d, name=[%s], size=%ld\n", relpath, (int)attrcnt, buffer+pos, (long)attrsize);
-        if ((attrsize>0) && (attrsize>65535LL))
+        if (attrsize>65535LL)
         {   errprintf("file [%s] has an xattr [%s] with data too big (size=%ld, maxsize=64k)\n", relpath, buffer+pos, (long)attrsize);
             ret=-1;
             continue; // copy the next xattr
@@ -294,9 +296,8 @@ int createar_item_xattr(csavear *save, char *root, char *relpath, struct stat64 
         }
         errno=0;
         valsize=lgetxattr(fullpath, buffer+pos, valbuf, attrsize);
-        // mit diesen zwei Zeilen wird das Verzeichnis/ die Datei dennoch gesichert, obwohl angeblich das Attribut bzw der dos-Name falsch ist
-        if (errno!=ENOATTR ) 
-            errno = 61;
+         if (errno!=ENOATTR ) 
+                errno = 61; 
         msgprintf(MSG_VERB2, "            xattr:lgetxattr(%s,%s)=%d\n", relpath, buffer+pos, valsize);
         if (valsize>=0)
         {
@@ -316,7 +317,7 @@ int createar_item_xattr(csavear *save, char *root, char *relpath, struct stat64 
             free(valbuf);
             continue; // copy the next xattr
         }
-        else if (errno==ENOATTR) // if the attribute does not exist
+        else // errno==ENOATTR hence the attribute does not exist
         {
             msgprintf(MSG_VERB2, "            xattr:lgetxattr-win(%s,%s)=-1: errno==ENOATTR\n", relpath, buffer+pos);
             free(valbuf);
@@ -335,7 +336,7 @@ int createar_item_winattr(csavear *save, char *root, char *relpath, struct stat6
     u64 attrcnt;
     int ret=0;
     int i;
-     
+    
     char *winattr[]= {"system.ntfs_acl", "system.ntfs_attrib", "system.ntfs_reparse_data", "system.ntfs_times", "system.ntfs_dos_name", NULL};
     
     // init
@@ -346,22 +347,21 @@ int createar_item_winattr(csavear *save, char *root, char *relpath, struct stat6
     {
         if ((strcmp(relpath, "/")==0) && (strcmp(winattr[i], "system.ntfs_dos_name")==0)) // the root inode does not require a short name
             continue;
-         errno=0;
+        
+        errno=0;
         if ((attrsize=lgetxattr(fullpath, winattr[i], NULL, 0)) < 0) // get the size of the attribute
         {
-            // mit diesen zwei Zeilen wird das Verzeichnis/ die Datei dennoch gesichert, obwohl angeblich das Attribut bzw der dos-Name falsch ist
-            if (errno!=ENOATTR)   
-               errno = 61;
+        	   if (errno!=ENOATTR ) 
+                errno = 61; 
             if (errno!=ENOATTR)
-            {  
-		sysprintf("           winattr:lgetxattr(%s,%s): returned negative attribute size\n", relpath, winattr[i]); // output if there are any other error
+            {
+            	 sysprintf("           winattr:lgetxattr(%s,%s): returned negative attribute size\n", relpath, winattr[i]); // output if there are any other error
                 ret=-1;
             }
             continue; // ignore the current xattr
         }
-   
         msgprintf(MSG_VERB2, "            winattr:file=[%s], attrcnt=%d, name=[%s], size=%ld\n", relpath, (int)attrcnt, winattr[i], (long)attrsize);
-        if ((attrsize>0) && (attrsize>65535LL))
+        if (attrsize>65535LL)
         {
             errprintf("file [%s] has an xattr [%s] with data size=%ld too big (max xattr size is 65535)\n", relpath, winattr[i], (long)attrsize);
             ret=-1;
@@ -392,13 +392,9 @@ int createar_item_winattr(csavear *save, char *root, char *relpath, struct stat6
             free(valbuf);
             continue; // ignore the current xattr
         }
-        else if (errno==ENOATTR) // if the attribute does not exist
+        else // errno==ENOATTR hence the attribute does not exist
         {
             msgprintf(MSG_VERB2, "            winattr:lgetxattr-win(%s,%s)=-1: errno==ENOATTR\n", relpath, winattr[i]);
-            free(valbuf);
-        }
-        else
-        {
             free(valbuf);
         }
     }
@@ -431,17 +427,16 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
             } 
     	if (meldeflag  == 1 ) { 
             // Anzeige im Terminal 
-           //if (save->objectid == 1)
+           //if (save->objectid == 1) 
            //    printf("\n");   
            if (save->objectid >= 1000) 
                printf("     %.5lld            %.0f%%             \r ",save->objectid,progress); 
           if (save->objectid <= 1000)  
-               printf("     %.5lld            %.0f%%             \r ",save->objectid,progress);
+               printf("     %.5lld            %.0f%%             \r ",save->objectid,progress); 
            werte_uebergeben(progress,1); 
            anzahlfile = save->objectid; 
            werte_uebergeben(anzahlfile,3); 
-         }
-    
+       }
     msgprintf(MSG_DEBUG2, "Adding [%.5lld]=[%s]\n", (long long)save->objectid, relpath);
     if (dico_add_u64(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_OBJECTID, (u64)(save->objectid)++)!=0)
     {   errprintf("dico_add_u64(DICO_OBJ_SECTION_STDATTR) failed\n");
@@ -567,7 +562,7 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
             }
             if (*objtype==OBJTYPE_REGFILEUNIQUE || *objtype==OBJTYPE_REGFILEMULTI)
             {
-                if (((u64)statbuf->st_blocks) * ((u64)S_BLKSIZE) < ((u64)statbuf->st_size))
+                if (((u64)statbuf->st_blocks) * ((u64)DEV_BSIZE) < ((u64)statbuf->st_size))
                     flags|=FSA_FILEFLAGS_SPARSE;
             }
             break;
@@ -941,6 +936,7 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
     cstrlist curmntopt;
     int showwarningcount1=0;
     int showwarningcount2=0;
+    int errorattr=false;
     char temp[PATH_MAX];
     char curmntdir[PATH_MAX];
     char optbuf[128];
@@ -975,6 +971,7 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
                 errprintf("filesystem of partition [%s] is not supported by fsarchiver: filesystem=[%s]\n", devinfo->devpath, fsbuf);
             return -1;
         }
+
         // check the filesystem is mounted with the right mount-options (to preserve acl and xattr)
         strlist_init(&reqmntopt);
         strlist_init(&badmntopt);
@@ -1058,13 +1055,52 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
         }
         if (tmptype==-1)
         {   errprintf("cannot mount partition [%s]: filesystem may not be supported by either fsarchiver or the kernel.\n", devinfo->devpath);
-            werte_uebergeben (110,3); // Partitionsart wird nicht unterstützt
             return -1;
         }
         devinfo->fstype=tmptype;
         devinfo->mountedbyfsa=true;
     }
-    
+/*
+    // Make sure users are aware if they save filesystems with experimental support in fsarchiver
+    if ((g_options.experimental==false) && (filesys[devinfo->fstype].stable==false))
+    {   errprintf("You must enable support for experimental features in order to save %s filesystems with fsarchiver.\n", filesys[devinfo->fstype].name);
+        return -1;
+    } */
+
+    // Make sure support for extended attributes is enabled if this filesystem supports it
+    if (g_options.dontcheckmountopts==false)
+    {
+        errorattr=false;
+
+        if (filesys[devinfo->fstype].support_for_xattr==true)
+        {   errno=0;
+            res=lgetxattr(devinfo->partmount, "user.fsa_test_xattr", temp, sizeof(temp));
+            msgprintf(MSG_DEBUG1, "lgetxattr(\"%s\", \"user.fsa_test_attr\", buf, bufsize)=[%d] and errno=[%d]\n", devinfo->partmount, (int)res, (int)errno);
+            // errno should be set to ENOATTR if we are able to read extended attributes
+            if ((res!=0) && (errno==ENOTSUP))
+            {   errprintf("fsarchiver is unable to access extended attributes on device [%s].\n", devinfo->devpath);
+                errorattr=true;
+            }
+        }
+
+        if (filesys[devinfo->fstype].support_for_acls==true)
+        {   errno=0;
+            res=lgetxattr(devinfo->partmount, "system.posix_acl_access", temp, sizeof(temp));
+            msgprintf(MSG_DEBUG1, "lgetxattr(\"%s\", \"system.posix_acl_access\", buf, bufsize)=[%d] and errno=[%d]\n", devinfo->partmount, (int)res, (int)errno);
+            // errno should be set to ENOATTR if we are able to read ACLs
+            if ((res!=0) && (errno==ENOTSUP))
+            {   errprintf("fsarchiver is unable to access ACLs on device [%s].\n", devinfo->devpath);
+                errorattr=true;
+            }
+        }
+
+        if (errorattr==true)
+        {   errprintf("Cannot continue, you can use option '-a' to ignore "
+                      "support for xattr and acl (they will not be preserved)\n");
+            return -1;
+        }
+    }
+
     // get space statistics
     if (statvfs64(devinfo->partmount, &statfsbuf)!=0)
     {   errprintf("statvfs64(%s) failed\n", devinfo->partmount);
@@ -1401,7 +1437,3 @@ do_create_success:
     archwriter_destroy(&save.ai);
     return ret;
 }
-
-
-
-

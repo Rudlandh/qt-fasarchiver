@@ -2185,40 +2185,47 @@ backup. բանալին:</translation>
     <name>Dialog_Net</name>
     <message>
         <location filename="../src/ui/net.ui" line="14"/>
+        <location filename="../build/ui_net.h" line="392"/>
         <source>Backup/restore partition over network</source>
         <extracomment>Partitionen über ein Netzwerk sichern/zurückschreiben</extracomment>
         <translation>Backup/վերականգնման բաժինների ցանցի</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="26"/>
+        <location filename="../build/ui_net.h" line="393"/>
         <source>Network computer  name:</source>
         <extracomment>Netzrechnername:</extracomment>
         <translation>Сетевое համակարգչի անունը:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="39"/>
+        <location filename="../build/ui_net.h" line="394"/>
         <source>Restore file name:</source>
         <extracomment>Name der Sicherungsdatei:</extracomment>
         <translation>Վերականգնել ֆայլի Անունը:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="58"/>
+        <location filename="../build/ui_net.h" line="395"/>
         <source>S</source>
         <translation>Ներ</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="71"/>
+        <location filename="../build/ui_net.h" line="397"/>
         <source>Select the partition to be backed up or restored.</source>
         <translation>Ընտրեք բաժինը կրկնօրինակեք կամ վերականգնման.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="74"/>
+        <location filename="../build/ui_net.h" line="399"/>
         <source>Existing partitions/directories:</source>
         <extracomment>vorhandene Partitionen:</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="93"/>
+        <location filename="../build/ui_net.h" line="400"/>
         <source>Proposed action:</source>
         <extracomment>vorgesehene Aktion:</extracomment>
         <translation>Առաջարկվող գործողությունները:</translation>
@@ -2230,12 +2237,14 @@ backup. բանալին:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="111"/>
+        <location filename="../build/ui_net.h" line="401"/>
         <source>&amp;Save partition
  or directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="125"/>
+        <location filename="../build/ui_net.h" line="403"/>
         <source>&amp;Restore partition 
  or directory</source>
         <extracomment>Partition mit fs-Archiver * zurückschreiben</extracomment>
@@ -2243,50 +2252,59 @@ backup. բանալին:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="155"/>
+        <location filename="../build/ui_net.h" line="405"/>
         <source>n</source>
         <translation>ժգ</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="168"/>
+        <location filename="../build/ui_net.h" line="407"/>
         <source>Start the backup of a partition.</source>
         <translation>Run կրկնօրինակում բաժնում.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="171"/>
+        <location filename="../build/ui_net.h" line="409"/>
         <source>Save partition/directorie</source>
         <extracomment>Partition sichern</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="217"/>
+        <location filename="../build/ui_net.h" line="411"/>
         <source>Name the backup file:</source>
         <extracomment>Dateiname der Sicherung:</extracomment>
         <translation>Անունը կրկնօրինակ ֆայլի:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="230"/>
+        <location filename="../build/ui_net.h" line="412"/>
         <source>Exit</source>
         <extracomment>Beenden</extracomment>
         <translation>Ելք</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="243"/>
+        <location filename="../build/ui_net.h" line="414"/>
         <source>Start restore a partition.</source>
         <translation>Մեկնարկը վերականգնման բաժնի.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="246"/>
+        <location filename="../build/ui_net.h" line="416"/>
         <source>Partition/directorie restore</source>
         <extracomment>Partition wiederherstellen</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="278"/>
+        <location filename="../build/ui_net.h" line="417"/>
         <source>elapsed time:</source>
         <translation>ջավախքում ժամանակ:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="288"/>
+        <location filename="../build/ui_net.h" line="418"/>
         <source>On the number saved
 Files/directories:</source>
         <translation>Համարը сохраненный
@@ -2294,6 +2312,7 @@ Files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="303"/>
+        <location filename="../build/ui_net.h" line="420"/>
         <source>already saved 
 files/directories:</source>
         <translation>արդեն փրկեց 
@@ -2302,33 +2321,41 @@ files/directories:</source>
     <message>
         <location filename="../src/ui/net.ui" line="325"/>
         <location filename="../src/ui/net.ui" line="374"/>
+        <location filename="../build/ui_net.h" line="422"/>
+        <location filename="../build/ui_net.h" line="426"/>
         <source>seconds</source>
         <translation>արդեն փրկեց</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="339"/>
         <location filename="../src/ui/net.ui" line="360"/>
+        <location filename="../build/ui_net.h" line="423"/>
+        <location filename="../build/ui_net.h" line="425"/>
         <source>minutes</source>
         <translation>րոպե</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="353"/>
+        <location filename="../build/ui_net.h" line="424"/>
         <source>remaining time</source>
         <translation>մնացած ժամանակ:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="440"/>
+        <location filename="../build/ui_net.h" line="430"/>
         <source>Directory in which the partition is backed up or from the recovery file is removed.</source>
         <translation>Կատալոգ, որտեղ բաժին կրկնօրինակում կամ վերականգնում է ֆայլը հեռացվել:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="443"/>
+        <location filename="../build/ui_net.h" line="432"/>
         <source>Please select the folder.</source>
         <extracomment>Bitte wählen Sie einen freigegebene Ordner aus:</extracomment>
         <translation>Խնդրում ենք, ընտրեք թղթապանակը.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="504"/>
+        <location filename="../build/ui_net.h" line="433"/>
         <source>Number of processors
 cores for to be used fsarchiver:</source>
         <translation>Պրոցեսորների քանակ
@@ -2336,6 +2363,7 @@ cores for to be used fsarchiver:</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="528"/>
+        <location filename="../build/ui_net.h" line="435"/>
         <source>Compression
 setting:</source>
         <translation>Կոմպրեսիոն
@@ -2343,31 +2371,37 @@ setting:</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="542"/>
+        <location filename="../build/ui_net.h" line="438"/>
         <source>Notes to the backup is written to a file.</source>
         <translation>Նշումներ է պահուստային պատճենը գրանցվում է ֆայլը</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="545"/>
+        <location filename="../build/ui_net.h" line="440"/>
         <source>Notes to  the backup</source>
         <translation>Նշումներ է կրկնօրինակ</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="568"/>
+        <location filename="../build/ui_net.h" line="442"/>
         <source>Same backup files are overwritten without prior consultation.</source>
         <translation>Նույն պահուստային ֆայլերը перезаписываются առանց նախնական խորհրդատվություն</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="571"/>
+        <location filename="../build/ui_net.h" line="444"/>
         <source>available backup overwrite</source>
         <translation>լավագույն կրկնօրինակում перезапись</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="584"/>
+        <location filename="../build/ui_net.h" line="445"/>
         <source>Stock Split on DVD size</source>
         <translation>Բաժանել բաժնետոմսերի DVD Չափը</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="597"/>
+        <location filename="../build/ui_net.h" line="446"/>
         <source>Encrypt 
 backup key</source>
         <translation>Шифровать 
@@ -2375,22 +2409,26 @@ backup key</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="611"/>
+        <location filename="../build/ui_net.h" line="449"/>
         <source>PBR is first block of any bootable partition.</source>
         <translation>Pbr է առաջին բլոկի bootstrap բաժնի</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="614"/>
+        <location filename="../build/ui_net.h" line="451"/>
         <source>Save PBR</source>
         <extracomment>PBR sichern</extracomment>
         <translation>Պահպանել ПБР</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="627"/>
+        <location filename="../build/ui_net.h" line="452"/>
         <source>Backup restore to the Origin</source>
         <translation>Վերականգնման կրկնօրինակ ծագման</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="651"/>
+        <location filename="../build/ui_net.h" line="453"/>
         <source>Protocoll for network
 transmission:</source>
         <translation>Արձանագրություն ցանցը
@@ -2398,16 +2436,19 @@ transmission:</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="713"/>
+        <location filename="../build/ui_net.h" line="457"/>
         <source>Show hidden directories and files</source>
         <translation type="unfinished">Վերականգնման բաժնի</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="751"/>
+        <location filename="../build/ui_net.h" line="459"/>
         <source>Show &amp;partitions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="764"/>
+        <location filename="../build/ui_net.h" line="460"/>
         <source>Show &amp;directories</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2416,58 +2457,68 @@ transmission:</source>
     <name>Eingabe_Net</name>
     <message>
         <location filename="../src/ui/net_ein.ui" line="14"/>
+        <location filename="../build/ui_net_ein.h" line="108"/>
         <source>Data network</source>
         <extracomment>Daten Netzwerk</extracomment>
         <translation>Ցանցի տվյալների փոխանցման</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="26"/>
+        <location filename="../build/ui_net_ein.h" line="109"/>
         <source>Username:</source>
         <extracomment>Benutzername:</extracomment>
         <translation>Մականուն:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="39"/>
+        <location filename="../build/ui_net_ein.h" line="110"/>
         <source>Password:</source>
         <extracomment>Kennwort:</extracomment>
         <translation>Գաղտնաբառ:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="52"/>
+        <location filename="../build/ui_net_ein.h" line="112"/>
         <source>Username and password are stored.</source>
         <translation>Login եւ գաղտնաբառ է պահվում.</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="55"/>
+        <location filename="../build/ui_net_ein.h" line="114"/>
         <source>Save data</source>
         <extracomment>Daten speichern</extracomment>
         <translation>Տվյալների</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="94"/>
+        <location filename="../build/ui_net_ein.h" line="115"/>
         <source>Next</source>
         <extracomment>Weiter</extracomment>
         <translation>Այսուհետ</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="117"/>
+        <location filename="../build/ui_net_ein.h" line="116"/>
         <source>Achievable network computer:</source>
         <extracomment>Im Netz erreichbare Rechner:</extracomment>
         <translation>Հասանելի ցանցի համակարգիչը:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="130"/>
+        <location filename="../build/ui_net_ein.h" line="117"/>
         <source>n</source>
         <translation>ժգ</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="143"/>
+        <location filename="../build/ui_net_ein.h" line="118"/>
         <source>Show Password</source>
         <extracomment>Kennwort anzeigen</extracomment>
         <translation>Ցույց Տալ Գաղտնաբառը</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="156"/>
+        <location filename="../build/ui_net_ein.h" line="119"/>
         <source>Cancel</source>
         <extracomment>Abbrechen</extracomment>
         <translation>Չեղարկել</translation>
@@ -2477,30 +2528,35 @@ transmission:</source>
     <name>FileDialog</name>
     <message>
         <location filename="../src/ui/filedialog.ui" line="14"/>
+        <location filename="../build/ui_filedialog.h" line="62"/>
         <source>Description of the backup</source>
         <extracomment>Beschreibung der Sicherung</extracomment>
         <translation>Նկարագրություն պահուստային պատճենները</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="26"/>
+        <location filename="../build/ui_filedialog.h" line="63"/>
         <source>Cancel</source>
         <extracomment>Abbrechen</extracomment>
         <translation>Չեղարկել</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="39"/>
+        <location filename="../build/ui_filedialog.h" line="64"/>
         <source>Description of the backup:</source>
         <extracomment>Beschreibung der Sicherung:</extracomment>
         <translation>Նկարագրություն պահուստային պատճենները</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="52"/>
+        <location filename="../build/ui_filedialog.h" line="65"/>
         <source>Back partition</source>
         <extracomment>Partition sichern</extracomment>
         <translation>Հետեւի перегородка</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="80"/>
+        <location filename="../build/ui_filedialog.h" line="66"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -2926,8 +2982,8 @@ Die Dateiendung muss .fsa sein</comment>
     <message>
         <location filename="../src/mainWindow.cpp" line="1086"/>
         <source>Backup and restore partitions, directory and MBR
-Version 0.6.19-21, August 1, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-21, 1. August 2016</comment>
+Version 0.8.0-0, October 15, 2016</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3279,71 +3335,85 @@ Version 0.6.19-21, August 1, 2016</source>
     <name>MainWindow</name>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="14"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="474"/>
         <source>Save/restore partition </source>
         <translation>Պահպանումը/վերականգնման բաժինների</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="27"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="494"/>
         <source>Select the partition to be backed up or restored.</source>
         <translation>Ընտրեք բաժինը կրկնօրինակեք կամ վերականգնման.</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="33"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="496"/>
         <source>Existing partitions:</source>
         <translation>Առկա բաժիններ:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="46"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="498"/>
         <source>Directory in which the partition is backed up or from the recovery file is removed.</source>
         <translation>Կատալոգ, որտեղ բաժին կրկնօրինակում կամ վերականգնում է ֆայլը հեռացվել:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="52"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="500"/>
         <source>Backup directory:</source>
         <translation>Տեղեկատու պահեստային</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="65"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="502"/>
         <source>Start the backup of a partition.</source>
         <translation>Run կրկնօրինակում բաժնում.</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="68"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="504"/>
         <source>Stored partitions</source>
         <translation>Պահվում baffles</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="81"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="505"/>
         <source>Exit</source>
         <translation>Ելք</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="126"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="506"/>
         <source>S</source>
         <translation>Ներ</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="162"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="509"/>
         <source>Start restore a partition.</source>
         <translation>Մեկնարկը վերականգնման բաժնի.</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="165"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="511"/>
         <source>Partition restore</source>
         <translation>Վերականգնման բաժնի</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="181"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="512"/>
         <source>Name the backup file:</source>
         <translation>Անունը կրկնօրինակ ֆայլի:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="213"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="513"/>
         <source>elapsed time:</source>
         <translation>ջավախքում ժամանակ:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="223"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="514"/>
         <source>On the number saved
 Files/directories:</source>
         <translation>Համարը сохраненный
@@ -3351,6 +3421,7 @@ Files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="238"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="516"/>
         <source>already saved 
 files/directories:</source>
         <translation>արդեն փրկեց 
@@ -3359,22 +3430,28 @@ files/directories:</source>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="260"/>
         <location filename="../src/ui/fsarchiverMain.ui" line="309"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="518"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="522"/>
         <source>seconds</source>
         <translation>արդեն փրկեց</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="274"/>
         <location filename="../src/ui/fsarchiverMain.ui" line="295"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="519"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="521"/>
         <source>minutes</source>
         <translation>րոպե</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="288"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="520"/>
         <source>remaining time:</source>
         <translation>մնացած ժամանակ:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="403"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="525"/>
         <source>Number of processors
 cores for to be used fsarchiver:</source>
         <translation>Պրոցեսորների քանակ
@@ -3382,6 +3459,7 @@ cores for to be used fsarchiver:</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="427"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="527"/>
         <source>Compression
 setting:</source>
         <translation>Կոմպրեսիոն
@@ -3389,31 +3467,37 @@ setting:</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="441"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="530"/>
         <source>Notes to the backup is written to a file</source>
         <translation>Նշումներ է պահուստային պատճենը գրանցվում է ֆայլը</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="444"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="532"/>
         <source>Notes to  the backup</source>
         <translation>Նշումներ է կրկնօրինակ</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="467"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="534"/>
         <source>Same backup files are overwritten without prior consultation</source>
         <translation>Նույն պահուստային ֆայլերը перезаписываются առանց նախնական խորհրդատվություն</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="470"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="536"/>
         <source>available backup overwrite</source>
         <translation>լավագույն կրկնօրինակում перезапись</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="483"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="537"/>
         <source>Stock Split on size:</source>
         <translation>Բաժանել բաժնետոմսերի չափը:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="499"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="541"/>
         <source>Encrypt 
 backup key</source>
         <translation>Шифровать 
@@ -3421,73 +3505,87 @@ backup key</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="513"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="544"/>
         <source>PBR is first block of any bootable partition</source>
         <translation>Pbr է առաջին բլոկի bootstrap բաժնի</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="516"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="546"/>
         <source>Save PBR</source>
         <extracomment>PBR sichern</extracomment>
         <translation>Պահպանել ПБР</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="539"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="547"/>
         <source>GB</source>
         <translation>GB</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="559"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="548"/>
         <source>Proposed action:</source>
         <extracomment>vorgesehene Aktion:</extracomment>
         <translation>Առաջարկվող գործողությունները:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="794"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="485"/>
         <source>Save a partition/directorie on network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="803"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="486"/>
         <source>Restore a partition/directorie on network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="663"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="560"/>
         <source>&amp;Actions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="681"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="561"/>
         <source>&amp;Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="687"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="562"/>
         <source>&amp;Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="693"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="563"/>
         <source>&amp;Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="731"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="478"/>
         <source>&amp;Basic Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="740"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="479"/>
         <source>&amp;Information fsarchiver</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="785"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="484"/>
         <source>&amp;Exit program</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="577"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="549"/>
         <source>Partition save 
 with fsarchiver</source>
         <extracomment>Partition mit * fsArchiver sichern:</extracomment>
@@ -3496,6 +3594,7 @@ with fsarchiver</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="594"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="554"/>
         <source>Restore partition
 with fsarchiver</source>
         <extracomment>Partition mit fs-Archiver * zurückschreiben</extracomment>
@@ -3504,6 +3603,7 @@ with fsarchiver</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="609"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="556"/>
         <source>Show hidden directories and files</source>
         <translation>Վերականգնման բաժնի</translation>
     </message>
@@ -3521,16 +3621,19 @@ with fsarchiver</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="704"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="475"/>
         <source>Basic Settings</source>
         <translation>Հիմնական Պարամետրեր</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="713"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="476"/>
         <source>Backup partition</source>
         <translation type="unfinished">Կրկնօրինակում բաժնի</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="722"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="477"/>
         <source>Restore partition</source>
         <translation type="unfinished">Վերականգնման բաժնի</translation>
     </message>
@@ -3540,21 +3643,25 @@ with fsarchiver</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="749"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="480"/>
         <source>Save MBR/GPT</source>
         <translation type="unfinished">Պահպանել MBR, այնպես էլ GPT</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="758"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="481"/>
         <source>Restore MBR/GPT</source>
         <translation type="unfinished">Վերականգնել MBR եւ GPT</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="767"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="482"/>
         <source>Restore directory </source>
         <translation type="unfinished">Վերականգնման ցուցակում</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="776"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="483"/>
         <source>Save directory </source>
         <translation type="unfinished">Պահպանել տեղեկատու</translation>
     </message>
@@ -3564,31 +3671,37 @@ with fsarchiver</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="812"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="487"/>
         <source>breakprocess</source>
         <translation>breakprocess</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="821"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="488"/>
         <source>Clone Drive HD-Image save/restore </source>
         <translation>Clone սկավառակի HD-պատկերի պահպանումն/վերականգնման</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="826"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="489"/>
         <source>HD-Image save/restore on network</source>
         <translation>Հայաստանի HD-պատկերի պահպանումն/ցանցի վերականգնումը</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="835"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="490"/>
         <source>Clone HD, HD-Image built and restore</source>
         <translation type="unfinished">Clone ձեւաչափով HD կամ HD-պատկերի կառուցվել եւ վերականգնել</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="840"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="491"/>
         <source>Save directories on network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="845"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="492"/>
         <source>Restore directories from network</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3664,17 +3777,20 @@ with fsarchiver</source>
     <name>clone_dialog</name>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="14"/>
+        <location filename="../build/ui_clone_dialog.h" line="298"/>
         <source>Clone hard drive</source>
         <extracomment>MBR sichern/zurückschreiben</extracomment>
         <translation>Clone կոշտ սկավառակի</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="630"/>
+        <location filename="../build/ui_clone_dialog.h" line="329"/>
         <source>p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="656"/>
+        <location filename="../build/ui_clone_dialog.h" line="331"/>
         <source>Exit</source>
         <extracomment>Abbrechen</extracomment>
         <translation>Ելք</translation>
@@ -3686,12 +3802,14 @@ with fsarchiver</source>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="39"/>
+        <location filename="../build/ui_clone_dialog.h" line="299"/>
         <source>Exist harddrive:</source>
         <extracomment>MBR Sicherungsverzeichnis:</extracomment>
         <translation>Գոյություն ունի մի կոշտ սկավառակի սխալները:</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="86"/>
+        <location filename="../build/ui_clone_dialog.h" line="300"/>
         <source>New harddrive:</source>
         <extracomment>MBR Sicherungsverzeichnis:</extracomment>
         <translation>Նոր կոշտ սկավառակ:</translation>
@@ -3702,97 +3820,122 @@ with fsarchiver</source>
         <location filename="../src/ui/clone_dialog.ui" line="669"/>
         <location filename="../src/ui/clone_dialog.ui" line="682"/>
         <location filename="../src/ui/clone_dialog.ui" line="695"/>
+        <location filename="../build/ui_clone_dialog.h" line="301"/>
+        <location filename="../build/ui_clone_dialog.h" line="302"/>
+        <location filename="../build/ui_clone_dialog.h" line="332"/>
+        <location filename="../build/ui_clone_dialog.h" line="333"/>
+        <location filename="../build/ui_clone_dialog.h" line="334"/>
         <source>CommandLinkButton</source>
         <translation>CommandLinkButton</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="140"/>
         <location filename="../src/ui/clone_dialog.ui" line="205"/>
+        <location filename="../build/ui_clone_dialog.h" line="303"/>
+        <location filename="../build/ui_clone_dialog.h" line="306"/>
         <source>seconds</source>
         <translation>վայրկյան</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="166"/>
         <location filename="../src/ui/clone_dialog.ui" line="231"/>
+        <location filename="../build/ui_clone_dialog.h" line="304"/>
+        <location filename="../build/ui_clone_dialog.h" line="307"/>
         <source>minutes</source>
         <translation>րոպե</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="192"/>
+        <location filename="../build/ui_clone_dialog.h" line="305"/>
         <source>elapsed time:</source>
         <translation>ջավախքում ժամանակ:</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="257"/>
+        <location filename="../build/ui_clone_dialog.h" line="308"/>
         <source>remaining time:</source>
         <translation>մնացած ժամանակ:</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="358"/>
+        <location filename="../build/ui_clone_dialog.h" line="311"/>
         <source>already saved:</source>
         <translation>արդեն փրկեց</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="374"/>
+        <location filename="../build/ui_clone_dialog.h" line="312"/>
         <source>MB</source>
         <translation>ՄԲ</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="387"/>
         <location filename="../src/ui/clone_dialog.ui" line="413"/>
+        <location filename="../build/ui_clone_dialog.h" line="313"/>
+        <location filename="../build/ui_clone_dialog.h" line="314"/>
         <source>hours</source>
         <translation>ժամ</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="439"/>
+        <location filename="../build/ui_clone_dialog.h" line="315"/>
         <source>Transmission speed:</source>
         <translation>Փոխանցման արագությունը</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="465"/>
+        <location filename="../build/ui_clone_dialog.h" line="316"/>
         <source>MB/sec</source>
         <translation>Մբ/վրկ:</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="479"/>
+        <location filename="../build/ui_clone_dialog.h" line="317"/>
         <source>f</source>
         <translation>Ֆ</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="492"/>
+        <location filename="../build/ui_clone_dialog.h" line="319"/>
         <source>Directory in which the image is written</source>
         <translation>Կատալոգ, որտեղ պատկերը գրանցվում</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="498"/>
+        <location filename="../build/ui_clone_dialog.h" line="321"/>
         <source>Backup directory:</source>
         <translation>Տեղեկատու պահեստային</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="526"/>
+        <location filename="../build/ui_clone_dialog.h" line="322"/>
         <source>&amp;Image of a hard disk write back</source>
         <extracomment>sdc</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="539"/>
+        <location filename="../build/ui_clone_dialog.h" line="323"/>
         <source>&amp;Clone hard disk</source>
         <extracomment>sda</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="577"/>
+        <location filename="../build/ui_clone_dialog.h" line="325"/>
         <source>Image &amp;of a hard disk to create</source>
         <extracomment>sdb</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="590"/>
+        <location filename="../build/ui_clone_dialog.h" line="326"/>
         <source>Image of &amp;a partition to create</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="603"/>
+        <location filename="../build/ui_clone_dialog.h" line="327"/>
         <source>Image of a &amp;partition write back</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3808,6 +3951,7 @@ with fsarchiver</source>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="558"/>
+        <location filename="../build/ui_clone_dialog.h" line="324"/>
         <source>Proposed action:</source>
         <extracomment>vorgesehene Aktion:</extracomment>
         <translation>Առաջարկվող գործողությունները:</translation>
@@ -3819,11 +3963,13 @@ with fsarchiver</source>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="616"/>
+        <location filename="../build/ui_clone_dialog.h" line="328"/>
         <source>Use gzip</source>
         <translation>Օգտագործել GZIP</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="643"/>
+        <location filename="../build/ui_clone_dialog.h" line="330"/>
         <source>Save/Restore</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3916,45 +4062,54 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="14"/>
         <location filename="../src/ui/dir_dialog.ui" line="42"/>
+        <location filename="../build/ui_dir_dialog.h" line="206"/>
+        <location filename="../build/ui_dir_dialog.h" line="211"/>
         <source>Save/restore directory</source>
         <extracomment>Verzeichnis sichern/zurückschreiben</extracomment>
         <translation>Պահպանել/վերականգնել ցուցակման</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="26"/>
+        <location filename="../build/ui_dir_dialog.h" line="207"/>
         <source>Exit</source>
         <extracomment>Schließen</extracomment>
         <translation>Ելք</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="39"/>
+        <location filename="../build/ui_dir_dialog.h" line="209"/>
         <source>Start the backup or the restore of a folder.</source>
         <translation>Գործարկել архивацию կամ վերականգնման համար թղթապանակների.</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="68"/>
+        <location filename="../build/ui_dir_dialog.h" line="213"/>
         <source>Select the folder to be backed up or restored.</source>
         <translation>Ընտրեք թղթապանակը կրկնօրինակեք կամ վերականգնման.</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="71"/>
+        <location filename="../build/ui_dir_dialog.h" line="215"/>
         <source>Saved directory</source>
         <extracomment>zu sicherndes Verzeichnis:</extracomment>
         <translation>Փրկեց ցուցակման</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="97"/>
+        <location filename="../build/ui_dir_dialog.h" line="217"/>
         <source>Directory in which the folder is backed up or from the recovery file is removed.</source>
         <translation>Կատալոգ, որտեղ թղթապանակ կրկնօրինակում կամ վերականգնում է ֆայլը հեռացվել:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="100"/>
+        <location filename="../build/ui_dir_dialog.h" line="219"/>
         <source>Location (path) of backup:</source>
         <extracomment>Ort (Pfad) der Sicherung:</extracomment>
         <translation>Գտնվելու վայրը (ճանապարհը) կրկնօրինակ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="128"/>
+        <location filename="../build/ui_dir_dialog.h" line="220"/>
         <source>On the number of
 captive Files/directories:</source>
         <extracomment>Anzahl der zu sichernden Dateien/Verzeichnisse:</extracomment>
@@ -3963,6 +4118,7 @@ captive Files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="155"/>
+        <location filename="../build/ui_dir_dialog.h" line="222"/>
         <source>Already backed
 Files/directories:</source>
         <extracomment>bereits gesicherte Datein/Verzeichnisse:</extracomment>
@@ -3971,6 +4127,7 @@ Files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="198"/>
+        <location filename="../build/ui_dir_dialog.h" line="224"/>
         <source>elapsed time:</source>
         <extracomment>vergangene Zeit:</extracomment>
         <translation>ջավախքում ժամանակ:</translation>
@@ -3978,6 +4135,8 @@ Files/directories:</source>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="224"/>
         <location filename="../src/ui/dir_dialog.ui" line="302"/>
+        <location filename="../build/ui_dir_dialog.h" line="225"/>
+        <location filename="../build/ui_dir_dialog.h" line="228"/>
         <source>minutes</source>
         <extracomment>Minuten</extracomment>
         <translation>րոպե</translation>
@@ -3985,18 +4144,22 @@ Files/directories:</source>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="250"/>
         <location filename="../src/ui/dir_dialog.ui" line="315"/>
+        <location filename="../build/ui_dir_dialog.h" line="226"/>
+        <location filename="../build/ui_dir_dialog.h" line="229"/>
         <source>seconds</source>
         <extracomment>Sekunden</extracomment>
         <translation>վայրկյան</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="263"/>
+        <location filename="../build/ui_dir_dialog.h" line="227"/>
         <source>remaining  time:</source>
         <extracomment>noch zu erwartende Zeit:</extracomment>
         <translation>մնացած ժամանակ:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="395"/>
+        <location filename="../build/ui_dir_dialog.h" line="232"/>
         <source>Number of processor cores
 for to be used fsarchiver:</source>
         <extracomment>Anzahl der Prozessorkerne, die für fsarchiver verwendet werden sollen:</extracomment>
@@ -4005,12 +4168,14 @@ for to be used fsarchiver:</source>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="424"/>
+        <location filename="../build/ui_dir_dialog.h" line="234"/>
         <source>Compression setting:</source>
         <extracomment>Kompressioneinstellung:</extracomment>
         <translation>Կոմպրեսիոն ստեղծման:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="447"/>
+        <location filename="../build/ui_dir_dialog.h" line="235"/>
         <source>Encrypt
 backup key</source>
         <translation>Шифровать 
@@ -4018,28 +4183,33 @@ backup key</source>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="471"/>
+        <location filename="../build/ui_dir_dialog.h" line="238"/>
         <source>Same backup files are overwritten without prior consultation.</source>
         <translation>Նույն պահուստային ֆայլերը перезаписываются առանց նախնական խորհրդատվություն</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="474"/>
+        <location filename="../build/ui_dir_dialog.h" line="240"/>
         <source>Overwrite existing backup</source>
         <extracomment>vorhandene Sicherung überschreiben</extracomment>
         <translation>Перезаписывать առկա պահեստային</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="487"/>
+        <location filename="../build/ui_dir_dialog.h" line="242"/>
         <source>The directory will be written back to the original path</source>
         <translation>Տեղեկատու կլինի գրված ետ է ելակետային ճանապարհը</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="490"/>
+        <location filename="../build/ui_dir_dialog.h" line="244"/>
         <source>Backup restore to the Origin</source>
         <extracomment>Sicherung an den Ursprungsort zurückschreiben</extracomment>
         <translation>Վերականգնման կրկնօրինակ ծագման</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="504"/>
+        <location filename="../build/ui_dir_dialog.h" line="245"/>
         <source>show hidden directories/files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4048,59 +4218,69 @@ backup key</source>
     <name>mbr_dialog</name>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="14"/>
+        <location filename="../build/ui_mbr_dialog.h" line="92"/>
         <source>Save / Restore MBR/GPT</source>
         <extracomment>MBR sichern/zurückschreiben</extracomment>
         <translation>Պահպանել / վերականգնել MBR եւ GPT</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="27"/>
+        <location filename="../build/ui_mbr_dialog.h" line="95"/>
         <source>Only the boot loader area to restore</source>
         <extracomment>nur den Bootloaderbereich wieder herstellen</extracomment>
         <translation>Միայն bootloader մարզի վերականգնել</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="32"/>
+        <location filename="../build/ui_mbr_dialog.h" line="96"/>
         <source>Bootloader area and restore the partition table</source>
         <extracomment>Bootloaderbereich und die Partitionstabelle wieder herstellen</extracomment>
         <translation>Bootloader գոտի եւ վերականգնել աղյուսակներ բաժինների</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="37"/>
+        <location filename="../build/ui_mbr_dialog.h" line="97"/>
         <source>Restore partition table</source>
         <extracomment>Partitionstabelle wiederherstellen</extracomment>
         <translation>Վերականգնել աղյուսակներ բաժինների</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="42"/>
+        <location filename="../build/ui_mbr_dialog.h" line="98"/>
         <source>Secretly area to restore. (Without Boot Loader and without partition table).</source>
         <extracomment>Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).</extracomment>
         <translation>Գաղտնի մարզ վերականգնման համար. (Առանց բեռնման եւ առանց աղյուսակներ բաժինների).</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="61"/>
+        <location filename="../build/ui_mbr_dialog.h" line="101"/>
         <source>Exit</source>
         <extracomment>Abbrechen</extracomment>
         <translation>Ելք</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="74"/>
+        <location filename="../build/ui_mbr_dialog.h" line="102"/>
         <source>Save / restore MBR</source>
         <extracomment>MBR sichern/zurückschreiben</extracomment>
         <translation>Պահպանել / վերականգնել MBR</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="100"/>
+        <location filename="../build/ui_mbr_dialog.h" line="104"/>
         <source>Directory in which the MBR/GPT is written.</source>
         <translation>Կատալոգ, որում MBR/GPT-drive գրանցվում.</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="103"/>
+        <location filename="../build/ui_mbr_dialog.h" line="106"/>
         <source>MBR/GPT backup directory:</source>
         <extracomment>MBR Sicherungsverzeichnis:</extracomment>
         <translation>MBR, այնպես էլ GPT տեղեկատու կրկնօրինակում:</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="116"/>
+        <location filename="../build/ui_mbr_dialog.h" line="107"/>
         <source>MBR of that drive this
 Backup / restore:</source>
         <extracomment>MBR von dieser dieser Festplatte sichern / wiederherstellen:</extracomment>
@@ -4109,6 +4289,7 @@ Backup / վերականգնում:</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="140"/>
+        <location filename="../build/ui_mbr_dialog.h" line="109"/>
         <source>&amp;Existing
 harddrive:</source>
         <translation type="unfinished"></translation>
@@ -4118,11 +4299,13 @@ harddrive:</source>
     <name>setting_dialog</name>
     <message>
         <location filename="../src/ui/setting.ui" line="14"/>
+        <location filename="../build/ui_setting.h" line="148"/>
         <source>Basic settings</source>
         <translation>Հիմնական պարամետրեր</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="41"/>
+        <location filename="../build/ui_setting.h" line="149"/>
         <source>Number of processors
 cores, for fsarchiver
 should be used:</source>
@@ -4133,6 +4316,7 @@ should be used:</source>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="66"/>
+        <location filename="../build/ui_setting.h" line="152"/>
         <source>Standard
 compression:</source>
         <extracomment>Standard*kompression:</extracomment>
@@ -4141,23 +4325,27 @@ compression:</source>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="90"/>
+        <location filename="../build/ui_setting.h" line="154"/>
         <source>Language:</source>
         <translation>Լեզու:</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="113"/>
+        <location filename="../build/ui_setting.h" line="155"/>
         <source>Existing files by default override</source>
         <extracomment>vorhandene Dateien * standardmäßig überschreiben</extracomment>
         <translation>Existing files by default override</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="126"/>
+        <location filename="../build/ui_setting.h" line="156"/>
         <source>Backup note enable by default</source>
         <extracomment>Hinweise zur Sicherung * standardmäßig aktivieren</extracomment>
         <translation>Կրկնօրինակում Նշում միացնել լռելյայն</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="139"/>
+        <location filename="../build/ui_setting.h" line="157"/>
         <source>Directories by default write 
 back to the original location</source>
         <extracomment>Verzeichnisse * standardmäßig an * den ursprünglichen * Ort zurückschreiben</extracomment>
@@ -4166,70 +4354,82 @@ back to the original location</source>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="153"/>
+        <location filename="../build/ui_setting.h" line="159"/>
         <source>Enable encryption by default</source>
         <extracomment>Verschlüsselung * standardmäßig aktivieren</extracomment>
         <translation>Միացնել default կոդավորումը</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="166"/>
+        <location filename="../build/ui_setting.h" line="160"/>
         <source>Archive file size divided on DVD</source>
         <extracomment>Archiv-Datei auf DVD * Größe aufteilen</extracomment>
         <translation>Արխիվ նիշքի Չափը բաժանվում է DVD</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="179"/>
+        <location filename="../build/ui_setting.h" line="161"/>
         <source>Show passwords</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="192"/>
+        <location filename="../build/ui_setting.h" line="162"/>
         <source>Network input data save</source>
         <extracomment>Netzwerkeingabedaten * speichern</extracomment>
         <translation>Ցանցի տվյալների մուտքագրման պահել</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="205"/>
+        <location filename="../build/ui_setting.h" line="163"/>
         <source>Save Settings</source>
         <extracomment>Einstellungen speichern</extracomment>
         <translation>Պահպանել Պարամետրեր</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="218"/>
+        <location filename="../build/ui_setting.h" line="164"/>
         <source>Exit</source>
         <extracomment>Beenden</extracomment>
         <translation>Ելք</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="231"/>
+        <location filename="../build/ui_setting.h" line="165"/>
         <source>Safe PBR by default</source>
         <extracomment>PBR standradmäßig sichern</extracomment>
         <translation>Safe PBR by default</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="254"/>
+        <location filename="../build/ui_setting.h" line="166"/>
         <source>Network protocol:</source>
         <translation>Network protocol:</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="267"/>
+        <location filename="../build/ui_setting.h" line="167"/>
         <source>Show Note for accessing network computer</source>
         <extracomment>Hinweis  für den Zugriff auf Netzwerkrechner anzeigen</extracomment>
         <translation>Show Note for accessing network computer</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="280"/>
+        <location filename="../build/ui_setting.h" line="168"/>
         <source>Show  Note to mount the network computer</source>
         <extracomment>Hinweis über das Mounten des Netzwerkrechners anzeigen</extracomment>
         <translation>Show  Note to mount the network computer</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="293"/>
+        <location filename="../build/ui_setting.h" line="169"/>
         <source>Show  Note about the programm qt5-fsarchiver</source>
         <extracomment>Hinweise zum Gebrauch des Programms anzeigen</extracomment>
         <translation>Show  Note about the programm qt5-fsarchiver</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="306"/>
+        <location filename="../build/ui_setting.h" line="170"/>
         <source>Show hidden directories and files</source>
         <translation type="unfinished">Վերականգնման բաժնի</translation>
     </message>
@@ -4238,30 +4438,35 @@ back to the original location</source>
     <name>treeview_dialog</name>
     <message>
         <location filename="../src/ui/treeview.ui" line="14"/>
+        <location filename="../build/ui_treeview.h" line="82"/>
         <source>Select restore file</source>
         <extracomment>Wiederherstellungsdatei auswählen</extracomment>
         <translation>Select restore file</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="41"/>
+        <location filename="../build/ui_treeview.h" line="83"/>
         <source>Cancel</source>
         <extracomment>Abbrechen</extracomment>
         <translation>Չեղարկել</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="60"/>
+        <location filename="../build/ui_treeview.h" line="84"/>
         <source>Next</source>
         <extracomment>Mit der Wiederherstellung fortfahren</extracomment>
         <translation>Այսուհետ</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="92"/>
+        <location filename="../build/ui_treeview.h" line="85"/>
         <source>Existing restore files:</source>
         <extracomment>Vorhandene Wiederherstellungsdateien:</extracomment>
         <translation>Existing restore files:</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="105"/>
+        <location filename="../build/ui_treeview.h" line="86"/>
         <source>a</source>
         <translation>a</translation>
     </message>

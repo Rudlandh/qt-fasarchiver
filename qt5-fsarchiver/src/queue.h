@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -111,7 +111,3 @@ s64  queue_dequeue_block(cqueue *q, cblockinfo *blkinfo);
 s64  queue_dequeue_first(cqueue *q, int *type, cheadinfo *headinfo, cblockinfo *blkinfo);
 
 #endif // __QUEUE_H__
-
-
-
-

@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -35,7 +35,7 @@
 #include "strlist.h"
 #include "error.h"
 
-int reiser4_mkfs(cdico *d, char *partition, char *fsoptions)
+int reiser4_mkfs(cdico *d, char *partition, char *fsoptions, char *mkfslabel, char *mkfsuuid)
 {
     char command[2048];
     char buffer[2048];
@@ -54,13 +54,17 @@ int reiser4_mkfs(cdico *d, char *partition, char *fsoptions)
 
     strlcatf(options, sizeof(options), " %s ", fsoptions);
 
-    if (dico_get_string(d, 0, FSYSHEADKEY_FSLABEL, buffer, sizeof(buffer))==0 && strlen(buffer)>0)
+    if (strlen(mkfslabel) > 0)
+        strlcatf(options, sizeof(options), " -L '%.16s' ", mkfslabel);
+    else if (dico_get_string(d, 0, FSYSHEADKEY_FSLABEL, buffer, sizeof(buffer))==0 && strlen(buffer)>0)
         strlcatf(options, sizeof(options), " -L '%.16s' ", buffer);
     
     if (dico_get_u64(d, 0, FSYSHEADKEY_FSREISER4BLOCKSIZE, &temp64)==0)
         strlcatf(options, sizeof(options), " -b %ld ", (long)temp64);
     
-    if (dico_get_string(d, 0, FSYSHEADKEY_FSUUID, buffer, sizeof(buffer))==0 && strlen(buffer)==36)
+    if (strlen(mkfsuuid) > 0)
+        strlcatf(options, sizeof(options), " -U %s ", mkfsuuid);
+    else if (dico_get_string(d, 0, FSYSHEADKEY_FSUUID, buffer, sizeof(buffer))==0 && strlen(buffer)==36)
         strlcatf(options, sizeof(options), " -U %s ", buffer);
     
     if (exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "mkfs.reiser4 -y %s %s", partition, options)!=0 || exitst!=0)
@@ -126,8 +130,8 @@ int reiser4_getinfo(cdico *d, char *devname)
     temp16=le16_to_cpu(sb.blocksize);
     if (temp16!=4096)
     {   ret=-5;
-        goto reiser4_get_specific_close;
         errprintf("invalid reiser4 block-size: %ld, it should be 4096\n", (long)temp16);
+        goto reiser4_get_specific_close;
     }
     else
     {   dico_add_u64(d, 0, FSYSHEADKEY_FSREISER4BLOCKSIZE, temp16);
@@ -187,7 +191,3 @@ int reiser4_get_reqmntopt(char *partition, cstrlist *reqopt, cstrlist *badopt)
 
     return 0;
 }
-
-
-
-

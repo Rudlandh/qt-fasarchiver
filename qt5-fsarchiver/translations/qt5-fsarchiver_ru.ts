@@ -2015,12 +2015,14 @@ Die Dateiendung muss .fsa sein</comment>
     <name>Dialog_Net</name>
     <message>
         <location filename="../src/ui/net.ui" line="14"/>
+        <location filename="../build/ui_net.h" line="392"/>
         <source>Backup/restore partition over network</source>
         <extracomment>Partitionen über ein Netzwerk sichern/zurückschreiben</extracomment>
         <translation>Работа с разделами по сети</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="504"/>
+        <location filename="../build/ui_net.h" line="433"/>
         <source>Number of processors
 cores for to be used fsarchiver:</source>
         <translation>Число потоков
@@ -2028,6 +2030,7 @@ cores for to be used fsarchiver:</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="528"/>
+        <location filename="../build/ui_net.h" line="435"/>
         <source>Compression
 setting:</source>
         <translation>Стандарт
@@ -2035,16 +2038,19 @@ setting:</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="571"/>
+        <location filename="../build/ui_net.h" line="444"/>
         <source>available backup overwrite</source>
         <translation>Разрешить перезапись образа</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="58"/>
+        <location filename="../build/ui_net.h" line="395"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="93"/>
+        <location filename="../build/ui_net.h" line="400"/>
         <source>Proposed action:</source>
         <extracomment>vorgesehene Aktion:</extracomment>
         <translation>Возможные действия:</translation>
@@ -2052,44 +2058,54 @@ setting:</source>
     <message>
         <location filename="../src/ui/net.ui" line="339"/>
         <location filename="../src/ui/net.ui" line="360"/>
+        <location filename="../build/ui_net.h" line="423"/>
+        <location filename="../build/ui_net.h" line="425"/>
         <source>minutes</source>
         <translation>минут</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="325"/>
         <location filename="../src/ui/net.ui" line="374"/>
+        <location filename="../build/ui_net.h" line="422"/>
+        <location filename="../build/ui_net.h" line="426"/>
         <source>seconds</source>
         <translation>секунд</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="584"/>
+        <location filename="../build/ui_net.h" line="445"/>
         <source>Stock Split on DVD size</source>
         <translation>Разбиение для DVD</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="217"/>
+        <location filename="../build/ui_net.h" line="411"/>
         <source>Name the backup file:</source>
         <extracomment>Dateiname der Sicherung:</extracomment>
         <translation>Имя образа восстановления:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="230"/>
+        <location filename="../build/ui_net.h" line="412"/>
         <source>Exit</source>
         <extracomment>Beenden</extracomment>
         <translation>Выход</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="155"/>
+        <location filename="../build/ui_net.h" line="405"/>
         <source>n</source>
         <translation>n</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="278"/>
+        <location filename="../build/ui_net.h" line="417"/>
         <source>elapsed time:</source>
         <translation>Прошедшее время:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="288"/>
+        <location filename="../build/ui_net.h" line="418"/>
         <source>On the number saved
 Files/directories:</source>
         <translation>Число сохранённых
@@ -2097,45 +2113,53 @@ Files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="353"/>
+        <location filename="../build/ui_net.h" line="424"/>
         <source>remaining time</source>
         <translation>осталось времени</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="26"/>
+        <location filename="../build/ui_net.h" line="393"/>
         <source>Network computer  name:</source>
         <extracomment>Netzrechnername:</extracomment>
         <translation>Сетевое имя компьютера:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="39"/>
+        <location filename="../build/ui_net.h" line="394"/>
         <source>Restore file name:</source>
         <extracomment>Name der Sicherungsdatei:</extracomment>
         <translation>Имя файла восстановления:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="545"/>
+        <location filename="../build/ui_net.h" line="440"/>
         <source>Notes to  the backup</source>
         <translation>Запись текстового описания образа</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="614"/>
+        <location filename="../build/ui_net.h" line="451"/>
         <source>Save PBR</source>
         <extracomment>PBR sichern</extracomment>
         <translation>Сохранение PBR (загрузочной записи раздела)</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="443"/>
+        <location filename="../build/ui_net.h" line="432"/>
         <source>Please select the folder.</source>
         <extracomment>Bitte wählen Sie einen freigegebene Ordner aus:</extracomment>
         <translation>Выберите каталог.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="71"/>
+        <location filename="../build/ui_net.h" line="397"/>
         <source>Select the partition to be backed up or restored.</source>
         <translation>Выберите раздел для сохранения, или восстановления.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="111"/>
+        <location filename="../build/ui_net.h" line="401"/>
         <source>&amp;Save partition
  or directory</source>
         <translation>&amp;Сохранение раздела
@@ -2143,6 +2167,7 @@ Files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="125"/>
+        <location filename="../build/ui_net.h" line="403"/>
         <source>&amp;Restore partition 
  or directory</source>
         <extracomment>Partition mit fs-Archiver * zurückschreiben</extracomment>
@@ -2151,80 +2176,95 @@ Files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="168"/>
+        <location filename="../build/ui_net.h" line="407"/>
         <source>Start the backup of a partition.</source>
         <translation>Начало сохранения раздела.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="243"/>
+        <location filename="../build/ui_net.h" line="414"/>
         <source>Start restore a partition.</source>
         <translation>Начало восстановления раздела.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="440"/>
+        <location filename="../build/ui_net.h" line="430"/>
         <source>Directory in which the partition is backed up or from the recovery file is removed.</source>
         <translation>Каталог, в  котором сохраняеется, или из которого восстанавливается раздел, удалён.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="542"/>
+        <location filename="../build/ui_net.h" line="438"/>
         <source>Notes to the backup is written to a file.</source>
         <translation>Заметки к резервной копии записываются в файл.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="568"/>
+        <location filename="../build/ui_net.h" line="442"/>
         <source>Same backup files are overwritten without prior consultation.</source>
         <translation>Одинаковые файлы будут перезаписаны без отдельных вопросов.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="611"/>
+        <location filename="../build/ui_net.h" line="449"/>
         <source>PBR is first block of any bootable partition.</source>
         <translation>PBR - это первый сектор любого загрузочного раздела.</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="651"/>
+        <location filename="../build/ui_net.h" line="453"/>
         <source>Protocoll for network
 transmission:</source>
         <translation>Протокол сетевой передачи:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="751"/>
+        <location filename="../build/ui_net.h" line="459"/>
         <source>Show &amp;partitions</source>
         <translation>Просмотр &amp;разделов</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="764"/>
+        <location filename="../build/ui_net.h" line="460"/>
         <source>Show &amp;directories</source>
         <translation>Просмотр &amp;каталогов</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="74"/>
+        <location filename="../build/ui_net.h" line="399"/>
         <source>Existing partitions/directories:</source>
         <extracomment>vorhandene Partitionen:</extracomment>
         <translation>Имеющиеся разделы / каталоги:</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="171"/>
+        <location filename="../build/ui_net.h" line="409"/>
         <source>Save partition/directorie</source>
         <extracomment>Partition sichern</extracomment>
         <translation>Разделы / каталоги для сохранения</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="246"/>
+        <location filename="../build/ui_net.h" line="416"/>
         <source>Partition/directorie restore</source>
         <extracomment>Partition wiederherstellen</extracomment>
         <translation>Разделы / каталоги для восстановления</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="627"/>
+        <location filename="../build/ui_net.h" line="452"/>
         <source>Backup restore to the Origin</source>
         <translation>Сохранение восстановление из Источника</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="713"/>
+        <location filename="../build/ui_net.h" line="457"/>
         <source>Show hidden directories and files</source>
         <translation>Показать скрытые каталоги и файлы</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="303"/>
+        <location filename="../build/ui_net.h" line="420"/>
         <source>already saved 
 files/directories:</source>
         <translation>уже сохранено
@@ -2232,6 +2272,7 @@ files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="597"/>
+        <location filename="../build/ui_net.h" line="446"/>
         <source>Encrypt 
 backup key</source>
         <translation>Ключ шифрования</translation>
@@ -2241,6 +2282,7 @@ backup key</source>
     <name>Eingabe_Net</name>
     <message>
         <location filename="../src/ui/net_ein.ui" line="14"/>
+        <location filename="../build/ui_net_ein.h" line="108"/>
         <source>Data network</source>
         <extracomment>Daten Netzwerk</extracomment>
         <translation>Сетевые
@@ -2248,18 +2290,21 @@ backup key</source>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="26"/>
+        <location filename="../build/ui_net_ein.h" line="109"/>
         <source>Username:</source>
         <extracomment>Benutzername:</extracomment>
         <translation>Имя пользователя:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="39"/>
+        <location filename="../build/ui_net_ein.h" line="110"/>
         <source>Password:</source>
         <extracomment>Kennwort:</extracomment>
         <translation>Пароль:</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="55"/>
+        <location filename="../build/ui_net_ein.h" line="114"/>
         <source>Save data</source>
         <extracomment>Daten speichern</extracomment>
         <translation>Сохранение
@@ -2267,17 +2312,20 @@ backup key</source>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="94"/>
+        <location filename="../build/ui_net_ein.h" line="115"/>
         <source>Next</source>
         <extracomment>Weiter</extracomment>
         <translation>Далее</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="130"/>
+        <location filename="../build/ui_net_ein.h" line="117"/>
         <source>n</source>
         <translation>n</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="143"/>
+        <location filename="../build/ui_net_ein.h" line="118"/>
         <source>Show Password</source>
         <extracomment>Kennwort anzeigen</extracomment>
         <translation>Показать
@@ -2285,17 +2333,20 @@ backup key</source>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="156"/>
+        <location filename="../build/ui_net_ein.h" line="119"/>
         <source>Cancel</source>
         <extracomment>Abbrechen</extracomment>
         <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="52"/>
+        <location filename="../build/ui_net_ein.h" line="112"/>
         <source>Username and password are stored.</source>
         <translation>Имя пользователя и пароль были сохранены.</translation>
     </message>
     <message>
         <location filename="../src/ui/net_ein.ui" line="117"/>
+        <location filename="../build/ui_net_ein.h" line="116"/>
         <source>Achievable network computer:</source>
         <extracomment>Im Netz erreichbare Rechner:</extracomment>
         <translation>Доступные компьютеры в сети:</translation>
@@ -2305,30 +2356,35 @@ backup key</source>
     <name>FileDialog</name>
     <message>
         <location filename="../src/ui/filedialog.ui" line="14"/>
+        <location filename="../build/ui_filedialog.h" line="62"/>
         <source>Description of the backup</source>
         <extracomment>Beschreibung der Sicherung</extracomment>
         <translation>Параметры сохранения</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="26"/>
+        <location filename="../build/ui_filedialog.h" line="63"/>
         <source>Cancel</source>
         <extracomment>Abbrechen</extracomment>
         <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="39"/>
+        <location filename="../build/ui_filedialog.h" line="64"/>
         <source>Description of the backup:</source>
         <extracomment>Beschreibung der Sicherung:</extracomment>
         <translation>Параметры сохранения:</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="52"/>
+        <location filename="../build/ui_filedialog.h" line="65"/>
         <source>Back partition</source>
         <extracomment>Partition sichern</extracomment>
         <translation>Сохранить раздел</translation>
     </message>
     <message>
         <location filename="../src/ui/filedialog.ui" line="80"/>
+        <location filename="../build/ui_filedialog.h" line="66"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -2586,6 +2642,14 @@ p, li { white-space: pre-wrap; }
         <translation>Восстановление было выполнено</translation>
     </message>
     <message>
+        <location filename="../src/mainWindow.cpp" line="1086"/>
+        <source>Backup and restore partitions, directory and MBR
+Version 0.8.0-0, October 15, 2016</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
+<translation>Сохранение и восстановление разделов, каталогов и MBR.
+Версия 0.8.0-0, 3. октября. 2016</translation>
+    </message>
+    <message>
         <location filename="../src/mainWindow.cpp" line="1172"/>
         <source>Yes</source>
         <comment>Ja</comment>
@@ -2656,11 +2720,10 @@ p, li { white-space: pre-wrap; }
         <translation> файлов </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1086"/>
         <source>Backup and restore partitions, directory and MBR
 Version 0.6.19-21, August 1, 2016</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-21, 1. August 2016</comment>
-        <translation>Сохранение и восстановление разделов, каталогов и MBR.
+        <translation type="vanished">Сохранение и восстановление разделов, каталогов и MBR.
 Версия 0.6.19-21, 1. август. 2016</translation>
     </message>
     <message>
@@ -3102,52 +3165,62 @@ Die Dateiendung muss .fsa sein</comment>
     <name>MainWindow</name>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="14"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="474"/>
         <source>Save/restore partition </source>
         <translation>Работа с разделом</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="33"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="496"/>
         <source>Existing partitions:</source>
         <translation>Найденные разделы:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="52"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="500"/>
         <source>Backup directory:</source>
         <translation>Каталог сохранения:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="68"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="504"/>
         <source>Stored partitions</source>
         <translation>Сохранение разделов</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="81"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="505"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="126"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="506"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="559"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="548"/>
         <source>Proposed action:</source>
         <extracomment>vorgesehene Aktion:</extracomment>
         <translation>Возможные действия:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="165"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="511"/>
         <source>Partition restore</source>
         <translation>Восстановить раздел</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="181"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="512"/>
         <source>Name the backup file:</source>
         <translation>Имя образа восстановления:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="403"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="525"/>
         <source>Number of processors
 cores for to be used fsarchiver:</source>
         <translation>Число потоков
@@ -3155,6 +3228,7 @@ cores for to be used fsarchiver:</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="427"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="527"/>
         <source>Compression
 setting:</source>
         <translation>Стандарт
@@ -3162,11 +3236,13 @@ setting:</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="470"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="536"/>
         <source>available backup overwrite</source>
         <translation>Разрешить перезапись образа</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="223"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="514"/>
         <source>On the number saved
 Files/directories:</source>
         <translation>Число сохранённых
@@ -3175,27 +3251,34 @@ Files/directories:</source>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="274"/>
         <location filename="../src/ui/fsarchiverMain.ui" line="295"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="519"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="521"/>
         <source>minutes</source>
         <translation>минут</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="260"/>
         <location filename="../src/ui/fsarchiverMain.ui" line="309"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="518"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="522"/>
         <source>seconds</source>
         <translation>секунд</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="213"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="513"/>
         <source>elapsed time:</source>
         <translation>Прошедшее время:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="444"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="532"/>
         <source>Notes to  the backup</source>
         <translation>Запись текстового описания образа</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="594"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="554"/>
         <source>Restore partition
 with fsarchiver</source>
         <extracomment>Partition mit fs-Archiver * zurückschreiben</extracomment>
@@ -3204,177 +3287,212 @@ with fsarchiver</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="704"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="475"/>
         <source>Basic Settings</source>
         <translation>Настройки по-умолчанию</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="713"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="476"/>
         <source>Backup partition</source>
         <translation>Сохранение раздела</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="722"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="477"/>
         <source>Restore partition</source>
         <translation>Восстановление раздела</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="767"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="482"/>
         <source>Restore directory </source>
         <translation>Восстановление каталога</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="776"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="483"/>
         <source>Save directory </source>
         <translation>Сохранение каталога</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="288"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="520"/>
         <source>remaining time:</source>
         <translation>оставшиеся время:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="812"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="487"/>
         <source>breakprocess</source>
         <translation>Прервать</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="516"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="546"/>
         <source>Save PBR</source>
         <extracomment>PBR sichern</extracomment>
         <translation>Сохранение загрузочной записи раздела (PBR)</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="483"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="537"/>
         <source>Stock Split on size:</source>
         <translation>Размер части разбиваемого архива:</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="539"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="547"/>
         <source>GB</source>
         <translation>ГБ</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="749"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="480"/>
         <source>Save MBR/GPT</source>
         <translation>Сохранение таблицы разделов (MBR/GPT)</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="758"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="481"/>
         <source>Restore MBR/GPT</source>
         <translation>Восстановление таблицы разделов (MBR/GPT)</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="821"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="488"/>
         <source>Clone Drive HD-Image save/restore </source>
         <translation>Копирование сохранение и восстановление образа жесткого диска</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="826"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="489"/>
         <source>HD-Image save/restore on network</source>
         <translation>Сохранение восстановление  по сети образа.жёсткого диска</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="835"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="490"/>
         <source>Clone HD, HD-Image built and restore</source>
         <translation>Копирование создание и восстановление жесткого диска  </translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="27"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="494"/>
         <source>Select the partition to be backed up or restored.</source>
         <translation>Выберите раздел для сохранения, или восстановления.</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="46"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="498"/>
         <source>Directory in which the partition is backed up or from the recovery file is removed.</source>
         <translation>Каталог, в  котором сохраняеется, или из которого восстанавливается раздел, удалён.</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="65"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="502"/>
         <source>Start the backup of a partition.</source>
         <translation>Начало сохранения раздела.</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="162"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="509"/>
         <source>Start restore a partition.</source>
         <translation>Начало восстановления раздела.</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="441"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="530"/>
         <source>Notes to the backup is written to a file</source>
         <translation>Примечания к резервной копии записываются в файл</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="467"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="534"/>
         <source>Same backup files are overwritten without prior consultation</source>
         <translation> Одинаковые файлы будут перезаписаны без отдельных вопросов</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="513"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="544"/>
         <source>PBR is first block of any bootable partition</source>
         <translation>PBR - это первый сектор любого загрузочного раздела</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="609"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="556"/>
         <source>Show hidden directories and files</source>
         <translation>Показать скрытые каталоги и файлы</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="663"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="560"/>
         <source>&amp;Actions</source>
         <translation>&amp;Файл</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="681"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="561"/>
         <source>&amp;Settings</source>
         <translation>&amp;Настройки</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="687"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="562"/>
         <source>&amp;Information</source>
         <translation>&amp;Справка</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="693"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="563"/>
         <source>&amp;Exit</source>
         <translation>&amp;Выход</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="731"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="478"/>
         <source>&amp;Basic Settings</source>
         <translation>Настройки по-&amp;умолчанию</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="740"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="479"/>
         <source>&amp;Information fsarchiver</source>
         <translation>О &amp;Qt-fsarchiver</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="785"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="484"/>
         <source>&amp;Exit program</source>
         <translation>&amp;Выход из программы</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="794"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="485"/>
         <source>Save a partition/directorie on network</source>
         <translation>Сохранение разделов/каталогов по сети</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="803"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="486"/>
         <source>Restore a partition/directorie on network</source>
         <translation>Восстановление разделов/каталогов по сети</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="840"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="491"/>
         <source>Save directories on network</source>
         <translation>Сохранение каталогов по сети</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="845"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="492"/>
         <source>Restore directories from network</source>
         <translation>Восстановление каталогов по сети</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="238"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="516"/>
         <source>already saved 
 files/directories:</source>
         <translation>уже сохранено
@@ -3382,12 +3500,14 @@ files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="499"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="541"/>
         <source>Encrypt 
 backup key</source>
         <translation>Ключ шифрования</translation>
     </message>
     <message>
         <location filename="../src/ui/fsarchiverMain.ui" line="577"/>
+        <location filename="../build/ui_fsarchiverMain.h" line="549"/>
         <source>Partition save 
 with fsarchiver</source>
         <extracomment>Partition mit * fsArchiver sichern:</extracomment>
@@ -3462,18 +3582,21 @@ with fsarchiver</source>
     <name>clone_dialog</name>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="14"/>
+        <location filename="../build/ui_clone_dialog.h" line="298"/>
         <source>Clone hard drive</source>
         <extracomment>MBR sichern/zurückschreiben</extracomment>
         <translation>Копирование жёсткого диска</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="39"/>
+        <location filename="../build/ui_clone_dialog.h" line="299"/>
         <source>Exist harddrive:</source>
         <extracomment>MBR Sicherungsverzeichnis:</extracomment>
         <translation>Имеющиеся диски:</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="86"/>
+        <location filename="../build/ui_clone_dialog.h" line="300"/>
         <source>New harddrive:</source>
         <extracomment>MBR Sicherungsverzeichnis:</extracomment>
         <translation>Новый жёсткий диск:</translation>
@@ -3484,124 +3607,154 @@ with fsarchiver</source>
         <location filename="../src/ui/clone_dialog.ui" line="669"/>
         <location filename="../src/ui/clone_dialog.ui" line="682"/>
         <location filename="../src/ui/clone_dialog.ui" line="695"/>
+        <location filename="../build/ui_clone_dialog.h" line="301"/>
+        <location filename="../build/ui_clone_dialog.h" line="302"/>
+        <location filename="../build/ui_clone_dialog.h" line="332"/>
+        <location filename="../build/ui_clone_dialog.h" line="333"/>
+        <location filename="../build/ui_clone_dialog.h" line="334"/>
         <source>CommandLinkButton</source>
         <translation>CommandLinkButton</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="192"/>
+        <location filename="../build/ui_clone_dialog.h" line="305"/>
         <source>elapsed time:</source>
         <translation>Прошедшее время:</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="257"/>
+        <location filename="../build/ui_clone_dialog.h" line="308"/>
         <source>remaining time:</source>
         <translation>оставшиеся время:</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="374"/>
+        <location filename="../build/ui_clone_dialog.h" line="312"/>
         <source>MB</source>
         <translation>МБ</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="479"/>
+        <location filename="../build/ui_clone_dialog.h" line="317"/>
         <source>f</source>
         <translation>f</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="526"/>
+        <location filename="../build/ui_clone_dialog.h" line="322"/>
         <source>&amp;Image of a hard disk write back</source>
         <extracomment>sdc</extracomment>
         <translation>&amp;Восстановление диска из образа</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="539"/>
+        <location filename="../build/ui_clone_dialog.h" line="323"/>
         <source>&amp;Clone hard disk</source>
         <extracomment>sda</extracomment>
         <translation>&amp;Копирование жёсткого диска</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="558"/>
+        <location filename="../build/ui_clone_dialog.h" line="324"/>
         <source>Proposed action:</source>
         <extracomment>vorgesehene Aktion:</extracomment>
         <translation>Возможные действия:</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="577"/>
+        <location filename="../build/ui_clone_dialog.h" line="325"/>
         <source>Image &amp;of a hard disk to create</source>
         <extracomment>sdb</extracomment>
         <translation>&amp;Создание образа жёсткого диска</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="590"/>
+        <location filename="../build/ui_clone_dialog.h" line="326"/>
         <source>Image of &amp;a partition to create</source>
         <translation>Создание &amp;образа из раздела</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="603"/>
+        <location filename="../build/ui_clone_dialog.h" line="327"/>
         <source>Image of a &amp;partition write back</source>
         <translation>Восстановление из образа &amp;раздела </translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="498"/>
+        <location filename="../build/ui_clone_dialog.h" line="321"/>
         <source>Backup directory:</source>
         <translation>Каталог сохранения:</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="140"/>
         <location filename="../src/ui/clone_dialog.ui" line="205"/>
+        <location filename="../build/ui_clone_dialog.h" line="303"/>
+        <location filename="../build/ui_clone_dialog.h" line="306"/>
         <source>seconds</source>
         <translation>секунд</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="166"/>
         <location filename="../src/ui/clone_dialog.ui" line="231"/>
+        <location filename="../build/ui_clone_dialog.h" line="304"/>
+        <location filename="../build/ui_clone_dialog.h" line="307"/>
         <source>minutes</source>
         <translation>минут</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="387"/>
         <location filename="../src/ui/clone_dialog.ui" line="413"/>
+        <location filename="../build/ui_clone_dialog.h" line="313"/>
+        <location filename="../build/ui_clone_dialog.h" line="314"/>
         <source>hours</source>
         <translation>часов</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="616"/>
+        <location filename="../build/ui_clone_dialog.h" line="328"/>
         <source>Use gzip</source>
         <translation>Использовать gzip</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="630"/>
+        <location filename="../build/ui_clone_dialog.h" line="329"/>
         <source>p</source>
         <translation>p</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="643"/>
+        <location filename="../build/ui_clone_dialog.h" line="330"/>
         <source>Save/Restore</source>
         <translation> Сохранение / восстановление</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="656"/>
+        <location filename="../build/ui_clone_dialog.h" line="331"/>
         <source>Exit</source>
         <extracomment>Abbrechen</extracomment>
         <translation>Выход</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="492"/>
+        <location filename="../build/ui_clone_dialog.h" line="319"/>
         <source>Directory in which the image is written</source>
         <translation>Каталог, в который записан образ</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="465"/>
+        <location filename="../build/ui_clone_dialog.h" line="316"/>
         <source>MB/sec</source>
         <translation>МБ/сек</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="358"/>
+        <location filename="../build/ui_clone_dialog.h" line="311"/>
         <source>already saved:</source>
         <translation>уже сохранён:</translation>
     </message>
     <message>
         <location filename="../src/ui/clone_dialog.ui" line="439"/>
+        <location filename="../build/ui_clone_dialog.h" line="315"/>
         <source>Transmission speed:</source>
         <translation>Скорость копирования:</translation>
     </message>
@@ -3611,48 +3764,57 @@ with fsarchiver</source>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="14"/>
         <location filename="../src/ui/dir_dialog.ui" line="42"/>
+        <location filename="../build/ui_dir_dialog.h" line="206"/>
+        <location filename="../build/ui_dir_dialog.h" line="211"/>
         <source>Save/restore directory</source>
         <extracomment>Verzeichnis sichern/zurückschreiben</extracomment>
         <translation>Работа с каталогами</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="71"/>
+        <location filename="../build/ui_dir_dialog.h" line="215"/>
         <source>Saved directory</source>
         <extracomment>zu sicherndes Verzeichnis:</extracomment>
         <translation>Каталог</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="100"/>
+        <location filename="../build/ui_dir_dialog.h" line="219"/>
         <source>Location (path) of backup:</source>
         <extracomment>Ort (Pfad) der Sicherung:</extracomment>
         <translation>Место (путь) сохранения:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="424"/>
+        <location filename="../build/ui_dir_dialog.h" line="234"/>
         <source>Compression setting:</source>
         <extracomment>Kompressioneinstellung:</extracomment>
         <translation>Настройки сжатия:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="447"/>
+        <location filename="../build/ui_dir_dialog.h" line="235"/>
         <source>Encrypt
 backup key</source>
         <translation>Ключ шифрования</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="474"/>
+        <location filename="../build/ui_dir_dialog.h" line="240"/>
         <source>Overwrite existing backup</source>
         <extracomment>vorhandene Sicherung überschreiben</extracomment>
         <translation>Перезапись сохранённого образа</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="490"/>
+        <location filename="../build/ui_dir_dialog.h" line="244"/>
         <source>Backup restore to the Origin</source>
         <extracomment>Sicherung an den Ursprungsort zurückschreiben</extracomment>
         <translation>Сохранение восстановление из Источника</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="128"/>
+        <location filename="../build/ui_dir_dialog.h" line="220"/>
         <source>On the number of
 captive Files/directories:</source>
         <extracomment>Anzahl der zu sichernden Dateien/Verzeichnisse:</extracomment>
@@ -3661,6 +3823,7 @@ captive Files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="155"/>
+        <location filename="../build/ui_dir_dialog.h" line="222"/>
         <source>Already backed
 Files/directories:</source>
         <extracomment>bereits gesicherte Datein/Verzeichnisse:</extracomment>
@@ -3669,6 +3832,7 @@ Files/directories:</source>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="198"/>
+        <location filename="../build/ui_dir_dialog.h" line="224"/>
         <source>elapsed time:</source>
         <extracomment>vergangene Zeit:</extracomment>
         <translation>Прошедшее время:</translation>
@@ -3676,6 +3840,8 @@ Files/directories:</source>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="224"/>
         <location filename="../src/ui/dir_dialog.ui" line="302"/>
+        <location filename="../build/ui_dir_dialog.h" line="225"/>
+        <location filename="../build/ui_dir_dialog.h" line="228"/>
         <source>minutes</source>
         <extracomment>Minuten</extracomment>
         <translation>минут</translation>
@@ -3683,12 +3849,15 @@ Files/directories:</source>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="250"/>
         <location filename="../src/ui/dir_dialog.ui" line="315"/>
+        <location filename="../build/ui_dir_dialog.h" line="226"/>
+        <location filename="../build/ui_dir_dialog.h" line="229"/>
         <source>seconds</source>
         <extracomment>Sekunden</extracomment>
         <translation>секунд</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="395"/>
+        <location filename="../build/ui_dir_dialog.h" line="232"/>
         <source>Number of processor cores
 for to be used fsarchiver:</source>
         <extracomment>Anzahl der Prozessorkerne, die für fsarchiver verwendet werden sollen:</extracomment>
@@ -3697,43 +3866,51 @@ for to be used fsarchiver:</source>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="26"/>
+        <location filename="../build/ui_dir_dialog.h" line="207"/>
         <source>Exit</source>
         <extracomment>Schließen</extracomment>
         <translation>Выход</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="263"/>
+        <location filename="../build/ui_dir_dialog.h" line="227"/>
         <source>remaining  time:</source>
         <extracomment>noch zu erwartende Zeit:</extracomment>
         <translation>оставшиеся время:</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="39"/>
+        <location filename="../build/ui_dir_dialog.h" line="209"/>
         <source>Start the backup or the restore of a folder.</source>
         <translation>Начало сохранение или восстановления каталога.</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="68"/>
+        <location filename="../build/ui_dir_dialog.h" line="213"/>
         <source>Select the folder to be backed up or restored.</source>
         <translation>Выберите раздел для сохранения, или восстановления.</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="97"/>
+        <location filename="../build/ui_dir_dialog.h" line="217"/>
         <source>Directory in which the folder is backed up or from the recovery file is removed.</source>
         <translation>Каталог, в  котором сохранён образ удаляется.</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="471"/>
+        <location filename="../build/ui_dir_dialog.h" line="238"/>
         <source>Same backup files are overwritten without prior consultation.</source>
         <translation>Одинаковые файлы будут перезаписаны без отдельных вопросов.</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="487"/>
+        <location filename="../build/ui_dir_dialog.h" line="242"/>
         <source>The directory will be written back to the original path</source>
         <translation>Каталог будет восстановлен по первоначальному пути</translation>
     </message>
     <message>
         <location filename="../src/ui/dir_dialog.ui" line="504"/>
+        <location filename="../build/ui_dir_dialog.h" line="245"/>
         <source>show hidden directories/files</source>
         <translation>Показать скрытые каталоги и файлы</translation>
     </message>
@@ -3742,30 +3919,35 @@ for to be used fsarchiver:</source>
     <name>mbr_dialog</name>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="74"/>
+        <location filename="../build/ui_mbr_dialog.h" line="102"/>
         <source>Save / restore MBR</source>
         <extracomment>MBR sichern/zurückschreiben</extracomment>
         <translation>Работа с MBR</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="27"/>
+        <location filename="../build/ui_mbr_dialog.h" line="95"/>
         <source>Only the boot loader area to restore</source>
         <extracomment>nur den Bootloaderbereich wieder herstellen</extracomment>
         <translation>Восстановление загрузочной записи</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="32"/>
+        <location filename="../build/ui_mbr_dialog.h" line="96"/>
         <source>Bootloader area and restore the partition table</source>
         <extracomment>Bootloaderbereich und die Partitionstabelle wieder herstellen</extracomment>
         <translation>Восстановление загрузки и разделов</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="37"/>
+        <location filename="../build/ui_mbr_dialog.h" line="97"/>
         <source>Restore partition table</source>
         <extracomment>Partitionstabelle wiederherstellen</extracomment>
         <translation>Восстановление таблицы разделов</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="42"/>
+        <location filename="../build/ui_mbr_dialog.h" line="98"/>
         <source>Secretly area to restore. (Without Boot Loader and without partition table).</source>
         <extracomment>Verborgenen Bereich  wieder herstellen. (Ohne  Bootloader und ohne Partitionstabelle).</extracomment>
         <translation>Восстановление скрытой области
@@ -3773,6 +3955,7 @@ for to be used fsarchiver:</source>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="140"/>
+        <location filename="../build/ui_mbr_dialog.h" line="109"/>
         <source>&amp;Existing
 harddrive:</source>
         <translation>&amp;Жёсткие
@@ -3780,6 +3963,7 @@ harddrive:</source>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="116"/>
+        <location filename="../build/ui_mbr_dialog.h" line="107"/>
         <source>MBR of that drive this
 Backup / restore:</source>
         <extracomment>MBR von dieser dieser Festplatte sichern / wiederherstellen:</extracomment>
@@ -3788,24 +3972,28 @@ Backup / restore:</source>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="14"/>
+        <location filename="../build/ui_mbr_dialog.h" line="92"/>
         <source>Save / Restore MBR/GPT</source>
         <extracomment>MBR sichern/zurückschreiben</extracomment>
         <translation>Сохранение / восстановление таблиц разделов (MBR/GPT)</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="61"/>
+        <location filename="../build/ui_mbr_dialog.h" line="101"/>
         <source>Exit</source>
         <extracomment>Abbrechen</extracomment>
         <translation>Выход</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="103"/>
+        <location filename="../build/ui_mbr_dialog.h" line="106"/>
         <source>MBR/GPT backup directory:</source>
         <extracomment>MBR Sicherungsverzeichnis:</extracomment>
         <translation>Каталог для сохранения / восстановления MBR/GPT:</translation>
     </message>
     <message>
         <location filename="../src/ui/mbr_dialog.ui" line="100"/>
+        <location filename="../build/ui_mbr_dialog.h" line="104"/>
         <source>Directory in which the MBR/GPT is written.</source>
         <translation>Каталог, в который записан MBR/GPT.</translation>
     </message>
@@ -3814,41 +4002,48 @@ Backup / restore:</source>
     <name>setting_dialog</name>
     <message>
         <location filename="../src/ui/setting.ui" line="14"/>
+        <location filename="../build/ui_setting.h" line="148"/>
         <source>Basic settings</source>
         <translation>Настройки по-умолчанию</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="126"/>
+        <location filename="../build/ui_setting.h" line="156"/>
         <source>Backup note enable by default</source>
         <extracomment>Hinweise zur Sicherung * standardmäßig aktivieren</extracomment>
         <translation>Записывать файл описания образа</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="153"/>
+        <location filename="../build/ui_setting.h" line="159"/>
         <source>Enable encryption by default</source>
         <extracomment>Verschlüsselung * standardmäßig aktivieren</extracomment>
         <translation>Шифровать образы</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="166"/>
+        <location filename="../build/ui_setting.h" line="160"/>
         <source>Archive file size divided on DVD</source>
         <extracomment>Archiv-Datei auf DVD * Größe aufteilen</extracomment>
         <translation>Файлы архива разделять по размеру DVD</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="205"/>
+        <location filename="../build/ui_setting.h" line="163"/>
         <source>Save Settings</source>
         <extracomment>Einstellungen speichern</extracomment>
         <translation>Сохранить настройки</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="218"/>
+        <location filename="../build/ui_setting.h" line="164"/>
         <source>Exit</source>
         <extracomment>Beenden</extracomment>
         <translation>Выход</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="41"/>
+        <location filename="../build/ui_setting.h" line="149"/>
         <source>Number of processors
 cores, for fsarchiver
 should be used:</source>
@@ -3858,6 +4053,7 @@ should be used:</source>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="66"/>
+        <location filename="../build/ui_setting.h" line="152"/>
         <source>Standard
 compression:</source>
         <extracomment>Standard*kompression:</extracomment>
@@ -3866,34 +4062,40 @@ compression:</source>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="90"/>
+        <location filename="../build/ui_setting.h" line="154"/>
         <source>Language:</source>
         <translation>Язык:</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="192"/>
+        <location filename="../build/ui_setting.h" line="162"/>
         <source>Network input data save</source>
         <extracomment>Netzwerkeingabedaten * speichern</extracomment>
         <translation>Сохранять сетевые настройки</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="113"/>
+        <location filename="../build/ui_setting.h" line="155"/>
         <source>Existing files by default override</source>
         <extracomment>vorhandene Dateien * standardmäßig überschreiben</extracomment>
         <translation>Разрешать перезапись предыдущего образа</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="231"/>
+        <location filename="../build/ui_setting.h" line="165"/>
         <source>Safe PBR by default</source>
         <extracomment>PBR standradmäßig sichern</extracomment>
         <translation>Безопасный PBR</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="254"/>
+        <location filename="../build/ui_setting.h" line="166"/>
         <source>Network protocol:</source>
         <translation>Сетевой протокол:</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="280"/>
+        <location filename="../build/ui_setting.h" line="168"/>
         <source>Show  Note to mount the network computer</source>
         <extracomment>Hinweis über das Mounten des Netzwerkrechners anzeigen</extracomment>
         <translation>Показывать записи по монтированию
@@ -3901,12 +4103,14 @@ compression:</source>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="293"/>
+        <location filename="../build/ui_setting.h" line="169"/>
         <source>Show  Note about the programm qt5-fsarchiver</source>
         <extracomment>Hinweise zum Gebrauch des Programms anzeigen</extracomment>
         <translation>Показывать заметку по использованию программы</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="267"/>
+        <location filename="../build/ui_setting.h" line="167"/>
         <source>Show Note for accessing network computer</source>
         <extracomment>Hinweis  für den Zugriff auf Netzwerkrechner anzeigen</extracomment>
         <translation>Показывать записи по доступу
@@ -3914,16 +4118,19 @@ compression:</source>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="306"/>
+        <location filename="../build/ui_setting.h" line="170"/>
         <source>Show hidden directories and files</source>
         <translation>Показывать скрытые каталоги и файлы</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="179"/>
+        <location filename="../build/ui_setting.h" line="161"/>
         <source>Show passwords</source>
         <translation>Показывать пароль</translation>
     </message>
     <message>
         <location filename="../src/ui/setting.ui" line="139"/>
+        <location filename="../build/ui_setting.h" line="157"/>
         <source>Directories by default write 
 back to the original location</source>
         <extracomment>Verzeichnisse * standardmäßig an * den ursprünglichen * Ort zurückschreiben</extracomment>
@@ -3934,29 +4141,34 @@ back to the original location</source>
     <name>treeview_dialog</name>
     <message>
         <location filename="../src/ui/treeview.ui" line="14"/>
+        <location filename="../build/ui_treeview.h" line="82"/>
         <source>Select restore file</source>
         <extracomment>Wiederherstellungsdatei auswählen</extracomment>
         <translation>Выберите файл для восстановления</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="41"/>
+        <location filename="../build/ui_treeview.h" line="83"/>
         <source>Cancel</source>
         <extracomment>Abbrechen</extracomment>
         <translation>Отмена</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="60"/>
+        <location filename="../build/ui_treeview.h" line="84"/>
         <source>Next</source>
         <extracomment>Mit der Wiederherstellung fortfahren</extracomment>
         <translation>Далее</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="105"/>
+        <location filename="../build/ui_treeview.h" line="86"/>
         <source>a</source>
         <translation>a</translation>
     </message>
     <message>
         <location filename="../src/ui/treeview.ui" line="92"/>
+        <location filename="../build/ui_treeview.h" line="85"/>
         <source>Existing restore files:</source>
         <extracomment>Vorhandene Wiederherstellungsdateien:</extracomment>
         <translation>Имеющиеся файлы восстановления:</translation>

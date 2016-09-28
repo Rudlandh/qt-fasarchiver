@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -62,7 +62,3 @@ int   dico_add_string(cdico *d, u8 section, u16 key, const char *szstring);
 int   dico_get_string(cdico *d, u8 section, u16 key, char *buffer, u16 bufsize);
 
 #endif // __DICO_H__
-
-
-
-

@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -209,7 +209,7 @@ void *thread_reader_fct(void *args)
                     fflush(stderr);
                     msgprintf(MSG_FORCE, "File [%s] is not found, please type the path to volume %ld:\n", ai->volpath, (long)ai->curvol);
                     fprintf(stdout, "New path:> ");
-                    res=scanf("%s", ai->volpath);
+                    res=scanf("%256s", ai->volpath);
                 }
                 
                 msgprintf(MSG_VERB2, "New volume is [%s]\n", ai->volpath);
@@ -272,7 +272,3 @@ thread_reader_fct_error:
     msgprintf(MSG_DEBUG1, "THREAD-READER: exit\n");
     return NULL;
 }
-
-
-
-

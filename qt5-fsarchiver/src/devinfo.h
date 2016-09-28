@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -39,7 +39,3 @@ struct s_devinfo
 int get_devinfo(struct s_devinfo *outdev, char *indevname, int min, int maj);
 
 #endif // __DEVINFO_H__
-
-
-
-

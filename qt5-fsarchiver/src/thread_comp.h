@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -24,7 +24,3 @@ void *thread_comp_fct(void *args);
 void *thread_decomp_fct(void *args);
 
 #endif // __THREAD_COMP_H__
-
-
-
-

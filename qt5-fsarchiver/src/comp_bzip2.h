@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -22,7 +22,3 @@ int compress_block_bzip2(u64 origsize, u64 *compsize, u8 *origbuf, u8 *compbuf, 
 int uncompress_block_bzip2(u64 compsize, u64 *origsize, u8 *origbuf, u64 origbufsize, u8 *compbuf);
 
 #endif // __COMPRESS_BZIP2_H__
-
-
-
-

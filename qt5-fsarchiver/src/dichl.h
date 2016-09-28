@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -44,7 +44,3 @@ int    dichl_add(cdichl *d, u64 key1, u64 key2, char *str);
 int    dichl_get(cdichl *d, u64 key1, u64 key2, char *buf, int bufsize);
 
 #endif // __DICHL_H__
-
-
-
-

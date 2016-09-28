@@ -1,6 +1,19 @@
-==================================================================================================
+===========================================================================================================
 * qt5-fsarchiver: Graphical interface for fsarchiver fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
-==================================================================================================
+===========================================================================================================
+*  qt5-fsarchiver-0.8.0-0 October 15, 2016
+     - Adjustment Version 0.8.0 fsarchiver 
+     - Implemented FAT filesystem support for EFI system partitions
+     - Allow user to specify new filesystem label or UUID during restfs
+     - Fixed more errors and warnings reported by cppcheck
+     - Updated man page and description of the commands and options
+     - Support for sparse inode chunks on XFS v5
+     - Avoid internationalization when running commands so mkfs output can be parsed properly
+     - Added micro-seconds to timestamp used in the name of the temporary directory
+     - Fixed memory leaks on failure scenarios and protect against buffer overflows in scanf
+     - Fixed possible failure to restore ext4 filesystems when mkfs running in interactive mode
+     - Fixed compilation errors with the musl libc library
+     - Test support for extended attributes and ACLs instead of checking mount options
 *  qt5-fsarchiver-6.19-21 August 1, 2016.
      - With ssh backup and restore over the network and restore is possible again
      - Depending on the operating system, the program must be started in a terminal with root privileges.

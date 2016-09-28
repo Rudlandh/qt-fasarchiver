@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -21,12 +21,14 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <sys/stat.h>
 #include <sys/vfs.h>
 #include <sys/utsname.h>
 #include <sys/mount.h>
 #include <sys/types.h>
 #include <errno.h>
+#include <uuid.h>
 
 #include "fsarchiver.h"
 #include "common.h"
@@ -38,20 +40,22 @@
 #include "fs_xfs.h"
 #include "fs_jfs.h"
 #include "fs_ntfs.h"
+#include "fs_vfat.h"
 #include "error.h"
 
 cfilesys filesys[]=
 {
-    {"ext2",     extfs_mount,    extfs_umount,    extfs_getinfo,    ext2_mkfs,     ext2_test,     extfs_get_reqmntopt,    false, false},
-    {"ext3",     extfs_mount,    extfs_umount,    extfs_getinfo,    ext3_mkfs,     ext3_test,     extfs_get_reqmntopt,    false, false},
-    {"ext4",     extfs_mount,    extfs_umount,    extfs_getinfo,    ext4_mkfs,     ext4_test,     extfs_get_reqmntopt,    false, false},
-    {"reiserfs", reiserfs_mount, reiserfs_umount, reiserfs_getinfo, reiserfs_mkfs, reiserfs_test, reiserfs_get_reqmntopt, false, false},
-    {"reiser4",  reiser4_mount,  reiser4_umount,  reiser4_getinfo,  reiser4_mkfs,  reiser4_test,  reiser4_get_reqmntopt,  false, false},
-    {"btrfs",    btrfs_mount,    btrfs_umount,    btrfs_getinfo,    btrfs_mkfs,    btrfs_test,    btrfs_get_reqmntopt,    false, false},
-    {"xfs",      xfs_mount,      xfs_umount,      xfs_getinfo,      xfs_mkfs,      xfs_test,      xfs_get_reqmntopt,      false, false},
-    {"jfs",      jfs_mount,      jfs_umount,      jfs_getinfo,      jfs_mkfs,      jfs_test,      jfs_get_reqmntopt,      false, false},
-    {"ntfs",     ntfs_mount,     ntfs_umount,     ntfs_getinfo,     ntfs_mkfs,     ntfs_test,     ntfs_get_reqmntopt,     true,  true},
-    {NULL,       NULL,           NULL,            NULL,             NULL,          NULL,          NULL,                   false, false},
+    {"ext2",     extfs_mount,    extfs_umount,    extfs_getinfo,    ext2_mkfs,     ext2_test,     extfs_get_reqmntopt,    true,  true,  false, false, true},
+    {"ext3",     extfs_mount,    extfs_umount,    extfs_getinfo,    ext3_mkfs,     ext3_test,     extfs_get_reqmntopt,    true,  true,  false, false, true},
+    {"ext4",     extfs_mount,    extfs_umount,    extfs_getinfo,    ext4_mkfs,     ext4_test,     extfs_get_reqmntopt,    true,  true,  false, false, true},
+    {"reiserfs", reiserfs_mount, reiserfs_umount, reiserfs_getinfo, reiserfs_mkfs, reiserfs_test, reiserfs_get_reqmntopt, true,  true,  false, false, true},
+    {"reiser4",  reiser4_mount,  reiser4_umount,  reiser4_getinfo,  reiser4_mkfs,  reiser4_test,  reiser4_get_reqmntopt,  true,  true,  false, false, true},
+    {"btrfs",    btrfs_mount,    btrfs_umount,    btrfs_getinfo,    btrfs_mkfs,    btrfs_test,    btrfs_get_reqmntopt,    true,  true,  false, false, true},
+    {"xfs",      xfs_mount,      xfs_umount,      xfs_getinfo,      xfs_mkfs,      xfs_test,      xfs_get_reqmntopt,      true,  true,  false, false, true},
+    {"jfs",      jfs_mount,      jfs_umount,      jfs_getinfo,      jfs_mkfs,      jfs_test,      jfs_get_reqmntopt,      true,  true,  false, false, true},
+    {"ntfs",     ntfs_mount,     ntfs_umount,     ntfs_getinfo,     ntfs_mkfs,     ntfs_test,     ntfs_get_reqmntopt,     false, false, true,  true,  false},
+    {"vfat",     vfat_mount,     vfat_umount,     vfat_getinfo,     vfat_mkfs,     vfat_test,     vfat_get_reqmntopt,     false, false, false, false, true},
+    {NULL,       NULL,           NULL,            NULL,             NULL,          NULL,          NULL,                   false, false, false, false, false}
 };
 
 // return the index of a filesystem in the filesystem table
@@ -163,8 +167,8 @@ int generic_get_mntinfo(char *devname, int *readwrite, char *mntbuf, int maxmntb
     // init
     uname(&suname);
     *readwrite=-1; // unknown
-    memset(mntbuf, 0, sizeof(mntbuf));
-    memset(optbuf, 0, sizeof(optbuf));
+    memset(mntbuf, 0, maxmntbuf);
+    memset(optbuf, 0, maxoptbuf);
 
     // ---- 1. attempt to find device in "/proc/self/mountinfo"
     if ((stat64(devname, &devstat)==0) && ((f=fopen("/proc/self/mountinfo","rb"))!=NULL))
@@ -319,12 +323,24 @@ int generic_mount(char *partition, char *mntbuf, char *fsbuf, char *mntopt, int 
 
 int generic_umount(char *mntbuf)
 {
+    int res=0;
+    int i;
+
     if (!mntbuf)
     {   errprintf("invalid param: mntbuf is null\n");
         return -1;
     }
+
     msgprintf(MSG_DEBUG1, "unmount_partition(%s)\n", mntbuf);
-    return umount2(mntbuf, 0);
+    for (i=0, errno=0 ; (i < 4) && (res=umount2(mntbuf, 0)!=0) && (errno==EBUSY) ; i++)
+    {   sync();
+        sleep(i+1);
+    }
+
+    if (res!=0)
+        errprintf("Failed to umount device %s after %d attempts\n", mntbuf, (int)i);
+
+    return res;
 }
 
 char *format_prog_version(u64 version, char *bufdat, int buflen)
@@ -332,7 +348,3 @@ char *format_prog_version(u64 version, char *bufdat, int buflen)
     snprintf(bufdat, buflen, "%ld.%ld.%ld", (long)(version>>16&0xFF), (long)(version>>8&0xFF), (long)(version>>0&0xFF));
     return bufdat;
 }
-
-
-
-

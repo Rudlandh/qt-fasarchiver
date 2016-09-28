@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -65,7 +65,3 @@ int uncompress_block_lzo(u64 compsize, u64 *origsize, u8 *origbuf, u64 origbufsi
 }
 
 #endif // OPTION_LZO_SUPPORT
-
-
-
-

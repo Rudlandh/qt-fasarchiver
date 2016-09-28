@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -70,7 +70,3 @@ int logfile_write(char *str, int len)
     else
         return FSAERR_UNKNOWN;
 }
-
-
-
-

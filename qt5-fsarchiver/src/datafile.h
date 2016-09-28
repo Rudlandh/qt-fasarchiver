@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -30,7 +30,3 @@ int       datafile_write(cdatafile *f, char *data, u64 len);
 int       datafile_close(cdatafile *f, u8 *md5bufdat, int md5bufsize);
 
 #endif // __DATAFILE_H__
-
-
-
-

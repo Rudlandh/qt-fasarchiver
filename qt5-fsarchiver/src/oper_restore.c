@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -28,6 +28,7 @@
 #include <sys/time.h>
 #include <sys/stat.h>
 #include <gcrypt.h>
+#include <uuid.h>
 
 #include "fsarchiver.h"
 #include "strdico.h"
@@ -63,9 +64,9 @@ typedef struct s_extractar
     u64         cost_current;
 } cextractar;
 long long anzahlfile; 
-float progress; 
-int zeitflag = 0;
-int symlink_ = 0;
+	float progress; 
+	int zeitflag = 0;
+	int symlink_ = 0;
 
 // returns true if this file of a parent directory has been excluded
 int is_filedir_excluded(char *relpath)
@@ -126,7 +127,7 @@ int convert_argv_to_strdicos(cstrdico *dicoargv[], int argc, char *cmdargv[])
             return -1;
         
         // parse argument and write (key,value) pairs in the strdico object
-        if ((strdico_set_valid_keys(tmpdico, "id,dest,mkfs,mkfsopt")!=0) ||
+        if ((strdico_set_valid_keys(tmpdico, "id,dest,mkfs,mkfsopt,uuid,label")!=0) ||
             (strdico_parse_string(tmpdico, cmdargv[i])!=0))
         {   strdico_destroy(tmpdico);
             return -1;
@@ -172,7 +173,8 @@ int convert_argv_to_strdicos(cstrdico *dicoargv[], int argc, char *cmdargv[])
 int extractar_listing_print_file(cextractar *exar, int objtype, char *relpath)
 {
     char strprogress[256];
-        
+   // s64 progress;
+    
     memset(strprogress, 0, sizeof(strprogress));
     if (exar->cost_global>0)
     {
@@ -183,8 +185,7 @@ int extractar_listing_print_file(cextractar *exar, int objtype, char *relpath)
     msgprintf(MSG_VERB1, "-[%.2d]%s[%s] %s\n", exar->fsid, strprogress, get_objtype_name(objtype), relpath);
     // Terminal Ausgabe 
     	printf("       %.0f%%       \r ", progress); 
-	werte_uebergeben(progress,1);
-    
+	   werte_uebergeben(progress,1);
     return 0;
 }
 
@@ -216,9 +217,11 @@ int extractar_restore_attr_xattr(cextractar *exar, u32 objtype, char *fullpath, 
             ret=-1;
             continue;
         }
-       
+        
         if ((res=lsetxattr(fullpath, xattrname, xattrvalue, xattrdatasize, 0))!=0)
-        {   sysprintf("xattr:lsetxattr(%s,%s) failed\n", relpath, xattrname);
+        {   sysprintf("winattr:lsetxattr(%s,%s) failed\n", relpath, xattrname); 
+	         symlink_ = symlink_ + 1; 
+            werte_uebergeben (symlink_,16);
             ret=-1;
         }
         else // success
@@ -240,7 +243,6 @@ int extractar_restore_attr_windows(cextractar *exar, u32 objtype, char *fullpath
     int i;
     
     xattrdicsize=dico_count_one_section(dicoattr, DICO_OBJ_SECTION_WINATTR);
-//printf("extractar_restore_attr_windows relpath %s\n", relpath);
     
     for (i=0; i < xattrdicsize; i+=2)
     {
@@ -258,18 +260,16 @@ int extractar_restore_attr_windows(cextractar *exar, u32 objtype, char *fullpath
             ret=-1;
             continue;
         }
-// Um Fehlermeldungen beim Zurückschreiben zu vermeiden        
+        
         if ((res=lsetxattr(fullpath, xattrname, xattrvalue, xattrdatasize, 0))!=0)
         {
-            //sysprintf("winattr:lsetxattr(%s,%s) failed\n", relpath, xattrname);
-            symlink_ = symlink_ + 1;
-            werte_uebergeben (symlink_,16);
+            sysprintf("winattr:lsetxattr(%s,%s) failed\n", relpath, xattrname);
             ret=-1;
         }
         else // success
         {
             msgprintf(MSG_VERB2, "            winattr:lsetxattr(%s, %s)=%d\n", relpath, xattrname, res);
-        } 
+        }
     }
     
     return ret;
@@ -521,7 +521,7 @@ int extractar_restore_obj_devfile(cextractar *exar, char *fullpath, char *relpat
         goto extractar_restore_obj_devfile_err;
     if (mknod(fullpath, mode, dev)!=0)
     {   sysprintf("mknod failed on [%s]\n", relpath);
-        werte_uebergeben (107,4);
+        werte_uebergeben (107,4); 
         goto extractar_restore_obj_devfile_err;
     }
     if (extractar_restore_attr_everything(exar, objtype, fullpath, relpath, d)!=0)
@@ -1192,6 +1192,8 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
     char mountinfo[4096];
     char partition[1024];
     char mkfsoptions[1024];
+    char mkfslabel[1024];
+    char mkfsuuid[1024];
     char tempbuf[1024];
     cdico *dicobegin=NULL;
     cdico *dicoend=NULL;
@@ -1210,6 +1212,8 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
     // init
     memset(magic, 0, sizeof(magic));
     memset(partition, 0, sizeof(partition));
+    memset(mkfslabel, 0, sizeof(mkfslabel));
+    memset(mkfsuuid, 0, sizeof(mkfsuuid));
     
     // read destination partition from dicocmdline
     if (strdico_get_string(dicocmdline, partition, sizeof(partition), "dest")!=0)
@@ -1268,7 +1272,15 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
     {
         msgprintf(MSG_VERB2,"strdico_get_string(dicocmdline, 'mkfsopt') doesn't exist\n");
     }
-       
+    if (strdico_get_string(dicocmdline, mkfslabel, sizeof(mkfslabel), "label")!=0)
+    {
+        msgprintf(MSG_VERB2,"strdico_get_string(dicocmdline, 'label') doesn't exist\n");
+    }
+    if (strdico_get_string(dicocmdline, mkfsuuid, sizeof(mkfsuuid), "uuid")!=0)
+    {
+        msgprintf(MSG_VERB2,"strdico_get_string(dicocmdline, 'uuid') doesn't exist\n");
+    }
+
     if (dico_get_u64(dicofs, 0, FSYSHEADKEY_BYTESTOTAL, &fsbytestotal)!=0)
     {   errprintf("dico_get_string(FSYSHEADKEY_BYTESTOTAL) failed\n");
         return -1;
@@ -1279,10 +1291,12 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
         return -1;
     }
     
-    msgprintf(MSG_VERB2, "filesystem=[%s]\n", filesystem);
-    msgprintf(MSG_VERB2, "filesystemoptions=[%s]\n", mkfsoptions);
-    msgprintf(MSG_VERB2, "fsbytestotal=[%s]\n", format_size(fsbytestotal, text, sizeof(text), 'h'));
-    msgprintf(MSG_VERB2, "fsbytesused=[%s]\n", format_size(fsbytesused, text, sizeof(text), 'h'));
+    msgprintf(MSG_VERB2, "filesystem_type=[%s]\n", filesystem);
+    msgprintf(MSG_VERB2, "filesystem_mkfsoptions=[%s]\n", mkfsoptions);
+    msgprintf(MSG_VERB2, "filesystem_mkfslabel=[%s]\n", mkfslabel);
+    msgprintf(MSG_VERB2, "filesystem_mkfsuuid=[%s]\n", mkfsuuid);
+    msgprintf(MSG_VERB2, "filesystem_space_total=[%s]\n", format_size(fsbytestotal, text, sizeof(text), 'h'));
+    msgprintf(MSG_VERB2, "filesystem_space_used=[%s]\n", format_size(fsbytesused, text, sizeof(text), 'h'));
     
     // get index of the filesystem in the filesystem table
     if (generic_get_fstype(filesystem, &fstype)!=0)
@@ -1291,8 +1305,8 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
     }
     
     // ---- make the filesystem
-    if (filesys[fstype].mkfs(dicofs, partition, mkfsoptions)!=0)
-    {   errprintf("cannot format the filesystem %s on partition %s\n", filesystem, partition);
+    if (filesys[fstype].mkfs(dicofs, partition, mkfsoptions, mkfslabel, mkfsuuid)!=0)
+    {   errprintf("cannot make filesystem %s on partition %s\n", filesystem, partition);
         return -1;
     }
 
@@ -1453,14 +1467,14 @@ int oper_restore(char *archive, int argc, char **argv, int oper)
         case ARCHTYPE_DIRECTORIES:
             if (oper==OPER_RESTFS)
             {   errprintf("this archive does not contain filesystems, cannot use \"restfs\". Try \"restdir\" instead.\n");
-                werte_uebergeben (102,4);
+                 werte_uebergeben (102,4);
                 goto do_extract_error;
             }
             break;
         case ARCHTYPE_FILESYSTEMS:
             if (oper==OPER_RESTDIR)
             {   errprintf("this archive does not contain simple directories, cannot use \"restdir\". Try \"restfs\" instead.\n");
-                 werte_uebergeben(104,4); 
+                werte_uebergeben(104,4);
                 goto do_extract_error;
             }
             break;
@@ -1609,8 +1623,8 @@ do_extract_success:
     // now we are sure that thread_compress is not working on an item in the queue so we can empty the queue
     while (get_secthreads()>0 && queue_get_end_of_queue(&g_queue)==false)
         queue_destroy_first_item(&g_queue);
-        // Damit die wiederholte Wiederherstellung der Verzeichnisse und Partitionen klappt!!
-	 set_stopfillqueue_false();
+         // Damit die wiederholte Wiederherstellung der Verzeichnisse und Partitionen klappt!!
+	     set_stopfillqueue_false();
     msgprintf(MSG_DEBUG1, "THREAD-MAIN2: queue is now empty\n");
     // the queue is empty, so thread_compress should now exit
     
@@ -1642,7 +1656,3 @@ do_extract_success:
     archreader_destroy(&exar.ai);
     return ret;
 }
-
-
-
-

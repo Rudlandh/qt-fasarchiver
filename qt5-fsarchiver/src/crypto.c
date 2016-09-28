@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -116,7 +116,3 @@ int crypto_random(u8 *buf, int bufsize)
     gcry_randomize(buf, bufsize, GCRY_STRONG_RANDOM);
     return 0;
 }
-
-
-
-

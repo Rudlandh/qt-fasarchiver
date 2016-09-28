@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -29,10 +29,14 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include <execinfo.h>
 #include <wordexp.h>
 #include <fnmatch.h>
 #include <time.h>
+#include <limits.h>
+
+#ifdef HAVE_EXECINFO_H
+#include <execinfo.h>
+#endif
 
 #include "fsarchiver.h"
 #include "syncthread.h"
@@ -355,6 +359,7 @@ int exec_command(char *command, int cmdbufsize, int *exitst, char *stdoutbuf, in
         close(pfildes1[1]); // close excess fildes
         dup2(pfildes2[1],2); // make 1 same as write-to end of pipe
         close(pfildes2[1]); // close excess fildes
+        setenv("LC_ALL", "C", 1); // kill internationalization
         execvp(pathtoprog, argv);
         errprintf("execvp(%s) failed\n", pathtoprog); // still around? exec failed
         wordfree(&p);
@@ -393,9 +398,9 @@ int exec_command(char *command, int cmdbufsize, int *exitst, char *stdoutbuf, in
         
         // read the remaining data in the pipes 
         if ((stdoutbuf!=NULL) && (outpos+1 < stdoutsize))
-            res=read(mystdout, stdoutbuf+outpos, stdoutsize-outpos-1);
+            read(mystdout, stdoutbuf+outpos, stdoutsize-outpos-1);
         if ((stderrbuf!=NULL) && (errpos+1 < stderrsize))
-            res=read(mystderr, stderrbuf+errpos, stderrsize-errpos-1);
+            read(mystderr, stderrbuf+errpos, stderrsize-errpos-1);
         
         msgprintf(MSG_VERB1, "command [%s] returned %d\n", command, WEXITSTATUS(status));
         if (exitst)
@@ -421,9 +426,9 @@ int generate_random_tmpdir(char *buffer, int bufsize, int n)
     abstime=tv.tv_sec;
         localtime_r(&abstime, &tbreak);
     
-    snprintf(buffer, bufsize, "/tmp/fsa/%.4d%.2d%.2d-%.2d%.2d%.2d-%.2d",
+    snprintf(buffer, bufsize, "/tmp/fsa/%.4d%.2d%.2d-%.2d%.2d%.2d-%.8x-%.2d",
         tbreak.tm_year+1900, tbreak.tm_mon+1, tbreak.tm_mday,
-         tbreak.tm_hour, tbreak.tm_min, tbreak.tm_sec, n);
+         tbreak.tm_hour, tbreak.tm_min, tbreak.tm_sec, (u32)tv.tv_usec, n);
     return 0;
 }
 
@@ -531,26 +536,27 @@ int get_parent_dir_time_attrib(char *filepath, char *parentdirbuf, int bufsize, 
 
 int stats_show(cstats stats, int fsid)
 {
-    printf("Statistics for filesystem %d\n", fsid);
-    printf("* files successfully processed:....regfiles=%lld, directories=%lld, "
+    printf("Statistics for filesystem %d\n", fsid); 
+    printf("* files successfully processed:....regfiles=%lld, directories=%lld, " 
         "symlinks=%lld, hardlinks=%lld, specials=%lld\n", 
         (long long)stats.cnt_regfile, (long long)stats.cnt_dir, (long long)stats.cnt_symlink, 
-        (long long)stats.cnt_hardlink, (long long)stats.cnt_special);
-    printf("* files with errors:...............regfiles=%lld, directories=%lld, "
+        (long long)stats.cnt_hardlink, (long long)stats.cnt_special); 
+    printf("* files with errors:...............regfiles=%lld, directories=%lld, " 
         "symlinks=%lld, hardlinks=%lld, specials=%lld\n", 
         (long long)stats.err_regfile, (long long)stats.err_dir, (long long)stats.err_symlink, 
         (long long)stats.err_hardlink, (long long)stats.err_special);
-   
+     
     werte_uebergeben((long long)stats.cnt_regfile,6); 
-    werte_uebergeben((long long)stats.cnt_dir,7);
+    werte_uebergeben((long long)stats.cnt_dir,7); 
     werte_uebergeben((long long)stats.cnt_symlink,8); 
     werte_uebergeben((long long)stats.cnt_hardlink,9); 
-    werte_uebergeben((long long)stats.cnt_special,10);   
-    werte_uebergeben((long long)stats.err_regfile,12); 
-    werte_uebergeben((long long)stats.err_dir,13); 
-    werte_uebergeben((long long)stats.err_symlink,14); 
-    werte_uebergeben((long long)stats.err_hardlink,5);
-    werte_uebergeben((long long)stats.err_special,11); 
+    werte_uebergeben((long long)stats.cnt_special,10);
+    
+    werte_uebergeben((long long)stats.err_regfile,1); 
+    werte_uebergeben((long long)stats.err_dir,2); 
+    werte_uebergeben((long long)stats.err_symlink,3); 
+    werte_uebergeben((long long)stats.err_hardlink,5); 
+    werte_uebergeben((long long)stats.err_special,11);
     return 0;
 }
 
@@ -561,6 +567,7 @@ u64 stats_errcount(cstats stats)
 
 int format_stacktrace(char *buffer, int bufsize)
 {
+#ifdef HAVE_EXECINFO_H
     const int stack_depth=20;
     void *temp[stack_depth];
     char **strings;
@@ -577,6 +584,7 @@ int format_stacktrace(char *buffer, int bufsize)
             strlcatf(buffer, bufsize, "%s\n", strings[i]);
         free(strings);
     }
+#endif
     
     return 0;
 }
@@ -621,8 +629,3 @@ int get_path_to_volume(char *newvolbuf, int bufsize, char *basepath, long curvol
     
     return 0;
 }
-
-
-
-
-

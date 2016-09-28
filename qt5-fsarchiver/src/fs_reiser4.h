@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -21,7 +21,7 @@
 struct s_dico;
 struct s_strlist;
 
-int reiser4_mkfs(struct s_dico *d, char *partition, char *fsoptions);
+int reiser4_mkfs(struct s_dico *d, char *partition, char *fsoptions, char *mkfslabel, char *mkfsuuid);
 int reiser4_getinfo(struct s_dico *d, char *devname);
 int reiser4_mount(char *partition, char *mntbuf, char *fsbuf, int flags, char *mntinfo);
 int reiser4_get_reqmntopt(char *partition, struct s_strlist *reqopt, struct s_strlist *badopt);
@@ -60,7 +60,3 @@ struct reiser4_master_sb
 } __attribute__((packed));*/
 
 #endif // __FS_REISER4_H__
-
-
-
-

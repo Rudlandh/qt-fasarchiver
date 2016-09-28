@@ -1,6 +1,9 @@
 ==================================================================================================
 * qt5-fsarchiver: Grafische Oberfläche für fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ==================================================================================================
+* qt5-fsarchiver-0.8.0-0 15 Oktober, 2016
+    - Anpassung an die Version 0.8.0 von fsarchiver
+    - Die Änderungen von fsarchiver sind in der Datei Change erläutert.
 * qt5-fsarchiver-6.19-21 August 2016
     - Mit ssh über das Netzwerk sichern und zurückschreiben ist wieder möglich möglich.
     - Je nach Betriebssystem muss das Programm in einem Terminal mit Root-Rechten gestartet werden.

@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -55,29 +55,30 @@ char *cryptalgostr(int algo)
 int archinfo_show_mainhead(carchreader *ai, cdico *dicomainhead)
 {
     char buffer[256];
-    werte_uebergeben(210,15); 
+    
     if (!ai || !dicomainhead)
     {   errprintf("a parameter is null\n");
         return -1;
     }
     
-   printf("====================== archive information ======================\n");
-   printf( "Archive type: \t\t\t%s\n", (ai->archtype==ARCHTYPE_FILESYSTEMS)?"filesystems":"flat files");
-    if ((ai->archtype==ARCHTYPE_FILESYSTEMS))
-        printf("Filesystems count: \t%ld\n", (long)ai->fscount);
+   printf("====================== archive information ======================\n"); 
+   printf( "Archive type: \t\t\t%s\n", (ai->archtype==ARCHTYPE_FILESYSTEMS)?"filesystems":"flat files"); 
+    if ((ai->archtype==ARCHTYPE_FILESYSTEMS)) 
+        printf("Filesystems count: \t%ld\n", (long)ai->fscount); 
          
-    printf("Archive id: \t\t\t%.8x\n", (unsigned int)ai->archid);
-    printf("Archive file format: \t\t%s\n", ai->filefmt);
-    printf("Archive created with: \t\t%s\n", ai->creatver);
-    printf("Archive creation date: \t\t%s\n", format_time(buffer, sizeof(buffer), ai->creattime));
-    printf("Archive label: \t\t\t%s\n", ai->label);
-    if (ai->minfsaver > 0) // fsarchiver < 0.6.7 had no per-archive minfsaver version requirement
+    printf("Archive id: \t\t\t%.8x\n", (unsigned int)ai->archid); 
+    printf("Archive file format: \t\t%s\n", ai->filefmt); 
+    printf("Archive created with: \t\t%s\n", ai->creatver); 
+    printf("Archive creation date: \t\t%s\n", format_time(buffer, sizeof(buffer), ai->creattime)); 
+    printf("Archive label: \t\t\t%s\n", ai->label); 
+    if (ai->minfsaver > 0) // fsarchiver < 0.6.7 had no per-archive minfsaver version requirement 
         printf("Minimum fsarchiver version:\t%d.%d.%d.%d\n", (int)FSA_VERSION_GET_A(ai->minfsaver), 
-            (int)FSA_VERSION_GET_B(ai->minfsaver), (int)FSA_VERSION_GET_C(ai->minfsaver), (int)FSA_VERSION_GET_D(ai->minfsaver));
-    printf("Compression level: \t\t%d (%s level %d)\n", ai->fsacomp, compalgostr(ai->compalgo), ai->complevel);
-    printf("Encryption algorithm: \t\t%s\n", cryptalgostr(ai->cryptalgo));
-    printf("\n");
+            (int)FSA_VERSION_GET_B(ai->minfsaver), (int)FSA_VERSION_GET_C(ai->minfsaver), (int)FSA_VERSION_GET_D(ai->minfsaver)); 
+    printf("Compression level: \t\t%d (%s level %d)\n", ai->fsacomp, compalgostr(ai->compalgo), ai->complevel); 
+    printf("Encryption algorithm: \t\t%s\n", cryptalgostr(ai->cryptalgo)); 
+    printf("\n"); 
     meldungen_uebergeben(cryptalgostr(ai->cryptalgo),1); 
+    
     return 0;
 }
 
@@ -128,20 +129,18 @@ int archinfo_show_fshead(cdico *dicofshead, int fsid)
         snprintf(fsuuid, sizeof(fsuuid), "%016llX", (long long unsigned int)temp64);
     else if (dico_get_string(dicofshead, 0, FSYSHEADKEY_FSUUID, buffer, sizeof(buffer))==0 && strlen(buffer)==36)
         snprintf(fsuuid, sizeof(fsuuid), "%s", buffer);
-    printf("===================== filesystem information ====================\n");
-    printf("Filesystem id in archive: \t%ld\n", (long)fsid);
-    printf("Filesystem format: \t\t%s\n", fsbuf);
-    printf("Filesystem label: \t\t%s\n", fslabel);
-    printf("Filesystem uuid: \t\t%s\n", fsuuid);
-    printf("Original device: \t\t%s\n", fsorigdev);
-    printf("Original filesystem size: \t%s (%lld bytes)\n", format_size(fsbytestotal, buffer, sizeof(buffer), 'h'), (long long)fsbytestotal);
-    printf("Space used in filesystem: \t%s (%lld bytes)\n", format_size(fsbytesused, buffer, sizeof(buffer), 'h'), (long long)fsbytesused);
-    printf("\n");
-    meldungen_uebergeben(fsorigdev,2);
+    
+   printf("===================== filesystem information ====================\n"); 
+    printf("Filesystem id in archive: \t%ld\n", (long)fsid); 
+    printf("Filesystem format: \t\t%s\n", fsbuf); 
+    printf("Filesystem label: \t\t%s\n", fslabel); 
+    printf("Filesystem uuid: \t\t%s\n", fsuuid); 
+    printf("Original device: \t\t%s\n", fsorigdev); 
+    printf("Original filesystem size: \t%s (%lld bytes)\n", format_size(fsbytestotal, buffer, sizeof(buffer), 'h'), (long long)fsbytestotal); 
+    printf("Space used in filesystem: \t%s (%lld bytes)\n", format_size(fsbytesused, buffer, sizeof(buffer), 'h'), (long long)fsbytesused); 
+    printf("\n"); 
+    meldungen_uebergeben(fsorigdev,2); 
     werte_uebergeben(200,15);
+    
     return 0;
 }
-
-
-
-

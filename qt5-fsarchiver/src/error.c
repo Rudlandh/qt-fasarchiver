@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -87,7 +87,3 @@ char *error_int_to_string(s64 err)
         default:                return "FSAERR_?";
     }
 }
-
-
-
-

@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -211,7 +211,8 @@ s64 queue_add_block(cqueue *q, cblockinfo *blkinfo, int status)
     
     // does not make sense to add item on a queue where endofqueue is true
     if (q->endofqueue==true)
-    {   assert(pthread_mutex_unlock(&q->mutex)==0);
+    {   free (item);
+        assert(pthread_mutex_unlock(&q->mutex)==0);
         return FSAERR_ENDOFFILE;
     }
     
@@ -227,7 +228,8 @@ s64 queue_add_block(cqueue *q, cblockinfo *blkinfo, int status)
         q->head=item;
     }
     else // list not empty: add items at the end
-    {   for (cur=q->head; (cur!=NULL) && (cur->next!=NULL); cur=cur->next);
+    {
+        for (cur=q->head; (cur!=NULL) && (cur->next!=NULL); cur=cur->next);
         cur->next=item;
     }
     
@@ -284,7 +286,8 @@ s64 queue_add_header_internal(cqueue *q, cheadinfo *headinfo)
     
     // does not make sense to add item on a queue where endofqueue is true
     if (q->endofqueue==true)
-    {   assert(pthread_mutex_unlock(&q->mutex)==0);
+    {   free(item);
+        assert(pthread_mutex_unlock(&q->mutex)==0);
         return FSAERR_ENDOFFILE;
     }
     
@@ -301,7 +304,8 @@ s64 queue_add_header_internal(cqueue *q, cheadinfo *headinfo)
         q->head=item;
     }
     else // list not empty
-    {   for (cur=q->head; (cur!=NULL) && (cur->next!=NULL); cur=cur->next);
+    {
+        for (cur=q->head; (cur!=NULL) && (cur->next!=NULL); cur=cur->next);
         cur->next=item;
     }
     
@@ -505,8 +509,8 @@ s64 queue_dequeue_block(cqueue *q, cblockinfo *blkinfo)
         return FSAERR_ENDOFFILE;
     }
     
-    // should not happen since queuelocked_is_first_block_ready means there is at least one block in the queue
-    assert((cur=q->head)!=NULL);
+    cur=q->head;
+    assert(cur!=NULL); // queuelocked_is_first_block_ready means there is at least one block in the queue
     
     // test the first item
     if ((cur->type==QITEM_TYPE_BLOCK) && (cur->status==QITEM_STATUS_DONE))
@@ -577,8 +581,8 @@ s64 queue_dequeue_header_internal(cqueue *q, cheadinfo *headinfo)
         return FSAERR_ENDOFFILE;
     }
     
-    // should not happen since queuelocked_is_first_block_ready means there is at least one block in the queue
-    assert ((cur=q->head)!=NULL);
+    cur=q->head;
+    assert (cur!=NULL); // queuelocked_is_first_block_ready means there is at least one block in the queue
     
     // test the first item
     switch (cur->type)
@@ -708,8 +712,8 @@ s64 queue_destroy_first_item(cqueue *q)
         return FSAERR_ENDOFFILE;
     }
     
-    // should not happen since queuelocked_is_first_block_ready means there is at least one block in the queue
-    assert((cur=q->head)!=NULL);
+    cur=q->head;
+    assert(cur!=NULL); // queuelocked_is_first_block_ready means there is at least one block in the queue
     
     switch (cur->type)
     {
@@ -729,7 +733,3 @@ s64 queue_destroy_first_item(cqueue *q)
     pthread_cond_broadcast(&q->cond);
     return FSAERR_SUCCESS;
 }
-
-
-
-

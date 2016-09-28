@@ -1,6 +1,6 @@
 /*
  * fsarchiver: Filesystem Archiver
- * 
+ *
  * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
@@ -84,19 +84,19 @@ char *format_fstype(int fstype)
     }
 }
 
-int ext2_mkfs(cdico *d, char *partition, char *fsoptions)
+int ext2_mkfs(cdico *d, char *partition, char *fsoptions, char *mkfslabel, char *mkfsuuid)
 {
-    return extfs_mkfs(d, partition, EXTFSTYPE_EXT2, fsoptions);
+    return extfs_mkfs(d, partition, EXTFSTYPE_EXT2, fsoptions, mkfslabel, mkfsuuid);
 }
 
-int ext3_mkfs(cdico *d, char *partition, char *fsoptions)
+int ext3_mkfs(cdico *d, char *partition, char *fsoptions, char *mkfslabel, char *mkfsuuid)
 {
-    return extfs_mkfs(d, partition, EXTFSTYPE_EXT3, fsoptions);
+    return extfs_mkfs(d, partition, EXTFSTYPE_EXT3, fsoptions, mkfslabel, mkfsuuid);
 }
 
-int ext4_mkfs(cdico *d, char *partition, char *fsoptions)
+int ext4_mkfs(cdico *d, char *partition, char *fsoptions, char *mkfslabel, char *mkfsuuid)
 {
-    return extfs_mkfs(d, partition, EXTFSTYPE_EXT4, fsoptions);
+    return extfs_mkfs(d, partition, EXTFSTYPE_EXT4, fsoptions, mkfslabel, mkfsuuid);
 }
 
 int extfs_get_fstype_from_compat_flags(u32 compat, u32 incompat, u32 ro_compat)
@@ -137,7 +137,7 @@ int extfs_check_compatibility(u64 compat, u64 incompat, u64 ro_compat)
     return 0;
 }
 
-int extfs_mkfs(cdico *d, char *partition, int extfstype, char *fsoptions)
+int extfs_mkfs(cdico *d, char *partition, int extfstype, char *fsoptions, char *mkfslabel, char *mkfsuuid)
 {
     cstrlist strfeatures;
     u64 features_tab[3];
@@ -176,13 +176,18 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype, char *fsoptions)
     // "mke2fs -q" prevents problems in exec_command when too many output details printed
     strlcatf(options, sizeof(options), " -q ");
     
+    // "mke2fs -F" removes confirmation prompt when device is a whole disk such as /dev/sda
+    strlcatf(options, sizeof(options), " -F ");
+
     // filesystem revision: good-old-rev or dynamic
     strlcatf(options, sizeof(options), " -r %d ", (int)fsextrevision);
 
     strlcatf(options, sizeof(options), " %s ", fsoptions);
     
     // ---- set the advanced filesystem settings from the dico
-    if (dico_get_string(d, 0, FSYSHEADKEY_FSLABEL, buffer, sizeof(buffer))==0 && strlen(buffer)>0)
+    if (strlen(mkfslabel) > 0)
+        strlcatf(options, sizeof(options), " -L '%.16s' ", mkfslabel);
+    else if (dico_get_string(d, 0, FSYSHEADKEY_FSLABEL, buffer, sizeof(buffer))==0 && strlen(buffer)>0)
         strlcatf(options, sizeof(options), " -L '%.16s' ", buffer);
     
     if (dico_get_u64(d, 0, FSYSHEADKEY_FSEXTBLOCKSIZE, &temp64)==0)
@@ -285,7 +290,9 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype, char *fsoptions)
     
     // ---- use tune2fs to set the other advanced options
     memset(options, 0, sizeof(options));
-    if (dico_get_string(d, 0, FSYSHEADKEY_FSUUID, buffer, sizeof(buffer))==0 && strlen(buffer)==36)
+    if (strlen(mkfsuuid) > 0)
+        strlcatf(options, sizeof(options), " -U %s ", mkfsuuid);
+    else if (dico_get_string(d, 0, FSYSHEADKEY_FSUUID, buffer, sizeof(buffer))==0 && strlen(buffer)==36)
         strlcatf(options, sizeof(options), " -U %s ", buffer);
     
     if (dico_get_string(d, 0, FSYSHEADKEY_FSEXTDEFMNTOPT, buffer, sizeof(buffer))==0 && strlen(buffer)>0)
@@ -502,28 +509,11 @@ int ext4_test(char *partition)
 
 int extfs_get_reqmntopt(char *partition, cstrlist *reqopt, cstrlist *badopt)
 {
-    blk_t use_superblock=0;
-    int use_blocksize=0;
-    u32 defmntoptmask;
-    ext2_filsys fs;
-    
     if (!reqopt || !badopt)
         return -1;
     
-    // check the "default mount options"
-    if (ext2fs_open(partition, EXT2_FLAG_JOURNAL_DEV_OK | EXT2_FLAG_SOFTSUPP_FEATURES, use_superblock,  use_blocksize, unix_io_manager, &fs)!=0)
-        return -1;
-    
-    defmntoptmask=fs->super->s_default_mount_opts;
-    if (!(defmntoptmask&EXT2_DEFM_XATTR_USER))
-        strlist_add(reqopt, "user_xattr");
-    if (!(defmntoptmask&EXT2_DEFM_ACL))
-        strlist_add(reqopt, "acl");
-    
     strlist_add(badopt, "nouser_xattr");
     strlist_add(badopt, "noacl");
-    
-    ext2fs_close(fs);
     
     return 0;
 }
@@ -564,7 +554,7 @@ u64 check_prog_version(char *prog)
     }
     
     x=y=z=0;
-    sscanf(result, "%s %d.%d.%d", temp1, &x, &y, &z);
+    sscanf(result, "%1023s %d.%d.%d", temp1, &x, &y, &z);
     
     if (x==0 && y==0)
     {   errprintf("can't parse %s version number: x=y=0\n", prog);
@@ -573,7 +563,3 @@ u64 check_prog_version(char *prog)
     
     return PROGVER(x,y,z);
 }
-
-
-
-
