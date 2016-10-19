@@ -1206,23 +1206,23 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/net.cpp" line="943"/>
         <location filename="../src/net.cpp" line="1002"/>
         <location filename="../src/net.cpp" line="1171"/>
-        <location filename="../src/net.cpp" line="1239"/>
-        <location filename="../src/net.cpp" line="1256"/>
-        <location filename="../src/net.cpp" line="1263"/>
-        <location filename="../src/net.cpp" line="1270"/>
-        <location filename="../src/net.cpp" line="1283"/>
-        <location filename="../src/net.cpp" line="1314"/>
-        <location filename="../src/net.cpp" line="1343"/>
-        <location filename="../src/net.cpp" line="1346"/>
-        <location filename="../src/net.cpp" line="1351"/>
-        <location filename="../src/net.cpp" line="1368"/>
-        <location filename="../src/net.cpp" line="1375"/>
-        <location filename="../src/net.cpp" line="1381"/>
-        <location filename="../src/net.cpp" line="1385"/>
-        <location filename="../src/net.cpp" line="1548"/>
-        <location filename="../src/net.cpp" line="1686"/>
-        <location filename="../src/net.cpp" line="1691"/>
-        <location filename="../src/net.cpp" line="1751"/>
+        <location filename="../src/net.cpp" line="1240"/>
+        <location filename="../src/net.cpp" line="1257"/>
+        <location filename="../src/net.cpp" line="1264"/>
+        <location filename="../src/net.cpp" line="1271"/>
+        <location filename="../src/net.cpp" line="1284"/>
+        <location filename="../src/net.cpp" line="1315"/>
+        <location filename="../src/net.cpp" line="1344"/>
+        <location filename="../src/net.cpp" line="1347"/>
+        <location filename="../src/net.cpp" line="1352"/>
+        <location filename="../src/net.cpp" line="1370"/>
+        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1383"/>
+        <location filename="../src/net.cpp" line="1387"/>
+        <location filename="../src/net.cpp" line="1550"/>
+        <location filename="../src/net.cpp" line="1688"/>
+        <location filename="../src/net.cpp" line="1693"/>
+        <location filename="../src/net.cpp" line="1753"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>appunto</translation>
@@ -1491,7 +1491,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>Se la partizione btrfs esistente da formattare? Il nuovo UUID viene definito qui. Se si sceglie No, l&apos;UUID rimane conservato.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1264"/>
+        <location filename="../src/net.cpp" line="1265"/>
         <source>The partition type is not supported.
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt
@@ -1499,7 +1499,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1352"/>
+        <location filename="../src/net.cpp" line="1353"/>
         <source>The restore of the partition/directorie was break by user!
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeichnisses wurde vom Benutzer abgebrochen!
@@ -1507,7 +1507,7 @@ Die Dateiendung muss .fsa sein</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1692"/>
+        <location filename="../src/net.cpp" line="1694"/>
         <source>The backup or restore with ssh is not possible. Exit the program and restart it again in the terminal with root right.
 </source>
         <comment> Die Sicherung oder Wiederherstellung mit ssh ist nicht möglich. Beenden Sie  das Programm und starten es erneut im Terminal mit Root-Rechten
@@ -1543,51 +1543,51 @@ entschlüsseln. Schlüssel</comment>
 backup. chiave:</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1241"/>
-        <location filename="../src/net.cpp" line="1284"/>
+        <location filename="../src/net.cpp" line="1242"/>
         <location filename="../src/net.cpp" line="1285"/>
-        <location filename="../src/net.cpp" line="1343"/>
-        <location filename="../src/net.cpp" line="1347"/>
-        <location filename="../src/net.cpp" line="1369"/>
-        <location filename="../src/net.cpp" line="1370"/>
-        <location filename="../src/net.cpp" line="1376"/>
-        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1286"/>
+        <location filename="../src/net.cpp" line="1344"/>
+        <location filename="../src/net.cpp" line="1348"/>
+        <location filename="../src/net.cpp" line="1371"/>
+        <location filename="../src/net.cpp" line="1372"/>
+        <location filename="../src/net.cpp" line="1378"/>
+        <location filename="../src/net.cpp" line="1379"/>
         <source> files, </source>
         <comment> Dateien, </comment>
         <translation> files</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1241"/>
-        <location filename="../src/net.cpp" line="1284"/>
+        <location filename="../src/net.cpp" line="1242"/>
         <location filename="../src/net.cpp" line="1285"/>
-        <location filename="../src/net.cpp" line="1343"/>
-        <location filename="../src/net.cpp" line="1347"/>
-        <location filename="../src/net.cpp" line="1369"/>
-        <location filename="../src/net.cpp" line="1376"/>
+        <location filename="../src/net.cpp" line="1286"/>
+        <location filename="../src/net.cpp" line="1344"/>
+        <location filename="../src/net.cpp" line="1348"/>
+        <location filename="../src/net.cpp" line="1371"/>
+        <location filename="../src/net.cpp" line="1378"/>
         <source> directories, </source>
         <comment> Verzeichnisse, </comment>
         <translation> directories,</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1241"/>
-        <location filename="../src/net.cpp" line="1284"/>
-        <location filename="../src/net.cpp" line="1286"/>
-        <location filename="../src/net.cpp" line="1343"/>
-        <location filename="../src/net.cpp" line="1369"/>
+        <location filename="../src/net.cpp" line="1242"/>
+        <location filename="../src/net.cpp" line="1285"/>
+        <location filename="../src/net.cpp" line="1287"/>
+        <location filename="../src/net.cpp" line="1344"/>
         <location filename="../src/net.cpp" line="1371"/>
-        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1373"/>
+        <location filename="../src/net.cpp" line="1379"/>
         <source> links and </source>
         <comment> Links und </comment>
         <translation> links e</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1241"/>
+        <location filename="../src/net.cpp" line="1242"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
         <translation> dati specifico è stato eseguito il backup.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1271"/>
+        <location filename="../src/net.cpp" line="1272"/>
         <source>The partition type is not supported. Maybe the partition is encrypted?
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?
@@ -1595,7 +1595,7 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1284"/>
+        <location filename="../src/net.cpp" line="1285"/>
         <source> specials have been backed
 .</source>
         <comment> spezielle Daten wurden gesichert
@@ -1603,7 +1603,7 @@ backup. chiave:</translation>
         <translation> dati specifico è stato eseguito il backup.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1286"/>
+        <location filename="../src/net.cpp" line="1287"/>
         <source> specials were not properly backed
 .</source>
         <comment> spezielle Daten wurden nicht korrekt gesichert.
@@ -1611,7 +1611,7 @@ backup. chiave:</translation>
         <translation> dati specifico non è stato il backup. </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1369"/>
+        <location filename="../src/net.cpp" line="1371"/>
         <source> specials have been restored
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
@@ -1619,7 +1619,7 @@ backup. chiave:</translation>
         <translation> specificati i dati è stata restaurata.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1369"/>
+        <location filename="../src/net.cpp" line="1371"/>
         <source>The restore of the partition/directorie was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeichnisses war nur teilweise erfolgreich
@@ -1627,8 +1627,8 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1372"/>
-        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1374"/>
+        <location filename="../src/net.cpp" line="1379"/>
         <source> specials were not properly restored
 .</source>
         <comment> spezielle Daten wurden nicht korrekt wiederhergestellt.
@@ -1636,7 +1636,7 @@ backup. chiave:</translation>
         <translation>.dati specifico non è stato ripristinato.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1376"/>
+        <location filename="../src/net.cpp" line="1378"/>
         <source>The restore of the partition/directorie was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeicnisses war nur teilweise erfolgreich
@@ -1644,7 +1644,7 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1379"/>
         <source> specials and the Partition Boot Record have been restored
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
@@ -1657,14 +1657,14 @@ backup. chiave:</translation>
         <translation type="obsolete"> files</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1370"/>
-        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1372"/>
+        <location filename="../src/net.cpp" line="1379"/>
         <source> directories and </source>
         <comment> Verzeichnisse und </comment>
         <translation> driectories e</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1314"/>
+        <location filename="../src/net.cpp" line="1315"/>
         <source>cannot restore an archive to a partition which is mounted, unmount it first 
 </source>
         <comment>Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!
@@ -1672,7 +1672,7 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1346"/>
+        <location filename="../src/net.cpp" line="1347"/>
         <source>The partition is successful back.
 </source>
         <comment>Die Partition wurde erfolgreich wieder hergestellt.
@@ -1680,7 +1680,7 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1343"/>
+        <location filename="../src/net.cpp" line="1344"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
         <translation> dati specifici è stato restaurato.</translation>
@@ -1698,7 +1698,7 @@ backup. chiave:</translation>
         <translation>Ripristinare la partizione/directory</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1240"/>
+        <location filename="../src/net.cpp" line="1241"/>
         <source>The partition/directorie has been backed up successfully.
 </source>
         <comment>Die Partition/das Verzeichnis wurde erfolgreich gesichert.
@@ -1706,7 +1706,7 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1257"/>
+        <location filename="../src/net.cpp" line="1258"/>
         <source>The backup of the partition/directorie was aborted by the user!
 </source>
         <comment>Die Sicherung der Partition/des Verzeichnisses wurde vom Benutzer abgebrochen!
@@ -1714,7 +1714,7 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1284"/>
+        <location filename="../src/net.cpp" line="1285"/>
         <source>The backup of the partition/directorie was only partially successful.
 </source>
         <comment>Die Sicherung der Partition/des Verzeichnis war nur teilweise erfolgreich
@@ -1722,7 +1722,7 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1343"/>
+        <location filename="../src/net.cpp" line="1344"/>
         <source>The partition/directorie is successful back.
 </source>
         <comment>Die Partition/das Verzeichnis wurde erfolgreich wieder hergestellt.
@@ -1730,19 +1730,19 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1347"/>
+        <location filename="../src/net.cpp" line="1348"/>
         <source> links </source>
         <comment> Links </comment>
         <translation> links</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1347"/>
+        <location filename="../src/net.cpp" line="1348"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
         <translation> specificati i dati e il settore di avvio della partizione è stata restaurata.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1382"/>
+        <location filename="../src/net.cpp" line="1384"/>
         <source>You tried to restore a partition. The selected file can only restore directories. Please restart the program.
 </source>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
@@ -1750,7 +1750,7 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1385"/>
+        <location filename="../src/net.cpp" line="1387"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben. 
@@ -1758,32 +1758,32 @@ backup. chiave:</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1549"/>
+        <location filename="../src/net.cpp" line="1551"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>Si</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1550"/>
+        <location filename="../src/net.cpp" line="1552"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1563"/>
+        <location filename="../src/net.cpp" line="1565"/>
         <source>Do you want really break the save or restore from the partition?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
         <translation>Do you want really break the save or restore from the partition?</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1671"/>
+        <location filename="../src/net.cpp" line="1673"/>
         <source>If you have not set up SSH authentication, you must now enter the password in the terminal. Should this continue to be displayed? You can change this in the basic settings.</source>
         <comment>Wenn Sie keine SSH-Authentifizierung eingerichtet haben, müssen Sie nun das Passwort in dem Terminal eingeben. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern</comment>
         <translation>Nel file / usr/share/doc/qt5-fsarchiver/Leggimi sono incluse istruzioni sull&apos;uso del programma. Se questo continuerà ad essere visualizzata? È possibile modificare questo nelle impostazioni di base.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1686"/>
-        <location filename="../src/net.cpp" line="1751"/>
+        <location filename="../src/net.cpp" line="1688"/>
+        <location filename="../src/net.cpp" line="1753"/>
         <source>The SSH server is not reachable. Try again or with another network protocol.
 </source>
         <comment>Der SSH-Server ist nicht erreichbar. Versuchen Sie es nochmals oder mit einem anderen Netzwerkprotokoll.
@@ -1801,7 +1801,7 @@ backup. chiave:</translation>
 3. lasciare il server con il comando exit.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1850"/>
+        <location filename="../src/net.cpp" line="1852"/>
         <source>Name</source>
         <translation>nome</translation>
     </message>
@@ -2744,20 +2744,20 @@ chiave di riserva:</translation>
         <location filename="../src/mainWindow.cpp" line="1011"/>
         <location filename="../src/mainWindow.cpp" line="1093"/>
         <location filename="../src/mainWindow.cpp" line="1171"/>
-        <location filename="../src/mainWindow.cpp" line="1349"/>
-        <location filename="../src/mainWindow.cpp" line="1370"/>
-        <location filename="../src/mainWindow.cpp" line="1377"/>
-        <location filename="../src/mainWindow.cpp" line="1384"/>
-        <location filename="../src/mainWindow.cpp" line="1388"/>
-        <location filename="../src/mainWindow.cpp" line="1401"/>
-        <location filename="../src/mainWindow.cpp" line="1423"/>
-        <location filename="../src/mainWindow.cpp" line="1452"/>
-        <location filename="../src/mainWindow.cpp" line="1456"/>
-        <location filename="../src/mainWindow.cpp" line="1461"/>
-        <location filename="../src/mainWindow.cpp" line="1478"/>
-        <location filename="../src/mainWindow.cpp" line="1487"/>
-        <location filename="../src/mainWindow.cpp" line="1498"/>
-        <location filename="../src/mainWindow.cpp" line="1501"/>
+        <location filename="../src/mainWindow.cpp" line="1350"/>
+        <location filename="../src/mainWindow.cpp" line="1371"/>
+        <location filename="../src/mainWindow.cpp" line="1378"/>
+        <location filename="../src/mainWindow.cpp" line="1385"/>
+        <location filename="../src/mainWindow.cpp" line="1389"/>
+        <location filename="../src/mainWindow.cpp" line="1402"/>
+        <location filename="../src/mainWindow.cpp" line="1424"/>
+        <location filename="../src/mainWindow.cpp" line="1453"/>
+        <location filename="../src/mainWindow.cpp" line="1457"/>
+        <location filename="../src/mainWindow.cpp" line="1462"/>
+        <location filename="../src/mainWindow.cpp" line="1480"/>
+        <location filename="../src/mainWindow.cpp" line="1489"/>
+        <location filename="../src/mainWindow.cpp" line="1500"/>
+        <location filename="../src/mainWindow.cpp" line="1503"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>Riferimento</translation>
@@ -2985,12 +2985,11 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>qt5-fsarchiver</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1086"/>
         <source>Backup and restore partitions, directory and MBR
 Version 0.8.0-0, October 15, 2016</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
 <translation>Backup e ripristino partizioni, directory e MBR.
-La versione 0.8.0-0, 3. Ottobre. 2016</translation>
+La versione 0.8.0-3, 31. Ottobre. 2016</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1094"/>
@@ -3013,7 +3012,7 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation>No</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1350"/>
+        <location filename="../src/mainWindow.cpp" line="1351"/>
         <source>The partition has been backed up successfully.
 </source>
         <comment>Die Partition wurde erfolgreich gesichert.
@@ -3021,52 +3020,52 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1351"/>
-        <location filename="../src/mainWindow.cpp" line="1403"/>
-        <location filename="../src/mainWindow.cpp" line="1405"/>
-        <location filename="../src/mainWindow.cpp" line="1453"/>
-        <location filename="../src/mainWindow.cpp" line="1457"/>
-        <location filename="../src/mainWindow.cpp" line="1480"/>
+        <location filename="../src/mainWindow.cpp" line="1352"/>
+        <location filename="../src/mainWindow.cpp" line="1404"/>
+        <location filename="../src/mainWindow.cpp" line="1406"/>
+        <location filename="../src/mainWindow.cpp" line="1454"/>
+        <location filename="../src/mainWindow.cpp" line="1458"/>
         <location filename="../src/mainWindow.cpp" line="1482"/>
-        <location filename="../src/mainWindow.cpp" line="1489"/>
-        <location filename="../src/mainWindow.cpp" line="1492"/>
+        <location filename="../src/mainWindow.cpp" line="1484"/>
+        <location filename="../src/mainWindow.cpp" line="1491"/>
+        <location filename="../src/mainWindow.cpp" line="1494"/>
         <source> files, </source>
         <comment> Dateien, </comment>
         <translation> files</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1351"/>
-        <location filename="../src/mainWindow.cpp" line="1403"/>
-        <location filename="../src/mainWindow.cpp" line="1405"/>
-        <location filename="../src/mainWindow.cpp" line="1453"/>
-        <location filename="../src/mainWindow.cpp" line="1457"/>
-        <location filename="../src/mainWindow.cpp" line="1480"/>
-        <location filename="../src/mainWindow.cpp" line="1489"/>
+        <location filename="../src/mainWindow.cpp" line="1352"/>
+        <location filename="../src/mainWindow.cpp" line="1404"/>
+        <location filename="../src/mainWindow.cpp" line="1406"/>
+        <location filename="../src/mainWindow.cpp" line="1454"/>
+        <location filename="../src/mainWindow.cpp" line="1458"/>
+        <location filename="../src/mainWindow.cpp" line="1482"/>
+        <location filename="../src/mainWindow.cpp" line="1491"/>
         <source> directories, </source>
         <comment> Verzeichnisse, </comment>
         <translation> directories</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1351"/>
-        <location filename="../src/mainWindow.cpp" line="1403"/>
-        <location filename="../src/mainWindow.cpp" line="1406"/>
-        <location filename="../src/mainWindow.cpp" line="1453"/>
-        <location filename="../src/mainWindow.cpp" line="1480"/>
-        <location filename="../src/mainWindow.cpp" line="1483"/>
-        <location filename="../src/mainWindow.cpp" line="1490"/>
-        <location filename="../src/mainWindow.cpp" line="1493"/>
+        <location filename="../src/mainWindow.cpp" line="1352"/>
+        <location filename="../src/mainWindow.cpp" line="1404"/>
+        <location filename="../src/mainWindow.cpp" line="1407"/>
+        <location filename="../src/mainWindow.cpp" line="1454"/>
+        <location filename="../src/mainWindow.cpp" line="1482"/>
+        <location filename="../src/mainWindow.cpp" line="1485"/>
+        <location filename="../src/mainWindow.cpp" line="1492"/>
+        <location filename="../src/mainWindow.cpp" line="1495"/>
         <source> links and </source>
         <comment> Links und </comment>
         <translation> link e</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1352"/>
+        <location filename="../src/mainWindow.cpp" line="1353"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
         <translation> dati specifico è stato eseguito il backup.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1371"/>
+        <location filename="../src/mainWindow.cpp" line="1372"/>
         <source>The backup of the partition was aborted by the user!
 </source>
         <comment>Die Sicherung der Partition  wurde vom Benutzer abgebrochen!
@@ -3074,7 +3073,7 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1378"/>
+        <location filename="../src/mainWindow.cpp" line="1379"/>
         <source>The partition type is not supported.
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt.
@@ -3082,7 +3081,7 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1385"/>
+        <location filename="../src/mainWindow.cpp" line="1386"/>
         <source>The partition type is not supported. Maybe the partition is encrypted?
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?
@@ -3090,7 +3089,7 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1389"/>
+        <location filename="../src/mainWindow.cpp" line="1390"/>
         <source>Error saving partition. File too large. Use is FAT-partition?
 </source>
         <comment>Die Sicherung der Partition war nicht erfolgreich. Die Datei ist zu groß. Nutzen Sie eine FAT-Partition?
@@ -3098,7 +3097,7 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1402"/>
+        <location filename="../src/mainWindow.cpp" line="1403"/>
         <source>The backup of the partition was only partially successful.
 </source>
         <comment>Die Sicherung der Partition war nur teilweise erfolgreich
@@ -3106,7 +3105,7 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1404"/>
+        <location filename="../src/mainWindow.cpp" line="1405"/>
         <source> specials have been backed
 .</source>
         <comment> spezielle Daten wurden gesichert
@@ -3114,7 +3113,7 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation> dati specifico è stato eseguito il backup.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1407"/>
+        <location filename="../src/mainWindow.cpp" line="1408"/>
         <source> specials were not properly backed
 .</source>
         <comment> spezielle Daten wurden nicht korrekt gesichert.
@@ -3122,15 +3121,15 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation> dati specifico non è stato il backup.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1482"/>
-        <location filename="../src/mainWindow.cpp" line="1492"/>
+        <location filename="../src/mainWindow.cpp" line="1484"/>
+        <location filename="../src/mainWindow.cpp" line="1494"/>
         <source> directories and </source>
         <comment> Verzeichnisse und </comment>
         <translation> directories e</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1484"/>
-        <location filename="../src/mainWindow.cpp" line="1494"/>
+        <location filename="../src/mainWindow.cpp" line="1486"/>
+        <location filename="../src/mainWindow.cpp" line="1496"/>
         <source> specials were not properly restored
 .</source>
         <comment> spezielle Daten wurden nicht korrekt wiederhergestellt.
@@ -3138,8 +3137,8 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation>.dati specifico non è stato ripristinato.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1479"/>
-        <location filename="../src/mainWindow.cpp" line="1488"/>
+        <location filename="../src/mainWindow.cpp" line="1481"/>
+        <location filename="../src/mainWindow.cpp" line="1490"/>
         <source>The restore of the partition was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition war nur teilweise erfolgreich
@@ -3147,7 +3146,15 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1481"/>
+        <location filename="../src/mainWindow.cpp" line="1086"/>
+        <source>Backup and restore partitions, directory and MBR
+Version 0.8.0-3, October 31, 2016</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016</comment>
+        <translation type="unfinished">Backup e ripristino partizioni, directory e MBR.
+La versione 0.8.0-0, 5. Ottobre. 2016 {0.8.0-3,?} {31, 2016?}</translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="1483"/>
         <source> specials have been restored
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
@@ -3155,7 +3162,7 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation> specificati i dati è stata restaurata.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1491"/>
+        <location filename="../src/mainWindow.cpp" line="1493"/>
         <source> specials and the Partition Boot Record have been restored
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
@@ -3163,7 +3170,7 @@ La versione 0.8.0-0, 3. Ottobre. 2016</translation>
         <translation> dati specifico  e la partizione Boot Record è stato eseguito il restaurato.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1423"/>
+        <location filename="../src/mainWindow.cpp" line="1424"/>
         <source>cannot restore an archive to a partition which is mounted, unmount it first 
 </source>
         <comment>Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!
@@ -3184,8 +3191,8 @@ Version 0.6.19-21, August 1, 2016</source>
 La versione 0.6.19-21, 1. Agosto. 2016</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1452"/>
-        <location filename="../src/mainWindow.cpp" line="1456"/>
+        <location filename="../src/mainWindow.cpp" line="1453"/>
+        <location filename="../src/mainWindow.cpp" line="1457"/>
         <source>The partition is successful back.
 </source>
         <comment>Die Partition wurde erfolgreich wieder hergestellt.
@@ -3193,25 +3200,25 @@ La versione 0.6.19-21, 1. Agosto. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1453"/>
+        <location filename="../src/mainWindow.cpp" line="1454"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
         <translation> dati specifici è stato restaurato.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1457"/>
+        <location filename="../src/mainWindow.cpp" line="1458"/>
         <source> links </source>
         <comment> Links </comment>
         <translation> link e</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1457"/>
+        <location filename="../src/mainWindow.cpp" line="1458"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
         <translation> specificati i dati e il settore di avvio della partizione è stata restaurata.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1462"/>
+        <location filename="../src/mainWindow.cpp" line="1463"/>
         <source>The restore of the partition was break by user!
 </source>
         <comment>Die Wiederherstellung der Partition  wurde vom Benutzer abgebrochen!
@@ -3225,7 +3232,7 @@ La versione 0.6.19-21, 1. Agosto. 2016</translation>
         <translation type="obsolete"> collegamenti non sono stati ripristinati correttamente. Il ripristino degli elenchi è stato un successo solo parziale.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1498"/>
+        <location filename="../src/mainWindow.cpp" line="1500"/>
         <source>You have tried restore a partition. The selected file can only restore directories. Please restart the program.
 </source>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
@@ -3233,7 +3240,7 @@ La versione 0.6.19-21, 1. Agosto. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1501"/>
+        <location filename="../src/mainWindow.cpp" line="1503"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben.
@@ -3241,107 +3248,107 @@ La versione 0.6.19-21, 1. Agosto. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1607"/>
+        <location filename="../src/mainWindow.cpp" line="1609"/>
         <source>Backup file name: </source>
         <comment>Sicherungsdateiname: </comment>
         <translation>Ripristinare il nome del file:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1608"/>
+        <location filename="../src/mainWindow.cpp" line="1610"/>
         <source>Partition  name: </source>
         <comment>Partitionsname: </comment>
         <translation>nome di partizione:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1609"/>
+        <location filename="../src/mainWindow.cpp" line="1611"/>
         <source>Partition type: </source>
         <comment>Partitionsart: </comment>
         <translation>tipo di partizione:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1610"/>
+        <location filename="../src/mainWindow.cpp" line="1612"/>
         <source>UUID: </source>
         <translation>UUID:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1610"/>
+        <location filename="../src/mainWindow.cpp" line="1612"/>
         <source>Description: </source>
         <comment>Bezeichnung: </comment>
         <translation>Descrizione: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1611"/>
+        <location filename="../src/mainWindow.cpp" line="1613"/>
         <source>Partition size: </source>
         <comment>Partitionsgröße: </comment>
         <translation> ha una dimensione di:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1611"/>
-        <location filename="../src/mainWindow.cpp" line="1612"/>
+        <location filename="../src/mainWindow.cpp" line="1613"/>
+        <location filename="../src/mainWindow.cpp" line="1614"/>
         <source>Assignment of the partition: </source>
         <comment>Belegung der Partition: </comment>
         <translation>Assegnazione della partizione:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1612"/>
+        <location filename="../src/mainWindow.cpp" line="1614"/>
         <source>Compression: </source>
         <comment>Kompression: </comment>
         <translation>Compressione:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1613"/>
+        <location filename="../src/mainWindow.cpp" line="1615"/>
         <source>Approximate image file sizes: </source>
         <comment>ungefähre Sicherungsdateigröße: </comment>
         <translation>Immagine Dimensioni file approssimative:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1613"/>
+        <location filename="../src/mainWindow.cpp" line="1615"/>
         <source>Other notes: </source>
         <comment>weitere Hinweise:</comment>
         <translation>Note per il riserva:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1614"/>
+        <location filename="../src/mainWindow.cpp" line="1616"/>
         <source>to be protected/secured partition: / (root system directory) </source>
         <comment>zu sichernde / gesicherte Partition: / (Wurzel-Systemverzeichnis) </comment>
         <translation>essere protetto partizione/assicurato: / (directory di sistema root)</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1619"/>
-        <location filename="../src/mainWindow.cpp" line="1625"/>
+        <location filename="../src/mainWindow.cpp" line="1621"/>
+        <location filename="../src/mainWindow.cpp" line="1627"/>
         <source>Operating system: </source>
         <comment>Betriebsystem: </comment>
         <translation>Sistema operativo:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1619"/>
-        <location filename="../src/mainWindow.cpp" line="1625"/>
+        <location filename="../src/mainWindow.cpp" line="1621"/>
+        <location filename="../src/mainWindow.cpp" line="1627"/>
         <source>Kernel: </source>
         <translation>Kernel:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1621"/>
+        <location filename="../src/mainWindow.cpp" line="1623"/>
         <source>to be protected/secured partition: /home</source>
         <comment>zu sichernde/gesicherte Partition: /home</comment>
         <translation>essere protetto/garantito partizione: /home</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1642"/>
+        <location filename="../src/mainWindow.cpp" line="1644"/>
         <source> MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1653"/>
+        <location filename="../src/mainWindow.cpp" line="1655"/>
         <source> TB</source>
         <translation> TB</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1664"/>
+        <location filename="../src/mainWindow.cpp" line="1666"/>
         <source> GB</source>
         <translation> GB</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1853"/>
+        <location filename="../src/mainWindow.cpp" line="1855"/>
         <source>Do you really want to break the save or restore from the partition?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
         <translation>Vuoi davvero rompere clone, salvare o ripristinare un&apos;immagine dalla partizione?</translation>
