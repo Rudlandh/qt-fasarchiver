@@ -9,8 +9,7 @@
 *.o
 *.so
 *.a
-<<<<<<< HEAD
-*.o
+
 configure
 Makefile.in
 config.log
@@ -30,5 +29,3 @@ aclocal.m4
 install-sh
 tg
 
-=======
->>>>>>> qt5
