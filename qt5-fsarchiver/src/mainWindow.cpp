@@ -1083,8 +1083,8 @@ void MWindow::folder_file() {
 void MWindow::info() {
    QMessageBox::information(
       0, tr("qt5-fsarchiver"),
-      tr("Backup and restore partitions, directory and MBR\nVersion 0.8.0-0, October 15, 2016",
-	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016"));
+      tr("Backup and restore partitions, directory and MBR\nVersion 0.8.0-3, October 31, 2016",
+	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016"));
       }
 
 int MWindow::Root_Auswertung(){
@@ -1342,7 +1342,8 @@ int part_testen;
        int cnt_special = werte_holen(10);
        QString cnt_special_;
        cnt_special_ = QString::number(cnt_special);
-       if (dialog_auswertung ==0){ 
+       int err = werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) + werte_holen(16);
+       if (dialog_auswertung == 0 and err == 0){ 
            //Rückmeldung von fsarchiver: Sicherung erfolgreich
            // Ausgabe progressBar durch Timer unterbinden
            stopFlag = 1; 
@@ -1393,7 +1394,7 @@ int part_testen;
        int err_dir = werte_holen(13);
        QString err_dir_ = QString::number(err_dir); 
        int err_hardlinks = werte_holen(14);
-       err_hardlinks = err_hardlinks + werte_holen(5);
+       err_hardlinks = err_hardlinks + werte_holen(16);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
        int err_special = werte_holen(11);
        QString err_special_ = QString::number(err_special);
@@ -1435,10 +1436,10 @@ void MWindow::thread2Ready()  {
      int cnt_special = werte_holen(10);
      QString cnt_special_;
      cnt_special_ = QString::number(cnt_special);
-     int err = werte_holen(5) + werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) - werte_holen(16);
-     // if (dialog_auswertung ==0){
+     int err = werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) + werte_holen(16) ;
+     //if (dialog_auswertung == 0 and err == 0){
      //Rückmeldung von fsarchiver: Zurückschreiben erfolgreich
-     if (err ==0){
+     if (err == 0){
        // Ausgabe progressBar durch Timer unterbinden
        stopFlag = 1; 
        pushButton_restore->setEnabled(true);
@@ -1465,15 +1466,16 @@ void MWindow::thread2Ready()  {
      if (err > 0) {
           // Anzahl nicht korrekt zurückgeschriebene Dateien ausgeben
        pushButton_restore->setEnabled(false);
+       int err_special = werte_holen(11);
+       QString err_special_ = QString::number(err_special);
        int err_regfile = werte_holen(12);
        QString err_regfile_ = QString::number(err_regfile);
        int err_dir = werte_holen(13);
        QString err_dir_ = QString::number(err_dir); 
        int err_hardlinks = werte_holen(14);
-       err_hardlinks = err_hardlinks + werte_holen(5);
+       err_hardlinks = err_hardlinks + werte_holen(16);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
-       int err_special = werte_holen(11);
-       QString err_special_ = QString::number(err_special);
+       
       if (i!=0) {  
        QMessageBox::about(this, tr("Note", "Hinweis"), 
        	  tr("The restore of the partition was only partially successful.\n", "Die Wiederherstellung der Partition war nur teilweise erfolgreich\n")

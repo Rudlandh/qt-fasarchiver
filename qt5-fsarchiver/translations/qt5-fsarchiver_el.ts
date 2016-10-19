@@ -1267,23 +1267,23 @@ Die Dateiendung muss .fsa sein</comment>
         <location filename="../src/net.cpp" line="943"/>
         <location filename="../src/net.cpp" line="1002"/>
         <location filename="../src/net.cpp" line="1171"/>
-        <location filename="../src/net.cpp" line="1239"/>
-        <location filename="../src/net.cpp" line="1256"/>
-        <location filename="../src/net.cpp" line="1263"/>
-        <location filename="../src/net.cpp" line="1270"/>
-        <location filename="../src/net.cpp" line="1283"/>
-        <location filename="../src/net.cpp" line="1314"/>
-        <location filename="../src/net.cpp" line="1343"/>
-        <location filename="../src/net.cpp" line="1346"/>
-        <location filename="../src/net.cpp" line="1351"/>
-        <location filename="../src/net.cpp" line="1368"/>
-        <location filename="../src/net.cpp" line="1375"/>
-        <location filename="../src/net.cpp" line="1381"/>
-        <location filename="../src/net.cpp" line="1385"/>
-        <location filename="../src/net.cpp" line="1548"/>
-        <location filename="../src/net.cpp" line="1686"/>
-        <location filename="../src/net.cpp" line="1691"/>
-        <location filename="../src/net.cpp" line="1751"/>
+        <location filename="../src/net.cpp" line="1240"/>
+        <location filename="../src/net.cpp" line="1257"/>
+        <location filename="../src/net.cpp" line="1264"/>
+        <location filename="../src/net.cpp" line="1271"/>
+        <location filename="../src/net.cpp" line="1284"/>
+        <location filename="../src/net.cpp" line="1315"/>
+        <location filename="../src/net.cpp" line="1344"/>
+        <location filename="../src/net.cpp" line="1347"/>
+        <location filename="../src/net.cpp" line="1352"/>
+        <location filename="../src/net.cpp" line="1370"/>
+        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1383"/>
+        <location filename="../src/net.cpp" line="1387"/>
+        <location filename="../src/net.cpp" line="1550"/>
+        <location filename="../src/net.cpp" line="1688"/>
+        <location filename="../src/net.cpp" line="1693"/>
+        <location filename="../src/net.cpp" line="1753"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>Σημείωση</translation>
@@ -1600,7 +1600,7 @@ entschlüsseln. Schlüssel</comment>
 δημιουργία αντιγράφων ασφαλείας. κλειδί:</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1240"/>
+        <location filename="../src/net.cpp" line="1241"/>
         <source>The partition/directorie has been backed up successfully.
 </source>
         <comment>Die Partition/das Verzeichnis wurde erfolgreich gesichert.
@@ -1608,51 +1608,51 @@ entschlüsseln. Schlüssel</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1241"/>
-        <location filename="../src/net.cpp" line="1284"/>
+        <location filename="../src/net.cpp" line="1242"/>
         <location filename="../src/net.cpp" line="1285"/>
-        <location filename="../src/net.cpp" line="1343"/>
-        <location filename="../src/net.cpp" line="1347"/>
-        <location filename="../src/net.cpp" line="1369"/>
-        <location filename="../src/net.cpp" line="1370"/>
-        <location filename="../src/net.cpp" line="1376"/>
-        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1286"/>
+        <location filename="../src/net.cpp" line="1344"/>
+        <location filename="../src/net.cpp" line="1348"/>
+        <location filename="../src/net.cpp" line="1371"/>
+        <location filename="../src/net.cpp" line="1372"/>
+        <location filename="../src/net.cpp" line="1378"/>
+        <location filename="../src/net.cpp" line="1379"/>
         <source> files, </source>
         <comment> Dateien, </comment>
         <translation> αρχεία </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1241"/>
-        <location filename="../src/net.cpp" line="1284"/>
+        <location filename="../src/net.cpp" line="1242"/>
         <location filename="../src/net.cpp" line="1285"/>
-        <location filename="../src/net.cpp" line="1343"/>
-        <location filename="../src/net.cpp" line="1347"/>
-        <location filename="../src/net.cpp" line="1369"/>
-        <location filename="../src/net.cpp" line="1376"/>
+        <location filename="../src/net.cpp" line="1286"/>
+        <location filename="../src/net.cpp" line="1344"/>
+        <location filename="../src/net.cpp" line="1348"/>
+        <location filename="../src/net.cpp" line="1371"/>
+        <location filename="../src/net.cpp" line="1378"/>
         <source> directories, </source>
         <comment> Verzeichnisse, </comment>
         <translation>καταλόγους,</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1241"/>
-        <location filename="../src/net.cpp" line="1284"/>
-        <location filename="../src/net.cpp" line="1286"/>
-        <location filename="../src/net.cpp" line="1343"/>
-        <location filename="../src/net.cpp" line="1369"/>
+        <location filename="../src/net.cpp" line="1242"/>
+        <location filename="../src/net.cpp" line="1285"/>
+        <location filename="../src/net.cpp" line="1287"/>
+        <location filename="../src/net.cpp" line="1344"/>
         <location filename="../src/net.cpp" line="1371"/>
-        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1373"/>
+        <location filename="../src/net.cpp" line="1379"/>
         <source> links and </source>
         <comment> Links und </comment>
         <translation> συνδέσεις και </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1241"/>
+        <location filename="../src/net.cpp" line="1242"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
         <translation>ειδικές προσφορές έχουν αντίγραφα.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1257"/>
+        <location filename="../src/net.cpp" line="1258"/>
         <source>The backup of the partition/directorie was aborted by the user!
 </source>
         <comment>Die Sicherung der Partition/des Verzeichnisses wurde vom Benutzer abgebrochen!
@@ -1660,7 +1660,7 @@ entschlüsseln. Schlüssel</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1264"/>
+        <location filename="../src/net.cpp" line="1265"/>
         <source>The partition type is not supported.
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt
@@ -1668,7 +1668,7 @@ entschlüsseln. Schlüssel</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1271"/>
+        <location filename="../src/net.cpp" line="1272"/>
         <source>The partition type is not supported. Maybe the partition is encrypted?
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?
@@ -1677,7 +1677,7 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1284"/>
+        <location filename="../src/net.cpp" line="1285"/>
         <source>The backup of the partition/directorie was only partially successful.
 </source>
         <comment>Die Sicherung der Partition/des Verzeichnis war nur teilweise erfolgreich
@@ -1685,7 +1685,7 @@ entschlüsseln. Schlüssel</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1284"/>
+        <location filename="../src/net.cpp" line="1285"/>
         <source> specials have been backed
 .</source>
         <comment> spezielle Daten wurden gesichert
@@ -1693,7 +1693,7 @@ entschlüsseln. Schlüssel</comment>
         <translation>ειδικές προσφορές έχουν αντίγραφα.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1286"/>
+        <location filename="../src/net.cpp" line="1287"/>
         <source> specials were not properly backed
 .</source>
         <comment> spezielle Daten wurden nicht korrekt gesichert.
@@ -1701,7 +1701,7 @@ entschlüsseln. Schlüssel</comment>
         <translation>αφιερώματα δεν ήταν σωστά υποστηρίζεται.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1314"/>
+        <location filename="../src/net.cpp" line="1315"/>
         <source>cannot restore an archive to a partition which is mounted, unmount it first 
 </source>
         <comment>Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!
@@ -1710,7 +1710,7 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1343"/>
+        <location filename="../src/net.cpp" line="1344"/>
         <source>The partition/directorie is successful back.
 </source>
         <comment>Die Partition/das Verzeichnis wurde erfolgreich wieder hergestellt.
@@ -1718,13 +1718,13 @@ entschlüsseln. Schlüssel</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1343"/>
+        <location filename="../src/net.cpp" line="1344"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
         <translation>αφιερώματα έχουν γίνει επαναφορά.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1346"/>
+        <location filename="../src/net.cpp" line="1347"/>
         <source>The partition is successful back.
 </source>
         <comment>Die Partition wurde erfolgreich wieder hergestellt.
@@ -1733,19 +1733,19 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1347"/>
+        <location filename="../src/net.cpp" line="1348"/>
         <source> links </source>
         <comment> Links </comment>
         <translation> συνδέσεις </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1347"/>
+        <location filename="../src/net.cpp" line="1348"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
         <translation>αφιερώματα και το Διαμέρισμα Εγγραφή Εκκίνησης έχουν αποκατασταθεί.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1352"/>
+        <location filename="../src/net.cpp" line="1353"/>
         <source>The restore of the partition/directorie was break by user!
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeichnisses wurde vom Benutzer abgebrochen!
@@ -1753,7 +1753,7 @@ entschlüsseln. Schlüssel</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1369"/>
+        <location filename="../src/net.cpp" line="1371"/>
         <source>The restore of the partition/directorie was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeichnisses war nur teilweise erfolgreich
@@ -1761,7 +1761,7 @@ entschlüsseln. Schlüssel</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1369"/>
+        <location filename="../src/net.cpp" line="1371"/>
         <source> specials have been restored
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
@@ -1769,15 +1769,15 @@ entschlüsseln. Schlüssel</comment>
         <translation>αφιερώματα έχουν γίνει επαναφορά.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1370"/>
-        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1372"/>
+        <location filename="../src/net.cpp" line="1379"/>
         <source> directories and </source>
         <comment> Verzeichnisse und </comment>
         <translation>καταλόγους και</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1372"/>
-        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1374"/>
+        <location filename="../src/net.cpp" line="1379"/>
         <source> specials were not properly restored
 .</source>
         <comment> spezielle Daten wurden nicht korrekt wiederhergestellt.
@@ -1785,7 +1785,7 @@ entschlüsseln. Schlüssel</comment>
         <translation>αφιερώματα δεν ήταν σωστή αποκατάσταση.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1376"/>
+        <location filename="../src/net.cpp" line="1378"/>
         <source>The restore of the partition/directorie was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition/des Verzeicnisses war nur teilweise erfolgreich
@@ -1793,7 +1793,7 @@ entschlüsseln. Schlüssel</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1377"/>
+        <location filename="../src/net.cpp" line="1379"/>
         <source> specials and the Partition Boot Record have been restored
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
@@ -1801,7 +1801,7 @@ entschlüsseln. Schlüssel</comment>
         <translation>αφιερώματα και το Διαμέρισμα Εγγραφή Εκκίνησης έχουν αποκατασταθεί.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1382"/>
+        <location filename="../src/net.cpp" line="1384"/>
         <source>You tried to restore a partition. The selected file can only restore directories. Please restart the program.
 </source>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
@@ -1810,7 +1810,7 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1385"/>
+        <location filename="../src/net.cpp" line="1387"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben. 
@@ -1819,32 +1819,32 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1549"/>
+        <location filename="../src/net.cpp" line="1551"/>
         <source>Yes</source>
         <comment>Ja</comment>
         <translation>Ναι</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1550"/>
+        <location filename="../src/net.cpp" line="1552"/>
         <source>No</source>
         <comment>Nein</comment>
         <translation>Όχι</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1563"/>
+        <location filename="../src/net.cpp" line="1565"/>
         <source>Do you want really break the save or restore from the partition?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
         <translation>Θέλετε πραγματικά να σπάσει το αποθηκεύσετε ή να επαναφέρετε το διαμέρισμα;</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1671"/>
+        <location filename="../src/net.cpp" line="1673"/>
         <source>If you have not set up SSH authentication, you must now enter the password in the terminal. Should this continue to be displayed? You can change this in the basic settings.</source>
         <comment>Wenn Sie keine SSH-Authentifizierung eingerichtet haben, müssen Sie nun das Passwort in dem Terminal eingeben. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern</comment>
         <translation>Εάν δεν έχετε ορίσει SSH ελέγχου ταυτότητας, πρέπει τώρα να εισάγετε τον κωδικό πρόσβασης στο τερματικό. Πρέπει να συνεχίσουν να εμφανίζονται; Μπορείτε να το αλλάξετε τις βασικές ρυθμίσεις.</translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1686"/>
-        <location filename="../src/net.cpp" line="1751"/>
+        <location filename="../src/net.cpp" line="1688"/>
+        <location filename="../src/net.cpp" line="1753"/>
         <source>The SSH server is not reachable. Try again or with another network protocol.
 </source>
         <comment>Der SSH-Server ist nicht erreichbar. Versuchen Sie es nochmals oder mit einem anderen Netzwerkprotokoll.
@@ -1853,7 +1853,7 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1692"/>
+        <location filename="../src/net.cpp" line="1694"/>
         <source>The backup or restore with ssh is not possible. Exit the program and restart it again in the terminal with root right.
 </source>
         <comment> Die Sicherung oder Wiederherstellung mit ssh ist nicht möglich. Beenden Sie  das Programm und starten es erneut im Terminal mit Root-Rechten
@@ -1869,7 +1869,7 @@ entschlüsseln. Schlüssel</comment>
 </translation>
     </message>
     <message>
-        <location filename="../src/net.cpp" line="1850"/>
+        <location filename="../src/net.cpp" line="1852"/>
         <source>Name</source>
         <translation>Όνομα</translation>
     </message>
@@ -2728,20 +2728,20 @@ verschlüsseln. Schlüssel</comment>
         <location filename="../src/mainWindow.cpp" line="1011"/>
         <location filename="../src/mainWindow.cpp" line="1093"/>
         <location filename="../src/mainWindow.cpp" line="1171"/>
-        <location filename="../src/mainWindow.cpp" line="1349"/>
-        <location filename="../src/mainWindow.cpp" line="1370"/>
-        <location filename="../src/mainWindow.cpp" line="1377"/>
-        <location filename="../src/mainWindow.cpp" line="1384"/>
-        <location filename="../src/mainWindow.cpp" line="1388"/>
-        <location filename="../src/mainWindow.cpp" line="1401"/>
-        <location filename="../src/mainWindow.cpp" line="1423"/>
-        <location filename="../src/mainWindow.cpp" line="1452"/>
-        <location filename="../src/mainWindow.cpp" line="1456"/>
-        <location filename="../src/mainWindow.cpp" line="1461"/>
-        <location filename="../src/mainWindow.cpp" line="1478"/>
-        <location filename="../src/mainWindow.cpp" line="1487"/>
-        <location filename="../src/mainWindow.cpp" line="1498"/>
-        <location filename="../src/mainWindow.cpp" line="1501"/>
+        <location filename="../src/mainWindow.cpp" line="1350"/>
+        <location filename="../src/mainWindow.cpp" line="1371"/>
+        <location filename="../src/mainWindow.cpp" line="1378"/>
+        <location filename="../src/mainWindow.cpp" line="1385"/>
+        <location filename="../src/mainWindow.cpp" line="1389"/>
+        <location filename="../src/mainWindow.cpp" line="1402"/>
+        <location filename="../src/mainWindow.cpp" line="1424"/>
+        <location filename="../src/mainWindow.cpp" line="1453"/>
+        <location filename="../src/mainWindow.cpp" line="1457"/>
+        <location filename="../src/mainWindow.cpp" line="1462"/>
+        <location filename="../src/mainWindow.cpp" line="1480"/>
+        <location filename="../src/mainWindow.cpp" line="1489"/>
+        <location filename="../src/mainWindow.cpp" line="1500"/>
+        <location filename="../src/mainWindow.cpp" line="1503"/>
         <source>Note</source>
         <comment>Hinweis</comment>
         <translation>Σημείωση</translation>
@@ -2981,8 +2981,8 @@ Die Dateiendung muss .fsa sein</comment>
     <message>
         <location filename="../src/mainWindow.cpp" line="1086"/>
         <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-0, October 15, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
+Version 0.8.0-3, October 31, 2016</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3007,7 +3007,7 @@ Version 0.8.0-0, October 15, 2016</source>
         <translation>Όχι</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1350"/>
+        <location filename="../src/mainWindow.cpp" line="1351"/>
         <source>The partition has been backed up successfully.
 </source>
         <comment>Die Partition wurde erfolgreich gesichert.
@@ -3016,52 +3016,52 @@ Version 0.8.0-0, October 15, 2016</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1351"/>
-        <location filename="../src/mainWindow.cpp" line="1403"/>
-        <location filename="../src/mainWindow.cpp" line="1405"/>
-        <location filename="../src/mainWindow.cpp" line="1453"/>
-        <location filename="../src/mainWindow.cpp" line="1457"/>
-        <location filename="../src/mainWindow.cpp" line="1480"/>
+        <location filename="../src/mainWindow.cpp" line="1352"/>
+        <location filename="../src/mainWindow.cpp" line="1404"/>
+        <location filename="../src/mainWindow.cpp" line="1406"/>
+        <location filename="../src/mainWindow.cpp" line="1454"/>
+        <location filename="../src/mainWindow.cpp" line="1458"/>
         <location filename="../src/mainWindow.cpp" line="1482"/>
-        <location filename="../src/mainWindow.cpp" line="1489"/>
-        <location filename="../src/mainWindow.cpp" line="1492"/>
+        <location filename="../src/mainWindow.cpp" line="1484"/>
+        <location filename="../src/mainWindow.cpp" line="1491"/>
+        <location filename="../src/mainWindow.cpp" line="1494"/>
         <source> files, </source>
         <comment> Dateien, </comment>
         <translation> αρχεία </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1351"/>
-        <location filename="../src/mainWindow.cpp" line="1403"/>
-        <location filename="../src/mainWindow.cpp" line="1405"/>
-        <location filename="../src/mainWindow.cpp" line="1453"/>
-        <location filename="../src/mainWindow.cpp" line="1457"/>
-        <location filename="../src/mainWindow.cpp" line="1480"/>
-        <location filename="../src/mainWindow.cpp" line="1489"/>
+        <location filename="../src/mainWindow.cpp" line="1352"/>
+        <location filename="../src/mainWindow.cpp" line="1404"/>
+        <location filename="../src/mainWindow.cpp" line="1406"/>
+        <location filename="../src/mainWindow.cpp" line="1454"/>
+        <location filename="../src/mainWindow.cpp" line="1458"/>
+        <location filename="../src/mainWindow.cpp" line="1482"/>
+        <location filename="../src/mainWindow.cpp" line="1491"/>
         <source> directories, </source>
         <comment> Verzeichnisse, </comment>
         <translation>καταλόγους,</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1351"/>
-        <location filename="../src/mainWindow.cpp" line="1403"/>
-        <location filename="../src/mainWindow.cpp" line="1406"/>
-        <location filename="../src/mainWindow.cpp" line="1453"/>
-        <location filename="../src/mainWindow.cpp" line="1480"/>
-        <location filename="../src/mainWindow.cpp" line="1483"/>
-        <location filename="../src/mainWindow.cpp" line="1490"/>
-        <location filename="../src/mainWindow.cpp" line="1493"/>
+        <location filename="../src/mainWindow.cpp" line="1352"/>
+        <location filename="../src/mainWindow.cpp" line="1404"/>
+        <location filename="../src/mainWindow.cpp" line="1407"/>
+        <location filename="../src/mainWindow.cpp" line="1454"/>
+        <location filename="../src/mainWindow.cpp" line="1482"/>
+        <location filename="../src/mainWindow.cpp" line="1485"/>
+        <location filename="../src/mainWindow.cpp" line="1492"/>
+        <location filename="../src/mainWindow.cpp" line="1495"/>
         <source> links and </source>
         <comment> Links und </comment>
         <translation> συνδέσεις και </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1352"/>
+        <location filename="../src/mainWindow.cpp" line="1353"/>
         <source> specials have been backed.</source>
         <comment> spezielle Daten wurden gesichert.</comment>
         <translation>ειδικές προσφορές έχουν αντίγραφα.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1371"/>
+        <location filename="../src/mainWindow.cpp" line="1372"/>
         <source>The backup of the partition was aborted by the user!
 </source>
         <comment>Die Sicherung der Partition  wurde vom Benutzer abgebrochen!
@@ -3070,7 +3070,7 @@ Version 0.8.0-0, October 15, 2016</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1378"/>
+        <location filename="../src/mainWindow.cpp" line="1379"/>
         <source>The partition type is not supported.
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt.
@@ -3078,7 +3078,7 @@ Version 0.8.0-0, October 15, 2016</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1385"/>
+        <location filename="../src/mainWindow.cpp" line="1386"/>
         <source>The partition type is not supported. Maybe the partition is encrypted?
 </source>
         <comment>Der Partitionstyp wird nicht unterstützt. Vielleicht ist die Partition verschlüsselt?
@@ -3087,7 +3087,7 @@ Version 0.8.0-0, October 15, 2016</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1389"/>
+        <location filename="../src/mainWindow.cpp" line="1390"/>
         <source>Error saving partition. File too large. Use is FAT-partition?
 </source>
         <comment>Die Sicherung der Partition war nicht erfolgreich. Die Datei ist zu groß. Nutzen Sie eine FAT-Partition?
@@ -3096,7 +3096,7 @@ Version 0.8.0-0, October 15, 2016</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1402"/>
+        <location filename="../src/mainWindow.cpp" line="1403"/>
         <source>The backup of the partition was only partially successful.
 </source>
         <comment>Die Sicherung der Partition war nur teilweise erfolgreich
@@ -3104,7 +3104,7 @@ Version 0.8.0-0, October 15, 2016</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1404"/>
+        <location filename="../src/mainWindow.cpp" line="1405"/>
         <source> specials have been backed
 .</source>
         <comment> spezielle Daten wurden gesichert
@@ -3112,7 +3112,7 @@ Version 0.8.0-0, October 15, 2016</source>
         <translation>ειδικές προσφορές έχουν αντίγραφα.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1407"/>
+        <location filename="../src/mainWindow.cpp" line="1408"/>
         <source> specials were not properly backed
 .</source>
         <comment> spezielle Daten wurden nicht korrekt gesichert.
@@ -3120,7 +3120,7 @@ Version 0.8.0-0, October 15, 2016</source>
         <translation>αφιερώματα δεν ήταν σωστά υποστηρίζεται.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1423"/>
+        <location filename="../src/mainWindow.cpp" line="1424"/>
         <source>cannot restore an archive to a partition which is mounted, unmount it first 
 </source>
         <comment>Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!
@@ -3129,8 +3129,8 @@ Version 0.8.0-0, October 15, 2016</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1452"/>
-        <location filename="../src/mainWindow.cpp" line="1456"/>
+        <location filename="../src/mainWindow.cpp" line="1453"/>
+        <location filename="../src/mainWindow.cpp" line="1457"/>
         <source>The partition is successful back.
 </source>
         <comment>Die Partition wurde erfolgreich wieder hergestellt.
@@ -3139,25 +3139,25 @@ Version 0.8.0-0, October 15, 2016</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1453"/>
+        <location filename="../src/mainWindow.cpp" line="1454"/>
         <source> specials have been restored.</source>
         <comment> spezielle Daten wurden wieder hergestellt.</comment>
         <translation>αφιερώματα έχουν γίνει επαναφορά.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1457"/>
+        <location filename="../src/mainWindow.cpp" line="1458"/>
         <source> links </source>
         <comment> Links </comment>
         <translation> συνδέσεις </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1457"/>
+        <location filename="../src/mainWindow.cpp" line="1458"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
         <translation>αφιερώματα και το Διαμέρισμα Εγγραφή Εκκίνησης έχουν αποκατασταθεί.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1462"/>
+        <location filename="../src/mainWindow.cpp" line="1463"/>
         <source>The restore of the partition was break by user!
 </source>
         <comment>Die Wiederherstellung der Partition  wurde vom Benutzer abgebrochen!
@@ -3165,8 +3165,8 @@ Version 0.8.0-0, October 15, 2016</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1479"/>
-        <location filename="../src/mainWindow.cpp" line="1488"/>
+        <location filename="../src/mainWindow.cpp" line="1481"/>
+        <location filename="../src/mainWindow.cpp" line="1490"/>
         <source>The restore of the partition was only partially successful.
 </source>
         <comment>Die Wiederherstellung der Partition war nur teilweise erfolgreich
@@ -3174,7 +3174,7 @@ Version 0.8.0-0, October 15, 2016</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1481"/>
+        <location filename="../src/mainWindow.cpp" line="1483"/>
         <source> specials have been restored
 .</source>
         <comment> spezielle Daten wurden wiederhergestellt
@@ -3182,15 +3182,15 @@ Version 0.8.0-0, October 15, 2016</source>
         <translation>αφιερώματα έχουν γίνει επαναφορά.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1482"/>
-        <location filename="../src/mainWindow.cpp" line="1492"/>
+        <location filename="../src/mainWindow.cpp" line="1484"/>
+        <location filename="../src/mainWindow.cpp" line="1494"/>
         <source> directories and </source>
         <comment> Verzeichnisse und </comment>
         <translation>καταλόγους και</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1484"/>
-        <location filename="../src/mainWindow.cpp" line="1494"/>
+        <location filename="../src/mainWindow.cpp" line="1486"/>
+        <location filename="../src/mainWindow.cpp" line="1496"/>
         <source> specials were not properly restored
 .</source>
         <comment> spezielle Daten wurden nicht korrekt wiederhergestellt.
@@ -3198,7 +3198,7 @@ Version 0.8.0-0, October 15, 2016</source>
         <translation>αφιερώματα δεν ήταν σωστή αποκατάσταση.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1491"/>
+        <location filename="../src/mainWindow.cpp" line="1493"/>
         <source> specials and the Partition Boot Record have been restored
 .</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
@@ -3206,7 +3206,7 @@ Version 0.8.0-0, October 15, 2016</source>
         <translation>αφιερώματα και το Διαμέρισμα Εγγραφή Εκκίνησης έχουν αποκατασταθεί.</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1498"/>
+        <location filename="../src/mainWindow.cpp" line="1500"/>
         <source>You have tried restore a partition. The selected file can only restore directories. Please restart the program.
 </source>
         <comment>Sie haben versucht eine Partition wiederherzustellen. Die gewählte Datei kann nur Verzeichnisse wiederherstellen. Bitte starten Sie das Programm neu.
@@ -3215,7 +3215,7 @@ Version 0.8.0-0, October 15, 2016</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1501"/>
+        <location filename="../src/mainWindow.cpp" line="1503"/>
         <source>You have entered an incorrect password.
 </source>
         <comment>Sie haben ein falsches Passwort eingegeben.
@@ -3224,107 +3224,107 @@ Version 0.8.0-0, October 15, 2016</source>
 </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1607"/>
+        <location filename="../src/mainWindow.cpp" line="1609"/>
         <source>Backup file name: </source>
         <comment>Sicherungsdateiname: </comment>
         <translation>Αρχείο αντιγράφου ασφαλείας όνομα:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1608"/>
+        <location filename="../src/mainWindow.cpp" line="1610"/>
         <source>Partition  name: </source>
         <comment>Partitionsname: </comment>
         <translation>Διαμέρισμα όνομα:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1609"/>
+        <location filename="../src/mainWindow.cpp" line="1611"/>
         <source>Partition type: </source>
         <comment>Partitionsart: </comment>
         <translation>Τύπος διαμερίσματος: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1610"/>
+        <location filename="../src/mainWindow.cpp" line="1612"/>
         <source>UUID: </source>
         <translation>UUID:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1610"/>
+        <location filename="../src/mainWindow.cpp" line="1612"/>
         <source>Description: </source>
         <comment>Bezeichnung: </comment>
         <translation>Περιγραφή: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1611"/>
+        <location filename="../src/mainWindow.cpp" line="1613"/>
         <source>Partition size: </source>
         <comment>Partitionsgröße: </comment>
         <translation>Μέγεθος διαμερίσματος: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1611"/>
-        <location filename="../src/mainWindow.cpp" line="1612"/>
+        <location filename="../src/mainWindow.cpp" line="1613"/>
+        <location filename="../src/mainWindow.cpp" line="1614"/>
         <source>Assignment of the partition: </source>
         <comment>Belegung der Partition: </comment>
         <translation>Ανάθεση του διαμερίσματος: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1612"/>
+        <location filename="../src/mainWindow.cpp" line="1614"/>
         <source>Compression: </source>
         <comment>Kompression: </comment>
         <translation>Συμπίεση: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1613"/>
+        <location filename="../src/mainWindow.cpp" line="1615"/>
         <source>Approximate image file sizes: </source>
         <comment>ungefähre Sicherungsdateigröße: </comment>
         <translation>Κατά προσέγγιση εικόνα μεγέθη αρχείων:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1613"/>
+        <location filename="../src/mainWindow.cpp" line="1615"/>
         <source>Other notes: </source>
         <comment>weitere Hinweise:</comment>
         <translation>Άλλες σημειώσεις:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1614"/>
+        <location filename="../src/mainWindow.cpp" line="1616"/>
         <source>to be protected/secured partition: / (root system directory) </source>
         <comment>zu sichernde / gesicherte Partition: / (Wurzel-Systemverzeichnis) </comment>
         <translation>να προστατεύεται/εξασφάλισε διαμέρισμα: / (ριζικό κατάλογο του συστήματος)</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1619"/>
-        <location filename="../src/mainWindow.cpp" line="1625"/>
+        <location filename="../src/mainWindow.cpp" line="1621"/>
+        <location filename="../src/mainWindow.cpp" line="1627"/>
         <source>Operating system: </source>
         <comment>Betriebsystem: </comment>
         <translation>Λειτουργικό σύστημα: </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1619"/>
-        <location filename="../src/mainWindow.cpp" line="1625"/>
+        <location filename="../src/mainWindow.cpp" line="1621"/>
+        <location filename="../src/mainWindow.cpp" line="1627"/>
         <source>Kernel: </source>
         <translation>Πυρήνας:</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1621"/>
+        <location filename="../src/mainWindow.cpp" line="1623"/>
         <source>to be protected/secured partition: /home</source>
         <comment>zu sichernde/gesicherte Partition: /home</comment>
         <translation>να προστατεύεται/εξασφάλισε διαμέρισμα: /home</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1642"/>
+        <location filename="../src/mainWindow.cpp" line="1644"/>
         <source> MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1653"/>
+        <location filename="../src/mainWindow.cpp" line="1655"/>
         <source> TB</source>
         <translation>TB</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1664"/>
+        <location filename="../src/mainWindow.cpp" line="1666"/>
         <source> GB</source>
         <translation>GB</translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1853"/>
+        <location filename="../src/mainWindow.cpp" line="1855"/>
         <source>Do you really want to break the save or restore from the partition?</source>
         <comment>Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?</comment>
         <translation>Δεν θέλετε πραγματικά να σπάσει την αποθηκεύσετε ή να επαναφέρετε το διαμέρισμα;</translation>

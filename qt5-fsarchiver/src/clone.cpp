@@ -1127,6 +1127,7 @@ void DialogClone::read_write_hd_1(){
 QString befehl;
 QString bytes_;
 QStringList bytes;
+int pos = 0;
 	if (endeThread_clone !=0)
             return;
          while (pid_dd.size() < 4) 
@@ -1156,8 +1157,11 @@ QStringList bytes;
            bytes_ = bytes[0];
            bytes_ =  bytes_.left( bytes_.size() -6);
            read_write_space_sum = (bytes_.toInt()/ sekunde_summe_clone);}
-        if (bytes_ != "")
-           read_write_space_sec= bytes[7];
+        if (bytes_ != ""){
+           read_write_space_sec = bytes[7];
+           pos = read_write_space_sec.indexOf(".");
+       	  read_write_space_sec = read_write_space_sec.left(pos+1);
+           }
 }
 
 
