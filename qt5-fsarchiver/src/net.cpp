@@ -1233,7 +1233,8 @@ void DialogNet::thread1Ready()  {
        QString cnt_hardlinks_ = QString::number(cnt_hardlinks);
        int cnt_special = werte_holen(10);
        QString cnt_special_ = QString::number(cnt_special); 
-     if (dialog_auswertung ==0){ 
+       int err = werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) + werte_holen(16);
+       if (dialog_auswertung == 0 and err == 0){ 
        // Ausgabe progressBar durch Timer unterbinden
        stopFlag_ = 1; 
        QMessageBox::about(this, tr("Note", "Hinweis"), 
@@ -1275,7 +1276,7 @@ void DialogNet::thread1Ready()  {
        int err_dir = werte_holen(13);
        QString err_dir_ = QString::number(err_dir); 
        int err_hardlinks = werte_holen(14);
-       err_hardlinks = err_hardlinks + werte_holen(5);
+       err_hardlinks = err_hardlinks + werte_holen(16);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
        int err_special = werte_holen(11);
        QString err_special_ = QString::number(err_special);
@@ -1326,7 +1327,7 @@ void DialogNet::thread2Ready()  {
        int cnt_special = werte_holen(10);
        QString cnt_special_;
        cnt_special_ = QString::number(cnt_special);
-       int err = werte_holen(5) + werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) - werte_holen(16);
+       int err = werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) + werte_holen(16) ;
        //if (dialog_auswertung ==0){
        //Rückmeldung von fsarchiver: Zurückschreiben erfolgreich
      if (err ==0){
@@ -1355,15 +1356,16 @@ void DialogNet::thread2Ready()  {
      if (err > 0) {
           // Anzahl nicht korrekt zurückgeschriebene Dateien ausgeben
        pushButton_restore->setEnabled(false);
+       int err_special = werte_holen(11);
+       QString err_special_ = QString::number(err_special);
        int err_regfile = werte_holen(12);
        QString err_regfile_ = QString::number(err_regfile);
        int err_dir = werte_holen(13);
        QString err_dir_ = QString::number(err_dir); 
        int err_hardlinks = werte_holen(14);
-       err_hardlinks = err_hardlinks + werte_holen(5);
+       err_hardlinks = err_hardlinks + werte_holen(16);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
-       int err_special = werte_holen(11);
-       QString err_special_ = QString::number(err_special);
+       
        if (i!=0) {  
        QMessageBox::about(this, tr("Note", "Hinweis"), 
        	  tr("The restore of the partition/directorie was only partially successful.\n", "Die Wiederherstellung der Partition/des Verzeichnisses war nur teilweise erfolgreich\n") + cnt_regfile_ + tr(" files, ", " Dateien, ") + cnt_dir_ + tr(" directories, ", " Verzeichnisse, ") + cnt_hardlinks_ + tr(" links and ", " Links und ") + cnt_special_ + tr(" specials have been restored\n.", " spezielle Daten wurden wiederhergestellt\n.")

@@ -1,7 +1,9 @@
 ==================================================================================================
 * qt5-fsarchiver: Grafische Oberfläche für fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ==================================================================================================
-* qt5-fsarchiver-0.8.0-0 15 Oktober, 2016
+* qt5-fsarchiver-0.8.0-3 31. Oktober, 2016.
+    - Korrektur bei der Schlussmeldung.
+* qt5-fsarchiver-0.8.0-0 15 Oktober, 2016.
     - Anpassung an die Version 0.8.0 von fsarchiver
     - Die Änderungen von fsarchiver sind in der Datei Change erläutert.
 * qt5-fsarchiver-6.19-21 August 2016

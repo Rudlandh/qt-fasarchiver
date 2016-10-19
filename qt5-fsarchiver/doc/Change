@@ -1,7 +1,9 @@
 ===========================================================================================================
 * qt5-fsarchiver: Graphical interface for fsarchiver fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ===========================================================================================================
-*  qt5-fsarchiver-0.8.0-0 October 15, 2016
+*  qt5-fsarchiver-0.8.0-3 October 31, 2016.
+     - Correction for the message at the end.
+*  qt5-fsarchiver-0.8.0-0 October 15, 2016.
      - Adjustment Version 0.8.0 fsarchiver 
      - Implemented FAT filesystem support for EFI system partitions
      - Allow user to specify new filesystem label or UUID during restfs
