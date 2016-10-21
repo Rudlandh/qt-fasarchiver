@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# qt5-fsarchiver
-The Program qt5-fsarchiver is the translation from qt4-fsarchiver to the Qt5 environment. qt5-fsarchiver save and restore partitions, directories, MBR/GPT, Clone partitions and  make Images. 
-=======
 =================================================================================================================================
 qt5-fsarchiver: Back up and restore partitions for Debian,Ubuntu, Linux-Mint, Suse and Fedora [http://wiki.ubuntuusers.de/qt4-fsarchiver]
 =================================================================================================================================
