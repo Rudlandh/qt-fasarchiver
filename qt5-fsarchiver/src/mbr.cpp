@@ -67,7 +67,6 @@ QString befehl;
 QString homepath = QDir::homePath();
 int i = 0;
 int j = 0;
-int pos;
 QString filename = homepath + "/.config/qt5-fsarchiver/disk.txt";
 QFile file(filename);
 QStringList disk;
@@ -349,7 +348,6 @@ QString Dateiname;
 QString partition;
 QString befehl;
 QStringList Ubuntu_;
-string part_art;
 int i = 0;
         i = cmb_disk->currentIndex();
         partition = disk_name[i];
@@ -377,8 +375,8 @@ int DialogMBR::folder_einlesen() {
    QString Festplatte;
    int ret = 1; 
    int pos = 0;
-   int pos1 = -1;
-   int pos2;
+   int pos1 = 0;
+   int pos2 = 0;
    int i = 0;
    QModelIndex index = treeView->currentIndex();
    QModelIndexList indexes = selModel->selectedIndexes();
@@ -480,8 +478,6 @@ int DialogMBR::is_gpt(QString partition_efi)
       system (befehl.toLatin1().data());
       QString filename = homepath + "/.config/qt5-fsarchiver/efi.txt";
       QFile file(filename);
-      int pos, pos1,i,j;
-      int line = 0;
       if( file.open(QIODevice::ReadOnly|QIODevice::Text)) { 
 	QTextStream ds(&file);
         while (!ds.atEnd()){

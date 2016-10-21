@@ -19,18 +19,11 @@
 #include <iostream>
 #include <time.h>
 #include <sys/times.h>
-
-
 #include <fstream>
 #include <sstream>
 #include <stdio.h>
 #include <sys/stat.h>
 #include <sys/mount.h>
-
-#include <string.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-
 #include <mntent.h>
 #include <QtGui>
 #include "filedialog.h"
@@ -128,8 +121,8 @@ MWindow::MWindow()
    QStringList partition_kurz;
    QString partition1_;
    QStringList items; 
-   int pos, pos1;
-   int i,j;
+   int pos = 0, pos1 = 0;
+   int i = 0,j = 0, k = 0;
    QString befehl;
    QString homepath = QDir::homePath();
    QString rootpath = QDir::rootPath();
@@ -208,34 +201,27 @@ MWindow::MWindow()
    items.clear();
    QDir dir1(homepath + "/.config/qt5-fsarchiver");
    if (!dir1.exists()){
-       dir1.mkpath(homepath + "/.config/qt5-fsarchiver");
-//      befehl = "mkdir " + homepath + "/.config/qt5-fsarchiver 2>/dev/null" ;
-//      system (befehl.toLatin1().data());
+      befehl = "mkdir " + homepath + "/.config/qt5-fsarchiver 2>/dev/null" ;
+      system (befehl.toLatin1().data());
       }
    QDir dir2(rootpath + "/.config/qt5-fsarchiver");
    if (!dir1.exists()){
-       dir2.mkpath(rootpath + "/.config/qt5-fsarchiver");
-//      befehl = "mkdir " + rootpath + "/.config/qt5-fsarchiver 2>/dev/null" ;
-//      system (befehl.toLatin1().data());
+      befehl = "mkdir " + rootpath + "/.config/qt5-fsarchiver 2>/dev/null" ;
+      system (befehl.toLatin1().data());
       }
    QDir dir(homepath + "/.qt5-fs-client");
    if (!dir.exists()){
-       dir.mkpath(homepath + "/.qt5-fs-client");
-//       befehl = "mkdir " + homepath + "/.qt5-fs-client 2>/dev/null" ;
-//       system (befehl.toLatin1().data());
+       befehl = "mkdir " + homepath + "/.qt5-fs-client 2>/dev/null" ;
+       system (befehl.toLatin1().data());
    	//Rechte setzen
-//       befehl = "chmod a+rwx " + homepath + "/.qt5-fs-client 2>/dev/null";
-//       system (befehl.toLatin1().data());
-       QByteArray c_path("");
-       c_path.append(homepath + "/.qt5-fs-client");
-       chmod(c_path, S_IROTH| S_IWOTH | S_IXOTH);
+       befehl = "chmod a+rwx " + homepath + "/.qt5-fs-client 2>/dev/null";
+       system (befehl.toLatin1().data());
    // wegen Suse
    QDir dir2("/media");
    QString media = "/media";
    if (!dir2.exists()){
-       dir.mkpath(media);
-//       befehl = "mkdir " + media + " 2>/dev/null" ;
-//       system (befehl.toLatin1().data());
+       befehl = "mkdir " + media + " 2>/dev/null" ;
+       system (befehl.toLatin1().data());
        }
    }
    // beim Abbruch einer Sicherung bleiben eventuell Daten in /tmp/fsa erhalten.
@@ -243,10 +229,8 @@ MWindow::MWindow()
    // Beim Öffnen einer weiteren Instanz von qt5-fsarchiver, darf /tmp/fsa keinenfalls gelöscht werden.
    // Das System sürzt ab!!
    if (is_running() == 0) {
-      QDir *cur_dir=new QDir("/tmp/fsa");
-      cur_dir->rmdir("/tmp/fsa");
-//       befehl = "rm -r -f /tmp/fsa 2>/dev/null";
-//       system (befehl.toLatin1().data());
+       befehl = "rm -r -f /tmp/fsa 2>/dev/null"; 
+       system (befehl.toLatin1().data());
    }
    // Ini-Datei auslesen
    QFile file(homepath + "/.config/qt5-fsarchiver/qt5-fsarchiver.conf");
@@ -299,7 +283,6 @@ MWindow::MWindow()
    chk_Beschreibung->setEnabled(true);
    chk_Beschreibung->setChecked(Qt::Checked);
    label->setEnabled(false);
-
         starteinstellung();
         if (geteuid() == 0) // 0 is the UID of the root  1000 von Dieter
 	{
@@ -337,23 +320,16 @@ MWindow::MWindow()
                    { 
                    if (part_art !="system" || part_art != "home")
                      {
-            if (partition_typ == "ext" || partition_typ == "btrfs"|| partition_typ == "vfat" || partition_typ ==  "ntfs" )
+			if (partition_typ == "ext" || partition_typ == "btrfs"|| partition_typ == "vfat" || partition_typ ==  "ntfs" )
                    		{
                    	 	char mountpoint[100] = "/media/";
                          	strcat (mountpoint , part[i][0].toLatin1().data());
                                 mkdir(mountpoint, 0777);
                          	char mountpoint1[100] = "mount ";
-                            strcat (mountpoint1,partition_.toLatin1().data());
+                         	strcat (mountpoint1,partition_.toLatin1().data()); 
 			 	strcat (mountpoint1, " ");
 			 	strcat (mountpoint1, mountpoint);
-//			 	int k = system (mountpoint1);   /// !!!1  Fix to mount(partition_, mountpoint, partition_typ,  MS_RELATIME, 0);
-                QByteArray m_p("");
-                m_p.append(mountpoint1);
-                QByteArray d_p("");
-                d_p.append(partition_);
-                QByteArray p_t("");
-                p_t.append(partition_typ);
-                int k= mount(d_p, m_p, p_t,  MS_RELATIME, 0);
+			 	k = system (mountpoint1);
                          	}
                         }
  		     }
@@ -590,14 +566,10 @@ int MWindow::savePartition()
                            //char * part_= new char [part_art.size()+1];  //Umwandlung von string nach char
                            //strcpy (part_, part_art.c_str()); 
                            char umountpoint[100] = "umount ";
-                           char *str_error;
-                           strcat (umountpoint,dev_);
+                           strcat (umountpoint,dev_); 
                            //cout << umountpoint << endl;
                           if (liveFlag == 0)
-//                         	err = system (umountpoint);
-                              err=umount(umountpoint);
-                              if (err==-1)
-                                  str_error=strerror(errno);
+                         	err = system (umountpoint);                              
                            if (err != 0 && liveFlag == 0)
                                 {
 				QMessageBox::about(this,tr("Note", "Hinweis"),
@@ -747,14 +719,14 @@ int MWindow::savePartition()
 
 void MWindow::ViewProzent()
 {
-int prozent = 0;
+int prozent = 0 ;
 QString sekunde;
-int sekunde_;
+int sekunde_ = 0;
 QString minute;
-int minute_;
-int meldung;
-int anzahl;
-int anzahl1;
+int minute_ = 0;
+int meldung = 0;
+int anzahl = 0;
+int anzahl1 = 0;
 QString text_integer;
 //if (endeThread !=1)
 if (endeThread ==0)
@@ -821,10 +793,9 @@ QFile file(folder);
 QString DateiName("") ;
 char * part_;
 int err;
-int prozent;
 QString keyText = "";
 char * dev_part;
-
+int y = 0;
 
   indicator_reset();
   if (rdBt_restoreFsArchiv->isChecked())
@@ -1007,7 +978,7 @@ char * dev_part;
         			// Partition muss gelöscht werden
                                 // Partition mounten, damit sie gelöscht werden kann
 				QString befehl = "mkdir /tmp/btrfs";
-				int y =  system (befehl.toLatin1().data());
+				y =  system (befehl.toLatin1().data());
                                 befehl = "mount /dev/" + partition_ + " /tmp/btrfs";
                                 y =  system (befehl.toLatin1().data());
 				//der Inhalt von tmp/btrfs und somit der Inhalt der btrfs Partition wird gelöscht
@@ -1064,8 +1035,6 @@ QString MWindow::Zeit_auslesen(){
     int Monat;
     int Jahr;
     QString Datum_akt;
-    
-    string stringvariable;
     time_t Zeitstempel;
     tm *nun;
     Zeitstempel = time(0);
@@ -1114,8 +1083,8 @@ void MWindow::folder_file() {
 void MWindow::info() {
    QMessageBox::information(
       0, tr("qt5-fsarchiver"),
-      tr("Backup and restore partitions, directory and MBR\nVersion 0.6.19-19, June 1, 2016",
-	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-19, 1. Juni 2016"));
+      tr("Backup and restore partitions, directory and MBR\nVersion 0.8.0-3, October 31, 2016",
+	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016"));
       }
 
 int MWindow::Root_Auswertung(){
@@ -1164,7 +1133,6 @@ int MWindow::is_running(){
 int MWindow::testDateiName(string endung)
 {
   string str (folder.toLatin1().data());
-  string str2;
   size_t found;
   // different member versions of find in the same order as above:
   found=str.find(endung);
@@ -1374,7 +1342,8 @@ int part_testen;
        int cnt_special = werte_holen(10);
        QString cnt_special_;
        cnt_special_ = QString::number(cnt_special);
-       if (dialog_auswertung ==0){ 
+       int err = werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) + werte_holen(16);
+       if (dialog_auswertung == 0 and err == 0){ 
            //Rückmeldung von fsarchiver: Sicherung erfolgreich
            // Ausgabe progressBar durch Timer unterbinden
            stopFlag = 1; 
@@ -1425,7 +1394,7 @@ int part_testen;
        int err_dir = werte_holen(13);
        QString err_dir_ = QString::number(err_dir); 
        int err_hardlinks = werte_holen(14);
-       err_hardlinks = err_hardlinks + werte_holen(5);
+       err_hardlinks = err_hardlinks + werte_holen(16);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
        int err_special = werte_holen(11);
        QString err_special_ = QString::number(err_special);
@@ -1453,7 +1422,7 @@ void MWindow::thread2Ready()  {
    int i =2;
    if (meldung == 105) {
       QMessageBox::about(this, tr("Note", "Hinweis"), tr("cannot restore an archive to a partition which is mounted, unmount it first \n", "Die Partition die wiederhergestellt werden soll, ist eingehängt. Sie muss zunächst ausgehängt werden!\n"));
-      endeThread = 0;
+      endeThread == 0;
        }
    if (endeThread == 1) { 
      pushButton_end->setEnabled(true);
@@ -1467,10 +1436,10 @@ void MWindow::thread2Ready()  {
      int cnt_special = werte_holen(10);
      QString cnt_special_;
      cnt_special_ = QString::number(cnt_special);
-     int err = werte_holen(5) + werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) - werte_holen(16);
-     // if (dialog_auswertung ==0){
+     int err = werte_holen(11) + werte_holen(12) + werte_holen(13) + werte_holen(14) + werte_holen(16) ;
+     //if (dialog_auswertung == 0 and err == 0){
      //Rückmeldung von fsarchiver: Zurückschreiben erfolgreich
-     if (err ==0){
+     if (err == 0){
        // Ausgabe progressBar durch Timer unterbinden
        stopFlag = 1; 
        pushButton_restore->setEnabled(true);
@@ -1492,20 +1461,21 @@ void MWindow::thread2Ready()  {
      if (flag_end == 1) {
         QMessageBox::about(this, tr("Note", "Hinweis"),
          tr("The restore of the partition was break by user!\n", "Die Wiederherstellung der Partition  wurde vom Benutzer abgebrochen!\n") );
-	meldung = 0;
+	meldung == 0;
         }
      if (err > 0) {
           // Anzahl nicht korrekt zurückgeschriebene Dateien ausgeben
        pushButton_restore->setEnabled(false);
+       int err_special = werte_holen(11);
+       QString err_special_ = QString::number(err_special);
        int err_regfile = werte_holen(12);
        QString err_regfile_ = QString::number(err_regfile);
        int err_dir = werte_holen(13);
        QString err_dir_ = QString::number(err_dir); 
        int err_hardlinks = werte_holen(14);
-       err_hardlinks = err_hardlinks + werte_holen(5);
+       err_hardlinks = err_hardlinks + werte_holen(16);
        QString err_hardlinks_ = QString::number(err_hardlinks); 
-       int err_special = werte_holen(11);
-       QString err_special_ = QString::number(err_special);
+       
       if (i!=0) {  
        QMessageBox::about(this, tr("Note", "Hinweis"), 
        	  tr("The restore of the partition was only partially successful.\n", "Die Wiederherstellung der Partition war nur teilweise erfolgreich\n")
@@ -1702,7 +1672,6 @@ QString homepath = QDir::homePath();
 QString befehl;
 QString Linuxversion;
 int i;
-int pos;
 	befehl = "cat /etc/*release 1> " +  homepath + "/.config/qt5-fsarchiver/version.txt";
         system (befehl.toLatin1().data());
 QString filename = homepath + "/.config/qt5-fsarchiver/version.txt";
@@ -1762,7 +1731,6 @@ QString MWindow::identify_save_part(QString save_partition)
    QString save_part;
    QFile file("/etc/mtab");
    QTextStream ds(&file);
-   int pos, pos1,i,j;
    int line = 0;
    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
      text = ds.readLine();
@@ -1882,7 +1850,7 @@ QString MWindow::mountpoint(QString partition)
 
 void MWindow::esc_end()
 {
-QString befehl;
+QString befehl = "";
    if (thread_run > 0) {
     int ret = questionMessage(tr("Do you really want to break the save or restore from the partition?", "Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?"));
       if (thread_run == 1 && ret == 1)
@@ -1894,11 +1862,10 @@ QString befehl;
        	SicherungsFolderFileName = SicherungsFolderFileName.left(pos);
        	SicherungsFolderFileName.insert(pos, QString("txt"));
         befehl = "rm "  + SicherungsFolderFileName;
-        system (befehl.toLatin1().data());
 
 // pbr-Datei löschen
  pos = SicherungsFolderFileName.indexOf("txt");
- SicherungsFolderFileName = SicherungsFolderFileName.left(pos);
+SicherungsFolderFileName = SicherungsFolderFileName.left(pos);
  SicherungsFolderFileName.insert(pos, QString("pbr"));
  befehl = "rm "  + SicherungsFolderFileName;
  system (befehl.toLatin1().data());
@@ -1979,7 +1946,6 @@ void MWindow::del_mediafolder()
       QString filename = homepath + "/.config/qt5-fsarchiver/media.txt";
       QFile file(filename);
       int zaehler = 0;
-      int i = 0;
       qApp->quit();
       if( file.open(QIODevice::ReadOnly|QIODevice::Text)) {
            QTextStream ds(&file);
@@ -2027,3 +1993,7 @@ void MWindow::del_mediafolder()
            qApp->quit();
           //close ();
 }
+
+
+
+

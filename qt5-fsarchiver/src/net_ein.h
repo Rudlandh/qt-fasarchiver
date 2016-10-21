@@ -22,6 +22,8 @@
 #include <QDialog>
 #include "ui_net_ein.h"
 
+
+
 using namespace std;
 
 class NetEin : public QDialog, private Ui::Eingabe_Net
@@ -35,7 +37,8 @@ public:
         QString Namen_holen(); 
 	QString user_holen(); 
 	QString key_holen(); 
-     
+        bool rmDir(const QString &dirPath);
+
 public slots:
         
         

@@ -2,11 +2,11 @@
 qt5-fsarchiver: Sichern und Wiederherstellen von Partitionen Debian, Ubuntu, Linux-Mint, Suse und Fedora. [http://wiki.ubuntuusers.de/qt4-fsarchiver]
 ==================================================================================================================================
 
-https://forum.ubuntuusers.de/topic/hilfe-was-ist-los-mit-qtbase5-dev-und-das-nach/
-
-Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.  All rights reserved.
+Copyright (C) 2008-2016 Francois Dupoux und Dieter Baum.  All rights reserved.
 Kopieren der Dateien, mit und ohne Änderung ist erlaubt. Der Code ist ohne jegliche Garantie. Die Benutzung erfolgt auf eigene Gefahr.
 Francois Dupoux entwickelte das Basisprogramm fsarchiver, Hihin Ruslan hat das Programm verbessert und nach Englisch und Russisch übersetzt. Michael R. Lawrence und sein Team übersetzte nach Spanisch und Italienisch, Zhenneng Li übersetzte nach Chinesisch, Dieter Baum erstellte die GUI.
+
+qt4-fsarchiver wurde in die Qt5-Umgebung übersetzt und in qt5-fsarchiver umbenannt.
 
 qt5-fsarchiver ist ein Programm mit einer grafischen Oberfläche zur einfachen Bedienung des Archivierungsprogramms fsarchiver.
 qt5-fsarchiver wurde mit diesen Programmpunkten erweiter:
@@ -20,19 +20,26 @@ Für die Installation von qt5-fsarchiver müssen die für fsarchiver notwendigen
 Dies erreichen Sie, bei auf Debian aufbauenden Distributionen, mit folgendem Befehl:
 sudo apt-get install libzip-dev libbz2-dev liblzma-dev liblzo2-2 liblzo2-dev libgcrypt11-dev e2fslibs-dev libblkid-dev libattr1-dev build-essential qtbase5-dev qttools5-dev-tools btrfs-tools gdisk sshfs sshpass nmap samba nfs-kernel-server nfs-common smbclient gksu
 
-In Suse werden die Abhängigkeiten mit Root-Rechten (su -l) mit diesem Befehl installiert: zypper in libqt5-devel make libzip-devel libbz2-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel btrfsprogs gdisk sshfs nmap samba nfs-kernel-server
+In Suse werden die Abhängigkeiten mit Root-Rechten (su -l) mit diesem Befehl installiert: zypper in libQt5Core5 libqt5-qttools libqt5-qtbase-devel make libzip-devel libbz2-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel btrfsprogs gdisk sshfs nmap samba nfs-kernel-server
 Wenn Sie ssh (secureshell) für den Zugriff auf weitere Rechner im Netzwerk nutzen wollen, müssen Sie noch sshpass individuell installieren.
 
-In Fedora werden die Abhängigkeiten mit Root-Rechten (su -l) mit diesem Befehl installiert: yum install  gcc gcc-c++ zlib-devel bzip2-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel qt5-devel gdisk sshfs sshpass nmap samba samba-client nfs-utils
+In Fedora werden die Abhängigkeiten mit Root-Rechten (su -l) mit diesem Befehl installiert: dnf install  gcc gcc-c++ zlib-devel bzip2-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel qt5-qtbase qt5-qtbase-devel gdisk sshfs sshpass nmap samba samba-client nfs-utils
 yum install wurde ab Fedora22 durch dnf install ersetzt.
 
 In dem Terminal wechseln Sie in den Ordner qt5-fsarchiver, der bei der Entpackung des Quellcodes installiert wurde.
-Mit der Eingabe von dem Befehl qmake && make && sudo make install wird das Programm installiert.
-Bei Fedora müssen Sie eingeben: qmake-qt5 && make && sudo make install
+
+Bei Debian8, Ubuntu 16.04 64-bit und Mint 17.1 64-bit Version müssen Sie eingeben: /usr/lib/x86_64-linux-gnu/qt5/bin/qmake && make && sudo make install.
+Bei Debian8, Ubuntu 16.04 32-bit und Mint 17.1 64-bit Version müssen Sie eingeben: /usr/lib/i386-linux-gnu/qt5/bin/qmake && make && sudo make install.
+Bei Debian müssen Sie anstatt sudo make install dies eingeben: su -l, make install.
+Bei Fedora und Suse müssen Sie eingeben: qmake-qt5 && make && sudo make install
+Bevor Sie bei Fedora das Programm kompilieren können, müssen Sie die Datei lrelease von /usr/lib64/qt4/bin/ nach /usr/lib64/qt5/bin kopieren.
 
 Installation des Programms aus den DEB-Paketen:
 Ein Doppelklick auf die DEB-Datei installiert in der Regel das Programm.
-Eventuell müssen Sie im Terminal mit root-Rechten dieses Kommando eingeben: dpkg -i qt5-fsarchiver-0.6.19-16.deb, wobei die Versionsnummer angepasst werden muss
+Eventuell müssen Sie im Terminal mit root-Rechten dieses Kommando eingeben: dpkg -i qt5-fsarchiver-0.6.19-19.deb, wobei die Versionsnummer angepasst werden muss.
+Bei Ubuntu 16.04 funktioniert der Doppelkick nicht. Der korrekte Befehl lautet: sudo apt-get install qt5-fsarchiver-0.6.19-19.deb.
+Bei Debian8 müssen Sie eingeben: gpk-install-local-file qt5-fsarchiver-0.6.19-19.deb, wobei die Versionsnummer angepasst werden muss.
+Ist bei Debian8 das Programm nicht installiert, dann müssen Sie eingeben: su -l dpkg-i, qt5-fsarchiver-0.6.19-19.deb und apt-get install -f. Die von dpkg ausgegebene Fehlermeldung können Sie ignorieren. 
 
 Programmaufruf:
 Meistens werden Starter unter Zubehör installiert. Mit Doppelklick wird qt5-fsarchiver gestartet.
@@ -71,6 +78,7 @@ Dieser Vorgang muss einmalig für alle Server durchgeführt werden.
 Beim erstmaligen Zugriff des Programms qt5-fsarchiver auf einen Server, wird der Befehl sudo ssh Benutzername@Adresse des Servers direkt in das Terminal eingetragen. In den Basiseinstellungen des Programms kann eingestellt werden, ob der automatische Eintrag für den Zugriff auf weitere Server wiederholt werden soll oder nicht. 
 Für das Mounten eines ssh-Servers, muss im Terminal das Passwort für den Zugriff auf den Server eingegeben werden. Um dies zu vermeiden, empfiehlt es sich, einen Public Keys einzurichten. (http://wiki.ubuntuusers.de/SSH#Authentifizieruoot/ng-ueber-Public-Keys). Wichtig: Der öffentliche Schlüssel (Datei: authorized_keys) muss beim Server in das Verzeichnis /root/.ssh kopiert werden.
 In den Basiseinstellungen kann festgelegt werden, ob der Hinweis für das Eingeben des Passworts angezeigt werden soll oder nicht.
+Hinweis: Bei einigen Betriebssystemen muss das Programm beim Arbeiten mit ssh in einem Terminal mit Root-Rechten gestartet werden.
 
 Mit Netzwerprotokoll NFS (Network File System):
 Es können nur Linux-Rechner als Client oder Server verwendet werden. Auf den Rechnern, auf dem die Daten abgelegt werden (Server), muss nfs-kernel-server installiert sein. In der Datei  /etc/exports müssen zusätzlich die freizugebenden Verzeichnisse eingetragen werden. Der Namen darf keine Leerzeichen enthalten. Auf das freigegebne Verzeichnis muss lesend und schreibend zugegriffen werden können. Der Eintrag /home/user/Bilder 192.168.2.0/255.255.255.0(rw) erlaubt allen Rechnern mit der IP-Adresse 192.168.2.0 bis 192.168.2.255 einen Lese-Schreibezugriff auf das Verzeichnis /home/user/Bilder des Clients.

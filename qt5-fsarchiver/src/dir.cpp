@@ -52,7 +52,7 @@ extern int fsarchiver_aufruf(int argc, char *anlage0=NULL, char
 QStringList filters;
 
 
-DialogDIR::DialogDIR(QWidget* /* parent */)
+DialogDIR::DialogDIR(QWidget *parent)
 {
         setupUi(this); // this sets up GUI
 	connect( bt_save, SIGNAL( clicked() ), this, SLOT( folder_dir_path_einlesen() ) ); 
@@ -179,7 +179,7 @@ int pos = 0;
 QString Befehl = "";
 int zip ;
 QString compress = "";
-QString keyText;
+QString keyText = "";
 Qt::CheckState state1;
    
    	QModelIndex index = treeView_dir->currentIndex();
@@ -584,7 +584,7 @@ void DialogDIR::indicator_reset() {
      SekundeElapsed ->setText("0");
      MinuteElapsed ->setText("0");
      dir_sekunde_summe = 0;
-//     dir_minute_elapsed = 0;
+     dir_minute_elapsed = 0;
      endeThread_ = 0;
      dir_sekunde_elapsed = 0;
      dir_minute_elapsed = 0;
@@ -680,7 +680,6 @@ int DialogDIR::questionMessage(QString frage)
     		return 1;
 	else if (msg.clickedButton() == noButton)
     		return 2;
-return -1;
 }
 
 void DialogDIR::esc_end()

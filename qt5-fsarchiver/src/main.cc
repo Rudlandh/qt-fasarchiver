@@ -14,9 +14,7 @@
  *
  */
 
-#ifndef HAVE_QT5
- #define HAVE_QT5 (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
-#endif
+#define HAVE_QT5 (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
 
 #ifdef HAVE_GETOPT_H
   #include <getopt.h>
@@ -25,7 +23,6 @@
 #ifdef HAVE_SYS_PARAM_H
   #include <sys/param.h>
 #endif
-
 #include <QApplication>
 #include <QTextCodec>
 #include <QTranslator>
@@ -41,10 +38,8 @@
 #include <sys/param.h>
 #include "qt_probe.h"
 #include "setting.h"
-#include "figaro.h"
 #include <locale.h>
 #include <gettext.h>
-#include <unistd.h>
 
 using namespace std;
 // experement mit uid: uid_t my_uid, my_euid, my_gid, my_egid; 
@@ -139,19 +134,27 @@ int main(int argc, char *argv[])
 //     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8")); 
      QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8")); 
 //     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8")); 
-
-     Figaro  dispatcher;
-     dispatcher.start(QThread::NormalPriority);
      MWindow window;
-
+  
    if (window.Root_Auswertung() != 10)
     {
    	window.show();
    	return app.exec();
   	}
-    else
+  	else
   	{
   	return 0;	
  		}
   // qDebug() << window.Root_Auswertung();
  }
+  
+
+
+
+
+
+
+
+
+
+

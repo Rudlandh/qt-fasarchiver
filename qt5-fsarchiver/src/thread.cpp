@@ -14,12 +14,12 @@
  *
  */
 
+#include <QtGui>
 #include "thread.h"
 #include "mainWindow.h"
 extern "C" {
 #include "connect_c_cpp.h"
 }
-
 
 Thread::Thread() {
    anzahl = 0;
@@ -34,7 +34,6 @@ void Thread::setValues( int anzahl_, QString dummy ) {
 void Thread::run() {
   extern int dialog_auswertung;
   extern QString parameter[15];
-  
 if (qdummy == "0") {
   //Zurücksetzen der bekannten oder unbekannten Fehlermeldung
   werte_uebergeben(1,4);
@@ -50,12 +49,18 @@ if (qdummy == "0") {
  }
 int pos = qdummy.indexOf("dd"); 
 if (qdummy != "0" && pos > -1) {  //thread Festplatte klonen, Image erstellen
-	Qsystem.start (qdummy);
-	Qsystem.waitForFinished();
-	dialog_auswertung = Qsystem.exitStatus();
-	if (dialog_auswertung == QProcess::NormalExit)
-	{
-	    dialog_auswertung =  Qsystem.exitCode();
+	dialog_auswertung = system (qdummy.toLatin1().data()); 
 	}
-     }
 }
+
+ 
+
+
+
+
+
+
+
+
+
+

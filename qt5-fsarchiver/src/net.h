@@ -57,7 +57,7 @@ protected slots:
 	void addItems(const QString &name, const QStringList& iconMap);
         void button_toParent();
         void treeWidget_auslesen();
-        void folder_free_mounten();
+        int folder_free_mounten();
         void save_partitions();
         void save_directories();
         void chkhidden();

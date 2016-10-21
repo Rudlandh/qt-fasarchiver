@@ -24,7 +24,7 @@ QStringList items_zip;
 QStringList items_language; 
 QStringList items_network;
 
-DialogSetting::DialogSetting()
+DialogSetting::DialogSetting(QWidget *parent)
 {
         setupUi(this); // this sets up GUI
 	connect( cmd_save, SIGNAL( clicked() ), this, SLOT( setting_save())); 

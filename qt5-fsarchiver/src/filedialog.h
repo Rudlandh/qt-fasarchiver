@@ -22,10 +22,9 @@
 class FileDialog: public QDialog, private Ui::FileDialog {
   Q_OBJECT
   public:
-    FileDialog();
-    QString werte_holen_(int auswahl);
-    void werte_uebergeben(QString wert); 
-       
+    FileDialog(QWidget *parent = 0);
+    void werte_uebergeben(QString wert);
+        
   protected slots:
     void folder_einlesen();
     void file_save();

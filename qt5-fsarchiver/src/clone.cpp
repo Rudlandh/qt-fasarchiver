@@ -52,7 +52,7 @@ QString img_partition_clone;
 QString img_partition_size;
 
 
-DialogClone::DialogClone(QWidget* /* parent */)
+DialogClone::DialogClone(QWidget *parent)
 {
 
 	setupUi(this); // this sets up GUI
@@ -175,7 +175,6 @@ int DialogClone::do_image_partition()
 {
 MWindow window;
 QString befehl;
-// int pos;
 QString _Datum_clone = window.Zeit_auslesen();
 Qt::CheckState state;
       lbl_save->setText (tr("already saved", "bereits gesichert"));
@@ -227,8 +226,7 @@ int pos;
 QString partition_exist;
 QString partition_exist_size;
 QString part_name;
- Qt::CheckState state;
-
+Qt::CheckState state;
       lbl_save->setText (tr("already restored", "bereits zurückgeschrieben"));
       state = chk_zip->checkState();
       flag_clone = 3;
@@ -303,7 +301,7 @@ QString partition_exist;
 QString partition_exist_size;
 QString partition_clone;
 QString partition_clone_size;
-int partition_clone_size_int = 0; 
+int partition_clone_size_int;
 lbl_save->setText (tr("already saved", "bereits gesichert"));
 QFile file(homepath + "/.config/qt5-fsarchiver/disk.txt");
       befehl = "rm "  + homepath + "/.config/qt5-fsarchiver/disk.txt";	
@@ -511,7 +509,6 @@ int DialogClone::questionMessage(QString frage)
     		return 1;
 	else if (msg.clickedButton() == noButton)
     		return 2;
-return -1;
 }
 
 void DialogClone::rdbutton_clone(){
@@ -597,7 +594,7 @@ void DialogClone::rdbutton_partition_image_restore(){
 }
 
 void DialogClone::listWidget_auslesen() {
-    int row;
+    int row = 0, pos = 0, pos1 = 0, pos2 = 0;;
     extern QString add_part[100];
     QStringList partition_kurz;  
     QString widget[100];
@@ -608,9 +605,9 @@ void DialogClone::listWidget_auslesen() {
     img_partition_clone = partition_kurz[0]; // z.B. sda1
     img_partition_clone = img_partition_clone.trimmed();
     img_partition_size = img_partition_size.right(12);
-    int pos = img_partition_size.indexOf("GB");
-//    int pos1 = img_partition_size.indexOf("MB");
-    int pos2 = img_partition_size.indexOf("TB");
+    pos = img_partition_size.indexOf("GB");
+    pos1 = img_partition_size.indexOf("MB");
+    pos2 = img_partition_size.indexOf("TB");
     img_partition_size = img_partition_size.left(9);
     img_partition_size = img_partition_size.trimmed();
     img_partition_size = img_partition_size.replace(",","");
@@ -679,19 +676,19 @@ int DialogClone::file_check() {
 
 void DialogClone::ViewProzent()
 {
-int prozent ;
+int prozent = 0 ;
 QString sekunde;
-int sekunde_;
+int sekunde_ = 0;
 QString minute;
-int minute_;
+int minute_ = 0;
 QString hour;
-int hour_;
+int hour_ = 0;
 QString text_integer;
 QString size;
-int size_1;
+int size_1 = 0;
 QString letzte_zeile;
 QString befehl;
-int diff;
+int diff = 0;
 QString mb_sec;
         if (endeThread_clone ==0)
 	{
@@ -704,13 +701,9 @@ QString mb_sec;
 		size_clone=size_clone_dummy; //Verhindert, dass die bereits angezeigten gespeicherten Daten nicht reduziert werden
         size_clone_dummy = size_clone; 
         lbl_hd_size ->setText("MB");
-        
-/// 	prozent = size_clone/(partition_exist_size_int)/10;   ??????
-
+        prozent = size_clone/(partition_exist_size_int)/10;
 	prozent = 100 * size_clone/(partition_exist_size_int);
-
-	
-	if (prozent > 100)
+        if (prozent > 100)
             prozent = 100;
         sekunde_summe_clone_1 = sekunde_summe_clone;
         savedBytes->setText("");
@@ -958,7 +951,7 @@ QString befehl;
    pid_2_ermitteln("dd");
    if (thread_run_clone > 0) {
     int ret = questionMessage(tr("Do you want really break clone, save or restore an image from the partition?", "Wollen Sie wirklich das Klonen der Festplatte, die Erstellung oder die Wiederherstellung eines Images der Festplatte beenden?"));
-      if ((thread_run_clone  == 1 && ret == 1) || (thread_run_clone == 2 && ret == 1) )
+      if (thread_run_clone  == 1 && ret == 1 or thread_run_clone == 2 && ret == 1)
         {
         befehl = "rm "  + folder_clone +  partition_name + ".gz.fsa";	
         QFile file(folder_clone +  partition_name + ".gz.fsa");
@@ -1030,8 +1023,8 @@ int k = 0;
 
 QString DialogClone::pid_ermitteln(QString prozess)
 {
-QString befehl;
-QString pid_nummer;
+QString befehl = "";
+QString pid_nummer = "";
 QStringList pid;
       befehl = "ps -C " + prozess + " 1> " +  homepath + "/.config/qt5-fsarchiver/pid.txt";
       system (befehl.toLatin1().data());
@@ -1041,7 +1034,7 @@ QStringList pid;
        return " ";
     if (file.open(QIODevice::ReadOnly|QIODevice::Text)) {
            QTextStream ds(&file);
-        ds.readLine();   // ???????
+        pid_nummer = ds.readLine();
         pid_nummer = ds.readLine();
         file.close();
      }
@@ -1059,15 +1052,15 @@ QStringList pid;
 
 
 void DialogClone::read_write_hd(){
-QString teilstring;
-QString befehl;
+QString teilstring = "";
+QString befehl = "";
 QString harddrive;
 int  i = 0;
 QStringList read_write;
 QString rw_;
 QString rw_1;
 int read_write_space = 0;
-int found;
+int found = 0;
        
        if (endeThread_clone !=0)
             return;
@@ -1094,9 +1087,9 @@ int found;
 	QFile file(filename);
         if (file.open(QIODevice::ReadOnly|QIODevice::Text)) {
            QTextStream ds(&file);
-           ds.readLine();
-	   ds.readLine();
-           ds.readLine();
+           teilstring = ds.readLine();
+	   teilstring = ds.readLine();
+           teilstring = ds.readLine();
            teilstring = ds.readLine();
            }
         file.close();
@@ -1134,6 +1127,7 @@ void DialogClone::read_write_hd_1(){
 QString befehl;
 QString bytes_;
 QStringList bytes;
+int pos = 0;
 	if (endeThread_clone !=0)
             return;
          while (pid_dd.size() < 4) 
@@ -1163,8 +1157,11 @@ QStringList bytes;
            bytes_ = bytes[0];
            bytes_ =  bytes_.left( bytes_.size() -6);
            read_write_space_sum = (bytes_.toInt()/ sekunde_summe_clone);}
-        if (bytes_ != "")
-           read_write_space_sec= bytes[7];
+        if (bytes_ != ""){
+           read_write_space_sec = bytes[7];
+           pos = read_write_space_sec.indexOf(".");
+       	  read_write_space_sec = read_write_space_sec.left(pos+1);
+           }
 }
 
 

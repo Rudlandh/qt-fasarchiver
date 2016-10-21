@@ -70,10 +70,8 @@ extern int btrfs_flag;
 
 
 int createar(){
-#ifdef DEBUG
-  bool probedetailed = 0;  //=True Anzeige Label zB C-System
+   bool probedetailed = 0;  //=True Anzeige Label zB C-System
    //bool probedetailed = 1;  //=False Anzeige UUID
-#endif
    int test = 0;
    //test = oper_probe(probedetailed);
    return test;
@@ -232,11 +230,11 @@ char *meldungen_holen(int auswahl){
       
 }
 
-float df(char* device, const char *mountPoint, int flag )
+float df(char *device, const char *mountPoint, int flag )
 {
 	struct statfs s;
 	long blocks_used;
-	long blocks_percent_used=0;
+	long blocks_percent_used;
 
 	if (statfs(mountPoint, &s) != 0) {
 		perror(mountPoint);
@@ -258,7 +256,7 @@ float df(char* device, const char *mountPoint, int flag )
 	}
    switch (flag)
         {
-      case 1:		return (blocks_percent_used);
+   	case 1:		return (blocks_percent_used);
       case 2:		return (long) (s.f_blocks * (s.f_bsize / 1024000.0));
 	   case 3:		return (long) ((s.f_blocks - s.f_bfree) * (s.f_bsize / 1024000.0));	
 	   case 4:		return (long) (s.f_bavail * (s.f_bsize / 1024000.0));

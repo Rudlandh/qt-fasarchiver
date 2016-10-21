@@ -8,5 +8,5 @@ Terminal=false
 Type=Application
 Categories=GNOME;GTK;Utility;
 StartupNotify=false
-OnlyShowIn=XFCE;MATE;Cinnamon;LXDE
+OnlyShowIn=XFCE;MATE;X-Cinnamon;LXDE;Unity
 

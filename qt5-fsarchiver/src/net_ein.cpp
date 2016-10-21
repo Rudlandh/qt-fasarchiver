@@ -27,8 +27,6 @@ QString user;
 //QString key= "";
 QString dummykey;
 
-
-
 NetEin::NetEin(QWidget *parent)
 {
 QString homepath = QDir::homePath(); 
@@ -38,6 +36,10 @@ connect( pushButton_net, SIGNAL( clicked() ), this, SLOT(listWidget_show()));
 connect( pushButton_go, SIGNAL( clicked() ), this, SLOT(go()));
 connect( pushButton_end, SIGNAL( clicked() ), this, SLOT(end()));
 connect( chk_password, SIGNAL( clicked() ), this, SLOT(Kennwort()));
+// Vorsichtshalver ./qt4-fs-client löschen und neu anlegen, da eventuell nicht leer
+       rmDir(homepath + "/.qt5-fs-client");
+       QString befehl = "mkdir " + homepath + "/.qt5-fs-client 2>/dev/null" ;
+       system (befehl.toLatin1().data());
 // Ini-Datei auslesen
    QFile file(homepath + "/.config/qt5-fsarchiver/qt5-fsarchiver.conf");
    if (file.exists()) {
@@ -80,34 +82,20 @@ QString befehl;
 QString homepath = QDir::homePath(); 
 QString hostname_;
 QStringList adresse_;
-QString adresse; 
+QString adresse = ""; 
 QString adresse_router;
-QString adresse_eigen;
-QString adresse_eigen_;
+QString adresse_eigen = "";
+QString adresse_eigen_ = "";
 int k = 0;
 int i = 0;
-int ret;
-QProcess Qsystem;
-
         // Routeradresse ermitteln
         befehl = "route -n 1> " +  homepath + "/.config/qt5-fsarchiver/smbtree.txt";
-
-	Qsystem.start (befehl);
-	Qsystem.waitForFinished();
-	
-	ret  = Qsystem.exitStatus();
-	if (ret == QProcess::NormalExit)
-	{
-	    ret  =  Qsystem.exitCode();
-	}
-
-//        system (befehl.toLatin1().data());
-
+        system (befehl.toLatin1().data());
         QFile file(homepath + "/.config/qt5-fsarchiver/smbtree.txt");
         QTextStream ds1(&file);
         if (file.open(QIODevice::ReadWrite | QIODevice::Text)) {
-     	     	ds1.readLine();
-             	ds1.readLine();
+     	     	adresse = ds1.readLine();
+             	adresse = ds1.readLine();
              	adresse = ds1.readLine();
             if (adresse != ""){  //verhindert Absturz wenn weder WLan noch Kabelnetzverbindung vorhanden ist
 		do{
@@ -178,7 +166,6 @@ int pos = 0;
 int pos1 = 0;
 int i = 0;
 int j;
-int m;
 QStringList adresse_;
 QString adresse_eigen;
 QString adresse2;
@@ -212,7 +199,7 @@ QString hostname_;
                 text = text.trimmed();
                 j = text.size();
 		        text = text.right(j-2);
-                if (pos1 == -1) {
+               // if (pos1 == -1) {
                      text = text.toLower();
                      text = IP(text); // IP ermitteln
                      adresse_ = text.split(" ");
@@ -222,7 +209,7 @@ QString hostname_;
                       i++;}
                    if (i > 99)
                       break;
-                }
+              //  }
              }} 
         } 
 	file.close();
@@ -376,7 +363,6 @@ QString NetEin:: IP(QString adresse)
 {
 QString befehl;
 int pos;
-int pos1;
 QString homepath = QDir::homePath();
 QFile file(homepath + "/.config/qt5-fsarchiver/ip.txt");
 QTextStream ds(&file);
@@ -397,7 +383,7 @@ QString text;
         if (i  == 2) // Anzahl 2 Zeilen, nmblookup -T adresse arbeitet korrekt
 	  {
           if (file.open(QIODevice::ReadWrite | QIODevice::Text)) {
-     	     ds.readLine();
+     	     text = ds.readLine();
 	     text = ds.readLine();   
               }
              file.close();
@@ -411,7 +397,7 @@ QString text;
 void NetEin:: listWidget_show()
 {
 extern int dialog_auswertung;
-int row;
+int row = 1;
 QString key_;
 QString key;
 QStringList comNet_;
@@ -689,6 +675,24 @@ int NetEin::questionMessage(QString frage)
     		return 1;
 	else if (msg.clickedButton() == noButton)
     		return 2;
+}
+
+bool NetEin::rmDir(const QString &dirPath)
+{
+    QDir dir(dirPath);
+    if (!dir.exists())
+        return true;
+    foreach(const QFileInfo &info, dir.entryInfoList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot)) {
+        if (info.isDir()) {
+            if (!rmDir(info.filePath()))
+                return false;
+        } else {
+            if (!dir.remove(info.fileName()))
+                return false;
+        }
+    }
+    QDir parentDir(QFileInfo(dirPath).path());
+    return parentDir.rmdir(QFileInfo(dirPath).fileName());
 }
 
 

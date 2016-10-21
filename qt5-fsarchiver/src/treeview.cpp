@@ -16,7 +16,6 @@
 
 #include <QtGui> 
 #include "treeview.h"
-#include "common.h"
 
 QString folder_treeview;
 
@@ -29,15 +28,17 @@ QString homepath = QDir::homePath();
         connect( cmd_cancel, SIGNAL( clicked() ), this, SLOT(close()));
         connect( pushButton_treeview, SIGNAL( clicked() ), this, SLOT(folder_einlesen()));
 
-	dirModel = new QFileSystemModel;
+        dirModel = new QFileSystemModel;
    	selModel = new QItemSelectionModel(dirModel);
    	treeView->setModel(dirModel);
-   	treeView->setSelectionModel(selModel);
-	filters << "*.fsa";
+        filters << "*.fsa";
    	dirModel->setFilter(QDir::AllDirs | QDir::Files | QDir::NoDotAndDotDot);
    	dirModel->setNameFilters(filters); 
-        QModelIndex cwdIndex = dirModel->index(homepath +"/.qt5-fs-client");
+   	treeView->setSelectionModel(selModel);
+	QModelIndex cwdIndex = dirModel->index(homepath +"/.qt5-fs-client");
+        dirModel->setRootPath(homepath +"/.qt5-fs-client");
         treeView->setRootIndex(cwdIndex);
+	treeView->setEnabled(true);
 }        
 
 void TreeviewRead::folder_einlesen() {
@@ -54,3 +55,14 @@ QString TreeviewRead::folder_treeview_holen()
 void TreeviewRead::folder_einlesen_beenden() {
      close();
 }
+
+
+
+
+
+
+
+
+
+
+

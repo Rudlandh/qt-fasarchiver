@@ -28,6 +28,8 @@
 
 using namespace std;
 
+
+
 class MWindow : public QMainWindow,
                 private Ui::MainWindow {
     Q_OBJECT
