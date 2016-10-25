@@ -2985,10 +2985,18 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>qt5-fsarchiver</translation>
     </message>
     <message>
+        <location filename="../src/mainWindow.cpp" line="1086"/>
+        <source>Backup and restore partitions, directory and MBR
+Version 0.8.0-5, November 2, 2016</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-5, 2. November 2016</comment>
+<translation>Backup e ripristino partizioni, directory e MBR.
+La versione 0.8.0-5, 2. Novembre. 2016</translation>
+    </message>
+    <message>
         <source>Backup and restore partitions, directory and MBR
 Version 0.8.0-0, October 15, 2016</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
-<translation>Backup e ripristino partizioni, directory e MBR.
+        <translation type="vanished">Backup e ripristino partizioni, directory e MBR.
 La versione 0.8.0-3, 31. Ottobre. 2016</translation>
     </message>
     <message>
@@ -3144,14 +3152,6 @@ La versione 0.8.0-3, 31. Ottobre. 2016</translation>
         <comment>Die Wiederherstellung der Partition war nur teilweise erfolgreich
 </comment>
         <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/mainWindow.cpp" line="1086"/>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-3, October 31, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016</comment>
-        <translation type="unfinished">Backup e ripristino partizioni, directory e MBR.
-La versione 0.8.0-0, 5. Ottobre. 2016 {0.8.0-3,?} {31, 2016?}</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1483"/>
