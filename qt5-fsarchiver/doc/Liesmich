@@ -95,7 +95,7 @@ qt5-fsarchiver kann ecryptfs verschlüsselte Home-Verzeichnisse sichern und wied
 
 Mit TrueCrypt verschlüsselte Partitionen können nicht gesichert werden.
 
-Die Sicherung einer Windows Fat-Partitionen ist nur als Image möglich (Aktionen>Festplattenimage erzeugen/zurückspielen). Es kann allerdings auf eine FAT-Partition gesichert werden. Die Sicherungsdatei wird gesplittet, wenn die Dateigröße 4GB überschreitet.
+Die Sicherung und Wiederherstellung einer Windows Fat-Partitionen ist ab Version 0.8.0.5. möglich. Auf eine FAT-Partition kann gesichert werden. Die Sicherungsdatei wird gesplittet, wenn die Dateigröße 4GB überschreitet.
 
 Klonen der Festplatte: Man wählt im linken Verzeichnisfeld die existierende Festplatte aus, die geklont werden soll und im rechten Verzeichnisfeld die Festplatte aus, die neu erzeugt werden soll. Dann den Button "Festplatte klonen" betätigen.
 Abbild der Festplatte/Partitionen erzeugen:

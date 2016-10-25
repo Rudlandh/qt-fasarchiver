@@ -105,7 +105,7 @@ qt5-fsarchiver  can back up and restore with ecryptfs encrypted home directories
 
 With TrueCrypt encrypted partitions can not be backed up.
 
-Securing a Windows FAT partitions is only possible as Image.(Actions>HD-Image built and restore) However, it can be stored on a FAT partition. The backup file will be split if the file size is greater than 4GB.
+Securing and restore Windows FAT partitions is with Version 0.8.0.5 and later possible. It can be stored on a FAT partition. The backup file will be split if the file size is greater than 4GB.
 
 Clone hard drive: You choose in the left list box, select the existing drive that is to be cloned, and the right list box, the hard drive, which is to be rebuilt. Click on the button "Clone disk".
 Image of the hard disk/partition create:
