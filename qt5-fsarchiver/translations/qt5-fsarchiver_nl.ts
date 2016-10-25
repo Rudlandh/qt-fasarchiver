@@ -2978,13 +2978,13 @@ Die Dateiendung muss .fsa sein</comment>
 Version 0.6.19-21, August 1, 2016</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-21, 1. August 2016</comment>
 <translation>Back-up en herstel partities, mappen en MBR.
-Versie 0.8.0-3, 31. Oktober. 2016</translation>
+Versie 0.8.0-5, 2. November. 2016</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1086"/>
         <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-3, October 31, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016</comment>
+Version 0.8.0-5, November 2, 2016</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-5, 2. November 2016</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>

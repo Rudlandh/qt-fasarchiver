@@ -1,6 +1,8 @@
 ===========================================================================================================
 * qt5-fsarchiver: Graphical interface for fsarchiver fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ===========================================================================================================
+*  qt5-fsarchiver-0.8.0-5 November 2, 2016.
+     - Backing up and restoring vfat partitions is possible.
 *  qt5-fsarchiver-0.8.0-3 October 31, 2016.
      - Correction for the message at the end.
 *  qt5-fsarchiver-0.8.0-0 October 15, 2016.

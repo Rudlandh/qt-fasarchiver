@@ -2646,7 +2646,7 @@ p, li { white-space: pre-wrap; }
 Version 0.8.0-0, October 15, 2016</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
 <translation>Сохранение и восстановление разделов, каталогов и MBR.
-Версия 0.8.0-3, 31. октября. 2016</translation>
+Версия 0.8.0-5, 2. ноябрь. 2016</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1172"/>
@@ -2806,6 +2806,13 @@ backup. key:</source>
 verschlüsseln. Schlüssel</comment>
         <translation>Ключ
 шифрования:</translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="1086"/>
+        <source>Backup and restore partitions, directory and MBR
+Version 0.8.0-5, November 2, 2016</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-5, 2. November 2016</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1610"/>
@@ -3098,14 +3105,6 @@ Die Dateiendung muss .fsa sein</comment>
         <comment>Die Schlüssellänge muss zwischen 6 und 64 Zeichen sein.
 </comment>
         <translation>Длина ключа должна быть от 6 до 64 символов.</translation>
-    </message>
-    <message>
-        <location filename="../src/mainWindow.cpp" line="1086"/>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-3, October 31, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016</comment>
-        <translation type="unfinished">Сохранение и восстановление разделов, каталогов и MBR.
-Версия 0.8.0-0, 5. октября. 2016 {0.8.0-3,?} {31, 2016?}</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1352"/>

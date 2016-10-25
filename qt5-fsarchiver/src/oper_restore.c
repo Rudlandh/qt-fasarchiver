@@ -1229,12 +1229,12 @@ int extractar_filesystem_extract(cextractar *exar, cdico *dicofs, cstrdico *dico
         (int)FSA_VERSION_GET_B(curver), (int)FSA_VERSION_GET_C(curver), (int)FSA_VERSION_GET_D(curver));
     msgprintf(MSG_VERB2, "Minimum fsarchiver version for that filesystem: %d.%d.%d.%d\n", (int)FSA_VERSION_GET_A(minver), 
         (int)FSA_VERSION_GET_B(minver), (int)FSA_VERSION_GET_C(minver), (int)FSA_VERSION_GET_D(minver));
-    if (curver < minver)
+    /*if (curver < minver)
     {   errprintf("This filesystem can only be restored with fsarchiver %d.%d.%d.%d or more recent\n",
         (int)FSA_VERSION_GET_A(minver), (int)FSA_VERSION_GET_B(minver), (int)FSA_VERSION_GET_C(minver),
         (int)FSA_VERSION_GET_D(minver));
-        return -1;
-    }
+       // return -1;
+    }*/
     
     // check the partition is not mounted
     res=generic_get_mntinfo(partition, &readwrite, mntbuf, sizeof(mntbuf), optbuf, sizeof(optbuf), fsbuf, sizeof(fsbuf));

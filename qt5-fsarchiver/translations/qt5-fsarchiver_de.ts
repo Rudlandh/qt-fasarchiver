@@ -2545,13 +2545,13 @@ protokoll:</translation>
         <location filename="../src/ui/net.ui" line="751"/>
         <location filename="../build/ui_net.h" line="459"/>
         <source>Show &amp;partitions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zeige &amp;Partitionen</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="764"/>
         <location filename="../build/ui_net.h" line="460"/>
         <source>Show &amp;directories</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zeige &amp;Verzeichnisse</translation>
     </message>
     <message>
         <source>Show partitions</source>
@@ -2703,7 +2703,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../build/ui_net.h" line="401"/>
         <source>&amp;Save partition
  or directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Partition oder 
+Verzeichnis &amp;sichern</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="125"/>
@@ -2711,7 +2712,8 @@ p, li { white-space: pre-wrap; }
         <source>&amp;Restore partition 
  or directory</source>
         <extracomment>Partition mit fs-Archiver * zurückschreiben</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Partition oder Verzeichnis
+&amp;wiederherstellen</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="230"/>
@@ -3248,7 +3250,7 @@ Sie müssen eine Datei auswählen</translation>
 Version 0.8.0-0, October 15, 2016</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
 <translation>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR.
-Version 0.8.0-3, 31. Oktober. 2016</translation>
+Version 0.8.0-5, 2. November. 2016</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1403"/>
@@ -3462,14 +3464,6 @@ Vielleicht ist die Partition verschlüsselt?</translation>
         <translation> Links </translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1086"/>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-3, October 31, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016</comment>
-        <translation type="unfinished">Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR.
-Version 0.8.0-3, 31. Oktober. 2016</translation>
-    </message>
-    <message>
         <location filename="../src/mainWindow.cpp" line="1458"/>
         <source> specials and the Partition Boot Record have been restored.</source>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt.</comment>
@@ -3565,6 +3559,13 @@ Passwort eingegeben.</translation>
         <source>Operating system: </source>
         <comment>Betriebsystem: </comment>
         <translation>Betriebsystem: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="1086"/>
+        <source>Backup and restore partitions, directory and MBR
+Version 0.8.0-5, November 2, 2016</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-5, 2. November 2016</comment>
+        <translation type="unfinished">Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR. Version 0.8.0-5, 2. November 2016</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1500"/>
