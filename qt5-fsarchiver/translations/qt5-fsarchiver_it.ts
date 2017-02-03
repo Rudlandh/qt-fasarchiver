@@ -2985,11 +2985,12 @@ Die Dateiendung muss .fsa sein</comment>
         <translation>qt5-fsarchiver</translation>
     </message>
     <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-0, October 15, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
+        <location filename="../src/mainWindow.cpp" line="1086"/>
+<source>Backup and restore partitions, directory and MBR.
+version 0.8.1-0, February 5, 2017</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-5, 2. November 2016</comment>
 <translation>Backup e ripristino partizioni, directory e MBR.
-La versione 0.8.0-3, 31. Ottobre. 2016</translation>
+La versione 0.8.1-0, 5. febbraio 2017</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1094"/>
@@ -3146,14 +3147,6 @@ La versione 0.8.0-3, 31. Ottobre. 2016</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/mainWindow.cpp" line="1086"/>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-3, October 31, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016</comment>
-        <translation type="unfinished">Backup e ripristino partizioni, directory e MBR.
-La versione 0.8.0-0, 5. Ottobre. 2016 {0.8.0-3,?} {31, 2016?}</translation>
-    </message>
-    <message>
         <location filename="../src/mainWindow.cpp" line="1483"/>
         <source> specials have been restored
 .</source>
@@ -3183,14 +3176,7 @@ La versione 0.8.0-0, 5. Ottobre. 2016 {0.8.0-3,?} {31, 2016?}</translation>
         <comment>In der Datei /usr/share/doc/qt5-fsarchiver/doc/Liesmich sind Hinweise zur Nutzung des Programms enthalten. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern.</comment>
         <translation type="unfinished">Nel file / usr/share/doc/qt5-fsarchiver/doc Leggimi sono incluse istruzioni sull&apos;uso del programma. Se questo continuerà ad essere visualizzata? È possibile modificare questo nelle impostazioni di base.</translation>
     </message>
-    <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.6.19-21, August 1, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-21, 1. August 2016</comment>
-        <translation type="vanished">Backup e ripristino partizioni, directory e MBR.
-La versione 0.6.19-21, 1. Agosto. 2016</translation>
-    </message>
-    <message>
+        <message>
         <location filename="../src/mainWindow.cpp" line="1453"/>
         <location filename="../src/mainWindow.cpp" line="1457"/>
         <source>The partition is successful back.

@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -313,7 +313,7 @@ int extfs_mkfs(cdico *d, char *partition, int extfstype, char *fsoptions, char *
         }
         
         // run e2fsck to workaround an tune2fs bug in e2fsprogs < 1.41.4 on ext4
-        // http://article.gmane.org/gmane.comp.file-systems.ext4/11181
+        // http://marc.info/?l=linux-ext4&m=123246035924487&w=2
         if (extfstype==EXTFSTYPE_EXT4 && e2fstoolsver<PROGVER(1,41,4))
         {
             if ( ((res=exec_command(command, sizeof(command), &exitst, NULL, 0, NULL, 0, "e2fsck -fy %s", partition))!=0) || ((exitst!=0) && (exitst!=1)) )
@@ -563,3 +563,4 @@ u64 check_prog_version(char *prog)
     
     return PROGVER(x,y,z);
 }
+

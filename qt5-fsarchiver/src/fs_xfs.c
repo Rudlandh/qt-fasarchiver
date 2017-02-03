@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -173,6 +173,27 @@ int xfs_mkfs(cdico *d, char *partition, char *fsoptions, char *mkfslabel, char *
         strlcatf(mkfsopts, sizeof(mkfsopts), " -m finobt=%d ", (int)optval);
     }
 
+    // Determine if the "rmapbt" mkfs option should be enabled (reverse mapping btree)
+    // - starting with linux-4.8 XFS has added a btree that maps filesystem blocks
+    //   to their owner
+    // - this feature relies on the new v5 on-disk format but it is optional
+    // - this feature will be enabled if the original filesystem was XFSv5 and had it
+    if (xfstoolsver >= PROGVER(4,8,0)) // only use "rmapbt" option when it is supported by mkfs
+    {
+        optval = ((xfsver==XFS_SB_VERSION_5) && (sb_features_ro_compat & XFS_SB_FEAT_RO_COMPAT_RMAPBT));
+        strlcatf(mkfsopts, sizeof(mkfsopts), " -m rmapbt=%d ", (int)optval);
+    }
+
+    // Determine if the "reflink" mkfs option should be enabled
+    // - starting with linux-4.9 XFS has added support for reflinked files
+    // - this feature relies on the new v5 on-disk format but it is optional
+    // - this feature will be enabled if the original filesystem was XFSv5 and had it
+    if (xfstoolsver >= PROGVER(4,9,0)) // only use "reflink" option when it is supported by mkfs
+    {
+        optval = ((xfsver==XFS_SB_VERSION_5) && (sb_features_ro_compat & XFS_SB_FEAT_RO_COMPAT_REFLINK));
+        strlcatf(mkfsopts, sizeof(mkfsopts), " -m reflink=%d ", (int)optval);
+    }
+
     // Attempt to preserve UUID of the filesystem
     // - the "-m uuid=<UUID>" option in mkfs.xfs was added in mkfs.xfs 4.3.0 and is the best way to set UUIDs
     // - the UUID of XFSv4 can be successfully set using either xfs_admin or mkfs.xfs >= 4.3.0
@@ -196,7 +217,7 @@ int xfs_mkfs(cdico *d, char *partition, char *fsoptions, char *mkfslabel, char *
     // - when CRCs are enabled via -m crc=1, the ftype functionality is always enabled
     // - ftype is madatory in XFSv5 volumes but it is optional for XFSv4 volumes
     // - the "ftype" option must be specified after the "crc" option in mkfs.xfs < 4.2.0:
-    //   http://oss.sgi.com/cgi-bin/gitweb.cgi?p=xfs/cmds/xfsprogs.git;a=commit;h=b990de8ba4e2df2bc76a140799d3ddb4a0eac4ce
+    //   https://git.kernel.org/cgit/fs/xfs/xfsprogs-dev.git/commit/?id=b990de8ba4e2df2bc76a140799d3ddb4a0eac4ce
     // - do not set ftype=1 with crc=1 as mkfs.xfs may fail when both options are enabled (at least with xfsprogs-3.2.2)
     // - XFSv4 with ftype=1 is supported since linux-3.13. We purposely always
     //   disable ftype for V4 volumes to keep them compatible with older kernels
@@ -211,7 +232,10 @@ int xfs_mkfs(cdico *d, char *partition, char *fsoptions, char *mkfslabel, char *
     // - starting with linux-4.2 XFS can allocate discontinuous inode chunks
     // - this feature relies on the new v5 on-disk format but it is optional
     // - this feature will be enabled if the original filesystem was XFSv5 and had it
-    if (xfstoolsver >= PROGVER(4,2,0)) // only use "sparse" option when it is supported by mkfs
+    // - this feature is supported since mkfs.xfs 4.2.0, but unfortunately
+    //   mkfs.xfs 4.5.0 in RHEL 7.3 carries a custom patch removing the option,
+    //   hence require mkfs.xfs 4.7.0, next version after 4.5.0
+    if (xfstoolsver >= PROGVER(4,7,0)) // only use "sparse" option when it is supported by mkfs
     {
         optval = ((xfsver==XFS_SB_VERSION_5) && (sb_features_incompat & XFS_SB_FEAT_INCOMPAT_SPINODES));
         strlcatf(mkfsopts, sizeof(mkfsopts), " -i sparse=%d ", (int)optval);
@@ -380,3 +404,4 @@ int xfs_get_reqmntopt(char *partition, cstrlist *reqopt, cstrlist *badopt)
 
     return 0;
 }
+

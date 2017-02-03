@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="de_DE" sourcelanguage="de">
 <context>
@@ -2545,13 +2544,13 @@ protokoll:</translation>
         <location filename="../src/ui/net.ui" line="751"/>
         <location filename="../build/ui_net.h" line="459"/>
         <source>Show &amp;partitions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zeige &amp;Partitionen</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="764"/>
         <location filename="../build/ui_net.h" line="460"/>
         <source>Show &amp;directories</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zeige &amp;Verzeichnisse</translation>
     </message>
     <message>
         <source>Show partitions</source>
@@ -2703,7 +2702,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../build/ui_net.h" line="401"/>
         <source>&amp;Save partition
  or directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Partition oder 
+Verzeichnis &amp;sichern</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="125"/>
@@ -2711,7 +2711,8 @@ p, li { white-space: pre-wrap; }
         <source>&amp;Restore partition 
  or directory</source>
         <extracomment>Partition mit fs-Archiver * zurückschreiben</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Partition oder Verzeichnis
+&amp;wiederherstellen</translation>
     </message>
     <message>
         <location filename="../src/ui/net.ui" line="230"/>
@@ -3244,13 +3245,6 @@ Sie müssen eine Datei auswählen</translation>
         <translation>Die Wiederherstellung wird durchgeführt</translation>
     </message>
     <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-0, October 15, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
-<translation>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR.
-Version 0.8.0-3, 31. Oktober. 2016</translation>
-    </message>
-    <message>
         <location filename="../src/mainWindow.cpp" line="1403"/>
         <source>The backup of the partition was only partially successful.
 </source>
@@ -3362,13 +3356,6 @@ Partition war nur teilweise erfolgreich.</translation>
  Das Programm wird beendet.</translation>
     </message>
     <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.6.19-21, August 1, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-21, 1. August 2016</comment>
-        <translation type="vanished">Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR.
-Version 0.6.19-21, 1. August. 2016</translation>
-    </message>
-    <message>
         <location filename="../src/mainWindow.cpp" line="1172"/>
         <source>Yes</source>
         <comment>Ja</comment>
@@ -3460,14 +3447,6 @@ Vielleicht ist die Partition verschlüsselt?</translation>
         <source> links </source>
         <comment> Links </comment>
         <translation> Links </translation>
-    </message>
-    <message>
-        <location filename="../src/mainWindow.cpp" line="1086"/>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-3, October 31, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016</comment>
-        <translation type="unfinished">Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR.
-Version 0.8.0-3, 31. Oktober. 2016</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1458"/>
@@ -3565,6 +3544,13 @@ Passwort eingegeben.</translation>
         <source>Operating system: </source>
         <comment>Betriebsystem: </comment>
         <translation>Betriebsystem: </translation>
+    </message>
+    <message>
+        <location filename="../src/mainWindow.cpp" line="1086"/>
+<source>Backup and restore partitions, directory and MBR.
+version 0.8.1-0, February 5, 2017</source>
+        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-5, 2. November 2016</comment>
+<translation>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR. Version 0.8.1-0, 5.Februar 2017</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1500"/>

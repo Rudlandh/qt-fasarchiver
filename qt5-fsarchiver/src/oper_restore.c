@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -67,7 +67,6 @@ long long anzahlfile;
 	float progress; 
 	int zeitflag = 0;
 	int symlink_ = 0;
-
 // returns true if this file of a parent directory has been excluded
 int is_filedir_excluded(char *relpath)
 {
@@ -173,8 +172,7 @@ int convert_argv_to_strdicos(cstrdico *dicoargv[], int argc, char *cmdargv[])
 int extractar_listing_print_file(cextractar *exar, int objtype, char *relpath)
 {
     char strprogress[256];
-   // s64 progress;
-    
+       
     memset(strprogress, 0, sizeof(strprogress));
     if (exar->cost_global>0)
     {
@@ -185,7 +183,7 @@ int extractar_listing_print_file(cextractar *exar, int objtype, char *relpath)
     msgprintf(MSG_VERB1, "-[%.2d]%s[%s] %s\n", exar->fsid, strprogress, get_objtype_name(objtype), relpath);
     // Terminal Ausgabe 
     	printf("       %.0f%%       \r ", progress); 
-	   werte_uebergeben(progress,1);
+	werte_uebergeben(progress,1);
     return 0;
 }
 
@@ -219,8 +217,8 @@ int extractar_restore_attr_xattr(cextractar *exar, u32 objtype, char *fullpath, 
         }
         
         if ((res=lsetxattr(fullpath, xattrname, xattrvalue, xattrdatasize, 0))!=0)
-        {   sysprintf("winattr:lsetxattr(%s,%s) failed\n", relpath, xattrname); 
-	         symlink_ = symlink_ + 1; 
+        {  sysprintf("winattr:lsetxattr(%s,%s) failed\n", relpath, xattrname); 
+	symlink_ = symlink_ + 1; 
             werte_uebergeben (symlink_,16);
             ret=-1;
         }
@@ -1175,7 +1173,7 @@ int extractar_read_mainhead(cextractar *exar, cdico **dicomainhead)
         
         if (memcmp(md5sumar, md5sumnew, 16)!=0)
         {   errprintf("you have to provide the password which was used to create archive, cannot decrypt the test buffer.\n");
-            werte_uebergeben (103,4);
+            werte_uebergeben (103,4); 
             return -1;
         }
     }
@@ -1377,7 +1375,7 @@ int oper_restore(char *archive, int argc, char **argv, int oper)
     int ret=0;
     int i;
     //Terminal Ausgabe 
-    printf("[ prozentualer Anteil ]  \n");
+   printf("[ prozentualer Anteil ]  \n");
     
     // init
     memset(&exar, 0, sizeof(exar));
@@ -1467,14 +1465,14 @@ int oper_restore(char *archive, int argc, char **argv, int oper)
         case ARCHTYPE_DIRECTORIES:
             if (oper==OPER_RESTFS)
             {   errprintf("this archive does not contain filesystems, cannot use \"restfs\". Try \"restdir\" instead.\n");
-                 werte_uebergeben (102,4);
+                werte_uebergeben (102,4); 
                 goto do_extract_error;
             }
             break;
         case ARCHTYPE_FILESYSTEMS:
             if (oper==OPER_RESTDIR)
             {   errprintf("this archive does not contain simple directories, cannot use \"restdir\". Try \"restfs\" instead.\n");
-                werte_uebergeben(104,4);
+                werte_uebergeben (104,4); 
                 goto do_extract_error;
             }
             break;
@@ -1623,8 +1621,8 @@ do_extract_success:
     // now we are sure that thread_compress is not working on an item in the queue so we can empty the queue
     while (get_secthreads()>0 && queue_get_end_of_queue(&g_queue)==false)
         queue_destroy_first_item(&g_queue);
-         // Damit die wiederholte Wiederherstellung der Verzeichnisse und Partitionen klappt!!
-	     set_stopfillqueue_false();
+        // Damit die wiederholte Wiederherstellung der Verzeichnisse und Partitionen klappt!!
+	set_stopfillqueue_false();
     msgprintf(MSG_DEBUG1, "THREAD-MAIN2: queue is now empty\n");
     // the queue is empty, so thread_compress should now exit
     
@@ -1656,3 +1654,4 @@ do_extract_success:
     archreader_destroy(&exar.ai);
     return ret;
 }
+

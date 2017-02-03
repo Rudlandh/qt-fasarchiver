@@ -1,7 +1,7 @@
 /*
  * qt5-fsarchiver: Filesystem Archiver
  * 
-* Copyright (C) 2008-2016 Dieter Baum.  All rights reserved.
+* Copyright (C) 2008-2017 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -113,6 +113,7 @@ int main(int argc, char *argv[])
    QSettings setting("qt5-fsarchiver", "qt5-fsarchiver");
    setting.beginGroup("Basiseinstellungen");
    int auswertung = setting.value("Sprache").toInt();
+
    if (auswertung > 0) 
    	language_ = "qt5-fsarchiver_" + language[auswertung -1];
    setting.endGroup();
@@ -126,10 +127,14 @@ int main(int argc, char *argv[])
 //   internationale Sprachauswahl
      QString sLocPath = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
      QTranslator *translator = new QTranslator(0);
-     if (auswertung == 0)
+     if (auswertung == 0){
          translator->load(QString("qt5-fsarchiver_"+QLocale::system().name()), sLocPath);
-     if (auswertung != 0) 
+         qDebug() << "translator->load(QString(qt5-fsarchiver_+QLocale::system().name()), sLocPath)";
+         }
+     if (auswertung != 0){ 
          translator->load(language_, sLocPath);
+         qDebug() <<  "translator->load(language_, sLocPath)";
+         }
      app.installTranslator(translator);
 //     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8")); 
      QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8")); 
@@ -148,6 +153,7 @@ int main(int argc, char *argv[])
   // qDebug() << window.Root_Auswertung();
  }
   
+
 
 
 
