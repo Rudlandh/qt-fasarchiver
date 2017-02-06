@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -50,3 +50,4 @@ int  regmulti_rest_setdatablock(cregmulti *m, char *data, u32 datsize);
 int  regmulti_rest_getfile(cregmulti *m, int index, struct s_dico **filehead, char *data, u64 *datsize, u32 bufsize);
 
 #endif // __REGMULTI_H__
+

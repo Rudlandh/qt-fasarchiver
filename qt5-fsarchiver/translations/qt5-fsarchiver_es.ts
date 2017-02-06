@@ -3195,32 +3195,11 @@ Los archivos deben terminar al fsa</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1086"/>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-5, November 2, 2016</source>
+<source>Backup and restore partitions, directory and MBR.
+version 0.8.1-0, February 5, 2017</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-5, 2. November 2016</comment>
-<translation>Copia de seguridad y restauración de particiones, directorios y MBR
-versione 0.8.0-5, 2. Noviembre. 2016</translation>
-    </message>
-    <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-3, October 31, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016</comment>
-        <translation type="vanished">Copia de seguridad y restauración de particiones, directorios y MBR
-versione 0.8.0-3, 31. Octubre. 2016</translation>
-    </message>
-    <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-0, October 15, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
-        <translation type="vanished">Copia de seguridad y restauración de particiones, directorios y MBR
-versione 0.8.0-0, 5. Octubre. 2016</translation>
-    </message>
-    <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.6.19-21, August 1, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-21, 1. August 2016</comment>
-        <translation type="vanished">Copia de seguridad y restauración de particiones, directorios y MBR
-versione 0.6.19-21, 1. Agosto. 2016</translation>
+<translation>Copia de seguridad y restauración de particiones, directorios y MBR.
+versione 0.8.1-0, 5.Febrero 2017</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1486"/>
@@ -3269,23 +3248,6 @@ versione 0.6.19-21, 1. Agosto. 2016</translation>
         <comment> spezielle Daten und der Partition Boot Sektor wurden wieder hergestellt
 .</comment>
         <translation>datos específicos ha sido respaldado. y el registro de arranque de partición ha sido restaurada.</translation>
-    </message>
-    <message>
-        <source>Backup and restore
-partitions, directory and MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-3, May 8, 2014</source>
-        <comment>Sichern und Wiederherstellen
-von Partitionen, Verzeichnissen und MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-3, 8. Mai 2014</comment>
-        <translation type="obsolete">Copia de seguridad y restauración de
- particiones, directorios y MBR
- Copyright (C) 2008-2013 Francois Dupoux y Dieter Baum.
-Todos los derechos reservados.
-Versión 0.6.17-4, 01 de junio 2013</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1094"/>

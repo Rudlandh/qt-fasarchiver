@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -331,7 +331,7 @@ int generic_umount(char *mntbuf)
         return -1;
     }
 
-    msgprintf(MSG_DEBUG1, "unmount_partition(%s)\n", mntbuf);
+    msgprintf(MSG_DEBUG1, "generic_umount(%s)\n", mntbuf);
     for (i=0, errno=0 ; (i < 4) && (res=umount2(mntbuf, 0)!=0) && (errno==EBUSY) ; i++)
     {   sync();
         sleep(i+1);
@@ -348,3 +348,4 @@ char *format_prog_version(u64 version, char *bufdat, int buflen)
     snprintf(bufdat, buflen, "%ld.%ld.%ld", (long)(version>>16&0xFF), (long)(version>>8&0xFF), (long)(version>>0&0xFF));
     return bufdat;
 }
+

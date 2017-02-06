@@ -2988,23 +2988,7 @@ Die Dateiendung muss .fsa sein</comment>
         <source>qt5-fsarchiver</source>
         <translation>în qt5-fsarchiver</translation>
     </message>
-    <message>
-        <source>Backup and restore
-partitions, directory and MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-9, October 31, 2014</source>
-        <comment>Sichern und Wiederherstellen
-von Partitionen, Verzeichnissen und MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-9, 31. Oktober 2014</comment>
-        <translation type="obsolete">Backup și restaurare partiții, 
-directorul și MBR Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum. 
-Toate drepturile rezervate. 
-Versiune 0.6.19-9, 2 septembrie 2014</translation>
-    </message>
-    <message>
+   <message>
         <location filename="../src/mainWindow.cpp" line="348"/>
         <source>In the file /usr/share/doc/qt5-fsarchiver/doc/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.</source>
         <comment>In der Datei /usr/share/doc/qt5-fsarchiver/doc/Liesmich sind Hinweise zur Nutzung des Programms enthalten. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern.</comment>
@@ -3012,11 +2996,12 @@ Versiune 0.6.19-9, 2 septembrie 2014</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1086"/>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-5, November 2, 2016</source>
+<source>Backup and restore partitions, directory and MBR.
+version 0.8.1-0, February 5, 2017</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-5, 2. November 2016</comment>
-        <translation type="unfinished"></translation>
-    </message>
+<translation>Backup și restaurare partiții, directoare și MBR.
+Versiune 0.8.1-0, 5.februarie 2017</translation>
+</message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1094"/>
         <source>The program must be run with root privileges. The program is terminated.

@@ -2984,54 +2984,6 @@ Die Dateiendung muss .fsa sein</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Backup and restore
-partitions, directory and MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-7, September 2, 2014</source>
-        <comment>Sichern und Wiederherstellen
-von Partitionen, Verzeichnissen und MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-7, 2. September 2014</comment>
-        <translation type="obsolete">分区、目录和MBR 备份/恢复工具。
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-版权所有。
-版本 0.6.19-7, 2014年9月2日</translation>
-    </message>
-    <message>
-        <source>Backup and restore
-partitions, directory and MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-8, October 17, 2014</source>
-        <comment>Sichern und Wiederherstellen
-von Partitionen, Verzeichnissen und MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-7, 17. Oktober 2014</comment>
-        <translation type="obsolete">分区、目录和MBR 备份/恢复工具。
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-版权所有。
-版本 0.6.19-8, 2014年10月17日</translation>
-    </message>
-    <message>
-        <source>Backup and restore
-partitions, directory and MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-8, October 15, 2014</source>
-        <comment>Sichern und Wiederherstellen
-von Partitionen, Verzeichnissen und MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-8, 15. Oktober 2014</comment>
-        <translation type="obsolete">分区、目录和MBR 备份/恢复工具。
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-版权所有。
-版本 0.6.19-8, 2014年10月17日 {2008-2014 ?} {0.6.19-8,?} {15, 2014?}</translation>
-    </message>
-    <message>
         <location filename="../src/mainWindow.cpp" line="187"/>
         <source>lzo</source>
         <comment>lzo</comment>
@@ -3086,88 +3038,17 @@ Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
         <translation>lzma算法最小压缩</translation>
     </message>
     <message>
-        <source>Backup and restore
-partitions, directory and MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-9, October 31, 2014</source>
-        <comment>Sichern und Wiederherstellen
-von Partitionen, Verzeichnissen und MBR
-Copyright (C) 2008-2014 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-9, 31. Oktober 2014</comment>
-        <translation type="obsolete">分区、目录和MBR 备份/恢复工具。
-Copyright (C) 2008-2014 Francois Dupoux 和 Dieter Baum.
-版权所有。
-版本 0.6.19-9, 2014年10月31日</translation>
-    </message>
-    <message>
-        <source>Backup and restore
-partitions, directory and MBR
-Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-10, January 27, 2015</source>
-        <comment>Sichern und Wiederherstellen
-von Partitionen, Verzeichnissen und MBR
-Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-10, 27. Januar 2015</comment>
-        <translation type="obsolete">分区、目录和MBR 备份/恢复工具。
-Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
-版权所有。
-版本 0.6.19-10, 2015年1月27日</translation>
-    </message>
-    <message>
-        <source>Backup and restore
-partitions, directory and MBR
-Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-11, February 20, 2015</source>
-        <comment>Sichern und Wiederherstellen
-von Partitionen, Verzeichnissen und MBR
-Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-11, 20. Februar 2015</comment>
-        <translation type="obsolete">分区、目录和MBR 备份/恢复工具。
-Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
-版权所有。
-版本 0.6.19-11, 2015年2月20日</translation>
-    </message>
-    <message>
-        <source>Backup and restore
-partitions, directory and MBR
-Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-12, February 25, 2015</source>
-        <comment>Sichern und Wiederherstellen
-von Partitionen, Verzeichnissen und MBR
-Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
-All rights reserved.
-Version 0.6.19-12, 25. Februar 2015</comment>
-        <translation type="obsolete">分区、目录和MBR 备份/恢复工具。
-Copyright (C) 2008-2015 Francois Dupoux und Dieter Baum.
-版权所有。
-版本 0.6.19-12, 2015年2月25日</translation>
-    </message>
-    <message>
         <location filename="../src/mainWindow.cpp" line="348"/>
         <source>In the file /usr/share/doc/qt5-fsarchiver/doc/Readme are instructions included on the use of the program. Should this continue to be displayed? You can change this in the basic settings.</source>
         <comment>In der Datei /usr/share/doc/qt5-fsarchiver/doc/Liesmich sind Hinweise zur Nutzung des Programms enthalten. Wollen Sie diesen Hinweis weiterhin sehen? Sie können dies in den Basiseinstellungen ändern.</comment>
         <translation type="unfinished">文件/usr/share/doc/qt5-fsarchiver/doc/Readme包含程序使用说明。每次启动时都弹出此对话框吗？您可以在程序配置界面修改此设置。</translation>
     </message>
     <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.6.19-21, August 1, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-21, 1. August 2016</comment>
-<translation>分区、目录和MBR 备份/恢复工具。
-版本 0.8.0-5, 2016. 十一月. 2</translation>
-    </message>
-    <message>
         <location filename="../src/mainWindow.cpp" line="1086"/>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-5, November 2, 2016</source>
+<source>Backup and restore partitions, directory and MBR.
+version 0.8.1-0, February 5, 2017</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-5, 2. November 2016</comment>
-        <translation type="unfinished"></translation>
+<translation>分区、目录和MBR 备份/恢复工具。 版本 0.8.1-0, 2017. 二月.5</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1094"/>

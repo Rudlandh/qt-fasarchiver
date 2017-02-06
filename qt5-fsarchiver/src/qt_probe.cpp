@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
  * 
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -63,6 +63,8 @@ int qt_probe()
     int res;
     int i;
     int j = 0;
+    int pos = 0;
+    QString partition_;
 
     // ---- 0. get info from /proc/partitions + libblkid
 
@@ -70,7 +72,6 @@ int qt_probe()
    {   printf("keine Disk und Partition entdeckt\n");
         return -1;
     }
-   
     // ---- 2. show filesystem information
     if (partcount>0)
     {
@@ -80,7 +81,12 @@ int qt_probe()
             if (blkdev[i].devtype==BLKDEV_FILESYSDEV)
             {
 		partition[i][0] = partlist_getinfo(temp, sizeof(temp), &blkdev[i], 0), strlen(partlist_getinfo(temp, sizeof(temp), &blkdev[i], 0));
-              if (partition[i][0] != "" && partition[i][0] != "ram0" && partition[i][0] != "ram1" && partition[i][0] != "ram2" && partition[i][0] != "ram3" && partition[i][0] != "ram4" && partition[i][0] != "ram5" && partition[i][0] != "ram6" && partition[i][0] != "ram7" && partition[i][0] != "ram8" && partition[i][0] != "ram9" && partition[i][0] != "ram10" && partition[i][0] != "ram11" && partition[i][0] != "ram12" && partition[i][0] != "ram13" && partition[i][0] != "ram14" && partition[i][0] != "ram15"  && partition[i][0] != "ramzswap0" && partition[i][0] != "loop0" && partition[i][0] != "zram0"){
+             partition_ = partition[i][0];
+	     pos = partition_.indexOf("ram");
+             pos = pos + partition_.indexOf("loop");
+             pos = pos + partition_.indexOf("ramzswap");
+             pos = pos + partition_.indexOf("zram");
+             if (partition[i][0] != "" && pos == -4){
                    j = j + 1;
                 //Daten in ein Array übernehmen vielleicht für einen bessere Formatierung im Listfeld
                   //Device
@@ -104,6 +110,7 @@ int qt_probe()
     return 0;
 
 }
+
 
 
 

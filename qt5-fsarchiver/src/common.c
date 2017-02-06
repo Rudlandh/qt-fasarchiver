@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -537,7 +537,7 @@ int get_parent_dir_time_attrib(char *filepath, char *parentdirbuf, int bufsize, 
 int stats_show(cstats stats, int fsid)
 {
     printf("Statistics for filesystem %d\n", fsid); 
-    printf("* files successfully processed:....regfiles=%lld, directories=%lld, " 
+    	printf("* files successfully processed:....regfiles=%lld, directories=%lld, " 
         "symlinks=%lld, hardlinks=%lld, specials=%lld\n", 
         (long long)stats.cnt_regfile, (long long)stats.cnt_dir, (long long)stats.cnt_symlink, 
         (long long)stats.cnt_hardlink, (long long)stats.cnt_special); 
@@ -552,11 +552,11 @@ int stats_show(cstats stats, int fsid)
     werte_uebergeben((long long)stats.cnt_hardlink,9); 
     werte_uebergeben((long long)stats.cnt_special,10);
     
+    werte_uebergeben((long long)stats.err_regfile,1); 
+    werte_uebergeben((long long)stats.err_dir,2); 
+    werte_uebergeben((long long)stats.err_symlink,3); 
+    werte_uebergeben((long long)stats.err_hardlink,5); 
     werte_uebergeben((long long)stats.err_special,11);
-    werte_uebergeben((long long)stats.err_regfile,12); 
-    werte_uebergeben((long long)stats.err_dir,13); 
-    werte_uebergeben((long long)stats.err_symlink,14); 
-    werte_uebergeben((long long)stats.err_hardlink,16); 
     return 0;
 }
 
@@ -629,3 +629,4 @@ int get_path_to_volume(char *newvolbuf, int bufsize, char *basepath, long curvol
     
     return 0;
 }
+

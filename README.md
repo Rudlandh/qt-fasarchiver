@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+# qt5-fsarchiver
+The Program qt5-fsarchiver is the translation from qt4-fsarchiver to the Qt5 environment. qt5-fsarchiver save and restore partitions, directories, MBR/GPT, Clone partitions and  make Images. 
+=======
 =================================================================================================================================
 qt5-fsarchiver: Back up and restore partitions for Debian,Ubuntu, Linux-Mint, Suse and Fedora [http://wiki.ubuntuusers.de/qt4-fsarchiver]
 =================================================================================================================================
@@ -7,11 +12,27 @@ Copying the files is permitted with or without modifications. The code is withou
 
 François Dupoux has developed the basic program fsarchiver, Hihin Ruslan has improved the program and tranlate to englisch und russian. Michael R. Lawrence and his team translated to Spanish and Italian, Zhenneng Li translated to Chinese, Dieter Baum created the GUI and the code to use the GUI.
 
-qt4-fsarchiver was translated QT5 environment and renamed in QT5-fsarchiver.
+# qt5-fsarchiver
+=======
+=================================================================================================================================
+qt5-fsarchiver: Back up and restore partitions for Debian,Ubuntu, Linux-Mint, Suse and Fedora [http://wiki.ubuntuusers.de/qt4-fsarchiver]
+=================================================================================================================================
 
-qt5-fsarchiver a program with a graphical interface for easy operation the archiving program fsarchiver.
+Copyright (C) 2008-2016 Francois Dupoux and Dieter Baum.  All rights reserved.
+Copying the files is permitted with or without modifications. The code is without warranty of any kind. Use at your own risk.
+
+François Dupoux has developed the basic program fsarchiver, Hihin Ruslan has improved the program and tranlate to englisch und russian. Michael R. Lawrence and his team translated to Spanish and Italian, Zhenneng Li translated to Chinese, Dieter Baum created the GUI and the code to use the GUI.
+
+# qt5-fsarchiver
+>>>>>>> 80ba611e4663005558ef276ec6fb23fcbf83dc7d
+The Program qt5-fsarchiver is the translation from qt4-fsarchiver 
+to the Qt5 environment. 
+
 qt5 fsarchiver program was extended with these points:
 Backup and restore partition table, HD cloning, images of hard drives and partitions write and restore.
+
+qt5-fsarchiver save and restore partitions, directories, MBR/GPT, 
+Clone partitions and  make Images. 
 
 The source code can be installed on any Debian-based system on Suse and Fedora.
 For Debian, Ubuntu and Linux Mint are deb packages for Suse and Fedora rpm packages are available.
@@ -21,7 +42,7 @@ To install qt5-fsarchiver the necessary dependencies for fsarchiver and the qt5 
 Of Debian based distributions: This is the command:
 sudo apt-get install libzip-dev libbz2-dev liblzma-dev liblzo2-2 liblzo2-dev libgcrypt11-dev e2fslibs-dev libblkid-dev libattr1-dev build-essential qtbase5-dev qttools5-dev-tools btrfs-tools gdisk sshfs sshpass nmap samba nfs-kernel-server nfs-common smbclient gksu
  
-The command for Suse: (you must be an administrator su -l) zypper in libQt5Core5 libqt5-qttools libqt5-qtbase-devel make libzip-devel libbz2-devel zlib-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel btrfsprogs gdisk sshfs nmap samba nfs-kernel-server
+The command for Suse: (you must be an administrator su -l) zypper in libQt5Core5 libqt5-qttools libqt5-qtbase-devel make libzip-devel libbz2-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel btrfsprogs gdisk sshfs nmap samba nfs-kernel-server
 If you use ssh (secure shell) want to access other computers in the network, you still need to install individually sshpass.
 
 The command for Fedora: (you must be an administrator su -l) yum install  gcc gcc-c++ zlib-devel bzip2-devel xz-devel lzo-devel libgcrypt-devel   e2fsprogs-devel libblkid-devel libattr-devel qt5-devel gdisk sshfs sshpass nmap samba samba-client nfs-utils
@@ -105,7 +126,7 @@ qt5-fsarchiver  can back up and restore with ecryptfs encrypted home directories
 
 With TrueCrypt encrypted partitions can not be backed up.
 
-Securing and restore Windows FAT partitions is with Version 0.8.0.5 and later possible. It can be stored on a FAT partition. The backup file will be split if the file size is greater than 4GB.
+Securing a Windows FAT partitions is only possible as Image.(Actions>HD-Image built and restore) However, it can be stored on a FAT partition. The backup file will be split if the file size is greater than 4GB.
 
 Clone hard drive: You choose in the left list box, select the existing drive that is to be cloned, and the right list box, the hard drive, which is to be rebuilt. Click on the button "Clone disk".
 Image of the hard disk/partition create:
@@ -118,5 +139,9 @@ qt5-fsarchiver can be started multiple times. So it is possible for instance to 
 
 Further information can be found in the german websites and http://wiki.ubuntuusers.de/qt5-fsarchiver http://wiki.ubuntuusers.de/fsarchiver.
 You can get information about fsarchiver on the English website of fsarchiver http://www.fsarchiver.org/Main_Page.
+<<<<<<< HEAD
 
 
+>>>>>>> qt5
+=======
+>>>>>>> 80ba611e4663005558ef276ec6fb23fcbf83dc7d

@@ -728,7 +728,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/einstellung.png</normaloff>:/src/images/einstellung.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Basic Settings</string>
+    <string>Basic Settings</string>
    </property>
   </action>
   <action name="action_Information">
@@ -737,7 +737,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/information.png</normaloff>:/src/images/information.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Information fsarchiver</string>
+    <string>Information fsarchiver</string>
    </property>
   </action>
   <action name="action_mbr_save">
@@ -782,7 +782,7 @@ with fsarchiver</string>
      <normaloff>:/src/images/cancel.png</normaloff>:/src/images/cancel.png</iconset>
    </property>
    <property name="text">
-    <string>&amp;Exit program</string>
+    <string>Exit program</string>
    </property>
   </action>
   <action name="action_partition_save_net">

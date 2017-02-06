@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -296,7 +296,7 @@ int createar_item_xattr(csavear *save, char *root, char *relpath, struct stat64 
         }
         errno=0;
         valsize=lgetxattr(fullpath, buffer+pos, valbuf, attrsize);
-         if (errno!=ENOATTR ) 
+        if (errno!=ENOATTR ) 
                 errno = 61; 
         msgprintf(MSG_VERB2, "            xattr:lgetxattr(%s,%s)=%d\n", relpath, buffer+pos, valsize);
         if (valsize>=0)
@@ -350,12 +350,12 @@ int createar_item_winattr(csavear *save, char *root, char *relpath, struct stat6
         
         errno=0;
         if ((attrsize=lgetxattr(fullpath, winattr[i], NULL, 0)) < 0) // get the size of the attribute
-        {
-        	   if (errno!=ENOATTR ) 
+        if (errno!=ENOATTR ) 
                 errno = 61; 
+        {
             if (errno!=ENOATTR)
             {
-            	 sysprintf("           winattr:lgetxattr(%s,%s): returned negative attribute size\n", relpath, winattr[i]); // output if there are any other error
+                sysprintf("           winattr:lgetxattr(%s,%s): returned negative attribute size\n", relpath, winattr[i]); // output if there are any other error
                 ret=-1;
             }
             continue; // ignore the current xattr
@@ -419,13 +419,13 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
     *objtype=OBJTYPE_NULL;
     *filecost=FSA_COST_PER_FILE; // fixed cost per file
     concatenate_paths(fullpath, sizeof(fullpath), root, relpath);
-    if (meldeflag  == 0) { 
+    	 if (meldeflag  == 0) { 
            // Anzeige im Terminal 
            printf ("Es müssen insgesamt %.5lld  Verzeichnisse bzw. Dateien gesichert werden.\r", (long long)save->objectid);
             anzahlfile = save->objectid; 
             werte_uebergeben(anzahlfile,2); 
             } 
-    	if (meldeflag  == 1 ) { 
+         if (meldeflag  == 1 ) { 
             // Anzeige im Terminal 
            //if (save->objectid == 1) 
            //    printf("\n");   
@@ -436,7 +436,8 @@ int createar_item_stdattr(csavear *save, char *root, char *relpath, struct stat6
            werte_uebergeben(progress,1); 
            anzahlfile = save->objectid; 
            werte_uebergeben(anzahlfile,3); 
-       }
+         }
+    
     msgprintf(MSG_DEBUG2, "Adding [%.5lld]=[%s]\n", (long long)save->objectid, relpath);
     if (dico_add_u64(d, DICO_OBJ_SECTION_STDATTR, DISKITEMKEY_OBJECTID, (u64)(save->objectid)++)!=0)
     {   errprintf("dico_add_u64(DICO_OBJ_SECTION_STDATTR) failed\n");
@@ -1060,12 +1061,12 @@ int filesystem_mount_partition(cdevinfo *devinfo, cdico *dicofsinfo, u16 fsid)
         devinfo->fstype=tmptype;
         devinfo->mountedbyfsa=true;
     }
-/*
+
     // Make sure users are aware if they save filesystems with experimental support in fsarchiver
     if ((g_options.experimental==false) && (filesys[devinfo->fstype].stable==false))
     {   errprintf("You must enable support for experimental features in order to save %s filesystems with fsarchiver.\n", filesys[devinfo->fstype].name);
         return -1;
-    } */
+    }
 
     // Make sure support for extended attributes is enabled if this filesystem supports it
     if (g_options.dontcheckmountopts==false)
@@ -1342,7 +1343,6 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
 	// Anzeige im Terminal 
 	printf("\n"); 
 	printf("[ Anzahl Dateien  prozentualer Anteil ]  \n");
-    
     // copy contents to archive
     switch (archtype)
     {
@@ -1397,7 +1397,7 @@ int oper_save(char *archive, int argc, char **argv, int archtype)
     if (get_interrupted()==false)
         goto do_create_success;
     if (get_abort()==true)
-        printf("operation aborted by user\n");
+         printf("operation aborted by user\n");
     
 do_create_error:
     msgprintf(MSG_DEBUG1, "THREAD-MAIN1: exit error\n");
@@ -1437,3 +1437,4 @@ do_create_success:
     archwriter_destroy(&save.ai);
     return ret;
 }
+

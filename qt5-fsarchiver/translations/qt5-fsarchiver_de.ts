@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="de_DE" sourcelanguage="de">
 <context>
@@ -3246,13 +3245,6 @@ Sie müssen eine Datei auswählen</translation>
         <translation>Die Wiederherstellung wird durchgeführt</translation>
     </message>
     <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-0, October 15, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-0, 15. Oktober 2016</comment>
-<translation>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR.
-Version 0.8.0-5, 2. November. 2016</translation>
-    </message>
-    <message>
         <location filename="../src/mainWindow.cpp" line="1403"/>
         <source>The backup of the partition was only partially successful.
 </source>
@@ -3362,13 +3354,6 @@ Partition war nur teilweise erfolgreich.</translation>
 </comment>
         <translation>Das Programm muss mit Root-Rechten gestartet werden.
  Das Programm wird beendet.</translation>
-    </message>
-    <message>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.6.19-21, August 1, 2016</source>
-        <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.6.19-21, 1. August 2016</comment>
-        <translation type="vanished">Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR.
-Version 0.6.19-21, 1. August. 2016</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1172"/>
@@ -3562,10 +3547,10 @@ Passwort eingegeben.</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1086"/>
-        <source>Backup and restore partitions, directory and MBR
-Version 0.8.0-5, November 2, 2016</source>
+<source>Backup and restore partitions, directory and MBR.
+version 0.8.1-0, February 5, 2017</source>
         <comment>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-5, 2. November 2016</comment>
-        <translation type="unfinished">Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR. Version 0.8.0-5, 2. November 2016</translation>
+<translation>Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR. Version 0.8.1-0, 5.Februar 2017</translation>
     </message>
     <message>
         <location filename="../src/mainWindow.cpp" line="1500"/>

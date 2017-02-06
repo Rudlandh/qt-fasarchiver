@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -61,3 +61,4 @@ int archwriter_dowrite_block(carchwriter *ai, struct s_blockinfo *blkinfo);
 int archwriter_dowrite_header(carchwriter *ai, struct s_headinfo *headinfo);
 
 #endif // __ARCHWRITER_H__
+

@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -211,7 +211,7 @@ int archwriter_write_buffer(carchwriter *ai, struct s_writebuf *wb)
                 "If the archive is being written to a FAT filesystem, you may have reached \n"
                 "the maximum filesize that it can handle (in general 2 GB)\n", 
                 format_size(freebytes, textbuf, sizeof(textbuf), 'h'));
-             werte_uebergeben (109,4);     
+            werte_uebergeben (109,4);     
             return -1;
         }
         else // another error
@@ -430,3 +430,4 @@ int archwriter_dowrite_header(carchwriter *ai, struct s_headinfo *headinfo)
     writebuf_destroy(wb);
     return 0;
 }
+
