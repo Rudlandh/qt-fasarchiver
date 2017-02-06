@@ -152,7 +152,7 @@ RESOURCES += src/icon.qrc
  autostart1.path = /usr/share/applications
  autostart2.files = starter/mate-qt5-fsarchiver.desktop 
  autostart2.path = /usr/share/applications
- doc.files = doc
+ doc.files = doc/*
  doc.path = /usr/share/doc/qt5-fsarchiver/doc
  smbfind.files = src/sbin
  smbfind.path = /usr
@@ -176,7 +176,6 @@ TRANSLATIONS += translations/qt5-fsarchiver_ar.ts \
                 translations/qt5-fsarchiver_hy.ts \
                 translations/qt5-fsarchiver_id.ts \
                 translations/qt5-fsarchiver_it.ts \
-                translations/qt5-fsarchiver_ja.ts \
                 translations/qt5-fsarchiver_jp.ts \
                 translations/qt5-fsarchiver_ko.ts \
                 translations/qt5-fsarchiver_lt.ts \

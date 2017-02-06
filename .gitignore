@@ -9,7 +9,7 @@
 *.o
 *.so
 *.a
-*.o
+
 configure
 Makefile.in
 config.log

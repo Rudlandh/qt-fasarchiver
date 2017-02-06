@@ -21,7 +21,7 @@ To install qt5-fsarchiver the necessary dependencies for fsarchiver and the qt5 
 Of Debian based distributions: This is the command:
 sudo apt-get install libzip-dev libbz2-dev liblzma-dev liblzo2-2 liblzo2-dev libgcrypt11-dev e2fslibs-dev libblkid-dev libattr1-dev build-essential qtbase5-dev qttools5-dev-tools btrfs-tools gdisk sshfs sshpass nmap samba nfs-kernel-server nfs-common smbclient gksu
  
-The command for Suse: (you must be an administrator su -l) zypper in libQt5Core5 libqt5-qttools libqt5-qtbase-devel make libzip-devel libbz2-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel btrfsprogs gdisk sshfs nmap samba nfs-kernel-server
+The command for Suse: (you must be an administrator su -l) zypper in libQt5Core5 libqt5-qttools libqt5-qtbase-devel make libzip-devel libbz2-devel zlib-devel xz-devel lzo-devel libgcrypt-devel e2fsprogs-devel libblkid-devel libattr-devel btrfsprogs gdisk sshfs nmap samba nfs-kernel-server
 If you use ssh (secure shell) want to access other computers in the network, you still need to install individually sshpass.
 
 The command for Fedora: (you must be an administrator su -l) yum install  gcc gcc-c++ zlib-devel bzip2-devel xz-devel lzo-devel libgcrypt-devel   e2fsprogs-devel libblkid-devel libattr-devel qt5-devel gdisk sshfs sshpass nmap samba samba-client nfs-utils
@@ -105,7 +105,7 @@ qt5-fsarchiver  can back up and restore with ecryptfs encrypted home directories
 
 With TrueCrypt encrypted partitions can not be backed up.
 
-Securing a Windows FAT partitions is only possible as Image.(Actions>HD-Image built and restore) However, it can be stored on a FAT partition. The backup file will be split if the file size is greater than 4GB.
+Securing and restore Windows FAT partitions is with Version 0.8.0.5 and later possible. It can be stored on a FAT partition. The backup file will be split if the file size is greater than 4GB.
 
 Clone hard drive: You choose in the left list box, select the existing drive that is to be cloned, and the right list box, the hard drive, which is to be rebuilt. Click on the button "Clone disk".
 Image of the hard disk/partition create:

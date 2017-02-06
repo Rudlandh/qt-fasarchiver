@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # qt5-fsarchiver
 The Program qt5-fsarchiver is the translation from qt4-fsarchiver to the Qt5 environment. qt5-fsarchiver save and restore partitions, directories, MBR/GPT, Clone partitions and  make Images. 
 =======
@@ -12,6 +13,18 @@ Copying the files is permitted with or without modifications. The code is withou
 François Dupoux has developed the basic program fsarchiver, Hihin Ruslan has improved the program and tranlate to englisch und russian. Michael R. Lawrence and his team translated to Spanish and Italian, Zhenneng Li translated to Chinese, Dieter Baum created the GUI and the code to use the GUI.
 
 # qt5-fsarchiver
+=======
+=================================================================================================================================
+qt5-fsarchiver: Back up and restore partitions for Debian,Ubuntu, Linux-Mint, Suse and Fedora [http://wiki.ubuntuusers.de/qt4-fsarchiver]
+=================================================================================================================================
+
+Copyright (C) 2008-2016 Francois Dupoux and Dieter Baum.  All rights reserved.
+Copying the files is permitted with or without modifications. The code is without warranty of any kind. Use at your own risk.
+
+François Dupoux has developed the basic program fsarchiver, Hihin Ruslan has improved the program and tranlate to englisch und russian. Michael R. Lawrence and his team translated to Spanish and Italian, Zhenneng Li translated to Chinese, Dieter Baum created the GUI and the code to use the GUI.
+
+# qt5-fsarchiver
+>>>>>>> 80ba611e4663005558ef276ec6fb23fcbf83dc7d
 The Program qt5-fsarchiver is the translation from qt4-fsarchiver 
 to the Qt5 environment. 
 
@@ -126,6 +139,9 @@ qt5-fsarchiver can be started multiple times. So it is possible for instance to 
 
 Further information can be found in the german websites and http://wiki.ubuntuusers.de/qt5-fsarchiver http://wiki.ubuntuusers.de/fsarchiver.
 You can get information about fsarchiver on the English website of fsarchiver http://www.fsarchiver.org/Main_Page.
+<<<<<<< HEAD
 
 
 >>>>>>> qt5
+=======
+>>>>>>> 80ba611e4663005558ef276ec6fb23fcbf83dc7d

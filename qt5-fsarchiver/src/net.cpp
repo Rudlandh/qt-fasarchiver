@@ -1,7 +1,7 @@
 /*
  * qt5-fsarchiver: Filesystem Archiver
  * 
-* Copyright (C) 2008-2016 Dieter Baum.  All rights reserved.
+* Copyright (C) 2008-2017 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -48,6 +48,7 @@ QString part_art_net;
 QString user_net;
 QString key_net;
 QString rechner_IP;
+extern int show_flag;
 extern QString parameter[15];
 int endeThread_net;
 QString SicherungsDateiName_net;
@@ -312,6 +313,7 @@ QString homepath = QDir::homePath();
 		system (befehl.toLatin1().data()); 
        } 
        cmbFlag = 0;
+       show_flag = 0;
        close(); 
 }
 
@@ -495,6 +497,7 @@ QString homepath = QDir::homePath();
      int net_art = cmb_Net->currentIndex();
      int found = 0;
      int stop = 0;
+     show_flag = 1;
      if (rdBt_saveFsArchiv->isChecked())
      {
      	if (folder_free == "")
@@ -1561,6 +1564,7 @@ void DialogNet::esc_end()
 {
 MWindow window;
 QString befehl;
+show_flag = 0;
    if (thread_run_net > 0) {
     int ret = questionMessage(tr("Do you want really break the save or restore from the partition?", "Wollen Sie wirklich die Sicherung oder Wiederherstellung der Partition beenden?"));
       if (thread_run_net == 1 && ret == 1)
@@ -1902,6 +1906,7 @@ QString homepath = QDir::homePath();
 	 return 1;
       return 0;
  }
+
 
 
 

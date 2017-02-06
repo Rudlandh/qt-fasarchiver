@@ -1,7 +1,7 @@
 /*
  * qt5-fsarchiver: Filesystem Archiver
  * 
-* Copyright (C) 2008-2016 Dieter Baum.  All rights reserved.
+* Copyright (C) 2008-2017 Dieter Baum.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -1083,8 +1083,8 @@ void MWindow::folder_file() {
 void MWindow::info() {
    QMessageBox::information(
       0, tr("qt5-fsarchiver"),
-      tr("Backup and restore partitions, directory and MBR\nVersion 0.8.0-3, October 31, 2016",
-	 "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.0-3, 31. Oktober 2016"));
+      tr("Backup and restore partitions, directory and MBR.\nversion 0.8.1-0, February 5, 2017",
+         "Sichern und Wiederherstellen von Partitionen, Verzeichnissen und MBR Version 0.8.1-0, 5. Februar 2017"));
       }
 
 int MWindow::Root_Auswertung(){
@@ -1974,6 +1974,9 @@ void MWindow::del_mediafolder()
            filename = homepath + "/.config/qt5-fsarchiver/ip.txt";
            befehl = "rm " + filename + " 2>/dev/null";
            system (befehl.toLatin1().data());
+           filename = homepath + "/.config/qt5-fsarchiver/findsmb.txt";
+           befehl = "rm " + filename + " 2>/dev/null";
+           system (befehl.toLatin1().data());
            filename = homepath + "/.config/qt5-fsarchiver/smbtree.txt";
            befehl = "rm " + filename + " 2>/dev/null";
            system (befehl.toLatin1().data());
@@ -1993,6 +1996,7 @@ void MWindow::del_mediafolder()
            qApp->quit();
           //close ();
 }
+
 
 
 

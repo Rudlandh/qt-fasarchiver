@@ -1,7 +1,7 @@
 /*
  * fsarchiver: Filesystem Archiver
- *
- * Copyright (C) 2008-2016 Francois Dupoux.  All rights reserved.
+ * 
+ * Copyright (C) 2008-2017 Francois Dupoux.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -183,16 +183,21 @@ struct xfs_sb
 
 // XFS features used in XFS version 5 only
 #define XFS_SB_FEAT_RO_COMPAT_FINOBT      (1 << 0)  /* free inode btree */
+#define XFS_SB_FEAT_RO_COMPAT_RMAPBT      (1 << 1)  /* reverse map btree */
+#define XFS_SB_FEAT_RO_COMPAT_REFLINK     (1 << 2)  /* reflinked files */
 #define XFS_SB_FEAT_INCOMPAT_FTYPE        (1 << 0)  /* filetype in dirent */
 #define XFS_SB_FEAT_INCOMPAT_SPINODES     (1 << 1)  /* sparse inode chunks */
 #define XFS_SB_FEAT_INCOMPAT_META_UUID    (1 << 2)  /* metadata UUID */
 
 // features supported by the current fsarchiver version
 #define FSA_XFS_FEATURE_COMPAT_SUPP       (u64)(0)
-#define FSA_XFS_FEATURE_RO_COMPAT_SUPP    (u64)(XFS_SB_FEAT_RO_COMPAT_FINOBT)
+#define FSA_XFS_FEATURE_RO_COMPAT_SUPP    (u64)(XFS_SB_FEAT_RO_COMPAT_FINOBT|\
+                                                XFS_SB_FEAT_RO_COMPAT_RMAPBT|\
+                                                XFS_SB_FEAT_RO_COMPAT_REFLINK)
 #define FSA_XFS_FEATURE_INCOMPAT_SUPP     (u64)(XFS_SB_FEAT_INCOMPAT_FTYPE|\
                                                 XFS_SB_FEAT_INCOMPAT_SPINODES|\
                                                 XFS_SB_FEAT_INCOMPAT_META_UUID)
 #define FSA_XFS_FEATURE_LOG_INCOMPAT_SUPP (u64)(0)
 
 #endif // __FS_XFS_H__
+

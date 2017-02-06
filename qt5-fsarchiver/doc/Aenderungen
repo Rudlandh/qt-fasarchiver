@@ -1,6 +1,11 @@
 ==================================================================================================
 * qt5-fsarchiver: Grafische Oberfläche für fsarchiver [http://wiki.ubuntuusers.de/qt4-fsarchiver] 
 ==================================================================================================
+* qt5-fsarchiver-0.8.1-0 5. Februar, 2017.
+    - Verbesserte Unterstützung für das XFS-Dateisystem (Beiträge von Marcos Mello)
+    - Aktualisierte Dokumentation und Kommentare in den Quellen (Marcos Mello)
+* qt5-fsarchiver-0.8.0-5 2. November, 2016.
+    - Sichern und Wiederherstellen von vfat-Partitionen ist möglich.
 * qt5-fsarchiver-0.8.0-3 31. Oktober, 2016.
     - Korrektur bei der Schlussmeldung.
 * qt5-fsarchiver-0.8.0-0 15 Oktober, 2016.
